@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>裸讀學習筆記｜總目錄</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&family=Noto+Serif+TC:wght@500;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0F1B18;--bg-2:#152420;--bg-3:#1B2E29;--line:#26403A;--line-2:#31534B;
+    --text:#E9F1EE;--text-2:#A8C2BA;--text-3:#7A968D;
+    --teal:#7FC9BE;--teal-dim:#4E9A90;--gold:#C9A961;--rose:#E58B85;
+    --serif:"Noto Serif TC","Songti TC",serif;
+    --sans:"Noto Sans TC","PingFang TC","Microsoft JhengHei",sans-serif;
+    --mono:"JetBrains Mono",ui-monospace,Menlo,monospace;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth;overflow-x:hidden}
+  body{margin:0;background:var(--bg);color:var(--text);font-family:var(--sans);
+    font-size:16.5px;line-height:1.9;font-weight:300;-webkit-font-smoothing:antialiased;
+    overflow-x:hidden}
+  .wrap{max-width:900px;margin:0 auto;padding:0 22px}
+
+  header.hero{padding:76px 0 52px;border-bottom:1px solid var(--line)}
+  .eyebrow{display:flex;align-items:center;gap:16px;margin-bottom:26px;
+    font-family:var(--serif);font-size:15px;letter-spacing:.34em;color:var(--teal)}
+  .eyebrow .rule{width:56px;height:1px;background:var(--gold)}
+  .eyebrow .dot{color:var(--gold)}
+  h1{font-family:var(--serif);font-weight:700;font-size:clamp(38px,7vw,66px);
+    line-height:1.16;margin:0 0 20px;letter-spacing:.02em}
+  h1 em{font-style:normal;color:var(--teal)}
+  p.sub{margin:0;color:var(--text-2);max-width:58ch;font-size:17px}
+
+  main{padding:46px 0 80px}
+  .lead{font-family:var(--mono);font-size:11px;letter-spacing:.2em;color:var(--text-3);margin-bottom:20px}
+
+  .block{display:block;text-decoration:none;color:inherit;
+    border:1px solid var(--line);border-radius:16px;background:var(--bg-2);
+    padding:28px 30px;margin-bottom:16px;transition:.15s}
+  .block:hover{border-color:var(--teal-dim);background:var(--bg-3)}
+  .block-top{display:flex;align-items:baseline;gap:14px;flex-wrap:wrap;margin-bottom:12px}
+  .bnum{font-family:var(--mono);font-size:12px;color:var(--gold);
+    border:1px solid var(--gold);padding:3px 11px;border-radius:5px;white-space:nowrap}
+  .block h2{font-family:var(--serif);font-size:24px;margin:0;font-weight:700;flex:1;min-width:0}
+  .meta{font-family:var(--mono);font-size:11.5px;color:var(--text-3);white-space:nowrap}
+  .block p{margin:0;color:var(--text-2);font-size:15px;line-height:1.75}
+  .subjects{margin:14px 0 0;padding:0;list-style:none;display:flex;flex-wrap:wrap;gap:7px}
+  .subjects li{font-size:12.5px;color:var(--text-2);
+    border:1px solid var(--line);border-radius:20px;padding:3px 12px;background:var(--bg-3)}
+
+  .block.soon{opacity:.5;pointer-events:none;border-style:dashed}
+  .block.soon .bnum{color:var(--text-3);border-color:var(--line-2)}
+
+  footer{border-top:1px solid var(--line);padding:26px 0 60px;color:var(--text-3);font-size:13.5px}
+  b{font-weight:500;color:#FFF}
+
+  @media (max-width:700px){
+    .wrap{padding:0 16px}
+    header.hero{padding:46px 0 34px}
+    .block{padding:20px 20px}
+    .block h2{font-size:20px}
+  }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="eyebrow"><span class="rule"></span>裸讀學習筆記<span class="dot">·</span>由淺入深</div>
+    <h1>考古題<em>重點筆記</em></h1>
+    <p class="sub">依 Block 分類的期末考重點整理。每一科都由淺入深講解觀念，考古題嵌入對應段落即時測驗，文末再依年度完整羅列答案與詳解。</p>
+  </div>
+</header>
+
+<main>
+<div class="wrap">
+  <div class="lead">BLOCKS</div>
+
+  <!-- ==========================================================
+       新增 Block：複製一整個 <a class="block"> ... </a> 區塊，
+       改 href="blockX/index.html"、標題、題數與科目標籤即可。
+       尚未完成的 Block 可加上 class="block soon"（會變灰且不可點）。
+       ========================================================== -->
+
+  <a class="block" href="block7/index.html">
+    <div class="block-top">
+      <span class="bnum">BLOCK 7</span>
+      <h2>消化系統</h2>
+      <span class="meta">6 科 · 50 題</span>
+    </div>
+    <p>從腹痛的神經生理一路到微創手術，涵蓋消化道症狀學、蠕動異常、外科急症、影像判讀與食道疾病。</p>
+    <ul class="subjects">
+      <li>腹部常見症狀</li>
+      <li>腸胃道蠕動異常</li>
+      <li>闌尾炎與腸繫膜</li>
+      <li>介入性放射學</li>
+      <li>食道疾病</li>
+      <li>微創與減重手術</li>
+    </ul>
+  </a>
+
+  <!-- 新 Block 貼在這裡 -->
+
+</div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p>內容依各學年度考古題詳解整理，若與老師上課投影片有出入，請以上課內容為準。</p>
+  </div>
+</footer>
+
+</body>
+</html>
