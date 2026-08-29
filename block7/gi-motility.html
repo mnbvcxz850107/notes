@@ -1,0 +1,895 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>腸胃道蠕動異常疾病｜裸讀學習筆記</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&family=Noto+Serif+TC:wght@500;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0F1B18;--bg-2:#152420;--bg-3:#1B2E29;--line:#26403A;--line-2:#31534B;
+    --text:#E9F1EE;--text-2:#A8C2BA;--text-3:#7A968D;
+    --teal:#7FC9BE;--teal-dim:#4E9A90;--gold:#C9A961;--rose:#E58B85;
+    --serif:"Noto Serif TC","Songti TC",serif;
+    --sans:"Noto Sans TC","PingFang TC","Microsoft JhengHei",sans-serif;
+    --mono:"JetBrains Mono",ui-monospace,Menlo,monospace;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth;scroll-padding-top:24px}
+  html{overflow-x:hidden}
+  body{margin:0;background:var(--bg);color:var(--text);font-family:var(--sans);
+    font-size:16.5px;line-height:1.9;font-weight:300;-webkit-font-smoothing:antialiased;
+    overflow-x:hidden}
+  .wrap{max-width:1150px;margin:0 auto;padding:0 22px}
+
+  header.hero{padding:66px 0 52px;border-bottom:1px solid var(--line)}
+  .backlink{display:inline-block;font-family:var(--mono);font-size:12px;
+    color:var(--text-3);text-decoration:none;margin-bottom:22px;
+    border:1px solid var(--line);border-radius:6px;padding:5px 12px;transition:.15s}
+  .backlink:hover{color:var(--teal);border-color:var(--teal-dim)}
+  .eyebrow{display:flex;align-items:center;gap:16px;margin-bottom:26px;
+    font-family:var(--serif);font-size:15px;letter-spacing:.34em;color:var(--teal)}
+  .eyebrow .rule{width:56px;height:1px;background:var(--gold)}
+  .eyebrow .dot{color:var(--gold)}
+  header.hero h1{font-family:var(--serif);font-weight:700;font-size:clamp(36px,6.4vw,68px);
+    line-height:1.15;margin:0 0 22px;letter-spacing:.02em}
+  header.hero h1 em{font-style:normal;color:var(--teal)}
+  header.hero p.sub{margin:0;color:var(--text-2);max-width:62ch;font-size:17px;line-height:1.85}
+  .intro-card{border:1px solid var(--line);border-radius:16px;padding:26px 30px;margin-top:34px;background:var(--bg-2)}
+  .intro-card p{margin:0 0 22px;color:var(--text-2)}
+  .intro-card b{color:var(--teal);font-weight:500}
+  .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+  .stat .n{font-family:var(--serif);font-size:38px;color:var(--gold);line-height:1}
+  .stat .l{font-size:12.5px;color:var(--text-3);letter-spacing:.08em;margin-top:6px}
+
+  .cols{display:grid;grid-template-columns:220px 1fr;gap:52px;padding:46px 0 90px;align-items:start}
+  nav.toc{position:sticky;top:26px}
+  nav.toc .t{font-family:var(--mono);font-size:11px;letter-spacing:.2em;color:var(--text-3);margin-bottom:14px}
+  nav.toc a{display:block;padding:7px 14px;border-left:1px solid var(--line);
+    color:var(--text-2);text-decoration:none;font-size:14px;transition:.15s}
+  nav.toc a:hover{border-left-color:var(--teal);color:var(--teal);background:var(--bg-2)}
+  nav.toc a.exam{color:var(--gold)}
+  nav.toc summary{display:none}
+
+  section{margin-bottom:64px;scroll-margin-top:24px}
+  .sec-head{display:flex;align-items:baseline;gap:16px;border-bottom:1px solid var(--line-2);padding-bottom:12px;margin-bottom:26px}
+  .sec-num{font-family:var(--serif);font-size:30px;color:var(--gold);line-height:1}
+  .sec-head h2{font-family:var(--serif);font-size:clamp(23px,3.4vw,31px);margin:0;font-weight:700;letter-spacing:.02em}
+  h3{font-family:var(--serif);font-size:21px;margin:38px 0 12px;font-weight:500}
+  h4{font-size:16.5px;margin:24px 0 8px;color:var(--teal);font-weight:500}
+  p{margin:0 0 15px}
+  ul,ol{margin:0 0 17px;padding-left:22px}
+  li{margin-bottom:8px}
+  li::marker{color:var(--teal-dim)}
+  strong,b{font-weight:500;color:#FFF}
+  u{text-decoration-color:var(--teal-dim);text-underline-offset:3px}
+  code{font-family:var(--mono);font-size:.88em;background:var(--bg-3);padding:1px 6px;border-radius:4px;color:var(--teal)}
+
+  mark{background:rgba(201,169,97,.22);box-shadow:inset 0 -2px 0 rgba(201,169,97,.6);
+    color:#FBF3E2;padding:1px 3px;border-radius:2px}
+  a.qtag{display:inline-block;font-family:var(--mono);font-size:11px;font-weight:600;
+    border:1px solid var(--gold);color:var(--gold);padding:1px 7px;border-radius:4px;
+    text-decoration:none;margin:0 3px;vertical-align:2px;white-space:nowrap;transition:.15s}
+  a.qtag:hover{background:var(--gold);color:var(--bg)}
+  .tagline{margin:-8px 0 18px;font-size:13.5px;color:var(--text-3)}
+
+  .box{border-radius:13px;padding:20px 24px;margin:22px 0;border:1px solid var(--line);background:var(--bg-2)}
+  .box .bt{font-weight:500;font-size:14.5px;margin-bottom:10px;display:flex;align-items:center;gap:9px;color:#FFF}
+  .box p:last-child,.box ul:last-child,.box ol:last-child{margin-bottom:0}
+  .badge{font-family:var(--mono);font-size:10px;padding:2px 8px;border-radius:3px;letter-spacing:.06em;
+    border:1px solid currentColor;font-weight:600}
+  .box.exam{border-color:rgba(201,169,97,.45);background:rgba(201,169,97,.07)}
+  .box.exam .badge{color:var(--gold)}
+  .box.trap{border-color:rgba(229,139,133,.45);background:rgba(229,139,133,.07)}
+  .box.trap .badge{color:var(--rose)}
+  .box.key{border-color:rgba(127,201,190,.4);background:rgba(127,201,190,.07)}
+  .box.key .badge{color:var(--teal)}
+
+  .tw{overflow-x:auto;margin:22px 0;border:1px solid var(--line);border-radius:13px}
+  table{border-collapse:collapse;width:100%;min-width:540px;font-size:14.8px}
+  th,td{padding:12px 16px;text-align:left;border-bottom:1px solid var(--line);vertical-align:top}
+  thead th{background:var(--bg-3);color:var(--teal);font-weight:500;font-size:13.5px;letter-spacing:.04em}
+  tbody tr:last-child td{border-bottom:none}
+  tbody tr:nth-child(even){background:rgba(255,255,255,.018)}
+  td.mono,th.mono{font-family:var(--mono);font-size:13px}
+
+  /* 治療階梯 */
+  .ladder{margin:24px 0;border:1px solid var(--line);border-radius:13px;overflow:hidden}
+  .rung{display:flex;gap:16px;padding:14px 20px;border-bottom:1px solid var(--line);background:var(--bg-2);align-items:flex-start}
+  .rung:last-child{border-bottom:none}
+  .rung .lv{font-family:var(--mono);font-size:11.5px;color:var(--gold);border:1px solid var(--gold);
+    padding:2px 9px;border-radius:4px;white-space:nowrap;margin-top:4px}
+  .rung .txt{font-size:14.8px;line-height:1.75;color:var(--text-2)}
+  .rung .txt b{color:#FFF}
+
+  .quiz{border:1px solid var(--line-2);border-radius:14px;margin:26px 0;overflow:hidden;background:var(--bg-2)}
+  .quiz-top{display:flex;align-items:center;gap:10px;padding:12px 20px;background:var(--bg-3);border-bottom:1px solid var(--line);flex-wrap:wrap}
+  .quiz-top .lab{font-family:var(--serif);font-size:14px;letter-spacing:.16em;color:var(--gold)}
+  .quiz-top .yr{font-family:var(--mono);font-size:11.5px;color:var(--text-2);border:1px solid var(--line-2);padding:2px 8px;border-radius:4px}
+  .quiz-body{padding:20px 22px}
+  .quiz-body .stem{font-size:15.5px;line-height:1.85;margin:0 0 14px;color:var(--text)}
+  .opts{list-style:none;padding:0;margin:0 0 14px}
+  .opts li{padding:8px 12px;font-size:15px;border:1px solid var(--line);border-radius:8px;margin-bottom:7px;color:var(--text-2)}
+  .toggle{background:none;border:1px solid var(--teal-dim);color:var(--teal);font-family:var(--sans);
+    font-size:13px;padding:7px 16px;border-radius:7px;cursor:pointer;transition:.15s;font-weight:400}
+  .toggle:hover{background:var(--teal);color:var(--bg)}
+
+  /* ---------- 答案展開：使用原生 details，不依賴 JavaScript ---------- */
+  details.rev{margin:0}
+  summary.toggle{
+    display:inline-block;list-style:none;cursor:pointer;
+    background:none;border:1px solid var(--teal-dim);color:var(--teal);
+    font-family:var(--sans);font-size:13px;padding:7px 16px;border-radius:7px;
+    font-weight:400;transition:.15s;-webkit-tap-highlight-color:transparent;
+  }
+  summary.toggle::-webkit-details-marker{display:none}
+  summary.toggle::marker{content:""}
+  summary.toggle:hover{background:var(--teal);color:var(--bg)}
+  summary.toggle::before{content:"顯示答案"}
+  .q summary.toggle::before{content:"顯示答案與詳解"}
+  details.rev[open] summary.toggle::before{content:"收合答案"}
+  details.rev .reveal{margin-top:14px}
+  .reveal{border-top:1px dashed var(--line-2);margin-top:14px;padding-top:14px}
+  .reveal[hidden]{display:none}
+  .ans{font-family:var(--serif);font-weight:700;color:var(--gold);font-size:17px;margin-bottom:10px}
+  .reveal p{margin:0 0 9px;font-size:14.8px;color:var(--text-2)}
+  .reveal p b{color:#FFF}
+  .src{font-size:12px;color:var(--text-3);font-family:var(--mono);margin-top:12px}
+  .jump{font-size:12.5px;color:var(--teal-dim);text-decoration:none;border-bottom:1px solid var(--line-2)}
+  .jump:hover{color:var(--teal)}
+
+  .exam-head{border:1px solid var(--line-2);border-radius:16px;padding:30px;margin-bottom:28px;background:var(--bg-2)}
+  .exam-head h2{font-family:var(--serif);margin:0 0 10px;font-size:29px}
+  .exam-head p{color:var(--text-2);margin:0;font-size:15px}
+  .btn{font-family:var(--sans);font-size:13.5px;cursor:pointer;background:var(--teal);color:var(--bg);
+    border:none;padding:10px 20px;border-radius:8px;margin-top:18px;font-weight:500}
+  .btn:hover{background:#9BDBD1}
+  .yrhead{font-family:var(--serif);font-size:24px;font-weight:700;margin:40px 0 18px;
+    padding-left:16px;border-left:3px solid var(--gold);color:var(--gold)}
+  .q{background:var(--bg-2);border:1px solid var(--line);border-radius:13px;padding:22px 24px;margin-bottom:16px;scroll-margin-top:24px}
+  .q-no{font-family:var(--mono);font-size:11.5px;color:var(--gold);border:1px solid var(--gold);padding:2px 9px;border-radius:5px}
+  .q-topic{font-size:12.5px;color:var(--text-3);margin-left:10px}
+  .q-stem{margin:14px 0 12px;font-size:15.5px;line-height:1.85}
+
+  footer{border-top:1px solid var(--line);padding:30px 0 60px;color:var(--text-3);font-size:13.5px}
+  footer b{color:var(--text-2)}
+
+  @media (max-width:900px){
+    .cols{grid-template-columns:1fr;gap:0;padding-top:28px}
+    nav.toc{position:static;margin-bottom:36px;border:1px solid var(--line);border-radius:12px;padding:16px;background:var(--bg-2)}
+    nav.toc a{border-left:none;padding:6px 4px}
+    .stats{grid-template-columns:repeat(2,1fr);gap:20px}
+    .rung{flex-direction:column;gap:8px}
+  }
+
+  /* ---------- 手機版：表格改為直式卡片，消除左右滑動 ---------- */
+
+  /* ---------- 表格一律直式卡片呈現（不依賴螢幕寬度判斷，因為部分 App 內建瀏覽器
+     不會依照真實裝置寬度計算版面，用 @media 寬度斷點會失效）---------- */
+  .tw{border:none;background:none;overflow:visible;border-radius:0;margin:18px 0}
+  .tw table{min-width:0;width:100%;border-collapse:separate;border-spacing:0;font-size:15px}
+  .tw thead{display:none}
+  .tw tbody tr{
+    display:block;border:1px solid var(--line);border-radius:12px;
+    background:var(--bg-2);margin-bottom:12px;padding:4px 0;
+  }
+  .tw tbody tr:nth-child(even){background:var(--bg-2)}
+  .tw tbody tr:last-child{margin-bottom:0}
+  .tw tbody td{display:block;border:none;padding:10px 16px}
+  .tw tbody td+td{border-top:1px dashed var(--line)}
+  .tw tbody td[data-label]::before{
+    content:attr(data-label);display:block;
+    font-family:var(--mono);font-size:11px;letter-spacing:.08em;
+    color:var(--teal);margin-bottom:5px;
+  }
+  .tw tbody td:first-child{font-size:16.5px}
+  .tw tbody td.mono,.tw tbody td:first-child{color:var(--text)}
+
+  @media (max-width:700px){
+    body{font-size:16px;line-height:1.85}
+    .wrap{padding:0 16px}
+    header.hero{padding:40px 0 34px}
+    .cols{padding:28px 0 60px}
+    section{margin-bottom:46px}
+
+    nav.toc{padding:0;overflow:hidden}
+    nav.toc .t{display:none}
+    nav.toc details{margin:0}
+    nav.toc summary{
+      display:block;list-style:none;cursor:pointer;padding:14px 16px;
+      font-family:var(--mono);font-size:12px;letter-spacing:.16em;color:var(--teal);
+    }
+    nav.toc summary::-webkit-details-marker{display:none}
+    nav.toc summary::after{content:" \25be";color:var(--text-3)}
+    nav.toc details[open] summary::after{content:" \25b4"}
+    nav.toc .toc-links{padding:0 10px 12px}
+
+    .box{padding:16px 18px;border-radius:11px}
+    p,li,td,.stem,.reveal p,.opts li,.q-stem{overflow-wrap:anywhere;word-break:break-word}
+    .quiz-body{padding:16px 16px}
+    .opts li{padding:9px 12px;font-size:15px}
+    .q{padding:18px 16px}
+    .sec-head{gap:12px}
+    ul,ol{padding-left:20px}
+    .toggle{width:100%;padding:11px 16px;font-size:14px}
+    summary.toggle{width:100%;text-align:center;padding:11px 16px;font-size:14px}
+    .btn{width:100%;padding:12px 16px}
+  }
+  @media print{nav.toc,.btn,.toggle{display:none}.reveal{display:block!important}body{background:#fff;color:#000;font-size:11pt}}
+  @media print{.tw thead{display:table-header-group!important}}
+  @media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <a class="backlink" href="index.html">← 返回 Block 7 目錄</a>
+    <div class="eyebrow"><span class="rule"></span>裸讀學習筆記<span class="dot">·</span>由淺入深</div>
+    <h1>腸胃道<em>蠕動異常</em>疾病</h1>
+    <p class="sub">功能性消化不良、胃輕癱、大腸激躁症 —— 三個「檢查都正常，但病人真的很不舒服」的疾病。授課教師：王俊偉。</p>
+
+    <div class="intro-card">
+      <p>這份筆記把 <b>BM113、BM112、BM111</b> 三個學年度考古題中，所有跟「腸胃道蠕動異常疾病」相關的題目，<b>嵌入到對應的觀念旁邊即時測驗</b>，文末再依年度完整羅列一次。</p>
+      <div class="stats">
+        <div class="stat"><div class="n">8</div><div class="l">總題數</div></div>
+        <div class="stat"><div class="n">2</div><div class="l">BM113</div></div>
+        <div class="stat"><div class="n">2</div><div class="l">BM112</div></div>
+        <div class="stat"><div class="n">4</div><div class="l">BM111</div></div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+<div class="cols">
+
+  <nav class="toc">
+    <div class="t">CONTENTS</div>
+    <details id="tocBox" open>
+      <summary>目錄 CONTENTS</summary>
+      <div class="toc-links">
+    <a href="#s1">一　先建立世界觀</a>
+    <a href="#s2">二　Rome IV 的時間密碼</a>
+    <a href="#s3">三　功能性消化不良 FD</a>
+    <a href="#s4">四　胃輕癱 Gastroparesis</a>
+    <a href="#s5">五　大腸激躁症 IBS</a>
+    <a href="#s6">六　三兄弟鑑別總表</a>
+    <a href="#s7">七　一分鐘總複習</a>
+    <a href="#exam" class="exam">八　考古題全收錄</a>
+      </div>
+    </details>
+  </nav>
+
+  <main>
+
+  <!-- ============ 01 ============ -->
+  <section id="s1">
+    <div class="sec-head"><span class="sec-num">一</span><h2>先建立世界觀：什麼叫「蠕動異常」</h2></div>
+
+    <p>這個單元的三個主角 —— <strong>功能性消化不良（FD）、胃輕癱（gastroparesis）、大腸激躁症（IBS）</strong> —— 有一個共同點：<mark>你把病人送去做胃鏡、大腸鏡、抽血、超音波，全部正常，但他真的很不舒服。</mark></p>
+    <p>所以要先接受一件事：<strong>「檢查沒問題」不等於「沒有病」。</strong>問題不在器官的「結構」，而在器官的「動作」與「感覺」。</p>
+
+    <h3>三個必須先懂的名詞</h3>
+
+    <h4>① 卡氏間質細胞 Interstitial Cells of Cajal（ICC）</h4>
+    <p>白話講：<mark>腸胃道的「節律器（pacemaker）」</mark>，功能類似心臟的竇房結。它負責產生電位慢波（slow wave），指揮平滑肌何時收縮、以什麼頻率收縮。</p>
+    <p><strong>ICC 受損或數量減少 → 腸胃失去節奏 → 蠕動變慢或亂掉。</strong>這正是<strong>胃輕癱最重要的病生理機轉</strong>（考點）。</p>
+
+    <h4>② 腦腸軸 Brain-Gut Axis</h4>
+    <p>腸道有自己的神經系統（腸神經系統，號稱「第二大腦」），而且和中樞神經雙向溝通。壓力、焦慮會改變腸道蠕動與敏感度；反過來腸道的不適也會影響情緒。</p>
+    <p>這解釋了為什麼 IBS 病人「壓力大就發作」。但要小心 —— <mark>「與腦腸軸有關」不等於「這是精神科的病」</mark>，這是 112 學年度的陷阱選項。</p>
+
+    <h4>③ 內臟高敏感 Visceral Hypersensitivity</h4>
+    <p>同樣程度的胃部擴張，正常人沒感覺，這些病人卻覺得脹得受不了。也就是<strong>「訊號放大」</strong>—— 跟上一份筆記講的中樞性腹痛症候群（CAPS）是同一家族的概念。</p>
+
+    <div class="box key">
+      <div class="bt"><span class="badge">核心邏輯</span>功能性疾病的診斷方式跟一般疾病相反</div>
+      <p>一般疾病：找到證據 → 確診。<br>
+      功能性疾病：<b>符合症狀準則（Rome IV）＋ 排除器質性疾病 → 確診</b>。<br>
+      所以 Rome IV 準則的「時間條件」變得非常重要，這也是本單元最愛考的地方。</p>
+    </div>
+  </section>
+
+  <!-- ============ 02 ============ -->
+  <section id="s2">
+    <div class="sec-head"><span class="sec-num">二</span><h2>Rome IV 的時間密碼</h2></div>
+    <p class="tagline">本節考點：<a class="qtag" href="#q111-33">111-33</a><a class="qtag" href="#q112-82">112-82</a></p>
+
+    <p>羅馬準則第四版（Rome criteria IV）是功能性腸胃疾病的國際診斷標準。它的時間條件有一個<strong>通用架構</strong>，把這個架構記熟，三個疾病就都通了。</p>
+
+    <div class="box exam">
+      <div class="bt"><span class="badge">高頻考點</span>Rome IV 通用時間架構</div>
+      <p style="font-size:17px;color:#FFF;margin-bottom:12px"><mark>症狀在<b>「至少 6 個月前」</b>開始出現，且<b>「最近 3 個月」</b>符合診斷準則。</mark></p>
+      <p>兩個數字各有各的角色，不要搞混：</p>
+      <ul>
+        <li><b>6 個月</b> = 病程夠長，確認它是慢性的、不是一次急性發作。</li>
+        <li><b>3 個月</b> = 現在正在發作，且要符合特定的發作頻率。</li>
+      </ul>
+    </div>
+
+    <div class="tw"><table>
+      <thead><tr><th>疾病</th><th>近 3 個月的發作頻率要求</th><th>起始時間</th></tr></thead>
+      <tbody>
+        <tr><td><b>功能性消化不良 FD</b></td><td><mark>每週至少 1 次</mark></td><td class="mono">≥ 6 個月前開始</td></tr>
+        <tr><td><b>大腸激躁症 IBS</b></td><td><mark>平均每週至少 1 天</mark>有腹痛</td><td class="mono">≥ 6 個月前開始</td></tr>
+      </tbody>
+    </table></div>
+
+    <div class="box trap">
+      <div class="bt"><span class="badge">易錯陷阱</span>111 與 112 拿同一句話玩了兩次</div>
+      <p><b>111-33(1)</b>：「症狀在<u>過去 1 個月內必須發作了 3 次以上</u>」→ <b>錯</b>（數字整組被掉包）。<br>
+      <b>112-82(1)</b>：「症狀在<u>過去 3 個月內必須發作 1 次以上</u>，而且持續超過 6 個月」→ <b>對</b>。<br>
+      判斷關鍵：正確版本一定是<b>「3 個月」搭配「每週 1 次」，再加「6 個月」的病程</b>。看到「1 個月內 3 次」就是錯的。</p>
+    </div>
+  </section>
+
+  <!-- ============ 03 ============ -->
+  <section id="s3">
+    <div class="sec-head"><span class="sec-num">三</span><h2>功能性消化不良 Functional Dyspepsia</h2></div>
+    <p class="tagline">本節考點：<a class="qtag" href="#q111-33">111-33</a><a class="qtag" href="#q112-82">112-82</a></p>
+
+    <h3>它是什麼</h3>
+    <p>白話講：<mark>「胃不舒服，但胃鏡照起來完全正常。」</mark>沒有潰瘍、沒有腫瘤、沒有糜爛，可是病人吃一點就飽、上腹悶痛、噁心。</p>
+
+    <h3>兩個亞型（依症狀分）</h3>
+    <div class="tw"><table>
+      <thead><tr><th>亞型</th><th>主要症狀</th><th>白話</th></tr></thead>
+      <tbody>
+        <tr><td><b>PDS</b><br>餐後不適症候群<br><span style="font-size:12.5px;color:var(--text-3)">Postprandial Distress Syndrome</span></td><td>餐後飽脹感（postprandial fullness）、早飽感（early satiation）</td><td><b>跟吃飯有關</b>：吃兩口就飽、飯後脹很久</td></tr>
+        <tr><td><b>EPS</b><br>上腹痛症候群<br><span style="font-size:12.5px;color:var(--text-3)">Epigastric Pain Syndrome</span></td><td>上腹痛、上腹燒灼感</td><td><b>跟吃飯不一定有關</b>：就是上腹痛</td></tr>
+      </tbody>
+    </table></div>
+    <p>兩者可以重疊。分型的用意在於<strong>選藥方向不同</strong>：PDS 偏向促動力劑，EPS 偏向制酸劑。</p>
+
+    <h3>三個必考觀念</h3>
+
+    <div class="box exam">
+      <div class="bt"><span class="badge">高頻考點</span>觀念一：FD 的症狀「不具特異性」</div>
+      <p>這是被考最多次的一句。FD 的症狀（上腹痛、飽脹、噁心）<mark>跟胃潰瘍、胃癌、胃輕癱、膽道疾病幾乎一模一樣</mark>，<b>光靠病史問診無法區分</b>。</p>
+      <p>所以流程一定是：<b>先做胃鏡等檢查排除器質性疾病 → 再回頭診斷 FD</b>。任何說「FD 症狀具特異性、可藉病史與器質性疾病作出區別」的選項，都是錯的。</p>
+    </div>
+
+    <div class="box exam">
+      <div class="bt"><span class="badge">高頻考點</span>觀念二：FD 與胃輕癱互為鑑別診斷</div>
+      <p>兩者症狀高度重疊（餐後飽脹、噁心、早飽），臨床上常常要靠<b>胃排空檢查</b>才能分開：胃排空延遲 → 胃輕癱；胃排空正常 → FD。這個敘述在 111、112 都出現過，而且<b>都是正確選項</b>。</p>
+    </div>
+
+    <h4>觀念三：治療階梯 —— 第一線是 PPI，不是神經調節劑</h4>
+    <div class="ladder">
+      <div class="rung"><span class="lv">STEP 0</span><span class="txt"><b>檢測並根除幽門螺旋桿菌</b>（test and treat）。若有 H. pylori，根除後部分病人症狀就解決了。</span></div>
+      <div class="rung"><span class="lv">STEP 1</span><span class="txt"><b>質子幫浦抑制劑（PPI）</b> —— <mark>第一線藥物</mark>，對 EPS 型效果較好。也可搭配 H2 blocker。</span></div>
+      <div class="rung"><span class="lv">STEP 2</span><span class="txt"><b>促動力劑（prokinetics）</b>，如 metoclopramide、domperidone、mosapride —— 對 PDS 型效果較好。</span></div>
+      <div class="rung"><span class="lv">STEP 3</span><span class="txt"><b>神經調節劑（neuromodulator）</b>，如三環抗憂鬱劑（TCA）—— 屬<mark>第二／三線</mark>，用於前述治療無效者。</span></div>
+      <div class="rung"><span class="lv">STEP 4</span><span class="txt"><b>心理治療</b>（認知行為治療、催眠療法）作為輔助，而不是「轉介精神科接手」。</span></div>
+    </div>
+
+    <div class="box trap">
+      <div class="bt"><span class="badge">易錯陷阱</span>兩個關於治療的錯誤選項</div>
+      <p><b>111-33(3)</b>：「治療通常使用<u>神經調節劑做為第一線</u>，例如三環抗憂鬱劑」→ <b>錯</b>，第一線是 PPI。<br>
+      <b>112-82(4)</b>：「病因屬於精神科範疇，胃腸科藥物效果不佳，診斷後應<u>轉介精神科接手治療</u>」→ <b>錯</b>。FD 確實與腦腸軸有關，但<mark>仍以胃腸科藥物為主要治療</mark>，心理治療只是輔助，不是把病人丟給精神科。</p>
+    </div>
+
+    <!-- QUIZ 111-33 -->
+    <div class="quiz">
+      <div class="quiz-top"><span class="lab">考古題</span><span class="yr">111 學年度 · 第 33 題</span></div>
+      <div class="quiz-body">
+        <p class="stem">下列對於功能性消化不良（functional dyspepsia）的敘述，何者<b>正確</b>？<br>
+          (1) 根據 Rome IV，病患的相關症狀在過去 1 個月內必須發作了 3 次以上，而且症狀得持續超過 6 個月以上才能診斷。<br>
+          (2) FD 病患的臨床症狀通常具有特異性，大多數病患可藉由詳細的病史詢問和相關特殊檢查和器質性胃腸疾病作出區別。<br>
+          (3) FD 的治療通常會使用神經調節劑做為第一線藥物治療，例如三環抗憂鬱劑。<br>
+          (4) FD 和胃輕癱的症狀很相似，這兩種疾病在臨床上常互為鑑別診斷。</p>
+        <ul class="opts"><li>(A) (1)　(B) (2)+(3)　(C) (1)+(4)　(D) (4)</li></ul>
+                <details class="rev">
+          <summary class="toggle"></summary>
+          <div class="reveal">
+          <div class="ans">答案：(D)</div>
+          <p>只有 (4) 正確。(1) 錯 —— 應為<b>過去 3 個月內每週至少 1 次</b>；(2) 錯 —— FD 症狀<b>不具特異性</b>；(3) 錯 —— 第一線是 <b>PPI</b>。</p>
+          <p><a class="jump" href="#q111-33">看文末完整詳解 ↓</a></p>
+        </div>
+        </details>
+      </div>
+    </div>
+
+    <!-- QUIZ 112-82 -->
+    <div class="quiz">
+      <div class="quiz-top"><span class="lab">考古題</span><span class="yr">112 學年度 · 第 82 題</span></div>
+      <div class="quiz-body">
+        <p class="stem">下列對於功能性消化不良的敘述，何者<b>錯誤</b>？<br>
+          (1) 根據 Rome IV，病患的相關症狀在過去 3 個月內必須發作 1 次以上，而且症狀得持續超過 6 個月以上才能診斷。<br>
+          (2) FD 和胃輕癱的症狀很相似，這兩種疾病在臨床上常互為鑑別診斷。<br>
+          (3) FD 病患的臨床症狀通常具有特異性，大多數病患可藉由詳細的病史詢問和相關特殊檢查和器質性胃腸疾病作出區別。<br>
+          (4) FD 的病因屬於精神科的範疇，臨床上胃腸科藥物治療的效果不佳，所以診斷後應轉介精神科接手治療。</p>
+        <ul class="opts"><li>(A) (1)+(2)　(B) (2)+(3)　(C) (3)+(4)　(D) (1)+(4)</li></ul>
+                <details class="rev">
+          <summary class="toggle"></summary>
+          <div class="reveal">
+          <div class="ans">答案：(C)</div>
+          <p>(3) 錯 —— 症狀<b>不具特異性</b>；(4) 錯 —— 雖與腦腸軸有關，但<b>仍以胃腸科藥物為主要治療</b>。(1)(2) 皆為正確敘述。</p>
+          <p><a class="jump" href="#q112-82">看文末完整詳解 ↓</a></p>
+        </div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 04 ============ -->
+  <section id="s4">
+    <div class="sec-head"><span class="sec-num">四</span><h2>胃輕癱 Gastroparesis</h2></div>
+    <p class="tagline">本節考點：<a class="qtag" href="#q112-83">112-83</a><a class="qtag" href="#q111-44">111-44</a><a class="qtag" href="#q113-44">113-44</a></p>
+
+    <h3>它是什麼</h3>
+    <p>白話講：<mark>「胃沒有力氣把食物推下去，但出口又沒有被塞住。」</mark>定義是<strong>在沒有機械性阻塞的前提下，出現胃排空延遲</strong>。</p>
+    <p>「沒有機械性阻塞」這五個字是定義的一部分 —— 所以診斷流程一定要先排除阻塞。</p>
+
+    <h3>病生理機轉</h3>
+    <ul>
+      <li><mark>卡氏間質細胞（ICC）受損或消失</mark> → 失去節律器 → 這是<strong>最主要的機轉</strong>（考點）。</li>
+      <li>迷走神經病變（糖尿病神經病變的一環）。</li>
+      <li>平滑肌本身病變、幽門功能失調（pylorospasm）。</li>
+    </ul>
+
+    <h3>常見原因 —— 排序要記對</h3>
+    <div class="box exam">
+      <div class="bt"><span class="badge">高頻考點</span>最常見的是「特發性」與「糖尿病」，不是藥物</div>
+      <p>112-83 的陷阱選項寫「臨床上最常造成胃輕癱的原因是<u>藥物造成</u>」→ <b>錯</b>。</p>
+      <p>正確排序：<mark>① 特發性（idiopathic，約 1/3）② 糖尿病（diabetic）③ 手術後（post-surgical，如迷走神經受損）</mark>，藥物（鴉片類、抗膽鹼藥、GLP-1 受體促效劑）雖然會造成，但不是最常見的原因。</p>
+    </div>
+    <p>另外一個常被考的流行病學：<mark>女性罹患率高於男性</mark>（約 4:1）。</p>
+
+    <h3>臨床表現</h3>
+    <ul>
+      <li>餐後飽脹、早飽感、噁心、嘔吐、上腹痛、體重下降。</li>
+      <li><strong>特徵性表現：</strong><mark>嘔吐出「未消化的食物」</mark>，甚至是好幾小時前吃下去的東西 —— 因為食物根本沒被排空。這是解題最強的線索。</li>
+      <li>糖尿病病人還會出現<strong>血糖控制忽高忽低</strong>（因為吸收時間不可預測）。</li>
+    </ul>
+
+    <h3>診斷流程（兩層邏輯）</h3>
+    <div class="ladder">
+      <div class="rung"><span class="lv">第一層</span><span class="txt"><b>先排除結構性阻塞</b> —— 上消化道內視鏡（EGD）或 <b>上消化道鋇劑攝影（UGI series）</b>。因為「無機械性阻塞」是診斷的前提。</span></div>
+      <div class="rung"><span class="lv">第二層</span><span class="txt"><b>再證實功能性排空延遲</b> —— <mark>胃排空閃爍攝影（Gastric emptying scintigraphy）＝診斷金標準</mark>。吃下標記放射性同位素的固體餐，在 4 小時內定時掃描；<b>4 小時後仍有 &gt;10% 食物殘留</b>即為異常。</span></div>
+      <div class="rung"><span class="lv">替代</span><span class="txt">無線動力膠囊（wireless motility capsule）、<sup>13</sup>C 呼氣試驗。</span></div>
+    </div>
+    <div class="box key">
+      <div class="bt"><span class="badge">解題法</span>為什麼 111-44 / 113-44 兩個答案都給分</div>
+      <p>題目問「哪一項檢查<b>最有助於確立診斷</b>」，而 UGI series 與胃排空閃爍攝影分屬上述兩層，<b>各自在診斷流程中不可或缺</b>：沒有第一層就不能診斷，沒有第二層就不能確診。所以申覆後 <b>(B) 與 (C) 皆給分</b>。</p>
+    </div>
+
+    <h3>治療階梯</h3>
+    <div class="ladder">
+      <div class="rung"><span class="lv">STEP 1</span><span class="txt"><b>飲食調整 + 控制血糖</b> —— 少量多餐、低脂低纖、必要時改為流質或半流質。糖尿病人<b>血糖控制本身就是治療</b>（高血糖會直接抑制胃排空）。</span></div>
+      <div class="rung"><span class="lv">STEP 2</span><span class="txt"><b>促動力劑</b> —— metoclopramide（唯一 FDA 核准，但長期使用有遲發性運動障礙風險）、domperidone、erythromycin。</span></div>
+      <div class="rung"><span class="lv">STEP 3</span><span class="txt"><b>止吐藥</b>控制症狀；停用會加重的藥物（鴉片類、抗膽鹼類）。</span></div>
+      <div class="rung"><span class="lv">STEP 4</span><span class="txt"><b>難治型才考慮</b>：幽門肉毒桿菌素注射、<b>經口內視鏡幽門肌切開術（G-POEM）</b>、<b>胃電刺激（gastric electrical stimulation）</b>、空腸營養管。</span></div>
+    </div>
+    <div class="box trap">
+      <div class="bt"><span class="badge">易錯陷阱</span>G-POEM 與胃電刺激「不是」第一線</div>
+      <p>112-83 的陷阱選項說「最新國際指引已把非藥物療法（G-POEM 或胃電刺激）的位階<u>提升至第一線治療</u>」→ <b>錯</b>。這些是<mark>藥物治療無效後的第三、四線選項</mark>，屬侵入性治療，不會擺在第一線。</p>
+      <p>命題的邏輯很固定：<b>任何把「侵入性治療」講成「第一線」的敘述，幾乎都是錯的。</b></p>
+    </div>
+
+    <!-- QUIZ 112-83 -->
+    <div class="quiz">
+      <div class="quiz-top"><span class="lab">考古題</span><span class="yr">112 學年度 · 第 83 題</span></div>
+      <div class="quiz-body">
+        <p class="stem">下列對於胃輕癱（gastroparesis）的敘述，何者<b>錯誤</b>？<br>
+          (1) 胃輕癱的病生理機轉主要是因為卡氏間質細胞受到損傷或消失。<br>
+          (2) 由於現行藥物治療效果有限，最新的國際臨床指引已經把非藥物療法（例如 G-POEM 或胃電刺激治療）的位階提升至第一線治療。<br>
+          (3) 臨床上最常造成胃輕癱的原因是藥物造成，例如鴉片類藥物、抗生素或抗癲癇藥物等。<br>
+          (4) 統計上女性比男性更常罹患胃輕癱。</p>
+        <ul class="opts"><li>(A) (1)+(2)　(B) (2)+(3)　(C) (3)+(4)　(D) (1)+(4)</li></ul>
+                <details class="rev">
+          <summary class="toggle"></summary>
+          <div class="reveal">
+          <div class="ans">答案：(B)</div>
+          <p>(2) 錯 —— 藥物仍為第一線，無效後才考慮 G-POEM／胃電刺激；(3) 錯 —— 最常見原因是<b>特發性與糖尿病</b>，不是藥物。(1)(4) 皆正確。</p>
+          <p><a class="jump" href="#q112-83">看文末完整詳解 ↓</a></p>
+        </div>
+        </details>
+      </div>
+    </div>
+
+    <!-- QUIZ 111-44 / 113-44 -->
+    <div class="quiz">
+      <div class="quiz-top"><span class="lab">考古題</span><span class="yr">111 學年度 · 第 44 題</span><span class="yr">113 學年度 · 第 44 題</span></div>
+      <div class="quiz-body">
+        <p class="stem">一位 50 歲女性因 3 個月來反覆出現餐後飽脹、噁心、體重輕微下降及間歇性嘔吐未消化食物而來門診就醫。有第 2 型糖尿病史 10 年，近期血糖控制不佳（HbA1c 9.2%），否認服用鴉片類藥物或曾接受過腹部手術，腹部理學檢查無明顯異常，肝腎功能皆正常。請問下列哪一項檢查最有助於確立診斷？</p>
+        <ul class="opts">
+          <li>(A) 腹部超音波</li>
+          <li>(B) 上消化道鋇劑攝影（UGI series）</li>
+          <li>(C) 胃排空閃爍攝影（Gastric emptying scintigraphy）</li>
+          <li>(D) 小腸內視鏡檢查</li>
+        </ul>
+                <details class="rev">
+          <summary class="toggle"></summary>
+          <div class="reveal">
+          <div class="ans">答案：(B) 與 (C) 皆給分（申覆後）</div>
+          <p>兩個關鍵字：<b>HbA1c 9.2%（糖尿病控制不佳）</b> ＋ <b>嘔吐未消化食物</b> → 糖尿病胃輕癱。(B) 排除結構性阻塞、(C) 證實功能性排空延遲，兩者在診斷流程中各有角色。</p>
+          <p><a class="jump" href="#q111-44">看文末完整詳解 ↓</a></p>
+        </div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 05 ============ -->
+  <section id="s5">
+    <div class="sec-head"><span class="sec-num">五</span><h2>大腸激躁症 IBS</h2></div>
+    <p class="tagline">本節考點：<a class="qtag" href="#q111-34">111-34</a><a class="qtag" href="#q111-45">111-45</a><a class="qtag" href="#q113-45">113-45</a></p>
+
+    <h3>Rome IV 診斷準則</h3>
+    <div class="box exam">
+      <div class="bt"><span class="badge">高頻考點</span>「腹痛 + 排便相關」是核心，跟吃東西無關</div>
+      <p><b>反覆腹痛</b>，近 3 個月內<b>平均每週至少 1 天</b>發作，且符合下列<b>至少 2 項</b>：</p>
+      <ol>
+        <li>與<mark>排便</mark>有關（多數為排便後緩解）</li>
+        <li>與<mark>排便頻率</mark>改變有關</li>
+        <li>與<mark>大便型態（外觀）</mark>改變有關</li>
+      </ol>
+      <p style="margin-top:10px">三項全部圍繞著<b>「排便」</b>。<mark>沒有任何一項跟「進食」有關</mark> —— 這正是 111-34 的陷阱。</p>
+    </div>
+
+    <div class="box trap">
+      <div class="bt"><span class="badge">易錯陷阱</span>兩個關於 IBS 的錯誤敘述</div>
+      <p><b>111-34(1)</b>：「常見症狀是腹痛<u>和進食有關</u>」→ <b>錯</b>。IBS 的腹痛與<b>排便</b>有關，不是進食。（跟進食有關的是功能性消化不良。）</p>
+      <p><b>111-34(2)</b>：「常會因為胃腸道症狀而<u>嚴重影響睡眠品質</u>」→ <b>錯</b>。<mark>IBS 不會在半夜把人痛醒</mark>，症狀通常在清醒活動時出現。<b>如果病人半夜痛醒或夜間腹瀉，那就是紅旗症狀，要懷疑腫瘤或發炎性腸道疾病，不能診斷 IBS。</b></p>
+    </div>
+
+    <h3>分型（依 Bristol 大便分類）</h3>
+    <div class="tw"><table>
+      <thead><tr><th>類型</th><th>特徵</th><th>用藥方向</th></tr></thead>
+      <tbody>
+        <tr><td><b>IBS-D</b> 腹瀉型</td><td>硬便 &lt;25%、稀軟便 &gt;25%</td><td>止瀉劑（loperamide）、rifaximin、膽酸結合劑</td></tr>
+        <tr><td><b>IBS-C</b> 便秘型</td><td>硬便 &gt;25%、稀軟便 &lt;25%</td><td>纖維、滲透性瀉劑、linaclotide、lubiprostone</td></tr>
+        <tr><td><b>IBS-M</b> 混合型</td><td>兩者皆 &gt;25%</td><td>依當下主要症狀調整</td></tr>
+        <tr><td><b>IBS-U</b> 未分類型</td><td>不符合上述</td><td>—</td></tr>
+      </tbody>
+    </table></div>
+    <p><strong>共通用藥：</strong>解痙劑（antispasmodics）緩解腹痛、薄荷油、益生菌；頑固者用低劑量 TCA（IBS-D）或 SSRI（IBS-C）作為神經調節。<mark>臨床上依不同分型選用不同藥物 —— 這個敘述是正確的</mark>（111-34 的正確選項之一）。</p>
+
+    <h3>紅旗症狀 —— 有這些就不是 IBS</h3>
+    <ul>
+      <li>年齡 &gt; 50 歲新發生</li>
+      <li>非刻意的<strong>體重減輕</strong></li>
+      <li><strong>血便、黑便</strong>、貧血</li>
+      <li><strong>夜間症狀</strong>（夜間腹痛或腹瀉）</li>
+      <li>發燒、腹部摸到腫塊</li>
+      <li>大腸癌或發炎性腸道疾病家族史</li>
+    </ul>
+    <p><mark>沒有紅旗症狀的年輕病人，不需要一開始就安排大腸鏡。</mark>這是 111-45 / 113-45 的解題關鍵。</p>
+
+    <h3>治療：先從飲食與壓力下手</h3>
+    <div class="ladder">
+      <div class="rung"><span class="lv">STEP 1</span><span class="txt"><b>飲食調整 + 壓力管理</b> —— <mark>低 FODMAP 飲食</mark>已被研究證實可降低腹脹、腹瀉、腸道痙攣。規律運動、睡眠。</span></div>
+      <div class="rung"><span class="lv">STEP 2</span><span class="txt"><b>依分型給藥</b>（見上表）+ 解痙劑緩解腹痛。</span></div>
+      <div class="rung"><span class="lv">STEP 3</span><span class="txt"><b>神經調節劑</b>（低劑量 TCA／SSRI）、<b>心理治療</b>（認知行為治療、腸道導向催眠療法）。</span></div>
+    </div>
+
+    <h4>什麼是 FODMAP？</h4>
+    <p>FODMAP＝<strong>可發酵的寡糖、雙糖、單糖及多元醇</strong>（Fermentable Oligo-, Di-, Mono-saccharides And Polyols）。白話講：<mark>一群「腸道吸收不良、但細菌很愛吃」的短鏈碳水化合物</mark>。它們在腸道裡被細菌發酵產氣、又把水分拉進腸腔，於是脹氣、腹痛、腹瀉。</p>
+    <p><strong>常見高 FODMAP 食物：</strong>牛奶與乳製品（乳糖）、洋蔥大蒜、豆類、小麥、蘋果水梨西瓜、蜂蜜、含<u>果糖或糖醇（山梨醇、木糖醇）的飲料與無糖口香糖</u>。</p>
+    <p style="color:var(--text-2)">→ 所以考題特別寫「常喝<b>含糖飲料</b>與<b>冰牛奶</b>」，那不是背景資訊，是在暗示你答案就是低 FODMAP 飲食。</p>
+
+    <!-- QUIZ 111-34 -->
+    <div class="quiz">
+      <div class="quiz-top"><span class="lab">考古題</span><span class="yr">111 學年度 · 第 34 題</span></div>
+      <div class="quiz-body">
+        <p class="stem">下列對於大腸激躁症的敘述，何者<b>錯誤</b>？<br>
+          (1) IBS 的常見症狀是腹痛和進食有關，腹痛和排便頻率改變有關以及腹痛或排便型態改變有關。<br>
+          (2) IBS 病患通常不會伴隨有異常的體重減輕、解黑便或解血便等症狀，但常會因為胃腸道症狀而嚴重影響睡眠品質。<br>
+          (3) 研究證實攝取低腹敏食物（low FODMAPs food）可降低 IBS 病患腹脹、腹瀉或腸道痙攣等不適症狀。<br>
+          (4) IBS 一般可分為腹瀉型、便秘型和混合型，臨床上會依據不同類型選用不同的藥物做治療。</p>
+        <ul class="opts"><li>(A) (1)+(2)　(B) (2)+(3)　(C) (1)+(3)　(D) (2)+(4)</li></ul>
+                <details class="rev">
+          <summary class="toggle"></summary>
+          <div class="reveal">
+          <div class="ans">答案：(A)</div>
+          <p>(1) 錯 —— IBS 腹痛與<b>排便</b>有關，<b>不是進食</b>；(2) 錯 —— 前半句（無體重減輕、無血便）正確，但後半句錯，<b>IBS 不會夜間痛醒、不影響睡眠</b>，若半夜痛醒要懷疑腫瘤。(3)(4) 正確。</p>
+          <p><a class="jump" href="#q111-34">看文末完整詳解 ↓</a></p>
+        </div>
+        </details>
+      </div>
+    </div>
+
+    <!-- QUIZ 111-45 / 113-45 -->
+    <div class="quiz">
+      <div class="quiz-top"><span class="lab">考古題</span><span class="yr">111 學年度 · 第 45 題</span><span class="yr">113 學年度 · 第 45 題</span></div>
+      <div class="quiz-body">
+        <p class="stem">32 歲男性主訴過去 6 個月反覆出現腹痛與腹瀉，症狀通常在排便後緩解，每日大便次數約 4-5 次為糊狀，常合併腹脹感，但無夜間腹瀉、體重下降或血便。最近工作壓力較大，並常喝含糖飲料與冰牛奶。理學檢查與抽血、糞便潛血檢查結果皆正常。請問下列何者為此病人最適當的初步處置？</p>
+        <ul class="opts">
+          <li>(A) 開立廣效型抗生素以排除感染性腸炎</li>
+          <li>(B) 建議低 FODMAP 飲食與壓力管理</li>
+          <li>(C) 安排大腸鏡以排除器質性病變</li>
+          <li>(D) 開始口服類固醇以抑制腸道發炎反應</li>
+        </ul>
+                <details class="rev">
+          <summary class="toggle"></summary>
+          <div class="reveal">
+          <div class="ans">答案：(B)</div>
+          <p>符合 Rome IV 的 IBS-D：6 個月病程、<b>排便後緩解</b>、大便型態改變，且<b>完全無紅旗症狀</b>。年輕、無警訊 → 初步處置採低侵入性的<b>飲食調整 + 壓力管理</b>。</p>
+          <p><a class="jump" href="#q111-45">看文末完整詳解 ↓</a></p>
+        </div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 06 ============ -->
+  <section id="s6">
+    <div class="sec-head"><span class="sec-num">六</span><h2>三兄弟鑑別總表</h2></div>
+    <div class="tw"><table>
+      <thead><tr><th>　</th><th>功能性消化不良 FD</th><th>胃輕癱 Gastroparesis</th><th>大腸激躁症 IBS</th></tr></thead>
+      <tbody>
+        <tr><td><b>病灶位置</b></td><td>胃（上消化道）</td><td>胃（上消化道）</td><td>腸（下消化道）</td></tr>
+        <tr><td><b>核心症狀</b></td><td>餐後飽脹、早飽、上腹痛</td><td>餐後飽脹、噁心、<b>嘔吐未消化食物</b></td><td><b>腹痛 + 排便習慣改變</b></td></tr>
+        <tr><td><b>關鍵區別</b></td><td>胃排空<b>正常</b></td><td>胃排空<b>延遲</b>（且無阻塞）</td><td>與<b>排便</b>相關，非進食</td></tr>
+        <tr><td><b>主要機轉</b></td><td>內臟高敏感、腦腸軸、胃調適不良</td><td><b>ICC 受損</b>、迷走神經病變</td><td>腦腸軸、內臟高敏感、菌相</td></tr>
+        <tr><td><b>常見背景</b></td><td>—</td><td><b>特發性、糖尿病</b>、術後；女 &gt; 男</td><td>壓力、感染後、飲食</td></tr>
+        <tr><td><b>診斷</b></td><td>Rome IV + 胃鏡排除器質性</td><td><b>UGI/EGD 排除阻塞 → 胃排空閃爍攝影</b></td><td>Rome IV + 無紅旗症狀</td></tr>
+        <tr><td><b>第一線治療</b></td><td><b>PPI</b>（＋H. pylori 根除）</td><td><b>飲食調整 + 血糖控制</b> → 促動力劑</td><td><b>低 FODMAP + 壓力管理</b></td></tr>
+        <tr><td><b>後線治療</b></td><td>促動力劑 → 神經調節劑</td><td>止吐藥 → <b>G-POEM／胃電刺激</b></td><td>依分型用藥 → 神經調節劑</td></tr>
+      </tbody>
+    </table></div>
+  </section>
+
+  <!-- ============ 07 ============ -->
+  <section id="s7">
+    <div class="sec-head"><span class="sec-num">七</span><h2>一分鐘總複習</h2></div>
+    <div class="box key">
+      <div class="bt"><span class="badge">考前 60 秒</span>把這十句唸完</div>
+      <ol>
+        <li>Rome IV 通用架構：<b>症狀 6 個月前開始，近 3 個月符合準則</b>。看到「1 個月內 3 次」就是錯的。</li>
+        <li>FD 的症狀<b>不具特異性</b>，一定要先做檢查排除器質性疾病。</li>
+        <li>FD 第一線是 <b>PPI</b>，神經調節劑（TCA）是後線。</li>
+        <li>FD 與腦腸軸有關，但<b>不是精神科的病</b>，不能直接轉介了事。</li>
+        <li>FD 與胃輕癱<b>互為鑑別診斷</b>，靠胃排空檢查分開。</li>
+        <li>胃輕癱最主要機轉＝<b>ICC（卡氏間質細胞）受損</b>；<b>女性多於男性</b>。</li>
+        <li>胃輕癱最常見原因＝<b>特發性、糖尿病</b>，不是藥物。</li>
+        <li>胃輕癱診斷：先 <b>UGI/EGD 排除阻塞</b>，再 <b>胃排空閃爍攝影（金標準）</b>；G-POEM／胃電刺激<b>絕不是第一線</b>。</li>
+        <li>IBS 腹痛與<b>排便</b>有關（非進食），且<b>不會夜間痛醒</b>；夜間症狀＝紅旗。</li>
+        <li>IBS 無紅旗症狀 → <b>低 FODMAP 飲食 + 壓力管理</b>，不必先做大腸鏡。</li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- ============ EXAM ============ -->
+  <section id="exam">
+    <div class="sec-head"><span class="sec-num">八</span><h2>考古題全收錄</h2></div>
+    <div class="exam-head">
+      <h2>依年度完整羅列</h2>
+      <p>BM113 → BM112 → BM111，含完整答案、詳解與出處。預設隱藏答案，可以先自己作答再展開。</p>
+      <button class="btn" id="allBtn">全部展開答案</button>
+    </div>
+
+    <!-- ===== 113 ===== -->
+    <div class="yrhead">113 學年度（BM113）· 2 題</div>
+
+    <div class="q" id="q113-44">
+      <span class="q-no">113-44</span><span class="q-topic">胃輕癱</span>
+      <p class="q-stem">一位 50 歲女性因 3 個月來反覆出現餐後飽脹、噁心、體重輕微下降及間歇性嘔吐未消化食物。有第 2 型糖尿病史 10 年，HbA1c 9.2%。腹部理學檢查無明顯異常，肝腎功能正常。請問下列哪一項檢查最有助於確立診斷？</p>
+      <ul class="opts">
+        <li>(A) 腹部超音波</li>
+        <li>(B) 上消化道鋇劑攝影（UGI series）</li>
+        <li>(C) 胃排空閃爍攝影（Gastric emptying scintigraphy）</li>
+        <li>(D) 小腸內視鏡檢查</li>
+      </ul>
+            <details class="rev">
+        <summary class="toggle"></summary>
+        <div class="reveal">
+        <div class="ans">答案：(B) 與 (C) 皆給分（申覆後）</div>
+        <p>長期血糖控制不佳的糖尿病（HbA1c 9.2%）＋ 餐後飽脹 ＋ <b>嘔吐未消化食物</b> → 高度懷疑<b>糖尿病胃輕癱</b>。</p>
+        <p>診斷有兩層邏輯：先用 <b>UGI series（或胃鏡）排除結構性阻塞</b>（因為「無機械性阻塞」是胃輕癱定義的前提），再用 <b>胃排空閃爍攝影（金標準）</b>證實胃排空延遲。兩者在診斷流程中各有不可取代的角色，因此申覆後兩個選項皆給分。</p>
+        <p>(A) 超音波無法評估胃動力；(D) 小腸鏡檢查的是小腸病灶，方向錯誤。</p>
+        <div class="src">出處：王俊偉 胃腸道蠕動異常疾病 ppt p.21, 23</div>
+      </div>
+      </details>
+    </div>
+
+    <div class="q" id="q113-45">
+      <span class="q-no">113-45</span><span class="q-topic">大腸激躁症</span>
+      <p class="q-stem">32 歲男性主訴過去 6 個月反覆出現腹痛與腹瀉，症狀通常在排便後緩解，每日 4-5 次糊狀便，常合併腹脹，無夜間腹瀉、體重下降或血便，工作壓力大，常喝含糖飲料與冰牛奶。理學檢查、抽血及糞便潛血皆正常。下列何者為最適當的初步處置？</p>
+      <ul class="opts">
+        <li>(A) 開立廣效型抗生素</li>
+        <li>(B) 建議低 FODMAP 飲食與壓力管理</li>
+        <li>(C) 安排大腸鏡</li>
+        <li>(D) 開始口服類固醇</li>
+      </ul>
+            <details class="rev">
+        <summary class="toggle"></summary>
+        <div class="reveal">
+        <div class="ans">答案：(B)</div>
+        <p>符合 Rome IV 的 <b>IBS 腹瀉型</b>：腹痛反覆 6 個月、<b>排便後緩解</b>、大便型態改變，且<b>完全沒有紅旗症狀</b>（無夜間腹瀉、無體重下降、無血便，糞便潛血正常）。</p>
+        <p>沒有警訊症狀的年輕病人，初步處置應採低侵入性：<b>低 FODMAP 飲食 + 壓力管理</b>。他常喝的含糖飲料（果糖／糖醇）與冰牛奶（乳糖）正是典型的高 FODMAP 來源。</p>
+        <p>(A) 無感染證據，濫用抗生素反而破壞菌相；(C) 無紅旗症狀不需一開始就做大腸鏡；(D) 類固醇是發炎性腸道疾病（IBD）的治療，IBS 並無腸道發炎。</p>
+        <div class="src">出處：王俊偉 胃腸道蠕動異常疾病 ppt p.29, 30, 36</div>
+      </div>
+      </details>
+    </div>
+
+    <!-- ===== 112 ===== -->
+    <div class="yrhead">112 學年度（BM112）· 2 題</div>
+
+    <div class="q" id="q112-82">
+      <span class="q-no">112-82</span><span class="q-topic">功能性消化不良</span>
+      <p class="q-stem">下列對於功能性消化不良（functional dyspepsia）的敘述，何者<b>錯誤</b>？<br>
+        (1) 根據羅馬準則第四版對於功能性消化不良的診斷標準，病患的相關症狀在過去 3 個月內必須發作 1 次以上，而且這些症狀得持續超過 6 個月以上才能做出診斷。<br>
+        (2) 功能性消化不良和胃輕癱的症狀很相似，這兩種疾病在臨床上常互為鑑別診斷。<br>
+        (3) 功能性消化不良病患的臨床症狀通常具有特異性，大多數病患可藉由詳細的病史詢問和相關特殊檢查和器質性胃腸疾病作出區別。<br>
+        (4) 功能性消化不良的病因屬於精神科的範疇，臨床上胃腸科藥物治療的效果不佳，所以診斷後應轉介精神科接手治療。</p>
+      <ul class="opts"><li>(A) (1)+(2)　　(B) (2)+(3)　　(C) (3)+(4)　　(D) (1)+(4)</li></ul>
+            <details class="rev">
+        <summary class="toggle"></summary>
+        <div class="reveal">
+        <div class="ans">答案：(C)</div>
+        <p>(3) <b>錯</b>：FD 的症狀（上腹痛、飽脹、噁心）與胃潰瘍、胃癌、胃輕癱高度重疊，<b>不具特異性</b>，無法單靠病史與器質性疾病區分，必須靠內視鏡等檢查排除。</p>
+        <p>(4) <b>錯</b>：FD 雖與腦腸軸、心理因素有關，但臨床上<b>仍以胃腸科藥物（PPI、促動力劑）為主要治療</b>，心理治療與神經調節劑是輔助或後線，不是把病人轉介給精神科接手。</p>
+        <p>(1) <b>正確</b>：符合 Rome IV「近 3 個月符合準則、症狀 6 個月前開始」的架構。<br>
+        (2) <b>正確</b>：兩者症狀相似，臨床上常互為鑑別診斷。</p>
+        <div class="src">出處：王俊偉 胃腸道蠕動異常疾病 ppt</div>
+      </div>
+      </details>
+    </div>
+
+    <div class="q" id="q112-83">
+      <span class="q-no">112-83</span><span class="q-topic">胃輕癱</span>
+      <p class="q-stem">下列對於胃輕癱（gastroparesis）的敘述，何者<b>錯誤</b>？<br>
+        (1) 胃輕癱的病生理機轉主要是因為卡氏間質細胞（interstitial cells of Cajal）受到損傷或消失。<br>
+        (2) 由於現行藥物大多對於胃輕癱的治療效果有限，所以最新的國際臨床指引已經把非藥物療法（例如經口內視鏡幽門肌切開術 G-POEM 或胃電刺激治療）的位階提升至第一線治療。<br>
+        (3) 臨床上最常造成胃輕癱的原因是藥物造成，例如鴉片類藥物、抗生素或抗癲癇藥物等。<br>
+        (4) 統計上女性比男性更常罹患胃輕癱。</p>
+      <ul class="opts"><li>(A) (1)+(2)　　(B) (2)+(3)　　(C) (3)+(4)　　(D) (1)+(4)</li></ul>
+            <details class="rev">
+        <summary class="toggle"></summary>
+        <div class="reveal">
+        <div class="ans">答案：(B)</div>
+        <p>(2) <b>錯</b>：治療階梯仍以<b>飲食調整與藥物（促動力劑）為第一線</b>，G-POEM、胃電刺激等侵入性治療屬於藥物無效後的後線選項，不會被提升為第一線。</p>
+        <p>(3) <b>錯</b>：最常見的原因是<b>特發性（idiopathic）與糖尿病</b>，其次為手術後。藥物（鴉片類、抗膽鹼類）確實可造成胃輕癱，但不是最常見的原因。</p>
+        <p>(1) <b>正確</b>：ICC 是腸胃道的節律器，受損或消失是胃輕癱最重要的病生理機轉。<br>
+        (4) <b>正確</b>：女性發生率明顯高於男性。</p>
+        <div class="src">出處：王俊偉 胃腸道蠕動異常疾病 ppt</div>
+      </div>
+      </details>
+    </div>
+
+    <!-- ===== 111 ===== -->
+    <div class="yrhead">111 學年度（BM111）· 4 題</div>
+
+    <div class="q" id="q111-33">
+      <span class="q-no">111-33</span><span class="q-topic">功能性消化不良</span>
+      <p class="q-stem">下列對於功能性消化不良（functional dyspepsia）的敘述，何者<b>正確</b>？<br>
+        (1) 根據羅馬準則第四版對於功能性消化不良的診斷標準，病患的相關症狀在過去 1 個月內必須發作了 3 次以上，而且這些症狀得持續超過 6 個月以上才能做出診斷。<br>
+        (2) 功能性消化不良病患的臨床症狀通常具有特異性，大多數病患可藉由詳細的病史詢問和相關特殊檢查和器質性胃腸疾病作出區別。<br>
+        (3) 功能性消化不良的治療通常會使用神經調節劑（neuromodulator）做為第一線藥物治療，例如三環抗憂鬱劑（tricyclic antidepressant）。<br>
+        (4) 功能性消化不良和胃輕癱（gastroparesis）的症狀很相似，這兩種疾病在臨床上常互為鑑別診斷。</p>
+      <ul class="opts"><li>(A) (1)　　(B) (2)+(3)　　(C) (1)+(4)　　(D) (4)</li></ul>
+            <details class="rev">
+        <summary class="toggle"></summary>
+        <div class="reveal">
+        <div class="ans">答案：(D)</div>
+        <p>(1) <b>錯</b>：Rome IV 的標準是「<b>近 3 個月內每週至少 1 次</b>，且症狀 6 個月前開始」，不是「1 個月內 3 次」。這是數字被整組掉包的陷阱。</p>
+        <p>(2) <b>錯</b>：FD 的症狀<b>不具特異性</b>，與胃潰瘍、胃癌、胃輕癱等器質性疾病高度重疊，無法單靠病史區分。</p>
+        <p>(3) <b>錯</b>：第一線藥物是 <b>PPI</b>（並先檢測根除幽門螺旋桿菌），神經調節劑如 TCA 屬於後線治療。</p>
+        <p>(4) <b>正確</b>：FD 與胃輕癱症狀相似（餐後飽脹、噁心、早飽），臨床上常互為鑑別診斷，需靠胃排空檢查區分。</p>
+        <div class="src">出處：王俊偉 胃腸道蠕動異常疾病 ppt</div>
+      </div>
+      </details>
+    </div>
+
+    <div class="q" id="q111-34">
+      <span class="q-no">111-34</span><span class="q-topic">大腸激躁症</span>
+      <p class="q-stem">下列對於大腸激躁症（Irritable Bowel Syndrome）的敘述，何者<b>錯誤</b>？<br>
+        (1) 大腸激躁症的常見症狀是腹痛和進食有關，腹痛和排便頻率改變有關以及腹痛或排便型態改變有關。<br>
+        (2) 大腸激躁症的病患通常不會伴隨有異常的體重減輕、解黑便或解血便等症狀，但常會因為胃腸道症狀而嚴重影響睡眠品質。<br>
+        (3) 研究證實攝取低腹敏食物（low FODMAPs food）可降低大腸激躁症病患腹脹、腹瀉或腸道痙攣等不適症狀。<br>
+        (4) 大腸激躁症一般可分為腹瀉型、便秘型和混合型，臨床上會依據不同類型選用不同的藥物做治療。</p>
+      <ul class="opts"><li>(A) (1)+(2)　　(B) (2)+(3)　　(C) (1)+(3)　　(D) (2)+(4)</li></ul>
+            <details class="rev">
+        <summary class="toggle"></summary>
+        <div class="reveal">
+        <div class="ans">答案：(A)</div>
+        <p>(1) <b>錯</b>：Rome IV 的三個附加條件全部圍繞<b>排便</b>（與排便有關、與排便頻率改變有關、與大便型態改變有關），<b>沒有一項跟「進食」有關</b>。跟進食有關的是功能性消化不良。</p>
+        <p>(2) <b>錯</b>：前半句正確（IBS 不會有體重減輕、血便黑便，這些是紅旗症狀），但後半句錯 —— <b>IBS 不會在半夜把人痛醒、不影響睡眠品質</b>。若病人夜間痛醒或夜間腹瀉，反而要懷疑腫瘤或發炎性腸道疾病。</p>
+        <p>(3) <b>正確</b>：低 FODMAP 飲食已有研究證實可改善腹脹、腹瀉與腸道痙攣。<br>
+        (4) <b>正確</b>：IBS 分為腹瀉型（IBS-D）、便秘型（IBS-C）、混合型（IBS-M），依分型選藥。</p>
+        <div class="src">出處：王俊偉 胃腸道蠕動異常疾病 ppt</div>
+      </div>
+      </details>
+    </div>
+
+    <div class="q" id="q111-44">
+      <span class="q-no">111-44</span><span class="q-topic">胃輕癱</span>
+      <p class="q-stem">一位 50 歲女性因 3 個月來反覆出現餐後飽脹、噁心、體重輕微下降及間歇性嘔吐未消化食物而來門診就醫。她本身有第 2 型糖尿病病史已 10 年，近期血糖控制不佳（HbA1c 9.2%），否認服用鴉片類藥物或曾接受過腹部手術，腹部理學檢查無明顯異常，肝腎功能皆正常。請問下列哪一項檢查最有助於確立診斷？</p>
+      <ul class="opts">
+        <li>(A) 腹部超音波</li>
+        <li>(B) 上消化道鋇劑攝影（UGI series）</li>
+        <li>(C) 胃排空閃爍攝影（Gastric emptying scintigraphy）</li>
+        <li>(D) 小腸內視鏡檢查</li>
+      </ul>
+            <details class="rev">
+        <summary class="toggle"></summary>
+        <div class="reveal">
+        <div class="ans">答案：(B) 與 (C) 皆給分（申覆後）</div>
+        <p>題幹刻意排除了另外兩個常見成因（<b>否認鴉片類藥物、否認腹部手術</b>），把診斷方向牢牢鎖在<b>糖尿病胃輕癱</b>：HbA1c 9.2% 代表長期控制不佳，加上<b>嘔吐未消化的食物</b>這個特徵性表現。</p>
+        <p>結構性問題（阻塞）可藉由 <b>UGI series</b> 排除，功能性問題（胃排空延遲）可用 <b>胃排空閃爍攝影</b>確診，兩者皆有助於確立診斷，故申覆後皆給分。</p>
+        <p>(A) 超音波無法評估胃動力；(D) 小腸鏡方向錯誤。</p>
+        <div class="src">出處：王俊偉 胃腸道蠕動異常疾病 ppt p.21, 23</div>
+      </div>
+      </details>
+    </div>
+
+    <div class="q" id="q111-45">
+      <span class="q-no">111-45</span><span class="q-topic">大腸激躁症</span>
+      <p class="q-stem">32 歲男性主訴過去 6 個月反覆出現腹痛與腹瀉，症狀通常在排便後緩解，每日大便次數約 4-5 次，為糊狀，常合併腹脹感，但無夜間腹瀉、體重下降或血便。他表示最近工作壓力較大，並常喝含糖飲料與冰牛奶。理學檢查與抽血、糞便潛血檢查結果皆正常。請問下列何者為此病人最適當的初步處置？</p>
+      <ul class="opts">
+        <li>(A) 開立廣效型抗生素以排除感染性腸炎</li>
+        <li>(B) 建議低 FODMAP 飲食與壓力管理</li>
+        <li>(C) 安排大腸鏡以排除器質性病變</li>
+        <li>(D) 開始口服類固醇以抑制腸道發炎反應</li>
+      </ul>
+            <details class="rev">
+        <summary class="toggle"></summary>
+        <div class="reveal">
+        <div class="ans">答案：(B)</div>
+        <p>符合 Rome IV 的 IBS 診斷：反覆腹痛 6 個月、<b>排便後緩解</b>、大便型態與頻率改變。同時題幹把<b>紅旗症狀逐一排除</b>（無夜間腹瀉、無體重下降、無血便，糞便潛血正常）。</p>
+        <p>無警示症狀的年輕病人，初步處置應以低侵略性為主：<b>低 FODMAP 飲食調整與壓力管理</b>。題幹提到的含糖飲料與冰牛奶正是高 FODMAP／乳糖來源，也是可介入的切入點。</p>
+        <p>(A) 無感染證據；(C) 無紅旗症狀不需先安排大腸鏡；(D) 類固醇適用於 IBD，IBS 無腸道發炎。</p>
+        <div class="src">出處：王俊偉 胃腸道蠕動異常疾病 ppt p.29, 30, 36</div>
+      </div>
+      </details>
+    </div>
+
+  </section>
+
+  <footer>
+    <p><b>第 2 科完成｜腸胃道蠕動異常疾病</b>　共 8 題（BM111 4 題、BM112 2 題、BM113 2 題）。111-44 與 113-44、111-45 與 113-45 為完全相同的題目，兩年重複出題。</p>
+    <p>已完成：① 腹部常見症狀（含急性腹痛）　② 腸胃道蠕動異常疾病<br>
+    後續科目：③ 急性闌尾炎、大腸傷害及腸系膜疾病　④ 消化系統介入性放射學　⑤ 食道疾病</p>
+    <p style="margin-top:14px;font-family:var(--mono);font-size:12px;color:var(--teal);border:1px solid var(--line-2);border-radius:6px;padding:6px 10px;display:inline-block">版面 v2 · 表格直式卡片</p>
+  </footer>
+
+  </main>
+</div>
+</div>
+
+<script>
+
+  // 手機版：把表頭文字寫進每個儲存格，直式排列時才知道每格代表什麼
+  (function(){
+    document.querySelectorAll('.tw table').forEach(function(t){
+      var ths = t.querySelectorAll('thead th');
+      if(!ths.length) return;
+      var labels = Array.prototype.map.call(ths, function(th){
+        return th.textContent.replace(/\u3000/g,'').trim();
+      });
+      t.querySelectorAll('tbody tr').forEach(function(tr){
+        Array.prototype.forEach.call(tr.children, function(td, i){
+          if(labels[i]) td.setAttribute('data-label', labels[i]);
+        });
+      });
+    });
+  })();
+
+  // 手機版：目錄預設收合
+  (function(){
+    var toc = document.getElementById('tocBox');
+    if(toc && window.matchMedia('(max-width:700px)').matches){
+      toc.removeAttribute('open');
+    }
+  })();
+
+  var allBtn = document.getElementById('allBtn');
+  if(allBtn){
+    var expanded = false;
+    allBtn.addEventListener('click', function(){
+      expanded = !expanded;
+      document.querySelectorAll('.q details.rev').forEach(function(d){
+        if(expanded){ d.setAttribute('open',''); } else { d.removeAttribute('open'); }
+      });
+      allBtn.textContent = expanded ? '全部收合答案' : '全部展開答案';
+    });
+  }
+</script>
+</body>
+</html>

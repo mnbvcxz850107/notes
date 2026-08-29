@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Block 7 消化系統｜科目目錄</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&family=Noto+Serif+TC:wght@500;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0F1B18;--bg-2:#152420;--bg-3:#1B2E29;--line:#26403A;--line-2:#31534B;
+    --text:#E9F1EE;--text-2:#A8C2BA;--text-3:#7A968D;
+    --teal:#7FC9BE;--teal-dim:#4E9A90;--gold:#C9A961;--rose:#E58B85;
+    --serif:"Noto Serif TC","Songti TC",serif;
+    --sans:"Noto Sans TC","PingFang TC","Microsoft JhengHei",sans-serif;
+    --mono:"JetBrains Mono",ui-monospace,Menlo,monospace;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth;overflow-x:hidden}
+  body{margin:0;background:var(--bg);color:var(--text);font-family:var(--sans);
+    font-size:16.5px;line-height:1.9;font-weight:300;-webkit-font-smoothing:antialiased;
+    overflow-x:hidden}
+  .wrap{max-width:900px;margin:0 auto;padding:0 22px}
+
+  header.hero{padding:52px 0 40px;border-bottom:1px solid var(--line)}
+  .backlink{display:inline-block;font-family:var(--mono);font-size:12px;
+    color:var(--text-3);text-decoration:none;margin-bottom:22px;
+    border:1px solid var(--line);border-radius:6px;padding:5px 12px;transition:.15s}
+  .backlink:hover{color:var(--teal);border-color:var(--teal-dim)}
+  .eyebrow{display:flex;align-items:center;gap:16px;margin-bottom:22px;
+    font-family:var(--serif);font-size:15px;letter-spacing:.34em;color:var(--teal)}
+  .eyebrow .rule{width:56px;height:1px;background:var(--gold)}
+  .eyebrow .dot{color:var(--gold)}
+  h1{font-family:var(--serif);font-weight:700;font-size:clamp(32px,6vw,54px);
+    line-height:1.2;margin:0 0 20px;letter-spacing:.02em}
+  h1 em{font-style:normal;color:var(--teal)}
+  p.sub{margin:0;color:var(--text-2);max-width:60ch;font-size:17px}
+
+  .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:30px;
+    border:1px solid var(--line);border-radius:16px;padding:22px 26px;background:var(--bg-2)}
+  .stat .n{font-family:var(--serif);font-size:34px;color:var(--gold);line-height:1}
+  .stat .l{font-size:12.5px;color:var(--text-3);letter-spacing:.08em;margin-top:6px}
+
+  main{padding:40px 0 80px}
+  .lead{font-family:var(--mono);font-size:11px;letter-spacing:.2em;color:var(--text-3);margin-bottom:18px}
+
+  .card{display:block;text-decoration:none;color:inherit;
+    border:1px solid var(--line);border-radius:14px;background:var(--bg-2);
+    padding:22px 24px;margin-bottom:14px;transition:.15s}
+  .card:hover{border-color:var(--teal-dim);background:var(--bg-3)}
+  .card-top{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap}
+  .card h2{font-family:var(--serif);font-size:20px;margin:0;font-weight:700;flex:1;min-width:0}
+  .qn{font-family:var(--mono);font-size:11px;color:var(--teal);
+    border:1px solid var(--line-2);padding:2px 9px;border-radius:4px;white-space:nowrap}
+  .card p{margin:10px 0 0;color:var(--text-2);font-size:14.8px;line-height:1.75}
+  .teacher{font-family:var(--mono);font-size:11.5px;color:var(--text-3);margin-top:10px}
+
+  .box{border-radius:13px;padding:20px 24px;margin:30px 0 0;
+    border:1px solid rgba(201,169,97,.45);background:rgba(201,169,97,.07)}
+  .box .bt{font-weight:500;font-size:14.5px;margin-bottom:10px;display:flex;align-items:center;gap:9px}
+  .badge{font-family:var(--mono);font-size:10px;padding:2px 8px;border-radius:3px;
+    letter-spacing:.06em;border:1px solid var(--gold);color:var(--gold);font-weight:600}
+  .box ul{margin:0;padding-left:20px}
+  .box li{margin-bottom:6px;color:var(--text-2);font-size:14.8px}
+  .box li::marker{color:var(--gold)}
+  b{font-weight:500;color:#FFF}
+
+  footer{border-top:1px solid var(--line);padding:26px 0 60px;color:var(--text-3);font-size:13.5px}
+
+  @media (max-width:700px){
+    .wrap{padding:0 16px}
+    header.hero{padding:34px 0 28px}
+    .stats{grid-template-columns:1fr;gap:18px;padding:18px 20px}
+    .card{padding:18px 18px}
+    .card h2{font-size:18px}
+  }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <a class="backlink" href="../index.html">← 返回總目錄</a>
+    <div class="eyebrow"><span class="rule"></span>BLOCK 7<span class="dot">·</span>消化系統</div>
+    <h1>消化系統<br><em>期末考重點筆記</em></h1>
+    <p class="sub">BM111、BM112、BM113 三個學年度考古題，依科目拆解、由淺入深，考古題嵌入對應觀念旁即時測驗，文末依年度完整羅列。</p>
+    <div class="stats">
+      <div class="stat"><div class="n">6</div><div class="l">科目</div></div>
+      <div class="stat"><div class="n">50</div><div class="l">總題數</div></div>
+      <div class="stat"><div class="n">3</div><div class="l">學年度</div></div>
+    </div>
+  </div>
+</header>
+
+<main>
+<div class="wrap">
+  <div class="lead">SUBJECTS</div>
+
+  <!-- ==========================================================
+       新增科目：複製一整個 <a class="card"> ... </a> 區塊貼到想要的位置，
+       改 href、<h2>科目名稱</h2>、<span class="qn">題數</span>、簡介與老師。
+       顯示順序 = 這裡由上到下的排列，與檔名無關。
+       ========================================================== -->
+
+  <a class="card" href="abdominal-pain.html">
+    <div class="card-top"><h2>腹部常見症狀（含急性腹痛）</h2><span class="qn">14 題</span></div>
+    <p>三種痛的傳導路徑、評估四步驟、理學檢查徵象、急性腹痛各論（闌尾炎／膽囊炎／膽管炎／胰臟炎／腸阻塞／腸繫膜缺血）、慢性腹痛與 ACNES。</p>
+    <div class="teacher">王俊偉　·　111 (4) ／ 112 (4) ／ 113 (6)</div>
+  </a>
+
+  <a class="card" href="gi-motility.html">
+    <div class="card-top"><h2>腸胃道蠕動異常疾病</h2><span class="qn">8 題</span></div>
+    <p>Rome IV 時間準則、功能性消化不良、胃輕癱（ICC 機轉與診斷流程）、大腸激躁症與低 FODMAP 飲食，附三兄弟鑑別總表。</p>
+    <div class="teacher">王俊偉　·　111 (4) ／ 112 (2) ／ 113 (2)</div>
+  </a>
+
+  <a class="card" href="appendicitis-colon-mesentery.html">
+    <div class="card-top"><h2>急性闌尾炎、大腸傷害及腸系膜疾病</h2><span class="qn">11 題</span></div>
+    <p>闌尾位置變異與對應徵象、Alvarado 評分、鑑別診斷陷阱、手術與術後照護、大腸傷害分級、腸繫膜缺血分類與腫瘤。</p>
+    <div class="teacher">蔡祥麟、陳彥成　·　111 (4) ／ 112 (3) ／ 113 (4)</div>
+  </a>
+
+  <a class="card" href="interventional-radiology.html">
+    <div class="card-top"><h2>消化系統介入性放射學</h2><span class="qn">5 題</span></div>
+    <p>全為影像判讀題。膽道解剖辨識、肝臟雙重血流、DWI 與 ADC 訊號判讀、膽道支架、TACE 碘油沉積、影像導引切片路徑規劃。</p>
+    <div class="teacher">石明誠　·　111 (1) ／ 112 (2) ／ 113 (2)</div>
+  </a>
+
+  <a class="card" href="esophagus.html">
+    <div class="card-top"><h2>食道疾病</h2><span class="qn">6 題</span></div>
+    <p>三處生理性狹窄、吞嚥困難鑑別、四大檢查工具配對、GERD 與 Barrett、achalasia、食道憩室、食道癌分期與治療策略。</p>
+    <div class="teacher">張博智　·　111 (2) ／ 112 (2) ／ 113 (2)</div>
+  </a>
+
+  <a class="card" href="minimally-invasive-bariatric.html">
+    <div class="card-top"><h2>微創手術之最新進展（含胃減重手術）</h2><span class="qn">6 題</span></div>
+    <p>氣腹生理影響、病人擺位、單孔與機器人手術、減重手術適應症與術式比較、代謝效益，附三年錯誤選項回收表。</p>
+    <div class="teacher">張博智　·　111 (2) ／ 112 (2) ／ 113 (2)</div>
+  </a>
+
+  <!-- 新科目貼在這裡 -->
+
+  <div class="box">
+    <div class="bt"><span class="badge">高命中</span>重複出題與待確認事項</div>
+    <ul>
+      <li><b>四題兩年完全重複：</b>111-44＝113-44、111-45＝113-45（腸胃道蠕動）；111-48＝113-48、111-49＝113-49（食道疾病）。</li>
+      <li><b>111-30</b>（慢性腹痛）公布答案與詳解邏輯不一致，關鍵在慢性腹痛定義為 3 個月或 6 個月，建議向老師確認。</li>
+      <li><b>111-48／113-48</b> 判 (A) 錯的理由是「未提及主動脈弓」，但教科書常將左主支氣管與主動脈弓並列，建議確認 ppt 寫法。</li>
+      <li><b>介入性放射學</b>五題中至少三題出自課堂口述補充圖片，建議取得老師的補充投影片對照。</li>
+    </ul>
+  </div>
+</div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p>Block 7 合計 50 題　·　BM111 15 題／BM112 13 題／BM113 16 題（含申覆送分題）。內容依考古題詳解整理，若與老師 ppt 有出入請以上課內容為準。</p>
+  </div>
+</footer>
+
+</body>
+</html>

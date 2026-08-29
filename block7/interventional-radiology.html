@@ -1,0 +1,804 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>消化系統介入性放射學｜裸讀學習筆記</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&family=Noto+Serif+TC:wght@500;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0F1B18;--bg-2:#152420;--bg-3:#1B2E29;--line:#26403A;--line-2:#31534B;
+    --text:#E9F1EE;--text-2:#A8C2BA;--text-3:#7A968D;
+    --teal:#7FC9BE;--teal-dim:#4E9A90;--gold:#C9A961;--rose:#E58B85;
+    --serif:"Noto Serif TC","Songti TC",serif;
+    --sans:"Noto Sans TC","PingFang TC","Microsoft JhengHei",sans-serif;
+    --mono:"JetBrains Mono",ui-monospace,Menlo,monospace;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth;scroll-padding-top:24px}
+  html{overflow-x:hidden}
+  body{margin:0;background:var(--bg);color:var(--text);font-family:var(--sans);
+    font-size:16.5px;line-height:1.9;font-weight:300;-webkit-font-smoothing:antialiased;
+    overflow-x:hidden}
+  .wrap{max-width:1150px;margin:0 auto;padding:0 22px}
+  header.hero{padding:66px 0 52px;border-bottom:1px solid var(--line)}
+  .backlink{display:inline-block;font-family:var(--mono);font-size:12px;
+    color:var(--text-3);text-decoration:none;margin-bottom:22px;
+    border:1px solid var(--line);border-radius:6px;padding:5px 12px;transition:.15s}
+  .backlink:hover{color:var(--teal);border-color:var(--teal-dim)}
+  .eyebrow{display:flex;align-items:center;gap:16px;margin-bottom:26px;
+    font-family:var(--serif);font-size:15px;letter-spacing:.34em;color:var(--teal)}
+  .eyebrow .rule{width:56px;height:1px;background:var(--gold)}
+  .eyebrow .dot{color:var(--gold)}
+  header.hero h1{font-family:var(--serif);font-weight:700;font-size:clamp(34px,6vw,64px);
+    line-height:1.18;margin:0 0 22px;letter-spacing:.02em}
+  header.hero h1 em{font-style:normal;color:var(--teal)}
+  header.hero p.sub{margin:0;color:var(--text-2);max-width:62ch;font-size:17px;line-height:1.85}
+  .intro-card{border:1px solid var(--line);border-radius:16px;padding:26px 30px;margin-top:34px;background:var(--bg-2)}
+  .intro-card p{margin:0 0 22px;color:var(--text-2)}
+  .intro-card b{color:var(--teal);font-weight:500}
+  .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+  .stat .n{font-family:var(--serif);font-size:38px;color:var(--gold);line-height:1}
+  .stat .l{font-size:12.5px;color:var(--text-3);letter-spacing:.08em;margin-top:6px}
+  .cols{display:grid;grid-template-columns:220px 1fr;gap:52px;padding:46px 0 90px;align-items:start}
+  nav.toc{position:sticky;top:26px}
+  nav.toc .t{font-family:var(--mono);font-size:11px;letter-spacing:.2em;color:var(--text-3);margin-bottom:14px}
+  nav.toc a{display:block;padding:7px 14px;border-left:1px solid var(--line);
+    color:var(--text-2);text-decoration:none;font-size:14px;transition:.15s}
+  nav.toc a:hover{border-left-color:var(--teal);color:var(--teal);background:var(--bg-2)}
+  nav.toc a.exam{color:var(--gold)}
+  nav.toc summary{display:none}
+  section{margin-bottom:64px;scroll-margin-top:24px}
+  .sec-head{display:flex;align-items:baseline;gap:16px;border-bottom:1px solid var(--line-2);padding-bottom:12px;margin-bottom:26px}
+  .sec-num{font-family:var(--serif);font-size:30px;color:var(--gold);line-height:1}
+  .sec-head h2{font-family:var(--serif);font-size:clamp(22px,3.2vw,30px);margin:0;font-weight:700;letter-spacing:.02em}
+  h3{font-family:var(--serif);font-size:21px;margin:38px 0 12px;font-weight:500}
+  h4{font-size:16.5px;margin:24px 0 8px;color:var(--teal);font-weight:500}
+  p{margin:0 0 15px}
+  ul,ol{margin:0 0 17px;padding-left:22px}
+  li{margin-bottom:8px}
+  li::marker{color:var(--teal-dim)}
+  strong,b{font-weight:500;color:#FFF}
+  u{text-decoration-color:var(--teal-dim);text-underline-offset:3px}
+  code{font-family:var(--mono);font-size:.88em;background:var(--bg-3);padding:1px 6px;border-radius:4px;color:var(--teal)}
+  mark{background:rgba(201,169,97,.22);box-shadow:inset 0 -2px 0 rgba(201,169,97,.6);
+    color:#FBF3E2;padding:1px 3px;border-radius:2px}
+  a.qtag{display:inline-block;font-family:var(--mono);font-size:11px;font-weight:600;
+    border:1px solid var(--gold);color:var(--gold);padding:1px 7px;border-radius:4px;
+    text-decoration:none;margin:0 3px;vertical-align:2px;white-space:nowrap;transition:.15s}
+  a.qtag:hover{background:var(--gold);color:var(--bg)}
+  .tagline{margin:-8px 0 18px;font-size:13.5px;color:var(--text-3)}
+  .box{border-radius:13px;padding:20px 24px;margin:22px 0;border:1px solid var(--line);background:var(--bg-2)}
+  .box .bt{font-weight:500;font-size:14.5px;margin-bottom:10px;display:flex;align-items:center;gap:9px;color:#FFF}
+  .box p:last-child,.box ul:last-child,.box ol:last-child{margin-bottom:0}
+  .badge{font-family:var(--mono);font-size:10px;padding:2px 8px;border-radius:3px;letter-spacing:.06em;
+    border:1px solid currentColor;font-weight:600}
+  .box.exam{border-color:rgba(201,169,97,.45);background:rgba(201,169,97,.07)}
+  .box.exam .badge{color:var(--gold)}
+  .box.trap{border-color:rgba(229,139,133,.45);background:rgba(229,139,133,.07)}
+  .box.trap .badge{color:var(--rose)}
+  .box.key{border-color:rgba(127,201,190,.4);background:rgba(127,201,190,.07)}
+  .box.key .badge{color:var(--teal)}
+  .tw{overflow-x:auto;margin:22px 0;border:1px solid var(--line);border-radius:13px}
+  table{border-collapse:collapse;width:100%;min-width:540px;font-size:14.8px}
+  th,td{padding:12px 16px;text-align:left;border-bottom:1px solid var(--line);vertical-align:top}
+  thead th{background:var(--bg-3);color:var(--teal);font-weight:500;font-size:13.5px;letter-spacing:.04em}
+  tbody tr:last-child td{border-bottom:none}
+  tbody tr:nth-child(even){background:rgba(255,255,255,.018)}
+  td.mono,th.mono{font-family:var(--mono);font-size:13px}
+  .flow{display:flex;flex-wrap:wrap;align-items:center;gap:10px;margin:22px 0;padding:20px;
+    border:1px solid var(--line);border-radius:13px;background:var(--bg-2)}
+  .node{padding:8px 14px;border:1px solid var(--line-2);border-radius:8px;font-size:14px;color:var(--text-2);background:var(--bg-3)}
+  .node.hi{border-color:var(--gold);color:var(--gold)}
+  .arrow{color:var(--teal-dim);font-family:var(--mono)}
+  .ladder{margin:24px 0;border:1px solid var(--line);border-radius:13px;overflow:hidden}
+  .rung{display:flex;gap:16px;padding:14px 20px;border-bottom:1px solid var(--line);background:var(--bg-2);align-items:flex-start}
+  .rung:last-child{border-bottom:none}
+  .rung .lv{font-family:var(--mono);font-size:11.5px;color:var(--gold);border:1px solid var(--gold);
+    padding:2px 9px;border-radius:4px;white-space:nowrap;margin-top:4px}
+  .rung .txt{font-size:14.8px;line-height:1.75;color:var(--text-2)}
+  .rung .txt b{color:#FFF}
+  .quiz{border:1px solid var(--line-2);border-radius:14px;margin:26px 0;overflow:hidden;background:var(--bg-2)}
+  .quiz-top{display:flex;align-items:center;gap:10px;padding:12px 20px;background:var(--bg-3);border-bottom:1px solid var(--line);flex-wrap:wrap}
+  .quiz-top .lab{font-family:var(--serif);font-size:14px;letter-spacing:.16em;color:var(--gold)}
+  .quiz-top .yr{font-family:var(--mono);font-size:11.5px;color:var(--text-2);border:1px solid var(--line-2);padding:2px 8px;border-radius:4px}
+  .quiz-body{padding:20px 22px}
+  .quiz-body .stem{font-size:15.5px;line-height:1.85;margin:0 0 14px;color:var(--text)}
+  .opts{list-style:none;padding:0;margin:0 0 14px}
+  .opts li{padding:8px 12px;font-size:15px;border:1px solid var(--line);border-radius:8px;margin-bottom:7px;color:var(--text-2)}
+  .toggle{background:none;border:1px solid var(--teal-dim);color:var(--teal);font-family:var(--sans);
+    font-size:13px;padding:7px 16px;border-radius:7px;cursor:pointer;transition:.15s;font-weight:400}
+  .toggle:hover{background:var(--teal);color:var(--bg)}
+
+  /* ---------- 答案展開：使用原生 details，不依賴 JavaScript ---------- */
+  details.rev{margin:0}
+  summary.toggle{
+    display:inline-block;list-style:none;cursor:pointer;
+    background:none;border:1px solid var(--teal-dim);color:var(--teal);
+    font-family:var(--sans);font-size:13px;padding:7px 16px;border-radius:7px;
+    font-weight:400;transition:.15s;-webkit-tap-highlight-color:transparent;
+  }
+  summary.toggle::-webkit-details-marker{display:none}
+  summary.toggle::marker{content:""}
+  summary.toggle:hover{background:var(--teal);color:var(--bg)}
+  summary.toggle::before{content:"顯示答案"}
+  .q summary.toggle::before{content:"顯示答案與詳解"}
+  details.rev[open] summary.toggle::before{content:"收合答案"}
+  details.rev .reveal{margin-top:14px}
+  .reveal{border-top:1px dashed var(--line-2);margin-top:14px;padding-top:14px}
+  .reveal[hidden]{display:none}
+  .ans{font-family:var(--serif);font-weight:700;color:var(--gold);font-size:17px;margin-bottom:10px}
+  .reveal p{margin:0 0 9px;font-size:14.8px;color:var(--text-2)}
+  .reveal p b{color:#FFF}
+  .src{font-size:12px;color:var(--text-3);font-family:var(--mono);margin-top:12px}
+  .jump{font-size:12.5px;color:var(--teal-dim);text-decoration:none;border-bottom:1px solid var(--line-2)}
+  .jump:hover{color:var(--teal)}
+  .exam-head{border:1px solid var(--line-2);border-radius:16px;padding:30px;margin-bottom:28px;background:var(--bg-2)}
+  .exam-head h2{font-family:var(--serif);margin:0 0 10px;font-size:29px}
+  .exam-head p{color:var(--text-2);margin:0;font-size:15px}
+  .btn{font-family:var(--sans);font-size:13.5px;cursor:pointer;background:var(--teal);color:var(--bg);
+    border:none;padding:10px 20px;border-radius:8px;margin-top:18px;font-weight:500}
+  .btn:hover{background:#9BDBD1}
+  .yrhead{font-family:var(--serif);font-size:24px;font-weight:700;margin:40px 0 18px;
+    padding-left:16px;border-left:3px solid var(--gold);color:var(--gold)}
+  .q{background:var(--bg-2);border:1px solid var(--line);border-radius:13px;padding:22px 24px;margin-bottom:16px;scroll-margin-top:24px}
+  .q-no{font-family:var(--mono);font-size:11.5px;color:var(--gold);border:1px solid var(--gold);padding:2px 9px;border-radius:5px}
+  .q-topic{font-size:12.5px;color:var(--text-3);margin-left:10px}
+  .q-stem{margin:14px 0 12px;font-size:15.5px;line-height:1.85}
+  .noimg{font-size:13px;color:var(--rose);border:1px dashed rgba(229,139,133,.5);border-radius:8px;
+    padding:8px 12px;margin:10px 0;display:inline-block}
+  footer{border-top:1px solid var(--line);padding:30px 0 60px;color:var(--text-3);font-size:13.5px}
+  footer b{color:var(--text-2)}
+  @media (max-width:900px){
+    .cols{grid-template-columns:1fr;gap:0;padding-top:28px}
+    nav.toc{position:static;margin-bottom:36px;border:1px solid var(--line);border-radius:12px;padding:16px;background:var(--bg-2)}
+    nav.toc a{border-left:none;padding:6px 4px}
+    .stats{grid-template-columns:repeat(2,1fr);gap:20px}
+    .rung{flex-direction:column;gap:8px}
+  }
+
+  /* ---------- 手機版：表格改為直式卡片，消除左右滑動 ---------- */
+
+  /* ---------- 表格一律直式卡片呈現（不依賴螢幕寬度判斷，因為部分 App 內建瀏覽器
+     不會依照真實裝置寬度計算版面，用 @media 寬度斷點會失效）---------- */
+  .tw{border:none;background:none;overflow:visible;border-radius:0;margin:18px 0}
+  .tw table{min-width:0;width:100%;border-collapse:separate;border-spacing:0;font-size:15px}
+  .tw thead{display:none}
+  .tw tbody tr{
+    display:block;border:1px solid var(--line);border-radius:12px;
+    background:var(--bg-2);margin-bottom:12px;padding:4px 0;
+  }
+  .tw tbody tr:nth-child(even){background:var(--bg-2)}
+  .tw tbody tr:last-child{margin-bottom:0}
+  .tw tbody td{display:block;border:none;padding:10px 16px}
+  .tw tbody td+td{border-top:1px dashed var(--line)}
+  .tw tbody td[data-label]::before{
+    content:attr(data-label);display:block;
+    font-family:var(--mono);font-size:11px;letter-spacing:.08em;
+    color:var(--teal);margin-bottom:5px;
+  }
+  .tw tbody td:first-child{font-size:16.5px}
+  .tw tbody td.mono,.tw tbody td:first-child{color:var(--text)}
+
+  @media (max-width:700px){
+    body{font-size:16px;line-height:1.85}
+    .wrap{padding:0 16px}
+    header.hero{padding:40px 0 34px}
+    .cols{padding:28px 0 60px}
+    section{margin-bottom:46px}
+
+    nav.toc{padding:0;overflow:hidden}
+    nav.toc .t{display:none}
+    nav.toc details{margin:0}
+    nav.toc summary{
+      display:block;list-style:none;cursor:pointer;padding:14px 16px;
+      font-family:var(--mono);font-size:12px;letter-spacing:.16em;color:var(--teal);
+    }
+    nav.toc summary::-webkit-details-marker{display:none}
+    nav.toc summary::after{content:" \25be";color:var(--text-3)}
+    nav.toc details[open] summary::after{content:" \25b4"}
+    nav.toc .toc-links{padding:0 10px 12px}
+
+    .box{padding:16px 18px;border-radius:11px}
+    p,li,td,.stem,.reveal p,.opts li,.q-stem{overflow-wrap:anywhere;word-break:break-word}
+    .quiz-body{padding:16px 16px}
+    .opts li{padding:9px 12px;font-size:15px}
+    .q{padding:18px 16px}
+    .sec-head{gap:12px}
+    ul,ol{padding-left:20px}
+    .toggle{width:100%;padding:11px 16px;font-size:14px}
+    summary.toggle{width:100%;text-align:center;padding:11px 16px;font-size:14px}
+    .btn{width:100%;padding:12px 16px}
+  }
+  @media print{nav.toc,.btn,.toggle{display:none}.reveal{display:block!important}body{background:#fff;color:#000;font-size:11pt}}
+  @media print{.tw thead{display:table-header-group!important}}
+  @media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <a class="backlink" href="index.html">← 返回 Block 7 目錄</a>
+    <div class="eyebrow"><span class="rule"></span>裸讀學習筆記<span class="dot">·</span>由淺入深</div>
+    <h1>消化系統<br><em>介入性放射學</em></h1>
+    <p class="sub">全單元都是影像判讀題。與其死背，不如建立三個基本功：看懂管道往哪裡走、看懂訊號代表什麼、看懂治療前後的差異。授課教師：石明誠。</p>
+
+    <div class="intro-card">
+      <p>這份筆記把 <b>BM113、BM112、BM111</b> 三個學年度考古題中，所有跟「消化系統介入性放射學」相關的題目，<b>嵌入到對應的觀念旁邊即時測驗</b>，文末再依年度完整羅列一次。</p>
+      <div class="stats">
+        <div class="stat"><div class="n">5</div><div class="l">總題數</div></div>
+        <div class="stat"><div class="n">2</div><div class="l">BM113</div></div>
+        <div class="stat"><div class="n">2</div><div class="l">BM112</div></div>
+        <div class="stat"><div class="n">1</div><div class="l">BM111</div></div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+<div class="cols">
+
+  <nav class="toc">
+    <div class="t">CONTENTS</div>
+    <details id="tocBox" open>
+      <summary>目錄 CONTENTS</summary>
+      <div class="toc-links">
+    <a href="#s0">〇　本科的讀法</a>
+    <a href="#s1">一　膽道解剖</a>
+    <a href="#s2">二　肝臟雙重血流</a>
+    <a href="#s3">三　MRI：DWI 與 ADC</a>
+    <a href="#s4">四　膽道引流與支架</a>
+    <a href="#s5">五　TACE 肝動脈栓塞</a>
+    <a href="#s6">六　影像導引切片</a>
+    <a href="#s7">七　一分鐘總複習</a>
+    <a href="#exam" class="exam">八　考古題全收錄</a>
+      </div>
+    </details>
+  </nav>
+
+  <main>
+
+  <!-- ============ 00 ============ -->
+  <section id="s0">
+    <div class="sec-head"><span class="sec-num">〇</span><h2>先講這科怎麼讀</h2></div>
+    <p>五題全部是<strong>影像判讀</strong>，而且多數來自老師課堂上口述補充的圖片。這意味著兩件事：</p>
+    <ul>
+      <li><strong>上課的補充投影片一定要拿到</strong>，考的就是那幾張圖。</li>
+      <li>但即使沒有原圖，這些題目仍有共通的<strong>判讀邏輯</strong>可以套用 —— 那才是這份筆記要教你的東西。</li>
+    </ul>
+
+    <div class="box key">
+      <div class="bt"><span class="badge">通用解法</span>看到消化系統影像題，依序問自己三個問題</div>
+      <ol>
+        <li><strong>這是管道還是實質？</strong>管道就追它「從哪來、往哪去」—— 這是辨識結構最可靠的方法。</li>
+        <li><strong>訊號亮暗代表什麼？</strong>不同序列（CT、T1、T2、DWI、ADC）中，水、脂肪、血、鈣化、顯影劑的表現各不相同。</li>
+        <li><strong>這是治療前還是治療後？</strong>比對前後兩張圖「多了什麼、少了什麼」，答案通常就在差異裡。</li>
+      </ol>
+    </div>
+
+    <h4>介入性放射學在做什麼</h4>
+    <p>白話講：<mark>在影像（超音波、CT、透視 X 光）的即時導引下，用針、導管、導絲進行治療，取代傳統開刀。</mark></p>
+    <div class="tw"><table>
+      <thead><tr><th>目的</th><th>常見處置</th></tr></thead>
+      <tbody>
+        <tr><td><b>診斷</b></td><td>影像導引切片（biopsy）、抽吸</td></tr>
+        <tr><td><b>引流</b></td><td>經皮穿肝膽道引流（PTCD／PTBD）、膿瘍引流、膽囊造廔（PTGBD）</td></tr>
+        <tr><td><b>打通</b></td><td>膽道支架、血管成形術與支架、TIPS（經頸靜脈肝內門體分流術）</td></tr>
+        <tr><td><b>塞住</b></td><td>止血栓塞、<b>TACE（肝動脈化學栓塞）</b></td></tr>
+        <tr><td><b>燒掉</b></td><td>射頻消融（RFA）、微波消融（MWA）治療肝腫瘤</td></tr>
+      </tbody>
+    </table></div>
+  </section>
+
+  <!-- ============ 01 ============ -->
+  <section id="s1">
+    <div class="sec-head"><span class="sec-num">一</span><h2>膽道解剖：這科的地圖</h2></div>
+    <p class="tagline">本節考點：<a class="qtag" href="#q113-68">113-68</a><a class="qtag" href="#q111-46">111-46</a><a class="qtag" href="#q112-66">112-66</a></p>
+
+    <p>五題裡有三題跟膽道有關，所以這張地圖必須刻在腦子裡。</p>
+
+    <div class="flow">
+      <span class="node">左肝管 + 右肝管</span><span class="arrow">→</span>
+      <span class="node hi">總肝管 Common hepatic duct</span><span class="arrow">→</span>
+      <span class="node">（膽囊管 cystic duct 匯入）</span><span class="arrow">→</span>
+      <span class="node hi">總膽管 Common bile duct</span><span class="arrow">→</span>
+      <span class="node">與胰管會合<br>Ampulla of Vater</span><span class="arrow">→</span>
+      <span class="node hi">十二指腸</span>
+    </div>
+
+    <h4>判讀影像時的三個定位線索</h4>
+    <ul>
+      <li><strong>往哪裡去？</strong><mark>只有膽道系統會「進入十二指腸」</mark>。若一條管道深入肝內、又往下匯入類似消化道的結構，那一定是膽道 —— 血管絕不會這樣走。</li>
+      <li><strong>從哪裡來？</strong>肝管深入肝內實質；總膽管走在肝十二指腸韌帶內、位於<b>門靜脈前方、肝動脈右側</b>（門脈三合一，portal triad）。</li>
+      <li><strong>跟胰臟的關係？</strong>總膽管的<b>遠端穿過胰頭</b>，再與胰管會合。所以在胰臟層面看到的膽道結構，通常就是總膽管遠端。</li>
+    </ul>
+
+    <div class="box key">
+      <div class="bt"><span class="badge">解題法</span>113-68 三十秒解法</div>
+      <p>題目描述：管道<b>深入肝內</b>，且有分支<b>流入類似消化道的管道（十二指腸）</b>。</p>
+      <p>逐一刪除：肝動脈與肝門靜脈是「進肝」的血管、肝靜脈是「出肝」回下腔靜脈的血管，<mark>三者都不會通到十二指腸</mark>。唯一會匯入十二指腸的只有膽道 → <b>肝管</b>。</p>
+    </div>
+
+    <!-- QUIZ 113-68 -->
+    <div class="quiz">
+      <div class="quiz-top"><span class="lab">考古題</span><span class="yr">113 學年度 · 第 68 題</span></div>
+      <div class="quiz-body">
+        <p class="stem">圖中箭頭所指的構造是什麼管道？<span class="noimg">圖略 —— 管道深入肝內，並有分支流入類似消化道的管道</span></p>
+        <ul class="opts">
+          <li>(A) 肝動脈 Hepatic artery</li>
+          <li>(B) 肝門靜脈 Hepatic portal vein</li>
+          <li>(C) 肝管 Hepatic duct</li>
+          <li>(D) 肝靜脈 Hepatic vein</li>
+        </ul>
+                <details class="rev">
+          <summary class="toggle"></summary>
+          <div class="reveal">
+          <div class="ans">答案：(C)</div>
+          <p>三個血管選項都不會通到消化道。<b>只有膽道系統會匯入十二指腸</b>（肝管 → 總肝管 → 總膽管 → 十二指腸）。</p>
+          <p><a class="jump" href="#q113-68">看文末完整詳解 ↓</a></p>
+        </div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 02 ============ -->
+  <section id="s2">
+    <div class="sec-head"><span class="sec-num">二</span><h2>肝臟的雙重血流</h2></div>
+    <p class="tagline">本節考點：<a class="qtag" href="#q112-67">112-67</a></p>
+
+    <p>肝臟是全身少數擁有<strong>雙重血液供應</strong>的器官，這個特性正是介入治療的理論基礎。</p>
+
+    <div class="tw"><table>
+      <thead><tr><th>　</th><th>肝動脈 Hepatic artery</th><th>肝門靜脈 Portal vein</th></tr></thead>
+      <tbody>
+        <tr><td><b>佔血流量</b></td><td class="mono">≈ 25%</td><td class="mono">≈ 75%</td></tr>
+        <tr><td><b>供應對象</b></td><td><mark>肝腫瘤（尤其肝細胞癌）幾乎完全靠它</mark></td><td>正常肝實質主要靠它</td></tr>
+        <tr><td><b>血流方向</b></td><td>離心性（centrifugal，從肝門往週邊）</td><td>向心性（centripetal，往肝內灌注）</td></tr>
+        <tr><td><b>顯影時相</b></td><td>動脈期早（注射後約 25–35 秒）</td><td>門脈期（約 60–70 秒）</td></tr>
+      </tbody>
+    </table></div>
+
+    <div class="box key">
+      <div class="bt"><span class="badge">核心邏輯</span>為什麼 TACE 有效？</div>
+      <p><mark>肝細胞癌的血液幾乎百分之百來自肝動脈，而正常肝實質有門靜脈當靠山。</mark></p>
+      <p>所以只要把<b>肝動脈</b>塞住，腫瘤會餓死，正常肝臟卻還能靠門靜脈存活 —— 這就是「肝動脈化學栓塞（TACE）」的原理。也因此，<b>門靜脈主幹阻塞的病人是 TACE 的相對禁忌</b>（沒有靠山，塞了動脈整片肝都會壞死）。</p>
+    </div>
+
+    <h4>肝靜脈不要跟門靜脈搞混</h4>
+    <ul>
+      <li><strong>肝門靜脈（portal vein）</strong>：把腸道與脾臟的血<u>帶進</u>肝臟 → 從肝門進入，逐漸分支變細。</li>
+      <li><strong>肝靜脈（hepatic vein）</strong>：把肝臟的血<u>帶出</u>去 → 往上匯入下腔靜脈（IVC），有左、中、右三條。</li>
+      <li>判讀口訣：<mark>往下腔靜脈跑的是肝靜脈，從肝門進來的是門靜脈。</mark></li>
+    </ul>
+  </section>
+
+  <!-- ============ 03 ============ -->
+  <section id="s3">
+    <div class="sec-head"><span class="sec-num">三</span><h2>MRI 判讀：DWI 與 ADC</h2></div>
+    <p class="tagline">本節考點：<a class="qtag" href="#q111-46">111-46</a></p>
+
+    <h3>先搞懂它們在測什麼</h3>
+    <p><strong>DWI（擴散加權影像，Diffusion-Weighted Imaging）</strong>測的是<mark>水分子在組織裡「自由移動」的能力</mark>。</p>
+    <ul>
+      <li>組織細胞排得很密（腫瘤）、或液體很黏稠（膿液、血塊）→ 水分子跑不動 → 稱為<strong>擴散受限（restricted diffusion）</strong>。</li>
+      <li>組織鬆散、水分自由（囊腫、單純積水）→ 水分子跑得動 → 擴散不受限。</li>
+    </ul>
+    <p><strong>ADC（表觀擴散係數圖，Apparent Diffusion Coefficient）</strong>是把擴散能力量化後畫成的圖，<mark>擴散越自由 → ADC 值越高 → 圖上越亮</mark>。</p>
+
+    <div class="box exam">
+      <div class="bt"><span class="badge">必背組合</span>DWI 亮 + ADC 暗 = 擴散受限</div>
+      <div class="tw" style="margin:10px 0 0"><table>
+        <thead><tr><th class="mono">DWI</th><th class="mono">ADC</th><th>意義</th><th>常見病灶</th></tr></thead>
+        <tbody>
+          <tr><td class="mono"><b>亮</b></td><td class="mono"><b>暗</b></td><td><mark>真正的擴散受限</mark></td><td><b>惡性腫瘤、膿瘍、急性梗塞、淋巴瘤</b></td></tr>
+          <tr><td class="mono">亮</td><td class="mono">亮</td><td>T2 穿透效應（T2 shine-through）<br>= 假陽性</td><td>單純囊腫、水腫</td></tr>
+          <tr><td class="mono">暗</td><td class="mono">亮</td><td>擴散自由</td><td>正常組織、囊液</td></tr>
+        </tbody>
+      </table></div>
+      <p style="margin-top:12px">記法：<mark>「DWI 亮而 ADC 暗」才算數</mark>；兩個都亮是假的（水太多造成的假象），必須用 ADC 圖去驗證，這也是為什麼臨床上兩張圖一定要對照著看。</p>
+    </div>
+
+    <h3>111-46 這題怎麼想</h3>
+    <p>題目問：<strong>DWI 上最亮、ADC 上暗的後腹腔病灶</strong>，箭頭所指是什麼構造？選項為總膽管、胰尾、十二指腸、膽囊。</p>
+    <div class="box key">
+      <div class="bt"><span class="badge">解題法</span>先用訊號縮小範圍，再用解剖定位</div>
+      <ol>
+        <li><strong>訊號告訴你：</strong>DWI 亮 + ADC 暗 = 擴散受限 = 這裡有異常（腫瘤、膿液、或阻塞後濃稠的液體），不是單純的水。</li>
+        <li><strong>位置告訴你：</strong>「後腹腔」是關鍵字。<mark>胰臟與十二指腸大部分位於後腹腔，總膽管遠端也穿行於胰頭之中</mark>；膽囊則位於肝臟下方、屬腹腔內器官（非後腹腔）。</li>
+        <li><strong>解剖關係告訴你：</strong>老師的圖中橫向亮起的帶狀構造是胰臟，而<b>總膽管會與胰管一起匯入十二指腸</b>，箭頭所指的即為此處的總膽管。</li>
+      </ol>
+      <p style="margin-top:10px">官方答案為 <b>(A) 總膽管</b>。</p>
+    </div>
+    <div class="box trap">
+      <div class="bt"><span class="badge">提醒</span>這題非常依賴課堂補充圖</div>
+      <p>純看文字敘述，這題的推理空間有限（單純膽汁在擴張的膽管中通常呈現 T2 穿透效應，DWI 與 ADC 都會亮）。<mark>老師上課補充的圖片曾直接出現在考題中</mark>，務必把那份補充投影片找齊、對著圖記位置。</p>
+    </div>
+
+    <!-- QUIZ 111-46 -->
+    <div class="quiz">
+      <div class="quiz-top"><span class="lab">考古題</span><span class="yr">111 學年度 · 第 46 題</span></div>
+      <div class="quiz-body">
+        <p class="stem">What do you assume the most bright up retroperitoneum lesion under DWI and dark in ADC images arising from (arrow)？<br><span style="color:var(--text-3);font-size:14.5px">（您認為 DWI 下變亮、ADC 圖像中變暗的後腹腔病灶代表什麼？）</span><span class="noimg">圖略</span></p>
+        <ul class="opts">
+          <li>(A) Common bile duct（總膽管）</li>
+          <li>(B) Pancreatic tail（胰尾）</li>
+          <li>(C) Duodenum（十二指腸）</li>
+          <li>(D) Gallbladder（膽囊）</li>
+        </ul>
+                <details class="rev">
+          <summary class="toggle"></summary>
+          <div class="reveal">
+          <div class="ans">答案：(A)</div>
+          <p>圖中橫向亮起的帶狀構造為胰臟，箭頭所指的管道與胰管一同匯入十二指腸，因此為<b>總膽管</b>。DWI 亮 + ADC 暗代表擴散受限。</p>
+          <p><a class="jump" href="#q111-46">看文末完整詳解 ↓</a></p>
+        </div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 04 ============ -->
+  <section id="s4">
+    <div class="sec-head"><span class="sec-num">四</span><h2>膽道引流與支架</h2></div>
+    <p class="tagline">本節考點：<a class="qtag" href="#q112-66">112-66</a></p>
+
+    <h3>什麼時候要放膽道支架</h3>
+    <p><strong>惡性膽道阻塞</strong>（胰頭癌、膽管癌、肝門部腫瘤、轉移淋巴結壓迫）造成阻塞性黃疸時，若腫瘤無法切除，就以支架撐開膽道、恢復膽汁引流，改善黃疸、搔癢與膽管炎風險。良性狹窄則多用塑膠支架或暫時性引流。</p>
+
+    <h4>兩條路徑</h4>
+    <div class="ladder">
+      <div class="rung"><span class="lv">內視鏡</span><span class="txt"><b>ERCP</b> —— 從口腔經十二指腸乳頭逆行進入膽道放支架。第一線，沒有體表傷口。</span></div>
+      <div class="rung"><span class="lv">經皮</span><span class="txt"><b>PTCD／PTBD（經皮穿肝膽道引流）</b> —— 從體表穿刺經肝進入膽管。用於 ERCP 失敗、解剖改變（如胃切除術後）、或肝門部高位阻塞。介入性放射科的招牌處置。</span></div>
+    </div>
+
+    <div class="box key">
+      <div class="bt"><span class="badge">解題法</span>影像上怎麼判斷支架放在哪裡</div>
+      <p>金屬支架在 X 光／CT 上是<b>高密度的網狀管狀結構</b>，判斷位置靠它的<mark>走向與周邊器官的關係</mark>：</p>
+      <ul>
+        <li><b>沿著肝臟下緣往上、朝肝門方向延伸</b> → 肝外膽道（總肝管／總膽管）</li>
+        <li>與主動脈相連、隨心跳搏動的管狀結構 → 動脈</li>
+        <li>位於腸腔內、口徑大且有腸壁皺襞 → 腸道支架</li>
+      </ul>
+      <p>112-66 的圖正是第一種：支架沿肝臟下緣、順膽道方向延伸 → <b>肝外膽道</b>。</p>
+    </div>
+
+    <!-- QUIZ 112-66 -->
+    <div class="quiz">
+      <div class="quiz-top"><span class="lab">考古題</span><span class="yr">112 學年度 · 第 66 題</span></div>
+      <div class="quiz-body">
+        <p class="stem">Where do you think the metallic stent being mainly placed?<br><span style="color:var(--text-3);font-size:14.5px">（您認為金屬支架主要放置在哪裡？）</span><span class="noimg">圖略 —— 支架沿肝臟下緣往上延伸</span></p>
+        <ul class="opts">
+          <li>(A) Common hepatic artery（肝總動脈）</li>
+          <li>(B) Main portal vein（主門靜脈）</li>
+          <li>(C) Extrahepatic biliary tract（肝外膽道）</li>
+          <li>(D) Duodenum bowel（十二指腸）</li>
+        </ul>
+                <details class="rev">
+          <summary class="toggle"></summary>
+          <div class="reveal">
+          <div class="ans">答案：(C)</div>
+          <p>影像中金屬支架<b>沿著肝臟下緣往上、順著膽道方向延伸</b>，符合肝外膽道的走向。膽道支架是介入性放射學治療惡性阻塞性黃疸最常見的處置之一。</p>
+          <p><a class="jump" href="#q112-66">看文末完整詳解 ↓</a></p>
+        </div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 05 ============ -->
+  <section id="s5">
+    <div class="sec-head"><span class="sec-num">五</span><h2>TACE 肝動脈化學栓塞</h2></div>
+    <p class="tagline">本節考點：<a class="qtag" href="#q112-67">112-67</a></p>
+
+    <h3>怎麼做</h3>
+    <p>從鼠蹊部股動脈穿刺 → 導管往上走到腹主動脈 → 進入腹腔動脈幹 → 肝總動脈 → 超選擇到<strong>供應腫瘤的那一支肝動脈</strong> → 打入化療藥物 + <strong>碘化油（lipiodol）</strong> + 栓塞顆粒。</p>
+
+    <h4>Lipiodol（碘油）是什麼</h4>
+    <ul>
+      <li>一種<strong>含碘的油性顯影劑</strong>，在 CT 與 X 光上呈現<mark>非常明亮的高密度</mark>。</li>
+      <li>它有一個神奇特性：<mark>會選擇性地「滯留」在肝腫瘤組織內</mark>，正常肝實質則會逐漸清除掉。</li>
+      <li>所以它同時扮演三個角色：<strong>① 化療藥的載體 ② 栓塞劑 ③ 治療後追蹤的標記</strong> —— 術後 CT 上碘油沉積的範圍，就代表腫瘤被治療覆蓋的範圍。</li>
+    </ul>
+
+    <div class="box exam">
+      <div class="bt"><span class="badge">關鍵觀念</span>碘油會出現在哪裡、不會出現在哪裡</div>
+      <div class="tw" style="margin:10px 0 0"><table>
+        <thead><tr><th>會滯留</th><th>不會出現</th></tr></thead>
+        <tbody>
+          <tr>
+            <td>
+              <b>肝動脈及其分支</b>（藥物注入的路徑）<br>
+              <b>腫瘤與周邊肝實質</b>（碘油沉積的目標）<br>
+              <b>門靜脈分支</b> —— 當腫瘤存在<u>動脈-門脈分流（arterio-portal shunt）</u>時，碘油可經分流進入門靜脈
+            </td>
+            <td>
+              <mark><b>膽道系統（總膽管）</b></mark><br>
+              因為膽道<b>不是血管</b>，與動脈系統不相通，經動脈打入的碘油不會跑到膽道裡去
+            </td>
+          </tr>
+        </tbody>
+      </table></div>
+    </div>
+
+    <div class="box key">
+      <div class="bt"><span class="badge">解題法</span>112-67 的問法是「除了」</div>
+      <p>題目問「碘油緻密物質保留在哪裡，<b>除了</b>」＝ 找出<b>不會有碘油的那一個</b>。</p>
+      <p>右肝動脈、右肝實質是碘油必然沉積之處；右門靜脈也可能因動脈-門脈分流而顯影。<mark>唯獨總膽管屬於膽汁引流系統、與血流不相通</mark>，因此答案是 <b>(D) common bile duct</b>。</p>
+    </div>
+
+    <!-- QUIZ 112-67 -->
+    <div class="quiz">
+      <div class="quiz-top"><span class="lab">考古題</span><span class="yr">112 學年度 · 第 67 題</span></div>
+      <div class="quiz-body">
+        <p class="stem">According to the right (mark as 1) pre and left (label 2) post interventional radiology treatment images, where do you think the embolization lipiodol dense material retained, <b>except for</b>?<br><span style="color:var(--text-3);font-size:14.5px">（根據治療前後影像，您認為栓塞碘油緻密物質保留在哪裡，除了：）</span><span class="noimg">圖略</span></p>
+        <ul class="opts">
+          <li>(A) Right portal vein（右門靜脈）</li>
+          <li>(B) Right hepatic artery（右肝動脈）</li>
+          <li>(C) Right hepatic cellular parenchyma（右肝實質）</li>
+          <li>(D) Common bile duct（膽道總管）</li>
+        </ul>
+                <details class="rev">
+          <summary class="toggle"></summary>
+          <div class="reveal">
+          <div class="ans">答案：(D)</div>
+          <p>碘油經肝動脈注入，會滯留在<b>肝動脈、腫瘤與肝實質</b>，也可能經動脈-門脈分流進入門靜脈分支。但<b>膽道不是血管系統</b>，不會有碘油沉積。</p>
+          <p><a class="jump" href="#q112-67">看文末完整詳解 ↓</a></p>
+        </div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 06 ============ -->
+  <section id="s6">
+    <div class="sec-head"><span class="sec-num">六</span><h2>影像導引切片：路徑規劃</h2></div>
+    <p class="tagline">本節考點：<a class="qtag" href="#q113-69">113-69</a></p>
+
+    <p>影像導引切片的核心技術不在「刺得準」，而在<strong>「規劃一條安全的路徑」</strong>。針要從皮膚走到病灶，中間經過什麼，決定了會不會出併發症。</p>
+
+    <div class="box exam">
+      <div class="bt"><span class="badge">必背</span>切片必須避開的構造與後果</div>
+      <div class="tw" style="margin:10px 0 0"><table>
+        <thead><tr><th>要避開</th><th>刺到會怎樣</th></tr></thead>
+        <tbody>
+          <tr><td><b>血管 Vessels</b><br><span style="font-size:13px;color:var(--text-3)">大血管、肝動脈、門靜脈、肋間動脈</span></td><td><mark>出血、假性動脈瘤、動靜脈廔管</mark>。切片最常見也最致命的併發症。</td></tr>
+          <tr><td><b>膽囊 Gallbladder</b><br><span style="font-size:13px;color:var(--text-3)">與擴張的膽管</span></td><td><mark>膽汁滲漏 → 膽汁性腹膜炎</mark>。膽汁具強烈化學刺激性。</td></tr>
+          <tr><td><b>胰臟 Pancreas</b></td><td><mark>胰液外漏 → 急性胰臟炎、胰廔管</mark>。胰酶會自我消化周邊組織。</td></tr>
+          <tr><td>腸道 Bowel</td><td>穿孔、腹膜炎、腫瘤細胞散布</td></tr>
+          <tr><td>肋膜腔／肺</td><td>氣胸、血胸</td></tr>
+        </tbody>
+      </table></div>
+    </div>
+
+    <h4>路徑規劃的其他原則</h4>
+    <ul>
+      <li><strong>選最短、最直的路徑</strong>，但以「安全」優先於「最短」。</li>
+      <li>肝腫瘤切片盡量<mark>穿過一段正常肝實質</mark>再進入病灶 —— 正常肝組織可以壓迫止血，也減少腫瘤沿針道播種（tract seeding）。</li>
+      <li>術前確認<strong>凝血功能與血小板</strong>；抗凝血劑需停用。</li>
+      <li>從<strong>肋膜腔最低點以下</strong>進針，避免氣胸。</li>
+    </ul>
+
+    <!-- QUIZ 113-69 -->
+    <div class="quiz">
+      <div class="quiz-top"><span class="lab">考古題</span><span class="yr">113 學年度 · 第 69 題</span></div>
+      <div class="quiz-body">
+        <p class="stem">在做影像導引切片時，需要避開哪些組織或器官？</p>
+        <ul class="opts">
+          <li>(A) 血管 Vessels</li>
+          <li>(B) 膽囊 Gallbladder</li>
+          <li>(C) 胰臟 Pancreas</li>
+          <li>(D) 以上構造均須避開 All of the above should be avoided.</li>
+        </ul>
+                <details class="rev">
+          <summary class="toggle"></summary>
+          <div class="reveal">
+          <div class="ans">答案：(D)</div>
+          <p>血管 → 出血；膽囊 → 膽汁性腹膜炎；胰臟 → 胰臟炎與胰廔管。三者都會造成嚴重併發症，路徑規劃時全部要避開。</p>
+          <p><a class="jump" href="#q113-69">看文末完整詳解 ↓</a></p>
+        </div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 07 ============ -->
+  <section id="s7">
+    <div class="sec-head"><span class="sec-num">七</span><h2>一分鐘總複習</h2></div>
+    <div class="box key">
+      <div class="bt"><span class="badge">考前 60 秒</span>把這八句唸完</div>
+      <ol>
+        <li>膽道路徑：<b>左右肝管 → 總肝管 →（膽囊管匯入）→ 總膽管 → 十二指腸</b>。<b>只有膽道會通到十二指腸</b>。</li>
+        <li>影像上看到管道，先問「從哪來、往哪去」，比記形狀可靠。</li>
+        <li>肝臟雙重血流：<b>動脈 25%／門靜脈 75%</b>；<b>肝腫瘤幾乎全靠肝動脈</b>，這就是 TACE 的原理。</li>
+        <li>肝靜脈往<b>下腔靜脈</b>跑；門靜脈從<b>肝門</b>進來。</li>
+        <li><b>DWI 亮 + ADC 暗 = 擴散受限</b>（腫瘤、膿瘍、梗塞）；兩個都亮是 T2 穿透效應的假陽性。</li>
+        <li>金屬支架沿肝臟下緣順膽道走向 → <b>肝外膽道</b>；ERCP 是第一線，PTCD 是經皮路徑。</li>
+        <li>TACE 的碘油會在<b>肝動脈、腫瘤與肝實質</b>，可經分流進門靜脈，<b>但絕不會在膽道</b>。</li>
+        <li>影像導引切片要避開<b>血管（出血）、膽囊（膽汁性腹膜炎）、胰臟（胰臟炎）</b>。</li>
+      </ol>
+    </div>
+    <div class="box trap">
+      <div class="bt"><span class="badge">重要提醒</span>務必取得老師的課堂補充投影片</div>
+      <p>本單元五題中至少三題出自<mark>老師上課口述補充的圖片</mark>（111-46、112-66、113-68 的出處都註明為口述或補充講義）。上面的判讀邏輯能幫你在沒看過圖時仍有機會推理，但<b>對著原圖記位置的效率遠高於推理</b>。</p>
+    </div>
+  </section>
+
+  <!-- ============ EXAM ============ -->
+  <section id="exam">
+    <div class="sec-head"><span class="sec-num">八</span><h2>考古題全收錄</h2></div>
+    <div class="exam-head">
+      <h2>依年度完整羅列</h2>
+      <p>BM113 → BM112 → BM111，含完整答案、詳解與出處。本單元全為影像判讀題，原圖請參照老師的補充投影片。</p>
+      <button class="btn" id="allBtn">全部展開答案</button>
+    </div>
+
+    <div class="yrhead">113 學年度（BM113）· 2 題</div>
+
+    <div class="q" id="q113-68">
+      <span class="q-no">113-68</span><span class="q-topic">膽道解剖判讀</span>
+      <p class="q-stem">圖中箭頭所指的構造是什麼管道？<span class="noimg">圖略</span></p>
+      <ul class="opts">
+        <li>(A) 肝動脈 Hepatic artery</li>
+        <li>(B) 肝門靜脈 Hepatic portal vein</li>
+        <li>(C) 肝管 Hepatic duct</li>
+        <li>(D) 肝靜脈 Hepatic vein</li>
+      </ul>
+            <details class="rev">
+        <summary class="toggle"></summary>
+        <div class="reveal">
+        <div class="ans">答案：(C)</div>
+        <p>圖中的管道<b>深入肝內</b>，並且有一分支流入類似消化道的管道（十二指腸）。</p>
+        <p>三個血管選項可逐一排除：肝動脈與肝門靜脈是把血「送進」肝臟的血管、肝靜脈是把血「送出」肝臟匯入下腔靜脈的血管，<b>三者都不會與消化道相通</b>。</p>
+        <p>唯一會匯入十二指腸的是膽道系統：肝管 → 總肝管 →（膽囊管匯入）→ 總膽管 → 與胰管會合於壺腹 → 十二指腸。因此答案為肝管。</p>
+        <div class="src">出處：石明誠 消化系統介入性放射線學（上課口述）</div>
+      </div>
+      </details>
+    </div>
+
+    <div class="q" id="q113-69">
+      <span class="q-no">113-69</span><span class="q-topic">影像導引切片</span>
+      <p class="q-stem">在做影像導引切片時，需要避開哪些組織或器官？</p>
+      <ul class="opts">
+        <li>(A) 血管 Vessels</li>
+        <li>(B) 膽囊 Gallbladder</li>
+        <li>(C) 胰臟 Pancreas</li>
+        <li>(D) 以上構造均須避開 All of the above should be avoided.</li>
+      </ul>
+            <details class="rev">
+        <summary class="toggle"></summary>
+        <div class="reveal">
+        <div class="ans">答案：(D)</div>
+        <p>影像導引切片（超音波或 CT 導引）在規劃穿刺路徑時，必須避開所有可能造成嚴重併發症的構造：</p>
+        <p><b>血管</b> → 出血、假性動脈瘤（切片最常見也最危險的併發症）<br>
+        <b>膽囊與擴張膽管</b> → 膽汁滲漏造成膽汁性腹膜炎<br>
+        <b>胰臟</b> → 胰液外漏造成急性胰臟炎與胰廔管</p>
+        <p>此外還應避開腸道（穿孔、腹膜炎）與肋膜腔（氣胸）。故答案為以上皆須避開。</p>
+        <div class="src">出處：石明誠 消化系統介入性放射線學（上課口述）</div>
+      </div>
+      </details>
+    </div>
+
+    <div class="yrhead">112 學年度（BM112）· 2 題</div>
+
+    <div class="q" id="q112-66">
+      <span class="q-no">112-66</span><span class="q-topic">膽道支架</span>
+      <p class="q-stem">Where do you think the metallic stent being mainly placed?（您認為金屬支架主要放置在哪裡？）<span class="noimg">圖略</span></p>
+      <ul class="opts">
+        <li>(A) Common hepatic artery（肝總動脈）</li>
+        <li>(B) Main portal vein（主門靜脈）</li>
+        <li>(C) Extrahepatic biliary tract（肝外膽道）</li>
+        <li>(D) Duodenum bowel（十二指腸）</li>
+      </ul>
+            <details class="rev">
+        <summary class="toggle"></summary>
+        <div class="reveal">
+        <div class="ans">答案：(C)</div>
+        <p>影像中金屬支架<b>沿著肝臟下緣往上、順著膽道方向延伸</b>，這個走向符合肝外膽道（總肝管與總膽管）的解剖路徑。</p>
+        <p>臨床背景：惡性膽道阻塞（胰頭癌、膽管癌）造成阻塞性黃疸且腫瘤無法切除時，以金屬支架撐開膽道恢復引流，是介入性放射學與內視鏡最常見的處置之一。可經 ERCP 內視鏡途徑，或經皮穿肝（PTCD／PTBD）途徑置放。</p>
+        <div class="src">出處：石明誠 消化系統介入性放射線學 老師補充 ppt p.1</div>
+      </div>
+      </details>
+    </div>
+
+    <div class="q" id="q112-67">
+      <span class="q-no">112-67</span><span class="q-topic">TACE 碘油沉積</span>
+      <p class="q-stem">According to the right (mark as 1) pre and left (label 2) post interventional radiology treatment images, where do you think the embolization lipiodol dense material retained, except for?（根據介入治療前後影像，您認為栓塞碘油緻密物質保留在哪裡，除了：）<span class="noimg">圖略</span></p>
+      <ul class="opts">
+        <li>(A) Right portal vein（右門靜脈）</li>
+        <li>(B) Right hepatic artery（右肝動脈）</li>
+        <li>(C) Right hepatic cellular parenchyma（右肝實質）</li>
+        <li>(D) Common bile duct（膽道總管）</li>
+      </ul>
+            <details class="rev">
+        <summary class="toggle"></summary>
+        <div class="reveal">
+        <div class="ans">答案：(D)</div>
+        <p>題目問的是「碘油<b>不會</b>保留在哪裡」。</p>
+        <p><b>碘油會出現的地方：</b>TACE 是經<b>肝動脈</b>注入化療藥與碘油，因此碘油必然沉積於右肝動脈及其分支 (B)、以及腫瘤與周邊肝實質 (C)。至於右門靜脈 (A)，當腫瘤存在<b>動脈-門脈分流（arterio-portal shunt）</b>時，碘油可經分流進入門靜脈分支而顯影。</p>
+        <p><b>碘油不會出現的地方：</b><b>總膽管屬於膽汁引流系統，不是血管</b>，與動脈系統不相通，因此經動脈注入的碘油不會沉積在膽道內。</p>
+        <p>另可由血流方向輔助判讀：門靜脈血流本應為向心方向，若影像中所見方向相反，即提示為動脈系統或分流；比對前後兩張影像，治療後原本顯影的部分結構消失或改變，即為栓塞後的變化。</p>
+        <div class="src">出處：石明誠 消化系統介入性放射學 補充講義 p.3</div>
+      </div>
+      </details>
+    </div>
+
+    <div class="yrhead">111 學年度（BM111）· 1 題</div>
+
+    <div class="q" id="q111-46">
+      <span class="q-no">111-46</span><span class="q-topic">MRI DWI／ADC 判讀</span>
+      <p class="q-stem">What do you assume the most bright up retroperitoneum lesion under DWI and dark in ADC images arising from (arrow)？（您認為 DWI 下變亮的病灶和 ADC 圖像中的暗病變代表什麼？）<span class="noimg">圖略</span></p>
+      <ul class="opts">
+        <li>(A) Common bile（膽總管）</li>
+        <li>(B) Pancreatic tail（胰尾）</li>
+        <li>(C) Duodenum（十二指腸）</li>
+        <li>(D) Gallbladder（膽囊）</li>
+      </ul>
+            <details class="rev">
+        <summary class="toggle"></summary>
+        <div class="reveal">
+        <div class="ans">答案：(A)</div>
+        <p><b>訊號判讀：</b>DWI 呈高訊號（亮）而 ADC 呈低訊號（暗），代表<b>擴散受限（restricted diffusion）</b>，常見於惡性腫瘤、膿瘍、急性梗塞等細胞排列緻密或液體黏稠的病灶。若 DWI 與 ADC 都亮，則屬 T2 穿透效應的假陽性。</p>
+        <p><b>解剖判讀：</b>圖中橫向亮起的帶狀構造是胰臟；總膽管的遠端會穿過胰頭，並與胰管一起匯入十二指腸。箭頭所指的即為此處的<b>總膽管</b>。</p>
+        <p><b>備註：</b>老師上課補充的圖片曾直接出現在考題中，本題高度依賴課堂補充投影片，建議務必取得原圖對照複習。</p>
+        <div class="src">出處：石明誠 消化系統介入性放射線學（上課口述補充）</div>
+      </div>
+      </details>
+    </div>
+
+  </section>
+
+  <footer>
+    <p><b>第 4 科完成｜消化系統介入性放射學</b>　共 5 題（BM111 1 題、BM112 2 題、BM113 2 題）。本單元全為影像判讀，建議搭配老師課堂補充圖片一同複習。</p>
+    <p>已完成：① 腹部常見症狀　② 腸胃道蠕動異常疾病　③ 急性闌尾炎、大腸傷害及腸系膜疾病　④ 消化系統介入性放射學<br>
+    後續科目：⑤ 食道疾病</p>
+    <p style="margin-top:14px;font-family:var(--mono);font-size:12px;color:var(--teal);border:1px solid var(--line-2);border-radius:6px;padding:6px 10px;display:inline-block">版面 v2 · 表格直式卡片</p>
+  </footer>
+
+  </main>
+</div>
+</div>
+
+<script>
+
+  // 手機版：把表頭文字寫進每個儲存格，直式排列時才知道每格代表什麼
+  (function(){
+    document.querySelectorAll('.tw table').forEach(function(t){
+      var ths = t.querySelectorAll('thead th');
+      if(!ths.length) return;
+      var labels = Array.prototype.map.call(ths, function(th){
+        return th.textContent.replace(/\u3000/g,'').trim();
+      });
+      t.querySelectorAll('tbody tr').forEach(function(tr){
+        Array.prototype.forEach.call(tr.children, function(td, i){
+          if(labels[i]) td.setAttribute('data-label', labels[i]);
+        });
+      });
+    });
+  })();
+
+  // 手機版：目錄預設收合
+  (function(){
+    var toc = document.getElementById('tocBox');
+    if(toc && window.matchMedia('(max-width:700px)').matches){
+      toc.removeAttribute('open');
+    }
+  })();
+
+  var allBtn = document.getElementById('allBtn');
+  if(allBtn){
+    var expanded = false;
+    allBtn.addEventListener('click', function(){
+      expanded = !expanded;
+      document.querySelectorAll('.q details.rev').forEach(function(d){
+        if(expanded){ d.setAttribute('open',''); } else { d.removeAttribute('open'); }
+      });
+      allBtn.textContent = expanded ? '全部收合答案' : '全部展開答案';
+    });
+  }
+</script>
+</body>
+</html>

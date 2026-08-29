@@ -1,0 +1,1261 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>腹部常見症狀（含急性腹痛）｜裸讀學習筆記</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&family=Noto+Serif+TC:wght@500;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0F1B18;
+    --bg-2:#152420;
+    --bg-3:#1B2E29;
+    --line:#26403A;
+    --line-2:#31534B;
+    --text:#E9F1EE;
+    --text-2:#A8C2BA;
+    --text-3:#7A968D;
+    --teal:#7FC9BE;
+    --teal-dim:#4E9A90;
+    --gold:#C9A961;
+    --rose:#E58B85;
+    --serif:"Noto Serif TC","Songti TC",serif;
+    --sans:"Noto Sans TC","PingFang TC","Microsoft JhengHei",sans-serif;
+    --mono:"JetBrains Mono",ui-monospace,Menlo,monospace;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth;scroll-padding-top:24px;overflow-x:hidden}
+  body{
+    margin:0;background:var(--bg);color:var(--text);
+    font-family:var(--sans);font-size:16.5px;line-height:1.9;font-weight:300;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  .wrap{max-width:1150px;margin:0 auto;padding:0 22px}
+
+  /* ---------- Hero ---------- */
+  header.hero{padding:66px 0 52px;border-bottom:1px solid var(--line)}
+  .backlink{display:inline-block;font-family:var(--mono);font-size:12px;
+    color:var(--text-3);text-decoration:none;margin-bottom:22px;
+    border:1px solid var(--line);border-radius:6px;padding:5px 12px;transition:.15s}
+  .backlink:hover{color:var(--teal);border-color:var(--teal-dim)}
+  .eyebrow{display:flex;align-items:center;gap:16px;margin-bottom:26px;
+    font-family:var(--serif);font-size:15px;letter-spacing:.34em;color:var(--teal)}
+  .eyebrow .rule{width:56px;height:1px;background:var(--gold)}
+  .eyebrow .dot{color:var(--gold)}
+  header.hero h1{
+    font-family:var(--serif);font-weight:700;font-size:clamp(38px,7vw,74px);
+    line-height:1.15;margin:0 0 22px;letter-spacing:.02em;
+  }
+  header.hero h1 em{font-style:normal;color:var(--teal)}
+  header.hero p.sub{margin:0;color:var(--text-2);max-width:62ch;font-size:17px;line-height:1.85}
+  .intro-card{
+    border:1px solid var(--line);border-radius:16px;padding:26px 30px;margin-top:34px;background:var(--bg-2);
+  }
+  .intro-card p{margin:0 0 22px;color:var(--text-2)}
+  .intro-card b{color:var(--teal);font-weight:500}
+  .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+  .stat .n{font-family:var(--serif);font-size:38px;color:var(--gold);line-height:1}
+  .stat .l{font-size:12.5px;color:var(--text-3);letter-spacing:.08em;margin-top:6px}
+
+  /* ---------- Layout ---------- */
+  .cols{display:grid;grid-template-columns:220px 1fr;gap:52px;padding:46px 0 90px;align-items:start}
+  nav.toc{position:sticky;top:26px}
+  nav.toc .t{font-family:var(--mono);font-size:11px;letter-spacing:.2em;color:var(--text-3);margin-bottom:14px}
+  nav.toc a{display:block;padding:7px 14px;border-left:1px solid var(--line);
+    color:var(--text-2);text-decoration:none;font-size:14px;transition:.15s}
+  nav.toc a:hover{border-left-color:var(--teal);color:var(--teal);background:var(--bg-2)}
+  nav.toc a.exam{color:var(--gold)}
+  nav.toc summary{display:none}
+
+  /* ---------- Sections ---------- */
+  section{margin-bottom:64px;scroll-margin-top:24px}
+  .sec-head{display:flex;align-items:baseline;gap:16px;border-bottom:1px solid var(--line-2);padding-bottom:12px;margin-bottom:26px}
+  .sec-num{font-family:var(--serif);font-size:30px;color:var(--gold);line-height:1}
+  .sec-head h2{font-family:var(--serif);font-size:clamp(23px,3.4vw,31px);margin:0;font-weight:700;letter-spacing:.02em}
+  h3{font-family:var(--serif);font-size:21px;margin:38px 0 12px;font-weight:500;color:var(--text)}
+  h4{font-size:16.5px;margin:24px 0 8px;color:var(--teal);font-weight:500}
+  p{margin:0 0 15px}
+  ul,ol{margin:0 0 17px;padding-left:22px}
+  li{margin-bottom:8px}
+  li::marker{color:var(--teal-dim)}
+  strong,b{font-weight:500;color:#FFF}
+  u{text-decoration-color:var(--teal-dim);text-underline-offset:3px}
+  code{font-family:var(--mono);font-size:.88em;background:var(--bg-3);padding:1px 6px;border-radius:4px;color:var(--teal)}
+
+  /* ---------- Signature: 螢光 + 年度標籤 ---------- */
+  mark{background:rgba(201,169,97,.22);box-shadow:inset 0 -2px 0 rgba(201,169,97,.6);
+    color:#FBF3E2;padding:1px 3px;border-radius:2px}
+  a.qtag{display:inline-block;font-family:var(--mono);font-size:11px;font-weight:600;
+    border:1px solid var(--gold);color:var(--gold);padding:1px 7px;border-radius:4px;
+    text-decoration:none;margin:0 3px;vertical-align:2px;white-space:nowrap;transition:.15s}
+  a.qtag:hover{background:var(--gold);color:var(--bg)}
+  .tagline{margin:-8px 0 18px;font-size:13.5px;color:var(--text-3)}
+
+  /* ---------- Boxes ---------- */
+  .box{border-radius:13px;padding:20px 24px;margin:22px 0;border:1px solid var(--line);background:var(--bg-2)}
+  .box .bt{font-weight:500;font-size:14.5px;margin-bottom:10px;display:flex;align-items:center;gap:9px;color:#FFF}
+  .box p:last-child,.box ul:last-child,.box ol:last-child{margin-bottom:0}
+  .badge{font-family:var(--mono);font-size:10px;padding:2px 8px;border-radius:3px;letter-spacing:.06em;
+    border:1px solid currentColor;font-weight:600}
+  .box.exam{border-color:rgba(201,169,97,.45);background:rgba(201,169,97,.07)}
+  .box.exam .badge{color:var(--gold)}
+  .box.trap{border-color:rgba(229,139,133,.45);background:rgba(229,139,133,.07)}
+  .box.trap .badge{color:var(--rose)}
+  .box.key{border-color:rgba(127,201,190,.4);background:rgba(127,201,190,.07)}
+  .box.key .badge{color:var(--teal)}
+
+  /* ---------- Tables ---------- */
+  .tw{overflow-x:auto;margin:22px 0;border:1px solid var(--line);border-radius:13px}
+  table{border-collapse:collapse;width:100%;min-width:540px;font-size:14.8px}
+  th,td{padding:12px 16px;text-align:left;border-bottom:1px solid var(--line);vertical-align:top}
+  thead th{background:var(--bg-3);color:var(--teal);font-weight:500;font-size:13.5px;letter-spacing:.04em}
+  tbody tr:last-child td{border-bottom:none}
+  tbody tr:nth-child(even){background:rgba(255,255,255,.018)}
+  td.mono,th.mono{font-family:var(--mono);font-size:13px}
+
+  /* ---------- 九分區 ---------- */
+  .grid9{display:grid;grid-template-columns:repeat(3,1fr);gap:9px;margin:24px 0}
+  .cell{background:var(--bg-2);border:1px solid var(--line);border-radius:11px;padding:14px 15px;font-size:13.5px;line-height:1.7}
+  .cell b{display:block;font-family:var(--mono);font-size:11px;color:var(--teal);margin-bottom:6px;letter-spacing:.08em;font-weight:600}
+
+  /* ---------- 隨堂小考（內文嵌入） ---------- */
+  .quiz{border:1px solid var(--line-2);border-radius:14px;margin:26px 0;overflow:hidden;background:var(--bg-2)}
+  .quiz-top{display:flex;align-items:center;gap:10px;padding:12px 20px;background:var(--bg-3);border-bottom:1px solid var(--line)}
+  .quiz-top .lab{font-family:var(--serif);font-size:14px;letter-spacing:.16em;color:var(--gold)}
+  .quiz-top .yr{font-family:var(--mono);font-size:11.5px;color:var(--text-2);border:1px solid var(--line-2);padding:2px 8px;border-radius:4px}
+  .quiz-body{padding:20px 22px}
+  .quiz-body .stem{font-size:15.5px;line-height:1.85;margin:0 0 14px;color:var(--text)}
+  .opts{list-style:none;padding:0;margin:0 0 14px}
+  .opts li{padding:8px 12px;font-size:15px;border:1px solid var(--line);border-radius:8px;margin-bottom:7px;color:var(--text-2)}
+  .toggle{background:none;border:1px solid var(--teal-dim);color:var(--teal);font-family:var(--sans);
+    font-size:13px;padding:7px 16px;border-radius:7px;cursor:pointer;transition:.15s;font-weight:400}
+  .toggle:hover{background:var(--teal);color:var(--bg)}
+
+  /* ---------- 答案展開：使用原生 details，不依賴 JavaScript ---------- */
+  details.rev{margin:0}
+  summary.toggle{
+    display:inline-block;list-style:none;cursor:pointer;
+    background:none;border:1px solid var(--teal-dim);color:var(--teal);
+    font-family:var(--sans);font-size:13px;padding:7px 16px;border-radius:7px;
+    font-weight:400;transition:.15s;-webkit-tap-highlight-color:transparent;
+  }
+  summary.toggle::-webkit-details-marker{display:none}
+  summary.toggle::marker{content:""}
+  summary.toggle:hover{background:var(--teal);color:var(--bg)}
+  summary.toggle::before{content:"顯示答案"}
+  .q summary.toggle::before{content:"顯示答案與詳解"}
+  details.rev[open] summary.toggle::before{content:"收合答案"}
+  details.rev .reveal{margin-top:14px}
+  .reveal{border-top:1px dashed var(--line-2);margin-top:14px;padding-top:14px}
+  .reveal[hidden]{display:none}
+  .ans{font-family:var(--serif);font-weight:700;color:var(--gold);font-size:17px;margin-bottom:10px}
+  .reveal p{margin:0 0 9px;font-size:14.8px;color:var(--text-2)}
+  .reveal p b{color:#FFF}
+  .src{font-size:12px;color:var(--text-3);font-family:var(--mono);margin-top:12px}
+  .jump{font-size:12.5px;color:var(--teal-dim);text-decoration:none;border-bottom:1px solid var(--line-2)}
+  .jump:hover{color:var(--teal)}
+
+  /* ---------- Exam bank ---------- */
+  .exam-head{border:1px solid var(--line-2);border-radius:16px;padding:30px;margin-bottom:28px;background:var(--bg-2)}
+  .exam-head h2{font-family:var(--serif);margin:0 0 10px;font-size:29px}
+  .exam-head p{color:var(--text-2);margin:0;font-size:15px}
+  .btn{font-family:var(--sans);font-size:13.5px;cursor:pointer;background:var(--teal);color:var(--bg);
+    border:none;padding:10px 20px;border-radius:8px;margin-top:18px;font-weight:500}
+  .btn:hover{background:#9BDBD1}
+  .yrhead{font-family:var(--serif);font-size:24px;font-weight:700;margin:40px 0 18px;
+    padding-left:16px;border-left:3px solid var(--gold);color:var(--gold)}
+  .q{background:var(--bg-2);border:1px solid var(--line);border-radius:13px;padding:22px 24px;margin-bottom:16px;scroll-margin-top:24px}
+  .q-no{font-family:var(--mono);font-size:11.5px;color:var(--gold);border:1px solid var(--gold);padding:2px 9px;border-radius:5px}
+  .q-topic{font-size:12.5px;color:var(--text-3);margin-left:10px}
+  .q-stem{margin:14px 0 12px;font-size:15.5px;line-height:1.85}
+
+  footer{border-top:1px solid var(--line);padding:30px 0 60px;color:var(--text-3);font-size:13.5px}
+  footer b{color:var(--text-2)}
+
+  @media (max-width:900px){
+    .cols{grid-template-columns:1fr;gap:0;padding-top:28px}
+    nav.toc{position:static;margin-bottom:36px;border:1px solid var(--line);border-radius:12px;padding:16px;background:var(--bg-2)}
+    nav.toc a{border-left:none;padding:6px 4px}
+    .grid9{grid-template-columns:1fr}
+    .stats{grid-template-columns:repeat(2,1fr);gap:20px}
+  }
+  /* ---------- 手機版：表格改為直式卡片，消除左右滑動 ---------- */
+
+  /* ---------- 表格一律直式卡片呈現（不依賴螢幕寬度判斷，因為部分 App 內建瀏覽器
+     不會依照真實裝置寬度計算版面，用 @media 寬度斷點會失效）---------- */
+  .tw{border:none;background:none;overflow:visible;border-radius:0;margin:18px 0}
+  .tw table{min-width:0;width:100%;border-collapse:separate;border-spacing:0;font-size:15px}
+  .tw thead{display:none}
+  .tw tbody tr{
+    display:block;border:1px solid var(--line);border-radius:12px;
+    background:var(--bg-2);margin-bottom:12px;padding:4px 0;
+  }
+  .tw tbody tr:nth-child(even){background:var(--bg-2)}
+  .tw tbody tr:last-child{margin-bottom:0}
+  .tw tbody td{display:block;border:none;padding:10px 16px}
+  .tw tbody td+td{border-top:1px dashed var(--line)}
+  .tw tbody td[data-label]::before{
+    content:attr(data-label);display:block;
+    font-family:var(--mono);font-size:11px;letter-spacing:.08em;
+    color:var(--teal);margin-bottom:5px;
+  }
+  .tw tbody td:first-child{font-size:16.5px}
+  .tw tbody td.mono,.tw tbody td:first-child{color:var(--text)}
+
+  @media (max-width:700px){
+    body{font-size:16px;line-height:1.85}
+    .wrap{padding:0 16px}
+    header.hero{padding:40px 0 34px}
+    .cols{padding:28px 0 60px}
+    section{margin-bottom:46px}
+
+    /* 目錄改為可收合，不佔滿整個第一屏 */
+    nav.toc{padding:0;overflow:hidden}
+    nav.toc .t{display:none}
+    nav.toc details{margin:0}
+    nav.toc summary{
+      display:block;list-style:none;cursor:pointer;padding:14px 16px;
+      font-family:var(--mono);font-size:12px;letter-spacing:.16em;color:var(--teal);
+    }
+    nav.toc summary::-webkit-details-marker{display:none}
+    nav.toc summary::after{content:" ▾";color:var(--text-3)}
+    nav.toc details[open] summary::after{content:" ▴"}
+    nav.toc .toc-links{padding:0 10px 12px}
+
+
+    /* 其他窄螢幕微調 */
+    .box{padding:16px 18px;border-radius:11px}
+    p,li,td,.stem,.reveal p,.opts li,.q-stem{overflow-wrap:anywhere;word-break:break-word}
+    .quiz-body{padding:16px 16px}
+    .opts li{padding:9px 12px;font-size:15px}
+    .q{padding:18px 16px}
+    .sec-head{gap:12px}
+    ul,ol{padding-left:20px}
+    .toggle{width:100%;padding:11px 16px;font-size:14px}
+    summary.toggle{width:100%;text-align:center;padding:11px 16px;font-size:14px}
+    .btn{width:100%;padding:12px 16px}
+  }
+  @media print{
+    nav.toc,.btn,.toggle{display:none}
+    .reveal{display:block!important}
+    body{background:#fff;color:#000;font-size:11pt}
+    .tw thead{display:table-header-group!important}
+  }
+  @media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <a class="backlink" href="index.html">← 返回 Block 7 目錄</a>
+    <div class="eyebrow"><span class="rule"></span>裸讀學習筆記<span class="dot">·</span>由淺入深</div>
+    <h1>腹部常見症狀 <em>(I)</em></h1>
+    <p class="sub">含急性腹痛 —— 從「痛怎麼傳到大腦」開始，推到床邊怎麼問、怎麼摸、怎麼開單。授課教師：王俊偉。</p>
+
+    <div class="intro-card">
+      <p>這份筆記把 <b>BM113、BM112、BM111</b> 三個學年度考古題中，所有跟「腹部常見症狀（含急性腹痛）」相關的題目，<b>嵌入到對應的觀念旁邊即時測驗</b>，文末再依年度完整羅列一次。</p>
+      <div class="stats">
+        <div class="stat"><div class="n">14</div><div class="l">總題數</div></div>
+        <div class="stat"><div class="n">6</div><div class="l">BM113</div></div>
+        <div class="stat"><div class="n">4</div><div class="l">BM112</div></div>
+        <div class="stat"><div class="n">4</div><div class="l">BM111</div></div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+<div class="cols">
+
+  <nav class="toc">
+    <div class="t">CONTENTS</div>
+    <details id="tocBox" open>
+      <summary>目錄 CONTENTS</summary>
+      <div class="toc-links">
+      <a href="#s1">一　腹痛的三種語言</a>
+      <a href="#s2">二　急性 vs 慢性</a>
+      <a href="#s3">三　評估四步驟</a>
+      <a href="#s4">四　理學檢查徵象</a>
+      <a href="#s5">五　誰最常見？</a>
+      <a href="#s6">六　依部位想診斷</a>
+      <a href="#s7">七　急性腹痛各論</a>
+      <a href="#s8">八　慢性腹痛</a>
+      <a href="#s9">九　一分鐘總複習</a>
+      <a href="#exam" class="exam">十　考古題全收錄</a>
+      </div>
+    </details>
+  </nav>
+
+  <main>
+
+  <!-- ============ 01 ============ -->
+  <section id="s1">
+    <div class="sec-head"><span class="sec-num">一</span><h2>腹痛的三種語言</h2></div>
+    <p class="tagline">本節考點：<a class="qtag" href="#q111-27">111-27</a><a class="qtag" href="#q112-33">112-33</a><a class="qtag" href="#q111-28">111-28</a></p>
+
+    <p>這一段是整堂課的地基。腹痛之所以難，是因為<strong>「痛的地方」不一定是「壞掉的地方」</strong>。要理解為什麼，得先知道腹部的痛有三種完全不同的傳導路徑。</p>
+
+    <h3>① 臟器性疼痛 Visceral pain —— 模糊的痛</h3>
+    <p>白話講：內臟本身沒有裝「GPS」。內臟的痛覺由<strong>自主神經的 C fibers</strong> 傳導，這種神經又細又慢、沒有髓鞘，訊號送進脊髓時是<strong>雙側、多節段</strong>的。所以大腦收到的訊息大概只有「肚子中間某處怪怪的」。</p>
+    <ul>
+      <li><strong>刺激來源：</strong>管腔擴張（distension）、平滑肌強力收縮、缺血、發炎化學物質 —— 注意，<u>切割內臟本身是不會痛的</u>。</li>
+      <li><strong>性質：</strong>悶痛、絞痛、鈍痛（dull／cramping），時強時弱。</li>
+      <li><strong>定位：</strong><mark>模糊、講不清楚，而且落在身體中線</mark>。</li>
+      <li><strong>伴隨：</strong>因為走自主神經，常合併噁心、嘔吐、冒冷汗、臉色蒼白、心跳快。</li>
+      <li><strong>病人的動作：</strong>坐立難安、翻來覆去（想找一個比較不痛的姿勢）。</li>
+    </ul>
+
+    <h4>中線的哪裡？看胚胎來源</h4>
+    <div class="tw"><table>
+      <thead><tr><th>胚胎腸段</th><th>器官</th><th>痛的位置</th><th class="mono">脊髓節段</th></tr></thead>
+      <tbody>
+        <tr><td><b>前腸 Foregut</b></td><td>食道下段、胃、十二指腸、肝膽、胰</td><td>上腹部 epigastric</td><td class="mono">T5–T9</td></tr>
+        <tr><td><b>中腸 Midgut</b></td><td>小腸、闌尾、升結腸、近端橫結腸</td><td>肚臍周圍 periumbilical</td><td class="mono">T8–T11</td></tr>
+        <tr><td><b>後腸 Hindgut</b></td><td>遠端橫結腸、降結腸、乙狀結腸、直腸</td><td>下腹部 suprapubic</td><td class="mono">T11–L1</td></tr>
+      </tbody>
+    </table></div>
+
+    <h3>② 體壁性疼痛 Somatic-parietal pain —— 精準的痛</h3>
+    <p>當發炎從內臟擴散、開始刺激到<strong>壁層腹膜（parietal peritoneum）</strong>，遊戲規則就變了。壁層腹膜由<strong>體神經</strong>支配，走的是 <strong>A-delta fibers</strong>（有髓鞘、傳導快、分布於皮膚與肌肉），而且是<strong>單側、對應特定皮節</strong>。</p>
+    <ul>
+      <li><strong>性質：</strong><mark>尖銳痛 sharp pain</mark>、刀割樣、持續存在。</li>
+      <li><strong>定位：</strong>病人可以「用一根手指指出來」。</li>
+      <li><strong>誘發：</strong>咳嗽、走路踩到地面震動、車子過減速丘都會更痛。</li>
+      <li><strong>病人的動作：</strong>躺著不敢動、雙膝彎曲（跟臟器痛的翻滾正好相反）。</li>
+      <li><strong>理學檢查：</strong>局部壓痛、反彈痛（rebound）、肌肉僵直（guarding／rigidity）。</li>
+    </ul>
+
+    <h3>③ 轉移性疼痛 Referred pain —— 搞錯地址的痛</h3>
+    <p>定義：<mark>感覺到痛的部位，和真正生病的器官位置不同</mark>。</p>
+    <p><strong>機轉（這句幾乎逐字考）：</strong>來自<u>不同解剖區域</u>的臟器傳入神經元（visceral afferent neurons）與軀體傳入神經元（somatic afferent neurons），會在<u>同一節脊髓</u>匯合到<strong>同一個次級神經元（second-order neuron）</strong>，再把訊號往上送到大腦。大腦分不出訊號原本來自哪一條，就依「平常比較常收到的那一條」去解讀 —— 也就是體表。</p>
+
+    <div class="tw"><table>
+      <thead><tr><th>器官</th><th>轉移痛位置</th><th>為什麼</th></tr></thead>
+      <tbody>
+        <tr><td>膽囊、膽道</td><td>右肩胛下、右肩</td><td class="mono">T5–T9</td></tr>
+        <tr><td>橫膈受刺激（如脾破裂積血）</td><td>同側肩膀（Kehr's sign）</td><td class="mono">phrenic n. C3–C5</td></tr>
+        <tr><td>胰臟</td><td>背部正中、腰部</td><td class="mono">後腹腔 T6–T10</td></tr>
+        <tr><td>輸尿管結石</td><td>腰側 → 鼠蹊、陰囊／大陰唇</td><td class="mono">T11–L1</td></tr>
+        <tr><td>下壁心肌梗塞</td><td>上腹痛、噁心嘔吐</td><td class="mono">易誤診為胃病</td></tr>
+      </tbody>
+    </table></div>
+
+    <!-- QUIZ 111-27 -->
+    <div class="quiz">
+      <div class="quiz-top"><span class="lab">考古題</span><span class="yr">111 學年度 · 第 27 題</span></div>
+      <div class="quiz-body">
+        <p class="stem">下列對於不同類型腹痛的敘述，何者<b>正確</b>？<br>
+          (1) 臟器性疼痛能很清楚地定位疼痛的明確位置。<br>
+          (2) 體壁性疼痛由 A-delta fibers 傳導，A-delta fibers 分布於皮膚和肌肉，屬於<b>鈍性疼痛（dull pain）</b>。<br>
+          (3) 轉移性疼痛指疼痛感受部位和產生疼痛的器官位置不同。<br>
+          (4) 轉移性疼痛的原理是不同解剖區域的臟器傳入神經元和軀體傳入神經元會在同一節脊髓中匯合成次級神經元。</p>
+        <ul class="opts"><li>(A) (1)+(2)　(B) (3)+(4)　(C) (1)+(3)+(4)　(D) (2)+(3)+(4)</li></ul>
+                <details class="rev">
+          <summary class="toggle"></summary>
+          <div class="reveal">
+          <div class="ans">答案：(B)</div>
+          <p>(1) <b>錯</b> —— 臟器痛走 C fibers，定位模糊。(2) <b>錯</b> —— A-delta 有髓鞘、傳導快，是 <b>sharp pain</b> 不是 dull。(3)(4) 正確。</p>
+          <p><a class="jump" href="#q111-27">看文末完整詳解 ↓</a></p>
+        </div>
+        </details>
+      </div>
+    </div>
+
+    <div class="box trap">
+      <div class="bt"><span class="badge">易錯陷阱</span>同一句話，兩年正反各考一次</div>
+      <p>111 學年度寫「A-delta fibers…屬於<u>鈍性疼痛 dull pain</u>」→ <b>錯</b>；112 學年度改成「屬於<u>尖銳性疼痛 sharp pain</u>」→ <b>對</b>。看到 A-delta 就要立刻反射「sharp」。</p>
+    </div>
+
+    <!-- QUIZ 112-33 -->
+    <div class="quiz">
+      <div class="quiz-top"><span class="lab">考古題</span><span class="yr">112 學年度 · 第 33 題</span></div>
+      <div class="quiz-body">
+        <p class="stem">下列對於不同類型腹痛的敘述，何者<b>錯誤</b>？</p>
+        <ul class="opts">
+          <li>(A) 臟器性疼痛發生時能很清楚地定位疼痛的明確位置。</li>
+          <li>(B) 體壁性疼痛由 A-delta fibers 傳導，分布於皮膚和肌肉，屬於尖銳性疼痛。</li>
+          <li>(C) 轉移性疼痛指疼痛感受部位和產生疼痛的器官位置不同。</li>
+          <li>(D) 轉移性疼痛的原理是臟器與軀體傳入神經元在同一節脊髓匯合成次級神經元。</li>
+        </ul>
+                <details class="rev">
+          <summary class="toggle"></summary>
+          <div class="reveal">
+          <div class="ans">答案：(A)</div>
+          <p>臟器性疼痛<b>定位模糊、無法明確指出</b>，可清楚定位的是體壁性疼痛。(B)(C)(D) 皆正確。</p>
+          <p><a class="jump" href="#q112-33">看文末完整詳解 ↓</a></p>
+        </div>
+        </details>
+      </div>
+    </div>
+
+    <div class="box key">
+      <div class="bt"><span class="badge">核心串連</span>用闌尾炎把三種痛串成一條時間軸</div>
+      <ul>
+        <li><b>第 0–8 小時：</b>闌尾管腔阻塞 → 撐大 → <u>臟器痛</u> → 肚臍周圍悶痛、噁心、厭食（中腸 → 肚臍）。</li>
+        <li><b>第 8 小時後：</b>發炎穿透漿膜、刺激右下腹壁層腹膜 → <u>體壁痛</u> → 痛點固定在 McBurney's point，咳嗽會痛。</li>
+        <li><b>順序很重要：</b>闌尾炎是<mark>先痛才吐</mark>；腸胃炎通常是<mark>先吐、先拉才痛</mark>。這一點比任何抽血都準。</li>
+      </ul>
+    </div>
+
+    <!-- QUIZ 111-28 -->
+    <div class="quiz">
+      <div class="quiz-top"><span class="lab">考古題</span><span class="yr">111 學年度 · 第 28 題</span></div>
+      <div class="quiz-body">
+        <p class="stem">一位 43 歲男性主訴昨天開始肚臍周圍疼痛，今天疼痛轉移到右下腹來，同時合併嘔吐、噁心，於急診後進行電腦斷層掃描檢查。請問他最有可能是什麼問題？<span style="color:var(--text-3)">（圖略）</span></p>
+        <ul class="opts">
+          <li>(A) 大腸憩室炎</li>
+          <li>(B) 急性闌尾炎</li>
+          <li>(C) 右側輸尿管結石併右腎水腫</li>
+          <li>(D) 急性腸胃炎</li>
+        </ul>
+                <details class="rev">
+          <summary class="toggle"></summary>
+          <div class="reveal">
+          <div class="ans">答案：(B)</div>
+          <p>不看圖也能解：<b>肚臍周圍痛 → 隔天轉移右下腹</b>，正是臟器痛轉為體壁痛的經典時間軸，且<b>先痛後吐</b>。(D) 腸胃炎多為先吐先拉、瀰漫性痛。</p>
+          <p><a class="jump" href="#q111-28">看文末完整詳解 ↓</a></p>
+        </div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 02 ============ -->
+  <section id="s2">
+    <div class="sec-head"><span class="sec-num">二</span><h2>急性 vs 慢性：先把時間軸切開</h2></div>
+    <div class="tw"><table>
+      <thead><tr><th>　</th><th>急性腹痛 Acute</th><th>慢性腹痛 Chronic</th></tr></thead>
+      <tbody>
+        <tr><td><b>定義</b></td><td><mark>發生時間 &lt; 7 天</mark></td><td><mark>連續或間斷持續 ≥ 6 個月</mark></td></tr>
+        <tr><td><b>核心問題</b></td><td>「要不要開刀？會不會死？」</td><td>「是器質性還是功能性？」</td></tr>
+        <tr><td><b>時間壓力</b></td><td>以小時計</td><td>可以門診慢慢追</td></tr>
+        <tr><td><b>優先動作</b></td><td>排除外科急症、穩定生命徵象</td><td>詳細病史 + 排除紅旗症狀</td></tr>
+      </tbody>
+    </table></div>
+    <p>中間那一段（7 天～6 個月）在臨床上叫 <strong>subacute</strong>，考試較少碰，但要知道它存在，別把兩個數字搞混。</p>
+  </section>
+
+  <!-- ============ 03 ============ -->
+  <section id="s3">
+    <div class="sec-head"><span class="sec-num">三</span><h2>評估腹痛的四個步驟</h2></div>
+    <p class="tagline">本節考點：<a class="qtag" href="#q112-36">112-36</a><a class="qtag" href="#q111-30">111-30</a></p>
+
+    <div class="box exam">
+      <div class="bt"><span class="badge">高頻考點</span>生命徵象 → 病史 → 理學檢查 → 抽血影像</div>
+      <p>邏輯很單純：<b>先救命，再診斷</b>。病人如果血壓 70/40、心跳 130，你不會先問他「痛幾天了」，而是先建立點滴、給氧、監測。等 ABC 穩住才輪到問診。抽血與影像永遠是<b>最後</b>一步 —— 它們用來「驗證你的臨床假設」，不是「代替你思考」。</p>
+    </div>
+
+    <h3>Step 1｜評估生命徵象與外觀</h3>
+    <ul>
+      <li>血壓、心跳、呼吸、體溫、意識、SpO₂。</li>
+      <li><strong>休克徵象</strong>（低血壓、心搏過速、皮膚濕冷、尿量少）＝ 想到出血（AAA 破裂、子宮外孕破裂、消化道大出血）或敗血症（膽管炎、腸壞死）。</li>
+      <li>看姿勢：翻滾不安 → 絞痛（結石）；一動也不敢動 → 腹膜炎。</li>
+    </ul>
+
+    <h3>Step 2｜病史（最有價值的一步）</h3>
+    <div class="tw"><table>
+      <thead><tr><th class="mono">OPQRST</th><th>問什麼</th><th>臨床意義</th></tr></thead>
+      <tbody>
+        <tr><td class="mono">O</td><td>Onset 怎麼開始的</td><td>數秒內爆炸痛 → 穿孔、破裂、剝離、缺血；數小時漸強 → 發炎</td></tr>
+        <tr><td class="mono">P</td><td>Provocation／Palliation</td><td>油膩食物加重 → 膽；<b>前傾減輕 → 胰臟炎</b>；進食後緩解 → 十二指腸潰瘍；<b>排便後緩解 → IBS</b></td></tr>
+        <tr><td class="mono">Q</td><td>Quality 什麼樣的痛</td><td>燒灼／絞痛／刀割 → 對應三種痛的分類</td></tr>
+        <tr><td class="mono">R</td><td>Region／Radiation</td><td>轉移到背 → 胰臟、主動脈；到右肩 → 膽；到鼠蹊 → 輸尿管</td></tr>
+        <tr><td class="mono">S</td><td>Severity 嚴重度</td><td><b>痛得比檢查所見還誇張 → 腸繫膜缺血</b></td></tr>
+        <tr><td class="mono">T</td><td>Time course</td><td>先痛後吐 → 外科；先吐後痛 → 內科</td></tr>
+      </tbody>
+    </table></div>
+
+    <div class="box trap">
+      <div class="bt"><span class="badge">易錯陷阱</span>「有影像就不用問病史」＝ 錯</div>
+      <p>111-30 直接考這句：「慢性腹痛的確診主要依賴抽血與內視鏡，因此病史詢問與理學檢查的重要性相對較低」→ <b>錯</b>。不論急慢性，<mark>病史與理學檢查永遠是診斷核心</mark>，影像只是輔助。</p>
+    </div>
+
+    <h4>紅旗症狀 Red flags：看到就不能當功能性疾病</h4>
+    <ul>
+      <li>非刻意的<strong>體重減輕</strong>、發燒</li>
+      <li><strong>夜間痛醒</strong>、夜間腹瀉</li>
+      <li>血便、黑便、貧血</li>
+      <li>吞嚥困難、持續嘔吐</li>
+      <li>年齡 &gt; 50 歲新發生、大腸癌家族史</li>
+      <li>腹部摸到腫塊</li>
+    </ul>
+
+    <h3>Step 3｜理學檢查</h3>
+    <p>腹部檢查順序跟其他部位不同：<mark>視診 → 聽診 → 扣診 → 觸診</mark>。先聽診是因為觸診會刺激腸道、改變腸音。觸診<strong>從最不痛的地方開始</strong>，最痛的留到最後。</p>
+
+    <h3>Step 4｜檢驗與影像</h3>
+    <ul>
+      <li><strong>必備：</strong>CBC/DC、電解質、腎功能、肝膽指數、amylase／lipase、尿液分析、<b>育齡女性一律驗孕</b>、乳酸。</li>
+      <li><strong>X-ray：</strong>看游離空氣（穿孔）、氣液平面（腸阻塞）。便宜快速但敏感度低。</li>
+      <li><strong>超音波：</strong>膽道、腎水腫、婦科、腹主動脈的第一線；無輻射、可床邊執行。</li>
+      <li><strong>CT：</strong>診斷率最高的萬用工具（闌尾炎、憩室炎、穿孔、缺血、腫瘤）。缺點是輻射與顯影劑。</li>
+    </ul>
+
+    <!-- QUIZ 112-36 -->
+    <div class="quiz">
+      <div class="quiz-top"><span class="lab">考古題</span><span class="yr">112 學年度 · 第 36 題</span></div>
+      <div class="quiz-body">
+        <p class="stem">下列何選項為正確評估腹痛的臨床步驟？</p>
+        <ul class="opts">
+          <li>(A) 病史詢問 → 抽血檢驗和影像學檢查 → 身體理學檢查 → 評估生命徵象</li>
+          <li>(B) 評估生命徵象 → 身體理學檢查 → 病史詢問 → 抽血檢驗和影像學檢查</li>
+          <li>(C) 評估生命徵象 → 病史詢問 → 身體理學檢查 → 抽血檢驗和影像學檢查</li>
+          <li>(D) 病史詢問 → 評估生命徵象 → 身體理學檢查 → 抽血檢驗和影像學檢查</li>
+        </ul>
+                <details class="rev">
+          <summary class="toggle"></summary>
+          <div class="reveal">
+          <div class="ans">答案：(C)</div>
+          <p>(B) 的陷阱是把理學檢查放在病史之前 —— 沒有病史就摸肚子，等於沒有假設地亂找。</p>
+          <p><a class="jump" href="#q112-36">看文末完整詳解 ↓</a></p>
+        </div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 04 ============ -->
+  <section id="s4">
+    <div class="sec-head"><span class="sec-num">四</span><h2>非背不可的理學檢查徵象</h2></div>
+    <div class="tw"><table>
+      <thead><tr><th>徵象</th><th>怎麼做</th><th>陽性代表</th></tr></thead>
+      <tbody>
+        <tr><td><b>Murphy's sign</b></td><td>右肋緣下深按，請病人吸氣 → 因痛而吸氣中斷</td><td><mark>急性膽囊炎</mark></td></tr>
+        <tr><td><b>McBurney's point</b></td><td>右髂前上棘與肚臍連線外 1/3 處壓痛</td><td>急性闌尾炎</td></tr>
+        <tr><td><b>Rovsing's sign</b></td><td>壓左下腹 → 右下腹痛</td><td>急性闌尾炎</td></tr>
+        <tr><td><b>Psoas sign</b></td><td>右髖伸展時痛</td><td>後盲腸位 retrocecal 闌尾炎</td></tr>
+        <tr><td><b>Obturator sign</b></td><td>右髖屈曲並內轉時痛</td><td>骨盆位 pelvic 闌尾炎</td></tr>
+        <tr><td><b>Aaron's sign</b></td><td>壓 McBurney 點 → 上腹或心窩不適</td><td>闌尾炎（轉移痛）</td></tr>
+        <tr><td><b>Carnett's sign</b></td><td>壓痛點時請病人抬頭／抬腿收縮腹肌 → <b>痛更明顯</b></td><td><mark>腹壁來源 ACNES</mark>；若變輕則為腹腔內來源</td></tr>
+        <tr><td><b>Cullen's sign</b></td><td>肚臍周圍瘀青</td><td>後腹腔出血（重症胰臟炎、子宮外孕破裂）</td></tr>
+        <tr><td><b>Grey-Turner's sign</b></td><td>腰側瘀青</td><td>後腹腔出血（重症胰臟炎）</td></tr>
+      </tbody>
+    </table></div>
+    <div class="box key">
+      <div class="bt"><span class="badge">口訣</span>Murphy 是膽，其餘四個是闌尾</div>
+      <p>McBurney／Rovsing／Psoas／Obturator 都是闌尾，只有 Murphy 是膽囊。這句話在三個年度、跨兩位老師的單元裡都出現過（腹痛單元＋闌尾炎單元），是整份考古題 CP 值最高的一句。</p>
+    </div>
+  </section>
+
+  <!-- ============ 05 ============ -->
+  <section id="s5">
+    <div class="sec-head"><span class="sec-num">五</span><h2>急診腹痛，到底誰最常見？</h2></div>
+    <div class="box exam">
+      <div class="bt"><span class="badge">高頻考點</span>第一名是「非特異性腹痛」，不是闌尾炎</div>
+      <p>臨床直覺會說闌尾炎，但統計上<mark>非特異性腹痛（NSAP）約 35%</mark> 才是最大宗 —— 查了半天找不出原因、後來自己好了的那一群。<mark>急性闌尾炎約 17%</mark> 排第二。</p>
+    </div>
+    <div class="tw"><table>
+      <thead><tr><th>排序</th><th>診斷</th><th class="mono">大約比例</th></tr></thead>
+      <tbody>
+        <tr><td>1</td><td><b>非特異性腹痛 NSAP</b></td><td class="mono">≈ 35%</td></tr>
+        <tr><td>2</td><td><b>急性闌尾炎</b></td><td class="mono">≈ 17%</td></tr>
+        <tr><td>3</td><td>膽道疾病（膽囊炎、膽絞痛）</td><td class="mono">≈ 10%</td></tr>
+        <tr><td>4</td><td>小腸阻塞</td><td class="mono">≈ 4%</td></tr>
+        <tr><td>5</td><td>婦科疾病、泌尿道結石、憩室炎、胰臟炎…</td><td class="mono">各數 %</td></tr>
+      </tbody>
+    </table></div>
+    <p>年齡會改變排序：<strong>老年人</strong>的腹痛要優先想膽道疾病、腸阻塞、腸繫膜缺血、腫瘤、腹主動脈瘤，而且他們<u>常常不發燒、白血球不高、腹膜炎徵象不明顯</u>，嚴重度容易被低估。</p>
+
+    <!-- QUIZ 112-34 -->
+    <div class="quiz">
+      <div class="quiz-top"><span class="lab">考古題</span><span class="yr">112 學年度 · 第 34 題</span></div>
+      <div class="quiz-body">
+        <p class="stem">下列關於急性腹痛的敘述何者<b>錯誤</b>？</p>
+        <ul class="opts">
+          <li>(A) 急性腹痛的定義為腹痛發生時間小於 7 天。</li>
+          <li>(B) 最常見的急性腹痛為急性盲腸炎。</li>
+          <li>(C) 急性盲腸炎剛發生時常以噁心、厭食和肚臍周圍疼痛表現，6 到 8 小時後疼痛才移轉至右下腹。</li>
+          <li>(D) 診斷急性盲腸炎的影像檢查中，以腹部電腦斷層準確度最高。</li>
+        </ul>
+                <details class="rev">
+          <summary class="toggle"></summary>
+          <div class="reveal">
+          <div class="ans">答案：(B)</div>
+          <p>最常見的是<b>非特異性腹痛（約 35%）</b>，闌尾炎約 17% 排第二。這是直覺陷阱題。</p>
+          <p><a class="jump" href="#q112-34">看文末完整詳解 ↓</a></p>
+        </div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 06 ============ -->
+  <section id="s6">
+    <div class="sec-head"><span class="sec-num">六</span><h2>依部位快速想診斷</h2></div>
+    <p>床邊最實用的一張圖。把腹部切成九區，每一區背 3–5 個。</p>
+    <div class="grid9">
+      <div class="cell"><b>RUQ 右上腹</b>膽囊炎／膽管炎、肝膿瘍、肝炎、十二指腸潰瘍、右下肺炎</div>
+      <div class="cell"><b>EPIGASTRIC 上腹</b>胃炎／潰瘍、<b>胰臟炎</b>、GERD、<b>下壁心肌梗塞</b>、早期膽道</div>
+      <div class="cell"><b>LUQ 左上腹</b>脾破裂／梗塞、胃病灶、胰尾病灶、左下肺炎</div>
+      <div class="cell"><b>RIGHT FLANK 右腰</b>腎結石、腎盂腎炎、後盲腸位闌尾炎</div>
+      <div class="cell"><b>PERIUMBILICAL 肚臍周圍</b><b>早期闌尾炎</b>、小腸阻塞、<b>腸繫膜缺血</b>、腹主動脈瘤、腸胃炎</div>
+      <div class="cell"><b>LEFT FLANK 左腰</b>腎結石、腎盂腎炎</div>
+      <div class="cell"><b>RLQ 右下腹</b><b>闌尾炎</b>、迴腸末端炎、卵巢囊腫扭轉、子宮外孕、輸尿管結石、<b>ACNES</b></div>
+      <div class="cell"><b>SUPRAPUBIC 下腹</b>膀胱炎、尿滯留、骨盆腔發炎、子宮病灶</div>
+      <div class="cell"><b>LLQ 左下腹</b><b>大腸憩室炎</b>、便秘、卵巢病灶、子宮外孕</div>
+    </div>
+    <div class="box trap">
+      <div class="bt"><span class="badge">別忘了</span>腹部以外的腹痛</div>
+      <p>下壁心肌梗塞、下肺葉肺炎、糖尿病酮酸中毒（DKA）、帶狀疱疹、腎上腺危機都可以表現為腹痛。<b>老人＋上腹痛，先做一張 EKG 不會吃虧。</b></p>
+    </div>
+  </section>
+
+  <!-- ============ 07 ============ -->
+  <section id="s7">
+    <div class="sec-head"><span class="sec-num">七</span><h2>急性腹痛各論</h2></div>
+
+    <h3>7-1　急性闌尾炎</h3>
+    <ul>
+      <li><strong>典型演變：</strong>厭食 → 肚臍周圍悶痛、噁心 → <mark>6–8 小時後轉移到右下腹</mark>、變成尖銳痛 → 發燒、白血球上升。</li>
+      <li><strong>順序記憶：</strong>厭食幾乎一定先出現；<b>痛在吐之前</b>。</li>
+      <li><strong>理學：</strong>McBurney 壓痛、rebound、Rovsing、Psoas（後盲腸位）、Obturator（骨盆位）。</li>
+      <li><strong>影像：</strong><mark>腹部電腦斷層準確度最高（&gt;95%）</mark>。兒童與孕婦優先超音波以避免輻射。CT 上看到闌尾直徑 &gt;6 mm、管壁增厚、周圍脂肪髒污、糞石。</li>
+      <li><strong>治療：</strong>闌尾切除術；未破裂者部分可先抗生素治療。</li>
+    </ul>
+
+    <h3>7-2　急性膽囊炎</h3>
+    <ul>
+      <li><strong>機轉：</strong>膽結石卡住膽囊管 → 膽囊撐大、發炎、細菌滋生。</li>
+      <li><strong>臨床：</strong>吃油膩食物後右上腹痛，<mark>持續 &gt; 4–6 小時不緩解</mark>（若 &lt; 6 小時自行緩解，多為單純膽絞痛 biliary colic）、噁心嘔吐、發燒、白血球升高、<b>Murphy's sign 陽性</b>。</li>
+      <li><strong>診斷首選：</strong><mark>腹部超音波</mark> —— 快速、無輻射、床邊可做，可見結石、膽囊壁增厚 &gt;3–4 mm、膽囊腫大、周圍積液、sonographic Murphy。核醫 HIDA 敏感度更高但慢又不方便，屬第二線。</li>
+      <li><strong>治療時機：</strong><mark>早期（72 小時內，一般抓 48 小時內）腹腔鏡膽囊切除</mark>，比「先保守、等 6–8 週再開」有更短住院天數與更低併發症。</li>
+    </ul>
+
+    <!-- QUIZ 113-40 -->
+    <div class="quiz">
+      <div class="quiz-top"><span class="lab">考古題</span><span class="yr">113 學年度 · 第 40 題</span></div>
+      <div class="quiz-body">
+        <p class="stem">45 歲女性主訴進食油膩食物後出現右上腹痛，疼痛持續逾 8 小時，伴隨噁心與嘔吐。理學檢查發現右上腹壓痛與 Murphy's sign 陽性，體溫 38.3℃，白血球升高。下列何者為此患者的診斷工具與治療時機的最佳組合？</p>
+        <ul class="opts">
+          <li>(A) 腹部電腦斷層評估，保守治療一週後再考慮手術治療</li>
+          <li>(B) 腹部超音波診斷，48 小時內安排膽囊切除手術</li>
+          <li>(C) 上消化道內視鏡診斷，24 小時內安排膽囊切除手術</li>
+          <li>(D) 核醫膽囊攝影診斷，先給予抗生素評估發燒是否改善，之後再決定手術</li>
+        </ul>
+                <details class="rev">
+          <summary class="toggle"></summary>
+          <div class="reveal">
+          <div class="ans">答案：(B)</div>
+          <p>典型急性膽囊炎。<b>膽囊＝超音波，且早期手術</b>。(A) CT 非第一線、保守拖延已非主流；(C) 內視鏡看的是胃十二指腸；(D) HIDA 屬第二線且延遲手術不必要。</p>
+          <p><a class="jump" href="#q113-40">看文末完整詳解 ↓</a></p>
+        </div>
+        </details>
+      </div>
+    </div>
+
+    <h3>7-3　急性膽管炎 Acute cholangitis</h3>
+    <ul>
+      <li><strong>機轉：</strong>膽道<u>阻塞</u>（結石、腫瘤）＋ <u>細菌感染</u> → 膽道內壓上升 → 細菌跑進血液 → 敗血症。這是<b>會死人的急症</b>。</li>
+      <li><strong>Charcot's triad：</strong><mark>右上腹痛 + 發燒／畏寒 + 黃疸</mark>。</li>
+      <li><strong>Reynolds' pentad：</strong>再加上<b>意識改變 + 低血壓</b> → 代表重症，需緊急膽道引流。</li>
+      <li><strong>治療：</strong>抗生素 + 支持性療法 + <b>膽道減壓（ERCP 為主）</b>。</li>
+    </ul>
+    <h4>抽血怎麼分「肝細胞型」與「膽汁鬱積型」</h4>
+    <div class="tw"><table>
+      <thead><tr><th>型態</th><th class="mono">AST／ALT</th><th class="mono">ALP／γ-GT</th><th class="mono">Bilirubin</th><th>代表疾病</th></tr></thead>
+      <tbody>
+        <tr><td><b>肝細胞損傷型</b></td><td class="mono">↑↑↑（數百～數千）</td><td class="mono">正常或輕升</td><td class="mono">±</td><td>病毒性肝炎、藥物性肝炎</td></tr>
+        <tr><td><b>膽汁鬱積型</b></td><td class="mono">輕～中度 ↑</td><td class="mono">↑↑↑</td><td class="mono">↑（direct 為主）</td><td><b>膽管結石、膽管炎、膽道腫瘤</b></td></tr>
+        <tr><td><b>酒精性肝炎</b></td><td class="mono"><b>AST &gt; ALT（&gt;2 倍）</b>，通常 &lt;300</td><td class="mono">輕升</td><td class="mono">±</td><td>酒精</td></tr>
+      </tbody>
+    </table></div>
+
+    <!-- QUIZ 112-35 -->
+    <div class="quiz">
+      <div class="quiz-top"><span class="lab">考古題</span><span class="yr">112 學年度 · 第 35 題</span></div>
+      <div class="quiz-body">
+        <p class="stem">一位 80 歲女性因右上腹痛合併發燒，生化檢查顯示：total protein 6.8、albumin 3.8、ALT 200、AST 100、alkaline phosphatase 300（正常 &lt;100）、γ-GT 350（正常 &lt;52）、total bilirubin 5、direct bilirubin 3.5。下列何者為最可能的診斷？</p>
+        <ul class="opts">
+          <li>(A) 酒精性肝炎</li>
+          <li>(B) 肝臟膿瘍</li>
+          <li>(C) 急性膽管炎</li>
+          <li>(D) 脂肪肝</li>
+        </ul>
+                <details class="rev">
+          <summary class="toggle"></summary>
+          <div class="reveal">
+          <div class="ans">答案：(C)</div>
+          <p><b>Charcot 三徵到齊</b>（右上腹痛＋發燒＋黃疸），抽血呈典型膽汁鬱積型（ALP 3 倍、γ-GT 近 7 倍、direct bilirubin 為主）。(A) 酒精性肝炎應 AST &gt; ALT，本題方向相反。</p>
+          <p><a class="jump" href="#q112-35">看文末完整詳解 ↓</a></p>
+        </div>
+        </details>
+      </div>
+    </div>
+
+    <h3>7-4　急性胰臟炎</h3>
+    <ul>
+      <li><strong>兩大主因：</strong>膽結石、酒精（合計約 80%）。其餘：高三酸甘油酯、藥物、ERCP 後、高血鈣、外傷。</li>
+      <li><strong>疼痛特徵：</strong><mark>上腹痛穿透到後背</mark>；<mark>身體前傾或坐直會緩解、平躺會加重</mark>（胰臟位於後腹腔，前傾可減少牽扯）。</li>
+      <li><strong>抽血：</strong><mark>血清 amylase 與 lipase 上升至正常值 3 倍以上</mark>；lipase 特異性較高、上升時間也較久。<b>ALP／γ-GT 大幅上升不是胰臟炎的特徵，那是膽道阻塞。</b></li>
+      <li><strong>診斷（3 取 2）：</strong>① 典型腹痛 ② amylase／lipase &gt; 3× 正常上限 ③ 影像符合。</li>
+      <li><strong>預後評估：</strong><mark>Ranson's criteria</mark>（入院時 5 項 + 48 小時後 6 項）；另有 APACHE II、BISAP、CT severity index。</li>
+      <li><strong>CT 的角色：</strong><mark>不是用來診斷，而是評估嚴重度與併發症</mark>（壞死、假性囊腫、膿瘍、積液），且建議發病 <b>48–72 小時後</b>做，太早會低估壞死範圍。</li>
+      <li><strong>治療：</strong>積極輸液、止痛、禁食後早期恢復進食；膽石性胰臟炎需處理膽道。</li>
+    </ul>
+
+    <!-- QUIZ 111-29 -->
+    <div class="quiz">
+      <div class="quiz-top"><span class="lab">考古題</span><span class="yr">111 學年度 · 第 29 題</span></div>
+      <div class="quiz-body">
+        <p class="stem">下列關於急性胰臟炎的敘述，何者<b>正確</b>？<br>
+          (1) 疼痛常以上腹痛併後背轉移痛，病患坐直或身體往前傾會減緩疼痛。<br>
+          (2) 臨床上常用 Ranson's criteria 評估急性胰臟炎的預後。<br>
+          (3) 抽血檢驗會呈現 alkaline phosphatase 和 γ-GT 顯著上升。<br>
+          (4) 腹部電腦斷層的重要性為確定嚴重程度和相關併發症。</p>
+        <ul class="opts"><li>(A) (1)+(2)+(4)　(B) (1)+(3)+(4)　(C) (1)+(4)　(D) (2)+(3)</li></ul>
+                <details class="rev">
+          <summary class="toggle"></summary>
+          <div class="reveal">
+          <div class="ans">答案：(A)</div>
+          <p>(3) 是唯一錯誤 —— ALP／γ-GT 顯著上升代表<b>膽道阻塞</b>；胰臟炎應為 <b>amylase／lipase &gt; 3 倍</b>。</p>
+          <p><a class="jump" href="#q111-29">看文末完整詳解 ↓</a></p>
+        </div>
+        </details>
+      </div>
+    </div>
+
+    <h3>7-5　腸阻塞（以小腸阻塞為主）</h3>
+    <ul>
+      <li><strong>小腸阻塞三大原因：</strong><mark>① 術後沾黏（最常見）② 疝氣 ③ 腫瘤</mark>。所以病史問「有沒有開過刀」極關鍵。大腸阻塞則以腫瘤、腸扭轉、憩室疾病為主。</li>
+      <li><strong>四大症狀：</strong>陣發性絞痛、嘔吐、腹脹、<mark>停止排氣排便 obstipation</mark>。高位阻塞吐得早、腹脹輕；低位阻塞腹脹明顯、吐得晚甚至吐出糞臭物。</li>
+      <li><strong>理學：</strong>早期腸音<mark>高頻金屬音 high-pitched metallic</mark>；晚期腸道疲乏後腸音消失（危險訊號）。</li>
+      <li><strong>影像：</strong>立位／臥位 X 光可見<mark>多個氣液平面 air-fluid levels</mark>、腸道擴張。CT 可定位阻塞點並找出絞扼徵象。</li>
+      <li><strong>無併發症時的第一線＝保守治療三件事：</strong><mark>① 禁食 NPO ② 鼻胃管減壓 ③ 靜脈輸液與電解質矯正</mark>，然後密切觀察。約 70–80% 的沾黏性阻塞可自行緩解。</li>
+      <li><strong>什麼時候一定要開刀：</strong>持續固定的劇痛、腹膜炎徵象、發燒、心搏過速、白血球升高、<b>乳酸上升</b>、代謝性酸中毒、CT 上腸壁不顯影或游離空氣。</li>
+    </ul>
+
+    <!-- QUIZ 113-41 -->
+    <div class="quiz">
+      <div class="quiz-top"><span class="lab">考古題</span><span class="yr">113 學年度 · 第 41 題</span></div>
+      <div class="quiz-body">
+        <p class="stem">68 歲男性因反覆嘔吐與腹脹就醫，近 3 天無排氣和排便。約 10 年前曾接受過腹部手術，腹部聽診有高頻金屬音，X-ray 顯示多個腸道內氣液平面。若無併發症，下列何者為首選處置？</p>
+        <ul class="opts">
+          <li>(A) 立即手術切除腸段</li>
+          <li>(B) 靜脈輸液、腸胃減壓與觀察</li>
+          <li>(C) 低劑量止痛藥與口服瀉劑</li>
+          <li>(D) 安排腹部磁振造影檢查</li>
+        </ul>
+                <details class="rev">
+          <summary class="toggle"></summary>
+          <div class="reveal">
+          <div class="ans">答案：(B)</div>
+          <p>四個線索全指向<b>沾黏性小腸阻塞</b>。無併發症時第一線是保守治療。特別注意 (C)：<b>腸阻塞絕對禁用瀉劑</b>，會增加穿孔風險。</p>
+          <p><a class="jump" href="#q113-41">看文末完整詳解 ↓</a></p>
+        </div>
+        </details>
+      </div>
+    </div>
+
+    <h3>7-6　急性腸繫膜缺血 Acute mesenteric ischemia</h3>
+    <ul>
+      <li><strong>經典畫面：</strong><mark>Pain out of proportion to physical findings</mark> —— 病人痛到快死掉，你摸肚子卻軟軟的、幾乎沒壓痛、沒 rebound。這是本病最重要的一句話。</li>
+      <li><strong>高風險族群：</strong><mark>心房顫動（AF）</mark>、近期心肌梗塞、心臟瓣膜疾病、動脈粥狀硬化、低血壓／休克（NOMI）、高凝血狀態（靜脈型）。</li>
+      <li><strong>抽血：</strong>白血球升高、<mark>乳酸升高</mark>、代謝性酸中毒 —— 但這些是<b>晚期</b>指標，正常也不能排除。</li>
+      <li><strong>診斷首選：</strong><mark>腹部電腦斷層血管攝影 CTA</mark>，可直接看到腸繫膜上動脈栓塞位置、腸壁變化、腸壁積氣、門靜脈積氣。</li>
+      <li><strong>為什麼不選其他：</strong>X 光只能排除穿孔／阻塞、超音波受腸氣干擾且看不清遠端血管、MRI 太慢不適合急症。</li>
+      <li><strong>治療：</strong>抗凝、血管重建（取栓／溶栓／支架）、壞死腸段切除。時間就是腸子。</li>
+    </ul>
+
+    <!-- QUIZ 113-43 -->
+    <div class="quiz">
+      <div class="quiz-top"><span class="lab">考古題</span><span class="yr">113 學年度 · 第 43 題</span></div>
+      <div class="quiz-body">
+        <p class="stem">72 歲男性有心房顫動病史，主訴突發性中上腹劇痛。理學檢查僅有輕微壓痛，沒有反彈痛或腹部肌肉緊繃。抽血發現白血球及乳酸升高。下列何者為最適合的診斷工具？</p>
+        <ul class="opts">
+          <li>(A) 腹部 X 光</li>
+          <li>(B) 腹部超音波</li>
+          <li>(C) 腹部電腦斷層血管攝影</li>
+          <li>(D) 腹部磁振造影</li>
+        </ul>
+                <details class="rev">
+          <summary class="toggle"></summary>
+          <div class="reveal">
+          <div class="ans">答案：(C)</div>
+          <p>三大特徵一次給滿：<b>AF（栓子來源）＋ 痛得不成比例 ＋ 乳酸升高</b>。診斷首選 CTA。</p>
+          <p><a class="jump" href="#q113-43">看文末完整詳解 ↓</a></p>
+        </div>
+        </details>
+      </div>
+    </div>
+
+    <h3>7-7　其他不能漏掉的急症</h3>
+    <div class="tw"><table>
+      <thead><tr><th>疾病</th><th>關鍵線索</th><th>首選檢查／處置</th></tr></thead>
+      <tbody>
+        <tr><td><b>消化性潰瘍穿孔</b></td><td>突發如刀割的上腹痛、板硬腹</td><td>立位胸腹 X 光看橫膈下游離空氣 → 手術</td></tr>
+        <tr><td><b>大腸憩室炎</b></td><td>左下腹痛 + 發燒（亞洲人可能右側）</td><td>CT；抗生素，膿瘍需引流</td></tr>
+        <tr><td><b>輸尿管結石</b></td><td>腰側絞痛放射至鼠蹊、血尿、翻滾不安</td><td>Non-contrast CT（KUB 為輔）</td></tr>
+        <tr><td><b>腹主動脈瘤破裂</b></td><td>老年、腹／背痛、低血壓、搏動性腫塊</td><td>床邊超音波／CTA；立即手術</td></tr>
+        <tr><td><b>子宮外孕破裂</b></td><td>育齡女性、停經、下腹痛、休克</td><td><b>驗孕</b> + 骨盆超音波</td></tr>
+        <tr><td><b>卵巢囊腫扭轉</b></td><td>突發單側下腹劇痛、嘔吐</td><td>骨盆超音波 + Doppler</td></tr>
+      </tbody>
+    </table></div>
+  </section>
+
+  <!-- ============ 08 ============ -->
+  <section id="s8">
+    <div class="sec-head"><span class="sec-num">八</span><h2>慢性腹痛</h2></div>
+    <p>慢性腹痛的思考方式跟急性完全相反：不是「要不要開刀」，而是<strong>「先排除器質性疾病，再往功能性疾病走」</strong>。而在功能性疾病裡，有兩個特別容易被誤診成闌尾炎或大腸疾病的診斷。</p>
+
+    <h3>8-1　ACNES 前皮神經卡壓症候群</h3>
+    <p style="color:var(--text-3);font-size:14.5px">Anterior Cutaneous Nerve Entrapment Syndrome</p>
+    <ul>
+      <li><strong>機轉：</strong>肋間神經的前皮枝在穿過腹直肌鞘時被卡住 —— <mark>問題出在「腹壁」，不在肚子裡面</mark>。</li>
+      <li><strong>三個必背特徵：</strong>
+        <ol>
+          <li><mark>與飲食、排便、腸胃蠕動<b>無關</b></mark>（因為根本不是腸子的問題）</li>
+          <li><mark>與<b>姿勢、動作</b>有關</mark> —— 咳嗽、起身、翻身、彎腰會加劇</li>
+          <li>有<mark>固定、局部、可用一根手指指出來的壓痛點</mark>（通常 &lt; 2 cm）</li>
+        </ol>
+      </li>
+      <li><strong>診斷：</strong><b>Carnett's sign 陽性</b>（收縮腹肌時壓痛不減反增）。</li>
+      <li><strong>治療：</strong>局部麻醉劑 ± 類固醇注射（同時具診斷與治療價值）、頑固者手術神經切除。</li>
+    </ul>
+
+    <h3>8-2　中樞性腹痛症候群 CAPS</h3>
+    <p style="color:var(--text-3);font-size:14.5px">Centrally Mediated Abdominal Pain Syndrome</p>
+    <ul>
+      <li><strong>機轉：</strong><mark>中樞神經「不正常地放大」了原本正常的臟器傳入訊號</mark>（central sensitization）。周邊器官其實沒有病灶。</li>
+      <li><strong>特徵：</strong>持續、幾乎整天都痛，與進食、排便關聯性低；常合併焦慮憂鬱、失眠、其他慢性疼痛症候群。</li>
+      <li><strong>治療：</strong><b>神經調節劑</b>如三環抗憂鬱劑、SNRI，加上心理治療；<u>不是</u>止痛藥（特別要避免長期鴉片類，會造成 narcotic bowel syndrome）。</li>
+    </ul>
+
+    <!-- QUIZ 111-30 -->
+    <div class="quiz">
+      <div class="quiz-top"><span class="lab">考古題</span><span class="yr">111 學年度 · 第 30 題</span></div>
+      <div class="quiz-body">
+        <p class="stem">關於慢性腹痛的敘述，下列何者<b>正確</b>？<br>
+          (1) 慢性腹痛的確診主要依賴抽血檢驗和內視鏡等影像學檢查，因此病史詢問和身體理學檢查的重要性相對較低。<br>
+          (2) 慢性腹痛的定義為腹痛發生時間（連續或間斷）至少持續 6 個月。<br>
+          (3) 前皮神經卡壓和筋膜疼痛症候群的疼痛通常與飲食及胃腸蠕動有關，而和姿勢動作無關。<br>
+          (4) 中樞性腹痛症候群的起因為中樞神經不正常的放大正常臟器傳遞的訊號而導致疼痛感。</p>
+        <ul class="opts"><li>(A) (1)+(2)　(B) (3)+(4)　(C) (1)+(3)　(D) (2)+(4)</li></ul>
+                <details class="rev">
+          <summary class="toggle"></summary>
+          <div class="reveal">
+          <div class="ans">公布答案：(B)　<span style="font-size:13px;color:var(--rose)">⚠ 此題有爭議</span></div>
+          <p>(1) 錯、(3) 錯（敘述完全顛倒）、(4) 對，這三點沒有爭議。爭議在 (2)：若「6 個月」的定義正確，答案應為 (D)。<b>考前務必以老師 ppt 上的定義為準。</b></p>
+          <p><a class="jump" href="#q111-30">看文末完整說明 ↓</a></p>
+        </div>
+        </details>
+      </div>
+    </div>
+
+    <!-- QUIZ 113-42 -->
+    <div class="quiz">
+      <div class="quiz-top"><span class="lab">考古題</span><span class="yr">113 學年度 · 第 42 題</span></div>
+      <div class="quiz-body">
+        <p class="stem">35 歲女性主訴右下腹疼痛已有 6 個月，無便秘、腹瀉或與進食關聯的症狀，咳嗽或起身時痛感會加劇。理學檢查發現局部有可觸痛點。最可能的診斷為何？</p>
+        <ul class="opts">
+          <li>(A) 急性盲腸炎</li>
+          <li>(B) 大腸激躁症</li>
+          <li>(C) 急性大腸憩室炎</li>
+          <li>(D) 前腹部皮神經擠壓症（ACNES）</li>
+        </ul>
+                <details class="rev">
+          <summary class="toggle"></summary>
+          <div class="reveal">
+          <div class="ans">答案：(D)</div>
+          <p>三個特徵全中：<b>病程 6 個月（排除 A、C 急性病）＋ 與進食排便無關（排除 B）＋ 與動作有關且有點狀壓痛</b>。</p>
+          <p><a class="jump" href="#q113-42">看文末完整詳解 ↓</a></p>
+        </div>
+        </details>
+      </div>
+    </div>
+
+    <h3>8-3　跨單元但同卷會考的兩個診斷</h3>
+    <div class="tw"><table>
+      <thead><tr><th>診斷</th><th>關鍵線索</th><th>檢查／處置</th></tr></thead>
+      <tbody>
+        <tr><td><b>胃輕癱 Gastroparesis</b></td><td>糖尿病控制不佳（HbA1c 9.2%）、餐後飽脹、<b>嘔吐未消化的食物</b>、體重下降</td><td><b>UGI series</b>（排除結構性阻塞）+ <b>胃排空閃爍攝影</b>（診斷功能性延遲）</td></tr>
+        <tr><td><b>大腸激躁症 IBS</b></td><td>腹痛<b>排便後緩解</b>、大便型態／頻率改變、<b>無紅旗症狀</b>、壓力大、喝冰牛奶含糖飲料</td><td>不需先做大腸鏡；<b>低 FODMAP 飲食 + 壓力管理</b>為初步處置</td></tr>
+      </tbody>
+    </table></div>
+    <p style="font-size:14px;color:var(--text-3)">※ 對應 113-44、113-45 兩題，完整版會在第 2 科「腸胃道蠕動異常疾病」筆記展開 Rome IV 準則與藥物治療，文末題庫仍會完整列出。</p>
+  </section>
+
+  <!-- ============ 09 ============ -->
+  <section id="s9">
+    <div class="sec-head"><span class="sec-num">九</span><h2>一分鐘總複習</h2></div>
+    <div class="box key">
+      <div class="bt"><span class="badge">考前 60 秒</span>把這十句唸完</div>
+      <ol>
+        <li>Visceral pain＝C fiber、模糊、中線、鈍痛；Somatic-parietal＝<b>A-delta</b>、精準、單側、<b>sharp</b>。</li>
+        <li>Referred pain＝臟器與軀體傳入神經在<b>同一節脊髓匯合成 second-order neuron</b>。</li>
+        <li>急性 &lt; 7 天；慢性 ≥ 6 個月。</li>
+        <li>評估順序：<b>生命徵象 → 病史 → 理學 → 抽血影像</b>。病史與理學永遠最重要。</li>
+        <li>急性腹痛第一名是<b>非特異性腹痛（35%）</b>，闌尾炎第二（17%）。</li>
+        <li>闌尾炎：<b>肚臍痛 6–8 小時後轉移右下腹</b>；先痛後吐；CT 準確度最高。</li>
+        <li>膽囊炎：Murphy(+) → <b>超音波</b> → <b>48 小時內早期膽囊切除</b>。</li>
+        <li>膽管炎：<b>Charcot 三徵</b> ＋ ALP／γ-GT 不成比例上升 + direct bilirubin ↑。</li>
+        <li>胰臟炎：<b>前傾緩解</b>、amylase／lipase &gt;3 倍、<b>Ranson 看預後</b>、<b>CT 看嚴重度與併發症</b>。</li>
+        <li>SBO：金屬腸音 + 氣液平面 + 開刀病史 → <b>NPO＋NG＋輸液</b>；AF + 痛得不成比例 + lactate↑ → <b>CTA</b>。</li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- ============ EXAM ============ -->
+  <section id="exam">
+    <div class="sec-head"><span class="sec-num">十</span><h2>考古題全收錄</h2></div>
+    <div class="exam-head">
+      <h2>依年度完整羅列</h2>
+      <p>BM113 → BM112 → BM111，含完整答案、詳解與出處。預設隱藏答案，可以先自己作答再展開。</p>
+      <button class="btn" id="allBtn">全部展開答案</button>
+    </div>
+
+    <!-- ===== 113 ===== -->
+    <div class="yrhead">113 學年度（BM113）· 6 題</div>
+
+    <div class="q" id="q113-40">
+      <span class="q-no">113-40</span><span class="q-topic">急性膽囊炎</span>
+      <p class="q-stem">45 歲女性主訴進食油膩食物後出現右上腹痛，疼痛持續逾 8 小時，伴隨噁心與嘔吐。理學檢查發現右上腹壓痛與 Murphy's sign 陽性，體溫 38.3℃，白血球升高。下列何者為此患者的診斷工具與治療時機的最佳組合？</p>
+      <ul class="opts">
+        <li>(A) 腹部電腦斷層評估，保守治療一週後再考慮手術治療</li>
+        <li>(B) 腹部超音波診斷，48 小時內安排膽囊切除手術</li>
+        <li>(C) 上消化道內視鏡診斷，24 小時內安排膽囊切除手術</li>
+        <li>(D) 核醫膽囊攝影診斷，先給予抗生素評估發燒是否改善，之後再決定手術</li>
+      </ul>
+            <details class="rev">
+        <summary class="toggle"></summary>
+        <div class="reveal">
+        <div class="ans">答案：(B)</div>
+        <p>油膩飲食誘發、右上腹痛 &gt;6 小時不緩解、Murphy's sign 陽性、發燒、白血球升高 → 典型<b>急性膽囊炎</b>。</p>
+        <p>診斷首選<b>腹部超音波</b>：快速、無輻射、床邊可做，可見膽結石、膽囊壁增厚、膽囊腫大與周圍積液。治療原則為<b>早期腹腔鏡膽囊切除（48 小時內）</b>，可縮短住院天數並降低併發症。</p>
+        <p>(A) CT 非第一線，且「保守一週」已非主流；(C) 內視鏡看的是胃十二指腸，不是膽囊；(D) 核醫 HIDA 敏感度雖高但耗時，屬第二線，且延遲手術不必要。</p>
+        <div class="src">出處：王俊偉 腹部常見症狀（含急性腹痛）ppt</div>
+      </div>
+      </details>
+    </div>
+
+    <div class="q" id="q113-41">
+      <span class="q-no">113-41</span><span class="q-topic">小腸阻塞</span>
+      <p class="q-stem">68 歲男性因反覆嘔吐與腹脹就醫，近 3 天無排氣和排便。約 10 年前曾接受過腹部手術，腹部聽診有高頻金屬音，X-ray 顯示多個腸道內氣液平面。若無併發症，下列何者為首選處置？</p>
+      <ul class="opts">
+        <li>(A) 立即手術切除腸段</li>
+        <li>(B) 靜脈輸液、腸胃減壓與觀察</li>
+        <li>(C) 低劑量止痛藥與口服瀉劑</li>
+        <li>(D) 安排腹部磁振造影檢查</li>
+      </ul>
+            <details class="rev">
+        <summary class="toggle"></summary>
+        <div class="reveal">
+        <div class="ans">答案：(B)</div>
+        <p>四個線索全部指向<b>沾黏性小腸阻塞</b>：腹部手術病史（沾黏是 SBO 最常見原因）、停止排氣排便、高頻金屬腸音、X 光多個氣液平面。</p>
+        <p>在<b>沒有絞扼／缺血／腹膜炎</b>的前提下，第一線是保守治療：<b>禁食 + 鼻胃管減壓 + 靜脈輸液與電解質矯正 + 密切觀察</b>，多數沾黏性阻塞可自行緩解。</p>
+        <p>(A) 沒有併發症就直接切腸段過度侵入性；(C) <b>腸阻塞絕對禁用瀉劑</b>，會增加穿孔風險；(D) MRI 太慢、非急症首選（真要影像應選 CT）。</p>
+        <div class="src">出處：王俊偉 腹部常見症狀（含急性腹痛）ppt p.51</div>
+      </div>
+      </details>
+    </div>
+
+    <div class="q" id="q113-42">
+      <span class="q-no">113-42</span><span class="q-topic">慢性腹痛／ACNES</span>
+      <p class="q-stem">35 歲女性主訴右下腹疼痛已有 6 個月，無便秘、腹瀉或與進食關聯的症狀，咳嗽或起身時痛感會加劇。理學檢查發現局部有可觸痛點。最可能的診斷為何？</p>
+      <ul class="opts">
+        <li>(A) 急性盲腸炎</li>
+        <li>(B) 大腸激躁症</li>
+        <li>(C) 急性大腸憩室炎</li>
+        <li>(D) 前腹部皮神經擠壓症（ACNES）</li>
+      </ul>
+            <details class="rev">
+        <summary class="toggle"></summary>
+        <div class="reveal">
+        <div class="ans">答案：(D)</div>
+        <p>三個特徵完全符合 ACNES：① 病程 6 個月＝<b>慢性</b>（排除 A、C 這兩個急性病）；② <b>與進食、排便無關</b>（排除 B，IBS 必須與排便相關且排便後緩解）；③ <b>與動作姿勢有關</b>（咳嗽、起身加劇）且有<b>局部固定壓痛點</b>。</p>
+        <p>臨床上以 <b>Carnett's sign 陽性</b>（收縮腹肌時壓痛加劇）確認來源在腹壁而非腹腔內，治療可用局部神經阻斷注射。</p>
+        <div class="src">出處：王俊偉 腹部常見症狀（含急性腹痛）ppt p.51</div>
+      </div>
+      </details>
+    </div>
+
+    <div class="q" id="q113-43">
+      <span class="q-no">113-43</span><span class="q-topic">急性腸繫膜缺血</span>
+      <p class="q-stem">72 歲男性有心房顫動病史，主訴突發性中上腹劇痛。理學檢查僅有輕微壓痛，沒有反彈痛或腹部肌肉緊繃。抽血發現白血球及乳酸升高。下列何者為最適合的診斷工具？</p>
+      <ul class="opts">
+        <li>(A) 腹部 X 光</li>
+        <li>(B) 腹部超音波</li>
+        <li>(C) 腹部電腦斷層血管攝影</li>
+        <li>(D) 腹部磁振造影</li>
+      </ul>
+            <details class="rev">
+        <summary class="toggle"></summary>
+        <div class="reveal">
+        <div class="ans">答案：(C)</div>
+        <p>本題把急性腸繫膜缺血的三大特徵一次給滿：<b>心房顫動（栓子來源）</b>、<b>突發劇痛但理學檢查幾乎正常（pain out of proportion）</b>、<b>乳酸升高</b>。</p>
+        <p>診斷首選 <b>CT angiography</b>，可直接顯示腸繫膜上動脈栓塞位置、腸壁增厚或不顯影、腸壁積氣、門靜脈積氣，並同時排除其他腹痛原因。</p>
+        <p>(A) X 光早期多正常，只能看穿孔／阻塞；(B) 超音波受腸氣干擾，難以評估遠端腸繫膜血管；(D) MRI 檢查時間長，不適合分秒必爭的急症。</p>
+        <div class="src">出處：王俊偉 腹部常見症狀（含急性腹痛）ppt p.26</div>
+      </div>
+      </details>
+    </div>
+
+    <div class="q" id="q113-44">
+      <span class="q-no">113-44</span><span class="q-topic">胃輕癱（跨單元）</span>
+      <p class="q-stem">一位 50 歲女性因 3 個月來反覆出現餐後飽脹、噁心、體重輕微下降及間歇性嘔吐未消化食物。有第 2 型糖尿病史 10 年，HbA1c 9.2%。腹部理學檢查無明顯異常，肝腎功能正常。下列哪一項檢查最有助於確立診斷？</p>
+      <ul class="opts">
+        <li>(A) 腹部超音波</li>
+        <li>(B) 上消化道鋇劑攝影（UGI series）</li>
+        <li>(C) 胃排空閃爍攝影（Gastric emptying scintigraphy）</li>
+        <li>(D) 小腸內視鏡檢查</li>
+      </ul>
+            <details class="rev">
+        <summary class="toggle"></summary>
+        <div class="reveal">
+        <div class="ans">答案：(B) 與 (C) 皆給分（申覆後）</div>
+        <p>長期血糖控制不佳的糖尿病（HbA1c 9.2%）＋ 餐後飽脹、<b>嘔吐未消化食物</b> → 高度懷疑<b>糖尿病胃輕癱</b>。</p>
+        <p>診斷邏輯分兩層：先用 <b>UGI series（或內視鏡）排除結構性阻塞</b>，再用 <b>胃排空閃爍攝影（診斷金標準）</b>證實胃排空延遲。因為兩者在診斷流程中各有角色，申覆後兩個選項皆給分。</p>
+        <p>(A) 超音波看不出胃動力；(D) 小腸鏡查的是小腸病灶，方向錯誤。</p>
+        <div class="src">出處：王俊偉 胃腸道蠕動異常疾病 ppt p.21, 23</div>
+      </div>
+      </details>
+    </div>
+
+    <div class="q" id="q113-45">
+      <span class="q-no">113-45</span><span class="q-topic">IBS（跨單元）</span>
+      <p class="q-stem">32 歲男性主訴過去 6 個月反覆出現腹痛與腹瀉，症狀通常在排便後緩解，每日 4-5 次糊狀便，常合併腹脹。無夜間腹瀉、體重下降或血便，工作壓力大，常喝含糖飲料與冰牛奶。理學檢查、抽血及糞便潛血皆正常。下列何者為最適當的初步處置？</p>
+      <ul class="opts">
+        <li>(A) 開立廣效型抗生素</li>
+        <li>(B) 建議低 FODMAP 飲食與壓力管理</li>
+        <li>(C) 安排大腸鏡</li>
+        <li>(D) 開始口服類固醇</li>
+      </ul>
+            <details class="rev">
+        <summary class="toggle"></summary>
+        <div class="reveal">
+        <div class="ans">答案：(B)</div>
+        <p>符合 Rome IV 的 <b>IBS（腹瀉型）</b>：腹痛反覆 6 個月、<b>排便後緩解</b>、大便型態改變，且<b>完全沒有紅旗症狀</b>（無夜間腹瀉、無體重下降、無血便，糞便潛血正常）。</p>
+        <p>沒有警訊症狀的年輕病人，初步處置應採低侵入性：<b>低 FODMAP 飲食 + 壓力管理</b>（他的含糖飲料與冰牛奶正是高 FODMAP／乳糖來源）。</p>
+        <p>(A) 無感染證據；(C) 無紅旗症狀不需先做大腸鏡；(D) 類固醇是發炎性腸道疾病（IBD）的治療，IBS 並無腸道發炎。</p>
+        <div class="src">出處：王俊偉 胃腸道蠕動異常疾病 ppt p.29, 30, 36</div>
+      </div>
+      </details>
+    </div>
+
+    <!-- ===== 112 ===== -->
+    <div class="yrhead">112 學年度（BM112）· 4 題</div>
+
+    <div class="q" id="q112-33">
+      <span class="q-no">112-33</span><span class="q-topic">腹痛分類</span>
+      <p class="q-stem">下列對於不同類型腹痛的敘述，何者<b>錯誤</b>？</p>
+      <ul class="opts">
+        <li>(A) 臟器性疼痛（visceral pain）發生時能很清楚地定位疼痛的明確位置。</li>
+        <li>(B) 體壁性疼痛（somatic-parietal pain）由 A-delta fibers 來傳導，A-delta fibers 分布於皮膚和肌肉，屬於尖銳性疼痛（sharp pain）。</li>
+        <li>(C) 轉移性疼痛（referred pain）指疼痛感受部位和產生疼痛的器官位置不同。</li>
+        <li>(D) 轉移性疼痛的原理是因為不同解剖區域的臟器傳入神經元和軀體傳入神經元會在同一節脊髓中匯合成次級神經元，而後再將訊號傳入大腦。</li>
+      </ul>
+            <details class="rev">
+        <summary class="toggle"></summary>
+        <div class="reveal">
+        <div class="ans">答案：(A)</div>
+        <p>臟器性疼痛由 <b>C fibers</b> 傳導，訊號進入脊髓時是雙側、多節段的，因此病人只能說「肚子中間某處痛」，<b>定位模糊、無法明確指出</b>。可清楚定位的是體壁性疼痛。</p>
+        <p>(B)(C)(D) 敘述皆正確 —— 特別注意 (B) 在 111 學年度被改成「dull pain」當錯誤選項，這一年改回正確版本。</p>
+        <div class="src">出處：王俊偉 腹部常見症狀（含急性腹痛）ppt p.8, 10, 11</div>
+      </div>
+      </details>
+    </div>
+
+    <div class="q" id="q112-34">
+      <span class="q-no">112-34</span><span class="q-topic">急性腹痛流行病學／闌尾炎</span>
+      <p class="q-stem">下列關於急性腹痛的敘述何者<b>錯誤</b>？</p>
+      <ul class="opts">
+        <li>(A) 急性腹痛的定義為腹痛發生時間小於 7 天。</li>
+        <li>(B) 最常見的急性腹痛為急性盲腸炎。</li>
+        <li>(C) 急性盲腸炎剛發生時常以噁心、厭食和肚臍周圍疼痛來表現，發生後 6 到 8 小時後疼痛才會移轉至右下腹。</li>
+        <li>(D) 臨床上用來診斷急性盲腸炎的影像檢查中，以腹部電腦斷層的準確度最高。</li>
+      </ul>
+            <details class="rev">
+        <summary class="toggle"></summary>
+        <div class="reveal">
+        <div class="ans">答案：(B)</div>
+        <p>最常見的急性腹痛是<b>非特異性腹痛（NSAP，約 35%）</b>，急性闌尾炎約 17% 位居第二。這是直覺陷阱題。</p>
+        <p>(A) 急性腹痛定義 &lt; 7 天，正確；(C) 闌尾炎典型時間軸（臟器痛 → 6-8 小時後轉為體壁痛），正確；(D) CT 準確度 &gt;95%，為診斷準確度最高的影像工具，正確。</p>
+        <div class="src">出處：王俊偉 腹部常見症狀（含急性腹痛）ppt p.18</div>
+      </div>
+      </details>
+    </div>
+
+    <div class="q" id="q112-35">
+      <span class="q-no">112-35</span><span class="q-topic">急性膽管炎</span>
+      <p class="q-stem">一位 80 歲女性因右上腹痛合併發燒，生化檢查顯示：total protein 6.8 g/dL、albumin 3.8 g/dL、ALT 200 U/L、AST 100 U/L、alkaline phosphatase 300 U/L（正常值 &lt;100）、γ-GT 350 U/L（正常 &lt;52）、total bilirubin 5 mg/dL、direct bilirubin 3.5 mg/dL。下列何者為最可能的診斷？</p>
+      <ul class="opts">
+        <li>(A) 酒精性肝炎</li>
+        <li>(B) 肝臟膿瘍</li>
+        <li>(C) 急性膽管炎</li>
+        <li>(D) 脂肪肝</li>
+      </ul>
+            <details class="rev">
+        <summary class="toggle"></summary>
+        <div class="reveal">
+        <div class="ans">答案：(C)</div>
+        <p><b>Charcot's triad</b> 到齊：右上腹痛 + 發燒 + 黃疸（total bilirubin 5、direct 3.5，屬阻塞性）。抽血呈典型<b>膽汁鬱積型</b>：ALP（3 倍）與 γ-GT（近 7 倍）不成比例地大幅上升。</p>
+        <p>(A) 酒精性肝炎應為 <b>AST &gt; ALT</b>（比值 &gt;2），本題 ALT 200 &gt; AST 100 方向相反；(B) 肝膿瘍雖會發燒腹痛，但不會呈現如此典型的膽道阻塞型黃疸；(D) 脂肪肝不會發燒，肝功能異常也輕微得多。</p>
+        <div class="src">出處：王俊偉 腹部常見症狀（含急性腹痛）ppt p.24</div>
+      </div>
+      </details>
+    </div>
+
+    <div class="q" id="q112-36">
+      <span class="q-no">112-36</span><span class="q-topic">臨床評估流程</span>
+      <p class="q-stem">下列何選項為正確評估腹痛的臨床步驟？</p>
+      <ul class="opts">
+        <li>(A) 病史詢問 → 抽血檢驗和影像學檢查 → 身體理學檢查 → 評估生命徵象</li>
+        <li>(B) 評估生命徵象 → 身體理學檢查 → 病史詢問 → 抽血檢驗和影像學檢查</li>
+        <li>(C) 評估生命徵象 → 病史詢問 → 身體理學檢查 → 抽血檢驗和影像學檢查</li>
+        <li>(D) 病史詢問 → 評估生命徵象 → 身體理學檢查 → 抽血檢驗和影像學檢查</li>
+      </ul>
+            <details class="rev">
+        <summary class="toggle"></summary>
+        <div class="reveal">
+        <div class="ans">答案：(C)</div>
+        <p>原則是<b>先救命、再診斷</b>：先確認生命徵象與 ABC 是否穩定，接著問病史（診斷價值最高），再做理學檢查驗證假設，最後才安排抽血與影像來確認或排除。</p>
+        <p>(B) 的陷阱是把理學檢查放在病史之前 —— 沒有病史就摸肚子，等於沒有假設地亂找。</p>
+        <div class="src">出處：王俊偉 腹部常見症狀（含急性腹痛）ppt p.13, 15</div>
+      </div>
+      </details>
+    </div>
+
+    <!-- ===== 111 ===== -->
+    <div class="yrhead">111 學年度（BM111）· 4 題</div>
+
+    <div class="q" id="q111-27">
+      <span class="q-no">111-27</span><span class="q-topic">腹痛分類</span>
+      <p class="q-stem">下列對於不同類型腹痛的敘述，何者<b>正確</b>？<br>
+        (1) 臟器性疼痛（visceral pain）發生時能很清楚地定位疼痛的明確位置。<br>
+        (2) 體壁性疼痛（somatic-parietal pain）由 A-delta fibers 來傳導，A-delta fibers 分布於皮膚和肌肉，屬於鈍性疼痛（dull pain）。<br>
+        (3) 轉移性疼痛（referred pain）指疼痛感受部位和產生疼痛的器官位置不同。<br>
+        (4) 轉移性疼痛的原理是因為不同解剖區域的臟器傳入神經元和軀體傳入神經元會在同一節脊髓中匯合成次級神經元，而後再將訊號傳入大腦。</p>
+      <ul class="opts"><li>(A) (1)+(2)　　(B) (3)+(4)　　(C) (1)+(3)+(4)　　(D) (2)+(3)+(4)</li></ul>
+            <details class="rev">
+        <summary class="toggle"></summary>
+        <div class="reveal">
+        <div class="ans">答案：(B)</div>
+        <p>(1) <b>錯</b>：臟器性疼痛走 C fibers，定位模糊、難以指出明確位置。</p>
+        <p>(2) <b>錯</b>：A-delta fibers 有髓鞘、傳導快，屬於<b>尖銳痛（sharp pain）</b>，不是鈍痛。</p>
+        <p>(3)(4) <b>正確</b>：轉移痛的定義與「同一節脊髓匯合成 second-order neuron」的機轉皆無誤。</p>
+        <div class="src">出處：王俊偉 腹部常見症狀（含急性腹痛）ppt p.6, 10</div>
+      </div>
+      </details>
+    </div>
+
+    <div class="q" id="q111-28">
+      <span class="q-no">111-28</span><span class="q-topic">急性闌尾炎（影像題）</span>
+      <p class="q-stem">一位 43 歲男性主訴昨天開始肚臍周圍疼痛，今天疼痛轉移到右下腹來，同時合併嘔吐、噁心，於急診後進行電腦斷層掃描檢查，結果如圖，請問他最有可能是什麼問題？<span style="color:var(--text-3)">（圖略）</span></p>
+      <ul class="opts">
+        <li>(A) 大腸憩室炎</li>
+        <li>(B) 急性闌尾炎</li>
+        <li>(C) 右側輸尿管結石併右腎水腫</li>
+        <li>(D) 急性腸胃炎</li>
+      </ul>
+            <details class="rev">
+        <summary class="toggle"></summary>
+        <div class="reveal">
+        <div class="ans">答案：(B)</div>
+        <p>不看圖也能解：<b>肚臍周圍痛 → 隔天轉移至右下腹</b>，是闌尾炎從臟器痛轉為體壁痛的經典時間軸，且<b>先痛後吐</b>。CT 上箭頭所指為腫脹的闌尾（直徑增大、管壁增厚、周圍脂肪髒污）。</p>
+        <p>(A) 憩室炎多在左下腹（亞洲人可右側，但無轉移痛特徵）；(C) 結石為腰側絞痛放射至鼠蹊，且會有血尿與腎水腫；(D) 腸胃炎通常<b>先吐先拉才痛</b>，且腹痛為瀰漫性、不會固定在一點。</p>
+        <div class="src">出處：王俊偉 腹部常見症狀（含急性腹痛）ppt</div>
+      </div>
+      </details>
+    </div>
+
+    <div class="q" id="q111-29">
+      <span class="q-no">111-29</span><span class="q-topic">急性胰臟炎</span>
+      <p class="q-stem">下列關於急性胰臟炎的敘述，何者<b>正確</b>？<br>
+        (1) 急性胰臟炎的疼痛表現常以上腹痛併後背轉移痛，病患坐直或身體往前傾會減緩疼痛。<br>
+        (2) 臨床上常用 Ranson's criteria 來評估急性胰臟炎的預後。<br>
+        (3) 急性胰臟炎的抽血檢驗會呈現 alkaline phosphatase 和 γ-glutamyl transpeptidase 顯著上升。<br>
+        (4) 腹部電腦斷層在急性胰臟炎的重要性為確定嚴重程度和相關併發症。</p>
+      <ul class="opts"><li>(A) (1)+(2)+(4)　　(B) (1)+(3)+(4)　　(C) (1)+(4)　　(D) (2)+(3)</li></ul>
+            <details class="rev">
+        <summary class="toggle"></summary>
+        <div class="reveal">
+        <div class="ans">答案：(A)</div>
+        <p>(3) 是唯一錯誤：ALP 與 γ-GT 顯著上升代表<b>膽道阻塞</b>；急性胰臟炎應為<b>血清 amylase 與 lipase 上升至正常值 3 倍以上</b>。</p>
+        <p>(1) 正確：胰臟位於後腹腔，痛會穿透到背部，<b>前傾姿勢可緩解</b>、平躺加重。<br>
+        (2) 正確：Ranson's criteria（入院時 5 項＋48 小時 6 項）用於評估預後與死亡率。<br>
+        (4) 正確：CT 的角色不在診斷，而在<b>評估嚴重度與併發症</b>（壞死、假性囊腫、膿瘍）。</p>
+        <div class="src">出處：王俊偉 腹部常見症狀（含急性腹痛）ppt</div>
+      </div>
+      </details>
+    </div>
+
+    <div class="q" id="q111-30">
+      <span class="q-no">111-30</span><span class="q-topic">慢性腹痛</span>
+      <p class="q-stem">關於慢性腹痛的敘述，下列何者<b>正確</b>？<br>
+        (1) 臨床上慢性腹痛的確診主要還是依賴抽血檢驗和內視鏡等影像學檢查，因此病史詢問和身體理學檢查的重要性相對較低。<br>
+        (2) 慢性腹痛的定義為腹痛發生時間（連續或間斷）至少持續 6 個月。<br>
+        (3) 前皮神經卡壓和筋膜疼痛症候群（ACNES and myofascial pain syndromes）的疼痛通常與飲食及胃腸蠕動有關，而和姿勢動作無關。<br>
+        (4) 中樞性腹痛症候群（CAPS）的起因為中樞神經不正常的放大正常臟器傳遞的訊號而導致疼痛感。</p>
+      <ul class="opts"><li>(A) (1)+(2)　　(B) (3)+(4)　　(C) (1)+(3)　　(D) (2)+(4)</li></ul>
+            <details class="rev">
+        <summary class="toggle"></summary>
+        <div class="reveal">
+        <div class="ans">公布答案：(B)</div>
+        <p><b>各敘述的正確性判斷：</b></p>
+        <p>(1) <b>錯</b>：不論急慢性腹痛，病史詢問與理學檢查始終是診斷核心，影像與抽血只是輔助。<br>
+        (2) <b>對</b>：慢性腹痛定義為持續或間斷 ≥ 6 個月。<br>
+        (3) <b>錯（敘述完全顛倒）</b>：ACNES 的疼痛與<b>姿勢動作有關</b>（咳嗽、起身加劇），與<b>飲食及腸蠕動無關</b>。<br>
+        (4) <b>對</b>：CAPS 的機轉正是中樞神經異常放大正常的臟器訊號。</p>
+        <div class="box trap" style="margin:14px 0 0">
+          <div class="bt"><span class="badge">注意</span>此題答案與詳解邏輯不一致，建議向老師確認</div>
+          <p style="margin:0">若照上述判斷（(2) 與 (4) 正確），答案應為 <b>(D)</b>；但你手上的詳解版本公布答案為 (B)，卻又寫「(2) 定義正確」。可能原因是老師 ppt 對慢性腹痛採用不同的時間定義（部分教科書用 3 個月）。<b>考前務必以老師 ppt 上的定義為準。</b>不論如何，(1) 與 (3) 是錯的、(4) 是對的，這三點沒有爭議。</p>
+        </div>
+        <div class="src">出處：王俊偉 腹部常見症狀（含急性腹痛）ppt</div>
+      </div>
+      </details>
+    </div>
+
+  </section>
+
+  <footer>
+    <p><b>第 1 科完成｜腹部常見症狀（含急性腹痛）</b>　共 14 題（BM111 4 題、BM112 4 題、BM113 6 題，其中 113-44、113-45 與「腸胃道蠕動異常疾病」單元重疊）。</p>
+    <p>後續科目：② 腸胃道蠕動異常疾病　③ 急性闌尾炎、大腸傷害及腸系膜疾病　④ 消化系統介入性放射學　⑤ 食道疾病</p>
+    <p style="margin-top:14px;font-family:var(--mono);font-size:12px;color:var(--teal);border:1px solid var(--line-2);border-radius:6px;padding:6px 10px;display:inline-block">版面 v2 · 表格直式卡片</p>
+  </footer>
+
+  </main>
+</div>
+</div>
+
+<script>
+  // 手機版：把表頭文字寫進每個儲存格，直式排列時才知道每格代表什麼
+  (function(){
+    document.querySelectorAll('.tw table').forEach(function(t){
+      var ths = t.querySelectorAll('thead th');
+      if(!ths.length) return;
+      var labels = Array.prototype.map.call(ths, function(th){
+        return th.textContent.replace(/\u3000/g,'').trim();
+      });
+      t.querySelectorAll('tbody tr').forEach(function(tr){
+        Array.prototype.forEach.call(tr.children, function(td, i){
+          if(labels[i]) td.setAttribute('data-label', labels[i]);
+        });
+      });
+    });
+  })();
+
+  // 手機版：目錄預設收合
+  (function(){
+    var toc = document.getElementById('tocBox');
+    if(toc && window.matchMedia('(max-width:700px)').matches){
+      toc.removeAttribute('open');
+    }
+  })();
+
+  var allBtn = document.getElementById('allBtn');
+  if(allBtn){
+    var expanded = false;
+    allBtn.addEventListener('click', function(){
+      expanded = !expanded;
+      document.querySelectorAll('.q details.rev').forEach(function(d){
+        if(expanded){ d.setAttribute('open',''); } else { d.removeAttribute('open'); }
+      });
+      allBtn.textContent = expanded ? '全部收合答案' : '全部展開答案';
+    });
+  }
+</script>
+</body>
+</html>

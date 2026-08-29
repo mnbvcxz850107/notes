@@ -1,0 +1,908 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>食道疾病｜裸讀學習筆記</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&family=Noto+Serif+TC:wght@500;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0F1B18;--bg-2:#152420;--bg-3:#1B2E29;--line:#26403A;--line-2:#31534B;
+    --text:#E9F1EE;--text-2:#A8C2BA;--text-3:#7A968D;
+    --teal:#7FC9BE;--teal-dim:#4E9A90;--gold:#C9A961;--rose:#E58B85;
+    --serif:"Noto Serif TC","Songti TC",serif;
+    --sans:"Noto Sans TC","PingFang TC","Microsoft JhengHei",sans-serif;
+    --mono:"JetBrains Mono",ui-monospace,Menlo,monospace;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth;scroll-padding-top:24px}
+  html{overflow-x:hidden}
+  body{margin:0;background:var(--bg);color:var(--text);font-family:var(--sans);
+    font-size:16.5px;line-height:1.9;font-weight:300;-webkit-font-smoothing:antialiased;
+    overflow-x:hidden}
+  .wrap{max-width:1150px;margin:0 auto;padding:0 22px}
+  header.hero{padding:66px 0 52px;border-bottom:1px solid var(--line)}
+  .backlink{display:inline-block;font-family:var(--mono);font-size:12px;
+    color:var(--text-3);text-decoration:none;margin-bottom:22px;
+    border:1px solid var(--line);border-radius:6px;padding:5px 12px;transition:.15s}
+  .backlink:hover{color:var(--teal);border-color:var(--teal-dim)}
+  .eyebrow{display:flex;align-items:center;gap:16px;margin-bottom:26px;
+    font-family:var(--serif);font-size:15px;letter-spacing:.34em;color:var(--teal)}
+  .eyebrow .rule{width:56px;height:1px;background:var(--gold)}
+  .eyebrow .dot{color:var(--gold)}
+  header.hero h1{font-family:var(--serif);font-weight:700;font-size:clamp(38px,7vw,72px);
+    line-height:1.15;margin:0 0 22px;letter-spacing:.02em}
+  header.hero h1 em{font-style:normal;color:var(--teal)}
+  header.hero p.sub{margin:0;color:var(--text-2);max-width:62ch;font-size:17px;line-height:1.85}
+  .intro-card{border:1px solid var(--line);border-radius:16px;padding:26px 30px;margin-top:34px;background:var(--bg-2)}
+  .intro-card p{margin:0 0 22px;color:var(--text-2)}
+  .intro-card b{color:var(--teal);font-weight:500}
+  .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+  .stat .n{font-family:var(--serif);font-size:38px;color:var(--gold);line-height:1}
+  .stat .l{font-size:12.5px;color:var(--text-3);letter-spacing:.08em;margin-top:6px}
+  .cols{display:grid;grid-template-columns:220px 1fr;gap:52px;padding:46px 0 90px;align-items:start}
+  nav.toc{position:sticky;top:26px}
+  nav.toc .t{font-family:var(--mono);font-size:11px;letter-spacing:.2em;color:var(--text-3);margin-bottom:14px}
+  nav.toc a{display:block;padding:7px 14px;border-left:1px solid var(--line);
+    color:var(--text-2);text-decoration:none;font-size:14px;transition:.15s}
+  nav.toc a:hover{border-left-color:var(--teal);color:var(--teal);background:var(--bg-2)}
+  nav.toc a.exam{color:var(--gold)}
+  nav.toc summary{display:none}
+  section{margin-bottom:64px;scroll-margin-top:24px}
+  .sec-head{display:flex;align-items:baseline;gap:16px;border-bottom:1px solid var(--line-2);padding-bottom:12px;margin-bottom:26px}
+  .sec-num{font-family:var(--serif);font-size:30px;color:var(--gold);line-height:1}
+  .sec-head h2{font-family:var(--serif);font-size:clamp(22px,3.2vw,30px);margin:0;font-weight:700;letter-spacing:.02em}
+  h3{font-family:var(--serif);font-size:21px;margin:38px 0 12px;font-weight:500}
+  h4{font-size:16.5px;margin:24px 0 8px;color:var(--teal);font-weight:500}
+  p{margin:0 0 15px}
+  ul,ol{margin:0 0 17px;padding-left:22px}
+  li{margin-bottom:8px}
+  li::marker{color:var(--teal-dim)}
+  strong,b{font-weight:500;color:#FFF}
+  u{text-decoration-color:var(--teal-dim);text-underline-offset:3px}
+  code{font-family:var(--mono);font-size:.88em;background:var(--bg-3);padding:1px 6px;border-radius:4px;color:var(--teal)}
+  mark{background:rgba(201,169,97,.22);box-shadow:inset 0 -2px 0 rgba(201,169,97,.6);
+    color:#FBF3E2;padding:1px 3px;border-radius:2px}
+  a.qtag{display:inline-block;font-family:var(--mono);font-size:11px;font-weight:600;
+    border:1px solid var(--gold);color:var(--gold);padding:1px 7px;border-radius:4px;
+    text-decoration:none;margin:0 3px;vertical-align:2px;white-space:nowrap;transition:.15s}
+  a.qtag:hover{background:var(--gold);color:var(--bg)}
+  .tagline{margin:-8px 0 18px;font-size:13.5px;color:var(--text-3)}
+  .box{border-radius:13px;padding:20px 24px;margin:22px 0;border:1px solid var(--line);background:var(--bg-2)}
+  .box .bt{font-weight:500;font-size:14.5px;margin-bottom:10px;display:flex;align-items:center;gap:9px;color:#FFF}
+  .box p:last-child,.box ul:last-child,.box ol:last-child{margin-bottom:0}
+  .badge{font-family:var(--mono);font-size:10px;padding:2px 8px;border-radius:3px;letter-spacing:.06em;
+    border:1px solid currentColor;font-weight:600}
+  .box.exam{border-color:rgba(201,169,97,.45);background:rgba(201,169,97,.07)}
+  .box.exam .badge{color:var(--gold)}
+  .box.trap{border-color:rgba(229,139,133,.45);background:rgba(229,139,133,.07)}
+  .box.trap .badge{color:var(--rose)}
+  .box.key{border-color:rgba(127,201,190,.4);background:rgba(127,201,190,.07)}
+  .box.key .badge{color:var(--teal)}
+  .tw{overflow-x:auto;margin:22px 0;border:1px solid var(--line);border-radius:13px}
+  table{border-collapse:collapse;width:100%;min-width:560px;font-size:14.8px}
+  th,td{padding:12px 16px;text-align:left;border-bottom:1px solid var(--line);vertical-align:top}
+  thead th{background:var(--bg-3);color:var(--teal);font-weight:500;font-size:13.5px;letter-spacing:.04em}
+  tbody tr:last-child td{border-bottom:none}
+  tbody tr:nth-child(even){background:rgba(255,255,255,.018)}
+  td.mono,th.mono{font-family:var(--mono);font-size:13px}
+  .ladder{margin:24px 0;border:1px solid var(--line);border-radius:13px;overflow:hidden}
+  .rung{display:flex;gap:16px;padding:14px 20px;border-bottom:1px solid var(--line);background:var(--bg-2);align-items:flex-start}
+  .rung:last-child{border-bottom:none}
+  .rung .lv{font-family:var(--mono);font-size:11.5px;color:var(--gold);border:1px solid var(--gold);
+    padding:2px 9px;border-radius:4px;white-space:nowrap;margin-top:4px}
+  .rung .txt{font-size:14.8px;line-height:1.75;color:var(--text-2)}
+  .rung .txt b{color:#FFF}
+  .quiz{border:1px solid var(--line-2);border-radius:14px;margin:26px 0;overflow:hidden;background:var(--bg-2)}
+  .quiz-top{display:flex;align-items:center;gap:10px;padding:12px 20px;background:var(--bg-3);border-bottom:1px solid var(--line);flex-wrap:wrap}
+  .quiz-top .lab{font-family:var(--serif);font-size:14px;letter-spacing:.16em;color:var(--gold)}
+  .quiz-top .yr{font-family:var(--mono);font-size:11.5px;color:var(--text-2);border:1px solid var(--line-2);padding:2px 8px;border-radius:4px}
+  .quiz-body{padding:20px 22px}
+  .quiz-body .stem{font-size:15.5px;line-height:1.85;margin:0 0 14px;color:var(--text)}
+  .opts{list-style:none;padding:0;margin:0 0 14px}
+  .opts li{padding:8px 12px;font-size:15px;border:1px solid var(--line);border-radius:8px;margin-bottom:7px;color:var(--text-2)}
+  .toggle{background:none;border:1px solid var(--teal-dim);color:var(--teal);font-family:var(--sans);
+    font-size:13px;padding:7px 16px;border-radius:7px;cursor:pointer;transition:.15s;font-weight:400}
+  .toggle:hover{background:var(--teal);color:var(--bg)}
+
+  /* ---------- 答案展開：使用原生 details，不依賴 JavaScript ---------- */
+  details.rev{margin:0}
+  summary.toggle{
+    display:inline-block;list-style:none;cursor:pointer;
+    background:none;border:1px solid var(--teal-dim);color:var(--teal);
+    font-family:var(--sans);font-size:13px;padding:7px 16px;border-radius:7px;
+    font-weight:400;transition:.15s;-webkit-tap-highlight-color:transparent;
+  }
+  summary.toggle::-webkit-details-marker{display:none}
+  summary.toggle::marker{content:""}
+  summary.toggle:hover{background:var(--teal);color:var(--bg)}
+  summary.toggle::before{content:"顯示答案"}
+  .q summary.toggle::before{content:"顯示答案與詳解"}
+  details.rev[open] summary.toggle::before{content:"收合答案"}
+  details.rev .reveal{margin-top:14px}
+  .reveal{border-top:1px dashed var(--line-2);margin-top:14px;padding-top:14px}
+  .reveal[hidden]{display:none}
+  .ans{font-family:var(--serif);font-weight:700;color:var(--gold);font-size:17px;margin-bottom:10px}
+  .reveal p{margin:0 0 9px;font-size:14.8px;color:var(--text-2)}
+  .reveal p b{color:#FFF}
+  .src{font-size:12px;color:var(--text-3);font-family:var(--mono);margin-top:12px}
+  .jump{font-size:12.5px;color:var(--teal-dim);text-decoration:none;border-bottom:1px solid var(--line-2)}
+  .jump:hover{color:var(--teal)}
+  .exam-head{border:1px solid var(--line-2);border-radius:16px;padding:30px;margin-bottom:28px;background:var(--bg-2)}
+  .exam-head h2{font-family:var(--serif);margin:0 0 10px;font-size:29px}
+  .exam-head p{color:var(--text-2);margin:0;font-size:15px}
+  .btn{font-family:var(--sans);font-size:13.5px;cursor:pointer;background:var(--teal);color:var(--bg);
+    border:none;padding:10px 20px;border-radius:8px;margin-top:18px;font-weight:500}
+  .btn:hover{background:#9BDBD1}
+  .yrhead{font-family:var(--serif);font-size:24px;font-weight:700;margin:40px 0 18px;
+    padding-left:16px;border-left:3px solid var(--gold);color:var(--gold)}
+  .q{background:var(--bg-2);border:1px solid var(--line);border-radius:13px;padding:22px 24px;margin-bottom:16px;scroll-margin-top:24px}
+  .q-no{font-family:var(--mono);font-size:11.5px;color:var(--gold);border:1px solid var(--gold);padding:2px 9px;border-radius:5px}
+  .q-topic{font-size:12.5px;color:var(--text-3);margin-left:10px}
+  .q-stem{margin:14px 0 12px;font-size:15.5px;line-height:1.85}
+  .anat{margin:24px 0;border:1px solid var(--line);border-radius:13px;overflow:hidden}
+  .lvl{display:flex;gap:18px;padding:16px 20px;border-bottom:1px solid var(--line);background:var(--bg-2);align-items:flex-start}
+  .lvl:last-child{border-bottom:none}
+  .lvl .pos{font-family:var(--mono);font-size:12px;color:var(--gold);white-space:nowrap;min-width:64px;margin-top:4px}
+  .lvl .body{font-size:14.8px;line-height:1.75;color:var(--text-2)}
+  .lvl .body b{color:#FFF;display:block;margin-bottom:3px}
+  footer{border-top:1px solid var(--line);padding:30px 0 60px;color:var(--text-3);font-size:13.5px}
+  footer b{color:var(--text-2)}
+  @media (max-width:900px){
+    .cols{grid-template-columns:1fr;gap:0;padding-top:28px}
+    nav.toc{position:static;margin-bottom:36px;border:1px solid var(--line);border-radius:12px;padding:16px;background:var(--bg-2)}
+    nav.toc a{border-left:none;padding:6px 4px}
+    .stats{grid-template-columns:repeat(2,1fr);gap:20px}
+    .rung,.lvl{flex-direction:column;gap:8px}
+  }
+
+  /* ---------- 手機版：表格改為直式卡片，消除左右滑動 ---------- */
+
+  /* ---------- 表格一律直式卡片呈現（不依賴螢幕寬度判斷，因為部分 App 內建瀏覽器
+     不會依照真實裝置寬度計算版面，用 @media 寬度斷點會失效）---------- */
+  .tw{border:none;background:none;overflow:visible;border-radius:0;margin:18px 0}
+  .tw table{min-width:0;width:100%;border-collapse:separate;border-spacing:0;font-size:15px}
+  .tw thead{display:none}
+  .tw tbody tr{
+    display:block;border:1px solid var(--line);border-radius:12px;
+    background:var(--bg-2);margin-bottom:12px;padding:4px 0;
+  }
+  .tw tbody tr:nth-child(even){background:var(--bg-2)}
+  .tw tbody tr:last-child{margin-bottom:0}
+  .tw tbody td{display:block;border:none;padding:10px 16px}
+  .tw tbody td+td{border-top:1px dashed var(--line)}
+  .tw tbody td[data-label]::before{
+    content:attr(data-label);display:block;
+    font-family:var(--mono);font-size:11px;letter-spacing:.08em;
+    color:var(--teal);margin-bottom:5px;
+  }
+  .tw tbody td:first-child{font-size:16.5px}
+  .tw tbody td.mono,.tw tbody td:first-child{color:var(--text)}
+
+  @media (max-width:700px){
+    body{font-size:16px;line-height:1.85}
+    .wrap{padding:0 16px}
+    header.hero{padding:40px 0 34px}
+    .cols{padding:28px 0 60px}
+    section{margin-bottom:46px}
+
+    nav.toc{padding:0;overflow:hidden}
+    nav.toc .t{display:none}
+    nav.toc details{margin:0}
+    nav.toc summary{
+      display:block;list-style:none;cursor:pointer;padding:14px 16px;
+      font-family:var(--mono);font-size:12px;letter-spacing:.16em;color:var(--teal);
+    }
+    nav.toc summary::-webkit-details-marker{display:none}
+    nav.toc summary::after{content:" \25be";color:var(--text-3)}
+    nav.toc details[open] summary::after{content:" \25b4"}
+    nav.toc .toc-links{padding:0 10px 12px}
+
+    .box{padding:16px 18px;border-radius:11px}
+    p,li,td,.stem,.reveal p,.opts li,.q-stem{overflow-wrap:anywhere;word-break:break-word}
+    .quiz-body{padding:16px 16px}
+    .opts li{padding:9px 12px;font-size:15px}
+    .q{padding:18px 16px}
+    .sec-head{gap:12px}
+    ul,ol{padding-left:20px}
+    .toggle{width:100%;padding:11px 16px;font-size:14px}
+    summary.toggle{width:100%;text-align:center;padding:11px 16px;font-size:14px}
+    .btn{width:100%;padding:12px 16px}
+  }
+  @media print{nav.toc,.btn,.toggle{display:none}.reveal{display:block!important}body{background:#fff;color:#000;font-size:11pt}}
+  @media print{.tw thead{display:table-header-group!important}}
+  @media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <a class="backlink" href="index.html">← 返回 Block 7 目錄</a>
+    <div class="eyebrow"><span class="rule"></span>裸讀學習筆記<span class="dot">·</span>由淺入深</div>
+    <h1>食道<em>疾病</em></h1>
+    <p class="sub">一根 25 公分的肌肉管子，卻是全消化道最不能出錯的地方 —— 因為它沒有漿膜層。本科考題高度集中在「檢查配對」與「治療配對」。授課教師：張博智。</p>
+
+    <div class="intro-card">
+      <p>這份筆記把 <b>BM113、BM112、BM111</b> 三個學年度考古題中，所有跟「食道疾病」相關的題目，<b>嵌入到對應的觀念旁邊即時測驗</b>，文末再依年度完整羅列一次。</p>
+      <div class="stats">
+        <div class="stat"><div class="n">6</div><div class="l">總題數</div></div>
+        <div class="stat"><div class="n">2</div><div class="l">BM113</div></div>
+        <div class="stat"><div class="n">2</div><div class="l">BM112</div></div>
+        <div class="stat"><div class="n">2</div><div class="l">BM111</div></div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+<div class="cols">
+
+  <nav class="toc">
+    <div class="t">CONTENTS</div>
+    <details id="tocBox" open>
+      <summary>目錄 CONTENTS</summary>
+      <div class="toc-links">
+    <a href="#s1">一　解剖：三處狹窄</a>
+    <a href="#s2">二　吞嚥困難怎麼問</a>
+    <a href="#s3">三　四大檢查工具</a>
+    <a href="#s4">四　胃食道逆流與 Barrett</a>
+    <a href="#s5">五　食道弛緩不能</a>
+    <a href="#s6">六　食道憩室</a>
+    <a href="#s7">七　食道癌</a>
+    <a href="#s8">八　配對總表</a>
+    <a href="#s9">九　一分鐘總複習</a>
+    <a href="#exam" class="exam">十　考古題全收錄</a>
+      </div>
+    </details>
+  </nav>
+
+  <main>
+
+  <!-- ============ 01 ============ -->
+  <section id="s1">
+    <div class="sec-head"><span class="sec-num">一</span><h2>解剖：三處生理性狹窄</h2></div>
+    <p class="tagline">本節考點：<a class="qtag" href="#q111-48">111-48</a><a class="qtag" href="#q113-48">113-48</a></p>
+
+    <h3>先講一個致命的解剖特徵</h3>
+    <div class="box key">
+      <div class="bt"><span class="badge">關鍵</span>食道<b>沒有漿膜層（serosa）</b></div>
+      <p>其他消化道都有漿膜層包覆，可以侷限感染、也讓縫合更牢固。食道只有黏膜層、黏膜下層、肌肉層與外膜。</p>
+      <p>後果有兩個：<mark>① 穿孔後感染會迅速擴散到縱膈腔（縱膈炎，死亡率極高）② 手術吻合處容易滲漏</mark>。這也是為什麼食道手術風險特別高。</p>
+    </div>
+
+    <h3>三處生理性狹窄</h3>
+    <p>食道全長約 25 公分（自門齒起算約 15–40 公分）。有三個天然變窄的地方 —— 這些位置是<mark>異物容易卡住、腐蝕性物質停留最久、腫瘤好發、內視鏡與擴張術最容易穿孔</mark>的地方。</p>
+
+    <div class="anat">
+      <div class="lvl">
+        <span class="pos">C6</span>
+        <span class="body"><b>① 上段：環咽肌 Cricopharyngeal sphincter</b>
+        即上食道括約肌（UES），距門齒約 15 公分。<mark>是三處中最窄的一處</mark>，也是 Zenker 憩室的發生位置。</span>
+      </div>
+      <div class="lvl">
+        <span class="pos">T4–T5</span>
+        <span class="body"><b>② 中段：主動脈弓與左主支氣管</b>
+        由<mark>主動脈弓</mark>（在前上方跨過）與<mark>左主支氣管</mark>（在其下方交叉）共同從外部壓迫形成。距門齒約 25 公分。<b>兩者都要記，但主動脈弓的壓迫較顯著。</b></span>
+      </div>
+      <div class="lvl">
+        <span class="pos">T10</span>
+        <span class="body"><b>③ 下段：橫膈裂孔 Diaphragmatic hiatus</b>
+        即下食道括約肌（LES）所在位置，距門齒約 40 公分。是 GERD、achalasia、epiphrenic 憩室的舞台。</span>
+      </div>
+    </div>
+
+    <div class="box trap">
+      <div class="bt"><span class="badge">爭議點</span>111-48 與 113-48 的答案是 (A)，但理由要看清楚</div>
+      <p>選項 (A) 寫的是：「…要注意相關 <u>left main bronchus, upper esophagus-cricopharyngeal sphincter and diaphragm level</u> 等解剖狹窄處」。</p>
+      <p>根據詳解，此選項被判為「最不適當」的理由是：中段狹窄<mark>主要由「主動脈弓」形成，左主支氣管為次要因素</mark>，而選項只列了 left main bronchus、未提及主動脈弓，描述不夠精確。</p>
+      <p><b>提醒：</b>不少教科書會把 left main bronchus 與 aortic arch 並列為中段狹窄的成因，所以這個判定相當依賴老師 ppt 的寫法。<mark>務必確認老師投影片上這三處狹窄是怎麼寫的</mark> —— 這題連考兩年，命中率極高。</p>
+    </div>
+
+    <!-- QUIZ 111-48 / 113-48 -->
+    <div class="quiz">
+      <div class="quiz-top"><span class="lab">考古題</span><span class="yr">111 學年度 · 第 48 題</span><span class="yr">113 學年度 · 第 48 題</span></div>
+      <div class="quiz-body">
+        <p class="stem">有關食道疾患與其相關評估檢查，下列的配對何者<b>最不適當</b>？</p>
+        <ul class="opts">
+          <li>(A) 若懷疑病患有食道狹窄，可先安排食道攝影（esophagogram）檢查，但要注意相關 left main bronchus, upper esophagus-cricopharyngeal sphincter and diaphragm level 等解剖狹窄處。</li>
+          <li>(B) 可安排食道胃鏡來排除有無腫瘤順便採取檢體外，施作時應注意有無食道手術之病史以防穿孔。</li>
+          <li>(C) 若平常生活中有抽菸、喝酒和嚼食檳榔習慣，且又合併體重減輕與漸進式吞嚥困難，則大概可以先臆測食道鱗狀細胞癌之高度可能性。</li>
+          <li>(D) 食道壓力測定可以用來診斷偵測食道蠕動異常疾病，achalasia 常呈現 aperistalsis 和 incomplete lower esophageal sphincter relaxation 之情形。</li>
+        </ul>
+                <details class="rev">
+          <summary class="toggle"></summary>
+          <div class="reveal">
+          <div class="ans">答案：(A)</div>
+          <p>中段狹窄<b>主要由主動脈弓壓迫形成</b>，左主支氣管為次要因素；選項未強調主動脈弓，描述不夠精確。(B)(C)(D) 敘述皆正確。</p>
+          <p><a class="jump" href="#q111-48">看文末完整詳解 ↓</a></p>
+        </div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 02 ============ -->
+  <section id="s2">
+    <div class="sec-head"><span class="sec-num">二</span><h2>吞嚥困難：問診就能分一半</h2></div>
+
+    <div class="box exam">
+      <div class="bt"><span class="badge">核心鑑別</span>問一句話就能分「機械性」與「動力性」</div>
+      <p><b>「一開始是吞不下固體，還是固體液體都吞不下？」</b></p>
+      <div class="tw" style="margin:10px 0 0"><table>
+        <thead><tr><th>　</th><th>機械性阻塞（結構問題）</th><th>動力障礙（蠕動問題）</th></tr></thead>
+        <tbody>
+          <tr><td><b>症狀演變</b></td><td><mark>先固體 → 後來連液體也困難</mark>（漸進式）</td><td><mark>一開始固體與液體<b>同時</b>都困難</mark></td></tr>
+          <tr><td><b>代表疾病</b></td><td><b>食道癌</b>、良性狹窄、食道環</td><td><b>Achalasia</b>、瀰漫性食道痙攣、硬皮症</td></tr>
+          <tr><td><b>病程</b></td><td>數週至數月，快速惡化</td><td>數月至數年，時好時壞</td></tr>
+          <tr><td><b>體重</b></td><td>明顯下降</td><td>下降較緩慢</td></tr>
+        </tbody>
+      </table></div>
+    </div>
+
+    <h4>食道癌的高風險組合（考題直接送分）</h4>
+    <p><mark>抽菸 + 喝酒 + 嚼檳榔 + 體重減輕 + 漸進式吞嚥困難 = 高度懷疑食道鱗狀細胞癌（SCC）</mark></p>
+    <p>這是台灣男性最典型的食道癌畫面，三種習慣有加乘效應。</p>
+
+    <h4>其他要問的症狀</h4>
+    <ul>
+      <li><strong>Odynophagia（吞嚥疼痛）</strong> → 感染性食道炎（念珠菌、疱疹、CMV）、腐蝕性傷害、藥物性潰瘍</li>
+      <li><strong>火燒心（heartburn）與逆流</strong> → GERD</li>
+      <li><strong>反芻未消化食物、夜咳、吸入性肺炎</strong> → achalasia 或憩室</li>
+      <li><strong>聲音沙啞</strong> → 喉返神經受侵犯（晚期食道癌的警訊）</li>
+    </ul>
+  </section>
+
+  <!-- ============ 03 ============ -->
+  <section id="s3">
+    <div class="sec-head"><span class="sec-num">三</span><h2>四大檢查工具，各司其職</h2></div>
+    <p class="tagline">本節考點：<a class="qtag" href="#q112-38">112-38</a><a class="qtag" href="#q111-48">111-48</a></p>
+
+    <p><strong>這一節是本科最重要的內容。</strong>六題裡有三題在考「疾病 ↔ 檢查」的配對。</p>
+
+    <div class="tw"><table>
+      <thead><tr><th>檢查</th><th>看什麼</th><th>最適合的疾病</th><th>限制</th></tr></thead>
+      <tbody>
+        <tr>
+          <td><b>食道攝影<br>Esophagogram</b><br><span style="font-size:12.5px;color:var(--text-3)">鋇劑吞嚥</span></td>
+          <td>食道的<b>形狀與輪廓</b>、通過情形</td>
+          <td><mark>食道狹窄、憩室、食道裂孔疝氣</mark>；achalasia 的鳥嘴狀（bird's beak）變化</td>
+          <td>看不到黏膜細節、不能切片</td>
+        </tr>
+        <tr>
+          <td><b>上消化道內視鏡<br>EGD</b></td>
+          <td><b>黏膜的直接影像</b>，可<b>切片</b></td>
+          <td><mark>Barrett's esophagus（診斷與追蹤）</mark>、逆流性食道炎分級、腫瘤、靜脈曲張</td>
+          <td>有穿孔風險（尤其有食道手術史或嚴重狹窄者）</td>
+        </tr>
+        <tr>
+          <td><b>食道壓力測定<br>High-resolution manometry</b></td>
+          <td>食道的<b>肌肉收縮力與括約肌功能</b></td>
+          <td><mark>Achalasia</mark> 及所有食道蠕動異常（動力障礙）</td>
+          <td>不能看結構、不能看發炎</td>
+        </tr>
+        <tr>
+          <td><b>食道 pH 監測<br>Esophageal pH monitoring</b></td>
+          <td>24 小時<b>酸暴露時間與逆流事件</b></td>
+          <td><mark>逆流性食道炎（GERD）的客觀確診</mark>，尤其內視鏡正常但仍有症狀者</td>
+          <td>需停 PPI；病人不適</td>
+        </tr>
+        <tr>
+          <td>內視鏡超音波 EUS</td>
+          <td>腫瘤侵犯的深度（T 分期）</td>
+          <td>食道癌分期</td>
+          <td>—</td>
+        </tr>
+        <tr>
+          <td>CT／PET</td>
+          <td>遠端轉移、淋巴結（M、N 分期）</td>
+          <td>食道癌分期</td>
+          <td><b>不能用來診斷 Barrett's</b></td>
+        </tr>
+      </tbody>
+    </table></div>
+
+    <div class="box trap">
+      <div class="bt"><span class="badge">易錯陷阱</span>Barrett's esophagus 要用內視鏡，不是 CT</div>
+      <p>112-38 的答案就是這一點。<mark>Barrett's esophagus 是「食道下段的鱗狀上皮被腸型柱狀上皮取代」的黏膜變化 —— 這是<b>顯微鏡下的組織學診斷</b></mark>，必須靠內視鏡直視加上切片才能確認。</p>
+      <p>胸部顯影劑電腦斷層是看縱膈腔、淋巴結、遠端轉移的工具，<b>根本看不到黏膜的細胞變化</b>。</p>
+      <p><b>判斷原則：</b>要看「黏膜長什麼樣」→ 內視鏡；要看「管子形狀」→ 攝影；要看「肌肉會不會動」→ 壓力測定；要看「有沒有酸」→ pH 監測。</p>
+    </div>
+
+    <!-- QUIZ 112-38 -->
+    <div class="quiz">
+      <div class="quiz-top"><span class="lab">考古題</span><span class="yr">112 學年度 · 第 38 題</span></div>
+      <div class="quiz-body">
+        <p class="stem">有關食道疾患與適當的食道檢查的配對，下列何者<b>最不適宜</b>？</p>
+        <ul class="opts">
+          <li>(A) Esophageal stenosis – 食道攝影（esophagogram）</li>
+          <li>(B) Barrett's esophagus – 胸部顯影劑電腦斷層</li>
+          <li>(C) Achalasia – 食道壓力測定（esophageal high resolution manometry）</li>
+          <li>(D) Reflux esophagitis – 食道酸鹼值監測（Esophageal pH monitoring）</li>
+        </ul>
+                <details class="rev">
+          <summary class="toggle"></summary>
+          <div class="reveal">
+          <div class="ans">答案：(B)</div>
+          <p>Barrett's esophagus 是黏膜的<b>組織學變化</b>，診斷與追蹤必須靠<b>上消化道內視鏡加切片</b>。CT 看不到黏膜細胞層次的變化。</p>
+          <p><a class="jump" href="#q112-38">看文末完整詳解 ↓</a></p>
+        </div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 04 ============ -->
+  <section id="s4">
+    <div class="sec-head"><span class="sec-num">四</span><h2>胃食道逆流與 Barrett's esophagus</h2></div>
+    <p class="tagline">本節考點：<a class="qtag" href="#q112-37">112-37</a><a class="qtag" href="#q111-49">111-49</a></p>
+
+    <h3>疾病進展的一條線</h3>
+    <div class="ladder">
+      <div class="rung"><span class="lv">1</span><span class="txt"><b>GERD</b> —— 下食道括約肌鬆弛，胃酸長期逆流</span></div>
+      <div class="rung"><span class="lv">2</span><span class="txt"><b>逆流性食道炎</b> —— 黏膜糜爛、潰瘍（內視鏡下依 Los Angeles 分級 A–D）</span></div>
+      <div class="rung"><span class="lv">3</span><span class="txt"><b>Barrett's esophagus</b> —— 鱗狀上皮被<mark>腸型柱狀上皮取代</mark>（腸化生，intestinal metaplasia）。這是身體的「適應」，但也是癌前病變</span></div>
+      <div class="rung"><span class="lv">4</span><span class="txt"><b>異型增生 → 食道腺癌（adenocarcinoma）</b> —— 所以 Barrett's 需要定期內視鏡追蹤</span></div>
+    </div>
+
+    <h3>治療階梯</h3>
+    <div class="ladder">
+      <div class="rung"><span class="lv">STEP 1</span><span class="txt"><b>生活型態調整</b> —— 減重、戒菸酒、避免咖啡與高脂食物、睡前 3 小時不進食、床頭抬高</span></div>
+      <div class="rung"><span class="lv">STEP 2</span><span class="txt"><b>PPI</b> —— 藥物治療的主力</span></div>
+      <div class="rung"><span class="lv">STEP 3</span><span class="txt"><mark><b>抗逆流手術（fundoplication）</b></mark> —— 用於<b>藥物治療無效（refractory）</b>、不願長期服藥、或有大型食道裂孔疝氣者。手術原理是把<b>胃底（fundus）包繞在下食道周圍</b>，重建括約肌的閥門功能</span></div>
+    </div>
+
+    <div class="box exam">
+      <div class="bt"><span class="badge">必背</span>三種 fundoplication 的差別</div>
+      <div class="tw" style="margin:10px 0 0"><table>
+        <thead><tr><th>術式</th><th class="mono">包繞角度</th><th>位置</th><th>主要用途</th></tr></thead>
+        <tbody>
+          <tr><td><b>Nissen</b></td><td class="mono">360°（完全）</td><td>環繞一圈</td><td><mark>GERD 的標準術式</mark>，抗逆流效果最強</td></tr>
+          <tr><td><b>Toupet</b></td><td class="mono">270°（部分）</td><td><b>後方</b></td><td><mark>GERD</mark>，尤其<b>食道蠕動較差</b>者（減少術後吞嚥困難）</td></tr>
+          <tr><td><b>Dor</b></td><td class="mono">180°（部分）</td><td><b>前方</b></td><td><mark>搭配 Heller myotomy</mark>，覆蓋切開的肌肉層並防止術後逆流</td></tr>
+        </tbody>
+      </table></div>
+      <p style="margin-top:12px">記法：<b>Nissen 全包（最強）、Toupet 後包、Dor 前包</b>。<mark>Dor 幾乎專屬於 achalasia 的 Heller 手術</mark>；治療 GERD 用 Nissen 或 Toupet 都對。</p>
+    </div>
+
+    <div class="box key">
+      <div class="bt"><span class="badge">解題法</span>112-37 為什麼 (A) 正確</div>
+      <p>「refractory reflux esophagitis – laparoscopic <b>Toupet</b> fundoplication」 —— 藥物無效的 GERD，以腹腔鏡抗逆流手術治療是正確的；Toupet（270° 部分包繞）是公認的術式選項之一。</p>
+    </div>
+  </section>
+
+  <!-- ============ 05 ============ -->
+  <section id="s5">
+    <div class="sec-head"><span class="sec-num">五</span><h2>食道弛緩不能 Achalasia</h2></div>
+    <p class="tagline">本節考點：<a class="qtag" href="#q112-37">112-37</a><a class="qtag" href="#q111-49">111-49</a></p>
+
+    <h3>它是什麼</h3>
+    <p>白話講：<mark>食道的肌肉不會蠕動，而且下食道括約肌「打不開」。</mark>食物只能靠重力慢慢滴下去，久了食道被撐成巨大的袋子（megaesophagus）。</p>
+    <p><strong>機轉：</strong>食道肌間神經叢（myenteric plexus）中的<strong>抑制性神經元退化</strong> —— 這些神經元負責分泌 NO 與 VIP 讓括約肌放鬆。它們死了，括約肌就一直緊繃著。</p>
+
+    <h3>診斷</h3>
+    <div class="ladder">
+      <div class="rung"><span class="lv">首選</span><span class="txt"><b>食道高解析度壓力測定（HRM）＝ 診斷金標準</b>。兩個典型發現：<mark>① 食道體部無蠕動（aperistalsis）② 下食道括約肌鬆弛不完全（incomplete LES relaxation）</mark>。這句話幾乎是逐字考。</span></div>
+      <div class="rung"><span class="lv">輔助</span><span class="txt"><b>食道攝影</b> —— 典型的<b>鳥嘴狀（bird's beak）</b>狹窄與上方擴張。</span></div>
+      <div class="rung"><span class="lv">必做</span><span class="txt"><b>內視鏡</b> —— <mark>排除假性弛緩不能（pseudoachalasia）</mark>，也就是賁門癌造成的類似表現。年長者、快速惡化、體重下降明顯者要特別警覺。</span></div>
+    </div>
+
+    <h3>治療</h3>
+    <div class="tw"><table>
+      <thead><tr><th>方式</th><th>說明</th></tr></thead>
+      <tbody>
+        <tr><td><b>腹腔鏡 Heller myotomy + Dor fundoplication</b></td><td><mark>外科標準術式</mark>。切開下食道括約肌的肌肉層（myotomy），再用 Dor（180° 前方部分包繞）覆蓋切開處並預防術後逆流。<b>即使已經是 megaesophagus 也仍以此為主要選擇</b></td></tr>
+        <tr><td><b>POEM</b><br>經口內視鏡肌肉切開術</td><td>內視鏡途徑達成同樣的肌肉切開，無體表傷口。但術後逆流比例較高</td></tr>
+        <tr><td>氣球擴張術<br>Pneumatic dilatation</td><td>非手術選項，可能需重複施行，有穿孔風險</td></tr>
+        <tr><td>肉毒桿菌素注射</td><td>效果短暫，用於不適合手術的高風險病人</td></tr>
+      </tbody>
+    </table></div>
+
+    <div class="box trap">
+      <div class="bt"><span class="badge">易錯陷阱</span>Achalasia 不做食道切除術</div>
+      <p>112-37 的錯誤選項是「Achalasia – <u>McKeown esophagectomy</u> with Heller myotomy」。</p>
+      <p><mark>McKeown esophagectomy 是「食道切除術」，用於食道癌</mark>，不是 achalasia 的治療。而且把「食道切除」跟「肌肉切開」寫在一起本身就自相矛盾 —— 食道都切掉了，還切開什麼肌肉？</p>
+      <p>只有極少數終末期、多次治療失敗且食道嚴重扭曲的病人，才會考慮食道切除，那是最後手段而非適應症。</p>
+    </div>
+  </section>
+
+  <!-- ============ 06 ============ -->
+  <section id="s6">
+    <div class="sec-head"><span class="sec-num">六</span><h2>食道憩室：位置決定手術路徑</h2></div>
+    <p class="tagline">本節考點：<a class="qtag" href="#q112-37">112-37</a><a class="qtag" href="#q111-49">111-49</a></p>
+
+    <div class="box exam">
+      <div class="bt"><span class="badge">高頻考點</span>憩室長在哪裡，就從哪裡開</div>
+      <div class="tw" style="margin:10px 0 0"><table>
+        <thead><tr><th>憩室</th><th>位置</th><th>機轉</th><th><mark>手術路徑</mark></th></tr></thead>
+        <tbody>
+          <tr>
+            <td><b>Zenker's diverticulum</b><br>（＝ Killian's diverticulum）</td>
+            <td><mark>咽食道交界處</mark><br>Killian's triangle（環咽肌上方）</td>
+            <td>推出型 pulsion<br>（環咽肌功能失調 → 壓力把黏膜擠出）</td>
+            <td><mark><b>頸部切開</b></mark>（或內視鏡下切開隔膜）<br><b>絕不可能用腹腔鏡</b></td>
+          </tr>
+          <tr>
+            <td>中段憩室<br>Midesophageal</td>
+            <td>氣管分叉附近</td>
+            <td>牽引型 traction<br>（縱膈腔淋巴結發炎沾黏牽拉）</td>
+            <td>胸腔鏡／開胸</td>
+          </tr>
+          <tr>
+            <td><b>Epiphrenic diverticulum</b></td>
+            <td><mark>橫膈上方、食道遠端</mark></td>
+            <td>推出型 pulsion<br>（常合併 achalasia 等動力障礙）</td>
+            <td><mark><b>腹腔鏡</b></mark>憩室切除 ± 肌肉切開</td>
+          </tr>
+        </tbody>
+      </table></div>
+    </div>
+
+    <div class="box trap">
+      <div class="bt"><span class="badge">易錯陷阱</span>Killian（Zenker）憩室不能用腹腔鏡</div>
+      <p>112-37 的錯誤選項：「Killian-diverticulum – <u>laparoscopic</u> diverticulectomy」。</p>
+      <p>Killian 憩室就是 Zenker 憩室，位在<mark>脖子上（咽食道交界）</mark>。腹腔鏡是從肚子進去的器械 —— <b>從肚子伸到脖子在解剖上根本不可能</b>。正確做法是頸部切開，或經口內視鏡切開環咽肌隔膜。</p>
+      <p>相對地，<b>epiphrenic diverticulum 位於橫膈上方，緊鄰腹腔，用腹腔鏡是完全正確的</b> —— 這正是 111-49 與 113-49 中 (D) 選項為正確敘述的原因。</p>
+    </div>
+  </section>
+
+  <!-- ============ 07 ============ -->
+  <section id="s7">
+    <div class="sec-head"><span class="sec-num">七</span><h2>食道癌：分期決定一切</h2></div>
+    <p class="tagline">本節考點：<a class="qtag" href="#q111-49">111-49</a><a class="qtag" href="#q113-49">113-49</a><a class="qtag" href="#q112-37">112-37</a></p>
+
+    <h3>兩種組織型態</h3>
+    <div class="tw"><table>
+      <thead><tr><th>　</th><th>鱗狀細胞癌 SCC</th><th>腺癌 Adenocarcinoma</th></tr></thead>
+      <tbody>
+        <tr><td><b>好發位置</b></td><td>上、中段食道</td><td>下段食道、胃食道交界</td></tr>
+        <tr><td><b>危險因子</b></td><td><mark>抽菸、喝酒、嚼檳榔</mark>、熱飲、亞硝胺、腐蝕性傷害病史、achalasia</td><td><mark>GERD → Barrett's esophagus</mark>、肥胖</td></tr>
+        <tr><td><b>流行地區</b></td><td>亞洲（台灣以此為主）</td><td>歐美（比例逐年上升）</td></tr>
+      </tbody>
+    </table></div>
+
+    <h3>T 分期 —— 決定要不要開刀的分水嶺</h3>
+    <div class="anat">
+      <div class="lvl"><span class="pos">T1a</span><span class="body"><b>侵犯至黏膜層（mucosa）</b>
+        淋巴轉移風險極低 → <mark>可用內視鏡黏膜下剝離術（ESD）或 EMR 切除</mark>，保留食道。</span></div>
+      <div class="lvl"><span class="pos">T1b</span><span class="body"><b>侵犯至黏膜下層（submucosa）</b>
+        <mark>黏膜下層有豐富淋巴管，淋巴轉移風險上升至 20–30%</mark> → <b>ESD 不足夠，應行食道切除術加淋巴結廓清</b>。</span></div>
+      <div class="lvl"><span class="pos">T2</span><span class="body">侵犯固有肌層（muscularis propria）</span></div>
+      <div class="lvl"><span class="pos">T3</span><span class="body">侵犯至外膜（adventitia）</span></div>
+      <div class="lvl"><span class="pos">T4</span><span class="body">侵犯鄰近構造（胸膜、心包、主動脈、氣管）</span></div>
+    </div>
+
+    <div class="box exam">
+      <div class="bt"><span class="badge">高頻考點</span>治療策略的分水嶺</div>
+      <div class="tw" style="margin:10px 0 0"><table>
+        <thead><tr><th>分期</th><th>治療</th></tr></thead>
+        <tbody>
+          <tr><td><b>T1a N0</b></td><td>內視鏡切除（ESD／EMR）</td></tr>
+          <tr><td><b>T1b N0</b></td><td><mark>食道切除術 + 淋巴結廓清</mark>（不可只做 ESD）</td></tr>
+          <tr><td><b>T2 以上，或有淋巴結轉移（N+）</b></td><td><mark>先做<b>前導性化學放射治療（neoadjuvant CCRT）</b>，再行手術</mark></td></tr>
+          <tr><td><b>頸段食道癌（cervical esophageal cancer）</b></td><td><mark>以<b>根治性化放療（definitive CCRT）</b>為主</mark>，因為手術需切除喉部、犧牲發聲功能，代價太大</td></tr>
+          <tr><td>M1（遠端轉移）</td><td>全身性治療、支持療法</td></tr>
+        </tbody>
+      </table></div>
+    </div>
+
+    <h3>三種食道切除術式（知道名字對應什麼即可）</h3>
+    <div class="tw"><table>
+      <thead><tr><th>術式</th><th>切口</th><th>吻合位置</th></tr></thead>
+      <tbody>
+        <tr><td><b>Ivor-Lewis</b></td><td>腹部 + 右胸</td><td><b>胸腔內</b>吻合（適合中下段腫瘤）</td></tr>
+        <tr><td><b>McKeown</b><br>（三切口）</td><td>腹部 + 右胸 + <b>頸部</b></td><td><b>頸部</b>吻合（適合較上段腫瘤）</td></tr>
+        <tr><td>Transhiatal</td><td>腹部 + 頸部（不開胸）</td><td>頸部吻合</td></tr>
+      </tbody>
+    </table></div>
+
+    <div class="box trap">
+      <div class="bt"><span class="badge">易錯陷阱</span>111-49 / 113-49 的 (C) 選項有三個錯</div>
+      <p>選項寫：「T3N2M0 <u>cervical</u> esophageal squamous cell carcinoma – <u>direct</u> Ivor-Lewis esophagectomy and reconstruction <u>without following chemoradiotherapy</u>」</p>
+      <ol>
+        <li><b>T3N2 屬局部晚期</b> → 應先做<mark>前導性化學放射治療（neoadjuvant CCRT）</mark>，不能直接開刀。</li>
+        <li><b>「without following chemoradiotherapy」</b> → 完全不給放化療，違反現行標準治療。</li>
+        <li><b>頸段食道癌</b>本身就以<mark>根治性化放療為主</mark>，而且 Ivor-Lewis（腹部＋右胸、胸腔內吻合）在解剖上也難以處理頸段病灶。</li>
+      </ol>
+    </div>
+
+    <!-- QUIZ 111-49 / 113-49 -->
+    <div class="quiz">
+      <div class="quiz-top"><span class="lab">考古題</span><span class="yr">111 學年度 · 第 49 題</span><span class="yr">113 學年度 · 第 49 題</span></div>
+      <div class="quiz-body">
+        <p class="stem">有關食道疾患與其相關治療，下列的配對何者<b>最不適當</b>？</p>
+        <ul class="opts">
+          <li>(A) refractory reflux esophagitis – laparoscopic Nissen fundoplication</li>
+          <li>(B) achalasia with megaesophagus – laparoscopic Heller myotomy + Dor fundoplication</li>
+          <li>(C) T3N2M0 cervical esophageal squamous cell carcinoma – direct Ivor-Lewis esophagectomy and reconstruction without following chemoradiotherapy</li>
+          <li>(D) epiphrenic diverticulum – laparoscopic diverticulectomy</li>
+        </ul>
+                <details class="rev">
+          <summary class="toggle"></summary>
+          <div class="reveal">
+          <div class="ans">答案：(C)</div>
+          <p>T3N2 屬局部晚期，應先行<b>前導性化學放射治療</b>再手術，而非直接手術且完全不給放化療。(A)(B)(D) 皆為正確配對。</p>
+          <p><a class="jump" href="#q111-49">看文末完整詳解 ↓</a></p>
+        </div>
+        </details>
+      </div>
+    </div>
+
+    <!-- QUIZ 112-37 -->
+    <div class="quiz">
+      <div class="quiz-top"><span class="lab">考古題</span><span class="yr">112 學年度 · 第 37 題</span></div>
+      <div class="quiz-body">
+        <p class="stem">有關食道疾患與其相關治療，下列的配對何者<b>最正確</b>？</p>
+        <ul class="opts">
+          <li>(A) refractory reflux esophagitis – laparoscopic Toupet fundoplication</li>
+          <li>(B) Killian-diverticulum – laparoscopic diverticulectomy</li>
+          <li>(C) Achalasia – McKeown esophagectomy with Heller myotomy</li>
+          <li>(D) T1bN0M0 upper-third esophageal cancer – endoscopic submucosal dissection</li>
+        </ul>
+                <details class="rev">
+          <summary class="toggle"></summary>
+          <div class="reveal">
+          <div class="ans">答案：(A)</div>
+          <p>(B) Killian（＝Zenker）憩室位於<b>頸部</b>，腹腔鏡到不了；(C) McKeown 是<b>食道切除術</b>，用於食道癌；(D) T1b 已侵犯黏膜下層，<b>ESD 只適用 T1a</b>。</p>
+          <p><a class="jump" href="#q112-37">看文末完整詳解 ↓</a></p>
+        </div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 08 ============ -->
+  <section id="s8">
+    <div class="sec-head"><span class="sec-num">八</span><h2>配對總表：考前掃這一張</h2></div>
+
+    <h4>疾病 ↔ 檢查</h4>
+    <div class="tw"><table>
+      <thead><tr><th>疾病</th><th>首選檢查</th><th>不適合</th></tr></thead>
+      <tbody>
+        <tr><td>食道狹窄</td><td><b>食道攝影</b></td><td>—</td></tr>
+        <tr><td>Barrett's esophagus</td><td><b>內視鏡 + 切片</b></td><td><b>CT</b>（看不到黏膜）</td></tr>
+        <tr><td>Achalasia</td><td><b>高解析度壓力測定</b></td><td>—</td></tr>
+        <tr><td>逆流性食道炎</td><td><b>pH 監測</b>（＋內視鏡分級）</td><td>—</td></tr>
+        <tr><td>食道癌分期</td><td>EUS（T）＋ CT／PET（N、M）</td><td>—</td></tr>
+      </tbody>
+    </table></div>
+
+    <h4>疾病 ↔ 治療</h4>
+    <div class="tw"><table>
+      <thead><tr><th>疾病</th><th>正確治療</th><th>常見誘答錯誤</th></tr></thead>
+      <tbody>
+        <tr><td>藥物無效的 GERD</td><td><b>腹腔鏡 Nissen 或 Toupet fundoplication</b></td><td>—</td></tr>
+        <tr><td>Achalasia（含 megaesophagus）</td><td><b>腹腔鏡 Heller myotomy + Dor fundoplication</b> 或 POEM</td><td><b>McKeown esophagectomy</b>（那是癌症手術）</td></tr>
+        <tr><td>Zenker／Killian 憩室</td><td><b>頸部切開</b>或內視鏡切開</td><td><b>腹腔鏡</b>（到不了脖子）</td></tr>
+        <tr><td>Epiphrenic 憩室</td><td><b>腹腔鏡</b>憩室切除</td><td>—</td></tr>
+        <tr><td>T1a 食道癌</td><td><b>ESD／EMR</b></td><td>—</td></tr>
+        <tr><td>T1b 食道癌</td><td><b>食道切除 + 淋巴結廓清</b></td><td><b>ESD</b>（深度不夠）</td></tr>
+        <tr><td>T2 以上或 N+</td><td><b>前導性 CCRT → 手術</b></td><td><b>直接手術且不給放化療</b></td></tr>
+        <tr><td>頸段食道癌</td><td><b>根治性 CCRT</b></td><td>Ivor-Lewis 手術</td></tr>
+      </tbody>
+    </table></div>
+  </section>
+
+  <!-- ============ 09 ============ -->
+  <section id="s9">
+    <div class="sec-head"><span class="sec-num">九</span><h2>一分鐘總複習</h2></div>
+    <div class="box key">
+      <div class="bt"><span class="badge">考前 60 秒</span>把這十句唸完</div>
+      <ol>
+        <li>食道<b>沒有漿膜層</b> → 穿孔會造成縱膈炎、吻合處容易滲漏。</li>
+        <li>三處狹窄：<b>環咽肌（C6）／主動脈弓＋左主支氣管（T4-5）／橫膈裂孔（T10）</b>。</li>
+        <li>吞嚥困難：<b>先固體後液體＝機械性阻塞（癌）；固液同時困難＝動力障礙（achalasia）</b>。</li>
+        <li><b>菸酒檳榔＋體重減輕＋漸進吞嚥困難 → 食道鱗狀細胞癌</b>。</li>
+        <li>檢查配對：形狀→<b>攝影</b>；黏膜→<b>內視鏡切片</b>；肌肉→<b>壓力測定</b>；酸→<b>pH 監測</b>。<b>Barrett's 絕不用 CT</b>。</li>
+        <li>Achalasia 的壓力測定：<b>aperistalsis + incomplete LES relaxation</b>。</li>
+        <li>抗逆流手術：<b>Nissen 全包 360°、Toupet 後包 270°、Dor 前包 180°</b>；<b>Dor 專搭 Heller</b>。</li>
+        <li>Achalasia 治療是 <b>Heller myotomy + Dor</b> 或 POEM，<b>不是食道切除</b>。</li>
+        <li>憩室：<b>Killian／Zenker 在脖子（頸部切開）；epiphrenic 在橫膈上（腹腔鏡）</b>。</li>
+        <li>食道癌：<b>T1a→ESD；T1b→手術；T2 以上或 N+→前導性 CCRT 後手術；頸段→根治性 CCRT</b>。</li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- ============ EXAM ============ -->
+  <section id="exam">
+    <div class="sec-head"><span class="sec-num">十</span><h2>考古題全收錄</h2></div>
+    <div class="exam-head">
+      <h2>依年度完整羅列</h2>
+      <p>BM113 → BM112 → BM111，含完整答案、詳解與出處。注意 113 學年度兩題與 111 學年度<b>完全相同</b>。</p>
+      <button class="btn" id="allBtn">全部展開答案</button>
+    </div>
+
+    <div class="yrhead">113 學年度（BM113）· 2 題</div>
+
+    <div class="q" id="q113-48">
+      <span class="q-no">113-48</span><span class="q-topic">食道解剖與檢查（與 111-48 完全相同）</span>
+      <p class="q-stem">有關食道疾患與其相關評估檢查，下列的配對何者<b>最不適當</b>？</p>
+      <ul class="opts">
+        <li>(A) 若懷疑病患有食道狹窄（esophageal stenosis），可先安排食道攝影（esophagogram）檢查，但要注意相關 left main bronchus, upper esophagus-cricopharyngeal sphincter and diaphragm level 等解剖狹窄處（anatomic narrowing）。</li>
+        <li>(B) 可安排食道胃鏡來排除有無腫瘤順便採取檢體外，施作時應注意有無食道手術之病史以防穿孔。</li>
+        <li>(C) 若平常生活中有抽菸、喝酒和嚼食檳榔習慣，且又合併體重減輕與漸進式吞嚥困難，則大概可以先臆測食道鱗狀細胞癌之高度可能性。</li>
+        <li>(D) 食道壓力測定（esophageal manometry）可以用來診斷偵測食道蠕動異常疾病，achalasia 常呈現 aperistalsis 和 incomplete lower esophageal sphincter relaxation 之情形。</li>
+      </ul>
+            <details class="rev">
+        <summary class="toggle"></summary>
+        <div class="reveal">
+        <div class="ans">答案：(A)</div>
+        <p>食道解剖上有三處生理性狹窄：① <b>上段</b>環咽肌（C6，最窄）② <b>中段</b>（T4–T5），主要由<b>主動脈弓</b>壓迫形成，左主支氣管為次要因素 ③ <b>下段</b>橫膈裂孔（LES）。</p>
+        <p>選項 (A) 將 left main bronchus 列為主要狹窄處而<b>未提及主動脈弓</b>，描述不夠精確，因此判為最不適當。</p>
+        <p>(B) 正確：有食道手術病史者組織較脆弱，內視鏡操作需格外小心以防穿孔。<br>
+        (C) 正確：菸、酒、檳榔為食道鱗狀細胞癌的典型危險因子組合，合併體重減輕與漸進式吞嚥困難時高度懷疑。<br>
+        (D) 正確：achalasia 在壓力測定上的兩大特徵即為食道體部無蠕動與 LES 鬆弛不完全。</p>
+        <p><b>備註：</b>部分教科書會把 left main bronchus 與 aortic arch 並列為中段狹窄成因，此題判定依老師 ppt 為準。</p>
+        <div class="src">出處：張博智 食道疾病 ppt</div>
+      </div>
+      </details>
+    </div>
+
+    <div class="q" id="q113-49">
+      <span class="q-no">113-49</span><span class="q-topic">食道疾病治療配對（與 111-49 完全相同）</span>
+      <p class="q-stem">有關食道疾患與其相關治療，下列的配對何者<b>最不適當</b>？</p>
+      <ul class="opts">
+        <li>(A) refractory reflux esophagitis（藥物治療無效的已確診胃食道逆流）– laparoscopic Nissen fundoplication</li>
+        <li>(B) achalasia with megaesophagus – laparoscopic Heller myotomy + Dor fundoplication</li>
+        <li>(C) T3N2M0 cervical esophageal squamous cell carcinoma – direct Ivor-Lewis esophagectomy and reconstruction without following chemoradiotherapy</li>
+        <li>(D) epiphrenic diverticulum – laparoscopic diverticulectomy</li>
+      </ul>
+            <details class="rev">
+        <summary class="toggle"></summary>
+        <div class="reveal">
+        <div class="ans">答案：(C)</div>
+        <p>T3N2M0 屬<b>局部晚期食道癌</b>，現行標準治療是先接受<b>前導性化學放射治療（neoadjuvant CCRT）</b>後再行手術，而非直接手術且完全不進行放化療。</p>
+        <p>此外，頸段食道癌（cervical esophageal cancer）本身多以<b>根治性化放療</b>為主要治療，以保留喉部與發聲功能；且 Ivor-Lewis 術式（腹部＋右胸、胸腔內吻合）在解剖上也不適合處理頸段病灶。</p>
+        <p>(A) 正確：藥物無效的 GERD 以腹腔鏡 Nissen（360° 完全包繞）抗逆流手術治療。<br>
+        (B) 正確：即使已發展為 megaesophagus，achalasia 仍以 Heller 肌肉切開術加 Dor 前方部分包繞為標準術式。<br>
+        (D) 正確：epiphrenic 憩室位於橫膈上方、緊鄰腹腔，適合以腹腔鏡切除。</p>
+        <div class="src">出處：張博智 食道疾病 ppt</div>
+      </div>
+      </details>
+    </div>
+
+    <div class="yrhead">112 學年度（BM112）· 2 題</div>
+
+    <div class="q" id="q112-37">
+      <span class="q-no">112-37</span><span class="q-topic">食道疾病治療配對</span>
+      <p class="q-stem">有關食道疾患與其相關治療，下列的配對何者<b>最正確</b>？</p>
+      <ul class="opts">
+        <li>(A) refractory reflux esophagitis（藥物治療無效的已確診胃食道逆流）– laparoscopic Toupet fundoplication</li>
+        <li>(B) Killian-diverticulum – laparoscopic diverticulectomy</li>
+        <li>(C) Achalasia – McKeown esophagectomy with Heller myotomy</li>
+        <li>(D) T1bN0M0 upper-third esophageal cancer – endoscopic submucosal dissection</li>
+      </ul>
+            <details class="rev">
+        <summary class="toggle"></summary>
+        <div class="reveal">
+        <div class="ans">答案：(A)</div>
+        <p>(A) <b>正確</b>：藥物治療無效的胃食道逆流，可行腹腔鏡抗逆流手術。Toupet（270° 後方部分包繞）是公認的術式之一，尤其適合食道蠕動功能較差的病人，可減少術後吞嚥困難。</p>
+        <p>(B) <b>錯</b>：Killian 憩室即 Zenker 憩室，位於<b>咽食道交界（脖子）</b>，必須經<b>頸部切口</b>或內視鏡切開環咽肌隔膜，<b>腹腔鏡在解剖上不可能到達</b>。</p>
+        <p>(C) <b>錯</b>：McKeown esophagectomy 是<b>食道切除術</b>，屬食道癌的治療；achalasia 的標準術式是 laparoscopic Heller myotomy（＋Dor）或 POEM。此選項還把「切除食道」與「切開肌肉」兩個矛盾的動作寫在一起。</p>
+        <p>(D) <b>錯</b>：T1b 代表腫瘤已侵犯<b>黏膜下層</b>，該層淋巴管豐富、淋巴結轉移風險達 20–30%，<b>ESD 僅適用於 T1a（黏膜內癌）</b>，T1b 應行食道切除術加淋巴結廓清。</p>
+        <div class="src">出處：張博智 食道疾病 ppt</div>
+      </div>
+      </details>
+    </div>
+
+    <div class="q" id="q112-38">
+      <span class="q-no">112-38</span><span class="q-topic">食道檢查配對</span>
+      <p class="q-stem">有關食道疾患與適當的食道檢查的配對，下列何者<b>最不適宜</b>？</p>
+      <ul class="opts">
+        <li>(A) Esophageal stenosis – 食道攝影（esophagogram）</li>
+        <li>(B) Barrett's esophagus – 胸部顯影劑電腦斷層</li>
+        <li>(C) Achalasia – 食道壓力測定（esophageal high resolution manometry）</li>
+        <li>(D) Reflux esophagitis – 食道酸鹼值監測（Esophageal pH monitoring）</li>
+      </ul>
+            <details class="rev">
+        <summary class="toggle"></summary>
+        <div class="reveal">
+        <div class="ans">答案：(B)</div>
+        <p>Barrett's esophagus 是食道下段黏膜的<b>組織學變化</b>（鱗狀上皮被腸型柱狀上皮取代），診斷與後續癌症監測都必須依靠<b>上消化道內視鏡直視加切片</b>。</p>
+        <p>胸部顯影劑電腦斷層的用途是評估縱膈腔、淋巴結與遠端轉移，<b>無法呈現黏膜細胞層次的變化</b>，並非診斷 Barrett's esophagus 的適當工具。</p>
+        <p>(A)(C)(D) 皆為正確配對：食道攝影看形狀與通過情形（狹窄）；壓力測定看肌肉收縮與括約肌功能（achalasia）；pH 監測客觀量化 24 小時酸暴露（逆流性食道炎）。</p>
+        <div class="src">出處：張博智 食道疾病 ppt p.57</div>
+      </div>
+      </details>
+    </div>
+
+    <div class="yrhead">111 學年度（BM111）· 2 題</div>
+
+    <div class="q" id="q111-48">
+      <span class="q-no">111-48</span><span class="q-topic">食道解剖與檢查</span>
+      <p class="q-stem">有關食道疾患與其相關評估檢查，下列的配對何者<b>最不適當</b>？</p>
+      <ul class="opts">
+        <li>(A) 若懷疑病患有食道狹窄（esophageal stenosis），可先安排食道攝影（esophagogram）檢查，但要注意相關 left main bronchus, upper esophagus-cricopharyngeal sphincter and diaphragm level 等解剖狹窄處（anatomic narrowing）。</li>
+        <li>(B) 可安排食道胃鏡來排除有無腫瘤順便採取檢體外，施作時應注意有無食道手術之病史以防穿孔。</li>
+        <li>(C) 若平常生活中有抽菸、喝酒和嚼食檳榔習慣，且又合併體重減輕與漸進式吞嚥困難，則大概可以先臆測食道鱗狀細胞癌之高度可能性。</li>
+        <li>(D) 食道壓力測定（esophageal manometry）可以用來診斷偵測食道蠕動異常疾病（esophageal motility disorder），achalasia 常呈現 aperistalsis 和 incomplete lower esophageal sphincter relaxation 之情形。</li>
+      </ul>
+            <details class="rev">
+        <summary class="toggle"></summary>
+        <div class="reveal">
+        <div class="ans">答案：(A)</div>
+        <p>食道三處生理性狹窄：<b>① 上段環咽肌（C6，距門齒約 15 cm，最窄）② 中段（T4–T5，距門齒約 25 cm）—— 主要由主動脈弓壓迫，其次為左主支氣管 ③ 下段橫膈裂孔（T10，距門齒約 40 cm）</b>。</p>
+        <p>選項 (A) 將 left main bronchus 獨立列為主要狹窄處，<b>未強調主動脈弓</b>，描述不夠精確，因此為最不適當者。</p>
+        <p>這三處狹窄的臨床意義：異物最容易卡住、腐蝕性物質停留最久、腫瘤好發、內視鏡或擴張術最容易造成穿孔。</p>
+        <div class="src">出處：張博智 食道疾病 ppt</div>
+      </div>
+      </details>
+    </div>
+
+    <div class="q" id="q111-49">
+      <span class="q-no">111-49</span><span class="q-topic">食道疾病治療配對</span>
+      <p class="q-stem">有關食道疾患與其相關治療，下列的配對何者<b>最不適當</b>？</p>
+      <ul class="opts">
+        <li>(A) refractory reflux esophagitis（藥物治療無效的已確診胃食道逆流）– laparoscopic Nissen fundoplication</li>
+        <li>(B) achalasia with megaesophagus – laparoscopic Heller myotomy + Dor fundoplication</li>
+        <li>(C) T3N2M0 cervical esophageal squamous cell carcinoma – direct Ivor-Lewis esophagectomy and reconstruction without following chemoradiotherapy</li>
+        <li>(D) epiphrenic diverticulum – laparoscopic diverticulectomy</li>
+      </ul>
+            <details class="rev">
+        <summary class="toggle"></summary>
+        <div class="reveal">
+        <div class="ans">答案：(C)</div>
+        <p>T2 以上或已有淋巴結轉移（N+）的食道癌，應接受<b>前導性化學放射治療（neoadjuvant CCRT）後再行手術</b>，或術後輔助治療，而非直接手術（Ivor-Lewis）且完全不進行放化療。此選項在「分期處置」與「頸段食道癌的治療策略」兩方面皆有誤。</p>
+        <p><b>其餘三個正確配對值得一起記：</b></p>
+        <p>(A) 藥物無效的 GERD → 腹腔鏡 <b>Nissen</b>（360° 完全包繞）抗逆流手術。<br>
+        (B) Achalasia（即使已有 megaesophagus）→ 腹腔鏡 <b>Heller myotomy + Dor fundoplication</b>（180° 前方部分包繞，覆蓋切開的肌肉層並防止術後逆流）。<br>
+        (D) Epiphrenic diverticulum 位於<b>橫膈上方</b>，緊鄰腹腔，適合<b>腹腔鏡</b>憩室切除（常合併肌肉切開，因其多與動力障礙並存）。</p>
+        <div class="src">出處：張博智 食道疾病 ppt</div>
+      </div>
+      </details>
+    </div>
+
+  </section>
+
+  <footer>
+    <p><b>第 5 科完成｜食道疾病</b>　共 6 題（BM111 2 題、BM112 2 題、BM113 2 題）。<b>113-48 與 111-48、113-49 與 111-49 為完全相同的題目</b>，兩年重複出題，命中率極高。</p>
+    <p>五科全部完成：① 腹部常見症狀（含急性腹痛）　② 腸胃道蠕動異常疾病　③ 急性闌尾炎、大腸傷害及腸系膜疾病　④ 消化系統介入性放射學　⑤ 食道疾病　—— 合計 44 題。</p>
+    <p style="margin-top:14px;font-family:var(--mono);font-size:12px;color:var(--teal);border:1px solid var(--line-2);border-radius:6px;padding:6px 10px;display:inline-block">版面 v2 · 表格直式卡片</p>
+  </footer>
+
+  </main>
+</div>
+</div>
+
+<script>
+
+  // 手機版：把表頭文字寫進每個儲存格，直式排列時才知道每格代表什麼
+  (function(){
+    document.querySelectorAll('.tw table').forEach(function(t){
+      var ths = t.querySelectorAll('thead th');
+      if(!ths.length) return;
+      var labels = Array.prototype.map.call(ths, function(th){
+        return th.textContent.replace(/\u3000/g,'').trim();
+      });
+      t.querySelectorAll('tbody tr').forEach(function(tr){
+        Array.prototype.forEach.call(tr.children, function(td, i){
+          if(labels[i]) td.setAttribute('data-label', labels[i]);
+        });
+      });
+    });
+  })();
+
+  // 手機版：目錄預設收合
+  (function(){
+    var toc = document.getElementById('tocBox');
+    if(toc && window.matchMedia('(max-width:700px)').matches){
+      toc.removeAttribute('open');
+    }
+  })();
+
+  var allBtn = document.getElementById('allBtn');
+  if(allBtn){
+    var expanded = false;
+    allBtn.addEventListener('click', function(){
+      expanded = !expanded;
+      document.querySelectorAll('.q details.rev').forEach(function(d){
+        if(expanded){ d.setAttribute('open',''); } else { d.removeAttribute('open'); }
+      });
+      allBtn.textContent = expanded ? '全部收合答案' : '全部展開答案';
+    });
+  }
+</script>
+</body>
+</html>
