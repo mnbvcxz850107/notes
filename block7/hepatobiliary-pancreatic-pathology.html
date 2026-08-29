@@ -1,0 +1,1245 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>肝膽胰病理學｜裸讀學習筆記</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&family=Noto+Serif+TC:wght@500;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0F1B18;
+    --bg-2:#152420;
+    --bg-3:#1B2E29;
+    --line:#26403A;
+    --line-2:#31534B;
+    --text:#E9F1EE;
+    --text-2:#A8C2BA;
+    --text-3:#7A968D;
+    --teal:#7FC9BE;
+    --teal-dim:#4E9A90;
+    --gold:#C9A961;
+    --rose:#E58B85;
+    --serif:"Noto Serif TC","Songti TC",serif;
+    --sans:"Noto Sans TC","PingFang TC","Microsoft JhengHei",sans-serif;
+    --mono:"JetBrains Mono",ui-monospace,Menlo,monospace;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth;scroll-padding-top:24px;overflow-x:hidden}
+  body{
+    margin:0;background:var(--bg);color:var(--text);
+    font-family:var(--sans);font-size:16.5px;line-height:1.9;font-weight:300;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  .wrap{max-width:1150px;margin:0 auto;padding:0 22px}
+
+  /* ---------- Hero ---------- */
+  header.hero{padding:60px 0 48px;border-bottom:1px solid var(--line)}
+  .backlink{display:inline-block;font-family:var(--mono);font-size:12px;
+    color:var(--text-3);text-decoration:none;margin-bottom:20px;
+    border:1px solid var(--line);border-radius:6px;padding:5px 12px;transition:.15s}
+  .backlink:hover{color:var(--teal);border-color:var(--teal-dim)}
+  .eyebrow{display:flex;align-items:center;gap:16px;margin-bottom:22px;
+    font-family:var(--serif);font-size:15px;letter-spacing:.34em;color:var(--teal)}
+  .eyebrow .rule{width:56px;height:1px;background:var(--gold)}
+  .eyebrow .dot{color:var(--gold)}
+  header.hero h1{
+    font-family:var(--serif);font-weight:700;font-size:clamp(34px,5.6vw,64px);
+    line-height:1.2;margin:0 0 20px;letter-spacing:.02em;
+  }
+  header.hero h1 em{font-style:normal;color:var(--teal)}
+  header.hero p.sub{margin:0;color:var(--text-2);max-width:65ch;font-size:16.5px;line-height:1.85}
+  .intro-card{
+    border:1px solid var(--line);border-radius:16px;padding:24px 28px;margin-top:30px;background:var(--bg-2);
+  }
+  .intro-card p{margin:0 0 20px;color:var(--text-2)}
+  .intro-card b{color:var(--teal);font-weight:500}
+  .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+  .stat .n{font-family:var(--serif);font-size:36px;color:var(--gold);line-height:1}
+  .stat .l{font-size:12px;color:var(--text-3);letter-spacing:.08em;margin-top:6px}
+
+  /* ---------- Layout ---------- */
+  .cols{display:grid;grid-template-columns:230px 1fr;gap:50px;padding:42px 0 90px;align-items:start}
+  nav.toc{position:sticky;top:26px}
+  nav.toc .t{font-family:var(--mono);font-size:11px;letter-spacing:.2em;color:var(--text-3);margin-bottom:14px}
+  nav.toc a{display:block;padding:7px 14px;border-left:1px solid var(--line);
+    color:var(--text-2);text-decoration:none;font-size:14px;transition:.15s}
+  nav.toc a:hover{border-left-color:var(--teal);color:var(--teal);background:var(--bg-2)}
+  nav.toc a.exam{color:var(--gold)}
+  nav.toc summary{display:none}
+
+  /* ---------- Sections ---------- */
+  section{margin-bottom:60px;scroll-margin-top:24px}
+  .sec-head{display:flex;align-items:baseline;gap:16px;border-bottom:1px solid var(--line-2);padding-bottom:12px;margin-bottom:24px}
+  .sec-num{font-family:var(--serif);font-size:28px;color:var(--gold);line-height:1}
+  .sec-head h2{font-family:var(--serif);font-size:clamp(22px,3.2vw,30px);margin:0;font-weight:700;letter-spacing:.02em}
+  h3{font-family:var(--serif);font-size:20px;margin:36px 0 12px;font-weight:500;color:var(--text)}
+  h4{font-size:16px;margin:22px 0 8px;color:var(--teal);font-weight:500}
+  p{margin:0 0 14px}
+  ul,ol{margin:0 0 16px;padding-left:22px}
+  li{margin-bottom:8px}
+  li::marker{color:var(--teal-dim)}
+  strong,b{font-weight:500;color:#FFF}
+  u{text-decoration-color:var(--teal-dim);text-underline-offset:3px}
+  code{font-family:var(--mono);font-size:.88em;background:var(--bg-3);padding:1px 6px;border-radius:4px;color:var(--teal)}
+
+  /* ---------- Signature: 螢光 + 考題標籤 ---------- */
+  mark{background:rgba(201,169,97,.22);box-shadow:inset 0 -2px 0 rgba(201,169,97,.6);
+    color:#FBF3E2;padding:1px 3px;border-radius:2px}
+  a.qtag{display:inline-block;font-family:var(--mono);font-size:11px;font-weight:600;
+    border:1px solid var(--gold);color:var(--gold);padding:1px 7px;border-radius:4px;
+    text-decoration:none;margin:0 3px;vertical-align:2px;white-space:nowrap;transition:.15s}
+  a.qtag:hover{background:var(--gold);color:var(--bg)}
+  .tagline{margin:-6px 0 18px;font-size:13.5px;color:var(--text-3)}
+
+  /* ---------- Boxes ---------- */
+  .box{border-radius:13px;padding:18px 22px;margin:20px 0;border:1px solid var(--line);background:var(--bg-2)}
+  .box .bt{font-weight:500;font-size:14.5px;margin-bottom:10px;display:flex;align-items:center;gap:9px;color:#FFF}
+  .box p:last-child,.box ul:last-child,.box ol:last-child{margin-bottom:0}
+  .badge{font-family:var(--mono);font-size:10px;padding:2px 8px;border-radius:3px;letter-spacing:.06em;
+    border:1px solid currentColor;font-weight:600}
+  .box.exam{border-color:rgba(201,169,97,.45);background:rgba(201,169,97,.07)}
+  .box.exam .badge{color:var(--gold)}
+  .box.trap{border-color:rgba(229,139,133,.45);background:rgba(229,139,133,.07)}
+  .box.trap .badge{color:var(--rose)}
+  .box.key{border-color:rgba(127,201,190,.4);background:rgba(127,201,190,.07)}
+  .box.key .badge{color:var(--teal)}
+
+  /* ---------- Tables (Cards on Mobile) ---------- */
+  .tw{border:none;background:none;overflow:visible;border-radius:0;margin:20px 0}
+  .tw table{min-width:0;width:100%;border-collapse:separate;border-spacing:0;font-size:14.8px}
+  .tw thead{display:none}
+  .tw tbody tr{
+    display:block;border:1px solid var(--line);border-radius:12px;
+    background:var(--bg-2);margin-bottom:12px;padding:6px 0;
+  }
+  .tw tbody tr:nth-child(even){background:var(--bg-2)}
+  .tw tbody tr:last-child{margin-bottom:0}
+  .tw tbody td{display:block;border:none;padding:9px 16px}
+  .tw tbody td+td{border-top:1px dashed var(--line)}
+  .tw tbody td[data-label]::before{
+    content:attr(data-label);display:block;
+    font-family:var(--mono);font-size:11px;letter-spacing:.08em;
+    color:var(--teal);margin-bottom:4px;font-weight:600;
+  }
+  .tw tbody td:first-child{font-size:16px;color:#FFF;font-weight:500}
+  .tw tbody td.mono{font-family:var(--mono);font-size:13.5px}
+
+  /* Desktop table view */
+  @media (min-width:769px){
+    .tw{overflow-x:auto;border:1px solid var(--line);border-radius:13px;background:var(--bg-2)}
+    .tw table{border-collapse:collapse}
+    .tw thead{display:table-header-group}
+    .tw thead th{background:var(--bg-3);color:var(--teal);font-weight:500;font-size:13.5px;padding:12px 16px;border-bottom:1px solid var(--line);text-align:left}
+    .tw tbody tr{display:table-row;border:none;background:none;margin-bottom:0;padding:0}
+    .tw tbody tr:nth-child(even){background:rgba(255,255,255,.018)}
+    .tw tbody td{display:table-cell;padding:12px 16px;border-bottom:1px solid var(--line)}
+    .tw tbody td+td{border-top:none}
+    .tw tbody tr:last-child td{border-bottom:none}
+    .tw tbody td[data-label]::before{display:none}
+    .tw tbody td:first-child{font-size:14.8px;font-weight:normal}
+  }
+
+  /* ---------- 隨堂小考（內文嵌入） ---------- */
+  .quiz{border:1px solid var(--line-2);border-radius:14px;margin:24px 0;overflow:hidden;background:var(--bg-2)}
+  .quiz-top{display:flex;align-items:center;gap:10px;padding:12px 20px;background:var(--bg-3);border-bottom:1px solid var(--line)}
+  .quiz-top .lab{font-family:var(--serif);font-size:14px;letter-spacing:.16em;color:var(--gold)}
+  .quiz-top .yr{font-family:var(--mono);font-size:11.5px;color:var(--text-2);border:1px solid var(--line-2);padding:2px 8px;border-radius:4px}
+  .quiz-body{padding:18px 20px}
+  .quiz-body .stem{font-size:15.5px;line-height:1.85;margin:0 0 14px;color:var(--text)}
+  .opts{list-style:none;padding:0;margin:0 0 14px}
+  .opts li{padding:8px 12px;font-size:15px;border:1px solid var(--line);border-radius:8px;margin-bottom:7px;color:var(--text-2)}
+
+  /* ---------- 答案展開：原生 details ---------- */
+  details.rev{margin:0}
+  summary.toggle{
+    display:inline-block;list-style:none;cursor:pointer;
+    background:none;border:1px solid var(--teal-dim);color:var(--teal);
+    font-family:var(--sans);font-size:13px;padding:7px 16px;border-radius:7px;
+    font-weight:400;transition:.15s;-webkit-tap-highlight-color:transparent;
+  }
+  summary.toggle::-webkit-details-marker{display:none}
+  summary.toggle::marker{content:""}
+  summary.toggle:hover{background:var(--teal);color:var(--bg)}
+  summary.toggle::before{content:"顯示答案"}
+  .q summary.toggle::before{content:"顯示答案與詳解"}
+  details.rev[open] summary.toggle::before{content:"收合答案"}
+  .reveal{border-top:1px dashed var(--line-2);margin-top:14px;padding-top:14px}
+  .ans{font-family:var(--serif);font-weight:700;color:var(--gold);font-size:17px;margin-bottom:10px}
+  .reveal p{margin:0 0 9px;font-size:14.8px;color:var(--text-2)}
+  .reveal p b{color:#FFF}
+  .src{font-size:12px;color:var(--text-3);font-family:var(--mono);margin-top:12px}
+  .jump{font-size:12.5px;color:var(--teal-dim);text-decoration:none;border-bottom:1px solid var(--line-2)}
+  .jump:hover{color:var(--teal)}
+
+  /* ---------- Exam bank ---------- */
+  .exam-head{border:1px solid var(--line-2);border-radius:16px;padding:26px;margin-bottom:26px;background:var(--bg-2)}
+  .exam-head h2{font-family:var(--serif);margin:0 0 10px;font-size:28px}
+  .exam-head p{color:var(--text-2);margin:0;font-size:15px}
+  .btn{font-family:var(--sans);font-size:13.5px;cursor:pointer;background:var(--teal);color:var(--bg);
+    border:none;padding:10px 20px;border-radius:8px;margin-top:16px;font-weight:500}
+  .btn:hover{background:#9BDBD1}
+  .yrhead{font-family:var(--serif);font-size:23px;font-weight:700;margin:36px 0 16px;
+    padding-left:16px;border-left:3px solid var(--gold);color:var(--gold)}
+  .q{background:var(--bg-2);border:1px solid var(--line);border-radius:13px;padding:20px 22px;margin-bottom:18px;scroll-margin-top:24px}
+  .q-no{font-family:var(--mono);font-size:11.5px;color:var(--gold);border:1px solid var(--gold);padding:2px 9px;border-radius:5px}
+  .q-topic{font-size:12.5px;color:var(--text-3);margin-left:10px}
+  .q-stem{margin:14px 0 12px;font-size:15.5px;line-height:1.85}
+
+  footer{border-top:1px solid var(--line);padding:28px 0 56px;color:var(--text-3);font-size:13.5px}
+  footer b{color:var(--text-2)}
+
+  @media (max-width:900px){
+    .cols{grid-template-columns:1fr;gap:0;padding-top:24px}
+    nav.toc{position:static;margin-bottom:32px;border:1px solid var(--line);border-radius:12px;padding:16px;background:var(--bg-2)}
+    nav.toc a{border-left:none;padding:6px 4px}
+    .stats{grid-template-columns:repeat(2,1fr);gap:16px}
+  }
+
+  @media (max-width:700px){
+    body{font-size:16px;line-height:1.85}
+    .wrap{padding:0 16px}
+    header.hero{padding:36px 0 30px}
+    .cols{padding:24px 0 50px}
+    section{margin-bottom:42px}
+    nav.toc{padding:0;overflow:hidden}
+    nav.toc .t{display:none}
+    nav.toc details{margin:0}
+    nav.toc summary{
+      display:block;list-style:none;cursor:pointer;padding:14px 16px;
+      font-family:var(--mono);font-size:12px;letter-spacing:.16em;color:var(--teal);
+    }
+    nav.toc summary::-webkit-details-marker{display:none}
+    nav.toc summary::after{content:" ▾";color:var(--text-3)}
+    nav.toc details[open] summary::after{content:" ▴"}
+    nav.toc .toc-links{padding:0 10px 12px}
+    .box{padding:15px 16px;border-radius:11px}
+    p,li,td,.stem,.reveal p,.opts li,.q-stem{overflow-wrap:anywhere;word-break:break-word}
+    .quiz-body{padding:15px 16px}
+    .opts li{padding:9px 12px;font-size:15px}
+    .q{padding:16px 16px}
+    .sec-head{gap:12px}
+    ul,ol{padding-left:20px}
+    .toggle{width:100%;padding:11px 16px;font-size:14px}
+    summary.toggle{width:100%;text-align:center;padding:11px 16px;font-size:14px}
+    .btn{width:100%;padding:12px 16px}
+  }
+  @media print{
+    nav.toc,.btn,.toggle{display:none}
+    .reveal{display:block!important}
+    body{background:#fff;color:#000;font-size:11pt}
+  }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <a class="backlink" href="index.html">← 返回 Block 7 目錄</a>
+    <div class="eyebrow"><span class="rule"></span>高醫外科學 · 裸讀學習筆記<span class="dot">·</span>韋又菁老師專題</div>
+    <h1>肝膽胰病理學 <em>(HBP Pathology)</em></h1>
+    <p class="sub">從肝臟循環障礙、病毒與自體免疫肝病，一路貫穿 PBC/PSC 膽道病理、代謝遺傳疾病與肝膽胰腫瘤。授課教師：韋又菁。</p>
+
+    <div class="intro-card">
+      <p>這份筆記把 <b>111、112、113 年期末考與 114M 期中考</b> 共 32 題病理考古題，<b>拆解為 6 大核心病理觀念模組，並嵌入隨堂測驗</b>。文末附錄 32 題完整考古題庫與權威深度解析。</p>
+      <div class="stats">
+        <div class="stat"><div class="n">32</div><div class="l">總題數</div></div>
+        <div class="stat"><div class="n">4</div><div class="l">學年度涵蓋</div></div>
+        <div class="stat"><div class="n">6</div><div class="l">核心章節</div></div>
+        <div class="stat"><div class="n">100%</div><div class="l">考點解析率</div></div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+<div class="cols">
+
+  <nav class="toc">
+    <div class="t">CONTENTS</div>
+    <details id="tocBox" open>
+      <summary>目錄 CONTENTS</summary>
+      <div class="toc-links">
+      <a href="#s1">一　肝臟循環障礙</a>
+      <a href="#s2">二　病毒性與自體免疫性肝炎</a>
+      <a href="#s3">三　膽道疾病與 PBC vs. PSC</a>
+      <a href="#s4">四　酒精性、代謝與遺傳性肝病</a>
+      <a href="#s5">五　肝臟與膽囊良惡性腫瘤</a>
+      <a href="#s6">六　胰臟炎、假性囊腫與胰腺癌</a>
+      <a href="#s7">七　一分鐘考前秒殺總複習</a>
+      <a href="#exam" class="exam">八　歷屆考題全收錄 (32 題)</a>
+      </div>
+    </details>
+  </nav>
+
+  <main>
+
+  <!-- ============ SECTION 1 ============ -->
+  <section id="s1">
+    <div class="sec-head"><span class="sec-num">一</span><h2>肝臟循環障礙 (Circulatory Disorders)</h2></div>
+    <p class="tagline">本節高頻考點：<a class="qtag" href="#q111-52">111-52</a><a class="qtag" href="#q112-31">112-31</a><a class="qtag" href="#q113-34">113-34</a><a class="qtag" href="#q114m-45">114M-45</a></p>
+
+    <p>肝臟具有獨特的雙重血供（Dual blood supply：門靜脈 75% + 肝動脈 25%），因此肝梗塞 (Infarction) 罕見但非絕不可能。循環障礙的考題聚焦在<strong>受阻位置（流入、肝內、流出）</strong>與其對應的病理特徵。</p>
+
+    <h3>1. 三大血流受阻位置與疾病對照</h3>
+    <div class="tw"><table>
+      <thead><tr><th>受阻位置</th><th>代表疾病</th><th>病理表現與臨床特徵</th></tr></thead>
+      <tbody>
+        <tr><td><b>流入受阻<br>(Inflow)</b></td><td><b>門靜脈血栓 (Portal Vein Thrombosis, PVT)</b></td><td>引起<b>門脈高壓症 (Portal HTN)</b>、食道靜脈曲張 (Esophageal varices)、腹水與脾腫大。</td></tr>
+        <tr><td><b>肝內血流受阻<br>(Intrahepatic)</b></td><td><b>肝硬化 (Cirrhosis)</b><br>竇狀隙阻塞 (SOS)</td><td><mark>肝內血流受阻最常見原因為「肝硬化 (Cirrhosis)」</mark>（非癌症！112-31, 113-34）。SOS 見竇狀隙內皮受損及 perivenular 壞死。</td></tr>
+        <tr><td><b>流出受阻<br>(Outflow)</b></td><td><b>Budd-Chiari syndrome</b><br>Nutmeg liver (檳榔肝)</td><td>• <b>Budd-Chiari：</b><mark>肝靜脈 (Hepatic vein) 或下腔靜脈 (IVC) 阻塞</mark>（與肝動脈無關！111-52, 113-34）。<br>• <b>Nutmeg liver：</b>右心衰竭淤血導致<mark>中央靜脈周圍 (Centrilobular / Zone 3) 出血性壞死</mark>（非 portal areas！）。</td></tr>
+      </tbody>
+    </table></div>
+
+    <div class="box trap">
+      <div class="bt"><span class="badge">易錯陷阱</span>Budd-Chiari syndrome 阻塞的是什麼？</div>
+      <p>題目常混淆：「Budd-Chiari 是因 obstruction of <u>portal vein</u> 或 <u>hepatic artery compromise</u>」→ <b>錯！</b><mark>Budd-Chiari 是「肝靜脈 (Hepatic vein)」或下腔靜脈阻塞導致的流出受阻 (Hepatic venous outflow obstruction)</mark>。</p>
+    </div>
+
+    <!-- Quiz 1 -->
+    <div class="quiz">
+      <div class="quiz-top"><span class="lab">隨堂測驗</span><span class="yr">113 學年度 · 第 34 題</span></div>
+      <div class="quiz-body">
+        <p class="stem">以下關於 "Circulatory disorder of liver" 的敘述，何者最不適當？</p>
+        <ul class="opts">
+          <li>(A) Nutmeg liver 與 systemic circulatory compromise 有關，其病理特徵是 centrilobular hemorrhagic necrosis</li>
+          <li>(B) Hepatic artery compromise 會造成 Budd-Chiari syndrome，臨床症狀通常與 increased hepatic blood pressure 有關</li>
+          <li>(C) Sinusoidal obstruction syndrome 可見到 sinusoidal endothelium injury，並可能發生 necrosis of perivenular hepatocytes</li>
+          <li>(D) Impaired blood flow through the liver 最常見之原因是 liver cirrhosis</li>
+        </ul>
+        <details class="rev">
+          <summary class="toggle"></summary>
+          <div class="reveal">
+            <div class="ans">正確答案：(B)</div>
+            <p>Budd-Chiari syndrome 是指<b>肝靜脈 (Hepatic vein) 或下腔靜脈 (IVC) 阻塞</b>所導致的流出受阻，與肝動脈 (Hepatic artery) 毫無關聯。</p>
+            <p><a class="jump" href="#q113-34">查看題庫完整解析 (113-34) ↓</a></p>
+          </div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SECTION 2 ============ -->
+  <section id="s2">
+    <div class="sec-head"><span class="sec-num">二</span><h2>病毒性肝炎與自體免疫性肝炎</h2></div>
+    <p class="tagline">本節高頻考點：<a class="qtag" href="#q111-54">111-54</a><a class="qtag" href="#q111-55">111-55</a><a class="qtag" href="#q112-27">112-27</a><a class="qtag" href="#q113-31">113-31</a><a class="qtag" href="#q113-33">113-33</a><a class="qtag" href="#q114m-43">114M-43</a><a class="qtag" href="#q114m-44">114M-44</a></p>
+
+    <h3>1. 病毒性肝炎血清學與特徵考點</h3>
+    <div class="tw"><table>
+      <thead><tr><th>病毒類型</th><th>關鍵血清標記與臨床核心考點</th></tr></thead>
+      <tbody>
+        <tr><td><b>A 型肝炎 (HAV)</b></td><td>糞口傳染、衛生環境相關；<b>自限性 (Self-limited)</b>，幾乎不轉為慢性或帶原，極少爆發性肝衰竭。</td></tr>
+        <tr><td><b>B 型肝炎 (HBV)</b></td><td>• <b>健康帶原者 (Inactive carrier)：</b><mark>HBsAg(+)、anti-HBe(+) 且 HBeAg(-)</mark>、HBV DNA 極低或測不到（112-27, 114M-43）。<br>• <b>活躍複製 (Active replication)：</b><mark>HBeAg(+) 或 HBV DNA 高</mark>；若出現 Anti-HBe 則代表複製力降低（血清轉換）。</td></tr>
+        <tr><td><b>C 型肝炎 (HCV)</b></td><td>極高機率轉為慢性肝炎 (80~85%)；臨床以 <b>Anti-HCV antibody</b> 篩檢，慢性患者血中 HCV RNA 持續陽性。</td></tr>
+        <tr><td><b>D 型肝炎 (HDV)</b></td><td><b>缺陷病毒 (Defective virus)</b>，必須依賴 HBV 之 HBsAg 才能在肝細胞複製與包被（114M-43）。</td></tr>
+        <tr><td><b>E 型肝炎 (HEV)</b></td><td>糞口傳染、<b>旅行者肝炎 (Traveler hepatitis)</b>。高考點：<mark>懷孕婦女 (Pregnant women) 感染致死率高達 15~20%</mark>（111-54, 113-33）。</td></tr>
+      </tbody>
+    </table></div>
+
+    <h3>2. 自體免疫性肝炎 (Autoimmune Hepatitis, AIH)</h3>
+    <ul>
+      <li><strong>切片特徵：</strong><mark>Interface hepatitis</mark>（界面性肝炎）、Emperipolesis（淋巴球穿入肝細胞現象），以及門脈區大量 <mark>漿細胞 (Plasma cells)</mark> 浸潤（111-55, 114M-44）。</li>
+      <li><strong>血清免疫標記分型：</strong>
+        <ul>
+          <li><strong>Type 1 AIH：</strong><mark>ANA (抗核抗體) + ASMA (抗平滑肌抗體 / Anti-smooth muscle)</mark>（113-31, 114M-44）。</li>
+          <li><strong>Type 2 AIH：</strong><mark>Anti-LKM1</mark> (Anti-liver kidney microsomal type 1)（113-31）。</li>
+          <li>患者血清中 <strong>IgG 常顯著上升</strong>。</li>
+        </ul>
+      </li>
+      <li><strong>重要陷阱：</strong><mark>自體抗體效價 (Autoantibody titers) 高低與疾病嚴重度或預後「無平行相關」</mark>！抗體僅用於診斷分類，評估嚴重度與療效需看 AST/ALT、IgG 與切片（114M-44）。</li>
+    </ul>
+
+    <div class="box trap">
+      <div class="bt"><span class="badge">切片浸潤細胞陷阱</span>急性病毒性肝炎 vs 酒精性肝炎 vs 自體免疫</div>
+      <ul>
+        <li><strong>急性病毒性肝炎：</strong><mark>單核球 / 淋巴球 (Lymphocytes / Monocytes)</mark> 浸潤（111-55）。</li>
+        <li><strong>酒精性肝炎：</strong><mark>嗜中性白血球 (Neutrophils)</mark> 浸潤（111-55, 112-28）。</li>
+        <li><strong>自體免疫性肝炎：</strong><mark>漿細胞 (Plasma cells)</mark> 浸潤（112-28, 114M-44）。</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ============ SECTION 3 ============ -->
+  <section id="s3">
+    <div class="sec-head"><span class="sec-num">三</span><h2>膽道疾病與自體免疫膽管炎 (PBC vs. PSC)</h2></div>
+    <p class="tagline">本節高頻考點：<a class="qtag" href="#q111-53">111-53</a><a class="qtag" href="#q112-26">112-26</a><a class="qtag" href="#q113-31">113-31</a><a class="qtag" href="#q113-36">113-36</a><a class="qtag" href="#q114m-40">114M-40</a></p>
+
+    <h3>1. PBC vs. PSC 世紀大對決（年年必考！）</h3>
+    <div class="tw"><table>
+      <thead><tr><th>比較項目</th><th>原發性膽汁性膽管炎 (PBC)</th><th>原發性硬化性膽管炎 (PSC)</th></tr></thead>
+      <tbody>
+        <tr><td><b>好發族群與性別</b></td><td><mark>中年女性 (女:男 ≈ 9:1)</mark>（112-26, 114M-40）</td><td><mark>年輕男性 (男:女 ≈ 2:1)</mark>（112-26）</td></tr>
+        <tr><td><b>伴隨疾病</b></td><td><b>乾燥症 (Sjogren syndrome)</b>、Hashimoto 等自體免疫病</td><td><mark>70% 伴隨潰瘍性結腸炎 (Ulcerative Colitis, UC)</mark></td></tr>
+        <tr><td><b>特異性血清抗體</b></td><td><mark>Anti-Mitochondrial Antibody (AMA > 95%)</mark></td><td><mark>p-ANCA (約 65%)</mark>（<b>不是 cANCA！</b>113-31）</td></tr>
+        <tr><td><b>侵犯膽道大小</b></td><td>肝內<b>中小型膽管</b>（Intrahepatic small-medium ducts）</td><td>肝內外<b>大中型膽管</b>（Large intra/extrahepatic ducts）</td></tr>
+        <tr><td><b>典型病理切片特徵</b></td><td><b>Florid duct lesion</b>（非化膿性肉芽腫性小膽管破壞）</td><td><mark>Onion-skin fibrosis</mark>（膽管周圍洋蔥皮樣纖維化）</td></tr>
+        <tr><td><b>長期惡性腫瘤風險</b></td><td>肝硬化後進展為 HCC</td><td><mark>大幅增加膽管癌 (Cholangiocarcinoma) 風險</mark>（111-53, 112-26）</td></tr>
+      </tbody>
+    </table></div>
+
+    <h3>2. 膽汁淤積 (Cholestatic liver disease) 特徵</h3>
+    <ul>
+      <li>膽道阻塞或肝硬化引起的黃疸，是以<mark>結合型 / 直接型 (Conjugated / Direct) 高膽紅素血症</mark>為主（因已被肝細胞結合但排不出，113-36）。</li>
+      <li>新生兒病理性黃疸以<strong>肝外膽道閉鎖 (Extrahepatic biliary atresia)</strong> 為主，常需葛西手術或肝移植（113-36）。</li>
+      <li>敗血症切片可在 portal-parenchymal interface 見到 <strong>bile plugs</strong>。</li>
+    </ul>
+
+    <!-- Quiz 2 -->
+    <div class="quiz">
+      <div class="quiz-top"><span class="lab">隨堂測驗</span><span class="yr">114M 學年度 · 第 40 題</span></div>
+      <div class="quiz-body">
+        <p class="stem">一名 20 歲的女性有 Sjogren syndrome 的病史，她從 4 個月前開始出現全身性的瘙癢症，抽血發現血清中鹼性磷酸酶 (ALP) 和抗線粒體抗體 (AMA) 有升高的情形，肝臟切片發現有中小型膽管的非浸潤性肉芽腫破壞，她最可能是下列何者？</p>
+        <ul class="opts">
+          <li>(A) 威爾森氏症</li>
+          <li>(B) 原發性硬化性膽管炎 (PSC)</li>
+          <li>(C) 自體免疫性肝炎 (AIH)</li>
+          <li>(D) 原發性膽汁性膽管炎 (PBC)</li>
+        </ul>
+        <details class="rev">
+          <summary class="toggle"></summary>
+          <div class="reveal">
+            <div class="ans">正確答案：(D)</div>
+            <p>年輕女性 + 乾燥症 + 皮膚搔癢 + ALP 升高 + <b>Anti-mitochondrial antibody (AMA) 陽性</b> + 中小型膽管肉芽腫性破壞（Florid duct lesion），為教科書級別的 <b>PBC</b> 經典表徵。</p>
+            <p><a class="jump" href="#q114m-40">查看題庫完整解析 (114M-40) ↓</a></p>
+          </div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SECTION 4 ============ -->
+  <section id="s4">
+    <div class="sec-head"><span class="sec-num">四</span><h2>酒精性、代謝與遺傳性肝病</h2></div>
+    <p class="tagline">本節高頻考點：<a class="qtag" href="#q111-55">111-55</a><a class="qtag" href="#q111-57">111-57</a><a class="qtag" href="#q112-25">112-25</a><a class="qtag" href="#q112-28">112-28</a><a class="qtag" href="#q113-30">113-30</a><a class="qtag" href="#q114m-41">114M-41</a><a class="qtag" href="#q114m-42">114M-42</a></p>
+
+    <h3>1. 酒精性肝病 (Alcoholic Liver Disease) vs. NAFLD</h3>
+    <ul>
+      <li><strong>生化指標：</strong>酒精性肝病常呈 <mark>AST / ALT 比值 &gt; 2</mark>（AST 顯著高於 ALT，111-57）。</li>
+      <li><strong>酒精性肝炎三大病理特徵：</strong>
+        <ol>
+          <li><strong>Fatty change (Steatosis)：</strong>大泡性脂肪堆積（兩者皆有）。</li>
+          <li><strong>Mallory-Denk bodies (Mallory hyaline)：</strong>肝細胞內角蛋白凝集（兩者皆有）。</li>
+          <li><strong><mark>嗜中性白血球 (Neutrophils) 浸潤</mark></strong>：圍繞退化的肝細胞（111-57, 112-28）。</li>
+        </ol>
+      </li>
+      <li><strong>纖維化起始位置：</strong><mark>最先出現在 Central vein (Zone 3 / Perivenular / 竇狀隙周圍)</mark>，形成網狀的 <strong>「Chicken wire fence pattern」</strong>，而非門脈區（111-57, 114M-41）！</li>
+    </ul>
+
+    <h3>2. 三大遺傳代謝性肝病比較表</h3>
+    <div class="tw"><table>
+      <thead><tr><th>遺傳疾病</th><th>基因突變與病理機轉</th><th>臨床表現與特殊染色</th></tr></thead>
+      <tbody>
+        <tr><td><b>血鐵沉著症<br>(Hemochromatosis)</b></td><td>• <b>HFE 基因 (C282Y)</b> 突變，鐵過載。<br>• 機轉：Fenton 反應與脂質過氧化，<mark>顯著缺乏發炎細胞浸潤 (striking absence of inflammation)</mark>（114M-42）。</td><td>• <mark>40~60 歲成年發病，男 &gt; 女且早於女</mark>（女性有月經排鐵保護，112-25）。<br>• 三聯單 (Bronze diabetes)：肝硬化、皮膚色素沉著、糖尿病。<br>• 染色：<mark>Prussian blue 染出藍色鐵沉澱</mark>；增加 <b>HCC</b> 風險（111-53）。</td></tr>
+        <tr><td><b>威爾森氏症<br>(Wilson Disease)</b></td><td>• <b>ATP7B 基因</b> 突變，銅轉運異常。<br>• 血清 <b>Ceruloplasmin (轉銅素) 下降</b>、尿銅增加。</td><td>• 青少年肝病 + 錐體外路神經症狀（手抖）+ 精神異常。<br>• 切片：<mark>銅離子沉積於肝細胞</mark>（Rhodanine 染色陽性，113-30）。</td></tr>
+        <tr><td><b>$\alpha_1$-抗胰蛋白酶缺乏<br>($\alpha_1$-AT Deficiency)</b></td><td>• <b>SERPINA1 (PiZ)</b> 突變。<br>• 異常折疊的 $\alpha_1$-AT 滯留於肝細胞內質網。</td><td>• 切片：肝細胞內圓形胞漿包涵體，特徵為 <mark>PAS(+) / Diastase-resistant</mark>（114M-42）。<br>• 主要增加 <b>HCC</b> 風險（非膽管癌！111-53）。</td></tr>
+      </tbody>
+    </table></div>
+  </section>
+
+  <!-- ============ SECTION 5 ============ -->
+  <section id="s5">
+    <div class="sec-head"><span class="sec-num">五</span><h2>肝臟與膽囊良惡性腫瘤</h2></div>
+    <p class="tagline">本節高頻考點：<a class="qtag" href="#q111-51">111-51</a><a class="qtag" href="#q111-53">111-53</a><a class="qtag" href="#q111-56">111-56</a><a class="qtag" href="#q112-24">112-24</a><a class="qtag" href="#q112-29">112-29</a><a class="qtag" href="#q113-29">113-29</a><a class="qtag" href="#q113-35">113-35</a><a class="qtag" href="#q114m-34">114M-34</a></p>
+
+    <h3>1. 肝臟良性病灶與腫瘤</h3>
+    <ul>
+      <li><strong>局灶性結節性增生 (Focal Nodular Hyperplasia, FNH)：</strong><mark>非腫瘤性 (Non-neoplastic)</mark> 的反應性增生，與局部血流異常 (Altered blood flow) 有關。病理特徵為 <mark>Central stellate scar (中央星狀疤痕)</mark>，幾乎不會惡變（111-56）。</li>
+      <li><strong>海綿狀血管瘤 (Cavernous hemangioma)：</strong>肝臟最常見的良性腫瘤。</li>
+      <li><strong>肝細胞腺瘤 (Hepatocellular Adenoma, HCA)：</strong>女性、口服避孕藥相關。其中 <mark>$\beta$-catenin 活化突變型 (Beta-catenin activated)</mark> 惡性轉化為 HCC 的風險最高（111-53, 113-35）。</li>
+    </ul>
+
+    <h3>2. 肝細胞癌 (Hepatocellular Carcinoma, HCC)</h3>
+    <ul>
+      <li><strong>組織型態：</strong>最常見為 <mark>Trabecular (索狀) 排列</mark>；腺體狀 (Glandular) 構造是膽管癌的特徵（112-29）。</li>
+      <li><strong>轉移途徑：</strong>HCC 具高度浸潤血管傾向，<mark>主要經由靜脈系統 (Portal vein 或 Hepatic vein) 轉移</mark>（112-29）。</li>
+      <li><strong>基因突變：</strong>常見為 TERT promoter、p53、$\beta$-catenin；<strong>KRAS 突變極罕見</strong>（KRAS 是胰腺癌和大腸癌特徵，112-29）。</li>
+      <li><strong>篩檢工具考點：</strong>AFP 敏感度與特異度不足（慢性肝炎也會升、早期肝癌可能不升），指引<mark>不建議單獨使用 AFP 作為篩檢工具</mark>，需搭配腹部超音波（113-35）。</li>
+    </ul>
+
+    <h3>3. 膽囊疾病與膽囊癌</h3>
+    <div class="tw"><table>
+      <thead><tr><th>膽囊病變</th><th>病理成分與臨床考點</th></tr></thead>
+      <tbody>
+        <tr><td><b>急性結石性膽囊炎</b></td><td>佔 90%，係因結石卡在膽囊頸或膽囊管造成阻塞與發炎（111-51, 113-29, 114M-34）。</td></tr>
+        <tr><td><b>急性非結石性膽囊炎<br>(Acalculous)</b></td><td>與<b>嚴重缺血、重症、敗血症、大手術、嚴重燒傷 (burns)</b> 相關；<mark>與「喝酒」無直接關聯</mark>（111-51, 113-29, 114M-34）。</td></tr>
+        <tr><td><b>色素結石 (Pigment stones)</b></td><td>成分為 <mark>未結合型膽紅素鈣鹽 (Unconjugated bilirubin calcium salts)</mark>（非結合型！112-24）。溶血性貧血與膽道感染為危險因子。</td></tr>
+        <tr><td><b>膽囊癌 (Gallbladder carcinoma)</b></td><td>最常見肝外膽道惡性腫瘤，女 &gt; 男，慢性結石發炎為危險因子，型態以 <mark>Adenocarcinoma (腺癌)</mark> 最常見（111-51, 112-24）。</td></tr>
+      </tbody>
+    </table></div>
+  </section>
+
+  <!-- ============ SECTION 6 ============ -->
+  <section id="s6">
+    <div class="sec-head"><span class="sec-num">六</span><h2>胰臟炎、假性囊腫與胰腺癌</h2></div>
+    <p class="tagline">本節高頻考點：<a class="qtag" href="#q111-58">111-58</a><a class="qtag" href="#q112-30">112-30</a><a class="qtag" href="#q113-32">113-32</a><a class="qtag" href="#q114m-35">114M-35</a></p>
+
+    <h3>1. 急性胰臟炎與假性囊腫 (Pseudocyst)</h3>
+    <ul>
+      <li><strong>急性壞死性胰臟炎：</strong>酗酒後突發劇烈上腹痛，Amylase/Lipase 升高，病理呈現<mark>胰臟實質出血性壞死</mark>與周圍脂肪酵素性壞死 (Fat necrosis)（112-30）。</li>
+      <li><strong>胰臟假性囊腫 (Pseudocyst)：</strong>佔胰臟囊狀病灶 75%，常見於急性/慢性胰臟炎後。病理關鍵：由肉芽組織與發炎纖維組織構成，<mark>缺乏真性上皮內襯 (No epithelial lining)</mark>（111-58）。</li>
+    </ul>
+
+    <h3>2. 胰腺導管腺癌 (Pancreatic Ductal Adenocarcinoma, PDAC)</h3>
+    <ul>
+      <li><strong>發生部位：</strong>約 60% 好發於 <mark>胰頭 (Pancreatic head)</mark>，常壓迫膽管引起無痛性黃疸。</li>
+      <li><strong>危險因子：</strong><mark>吸菸 (Smoking)</mark> 為最強環境危險因子；遺傳性胰臟炎 (PRSS1 突變) 終生罹癌風險高達 40%（114M-35）。</li>
+      <li><strong>PanIN 演進模型與基因突變順序：</strong>
+        <ul>
+          <li><mark>最早發生且最關鍵的突變是 KRAS 突變（占 &gt;90%）</mark>（非 $\beta$-catenin！113-32）。</li>
+          <li>接續突變：p16/CDKN2A（失活）、p53、SMAD4（晚期）。</li>
+        </ul>
+      </li>
+      <li><strong>囊腫前驅病灶：</strong>黏液性囊狀腫瘤 (MCN) 與導管內乳頭狀黏液腫瘤 (IPMN) 為癌前病變；<mark>漿液性囊腫 (Serous cystic neoplasm, SCN) 幾乎全為良性，不是前驅物</mark>（114M-35）。</li>
+    </ul>
+
+    <!-- Quiz 3 -->
+    <div class="quiz">
+      <div class="quiz-top"><span class="lab">隨堂測驗</span><span class="yr">114M 學年度 · 第 35 題</span></div>
+      <div class="quiz-body">
+        <p class="stem">以下關於胰腺癌 (pancreatic carcinoma) 的敘述，何者最不恰當？</p>
+        <ul class="opts">
+          <li>(A) 大部分的胰腺癌發生在胰腺頭部 (pancreatic head)</li>
+          <li>(B) 遺傳性胰腺炎有 PRSS1-mutations 者，其罹患胰腺癌的風險較高，lifetime risk 可達 40%</li>
+          <li>(C) Serous cystic neoplasm 可能為其 precursor lesion</li>
+          <li>(D) 最強的環境因子 (environmental influence) 是吸菸</li>
+        </ul>
+        <details class="rev">
+          <summary class="toggle"></summary>
+          <div class="reveal">
+            <div class="ans">正確答案：(C)</div>
+            <p>漿液性囊腫 (Serous cystic neoplasm, SCN) 幾乎全為良性，<b>不是</b>胰腺癌的前驅病灶。胰癌的囊狀前驅病變為 MCN 與 IPMN。</p>
+            <p><a class="jump" href="#q114m-35">查看題庫完整解析 (114M-35) ↓</a></p>
+          </div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SECTION 7 ============ -->
+  <section id="s7">
+    <div class="sec-head"><span class="sec-num">七</span><h2>一分鐘考前秒殺總複習（10 大必背口訣）</h2></div>
+    <div class="box key">
+      <div class="bt"><span class="badge">考前 60 秒衝刺</span>韋又菁老師 10 大必考核心秒殺口訣</div>
+      <ol>
+        <li><b>Budd-Chiari：</b><strong>肝靜脈 (Hepatic vein) 或 IVC 阻塞</strong>；Nutmeg liver＝<strong>Zone 3 (Centrilobular) 出血壞死</strong>。</li>
+        <li><b>B 肝健康帶原：</b>`HBsAg(+)` + `anti-HBe(+)` + <strong>`HBeAg(-)`</strong> + HBV DNA 極低。</li>
+        <li><b>E 肝特色：</b>旅行者肝炎、糞口傳染、<strong>孕婦死亡率達 15~20%</strong>。</li>
+        <li><b>自體免疫 AIH：</b>Interface 浸潤<strong>漿細胞 (Plasma cells)</strong>；Type 1＝ANA/ASMA；<strong>抗體效價與嚴重度無關</strong>。</li>
+        <li><b>PBC vs PSC：</b>PBC＝<strong>女、AMA、小膽管 Florid lesion</strong>；PSC＝<strong>男、70%伴隨 UC、p-ANCA (非cANCA)、洋蔥皮纖維化、膽管癌風險</strong>。</li>
+        <li><b>酒精性肝炎：</b>AST/ALT &gt; 2、Mallory-Denk、<strong>嗜中性球</strong>；<strong>Chicken wire 纖維化從 Zone 3 (Central vein) 開始</strong>。</li>
+        <li><b>血鐵沉著症：</b>HFE 突變、<strong>男早於女且多於女</strong>、Prussian blue 染藍、<strong>顯著缺乏發炎細胞</strong>、增加 HCC 風險。</li>
+        <li><b>FNH：</b><strong>非腫瘤性</strong>、局部血流異常、<strong>中央星狀疤痕 (Central stellate scar)</strong>。$\beta$-catenin 腺瘤惡性化風險最高。</li>
+        <li><b>急性非結石膽囊炎：</b>重症、嚴重缺血、敗血症、大燒傷；<strong>與喝酒無關</strong>。色素結石＝<strong>未結合型膽紅素鈣鹽</strong>。</li>
+        <li><b>胰腺癌：</b>60% 胰頭、吸菸最強危險因子、<strong>PanIN 最早突變為 KRAS (&gt;90%)</strong>、<strong>漿液性囊腫 SCN 為良性非前驅物</strong>；假性囊腫<strong>無上皮內襯</strong>。</li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- ============ SECTION 8: EXAM BANK ============ -->
+  <section id="exam">
+    <div class="sec-head"><span class="sec-num">八</span><h2>歷屆考古題全收錄（111 ～ 114M 共 32 題）</h2></div>
+    <div class="exam-head">
+      <h2>韋又菁老師 肝膽胰病理學題庫全解</h2>
+      <p>完整收錄 111、112、113 年期末考與 114M 年期中考共 32 題，附標準答案與逐選項深度剖析。</p>
+      <button class="btn" id="allBtn">全部展開答案</button>
+    </div>
+
+    <!-- ===== 111 ===== -->
+    <div class="yrhead">111 學年度期末考 (Block7_111_Final) · 8 題</div>
+
+    <div class="q" id="q111-51">
+      <span class="q-no">111-51</span><span class="q-topic">膽囊疾病 / 非結石性膽囊炎</span>
+      <p class="q-stem">25. 以下關於 "膽囊疾病" 的敘述，何者最不適當？</p>
+      <ul class="opts">
+        <li>A. Cholesterol stones 較好發於西方國家，女性與肥胖是其 risk factor</li>
+        <li>B. Acute calculous cholecystitis 的發生和 ischemia 有關，和 stone 較不相關，較易發生於 major trauma and burn 的病人身上</li>
+        <li>C. Gallbladder carcinoma 較好發於女性，其 risk factor 是 chronic inflammation，最常見的細胞型態是 adenocarcinoma</li>
+        <li>D. Pigment stones 成分是 bilirubin calcium salts，chronic hemolytic anemia 是其 risk factor</li>
+      </ul>
+      <details class="rev">
+        <summary class="toggle"></summary>
+        <div class="reveal">
+          <div class="ans">正確答案：B（此選項敘述錯誤）</div>
+          <p>• <b>選項 B 錯誤</b>：題目描述的是「急性無結石性膽囊炎 (Acute acalculous cholecystitis)」，而非結石性 (calculous)。結石性膽囊炎佔 90%，係因結石阻塞引發；無結石性則與缺血、重症、嚴重燒傷 (burns) 或敗血症相關。</p>
+          <p>• <b>其他選項正確</b>：膽固醇結石好發於西方、女性、肥胖；膽囊癌最常見為 adenocarcinoma 且與慢性發炎相關；色素結石包含未結合膽紅素鈣鹽，溶血性貧血為危險因子。</p>
+          <div class="src">出處：111年期末考 第25題</div>
+        </div>
+      </details>
+    </div>
+
+    <div class="q" id="q111-52">
+      <span class="q-no">111-52</span><span class="q-topic">肝臟循環障礙 / 門脈血栓 / Budd-Chiari</span>
+      <p class="q-stem">26. 以下關於肝臟 "Circulatory disorder" 的敘述，何者最為適當？</p>
+      <ul class="opts">
+        <li>A. 肝臟因為有 dual blood supply，不會發生 infarction</li>
+        <li>B. Budd-Chiari syndrome 會發生 increased intrahepatic blood pressure，是因 obstruction of portal vein 所造成</li>
+        <li>C. Nutmeg liver 是指肝臟外觀與豆蔻相似，是因 hemorrhagic necrosis 發生於 portal areas</li>
+        <li>D. Portal vein thrombosis 的病人會表現 portal hypertension，可能發生 esophageal varice</li>
+      </ul>
+      <details class="rev">
+        <summary class="toggle"></summary>
+        <div class="reveal">
+          <div class="ans">正確答案：D</div>
+          <p>• <b>選項 D 正確</b>：門靜脈血栓 (Portal vein thrombosis) 會造成門脈高壓症，並引發食道靜脈曲張 (esophageal varices) 及腹水。</p>
+          <p>• <b>錯誤選項修正</b>：<br>
+          (A) 肝臟有雙重血供 (肝動脈+門靜脈)，梗塞罕見但仍可能發生。<br>
+          (B) Budd-Chiari syndrome 是指<b>肝靜脈 (Hepatic vein)</b> 或下腔靜脈阻塞，而非門靜脈。<br>
+          (C) Nutmeg liver 的出血性壞死是發生於<b>中央靜脈周圍 (Centrilobular / Zone 3)</b>，非 portal areas。</p>
+          <div class="src">出處：111年期末考 第26題</div>
+        </div>
+      </details>
+    </div>
+
+    <div class="q" id="q111-53">
+      <span class="q-no">111-53</span><span class="q-topic">肝臟疾病與腫瘤 / 膽管癌風險</span>
+      <p class="q-stem">27. 以下關於肝臟疾病與肝臟腫瘤的敘述，何者最不適當？</p>
+      <ul class="opts">
+        <li>A. Primary sclerosing cholangitis 可能會發生 biliary intraepithelial neoplasia 並進展至 cholangiocarcinoma</li>
+        <li>B. Primary biliary cholangitis 可能會發生 cirrhosis 並進展至 hepatocellular carcinoma</li>
+        <li>C. Beta-catenin activated adenoma 在所有 hepatocellular adenoma 的型別中，惡性化風險 (risk for malignant transformation) 最高</li>
+        <li>D. Hereditary hemochromatosis、fibropolycystic liver disease 與 α1-antitrypsin deficiency 都是 cholangiocarcinoma 的 risk factor</li>
+      </ul>
+      <details class="rev">
+        <summary class="toggle"></summary>
+        <div class="reveal">
+          <div class="ans">正確答案：D（此選項敘述錯誤）</div>
+          <p>• <b>選項 D 錯誤</b>：Hereditary hemochromatosis 與 α1-antitrypsin deficiency 主要增加的是<b>肝細胞癌 (HCC)</b> 的風險，而非膽管癌 (Cholangiocarcinoma)。Fibropolycystic liver disease 則會增加膽管癌風險。</p>
+          <p>• <b>其他選項正確</b>：Beta-catenin 突變型的肝細胞腺瘤惡性化風險最高；PSC 易發展為膽管癌；PBC 肝硬化後可發展為 HCC。</p>
+          <div class="src">出處：111年期末考 第27題</div>
+        </div>
+      </details>
+    </div>
+
+    <div class="q" id="q111-54">
+      <span class="q-no">111-54</span><span class="q-topic">E 型肝炎 / 旅行者肝炎 / 孕婦</span>
+      <p class="q-stem">28. 以下何種肝炎病毒常是造成旅行者肝炎 (traveler hepatitis) 的元兇，並且懷孕婦女感染有將近 20% 的死亡率？</p>
+      <ul class="opts">
+        <li>A. A型肝炎病毒</li>
+        <li>B. E型肝炎病毒</li>
+        <li>C. C型肝炎病毒</li>
+        <li>D. B型肝炎病毒</li>
+      </ul>
+      <details class="rev">
+        <summary class="toggle"></summary>
+        <div class="reveal">
+          <div class="ans">正確答案：B</div>
+          <p>• <b>選項 B 正確</b>：E 型肝炎病毒 (HEV) 為糞口傳染，常引起旅行者肝炎。其最典型的臨床高考點為：對<b>孕婦 (Pregnant women)</b> 危害極大，感染後可能引發爆發性肝炎，致死率高達 15-20%。</p>
+          <div class="src">出處：111年期末考 第28題</div>
+        </div>
+      </details>
+    </div>
+
+    <div class="q" id="q111-55">
+      <span class="q-no">111-55</span><span class="q-topic">肝臟切片病理判讀</span>
+      <p class="q-stem">29. 以下關於肝臟疾病之肝臟切片的描述，何者最不適當？</p>
+      <ul class="opts">
+        <li>A. 急性病毒性肝炎會在 portal area 見到 neutrophil infiltrate 並見到 hepatocyte injury</li>
+        <li>B. Autoimmune hepatitis 肝臟切片之特色有 interface hepatitis、emperipolesis，並見到 plasma cells 的浸潤</li>
+        <li>C. Hemochromatosis 之肝臟切片可見到 hemosiderin granules，Prussian blue stain 可見藍色的鐵沉澱</li>
+        <li>D. Large bile duct obstruction 之肝臟切片可見到 portal expansion 與 ductular reaction</li>
+      </ul>
+      <details class="rev">
+        <summary class="toggle"></summary>
+        <div class="reveal">
+          <div class="ans">正確答案：A（此選項敘述錯誤）</div>
+          <p>• <b>選項 A 錯誤</b>：急性病毒性肝炎的發炎細胞浸潤以<b>單核細胞/淋巴球 (Lymphocytes/Monocytes)</b> 為主，而非嗜中性球 (neutrophils)。嗜中性球浸潤常見於「酒精性肝炎 (Alcoholic hepatitis)」。</p>
+          <p>• <b>其他選項正確</b>：自體免疫性肝炎切片可見 Interface hepatitis、emperipolesis 與大量 Plasma cell；鐵沉著症用 Prussian blue 染成藍色；大膽管阻塞見 portal expansion 與 ductular reaction。</p>
+          <div class="src">出處：111年期末考 第29題</div>
+        </div>
+      </details>
+    </div>
+
+    <div class="q" id="q111-56">
+      <span class="q-no">111-56</span><span class="q-topic">局灶性結節性增生 (FNH)</span>
+      <p class="q-stem">30. 一位 50 歲的女性病患，接受肝臟結節 (nodule) 切除手術，病理切片中，此肝臟結節的中央有一星狀纖維疤痕 (central scar)，在此星狀纖維疤痕中可見發炎細胞、血管與膽道的結構，結節中的肝細胞核質比 (N/C ratio) 並未增加，以下關於此結節病理診斷的敘述，何者最為適當？</p>
+      <ul class="opts">
+        <li>A. 此結節是 non-neoplastic 的，與 altered blood flow 有關</li>
+        <li>B. 此結節雖是良性腫瘤，但可能會惡性變化</li>
+        <li>C. 此結節是肝臟最常見的良性腫瘤，病人通常沒症狀</li>
+        <li>D. 此結節是惡性腫瘤，可能有 β-catenin-activating mutation</li>
+      </ul>
+      <details class="rev">
+        <summary class="toggle"></summary>
+        <div class="reveal">
+          <div class="ans">正確答案：A</div>
+          <p>• <b>診斷</b>：局灶性結節性增生 (Focal Nodular Hyperplasia, FNH)</p>
+          <p>• <b>選項 A 正確</b>：FNH 屬於<b>非腫瘤性 (non-neoplastic)</b> 的增生反應，係因局部血流量異常 (altered blood flow) 引發。典型特徵為 Central stellate scar (中央星狀疤痕)，內含粗大無彈性的血管與增生的膽管。</p>
+          <p>• <b>錯誤選項修正</b>：肝臟最常見的良性腫瘤為海綿狀血管瘤 (Cavernous hemangioma)。FNH 幾乎不會惡化。</p>
+          <div class="src">出處：111年期末考 第30題</div>
+        </div>
+      </details>
+    </div>
+
+    <div class="q" id="q111-57">
+      <span class="q-no">111-57</span><span class="q-topic">酒精性肝炎 / 纖維化起始位置</span>
+      <p class="q-stem">31. 關於酒精性肝炎之敘述，何者最不適當？</p>
+      <ul class="opts">
+        <li>A. AST 通常比 ALT 高約兩倍以上</li>
+        <li>B. 典型可見肝臟脂肪堆積、Mallory hyaline 與嗜中性白血球 (neutrophils) 浸潤</li>
+        <li>C. 酗酒而言，女性似乎比男性更容易受到肝臟損傷</li>
+        <li>D. 纖維化通常由 portal areas 開始，之後往 central vein 延伸</li>
+      </ul>
+      <details class="rev">
+        <summary class="toggle"></summary>
+        <div class="reveal">
+          <div class="ans">正確答案：D（此選項敘述錯誤）</div>
+          <p>• <b>選項 D 錯誤</b>：酒精性肝病的纖維化最先出現於 <b>Central vein (Zone 3 / Perivenular)</b> 周圍，形成網狀的「Chicken wire fence pattern」纖維化，而非 portal areas。</p>
+          <p>• <b>其他選項正確</b>：AST/ALT ratio &gt; 2（AST 較高）；三大經典病理特徵：Fatty change、Mallory-Denk bodies、Neutrophil infiltrate；女性對酒精肝毒性更敏感。</p>
+          <div class="src">出處：111年期末考 第31題</div>
+        </div>
+      </details>
+    </div>
+
+    <div class="q" id="q111-58">
+      <span class="q-no">111-58</span><span class="q-topic">胰臟假性囊腫 (Pseudocyst)</span>
+      <p class="q-stem">32. 一位長期酗酒的 65 歲男性病人，某次肚子痛就醫，被診斷為急性胰臟炎，胰臟還有一個 6 公分大的囊狀病灶，該病灶是由發炎組織與肉芽組織構成，未見明顯 epithelial lining cells，請問以下何者最可能是該囊狀病灶的診斷？</p>
+      <ul class="opts">
+        <li>A. serous cystic neoplasm</li>
+        <li>B. intraductal papillary mucinous neoplasm</li>
+        <li>C. pseudocyst</li>
+        <li>D. solid-pseudopapillary neoplasm</li>
+      </ul>
+      <details class="rev">
+        <summary class="toggle"></summary>
+        <div class="reveal">
+          <div class="ans">正確答案：C</div>
+          <p>• <b>選項 C 正確</b>：胰臟假性囊腫 (Pseudocyst) 占胰臟囊狀病灶 75%，常見於急性或慢性胰臟炎（尤其是酒精性）之後。病理關鍵：由肉芽組織 (Granulation tissue) 及發炎纖維組織構成，<b>缺乏真性上皮細胞 (No epithelial lining)</b>。</p>
+          <div class="src">出處：111年期末考 第32題</div>
+        </div>
+      </details>
+    </div>
+
+    <!-- ===== 112 ===== -->
+    <div class="yrhead">112 學年度期末考 (Block7_112_Final) · 8 題</div>
+
+    <div class="q" id="q112-25">
+      <span class="q-no">112-25</span><span class="q-topic">遺傳性血鐵沉著症</span>
+      <p class="q-stem">17. 關於遺傳性血鐵沉著症 (hemochromatosis)，下列何者最不適當？</p>
+      <ul class="opts">
+        <li>A. 肝臟組織可用 Prussian blue 染出藍色的鐵沉澱</li>
+        <li>B. 最常發病於兒童時期，且一般而言，女性較男性早發病</li>
+        <li>C. 可造成糖尿病 (diabetes)、肝硬化及心臟病變</li>
+        <li>D. 最常見為 HFE 基因變異</li>
+      </ul>
+      <details class="rev">
+        <summary class="toggle"></summary>
+        <div class="reveal">
+          <div class="ans">正確答案：B（此選項敘述錯誤）</div>
+          <p>• <b>選項 B 錯誤</b>：遺傳性血鐵沉著症多於<b>成年期 (40-60歲)</b> 發病。<b>男性顯著多於女性且較早發病</b>，因為女性因月經與生育有定期排鐵機制，對過量鐵有保護效果。</p>
+          <p>• <b>其他選項正確</b>：染色用 Prussian blue；三聯單（Bronze diabetes：肝硬化、皮膚色素沉著、糖尿病）；主要為 HFE 基因突變 (C282Y)。</p>
+          <div class="src">出處：112年期末考 第17題</div>
+        </div>
+      </details>
+    </div>
+
+    <div class="q" id="q112-26">
+      <span class="q-no">112-26</span><span class="q-topic">原發性硬化性膽管炎 (PSC)</span>
+      <p class="q-stem">18. 關於原發性硬化性膽管炎 (primary sclerosing cholangitis)，下列敘述何者最不適當？</p>
+      <ul class="opts">
+        <li>A. 發生於女性較男性多，會出現疲勞、搔癢和黃疸</li>
+        <li>B. 與 HLA-B8 相關且常伴隨 ulcerative colitis</li>
+        <li>C. 病理切片可見膽道有 onion skin fibrosis (periductal fibrosis/sclerosis)</li>
+        <li>D. 可能會造成肝硬化並增加 cholangiocarcinoma 的風險</li>
+      </ul>
+      <details class="rev">
+        <summary class="toggle"></summary>
+        <div class="reveal">
+          <div class="ans">正確答案：A（此選項敘述錯誤）</div>
+          <p>• <b>選項 A 錯誤</b>：原發性硬化性膽管炎 (PSC) <b>好發於年輕男性 (男:女 ≈ 2:1)</b>；而原發性膽汁性膽管炎 (PBC) 才好發於女性 (女:男 ≈ 9:1)。</p>
+          <p>• <b>其他選項正確</b>：70% 的 PSC 患者高度伴隨潰瘍性結腸炎 (Ulcerative Colitis)；特徵病理為膽管周圍洋蔥皮樣纖維化 (Onion-skin fibrosis)；大大增加膽管癌 (Cholangiocarcinoma) 風險。</p>
+          <div class="src">出處：112年期末考 第18題</div>
+        </div>
+      </details>
+    </div>
+
+    <div class="q" id="q112-27">
+      <span class="q-no">112-27</span><span class="q-topic">病毒性肝炎 / 健康帶原者</span>
+      <p class="q-stem">19. 以下關於病毒性肝炎的敘述，何者最不適當？</p>
+      <ul class="opts">
+        <li>A. A 型肝炎與衛生環境相關，幾乎不會形成 chronic hepatitis 或 carrier state</li>
+        <li>B. C 型肝炎非常造成慢性肝炎，可藉由檢測 Anti-HCV antibodies 診斷是否感染</li>
+        <li>C. B 型肝炎的病人因其免疫反應不同，臨床表現相當多樣性，所謂健康帶原者抽血可見 HBsAg(+) HBeAg(+)</li>
+        <li>D. E 型肝炎病毒常是造成旅行者肝炎的元兇，並且懷孕婦女感染有將近 20% 的死亡率</li>
+      </ul>
+      <details class="rev">
+        <summary class="toggle"></summary>
+        <div class="reveal">
+          <div class="ans">正確答案：C（此選項敘述錯誤）</div>
+          <p>• <b>選項 C 錯誤</b>：慢性 B 型肝炎「健康帶原者 (Inactive carrier state)」的血清學特徵為：<b>HBsAg(+)、anti-HBe(+) 且 HBeAg(-)</b>、HBV DNA 濃度極低或測不到。若 HBeAg(+) 則表示病毒複製活躍，傳染力強，非健康帶原狀態。</p>
+          <div class="src">出處：112年期末考 第19題</div>
+        </div>
+      </details>
+    </div>
+
+    <div class="q" id="q112-28">
+      <span class="q-no">112-28</span><span class="q-topic">酒精性肝炎 / 浸潤細胞</span>
+      <p class="q-stem">20. 關於酒精性肝炎之敘述，何者錯誤？</p>
+      <ul class="opts">
+        <li>A. 典型可見肝臟脂肪堆積，Mallory hyaline，漿細胞 (plasma cell) 浸潤</li>
+        <li>B. 纖維化通常由 central vein 開始，之後往 portal areas 延伸</li>
+        <li>C. AST 通常比 ALT 高約兩倍以上</li>
+        <li>D. 酗酒而言，女性似乎比男性更容易受到肝臟損傷</li>
+      </ul>
+      <details class="rev">
+        <summary class="toggle"></summary>
+        <div class="reveal">
+          <div class="ans">正確答案：A（此選項敘述錯誤）</div>
+          <p>• <b>選項 A 錯誤</b>：酒精性肝炎浸潤的發炎細胞為<b>嗜中性白血球 (Neutrophils)</b>，而非漿細胞 (Plasma cells)。漿細胞浸潤是「自體免疫性肝炎 (Autoimmune hepatitis)」的典型特徵。</p>
+          <div class="src">出處：112年期末考 第20題</div>
+        </div>
+      </details>
+    </div>
+
+    <div class="q" id="q112-29">
+      <span class="q-no">112-29</span><span class="q-topic">肝細胞癌 (HCC) 病理特徵</span>
+      <p class="q-stem">21. 某 44 歲男性，已知是 B 型肝炎帶原者近 20 年。最近覺得容易疲倦且右上腹不適。身體檢查發現他肝臟較小且有脾腫現象。腹部超音波檢查在肝臟右葉發現一個 10 公分大的腫瘤。血清中胎兒甲型蛋白值 (alpha-fetoprotein) 上升。下列有關肝臟腫瘤的敘述，何者最適當？</p>
+      <ul class="opts">
+        <li>A. 以腺體構造不規則排列在纖維組織是最常見的腫瘤形態</li>
+        <li>B. 腫瘤外圍不會形成纖維化被膜</li>
+        <li>C. K-RAS 基因突變是腫瘤發生的主要原因</li>
+        <li>D. 因腫瘤細胞主要經由靜脈系統轉移</li>
+      </ul>
+      <details class="rev">
+        <summary class="toggle"></summary>
+        <div class="reveal">
+          <div class="ans">正確答案：D</div>
+          <p>• <b>診斷</b>：肝細胞癌 (Hepatocellular Carcinoma, HCC)（背景為慢性 B 肝、肝硬化、AFP 顯著升高與肝右葉大腫瘤）。</p>
+          <p>• <b>選項 D 正確</b>：HCC 有高度浸潤血管的傾向，<b>最常侵犯靜脈系統 (Portal vein 或 Hepatic vein)</b> 進行肝內或遠端轉移。</p>
+          <p>• <b>錯誤選項修正</b>：<br>
+          (A) 最常見的型態是 Trabecular (索狀) 排列，腺體狀構造為膽管癌 (Cholangiocarcinoma) 的特徵。<br>
+          (B) Well-differentiated 的 HCC 常有假被膜 (pseudocapsule)。<br>
+          (C) HCC 的常見突變為 TERT promoter、p53、β-catenin，KRAS 突變極罕見。</p>
+          <div class="src">出處：112年期末考 第21題</div>
+        </div>
+      </details>
+    </div>
+
+    <div class="q" id="q112-30">
+      <span class="q-no">112-30</span><span class="q-topic">急性壞死性胰臟炎</span>
+      <p class="q-stem">22. 一位酗酒的 40 歲男性，酒後因上腹痛來急診，病人血清消化酶 (amylase) 及脂肪酶 (lipase) 升高，則病人最有可能出現下列何種病理變化？</p>
+      <ul class="opts">
+        <li>A. 胃潰瘍穿孔</li>
+        <li>B. 心臟廣泛性壞死</li>
+        <li>C. 胰臟出血性壞死</li>
+        <li>D. 肝臟大塊性壞死</li>
+      </ul>
+      <details class="rev">
+        <summary class="toggle"></summary>
+        <div class="reveal">
+          <div class="ans">正確答案：C</div>
+          <p>• <b>選項 C 正確</b>：酗酒後突發劇烈上腹痛，且 Amylase/Lipase 升高，為<b>急性壞死性胰臟炎 (Acute necrotizing pancreatitis)</b> 的典型表現，病理可見胰臟實質出血、壞死及酶所導致的周圍脂肪酵素性壞死 (Fat necrosis)。</p>
+          <div class="src">出處：112年期末考 第22題</div>
+        </div>
+      </details>
+    </div>
+
+    <div class="q" id="q112-31">
+      <span class="q-no">112-31</span><span class="q-topic">肝臟循環障礙 / 肝硬化</span>
+      <p class="q-stem">23. 關於肝臟 circulation disorder 方面的疾病，下列敘述何者最不適當？</p>
+      <ul class="opts">
+        <li>A. Portal vein obstruction and thrombosis 病人表現以 portal hypertension 為主，如腹水與食道靜脈曲張</li>
+        <li>B. Nutmeg liver 可見肝臟組織有 centrilobular hemorrhagic necrosis，與心臟衰竭有關</li>
+        <li>C. Sinusoidal obstruction syndrome 可見肝臟組織有 necrosis of perivenular hepatocytes，死亡率極高</li>
+        <li>D. Impaired blood flow through the liver 最常見的原因是 intraabdominal cancers，尤其是 hepatocellular carcinoma</li>
+      </ul>
+      <details class="rev">
+        <summary class="toggle"></summary>
+        <div class="reveal">
+          <div class="ans">正確答案：D（此選項敘述錯誤）</div>
+          <p>• <b>選項 D 錯誤</b>：Impaired blood flow through the liver (肝內血流受阻) <b>最常見的原因是肝硬化 (Cirrhosis)</b>，而非癌症。</p>
+          <div class="src">出處：112年期末考 第23題</div>
+        </div>
+      </details>
+    </div>
+
+    <div class="q" id="q112-32">
+      <span class="q-no">112-32</span><span class="q-topic">膽囊疾病 / 色素結石成分</span>
+      <p class="q-stem">24. 關於膽囊疾病，下列敘述何者最不適當？</p>
+      <ul class="opts">
+        <li>A. 最常見的先天性疾病是 folded fundus</li>
+        <li>B. 急性 acalculous cholecystitis 與 ischemia 有關，好發於 major trauma, sepsis 等的病人</li>
+        <li>C. 膽囊癌是最常見的 extrahepatic biliary tract malignancy，較好發於女性，病理型態以 adenocarcinoma 最常見</li>
+        <li>D. 膽囊結石中的 pigment stone，其成分以 conjugated bilirubin 膽紅素鈣鹽為主，與膽道發炎有關</li>
+      </ul>
+      <details class="rev">
+        <summary class="toggle"></summary>
+        <div class="reveal">
+          <div class="ans">正確答案：D（此選項敘述錯誤）</div>
+          <p>• <b>選項 D 錯誤</b>：色素結石 (Pigment stones) 主要成分為<b>未結合型膽紅素 (Unconjugated bilirubin)</b> 的鈣鹽，而非結合型 (conjugated)。膽道感染或溶血會增加 β-glucuronidase，使未結合膽紅素增加而沉澱。</p>
+          <div class="src">出處：112年期末考 第24題</div>
+        </div>
+      </details>
+    </div>
+
+    <!-- ===== 113 ===== -->
+    <div class="yrhead">113 學年度期末考 (Block7_113_Final) · 8 題</div>
+
+    <div class="q" id="q113-29">
+      <span class="q-no">113-29</span><span class="q-topic">急性膽囊炎危險因子</span>
+      <p class="q-stem">9. 以下關於急性膽囊炎的敘述，何者最不適當？</p>
+      <ul class="opts">
+        <li>A. 約 90% 為急性結石性膽囊炎，因膽囊頸部或膽囊管阻塞造成</li>
+        <li>B. 急性非結石性膽囊炎主要的風險因子包括敗血症及喝酒</li>
+        <li>C. 急性非結石性膽囊炎主要與缺血有關</li>
+        <li>D. 前列腺素 (prostaglandin) 的釋放與發炎有關</li>
+      </ul>
+      <details class="rev">
+        <summary class="toggle"></summary>
+        <div class="reveal">
+          <div class="ans">正確答案：B（此選項敘述錯誤）</div>
+          <p>• <b>選項 B 錯誤</b>：急性非結石性膽囊炎 (Acute acalculous cholecystitis) 主要發生於重症、嚴重創傷、大手術、敗血症或休克病患，原因為缺血及膽汁淤積，<b>與「喝酒」無直接關聯</b>。</p>
+          <div class="src">出處：113年期末考 第9題</div>
+        </div>
+      </details>
+    </div>
+
+    <div class="q" id="q113-30">
+      <span class="q-no">113-30</span><span class="q-topic">威爾森氏症 (Wilson Disease)</span>
+      <p class="q-stem">10. 17 歲女性，出現肝功能異常、腹水、脾腫大及手顫抖等現象，病人亦偶有精神症狀和行為異常。肝臟穿刺切片最可能出現下列何種變化？</p>
+      <ul class="opts">
+        <li>A. 脂肪性肝炎 (steatohepatitis)</li>
+        <li>B. periodic acid-Schiff (PAS) 染色陽性的小球 (globule)</li>
+        <li>C. 銅離子沉積在肝細胞</li>
+        <li>D. 非化膿性肝內膽管破壞 (nonsuppurative destruction of intrahepatic bile duct)</li>
+      </ul>
+      <details class="rev">
+        <summary class="toggle"></summary>
+        <div class="reveal">
+          <div class="ans">正確答案：C</div>
+          <p>• <b>診斷</b>：威爾森氏症 (Wilson Disease)</p>
+          <p>• <b>選項 C 正確</b>：青少年出現肝病變、椎體外路神經症狀（手顫抖）、精神症狀，為典型 Wilson disease (ATP7B 突變)。病理特徵為<b>銅 (Copper) 異常沉積於肝細胞中</b>（可用 Rhodanine 特殊染色呈陽性）。</p>
+          <div class="src">出處：113年期末考 第10題</div>
+        </div>
+      </details>
+    </div>
+
+    <div class="q" id="q113-31">
+      <span class="q-no">113-31</span><span class="q-topic">疾病與免疫抗體配對 / PSC</span>
+      <p class="q-stem">11. 下列疾病與檢驗配對之敘述，何者最不適當？</p>
+      <ul class="opts">
+        <li>A. primary biliary cirrhosis 病人 90% 以上的病人有 anti-mitochondrial 抗體</li>
+        <li>B. antinuclear antibody (ANA) 及 anti-smooth muscle antibody 為第一型自體免疫性肝炎的血清指標</li>
+        <li>C. 第二型自體免疫性肝炎的血清指標為 anti-liver kidney microsomal antibodies (anti-LKM1)</li>
+        <li>D. 約在 65% 的 primary sclerosing cholangitis 病人可檢測出 cytoplasmic antineutrophil cytoplasmic antibodies (cANCA)</li>
+      </ul>
+      <details class="rev">
+        <summary class="toggle"></summary>
+        <div class="reveal">
+          <div class="ans">正確答案：D（此選項敘述錯誤）</div>
+          <p>• <b>選項 D 錯誤</b>：Primary sclerosing cholangitis (PSC) 患者約 65% 可檢測出 <b>p-ANCA (perinuclear ANCA)</b>，而非 cANCA（cANCA 與 GPA 血管炎相關）。</p>
+          <p>• <b>重點總結</b>：<br>
+          • PBC ➔ Anti-mitochondrial antibody (AMA) &gt; 95%<br>
+          • Type 1 AIH ➔ ANA, ASMA<br>
+          • Type 2 AIH ➔ Anti-LKM1</p>
+          <div class="src">出處：113年期末考 第11題</div>
+        </div>
+      </details>
+    </div>
+
+    <div class="q" id="q113-32">
+      <span class="q-no">113-32</span><span class="q-topic">胰腺癌演進與基因突變</span>
+      <p class="q-stem">12. 下列有關 "胰腺癌 (pancreatic carcinoma)" 的敘述，何者最不適當？</p>
+      <ul class="opts">
+        <li>A. 病人可能會以疼痛或黃疸的症狀來表現</li>
+        <li>B. pancreatic cystic neoplasm 可能為其前驅病兆 (precursor lesion)</li>
+        <li>C. BRCA2 mutations 與 familial pancreatic cancer 有關</li>
+        <li>D. 目前認爲由 normal pancreas duct 到 pancreas invasive carcinoma 的 model，最早的變化是 β-catenin gene mutation</li>
+      </ul>
+      <details class="rev">
+        <summary class="toggle"></summary>
+        <div class="reveal">
+          <div class="ans">正確答案：D（此選項敘述錯誤）</div>
+          <p>• <b>選項 D 錯誤</b>：胰腺癌 (PDAC) 從正常導管發展至浸潤癌的演進模型 (PanIN模型) 中，<b>最早發生的關鍵基因突變是 KRAS 突變（占>90%）</b>，其次為 p16/CDKN2A、p53 及 SMAD4，而非 β-catenin。</p>
+          <div class="src">出處：113年期末考 第12題</div>
+        </div>
+      </details>
+    </div>
+
+    <div class="q" id="q113-33">
+      <span class="q-no">113-33</span><span class="q-topic">病毒性肝炎 / Anti-HBe 意義</span>
+      <p class="q-stem">13. 以下關於 "病毒性肝炎" 的敘述，何者最不適當？</p>
+      <ul class="opts">
+        <li>A. 當 B 型肝炎病患出現 Anti-HBe antibody 時，通常代表 active viral replication</li>
+        <li>B. C 型肝炎病患常以慢性肝炎表現，慢性 C 型肝炎病患血中之 HCV RNA 通常會持續出現</li>
+        <li>C. A 型肝炎大部分是 self-limited disease，很少造成 fulminant hepatitis</li>
+        <li>D. E 型肝炎病毒常是造成旅行者肝炎 (traveler hepatitis) 的元兇，並且懷孕婦女感染有將近 20% 的死亡率</li>
+      </ul>
+      <details class="rev">
+        <summary class="toggle"></summary>
+        <div class="reveal">
+          <div class="ans">正確答案：A（此選項敘述錯誤）</div>
+          <p>• <b>選項 A 錯誤</b>：出現 Anti-HBe (HBeAb) 代表病毒複製能力及傳染力降低（血清轉換/恢復期）；而代表 <b>Active viral replication 的標記是 HBeAg 或 HBV DNA</b>。</p>
+          <div class="src">出處：113年期末考 第13題</div>
+        </div>
+      </details>
+    </div>
+
+    <div class="q" id="q113-34">
+      <span class="q-no">113-34</span><span class="q-topic">肝臟循環障礙 / Budd-Chiari</span>
+      <p class="q-stem">14. 以下關於 "Circulatory disorder of liver" 的敘述，何者最不適當？</p>
+      <ul class="opts">
+        <li>A. Nutmeg liver 與 systemic circulatory compromise 有關，其病理特徵是 centrilobular hemorrhagic necrosis</li>
+        <li>B. Hepatic artery compromise 會造成 Budd-Chiari syndrome，臨床症狀通常與 increased hepatic blood pressure 有關</li>
+        <li>C. Sinusoidal obstruction syndrome 可見到 sinusoidal endothelium injury，並可能發生 necrosis of perivenular hepatocytes</li>
+        <li>D. Impaired blood flow through the liver 最常見之原因是 liver cirrhosis</li>
+      </ul>
+      <details class="rev">
+        <summary class="toggle"></summary>
+        <div class="reveal">
+          <div class="ans">正確答案：B（此選項敘述錯誤）</div>
+          <p>• <b>選項 B 錯誤</b>：Budd-Chiari syndrome 是指<b>肝靜脈 (Hepatic vein) 或下腔靜脈 (IVC) 阻塞</b>所導致的流出受阻（Hepatic venous outflow obstruction），與肝動脈 (Hepatic artery) 病變無關。</p>
+          <div class="src">出處：113年期末考 第14題</div>
+        </div>
+      </details>
+    </div>
+
+    <div class="q" id="q113-35">
+      <span class="q-no">113-35</span><span class="q-topic">肝臟惡性腫瘤 / AFP 角色</span>
+      <p class="q-stem">15. 下列關於 "肝臟惡性腫瘤" 的敘述，何者最不適當？</p>
+      <ul class="opts">
+        <li>A. 肝細胞腺腫 (hepatocellular adenoma) 為肝細胞癌 (hepatocellular carcinoma) 的 precursor lesion，尤其是有 β-catenin-activating mutation 的類型</li>
+        <li>B. 遺傳性血鐵沉著症 (hereditary hemochromatosis) 與酒精性肝病變 (alcoholic liver disease) 的病人，死因可能是肝細胞癌</li>
+        <li>C. 肝細胞癌的病人血清會有甲型胎兒球蛋白 (a-fetoprotein) 升高之表現，因此很適合用來當成篩檢肝癌的工具</li>
+        <li>D. 最常發生於肝臟之腫瘤是轉移性惡性腫瘤 (metastasis)</li>
+      </ul>
+      <details class="rev">
+        <summary class="toggle"></summary>
+        <div class="reveal">
+          <div class="ans">正確答案：C（此選項敘述錯誤）</div>
+          <p>• <b>選項 C 錯誤</b>：雖然肝癌患者 AFP 常升高，但因 AFP 在慢性肝炎或非肝癌症狀時也可能上升，且部分早期肝癌 AFP 不會上升，故敏感度與特異度不足，指引<b>不建議「單獨使用 AFP」作為全身或群體之篩檢工具</b>（通常需搭配超音波）。</p>
+          <p>• <b>其他選項正確</b>：β-catenin 突變型腺瘤具癌變風險；肝臟最常見的惡性腫瘤為轉移癌 (Metastasis)。</p>
+          <div class="src">出處：113年期末考 第15題</div>
+        </div>
+      </details>
+    </div>
+
+    <div class="q" id="q113-36">
+      <span class="q-no">113-36</span><span class="q-topic">膽汁淤積肝病 / 膽紅素型態</span>
+      <p class="q-stem">16. 下列關於 "膽汁淤積肝病 (cholestatic liver disease)" 的敘述，何者最不適當？</p>
+      <ul class="opts">
+        <li>A. 成人最常見的 large bile duct obstruction 的原因是結石，長期下來可能會引起肝硬化 (cirrhosis)</li>
+        <li>B. 膽道阻塞所引起的新生兒病理症黃疸，以肝外膽道閉鎖 (extrahepatic biliary atresia) 為主，病人可能因此必須接受肝臟移植</li>
+        <li>C. 肝硬化與膽道阻塞所引起的膽汁淤積肝病或黃疸，是以非結合性高膽紅素血症 (Unconjugated hyperbilirubinemia) 表現為主</li>
+        <li>D. 敗血症的病人，其肝臟切片可見 portal-parenchymal interface 有 bile plugs 伴隨輕微的發炎</li>
+      </ul>
+      <details class="rev">
+        <summary class="toggle"></summary>
+        <div class="reveal">
+          <div class="ans">正確答案：C（此選項敘述錯誤）</div>
+          <p>• <b>選項 C 錯誤</b>：膽道阻塞 (Biliary obstruction) 或肝硬化導致的膽汁淤積，高膽紅素血症是以<b>結合型 (Conjugated / Direct) 高膽紅素血症為主</b>（因膽汁已被肝細胞結合但無法順利排出）。未結合型多與溶血或 Gilbert syndrome 相關。</p>
+          <div class="src">出處：113年期末考 第16題</div>
+        </div>
+      </details>
+    </div>
+
+    <!-- ===== 114M ===== -->
+    <div class="yrhead">114M 學年度期中考 (Block7_114M_Mid) · 8 題</div>
+
+    <div class="q" id="q114m-34">
+      <span class="q-no">114M-34</span><span class="q-topic">急性膽囊炎</span>
+      <p class="q-stem">1. 以下關於急性膽囊炎 (acute cholecystitis) 的敘述，何者最不適當？</p>
+      <ul class="opts">
+        <li>A. 前列腺素 (prostaglandin) 的釋放與發炎有關</li>
+        <li>B. 約 90% 為急性結石性膽囊炎，因膽囊頸部或膽囊管阻塞造成</li>
+        <li>C. 急性非結石性膽囊炎主要的風險因子包括敗血症及喝酒</li>
+        <li>D. 急性非結石性膽囊炎主要與缺血有關</li>
+      </ul>
+      <details class="rev">
+        <summary class="toggle"></summary>
+        <div class="reveal">
+          <div class="ans">正確答案：C（此選項敘述錯誤）</div>
+          <p>• <b>選項 C 錯誤</b>：急性非結石性膽囊炎主要與嚴重缺血、重症、敗血症或大手術有關，無證據顯示與酒精飲用直接相關。</p>
+          <div class="src">出處：114M年期中考 第1題</div>
+        </div>
+      </details>
+    </div>
+
+    <div class="q" id="q114m-35">
+      <span class="q-no">114M-35</span><span class="q-topic">胰腺癌前驅病變 / 危險因子</span>
+      <p class="q-stem">2. 以下關於胰腺癌 (pancreatic carcinoma) 的敘述，何者最不恰當？</p>
+      <ul class="opts">
+        <li>A. 大部分的胰腺癌 (pancreatic carcinoma) 發生在胰腺頭部 (pancreatic head)</li>
+        <li>B. 遺傳性胰腺炎 (hereditary pancreatitis) 有 PRSS1-mutations 者，其罹患胰腺癌的風險較高，lifetime risk 可達 40%</li>
+        <li>C. Serous cystic neoplasm 可能為其 precursor lesion</li>
+        <li>D. 最強的環境因子 (environmental influence) 是吸菸</li>
+      </ul>
+      <details class="rev">
+        <summary class="toggle"></summary>
+        <div class="reveal">
+          <div class="ans">正確答案：C（此選項敘述錯誤）</div>
+          <p>• <b>選項 C 錯誤</b>：漿液性囊腫 (Serous cystic neoplasm, SCN) 幾乎全為良性，<b>不是</b>胰癌前驅物。胰臟癌的前驅囊腫病灶為黏液性囊狀腫瘤 (MCN) 及導管內乳頭狀黏液腫瘤 (IPMN)。</p>
+          <p>• <b>其他選項正確</b>：60% 好發於胰頭；吸菸為最強環境危險因子；PRSS1 突變使罹癌風險大增。</p>
+          <div class="src">出處：114M年期中考 第2題</div>
+        </div>
+      </details>
+    </div>
+
+    <div class="q" id="q114m-40">
+      <span class="q-no">114M-40</span><span class="q-topic">原發性膽汁性膽管炎 (PBC)</span>
+      <p class="q-stem">3. 一名 20 歲的女性有 Sjogren syndrome 的病史，她從 4 個月前開始出現全身性的瘙癢症，抽血發現血清中鹼性磷酸酶和抗線粒體抗體有升高的情形，肝臟切片發現有中小型膽管的非浸潤性肉芽腫破壞，她最可能是下列何者？</p>
+      <ul class="opts">
+        <li>A. 威爾森氏症</li>
+        <li>B. 原發性硬化性膽管炎</li>
+        <li>C. 自體免疫性肝炎</li>
+        <li>D. 原發性膽汁性膽管炎</li>
+      </ul>
+      <details class="rev">
+        <summary class="toggle"></summary>
+        <div class="reveal">
+          <div class="ans">正確答案：D</div>
+          <p>• <b>診斷</b>：原發性膽汁性膽管炎 (Primary Biliary Cholangitis, PBC)</p>
+          <p>• <b>選項 D 正確</b>：典型提示詞：年輕/中年女性、伴隨自體免疫病 (Sjogren syndrome)、皮膚瘙癢、ALP 升高、<b>Anti-mitochondrial antibody (AMA) 陽性</b>，病理為中小型膽管的 Florid duct lesion（非化膿性肉芽腫性破壞）。</p>
+          <div class="src">出處：114M年期中考 第3題</div>
+        </div>
+      </details>
+    </div>
+
+    <div class="q" id="q114m-41">
+      <span class="q-no">114M-41</span><span class="q-topic">酒精性 vs 非酒精性脂肪肝病</span>
+      <p class="q-stem">4. 下列關於酒精性肝病和非酒精性脂肪性肝病的敘述，何者最不恰當？</p>
+      <ul class="opts">
+        <li>A. 兩者都可能見到脂肪變性</li>
+        <li>B. 在酒精性肝病中可見到 Chicken wire fence pattern 的纖維化，並首先出現在門靜脈區域</li>
+        <li>C. NAFLD 與代謝性疾病、第二型糖尿病有關</li>
+        <li>D. 兩者都可能見到 Mallory hyaline</li>
+      </ul>
+      <details class="rev">
+        <summary class="toggle"></summary>
+        <div class="reveal">
+          <div class="ans">正確答案：B（此選項敘述錯誤）</div>
+          <p>• <b>選項 B 錯誤</b>：Chicken wire fence pattern 纖維化（竇狀隙周圍纖維化）<b>最先出現於中央靜脈區域 (Centrilobular / Zone 3 / Perivenular)</b>，而非門靜脈區域 (Portal areas)。</p>
+          <div class="src">出處：114M年期中考 第4題</div>
+        </div>
+      </details>
+    </div>
+
+    <div class="q" id="q114m-42">
+      <span class="q-no">114M-42</span><span class="q-topic">遺傳代謝性肝病 (Inherited Liver Disease)</span>
+      <p class="q-stem">5. 以下關於 "Inherited liver disease" 的敘述，何者最不適當？</p>
+      <ul class="opts">
+        <li>A. Hemochromatosis 是鐵代謝的疾病，病人可能會發生肝硬化與肝癌</li>
+        <li>B. Hemochromatosis 病人的肝臟切片可見 Golden-yellow hemosiderin granules，並引發大量的免疫細胞與發炎反應來破壞肝臟組織</li>
+        <li>C. Wilson disease 是銅代謝的疾病，病人血清中轉銅素會下降</li>
+        <li>D. α1-antitrypsin deficiency 病人的肝臟切片可見 round-to-oval cytoplasmic globular inclusion，染色特徵是 Periodic acid-Schiff stain-positive and diastase-resistant</li>
+      </ul>
+      <details class="rev">
+        <summary class="toggle"></summary>
+        <div class="reveal">
+          <div class="ans">正確答案：B（此選項敘述錯誤）</div>
+          <p>• <b>選項 B 錯誤</b>：Hemochromatosis 中鐵過載導致的組織損傷是透過產生自由基 (Fenton reaction) 及直接脂質過氧化引發，<b>顯著缺乏明顯的發炎細胞浸潤 (striking absence of inflammation)</b>。</p>
+          <p>• <b>其他選項正確</b>：Wilson病 Ceruloplasmin 下降；α1-antitrypsin 缺乏呈現 PAS(+)/Diastase-resistant 球狀包涵體。</p>
+          <div class="src">出處：114M年期中考 第5題</div>
+        </div>
+      </details>
+    </div>
+
+    <div class="q" id="q114m-43">
+      <span class="q-no">114M-43</span><span class="q-topic">病毒性肝炎綜合</span>
+      <p class="q-stem">6. 以下關於「病毒性肝炎」的敘述，何者最不適當？</p>
+      <ul class="opts">
+        <li>A. 臨床上使用 Anti-HCV antibody 作為 C 型肝炎感染的篩檢工具</li>
+        <li>B. 急性 E 型肝炎之致死率，在懷孕婦女會比較高</li>
+        <li>C. B 型肝炎的健康帶原者，其血清表現為 HbsAg(+)、anti-HBe(-) 和 HBeAg(+)</li>
+        <li>D. D 型肝炎病毒是一種有缺陷的病毒，B 型肝炎病毒對肝細胞中 HDV 的複製至關重要</li>
+      </ul>
+      <details class="rev">
+        <summary class="toggle"></summary>
+        <div class="reveal">
+          <div class="ans">正確答案：C（此選項敘述錯誤）</div>
+          <p>• <b>選項 C 錯誤</b>：健康帶原者 (Inactive carrier) 應為 <b>anti-HBe(+) 且 HBeAg(-)</b>。</p>
+          <div class="src">出處：114M年期中考 第6題</div>
+        </div>
+      </details>
+    </div>
+
+    <div class="q" id="q114m-44">
+      <span class="q-no">114M-44</span><span class="q-topic">自體免疫性肝炎 (AIH)</span>
+      <p class="q-stem">7. 以下關於 "自體免疫性肝炎 (autoimmune hepatitis)" 的敘述，何者最不適當？</p>
+      <ul class="opts">
+        <li>A. 第一型自體免疫性肝炎病患之血清可見 antinuclear antibodies 與 anti-smooth muscle antibodies</li>
+        <li>B. 自體免疫性肝炎病患血清中的 IgG 通常會上升</li>
+        <li>C. 自體免疫性肝炎病患之肝臟切片中，在 interface 可見主要浸潤的發炎細胞類型是漿細胞</li>
+        <li>D. 自體免疫性肝炎病患血清中的 autoantibodies level 越高，代表疾病越嚴重，預後越不好</li>
+      </ul>
+      <details class="rev">
+        <summary class="toggle"></summary>
+        <div class="reveal">
+          <div class="ans">正確答案：D（此選項敘述錯誤）</div>
+          <p>• <b>選項 D 錯誤</b>：自體免疫性肝炎中的自體抗體效價 (Autoantibody titers) 主要用於診斷與分類，<b>抗體效價高低與疾病嚴重度 (severity) 或預後無直接平行相關</b>。追蹤療效與評估嚴重度需靠肝功能指標 (ALT/AST, IgG) 及切片改善程度。</p>
+          <div class="src">出處：114M年期中考 第7題</div>
+        </div>
+      </details>
+    </div>
+
+    <div class="q" id="q114m-45">
+      <span class="q-no">114M-45</span><span class="q-topic">慢性肝衰竭臨床表現 / 高雌激素</span>
+      <p class="q-stem">8. 以下關於 "慢性肝衰竭病人表現" 的敘述，何者最不適當？</p>
+      <ul class="opts">
+        <li>A. 病人皮膚會瘙癢與 cholestasis 有關</li>
+        <li>B. 女性病人因 hyperestrogenemia 出現經血過多的症狀</li>
+        <li>C. 男性病人因 hyperestrogenemia 而出現性欲低下與男性乳房發育</li>
+        <li>D. 病人因 portal hypertension 出現腹水與 portosystemic venous shunts，可能出現痔瘡</li>
+      </ul>
+      <details class="rev">
+        <summary class="toggle"></summary>
+        <div class="reveal">
+          <div class="ans">正確答案：B（此選項敘述錯誤）</div>
+          <p>• <b>選項 B 錯誤</b>：女性慢性肝衰竭/肝硬化患者因高雌激素血症 (Hyperestrogenemia) 及內分泌失調，主要會導致<b>停經、無月經或月經過少 (Amenorrhea / Oligomenorrhea) 以及不孕</b>，而非經血過多。</p>
+          <div class="src">出處：114M年期中考 第8題</div>
+        </div>
+      </details>
+    </div>
+
+  </section>
+
+  <footer>
+    <p><b>高醫外科學｜韋又菁老師 肝膽胰病理學筆記完成</b>　共 32 題（涵蓋 111、112、113 年期末考與 114M 年期中考完整試題）。</p>
+    <p style="margin-top:14px;font-family:var(--mono);font-size:12px;color:var(--teal);border:1px solid var(--line-2);border-radius:6px;padding:6px 10px;display:inline-block">版面系統 · 醫學專題裸讀筆記 v2.0</p>
+  </footer>
+
+  </main>
+</div>
+</div>
+
+<script>
+  // 手機版：把表頭文字寫進每個儲存格，直式排列時識別資料欄位
+  (function(){
+    document.querySelectorAll('.tw table').forEach(function(t){
+      var ths = t.querySelectorAll('thead th');
+      if(!ths.length) return;
+      var labels = Array.prototype.map.call(ths, function(th){
+        return th.textContent.replace(/\u3000/g,'').trim();
+      });
+      t.querySelectorAll('tbody tr').forEach(function(tr){
+        Array.prototype.forEach.call(tr.children, function(td, i){
+          if(labels[i]) td.setAttribute('data-label', labels[i]);
+        });
+      });
+    });
+  })();
+
+  // 手機版：目錄預設收合
+  (function(){
+    var toc = document.getElementById('tocBox');
+    if(toc && window.matchMedia('(max-width:700px)').matches){
+      toc.removeAttribute('open');
+    }
+  })();
+
+  // 全部展開/收合答案按鈕
+  var allBtn = document.getElementById('allBtn');
+  if(allBtn){
+    var expanded = false;
+    allBtn.addEventListener('click', function(){
+      expanded = !expanded;
+      document.querySelectorAll('.q details.rev, .quiz details.rev').forEach(function(d){
+        if(expanded){ d.setAttribute('open',''); } else { d.removeAttribute('open'); }
+      });
+      allBtn.textContent = expanded ? '全部收合答案' : '全部展開答案';
+    });
+  }
+</script>
+</body>
+</html>
