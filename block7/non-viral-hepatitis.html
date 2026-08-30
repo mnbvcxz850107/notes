@@ -1,0 +1,788 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>非病毒性肝炎｜裸讀學習筆記</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&family=Noto+Serif+TC:wght@500;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0F1B18;
+    --bg-2:#152420;
+    --bg-3:#1B2E29;
+    --line:#26403A;
+    --line-2:#31534B;
+    --text:#E9F1EE;
+    --text-2:#A8C2BA;
+    --text-3:#7A968D;
+    --teal:#7FC9BE;
+    --teal-dim:#4E9A90;
+    --gold:#C9A961;
+    --rose:#E58B85;
+    --serif:"Noto Serif TC","Songti TC",serif;
+    --sans:"Noto Sans TC","PingFang TC","Microsoft JhengHei",sans-serif;
+    --mono:"JetBrains Mono",ui-monospace,Menlo,monospace;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth;scroll-padding-top:24px;overflow-x:hidden}
+  body{
+    margin:0;background:var(--bg);color:var(--text);
+    font-family:var(--sans);font-size:16.5px;line-height:1.9;font-weight:300;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  .wrap{max-width:1150px;margin:0 auto;padding:0 22px}
+
+  /* ---------- Hero ---------- */
+  header.hero{padding:60px 0 48px;border-bottom:1px solid var(--line)}
+  .backlink{display:inline-block;font-family:var(--mono);font-size:12px;
+    color:var(--text-3);text-decoration:none;margin-bottom:20px;
+    border:1px solid var(--line);border-radius:6px;padding:5px 12px;transition:.15s}
+  .backlink:hover{color:var(--teal);border-color:var(--teal-dim)}
+  .eyebrow{display:flex;align-items:center;gap:16px;margin-bottom:22px;
+    font-family:var(--serif);font-size:15px;letter-spacing:.34em;color:var(--teal)}
+  .eyebrow .rule{width:56px;height:1px;background:var(--gold)}
+  .eyebrow .dot{color:var(--gold)}
+  header.hero h1{
+    font-family:var(--serif);font-weight:700;font-size:clamp(34px,5.6vw,64px);
+    line-height:1.2;margin:0 0 20px;letter-spacing:.02em;
+  }
+  header.hero h1 em{font-style:normal;color:var(--teal)}
+  header.hero p.sub{margin:0;color:var(--text-2);max-width:65ch;font-size:16.5px;line-height:1.85}
+  .intro-card{
+    border:1px solid var(--line);border-radius:16px;padding:24px 28px;margin-top:30px;background:var(--bg-2);
+  }
+  .intro-card p{margin:0 0 20px;color:var(--text-2)}
+  .intro-card b{color:var(--teal);font-weight:500}
+  .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+  .stat .n{font-family:var(--serif);font-size:36px;color:var(--gold);line-height:1}
+  .stat .l{font-size:12px;color:var(--text-3);letter-spacing:.08em;margin-top:6px}
+
+  /* ---------- Layout ---------- */
+  .cols{display:grid;grid-template-columns:230px 1fr;gap:50px;padding:42px 0 90px;align-items:start}
+  nav.toc{position:sticky;top:26px}
+  nav.toc .t{font-family:var(--mono);font-size:11px;letter-spacing:.2em;color:var(--text-3);margin-bottom:14px}
+  nav.toc a{display:block;padding:7px 14px;border-left:1px solid var(--line);
+    color:var(--text-2);text-decoration:none;font-size:14px;transition:.15s}
+  nav.toc a:hover{border-left-color:var(--teal);color:var(--teal);background:var(--bg-2)}
+  nav.toc a.exam{color:var(--gold)}
+  nav.toc summary{display:none}
+
+  /* ---------- Sections ---------- */
+  section{margin-bottom:60px;scroll-margin-top:24px}
+  .sec-head{display:flex;align-items:baseline;gap:16px;border-bottom:1px solid var(--line-2);padding-bottom:12px;margin-bottom:24px}
+  .sec-num{font-family:var(--serif);font-size:28px;color:var(--gold);line-height:1}
+  .sec-head h2{font-family:var(--serif);font-size:clamp(22px,3.2vw,30px);margin:0;font-weight:700;letter-spacing:.02em}
+  h3{font-family:var(--serif);font-size:20px;margin:36px 0 12px;font-weight:500;color:var(--text)}
+  h4{font-size:16px;margin:22px 0 8px;color:var(--teal);font-weight:500}
+  p{margin:0 0 14px}
+  ul,ol{margin:0 0 16px;padding-left:22px}
+  li{margin-bottom:8px}
+  li::marker{color:var(--teal-dim)}
+  strong,b{font-weight:500;color:#FFF}
+  u{text-decoration-color:var(--teal-dim);text-underline-offset:3px}
+  code{font-family:var(--mono);font-size:.88em;background:var(--bg-3);padding:1px 6px;border-radius:4px;color:var(--teal)}
+
+  /* ---------- Signature: 螢光 + 考題標籤 ---------- */
+  mark{background:rgba(201,169,97,.22);box-shadow:inset 0 -2px 0 rgba(201,169,97,.6);
+    color:#FBF3E2;padding:1px 3px;border-radius:2px}
+  a.qtag{display:inline-block;font-family:var(--mono);font-size:11px;font-weight:600;
+    border:1px solid var(--gold);color:var(--gold);padding:1px 7px;border-radius:4px;
+    text-decoration:none;margin:0 3px;vertical-align:2px;white-space:nowrap;transition:.15s}
+  a.qtag:hover{background:var(--gold);color:var(--bg)}
+  .tagline{margin:-6px 0 18px;font-size:13.5px;color:var(--text-3)}
+
+  /* ---------- Boxes ---------- */
+  .box{border-radius:13px;padding:18px 22px;margin:20px 0;border:1px solid var(--line);background:var(--bg-2)}
+  .box .bt{font-weight:500;font-size:14.5px;margin-bottom:10px;display:flex;align-items:center;gap:9px;color:#FFF}
+  .box p:last-child,.box ul:last-child,.box ol:last-child{margin-bottom:0}
+  .badge{font-family:var(--mono);font-size:10px;padding:2px 8px;border-radius:3px;letter-spacing:.06em;
+    border:1px solid currentColor;font-weight:600}
+  .box.exam{border-color:rgba(201,169,97,.45);background:rgba(201,169,97,.07)}
+  .box.exam .badge{color:var(--gold)}
+  .box.trap{border-color:rgba(229,139,133,.45);background:rgba(229,139,133,.07)}
+  .box.trap .badge{color:var(--rose)}
+  .box.key{border-color:rgba(127,201,190,.4);background:rgba(127,201,190,.07)}
+  .box.key .badge{color:var(--teal)}
+
+  /* ---------- Visual Diagram / Flow Cards ---------- */
+  .visual-card{
+    background:#08100E;border:1px solid var(--line-2);border-radius:14px;
+    padding:18px 22px;margin:20px 0 24px;
+  }
+  .visual-card .v-title{
+    font-family:var(--mono);font-size:12.5px;color:var(--gold);font-weight:600;
+    margin-bottom:12px;display:flex;align-items:center;gap:8px;letter-spacing:.06em;
+  }
+  .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+  .v-item{background:var(--bg-2);border:1px solid var(--line);border-radius:10px;padding:14px}
+  .v-item h5{margin:0 0 6px;color:var(--teal);font-size:15px;font-weight:600}
+  .v-item p{margin:0;font-size:13.5px;color:var(--text-2);line-height:1.65}
+
+  /* ---------- Tables (Cards on Mobile) ---------- */
+  .tw{border:none;background:none;overflow:visible;border-radius:0;margin:20px 0}
+  .tw table{min-width:0;width:100%;border-collapse:separate;border-spacing:0;font-size:14.8px}
+  .tw thead{display:none}
+  .tw tbody tr{
+    display:block;border:1px solid var(--line);border-radius:12px;
+    background:var(--bg-2);margin-bottom:12px;padding:6px 0;
+  }
+  .tw tbody tr:nth-child(even){background:var(--bg-2)}
+  .tw tbody tr:last-child{margin-bottom:0}
+  .tw tbody td{display:block;border:none;padding:9px 16px}
+  .tw tbody td+td{border-top:1px dashed var(--line)}
+  .tw tbody td[data-label]::before{
+    content:attr(data-label);display:block;
+    font-family:var(--mono);font-size:11px;letter-spacing:.08em;
+    color:var(--teal);margin-bottom:4px;font-weight:600;
+  }
+  .tw tbody td:first-child{font-size:16px;color:#FFF;font-weight:500}
+  .tw tbody td.mono{font-family:var(--mono);font-size:13.5px}
+
+  /* Desktop table view */
+  @media (min-width:769px){
+    .tw{overflow-x:auto;border:1px solid var(--line);border-radius:13px;background:var(--bg-2)}
+    .tw table{border-collapse:collapse}
+    .tw thead{display:table-header-group}
+    .tw thead th{background:var(--bg-3);color:var(--teal);font-weight:500;font-size:13.5px;padding:12px 16px;border-bottom:1px solid var(--line);text-align:left}
+    .tw tbody tr{display:table-row;border:none;background:none;margin-bottom:0;padding:0}
+    .tw tbody tr:nth-child(even){background:rgba(255,255,255,.018)}
+    .tw tbody td{display:table-cell;padding:12px 16px;border-bottom:1px solid var(--line)}
+    .tw tbody td+td{border-top:none}
+    .tw tbody tr:last-child td{border-bottom:none}
+    .tw tbody td[data-label]::before{display:none}
+    .tw tbody td:first-child{font-size:14.8px;font-weight:normal}
+  }
+
+  /* ---------- 隨堂小考（內文嵌入） ---------- */
+  .quiz{border:1px solid var(--line-2);border-radius:14px;margin:24px 0;overflow:hidden;background:var(--bg-2)}
+  .quiz-top{display:flex;align-items:center;gap:10px;padding:12px 20px;background:var(--bg-3);border-bottom:1px solid var(--line)}
+  .quiz-top .lab{font-family:var(--serif);font-size:14px;letter-spacing:.16em;color:var(--gold)}
+  .quiz-top .yr{font-family:var(--mono);font-size:11.5px;color:var(--text-2);border:1px solid var(--line-2);padding:2px 8px;border-radius:4px}
+  .quiz-body{padding:18px 20px}
+  .quiz-body .stem{font-size:15.5px;line-height:1.85;margin:0 0 14px;color:var(--text)}
+  .opts{list-style:none;padding:0;margin:0 0 14px}
+  .opts li{padding:8px 12px;font-size:15px;border:1px solid var(--line);border-radius:8px;margin-bottom:7px;color:var(--text-2)}
+
+  /* ---------- 答案展開：原生 details ---------- */
+  details.rev{margin:0}
+  summary.toggle{
+    display:inline-block;list-style:none;cursor:pointer;
+    background:none;border:1px solid var(--teal-dim);color:var(--teal);
+    font-family:var(--sans);font-size:13px;padding:7px 16px;border-radius:7px;
+    font-weight:400;transition:.15s;-webkit-tap-highlight-color:transparent;
+  }
+  summary.toggle::-webkit-details-marker{display:none}
+  summary.toggle::marker{content:""}
+  summary.toggle:hover{background:var(--teal);color:var(--bg)}
+  summary.toggle::before{content:"顯示答案"}
+  .q summary.toggle::before{content:"顯示答案與詳解"}
+  details.rev[open] summary.toggle::before{content:"收合答案"}
+  .reveal{border-top:1px dashed var(--line-2);margin-top:14px;padding-top:14px}
+  .ans{font-family:var(--serif);font-weight:700;color:var(--gold);font-size:17px;margin-bottom:10px}
+  .reveal p{margin:0 0 9px;font-size:14.8px;color:var(--text-2)}
+  .reveal p b{color:#FFF}
+  .src{font-size:12px;color:var(--text-3);font-family:var(--mono);margin-top:12px}
+  .jump{font-size:12.5px;color:var(--teal-dim);text-decoration:none;border-bottom:1px solid var(--line-2)}
+  .jump:hover{color:var(--teal)}
+
+  /* ---------- Exam bank ---------- */
+  .exam-head{border:1px solid var(--line-2);border-radius:16px;padding:26px;margin-bottom:26px;background:var(--bg-2)}
+  .exam-head h2{font-family:var(--serif);margin:0 0 10px;font-size:28px}
+  .exam-head p{color:var(--text-2);margin:0;font-size:15px}
+  .btn{font-family:var(--sans);font-size:13.5px;cursor:pointer;background:var(--teal);color:var(--bg);
+    border:none;padding:10px 20px;border-radius:8px;margin-top:16px;font-weight:500}
+  .btn:hover{background:#9BDBD1}
+  .yrhead{font-family:var(--serif);font-size:23px;font-weight:700;margin:36px 0 16px;
+    padding-left:16px;border-left:3px solid var(--gold);color:var(--gold)}
+  .q{background:var(--bg-2);border:1px solid var(--line);border-radius:13px;padding:20px 22px;margin-bottom:18px;scroll-margin-top:24px}
+  .q-no{font-family:var(--mono);font-size:11.5px;color:var(--gold);border:1px solid var(--gold);padding:2px 9px;border-radius:5px}
+  .q-topic{font-size:12.5px;color:var(--text-3);margin-left:10px}
+  .q-stem{margin:14px 0 12px;font-size:15.5px;line-height:1.85}
+
+  footer{border-top:1px solid var(--line);padding:28px 0 56px;color:var(--text-3);font-size:13.5px}
+  footer b{color:var(--text-2)}
+
+  @media (max-width:900px){
+    .cols{grid-template-columns:1fr;gap:0;padding-top:24px}
+    nav.toc{position:static;margin-bottom:32px;border:1px solid var(--line);border-radius:12px;padding:16px;background:var(--bg-2)}
+    nav.toc a{border-left:none;padding:6px 4px}
+    .stats{grid-template-columns:repeat(2,1fr);gap:16px}
+    .grid-2,.grid-3{grid-template-columns:1fr}
+  }
+
+  @media (max-width:700px){
+    body{font-size:16px;line-height:1.85}
+    .wrap{padding:0 16px}
+    header.hero{padding:36px 0 30px}
+    .cols{padding:24px 0 50px}
+    section{margin-bottom:42px}
+    nav.toc{padding:0;overflow:hidden}
+    nav.toc .t{display:none}
+    nav.toc details{margin:0}
+    nav.toc summary{
+      display:block;list-style:none;cursor:pointer;padding:14px 16px;
+      font-family:var(--mono);font-size:12px;letter-spacing:.16em;color:var(--teal);
+    }
+    nav.toc summary::-webkit-details-marker{display:none}
+    nav.toc summary::after{content:" ▾";color:var(--text-3)}
+    nav.toc details[open] summary::after{content:" ▴"}
+    nav.toc .toc-links{padding:0 10px 12px}
+    .box{padding:15px 16px;border-radius:11px}
+    p,li,td,.stem,.reveal p,.opts li,.q-stem{overflow-wrap:anywhere;word-break:break-word}
+    .quiz-body{padding:15px 16px}
+    .opts li{padding:9px 12px;font-size:15px}
+    .q{padding:16px 16px}
+    .sec-head{gap:12px}
+    ul,ol{padding-left:20px}
+    .toggle{width:100%;padding:11px 16px;font-size:14px}
+    summary.toggle{width:100%;text-align:center;padding:11px 16px;font-size:14px}
+    .btn{width:100%;padding:12px 16px}
+  }
+  @media print{
+    nav.toc,.btn,.toggle{display:none}
+    .reveal{display:block!important}
+    body{background:#fff;color:#000;font-size:11pt}
+  }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <a class="backlink" href="index.html">← 返回 Block 7 目錄</a>
+    <div class="eyebrow"><span class="rule"></span>高醫肝膽胰內科 · 裸讀學習筆記<span class="dot">·</span>戴嘉言老師專題</div>
+    <h1>非病毒性肝炎 <em>(Non-viral Hepatitis)</em></h1>
+    <p class="sub">全面掌握脂肪肝命名新演進（NAFLD / NASH / MAFLD / MASLD）、自體免疫性肝炎（AIH）自體抗體與分型、三大遺傳代謝肝病（Wilson / Hemochromatosis / AATD）及藥物性肝損傷。授課教師：戴嘉言。</p>
+
+    <div class="intro-card">
+      <p>這份筆記完整彙整 <b>BM110、BM111、BM112、BM113 四個學年度期末考題</b>（共 8 題完整真題），<b>將每年反覆出現的命名陷阱、自體抗體配對、染色體編號與病理組織特徵做深度解構</b>，文末收錄 8 題完整題庫與解析。</p>
+      <div class="stats">
+        <div class="stat"><div class="n">8</div><div class="l">全收錄真題</div></div>
+        <div class="stat"><div class="n">4</div><div class="l">學年度 (110-113)</div></div>
+        <div class="stat"><div class="n">4</div><div class="l">核心章節</div></div>
+        <div class="stat"><div class="n">100%</div><div class="l">考點命中率</div></div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+<div class="cols">
+
+  <nav class="toc">
+    <div class="t">CONTENTS</div>
+    <details id="tocBox" open>
+      <summary>目錄 CONTENTS</summary>
+      <div class="toc-links">
+      <a href="#s1">一　脂肪肝命名與病理演進</a>
+      <a href="#s2">二　自體免疫性肝炎 (AIH)</a>
+      <a href="#s3">三　三大遺傳代謝性肝病</a>
+      <a href="#s4">四　藥物性肝損傷 (DILI)</a>
+      <a href="#s5">五　一分鐘考前秒殺心法</a>
+      <a href="#exam" class="exam">六　歷屆考題全收錄 (8 題)</a>
+      </div>
+    </details>
+  </nav>
+
+  <main>
+
+  <!-- ============ SECTION 1 ============ -->
+  <section id="s1">
+    <div class="sec-head"><span class="sec-num">一</span><h2>脂肪肝疾病命名演進與組織病理學</h2></div>
+    <p class="tagline">核心考點：<a class="qtag" href="#q110-61">110-61</a><a class="qtag" href="#q111-66">111-66</a><a class="qtag" href="#q111-67">111-67</a><a class="qtag" href="#q112-76">112-76</a><a class="qtag" href="#q113-77">113-77</a></p>
+
+    <p>戴嘉言老師每一年必考「脂肪肝命名變革」與「組織病理特徵」，這是整份考卷最容易出現陷阱的單元：</p>
+
+    <h3>1. 脂肪肝疾病新舊命名世紀大對決</h3>
+    <div class="tw"><table>
+      <thead><tr><th>命名體系</th><th>全名</th><th>核心定義精神</th><th>排除條件與關鍵差異</th></tr></thead>
+      <tbody>
+        <tr>
+          <td><b>NAFLD</b></td>
+          <td>Nonalcoholic Fatty Liver Disease<br>非酒精性脂肪肝病</td>
+          <td>脂肪變性 &gt; 5% 且與代謝異常相關。</td>
+          <td><mark>排他性定義</mark>：必須嚴格排除過量飲酒、B/C 肝炎及藥物性肝病。</td>
+        </tr>
+        <tr>
+          <td><b>NASH</b></td>
+          <td>Nonalcoholic Steatohepatitis<br>非酒精性脂肪性肝炎</td>
+          <td>脂肪變性 ＋ <mark>肝細胞氣球樣變性 (Ballooning)</mark> ＋ 小葉內發炎。</td>
+          <td>代表有活動性壞死發炎，會進展為肝硬化與肝癌。</td>
+        </tr>
+        <tr>
+          <td><b>MAFLD<br>(2020年)</b></td>
+          <td>Metabolic-Associated Fatty Liver Disease<br>代謝相關脂肪肝病</td>
+          <td>以脂肪肝為基礎，合併：① 超重/肥胖 ② 第二型糖尿病 或 ③ 至少2項代謝異常。</td>
+          <td><mark>包容性定義</mark>：<b>「不需排除」B肝、C肝或飲酒</b>！可與其他肝病共存（111-66, 112-76 必考陷阱！）。</td>
+        </tr>
+        <tr>
+          <td><b>MASLD<br>(2023年最新)</b></td>
+          <td>Metabolic Dysfunction-Associated Steatotic Liver Disease<br>代謝功能障礙相關脂肪性肝病</td>
+          <td>脂肪肝 ＋ 至少 1 項心血管代謝危險因子 (CMRF)；飲酒量為非過量（女&lt;140g/週，男&lt;210g/週）。</td>
+          <td>若飲酒量超過上述門檻（女 140~350g/週，男 210~420g/週），則稱為 <b>MetALD</b>（113-77 考點）。</td>
+        </tr>
+      </tbody>
+    </table></div>
+
+    <div class="box trap">
+      <div class="bt"><span class="badge">必背考題陷阱</span>病理切片能否區分「酒精性」vs.「非酒精性」？</div>
+      <p>111-66、112-76、113-77 考題反覆強調：<mark>酒精性脂肪肝與非酒精性脂肪肝在組織學切片上「極為類似，無法單純由切片明確區分」</mark>！兩者均可見到大泡性脂肪變性、Mallory-Denk bodies、氣球樣變性與小葉發炎。必須仰賴詳細病史（飲酒量）才能確立診斷。</p>
+    </div>
+
+    <h3>2. 脂肪肝關鍵組織病理特徵</h3>
+    <div class="visual-card">
+      <div class="v-title">🔬 脂肪肝炎 (Steatohepatitis) 4 大病理特徵</div>
+      <div class="grid-2">
+        <div class="v-item">
+          <h5>1. 大泡性脂肪變性 (Macrovesicular steatosis)</h5>
+          <p>單一巨大脂滴將細胞核推擠至邊緣（<mark>主要為大液滴/大泡狀，非微泡/小液滴</mark>；110-61, 111-67 考點）。</p>
+        </div>
+        <div class="v-item">
+          <h5>2. 氣球樣變性 (Ballooning degeneration)</h5>
+          <p>肝細胞明顯腫脹變圓，胞漿稀疏透亮，代表細胞骨架嚴重受損。</p>
+        </div>
+        <div class="v-item">
+          <h5>3. 馬洛里小體 (Mallory-Denk bodies)</h5>
+          <p>胞漿內嗜酸性繩索狀/不規則沉積物（變性角蛋白聚集），酒精性與 NASH 均可見。</p>
+        </div>
+        <div class="v-item">
+          <h5>4. 鐵絲網樣纖維化 (Chicken-wire fibrosis)</h5>
+          <p>纖維化最先始於 <mark>Zone 3（中央靜脈周圍/竇周）</mark>，沿竇狀隙蔓延呈網狀，最後才波及門脈區。</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Quiz 1 -->
+    <div class="quiz">
+      <div class="quiz-top"><span class="lab">隨堂測驗</span><span class="yr">111 學年度 · 第 66 題</span></div>
+      <div class="quiz-body">
+        <p class="stem">下列關於脂肪肝 (fatty liver) 敘述何者為錯誤？</p>
+        <ul class="opts">
+          <li>(A) 酒精性脂肪肝與非酒精性脂肪肝臟組織學切片類似</li>
+          <li>(B) 非酒精性脂肪肝 “nonalcoholic fatty liver disease” 與肥胖，糖尿病或高脂血症相關的特徵為特徵</li>
+          <li>(C) Metabolic (dysfunction)-associated fatty liver disease (MAFLD) 需排除 B 肝 C 肝</li>
+          <li>(D) 脂肪性肝炎肝臟組織學可能顯示肝細胞氣球樣變性(ballooning degeneration)，輕度瀰漫性小葉混合急性慢性炎症(diffuse lobular mixed acute and chronic inflammation)</li>
+        </ul>
+        <details class="rev">
+          <summary class="toggle"></summary>
+          <div class="reveal">
+            <div class="ans">正確答案：(C)</div>
+            <p>• (C) <b>錯誤</b>：MAFLD 採「包容性」診斷精神，強調代謝異常本身，<b>不需排除 B 肝、C 肝或酒精性肝病</b>，可與其他肝病並存。<br>
+            • (A)(B)(D) 均為正確描述。</p>
+            <p><a class="jump" href="#q111-66">查看文末完整解析 (111-66) ↓</a></p>
+          </div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SECTION 2 ============ -->
+  <section id="s2">
+    <div class="sec-head"><span class="sec-num">二</span><h2>自體免疫性肝炎 (Autoimmune Hepatitis, AIH)</h2></div>
+    <p class="tagline">核心考點：<a class="qtag" href="#q110-60">110-60</a><a class="qtag" href="#q111-67">111-67</a><a class="qtag" href="#q112-77">112-77</a><a class="qtag" href="#q113-76">113-76</a></p>
+
+    <p>自體免疫性肝炎 (AIH) 是自體免疫破壞肝實質細胞的慢性發炎疾病，戴老師出題焦點非常集中：</p>
+
+    <h3>1. 流行病學與臨床免疫特徵</h3>
+    <ul>
+      <li><strong>好發族群：</strong><mark>女性遠多於男性（女:男 約 3.6~4:1）</mark>（111-67, 112-77 年年必出「男性較多」之錯誤選項！）。</li>
+      <li><strong>免疫球蛋白：</strong>血清呈現 <mark>高丙種球蛋白血症 (Hypergammaglobulinemia / IgG 升高)</mark>，<b>絕非低球蛋白血症 (Hypoglobulinemia)</b>（110-60 考點！）。</li>
+      <li><strong>病理切片：</strong>門脈區及介面處浸潤大量 <mark>漿細胞 (Plasma cells)</mark> 與 Emperipolesis（淋巴細胞穿入肝細胞現象）。</li>
+      <li><strong>治療準則：</strong>第一線首選為 <mark>皮質類固醇 (Glucocorticoid) ＋ 免疫抑制劑 (Azathioprine)</mark>，療效極佳（110-60, 111-67, 112-77, 113-76）。</li>
+    </ul>
+
+    <h3>2. 自體抗體分型 (AIH Subtypes)</h3>
+    <div class="tw"><table>
+      <thead><tr><th>分型</th><th>好發族群</th><th>特異性循環自體抗體 (Autoantibodies)</th><th>臨床特徵</th></tr></thead>
+      <tbody>
+        <tr>
+          <td><b>Type 1 AIH<br>(經典型，佔 80%)</b></td>
+          <td>各年齡層女性（青年及中老年）</td>
+          <td><mark>ANA (抗核抗體)</mark><br><mark>SMA / ASMA (抗平滑肌抗體)</mark></td>
+          <td>對類固醇反應極佳，可伴隨 Hashimoto 甲狀腺炎、類風濕關節炎等。</td>
+        </tr>
+        <tr>
+          <td><b>Type 2 AIH<br>(佔 10~20%)</b></td>
+          <td>兒童與年輕女性 (2~14歲)</td>
+          <td><mark>Anti-LKM-1 (抗肝腎微粒體1型抗體)</mark><br><mark>Anti-LC-1 (抗肝胞漿1型抗體)</mark></td>
+          <td>發病較急驟，易迅速進展為猛爆性肝衰竭或肝硬化。</td>
+        </tr>
+        <tr>
+          <td><b>Type 3 AIH</b></td>
+          <td>成人女性為主</td>
+          <td><mark>Anti-SLA / LP (抗可溶性肝抗原/肝胰抗原抗體)</mark></td>
+          <td>臨床表現與 Type 1 類似，常被歸入 Type 1 亞型（110-60 考點）。</td>
+        </tr>
+      </tbody>
+    </table></div>
+
+    <!-- Quiz 2 -->
+    <div class="quiz">
+      <div class="quiz-top"><span class="lab">隨堂測驗</span><span class="yr">110 學年度 · 第 60 題</span></div>
+      <div class="quiz-body">
+        <p class="stem">下列關於自體免疫肝炎 “Autoimmune Hepatitis” 敘述何者為錯誤？</p>
+        <ul class="opts">
+          <li>(A) 第I型自體抗體包括 ANA，SMA；第II型：抗LKM，抗LC1；第III型：抗SLA</li>
+          <li>(B) 發生在女性較多</li>
+          <li>(C) 以自體免疫特徵，低球蛋白血症(hypoglobulinemia)和存在循環自體抗體(circulating autoantibodies)為特徵</li>
+          <li>(D) 目前治療的準則為使用皮質類固醇(glucocorticoid)與免疫抑制劑(immunosuppressive agent)</li>
+        </ul>
+        <details class="rev">
+          <summary class="toggle"></summary>
+          <div class="reveal">
+            <div class="ans">正確答案：(C)</div>
+            <p>• (C) <b>錯誤</b>：AIH 是以<b>高球蛋白血症 (Hyperglobulinemia / Hypergammaglobulinemia)</b> 為特徵，尤其是多株血清 IgG 顯著升高，而非低球蛋白血症。</p>
+            <p><a class="jump" href="#q110-60">查看文末完整解析 (110-60) ↓</a></p>
+          </div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SECTION 3 ============ -->
+  <section id="s3">
+    <div class="sec-head"><span class="sec-num">三</span><h2>三大遺傳代謝性肝病世紀大對照</h2></div>
+    <p class="tagline">核心考點：<a class="qtag" href="#q110-61">110-61</a><a class="qtag" href="#q111-67">111-67</a><a class="qtag" href="#q112-77">112-77</a><a class="qtag" href="#q113-76">113-76</a></p>
+
+    <p>威爾森氏症、血鐵沉著症與 $\alpha_1$-抗胰蛋白酶缺乏症是**國考與期末考每年必出的「常客」**，必須精確掌握基因染色體位置、代謝異常指標與臨床特徵：</p>
+
+    <div class="tw"><table>
+      <thead><tr><th>疾病名稱</th><th>致病基因與染色體</th><th>核心致病機制與代謝異常</th><th>特徵性臨床表現與三聯徵</th><th>特殊病理與診斷檢驗</th></tr></thead>
+      <tbody>
+        <tr>
+          <td><b>威爾森氏症<br>(Wilson Disease / 肝豆狀核變性)</b></td>
+          <td><b>ATP7B 基因</b><br><mark>第 13 號染色體 (Chr 13)</mark><br>體染色體隱性</td>
+          <td>銅轉運 ATP 酶缺陷 $\rightarrow$ 膽汁排銅受阻 $\rightarrow$ <mark>銅沉積於肝臟、腦基底核、角膜</mark>。</td>
+          <td>• 兒童/青少年發病<br>• 肝硬化、手抖 (Wing-beating tremor)、精神行為異常<br>• <mark>Kayser-Fleischer 環 (K-F rings)</mark></td>
+          <td>① <b>血清攜銅蛋白 (Ceruloplasmin) 下降</b> (&lt;20mg/dL)<br>② <mark>24小時尿銅排泄「增加」</mark> (&gt;100μg/day，112-77 考點！)<br>③ 肝實質銅含量顯著增加</td>
+        </tr>
+        <tr>
+          <td><b>遺傳性血鐵沉著症<br>(Hereditary Hemochromatosis, HH)</b></td>
+          <td><b>HFE 基因 (C282Y)</b><br><mark>第 6 號染色體 (Chr 6)</mark><br>體染色體隱性</td>
+          <td>Hepcidin 缺乏 $\rightarrow$ 腸道過度吸鐵 $\rightarrow$ <mark>鐵大量沉積於肝、胰臟、心臟、皮膚</mark>。</td>
+          <td>• <mark>男性發病早且多於女性</mark>（女有月經保護）<br>• <mark>青銅色糖尿病 (Bronze Diabetes) 經典三聯徵</mark>：<b>① 肝硬化 ② 糖尿病 ③ 皮膚色素沉著</b></td>
+          <td>• 肝切片普魯士藍染色 (<mark>Prussian blue stain</mark>) 染出鮮藍色血鐵質<br>• Transferrin saturation &gt; 45%<br>• 顯著增加肝細胞癌 (HCC) 風險</td>
+        </tr>
+        <tr>
+          <td><b>$\alpha_1$-抗胰蛋白酶缺乏<br>(AAT Deficiency, AATD)</b></td>
+          <td><b>SERPINA1 基因</b><br><mark>第 14 號染色體 (Chr 14)</mark><br>體染色體共顯性</td>
+          <td>$\alpha_1$-AT 摺疊異常滯留於肝細胞內質網，無法分泌至血液保護組織。</td>
+          <td>• 新生兒膽汁淤積、青少年/成人肝硬化<br>• 青年早發性<b>全小葉型肺氣腫 (Panacinar emphysema)</b></td>
+          <td>• <mark>M/S/Z 等位基因 (Alleles)</mark>：PiMM 正常；PiZZ 最嚴重（濃度僅剩 10~15%）<br>• 肝細胞胞漿小球呈 <mark>PAS(+) / 耐澱粉酶 (Diastase-resistant)</mark></td>
+        </tr>
+      </tbody>
+    </table></div>
+
+    <div class="box key">
+      <div class="bt"><span class="badge">染色體秒殺口訣</span>三大遺傳肝病染色體位置</div>
+      <p>• <b>Hemochromatosis (血鐵沉著症)：</b>6 號染色體（6 個英文字母 H-E-M-O-C-H）。<br>
+      • <b>Wilson disease (威爾森氏症)：</b>13 號染色體（Wilson 倒過來是 W $\rightarrow$ 3 $\rightarrow$ 13 號）。<br>
+      • <b>$\alpha_1$-Antitrypsin (AATD)：</b><mark>14 號染色體</mark>（$\alpha_1$ + 4 $\rightarrow$ 14 號，113-76 考染色體 13 為錯誤！）。</p>
+    </div>
+
+    <!-- Quiz 3 -->
+    <div class="quiz">
+      <div class="quiz-top"><span class="lab">隨堂測驗</span><span class="yr">113 學年度 · 第 76 題</span></div>
+      <div class="quiz-body">
+        <p class="stem">下列敘述何者為錯誤？</p>
+        <ul class="opts">
+          <li>(A) Wilson 氏症表現為肝實質銅含量增加和 24 小時尿銅排泄增加，血清攜銅蛋白(ceruloplasmin)降低，可能有 Kayser-Fleischer 環。</li>
+          <li>(B) 自體免疫肝炎“Autoimmune Hepatitis”發生在女性較多，目前治療的準則為使用皮質類固醇(glucocorticoid)與免疫抑制劑(immunosuppressive agent)。</li>
+          <li>(C) 青銅色糖尿病(Bronze diabetes)包括肝硬化，糖尿病和皮膚色素沉著(skin pigmentation)的典型三聯徵(classic triad)是 Hemochromatosis 的特徵性表現。</li>
+          <li>(D) α1 抗胰蛋白酶缺乏(Antitrypsin Deficiency)與 M/S/Z 等位基因 alleles（染色體 Chromosome 13）有關。</li>
+        </ul>
+        <details class="rev">
+          <summary class="toggle"></summary>
+          <div class="reveal">
+            <div class="ans">正確答案：(D)</div>
+            <p>• (D) <b>錯誤</b>：$\alpha_1$-抗胰蛋白酶缺乏 (AATD) 的 SERPINA1 基因位於<b>第 14 號染色體 (Chromosome 14)</b>，而非 13 號染色體（13 號染色體為 Wilson disease 的 ATP7B 基因所在）。</p>
+            <p><a class="jump" href="#q113-76">查看文末完整解析 (113-76) ↓</a></p>
+          </div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SECTION 4 ============ -->
+  <section id="s4">
+    <div class="sec-head"><span class="sec-num">四</span><h2>藥物性肝損傷 (Drug-Induced Liver Injury, DILI)</h2></div>
+
+    <p>藥物性肝損傷 (DILI) 是臨床非病毒性急性肝衰竭的常見主因，主要分為兩大機制：</p>
+
+    <div class="tw"><table>
+      <thead><tr><th>分類</th><th>固有型肝毒性 (Intrinsic DILI)</th><th>特異質型肝毒性 (Idiosyncratic DILI)</th></tr></thead>
+      <tbody>
+        <tr><td><b>可預測性與劑量</b></td><td><mark>具劑量相關性 (Dose-dependent)</mark>，可預測</td><td><mark>與劑量無關 (Dose-independent)</mark>，不可預測</td></tr>
+        <tr><td><b>潛伏期</b></td><td>短（數小時至數天內）</td><td>變異大（數週至數月以上）</td></tr>
+        <tr><td><b>典型藥物代表</b></td><td><mark>Acetaminophen (普拿疼過量)</mark>、四氯化碳</td><td>Augmentin (抗生素)、Isoniazid、NSAIDs、抗癲癇藥</td></tr>
+        <tr><td><b>病理與機轉</b></td><td>NAPQI 代謝物耗竭穀胱甘肽 $\rightarrow$ Zone 3 大塊壞死</td><td>免疫反應或代謝特異性（過敏、嗜酸性球浸潤）</td></tr>
+      </tbody>
+    </table></div>
+
+    <div class="box key">
+      <div class="bt"><span class="badge">臨床分型計算</span>R 值 (R-value) 判斷 DILI 臨床形態</div>
+      <p>$$R = \frac{\text{ALT} / \text{ALT}_{\text{ULN}}}{\text{ALP} / \text{ALP}_{\text{ULN}}}$$</p>
+      <ul>
+        <li>$R \ge 5$：<b>肝細胞損傷型 (Hepatocellular)</b>（常見於 Acetaminophen, Isoniazid）。</li>
+        <li>$R \le 2$：<b>膽汁淤積型 (Cholestatic)</b>（常見於 Augmentin, 類固醇, 口服避孕藥）。</li>
+        <li>$2 < R < 5$：<b>混合型 (Mixed)</b>。</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ============ SECTION 5 ============ -->
+  <section id="s5">
+    <div class="sec-head"><span class="sec-num">五</span><h2>一分鐘考前秒殺心法（戴嘉言老師 8 大口訣）</h2></div>
+    <div class="box key">
+      <div class="bt"><span class="badge">考前 60 秒衝刺</span>記住這 8 條直接拿滿分</div>
+      <ol>
+        <li><b>MAFLD 定義：</b>強調代謝異常，<mark>「不需排除」B肝、C肝、酒精或藥物肝炎</mark>！</li>
+        <li><b>脂肪肝病理：</b>為<mark>大泡狀 (Macrovesicular) 脂肪變性</mark>；切片<mark>無法區分酒精性 vs 非酒精性</mark>！</li>
+        <li><b>自體免疫肝炎：</b><mark>女性遠多於男性（女:男 約 4:1）</mark>；血清呈現<mark>高球蛋白血症 (Hyperglobulinemia)</mark>。</li>
+        <li><b>AIH 自體抗體：</b>Type 1 是 <strong>ANA / SMA</strong>；Type 2 是 <strong>Anti-LKM-1 / Anti-LC-1</strong>；Type 3 是 <strong>Anti-SLA</strong>。</li>
+        <li><b>AIH 首選治療：</b><mark>皮質類固醇 (Glucocorticoid) ＋ 免疫抑制劑 (Azathioprine)</mark>。</li>
+        <li><b>Wilson 氏症：</b>ATP7B 突變於 <strong>13 號染色體</strong>；血清攜銅蛋白降低，<strong>24小時尿銅排泄「增加」</strong>，K-F 環。</li>
+        <li><b>Hemochromatosis：</b>HFE 突變於 <strong>6 號染色體</strong>；<strong>男性早於女性</strong>；<strong>經典三聯徵＝肝硬化＋糖尿病＋青銅色皮膚</strong>；Prussian blue 染藍色。</li>
+        <li><b>$\alpha_1$-抗胰蛋白酶：</b>SERPINA1 突變於 <mark>14 號染色體</mark>（非 13！）；<strong>PAS(+) / Diastase-resistant</strong> 胞漿小球；PiZZ 最嚴重。</li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- ============ SECTION 6: EXAM BANK ============ -->
+  <section id="exam">
+    <div class="sec-head"><span class="sec-num">六</span><h2>歷屆考古題全收錄（BM110 ～ BM113 共 8 題）</h2></div>
+    <div class="exam-head">
+      <h2>戴嘉言老師 非病毒性肝炎題庫全解</h2>
+      <p>完整收錄 BM110 至 BM113 四個學年度期末考共 8 道真題，附標準答案與超深入逐選項剖析。</p>
+      <button class="btn" id="allBtn">全部展開答案</button>
+    </div>
+
+    <!-- ===== BM113 ===== -->
+    <div class="yrhead">113 學年度 (BM113 期末考) · 2 題</div>
+
+    <div class="q" id="q113-76">
+      <span class="q-no">113-76</span><span class="q-topic">遺傳代謝肝病 / AATD 染色體 14</span>
+      <p class="q-stem">1. 下列敘述何者為錯誤？</p>
+      <ul class="opts">
+        <li>(A) Wilson 氏症表現為肝實質銅含量增加和 24 小時尿銅排泄增加，血清攜銅蛋白(ceruloplasmin)降低，可能有 Kayser-Fleischer 環。</li>
+        <li>(B) 自體免疫肝炎“Autoimmune Hepatitis”發生在女性較多，目前治療的準則為使用皮質類固醇(glucocorticoid)與免疫抑制劑(immunosuppressive agent)。</li>
+        <li>(C) 青銅色糖尿病(Bronze diabetes)包括肝硬化，糖尿病和皮膚色素沉著(skin pigmentation)的典型三聯徵(classic triad)是 Hemochromatosis 的特徵性表現。</li>
+        <li>(D) α1 抗胰蛋白酶缺乏(Antitrypsin Deficiency)與 M/S/Z 等位基因 alleles（染色體 Chromosome 13）有關。</li>
+      </ul>
+      <details class="rev">
+        <summary class="toggle"></summary>
+        <div class="reveal">
+          <div class="ans">正確答案：(D)</div>
+          <p>• (D) <b>錯誤</b>：$\alpha_1$-抗胰蛋白酶缺乏 (AATD) 的基因 SERPINA1 位於<b>第 14 號染色體 (Chromosome 14)</b>，而非 13 號染色體（第 13 號染色體為 Wilson disease 的 ATP7B 基因位置）。</p>
+          <p>• (A) <b>正確</b>：Wilson 氏症（ATP7B突變）排銅障礙，導致肝銅沉積、尿銅排泄增加、血清 Ceruloplasmin 降低、角膜 K-F 環。</p>
+          <p>• (B) <b>正確</b>：自體免疫肝炎 (AIH) 女多於男 (4:1)，首選治療為類固醇 ＋ 免疫抑制劑 (Azathioprine)。</p>
+          <p>• (C) <b>正確</b>：Hemochromatosis 經典三聯徵為肝硬化、糖尿病、青銅色皮膚色素沉著。</p>
+          <div class="src">出處：BM113 期末考 第76題（戴嘉言 非病毒性肝炎 p18）</div>
+        </div>
+      </details>
+    </div>
+
+    <div class="q" id="q113-77">
+      <span class="q-no">113-77</span><span class="q-topic">脂肪肝病理 / MASLD 命名</span>
+      <p class="q-stem">2. 下列關於脂肪肝(fatty liver)敘述何者為錯誤？</p>
+      <ul class="opts">
+        <li>(A) 非酒精性脂肪肝“nonalcoholic fatty liver disease”與肥胖，糖尿病或高脂血症相關的特徵為特徵。</li>
+        <li>(B) 酒精性脂肪性與非酒精性脂肪肝肝臟組織學切片類似，較無法明確區分確診。</li>
+        <li>(C) 每週飲酒量女性 < 140 克/週，男性 < 210 克/週之脂肪肝病患可診斷為 Metabolic (dysfunction)-associated steatotic liver disease (MASLD) 。</li>
+        <li>(D) 脂肪性肝炎肝臟組織學可能顯示肝細胞氣球樣變性(ballooning degeneration)，輕度瀰漫性小葉混合急性慢性炎症(diffuse lobular mixed acute and chronic inflammation)。</li>
+      </ul>
+      <details class="rev">
+        <summary class="toggle"></summary>
+        <div class="reveal">
+          <div class="ans">正確答案：(C)</div>
+          <p>• (C) <b>錯誤</b>：診斷 MASLD（2023 最新跨國指引）除了飲酒量限制（女性每週 &lt;140g，男性每週 &lt;210g）外，核心要件是<b>「必須存在至少 1 項心血管代謝危險因子 (Cardiometabolic risk factor, CMRF)」</b>（如肥胖、第二型糖尿病、高血壓、高三酸甘油酯或低 HDL），不能單憑無過量飲酒即診斷為 MASLD。</p>
+          <p>• (B) <b>正確</b>：酒精性與非酒精性脂肪肝在病理切片上均表現為大泡性脂肪變性、氣球樣變性、小葉發炎及 Mallory bodies，單純切片無法明確區分，必須結合病史。</p>
+          <div class="src">出處：BM113 期末考 第77題（戴嘉言 非病毒性肝炎 page70-72）</div>
+        </div>
+      </details>
+    </div>
+
+    <!-- ===== BM112 ===== -->
+    <div class="yrhead">112 學年度 (BM112 期末考) · 2 題</div>
+
+    <div class="q" id="q112-76">
+      <span class="q-no">112-76</span><span class="q-topic">脂肪肝組織學 / MAFLD 不需排除 B/C 肝</span>
+      <p class="q-stem">3. 下列關於脂肪肝(fatty liver)敘述何者為錯誤？</p>
+      <ul class="opts">
+        <li>(A) 非酒精性脂肪肝 “nonalcoholic fatty liver disease” 與肥胖，糖尿病或高脂血症相關的特徵為特徵</li>
+        <li>(B) 酒精性脂肪性與非酒精性脂肪肝肝臟組織學切片類似，但可明確確診</li>
+        <li>(C) 診斷 Metabolic (dysfunction)-associated fatty liver disease (MAFLD)需排除 B 肝 C 肝與藥物性肝炎</li>
+        <li>(D) 脂肪性肝炎肝臟組織學可能顯示肝細胞氣球樣變性(ballooning degeneration)，輕度瀰漫性小葉混合急性慢性炎症(diffuse lobular mixed acute and chronic inflammation)</li>
+      </ul>
+      <details class="rev">
+        <summary class="toggle"></summary>
+        <div class="reveal">
+          <div class="ans">官方答案：(B)（(C) 亦為錯誤觀念）</div>
+          <p>• (B) <b>錯誤</b>：組織切片上酒精性與非酒精性脂肪肝極為相似，<b>無法單純靠切片明確鑑別診斷</b>，必須配合臨床飲酒史。</p>
+          <p>• (C) <b>觀念勘誤</b>：MAFLD 是代謝相關之包容性診斷，<b>不需排除 B/C 肝與藥物性肝炎</b>（此為 NAFLD 舊定義才需要排除）。</p>
+          <div class="src">出處：BM112 期末考 第76題（戴嘉言 非病毒性肝炎 ppt pg. 42, 60）</div>
+        </div>
+      </details>
+    </div>
+
+    <div class="q" id="q112-77">
+      <span class="q-no">112-77</span><span class="q-topic">Wilson 尿銅增加 / AIH 女性好發</span>
+      <p class="q-stem">4. 下列敘述何者為錯誤？？</p>
+      <ul class="opts">
+        <li>(A) 非酒精性脂肪性肝炎 “nonalcoholic steatohepatitis” 與肥胖，糖尿病，高脂血症和胰島素抵抗等有關，特徵主要是大液滴（微泡）脂肪變性</li>
+        <li>(B) 自體免疫肝炎 “Autoimmune Hepatitis” 發生在女性較多，目前治療的準則為使用皮質類固醇(glucocorticoid)與免疫抑制劑(immunosuppressive agent)</li>
+        <li>(C) α1 抗胰蛋白酶缺乏(Antitrypsin Deficiency)與 M/S/Z 等位基因 alleles (染色體 Chromosome 14) 有關，Wilson 氏症表現為肝實質銅含量增加和 24 小時尿銅排泄減少，可能有 Kayser-Fleischer 環</li>
+        <li>(D) 青銅色糖尿病(Bronze diabetes)包括肝硬化，糖尿病和皮膚色素沉著(skin pigmentation)的典型三聯徵(classic triad)是 Hemochromatosis 的特徵性表現</li>
+      </ul>
+      <details class="rev">
+        <summary class="toggle"></summary>
+        <div class="reveal">
+          <div class="ans">正確答案：(C)</div>
+          <p>• (C) <b>錯誤</b>：Wilson 氏症病人體內游離銅離子大量增加，由腎臟過濾排出，因此 <b>24 小時尿銅排泄量是「顯著增加」</b>（常 &gt; 100 $\mu$g/day），而非減少！</p>
+          <p>• (A) <b>正確</b>：NASH 與代謝症候群相關，特徵為大泡狀脂肪變性。</p>
+          <p>• (B) <b>正確</b>：AIH 女性佔多數，首選類固醇 ＋ 免疫抑制劑。</p>
+          <p>• (D) <b>正確</b>：血鐵沉著症典型三聯徵為青銅色糖尿病。</p>
+          <div class="src">出處：BM112 期末考 第77題（戴嘉言 非病毒性肝炎 ppt pg. 7, 24, 29, 34, 53, 60）</div>
+        </div>
+      </details>
+    </div>
+
+    <!-- ===== BM111 ===== -->
+    <div class="yrhead">111 學年度 (BM111 期末考) · 2 題</div>
+
+    <div class="q" id="q111-66">
+      <span class="q-no">111-66</span><span class="q-topic">MAFLD 診斷不需排除 B/C 肝</span>
+      <p class="q-stem">5. 下列關於脂肪肝(fatty liver)敘述何者為錯誤？</p>
+      <ul class="opts">
+        <li>(A) 酒精性脂肪肝與非酒精性脂肪肝臟組織學切片類似</li>
+        <li>(B) 非酒精性脂肪肝 “nonalcoholic fatty liver disease” 與肥胖，糖尿病或高脂血症相關的特徵為特徵</li>
+        <li>(C) Metabolic (dysfunction)-associated fatty liver disease (MAFLD)需排除B肝C肝</li>
+        <li>(D) 脂肪性肝炎肝臟組織學可能顯示肝細胞氣球樣變性(ballooning degeneration)，輕度瀰漫性小葉混合急性慢性炎症(diffuse lobular mixed acute and chronic inflammation)</li>
+      </ul>
+      <details class="rev">
+        <summary class="toggle"></summary>
+        <div class="reveal">
+          <div class="ans">正確答案：(C)</div>
+          <p>• (C) <b>錯誤</b>：MAFLD 命名改革的核心就是<b>打破舊有 NAFLD 的「排他性」限制</b>。MAFLD 只要符合代謝異常要件即可確立診斷，<b>不需要排除 B 肝、C 肝或酒精性肝病</b>，兩者可同時並存（Dual etiology）。</p>
+          <div class="src">出處：BM111 期末考 第66題（戴嘉言 非病毒性肝炎）</div>
+        </div>
+      </details>
+    </div>
+
+    <div class="q" id="q111-67">
+      <span class="q-no">111-67</span><span class="q-topic">AIH 女性好發 / NASH 大泡性脂肪變性</span>
+      <p class="q-stem">6. 下列敘述何者為錯誤？</p>
+      <ul class="opts">
+        <li>(A) 非酒精性脂肪性肝炎 “nonalcoholic steatohepatitis” 與肥胖，糖尿病，高脂血症和胰島素抵抗等有關，特徵主要是大液滴（微泡）脂肪變性</li>
+        <li>(B) 自體免疫肝炎 “Autoimmune Hepatitis” 發生在男性較多，目前治療的準則為使用皮質類固醇(glucocorticoid)與免疫抑制劑(immunosuppressive agent)</li>
+        <li>(C) α1抗胰蛋白酶缺乏(Antitrypsin Deficiency)與M/S/Z等位基因allele s(染色體Chromosome 14)有關，Wilson氏症表現為肝實質銅含量增加和24小時尿銅排泄增加，可能有Kayser-Fleischer環</li>
+        <li>(D) 青銅色糖尿病(Bronze diabetes)包括肝硬化，糖尿病和皮膚色素沉著(skin pigmentation)的典型三聯徵(Classic triad)是Hemochromatosis的特徵性表現</li>
+      </ul>
+      <details class="rev">
+        <summary class="toggle"></summary>
+        <div class="reveal">
+          <div class="ans">正確答案：(B)</div>
+          <p>• (B) <b>錯誤</b>：自體免疫性肝炎 (AIH) <b>發生在「女性」顯著多於男性</b>（女:男 約 3.6~4:1），而非男性較多。</p>
+          <div class="src">出處：BM111 期末考 第67題（戴嘉言 非病毒性肝炎）</div>
+        </div>
+      </details>
+    </div>
+
+    <!-- ===== BM110 ===== -->
+    <div class="yrhead">110 學年度 (BM110 期末考) · 2 題</div>
+
+    <div class="q" id="q110-60">
+      <span class="q-no">110-60</span><span class="q-topic">AIH 自體抗體分型 / 高球蛋白血症</span>
+      <p class="q-stem">7. 下列關於自體免疫肝炎 “Autoimmune Hepatitis” 敘述何者為錯誤？</p>
+      <ul class="opts">
+        <li>(A) 第I型自體抗體包括ANA，SMA; 第II型：抗LKM，抗LC1; 第III型：抗SLA</li>
+        <li>(B) 發生在女性較多</li>
+        <li>(C) 以自體免疫特徵，低球蛋白血症(hypoglobulinemia)和存在循環自體抗體(circulating autoantibodies)為特徵</li>
+        <li>(D) 目前治療的準則為使用皮質類固醇(glucocorticoid)與免疫抑制劑(immunosuppressive agent)</li>
+      </ul>
+      <details class="rev">
+        <summary class="toggle"></summary>
+        <div class="reveal">
+          <div class="ans">正確答案：(C)</div>
+          <p>• (C) <b>錯誤</b>：AIH 是自體反應性 B 細胞大量產生抗體，血清呈現<b>高丙種球蛋白血症 (Hypergammaglobulinemia / 高球蛋白血症)</b>，以 IgG 顯著升高為特徵，絕非「低球蛋白血症 (Hypoglobulinemia)」！</p>
+          <p>• (A) <b>正確</b>：Type 1 (ANA, SMA)、Type 2 (Anti-LKM-1, Anti-LC-1)、Type 3 (Anti-SLA)。</p>
+          <p>• (B)(D) <b>正確</b>：女多於男，首選類固醇 ＋ 免疫抑制劑。</p>
+          <div class="src">出處：BM110 期末考 第60題（戴嘉言 非病毒性肝炎 ppt pg.5-7）</div>
+        </div>
+      </details>
+    </div>
+
+    <div class="q" id="q110-61">
+      <span class="q-no">110-61</span><span class="q-topic">脂肪肝大泡變性 / 三大遺傳代謝肝病</span>
+      <p class="q-stem">8. 下列敘述何者為錯誤？</p>
+      <ul class="opts">
+        <li>(A) Wilson 氏症表現為肝實質銅含量增加和 24 小時尿銅排泄增加，可能有 Kayser-Fleischer 環</li>
+        <li>(B) α1 抗胰蛋白酶缺乏(Antitrypsin Deficiency)與 M/S/Z 等位基因 alleles(染色體 Chromosome 14)有關，常見正常/輕度減少/顯著降低的 α1 抗胰蛋白酶濃度</li>
+        <li>(C) 酒精性脂肪肝和 NAFLD 的特徵主要是小液滴(微泡)為主之脂肪變性</li>
+        <li>(D) 青銅色糖尿病(Bronze diabetes)包括肝硬化，糖尿病和皮膚色素沉著(skin pigmentation)的典型三聯徵(classic triad)是血色素沉著症(Hemochromatosis)的特徵性表現</li>
+      </ul>
+      <details class="rev">
+        <summary class="toggle"></summary>
+        <div class="reveal">
+          <div class="ans">正確答案：(C)</div>
+          <p>• (C) <b>錯誤</b>：酒精性脂肪肝 (ALD) 與非酒精性脂肪肝 (NAFLD) 的主要病理特徵是<b>「大液滴 / 大泡狀 (Macrovesicular)」為主的脂肪變性</b>，而非小液滴（微泡 microvesicular 脂肪變性多見於雷氏症候群 Reye syndrome、懷孕急性脂肪肝 AFLP 或某些藥物中毒）。</p>
+          <div class="src">出處：BM110 期末考 第61題（戴嘉言 非病毒性肝炎 ppt pg.23,28,33）</div>
+        </div>
+      </details>
+    </div>
+
+  </section>
+
+  <footer>
+    <p><b>高醫肝膽胰內科｜戴嘉言老師 非病毒性肝炎題庫全集完成</b>　共 8 題（完整收錄 BM110 ～ BM113 四個學年度期末考真題與深度解析）。</p>
+    <p style="margin-top:14px;font-family:var(--mono);font-size:12px;color:var(--teal);border:1px solid var(--line-2);border-radius:6px;padding:6px 10px;display:inline-block">版面系統 · 醫學專題裸讀筆記 v2.0</p>
+  </footer>
+
+  </main>
+</div>
+</div>
+
+<script>
+  // 手機版：把表頭文字寫進每個儲存格，直式排列時識別資料欄位
+  (function(){
+    document.querySelectorAll('.tw table').forEach(function(t){
+      var ths = t.querySelectorAll('thead th');
+      if(!ths.length) return;
+      var labels = Array.prototype.map.call(ths, function(th){
+        return th.textContent.replace(/\u3000/g,'').trim();
+      });
+      t.querySelectorAll('tbody tr').forEach(function(tr){
+        Array.prototype.forEach.call(tr.children, function(td, i){
+          if(labels[i]) td.setAttribute('data-label', labels[i]);
+        });
+      });
+    });
+  })();
+
+  // 手機版：目錄預設收合
+  (function(){
+    var toc = document.getElementById('tocBox');
+    if(toc && window.matchMedia('(max-width:700px)').matches){
+      toc.removeAttribute('open');
+    }
+  })();
+
+  // 全部展開/收合答案按鈕
+  var allBtn = document.getElementById('allBtn');
+  if(allBtn){
+    var expanded = false;
+    allBtn.addEventListener('click', function(){
+      expanded = !expanded;
+      document.querySelectorAll('.q details.rev, .quiz details.rev').forEach(function(d){
+        if(expanded){ d.setAttribute('open',''); } else { d.removeAttribute('open'); }
+      });
+      allBtn.textContent = expanded ? '全部收合答案' : '全部展開答案';
+    });
+  }
+</script>
+</body>
+</html>
