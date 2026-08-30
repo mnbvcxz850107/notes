@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>胰臟腫瘤、傷害與膽道外科｜裸讀學習筆記</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&family=Noto+Serif+TC:wght@500;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0F1B18;--bg-2:#152420;--bg-3:#1B2E29;--line:#26403A;--line-2:#31534B;
+    --text:#E9F1EE;--text-2:#A8C2BA;--text-3:#7A968D;
+    --teal:#7FC9BE;--teal-dim:#4E9A90;--gold:#C9A961;--rose:#E58B85;
+    --serif:"Noto Serif TC","Songti TC",serif;
+    --sans:"Noto Sans TC","PingFang TC","Microsoft JhengHei",sans-serif;
+    --mono:"JetBrains Mono",ui-monospace,Menlo,monospace;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth;scroll-padding-top:24px;overflow-x:hidden}
+  body{
+    margin:0;background:var(--bg);color:var(--text);
+    font-family:var(--sans);font-size:16.5px;line-height:1.9;font-weight:300;
+    -webkit-font-smoothing:antialiased;overflow-x:hidden;
+  }
+  .wrap{max-width:1150px;margin:0 auto;padding:0 22px}
+  header.hero{padding:60px 0 48px;border-bottom:1px solid var(--line)}
+  .backlink{display:inline-block;font-family:var(--mono);font-size:12px;
+    color:var(--text-3);text-decoration:none;margin-bottom:20px;
+    border:1px solid var(--line);border-radius:6px;padding:5px 12px;transition:.15s}
+  .backlink:hover{color:var(--teal);border-color:var(--teal-dim)}
+  .eyebrow{display:flex;align-items:center;gap:16px;margin-bottom:22px;
+    font-family:var(--serif);font-size:15px;letter-spacing:.34em;color:var(--teal)}
+  .eyebrow .rule{width:56px;height:1px;background:var(--gold)}
+  .eyebrow .dot{color:var(--gold)}
+  header.hero h1{
+    font-family:var(--serif);font-weight:700;font-size:clamp(34px,5.6vw,64px);
+    line-height:1.2;margin:0 0 20px;letter-spacing:.02em;
+  }
+  header.hero h1 em{font-style:normal;color:var(--teal)}
+  header.hero p.sub{margin:0;color:var(--text-2);max-width:65ch;font-size:16.5px;line-height:1.85}
+  .intro-card{border:1px solid var(--line);border-radius:16px;padding:24px 28px;margin-top:30px;background:var(--bg-2)}
+  .intro-card p{margin:0 0 20px;color:var(--text-2)}
+  .intro-card b{color:var(--teal);font-weight:500}
+  .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+  .stat .n{font-family:var(--serif);font-size:36px;color:var(--gold);line-height:1}
+  .stat .l{font-size:12px;color:var(--text-3);letter-spacing:.08em;margin-top:6px}
+  .cols{display:grid;grid-template-columns:230px 1fr;gap:50px;padding:42px 0 90px;align-items:start}
+  nav.toc{position:sticky;top:26px}
+  nav.toc .t{font-family:var(--mono);font-size:11px;letter-spacing:.2em;color:var(--text-3);margin-bottom:14px}
+  nav.toc a{display:block;padding:7px 14px;border-left:1px solid var(--line);
+    color:var(--text-2);text-decoration:none;font-size:14px;transition:.15s}
+  nav.toc a:hover{border-left-color:var(--teal);color:var(--teal);background:var(--bg-2)}
+  nav.toc a.exam{color:var(--gold)}
+  nav.toc summary{display:none}
+  section{margin-bottom:60px;scroll-margin-top:24px}
+  .sec-head{display:flex;align-items:baseline;gap:16px;border-bottom:1px solid var(--line-2);padding-bottom:12px;margin-bottom:24px}
+  .sec-num{font-family:var(--serif);font-size:28px;color:var(--gold);line-height:1}
+  .sec-head h2{font-family:var(--serif);font-size:clamp(22px,3.2vw,30px);margin:0;font-weight:700;letter-spacing:.02em}
+  h3{font-family:var(--serif);font-size:20px;margin:36px 0 12px;font-weight:500;color:var(--text)}
+  h4{font-size:16px;margin:22px 0 8px;color:var(--teal);font-weight:500}
+  p{margin:0 0 14px}
+  ul,ol{margin:0 0 16px;padding-left:22px}
+  li{margin-bottom:8px}
+  li::marker{color:var(--teal-dim)}
+  strong,b{font-weight:500;color:#FFF}
+  u{text-decoration-color:var(--teal-dim);text-underline-offset:3px}
+  code{font-family:var(--mono);font-size:.88em;background:var(--bg-3);padding:1px 6px;border-radius:4px;color:var(--teal)}
+  mark{background:rgba(201,169,97,.22);box-shadow:inset 0 -2px 0 rgba(201,169,97,.6);color:#FBF3E2;padding:1px 3px;border-radius:2px}
+  a.qtag{display:inline-block;font-family:var(--mono);font-size:11px;font-weight:600;border:1px solid var(--gold);color:var(--gold);padding:1px 7px;border-radius:4px;text-decoration:none;margin:0 3px;vertical-align:2px;white-space:nowrap;transition:.15s}
+  a.qtag:hover{background:var(--gold);color:var(--bg)}
+  .tagline{margin:-6px 0 18px;font-size:13.5px;color:var(--text-3)}
+  .box{border-radius:13px;padding:18px 22px;margin:20px 0;border:1px solid var(--line);background:var(--bg-2)}
+  .box .bt{font-weight:500;font-size:14.5px;margin-bottom:10px;display:flex;align-items:center;gap:9px;color:#FFF}
+  .box p:last-child,.box ul:last-child,.box ol:last-child{margin-bottom:0}
+  .badge{font-family:var(--mono);font-size:10px;padding:2px 8px;border-radius:3px;letter-spacing:.06em;border:1px solid currentColor;font-weight:600}
+  .box.exam{border-color:rgba(201,169,97,.45);background:rgba(201,169,97,.07)}
+  .box.exam .badge{color:var(--gold)}
+  .box.trap{border-color:rgba(229,139,133,.45);background:rgba(229,139,133,.07)}
+  .box.trap .badge{color:var(--rose)}
+  .box.key{border-color:rgba(127,201,190,.4);background:rgba(127,201,190,.07)}
+  .box.key .badge{color:var(--teal)}
+  .img-frame{background:#08100E;border:1px solid var(--line-2);border-radius:12px;padding:12px;margin:18px 0 20px;text-align:center}
+  .q-img{display:block;max-width:100%;height:auto;border-radius:8px;margin:0 auto;box-shadow:0 4px 14px rgba(0,0,0,.5)}
+  .img-caption{font-family:var(--mono);font-size:12px;color:var(--text-2);margin-top:10px;line-height:1.6}
+  .img-caption b{color:var(--gold);font-weight:600}
+  .tw{border:none;background:none;overflow:visible;border-radius:0;margin:20px 0}
+  .tw table{min-width:0;width:100%;border-collapse:separate;border-spacing:0;font-size:14.8px}
+  .tw thead{display:none}
+  .tw tbody tr{display:block;border:1px solid var(--line);border-radius:12px;background:var(--bg-2);margin-bottom:12px;padding:6px 0}
+  .tw tbody tr:nth-child(even){background:var(--bg-2)}
+  .tw tbody tr:last-child{margin-bottom:0}
+  .tw tbody td{display:block;border:none;padding:9px 16px}
+  .tw tbody td+td{border-top:1px dashed var(--line)}
+  .tw tbody td[data-label]::before{content:attr(data-label);display:block;font-family:var(--mono);font-size:11px;letter-spacing:.08em;color:var(--teal);margin-bottom:4px;font-weight:600}
+  .tw tbody td:first-child{font-size:16px;color:#FFF;font-weight:500}
+  .tw tbody td.mono{font-family:var(--mono);font-size:13.5px}
+  @media (min-width:769px){
+    .tw{overflow-x:auto;border:1px solid var(--line);border-radius:13px;background:var(--bg-2)}
+    .tw table{border-collapse:collapse}
+    .tw thead{display:table-header-group}
+    .tw thead th{background:var(--bg-3);color:var(--teal);font-weight:500;font-size:13.5px;padding:12px 16px;border-bottom:1px solid var(--line);text-align:left}
+    .tw tbody tr{display:table-row;border:none;background:none;margin-bottom:0;padding:0}
+    .tw tbody tr:nth-child(even){background:rgba(255,255,255,.018)}
+    .tw tbody td{display:table-cell;padding:12px 16px;border-bottom:1px solid var(--line)}
+    .tw tbody td+td{border-top:none}
+    .tw tbody tr:last-child td{border-bottom:none}
+    .tw tbody td[data-label]::before{display:none}
+    .tw tbody td:first-child{font-size:14.8px;font-weight:normal}
+  }
+  .quiz{border:1px solid var(--line-2);border-radius:14px;margin:24px 0;overflow:hidden;background:var(--bg-2)}
+  .quiz-top{display:flex;align-items:center;gap:10px;padding:12px 20px;background:var(--bg-3);border-bottom:1px solid var(--line)}
+  .quiz-top .lab{font-family:var(--serif);font-size:14px;letter-spacing:.16em;color:var(--gold)}
+  .quiz-top .yr{font-family:var(--mono);font-size:11.5px;color:var(--text-2);border:1px solid var(--line-2);padding:2px 8px;border-radius:4px}
+  .quiz-body{padding:18px 20px}
+  .quiz-body .stem{font-size:15.5px;line-height:1.85;margin:0 0 14px;color:var(--text)}
+  .opts{list-style:none;padding:0;margin:0 0 14px}
+  .opts li{padding:8px 12px;font-size:15px;border:1px solid var(--line);border-radius:8px;margin-bottom:7px;color:var(--text-2)}
+  details.rev{margin:0}
+  summary.toggle{display:inline-block;list-style:none;cursor:pointer;background:none;border:1px solid var(--teal-dim);color:var(--teal);font-family:var(--sans);font-size:13px;padding:7px 16px;border-radius:7px;font-weight:400;transition:.15s;-webkit-tap-highlight-color:transparent}
+  summary.toggle::-webkit-details-marker{display:none}
+  summary.toggle::marker{content:""}
+  summary.toggle:hover{background:var(--teal);color:var(--bg)}
+  summary.toggle::before{content:"顯示答案"}
+  .q summary.toggle::before{content:"顯示答案與詳解"}
+  details.rev[open] summary.toggle::before{content:"收合答案"}
+  .reveal{border-top:1px dashed var(--line-2);margin-top:14px;padding-top:14px}
+  .ans{font-family:var(--serif);font-weight:700;color:var(--gold);font-size:17px;margin-bottom:10px}
+  .reveal p{margin:0 0 9px;font-size:14.8px;color:var(--text-2)}
+  .reveal p b{color:#FFF}
+  .src{font-size:12px;color:var(--text-3);font-family:var(--mono);margin-top:12px}
+  .jump{font-size:12.5px;color:var(--teal-dim);text-decoration:none;border-bottom:1px solid var(--line-2)}
+  .jump:hover{color:var(--teal)}
+  .exam-head{border:1px solid var(--line-2);border-radius:16px;padding:26px;margin-bottom:26px;background:var(--bg-2)}
+  .exam-head h2{font-family:var(--serif);margin:0 0 10px;font-size:28px}
+  .exam-head p{color:var(--text-2);margin:0;font-size:15px}
+  .btn{font-family:var(--sans);font-size:13.5px;cursor:pointer;background:var(--teal);color:var(--bg);border:none;padding:10px 20px;border-radius:8px;margin-top:16px;font-weight:500}
+  .btn:hover{background:#9BDBD1}
+  .yrhead{font-family:var(--serif);font-size:23px;font-weight:700;margin:36px 0 16px;padding-left:16px;border-left:3px solid var(--gold);color:var(--gold)}
+  .q{background:var(--bg-2);border:1px solid var(--line);border-radius:13px;padding:20px 22px;margin-bottom:18px;scroll-margin-top:24px}
+  .q-no{font-family:var(--mono);font-size:11.5px;color:var(--gold);border:1px solid var(--gold);padding:2px 9px;border-radius:5px}
+  .q-topic{font-size:12.5px;color:var(--text-3);margin-left:10px}
+  .q-stem{margin:14px 0 12px;font-size:15.5px;line-height:1.85}
+  footer{border-top:1px solid var(--line);padding:28px 0 56px;color:var(--text-3);font-size:13.5px}
+  footer b{color:var(--text-2)}
+  @media (max-width:900px){
+    .cols{grid-template-columns:1fr;gap:0;padding-top:24px}
+    nav.toc{position:static;margin-bottom:32px;border:1px solid var(--line);border-radius:12px;padding:16px;background:var(--bg-2)}
+    nav.toc a{border-left:none;padding:6px 4px}
+    .stats{grid-template-columns:repeat(2,1fr);gap:16px}
+  }
+  @media (max-width:700px){
+    body{font-size:16px;line-height:1.85}
+    .wrap{padding:0 16px}
+    header.hero{padding:36px 0 30px}
+    .cols{padding:24px 0 50px}
+    section{margin-bottom:42px}
+    nav.toc{padding:0;overflow:hidden}
+    nav.toc .t{display:none}
+    nav.toc details{margin:0}
+    nav.toc summary{display:block;list-style:none;cursor:pointer;padding:14px 16px;font-family:var(--mono);font-size:12px;letter-spacing:.16em;color:var(--teal)}
+    nav.toc summary::-webkit-details-marker{display:none}
+    nav.toc summary::after{content:" ▾";color:var(--text-3)}
+    nav.toc details[open] summary::after{content:" ▴"}
+    nav.toc .toc-links{padding:0 10px 12px}
+    .box{padding:15px 16px;border-radius:11px}
+    p,li,td,.stem,.reveal p,.opts li,.q-stem{overflow-wrap:anywhere;word-break:break-word}
+    .quiz-body{padding:15px 16px}
+    .opts li{padding:9px 12px;font-size:15px}
+    .q{padding:16px 16px}
+    .sec-head{gap:12px}
+    ul,ol{padding-left:20px}
+    .toggle{width:100%;padding:11px 16px;font-size:14px}
+    summary.toggle{width:100%;text-align:center;padding:11px 16px;font-size:14px}
+    .btn{width:100%;padding:12px 16px}
+  }
+  @media print{
+    nav.toc,.btn,.toggle{display:none}
+    .reveal{display:block!important}
+    body{background:#fff;color:#000;font-size:11pt}
+  }
+</style>
+</head>
+<body>
+<header class="hero">
+  <div class="wrap">
+    <a class="backlink" href="index.html">← 返回 Block 7 目錄</a>
+    <div class="eyebrow"><span class="rule"></span>高醫肝膽胰外科 · 裸讀學習筆記<span class="dot">·</span>王森稔／郭功楷老師專題</div>
+    <h1>胰臟腫瘤、傷害與膽道外科 <em>(Pancreatic & Biliary Surgery)</em></h1>
+    <p class="sub">精準剖析膽汁製造與膽絞痛放射痛、先天性膽道囊腫 Todani 分型、胰腺囊性腫瘤（SCN vs IPMN）、術後胰漏 (POPF) 與 GDA 動脈瘤破裂處置、胰腺癌切除與新輔助治療。授課教師：王森稔、郭功楷。</p>
+    <div class="intro-card">
+      <p>完整收錄 <b>BM110、BM111、BM112、BM113 四個學年度共 12 題真題</b>，將外科手術處置原則、胰漏處置與膽囊生理徹底拆解，文末附完整題庫詳解。</p>
+      <div class="stats">
+        <div class="stat"><div class="n">12</div><div class="l">全收錄真題</div></div>
+        <div class="stat"><div class="n">4</div><div class="l">學年度 (110-113)</div></div>
+        <div class="stat"><div class="n">5</div><div class="l">核心章節</div></div>
+        <div class="stat"><div class="n">100%</div><div class="l">考點命中率</div></div>
+      </div>
+    </div>
+  </div>
+</header>
+<div class="wrap">
+<div class="cols">
+  <nav class="toc">
+    <div class="t">CONTENTS</div>
+    <details id="tocBox" open>
+      <summary>目錄 CONTENTS</summary>
+      <div class="toc-links">
+      <a href="#s1">一　膽汁生理與膽結石病理</a>
+      <a href="#s2">二　先天膽道疾病與 Todani 分型</a>
+      <a href="#s3">三　胰腺囊性腫瘤與胰腺癌</a>
+      <a href="#s4">四　術後胰漏 (POPF) 與 GDA 出血</a>
+      <a href="#s5">五　一分鐘考前秒殺心法</a>
+      <a href="#exam" class="exam">六　歷屆考題全收錄 (12 題)</a>
+      </div>
+    </details>
+  </nav>
+  <main>
+  <section id="s1">
+    <div class="sec-head"><span class="sec-num">一</span><h2>膽汁製造生理與膽結石病理</h2></div>
+    <p class="tagline">核心考點：<a class="qtag" href="#q112-3">112-3</a><a class="qtag" href="#q112-4">112-4</a><a class="qtag" href="#q113-3">113-3</a><a class="qtag" href="#q113-4">113-4</a></p>
+    <ul>
+      <li><mark>膽汁製造：膽汁由「肝臟 (Liver)」製造產生</mark>，膽囊僅負責儲存與濃縮膽汁（112-3, 113-3 考膽囊製造為錯誤！）。</li>
+      <li><strong>膽紅素來源：</strong>膽汁中的 Bilirubin 主要是體內老化紅血球之 <mark>Heme (血基質) 代謝產物</mark>。</li>
+      <li><strong>膽結石風險：</strong>懷孕 (Pregnancy) 時黃體素 (Progesterone) 會降低膽囊收縮與排空能力，造成膽汁滯留。</li>
+      <li><strong>膽絞痛 (Biliary colic)：</strong>常於<mark>進食油膩食物後</mark>發作，右上腹疼痛常放射至 <mark>右肩胛骨下方或後背</mark>。</li>
+      <li><strong>Charcot's triad：</strong>急性膽管炎三聯徵＝<mark>腹痛 ＋ 發燒 ＋ 黃疸</mark>（非腹瀉！112-4, 113-4 考點）。</li>
+    </ul>
+  </section>
+
+  <section id="s2">
+    <div class="sec-head"><span class="sec-num">二</span><h2>先天性膽道擴張症 (Todani 分型) 與膽石性腸阻塞</h2></div>
+    <p class="tagline">核心考點：<a class="qtag" href="#q112-4">112-4</a><a class="qtag" href="#q113-4">113-4</a></p>
+    <ul>
+      <li><mark>Todani 分型：臨床上最常見的是「Type 1 (總膽管囊狀/梭形擴張)」</mark>（佔 80~90%），非 Type 2（112-4, 113-4 考點）。需切除囊腫並行 Roux-en-Y 膽管空腸吻合術以防癌變。</li>
+      <li><mark>Gallstone ileus (膽石性腸阻塞)：</mark>多發生於老年人，巨大膽結石經慢性發炎形成的<b>膽囊十二指腸瘻管 (Cholecysto-duodenal fistula)</b> 掉入腸道，最常嵌頓於最狹窄的<b>迴盲瓣 (Ileocecal valve)</b>。</li>
+    </ul>
+  </section>
+
+  <section id="s3">
+    <div class="sec-head"><span class="sec-num">三</span><h2>胰腺囊性腫瘤 (SCN vs. IPMN) 與胰腺癌切除策略</h2></div>
+    <p class="tagline">核心考點：<a class="qtag" href="#q110-62">110-62</a><a class="qtag" href="#q111-68">111-68</a><a class="qtag" href="#q111-69">111-69</a><a class="qtag" href="#q112-70">112-70</a><a class="qtag" href="#q113-5">113-5</a></p>
+    <div class="tw"><table>
+      <thead><tr><th>胰腺腫瘤類型</th><th>良惡性與前驅特性</th><th>初診斷處置策略</th></tr></thead>
+      <tbody>
+        <tr><td><b>漿液性囊腺瘤<br>(Serous Cystadenoma, SCN)</b></td><td><mark>幾乎 100% 為良性</mark>，惡性變機率最低。</td><td><mark>初診斷時建議「先觀察」，不用常規評估手術切除</mark>（113-5 考點！）。</td></tr>
+        <tr><td><b>主胰管型 IPMN<br>(Main-duct IPMN)</b></td><td>惡性潛能極高（癌變率 40~70%），主胰管直徑 &gt; 10 mm。</td><td>必須積極評估並接受手術切除。</td></tr>
+        <tr><td><b>邊界可切除胰腺癌<br>(Borderline Resectable PDAC)</b></td><td>緊鄰或侵犯腸繫膜上動靜脈/腹腔動脈幹。</td><td><mark>應先進行新輔助治療 (Neoadjuvant 化療/放療)</mark>，降期後再評估根治性切除（110-62, 111-68 考點！）。</td></tr>
+      </tbody>
+    </table></div>
+  </section>
+
+  <section id="s4">
+    <div class="sec-head"><span class="sec-num">四</span><h2>術後胰漏 (POPF) 與胃十二指腸動脈 (GDA) 假性動脈瘤</h2></div>
+    <p class="tagline">核心考點：<a class="qtag" href="#q112-71">112-71</a><a class="qtag" href="#q113-6">113-6</a></p>
+    <div class="box trap">
+      <div class="bt"><span class="badge">外科重大併發症</span>POPF 臨床致命機轉</div>
+      <ul>
+        <li><strong>定義與危險因子：</strong>常發生於胰十二指腸切除術 (Whipple procedure) 術後。危險因子為 <mark>胰臟質地過軟 (Soft pancreas) 與主胰管過細 (&lt; 3 mm)</mark>。</li>
+        <li><strong>致死性出血機轉：</strong>外漏的高活性胰液侵蝕骨骼化之動脈殘端，常導致 <mark>胃十二指腸動脈 (GDA, Gastroduodenal artery)</mark> 發生假性動脈瘤破裂大出血（非脾動脈！112-71, 113-6 考點）。</li>
+        <li><strong>處置原則：</strong>發生胰漏時<mark>首選通暢引流、禁食、全靜脈營養與體抑素 (Somatostatin) 之保守治療</mark>，<b>絕非「立即再次手術開刀」</b>（立即再開刀組織脆弱水腫吻合極易再崩裂，113-6 考點）。出血時首選血管攝影動脈栓塞 (TAE)。</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="s5">
+    <div class="sec-head"><span class="sec-num">五</span><h2>一分鐘考前秒殺心法（王森稔／郭功楷老師 5 大重點）</h2></div>
+    <div class="box key">
+      <div class="bt"><span class="badge">考前 60 秒衝刺</span>王森稔／郭功楷老師必背重點</div>
+      <ol>
+        <li><b>膽汁製造：</b>膽汁由<strong>肝臟製造</strong>（非膽囊！）；膽絞痛常<strong>放射至右肩與後背</strong>。</li>
+        <li><b>Todani 分型：</b>最常見為 <strong>Type 1 (總膽管囊狀擴張)</strong>。</li>
+        <li><b>良性可觀察囊腫：</b><strong>漿液性囊腺瘤 (SCN)</strong> 幾無惡性風險，初診斷可先保守觀察。</li>
+        <li><b>POPF 衍生出血：</b>常因 <strong>GDA (胃十二指腸動脈) 假性動脈瘤破裂</strong>；胰漏首選引流保守治療，<strong>非立即手術</strong>。</li>
+        <li><b>胰腺癌治療：</b>Borderline resectable <strong>先做 Neoadjuvant 化療/放療</strong>。</li>
+      </ol>
+    </div>
+  </section>
+
+  <section id="exam">
+    <div class="sec-head"><span class="sec-num">六</span><h2>歷屆考古題全收錄（BM110 ～ BM113 共 12 題）</h2></div>
+    <div class="exam-head">
+      <h2>王森稔／郭功楷老師 胰臟與膽道外科題庫全解</h2>
+      <p>完整收錄 4 個學年度共 12 道真題，附標準答案與逐選項深度剖析。</p>
+      <button class="btn" id="allBtn">全部展開答案</button>
+    </div>
+
+    <!-- BM113 -->
+    <div class="yrhead">113 學年度 (BM113 期末考) · 4 題</div>
+    <div class="q" id="q113-3"><span class="q-no">113-3</span><span class="q-topic">膽汁與膽紅素生理</span>
+      <p class="q-stem">1. 下列敘述何者正確？<br>(A)Bile 中的 bilirubin 主要是人體內 heme 代謝後的產物<br>(B)人體內的膽汁(bile juice)是由膽囊(Gallbladder)製造產生<br>(C)cholesterol gallstone 的形成主要是和膽道系統發生細菌感染有關<br>(D)pregnancy 是膽石症相關的 risk factor，主要是因為懷孕過程中 progesterone 會增加 bile acid 的分泌以及膽囊收縮排空的能力</p>
+      <details class="rev"><summary class="toggle"></summary><div class="reveal"><div class="ans">正確答案：(A)</div><p>• (A) 正確：Bilirubin 為血紅素 Heme 代謝物。(B) 膽汁由肝臟製造。(C) 細菌感染形成的是色素結石。(D) Progesterone 抑制膽囊排空造成膽汁淤積。</p><div class="src">出處：BM113 期末考 第3題（王森稔 ppt p.14、17）</div></div></details>
+    </div>
+    <div class="q" id="q113-4"><span class="q-no">113-4</span><span class="q-topic">膽絞痛與 Todani</span>
+      <p class="q-stem">2. 下列敘述何者正確？<br>(A)Gallstone 所引起的 biliary colic 是指病人的上腹疼痛通常和進食有關，且常合併有後背痛或右肩疼痛的情形<br>(B)Charcot’s triad 描述 acute cholangitis 病人的常見症狀，包括：腹瀉、發燒及黃疸<br>(C)Gallstone ileus 常發生在老人冢，其 cholecystoenteric fistula 最常發生在 stomach<br>(D)Todani classification 描述 Choledochal cyst 的不同型態，其中 type 2 臨床上最常見</p>
+      <details class="rev"><summary class="toggle"></summary><div class="reveal"><div class="ans">正確答案：(A)</div><p>• (A) 正確：進食引發 CCK 分泌刺激膽囊收縮致膽絞痛，放射至右肩與後背。(B) Charcot triad 為腹痛、發燒、黃疸。(C) 瘻管多在十二指腸。(D) Todani Type 1 最常見。</p><div class="src">出處：BM113 期末考 第4題（王森稔 ppt p33,41,46）</div></div></details>
+    </div>
+    <div class="q" id="q113-5"><span class="q-no">113-5</span><span class="q-topic">SCN 先觀察</span>
+      <p class="q-stem">3. 下列那一種胰臟腫瘤，初診斷時建議可先觀察不用考慮評估接受手術切除治療？<br>(A)Pancreatic neuroendocrine tumor　(B)Solid pseudopapillary neoplasms　(C)Main-duct IPMNs　(D)Serous cystadenomas</p>
+      <details class="rev"><summary class="toggle"></summary><div class="reveal"><div class="ans">正確答案：(D) Serous cystadenomas</div><p>• 漿液性囊腺瘤 (SCN) 幾乎全為良性，無症狀者初診斷時可先保守觀察。</p><div class="src">出處：BM113 期末考 第5題（王森稔 ppt pg. 4, 6）</div></div></details>
+    </div>
+    <div class="q" id="q113-6"><span class="q-no">113-6</span><span class="q-topic">POPF 處置錯誤</span>
+      <p class="q-stem">4. 有關胰漏(Postoperative pancreatic fistula; POPF)下列敘述何者錯誤？<br>(A)常發生在胰臟手術之後<br>(B)Whipple procedure 後若發生 POPF，其衍生出的出血常是因為 gastro-duodenal artery(GDA)發生 pseudoaneurysm 破裂所致，死亡率極高<br>(C)相關的危險因子包括胰臟組織過軟以及胰管過細等<br>(D)發生胰漏的病人建議立即接受手術處理</p>
+      <details class="rev"><summary class="toggle"></summary><div class="reveal"><div class="ans">正確答案：(D)</div><p>• (D) 錯誤：發生胰漏時首選禁食、維持引流通暢之保守治療，盲目立即再手術開刀死亡率更高。</p><div class="src">出處：BM113 期末考 第6題（王森稔 ppt pg. 36, 38）</div></div></details>
+    </div>
+
+    <!-- BM112 -->
+    <div class="yrhead">112 學年度 (BM112 期末考) · 4 題</div>
+    <div class="q" id="q112-3"><span class="q-no">112-3</span><span class="q-topic">膽汁生理</span>
+      <p class="q-stem">5. 下列敘述何者正確？<br>(A) 人體內的膽汁是由膽囊製造產生<br>(B) Bile 中的 bilirubin 主要是人體內 heme 代謝後的產物<br>(C) cholesterol gallstone 形成主因是細菌感染<br>(D) pregnancy 增加膽囊排空能力</p>
+      <details class="rev"><summary class="toggle"></summary><div class="reveal"><div class="ans">正確答案：(B)</div><p>• 膽汁由肝臟製造；Bilirubin 來自 Heme 代謝。</p><div class="src">出處：BM112 期末考 第3題（王森稔）</div></div></details>
+    </div>
+    <div class="q" id="q112-4"><span class="q-no">112-4</span><span class="q-topic">Charcot triad</span>
+      <p class="q-stem">6. 下列敘述何者正確？<br>(A) 膽絞痛通常和進食無關<br>(B) Charcot’s triad 描述 acute cholangitis 病人的常見症狀，包括：腹痛、發燒及黃疸<br>(C) Gallstone ileus 瘻管最常發生在胃<br>(D) Todani type 2 臨床最常見</p>
+      <details class="rev"><summary class="toggle"></summary><div class="reveal"><div class="ans">正確答案：(B)</div><p>• Charcot's triad 為腹痛、發燒、黃疸。</p><div class="src">出處：BM112 期末考 第4題（王森稔）</div></div></details>
+    </div>
+    <div class="q" id="q112-70"><span class="q-no">112-70</span><span class="q-topic">胰腺癌特徵</span>
+      <p class="q-stem">7. 有關胰臟癌下列敘述何者正確？<br>(A) 由 islet cells 衍生出來的占大多數<br>(B) 新生糖尿病(new-onset diabetes)的發生被列為是 risk factor 之一<br>(C) 胰尾癌常見初始症狀是黃疸<br>(D) CA19-9 適合做普查篩檢</p>
+      <details class="rev"><summary class="toggle"></summary><div class="reveal"><div class="ans">正確答案：(B)</div><p>• (B) 正確：年過 50 歲新診斷糖尿病為胰腺癌高危警訊。(A) 90% 為導管腺癌。(C) 黃疸為胰頭癌特徵。(D) CA19-9 不適合常規篩檢。</p><div class="src">出處：BM112 期末考 第70題（王森稔）</div></div></details>
+    </div>
+    <div class="q" id="q112-71"><span class="q-no">112-71</span><span class="q-topic">POPF GDA 假性動脈瘤</span>
+      <p class="q-stem">8. 有關胰漏(POPF)下列敘述何者錯誤？<br>(A) 常發生在胰臟手術之後<br>(B) Whipple procedure 後若發生 POPF，其衍生出的出血常是因為 splenic artery 發生pseudoaneurysm 破裂所致，死亡率極高<br>(C) 相關的危險因子包括胰臟組織過軟以及胰管過細等<br>(D) 發生胰漏的病人也可能因為發生 sepsis 而死亡</p>
+      <details class="rev"><summary class="toggle"></summary><div class="reveal"><div class="ans">正確答案：(B)</div><p>• (B) 錯誤：Whipple 術後 POPF 腐蝕出血的血管是<b>胃十二指腸動脈 (GDA)</b> 殘端，而非脾動脈。</p><div class="src">出處：BM112 期末考 第71題（王森稔）</div></div></details>
+    </div>
+
+    <!-- BM111 -->
+    <div class="yrhead">111 學年度 (BM111 期末考) · 2 題</div>
+    <div class="q" id="q111-68"><span class="q-no">111-68</span><span class="q-topic">Borderline 胰腺癌治療</span>
+      <p class="q-stem">9. 胰臟癌的腫瘤分布位置如圖(Stage III)，有關治療之敘述，下列何者正確？<br>(A) 病人應該接受全胰臟切除<br>(B) 病人應該接受胰頭十二指腸切除術<br>(C) 若評估可行，病人應先接受化學治療<br>(D) 病人應該接受最新的標靶及免疫治療</p>
+      <details class="rev"><summary class="toggle"></summary><div class="reveal"><div class="ans">正確答案：(C) 先接受化療</div><p>• 侵犯大血管之 Borderline resectable 胰腺癌應先給予 Neoadjuvant 化療/放療。</p><div class="src">出處：BM111 期末考 第68題（郭功楷 ppt pg. 20）</div></div></details>
+    </div>
+    <div class="q" id="q111-69"><span class="q-no">111-69</span><span class="q-topic">IPMN 處置</span>
+      <p class="q-stem">10. 胰腺導管內乳頭狀黏液性腫瘤 (IPMN) 的評估和處理方法：下列何者不正確？<br>(A) IPMN 會產生黏液，這種黏液會形成胰腺囊腫。<br>(B) 主胰管 (main duct, MD) 發生惡性腫瘤的風險較高。<br>(C) 常常需要通過超音波內鏡引導下細針抽吸活檢 (EUS-FNA) 進一步評估是否具惡性特徵。<br>(D) 若有阻塞性黃疸，囊泡內壁有(&gt;1cm)顯影性結節產生，應建議置放支架及化療後，進一步手術切除為佳。</p>
+      <details class="rev"><summary class="toggle"></summary><div class="reveal"><div class="ans">正確答案：(D)</div><p>• (D) 錯誤：出現黃疸、主胰管擴張或 &gt;1cm 結節為「High-risk stigmata」，應<b>直接考慮手術切除</b>，而非先放支架化療。</p><div class="src">出處：BM111 期末考 第69題（郭功楷 ppt pg. 16, 54, 57）</div></div></details>
+    </div>
+
+    <!-- BM110 -->
+    <div class="yrhead">110 學年度 (BM110 期末考) · 2 題</div>
+    <div class="q" id="q110-62"><span class="q-no">110-62</span><span class="q-topic">胰臟癌敘述</span>
+      <p class="q-stem">11. 有關胰臟癌之敘述，下列何者正確？<br>(A)發於胰臟體尾部的癌，其電腦斷層多顯示為「高顯影腫瘤」且預後不佳<br>(B) 胰尾部的胰腺癌常出現黃疸、體重減輕和腹痛<br>(C) 在內視鏡超音波引導下進行酒精注射是最有效的治療方法<br>(D) Borderline resectable 的胰臟癌應先進行 neoadjuvant 化療或合併放射線療法</p>
+      <details class="rev"><summary class="toggle"></summary><div class="reveal"><div class="ans">正確答案：(D)</div><p>• Borderline resectable 胰腺癌應先進行 Neoadjuvant 化放療。</p><div class="src">出處：BM110 期末考 第62題（郭功楷 ppt pg.20）</div></div></details>
+    </div>
+    <div class="q" id="q110-63"><span class="q-no">110-63</span><span class="q-topic">胰臟癌切除率</span>
+      <p class="q-stem">12. 有關胰臟癌的切除性手術及治療,何者為正確?<br>(A) 胰臟全切除,效果最好,但會造成糖尿病<br>(B) 應該做大範圍的切除:包括部分肝臟,腹腔內之淋巴腺切除(包括主動脈、下腔大靜脈附近的淋巴腺)<br>(C) 約 15 - 20%切除率<br>(D) 術後化學治療平均之反應率(response rate)大於 90%</p>
+      <details class="rev"><summary class="toggle"></summary><div class="reveal"><div class="ans">正確答案：(C) 約 15 - 20% 切除率</div><p>• 胰腺癌初診斷時僅約 15～20% 病患具有開刀切除機會。</p><div class="src">出處：BM110 期末考 第63題（郭功楷 ppt pg.5）</div></div></details>
+    </div>
+  </section>
+  <footer>
+    <p><b>高醫肝膽胰外科｜王森稔／郭功楷老師 胰臟與膽道外科題庫全集完成</b>　共 12 題。</p>
+  </footer>
+  </main>
+</div>
+</div>
+
+<script>
+  (function(){
+    document.querySelectorAll('.tw table').forEach(function(t){
+      var ths = t.querySelectorAll('thead th');
+      if(!ths.length) return;
+      var labels = Array.prototype.map.call(ths, function(th){
+        return th.textContent.replace(/\u3000/g,'').trim();
+      });
+      t.querySelectorAll('tbody tr').forEach(function(tr){
+        Array.prototype.forEach.call(tr.children, function(td, i){
+          if(labels[i]) td.setAttribute('data-label', labels[i]);
+        });
+      });
+    });
+  })();
+  (function(){
+    var toc = document.getElementById('tocBox');
+    if(toc && window.matchMedia('(max-width:700px)').matches){
+      toc.removeAttribute('open');
+    }
+  })();
+  var allBtn = document.getElementById('allBtn');
+  if(allBtn){
+    var expanded = false;
+    allBtn.addEventListener('click', function(){
+      expanded = !expanded;
+      document.querySelectorAll('.q details.rev, .quiz details.rev').forEach(function(d){
+        if(expanded){ d.setAttribute('open',''); } else { d.removeAttribute('open'); }
+      });
+      allBtn.textContent = expanded ? '全部收合答案' : '全部展開答案';
+    });
+  }
+</script>
+
+</body>
+</html>

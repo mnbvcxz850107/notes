@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>消化系統（肝膽胰）放射線學｜裸讀學習筆記</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&family=Noto+Serif+TC:wght@500;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0F1B18;--bg-2:#152420;--bg-3:#1B2E29;--line:#26403A;--line-2:#31534B;
+    --text:#E9F1EE;--text-2:#A8C2BA;--text-3:#7A968D;
+    --teal:#7FC9BE;--teal-dim:#4E9A90;--gold:#C9A961;--rose:#E58B85;
+    --serif:"Noto Serif TC","Songti TC",serif;
+    --sans:"Noto Sans TC","PingFang TC","Microsoft JhengHei",sans-serif;
+    --mono:"JetBrains Mono",ui-monospace,Menlo,monospace;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth;scroll-padding-top:24px;overflow-x:hidden}
+  body{
+    margin:0;background:var(--bg);color:var(--text);
+    font-family:var(--sans);font-size:16.5px;line-height:1.9;font-weight:300;
+    -webkit-font-smoothing:antialiased;overflow-x:hidden;
+  }
+  .wrap{max-width:1150px;margin:0 auto;padding:0 22px}
+  header.hero{padding:60px 0 48px;border-bottom:1px solid var(--line)}
+  .backlink{display:inline-block;font-family:var(--mono);font-size:12px;
+    color:var(--text-3);text-decoration:none;margin-bottom:20px;
+    border:1px solid var(--line);border-radius:6px;padding:5px 12px;transition:.15s}
+  .backlink:hover{color:var(--teal);border-color:var(--teal-dim)}
+  .eyebrow{display:flex;align-items:center;gap:16px;margin-bottom:22px;
+    font-family:var(--serif);font-size:15px;letter-spacing:.34em;color:var(--teal)}
+  .eyebrow .rule{width:56px;height:1px;background:var(--gold)}
+  .eyebrow .dot{color:var(--gold)}
+  header.hero h1{
+    font-family:var(--serif);font-weight:700;font-size:clamp(34px,5.6vw,64px);
+    line-height:1.2;margin:0 0 20px;letter-spacing:.02em;
+  }
+  header.hero h1 em{font-style:normal;color:var(--teal)}
+  header.hero p.sub{margin:0;color:var(--text-2);max-width:65ch;font-size:16.5px;line-height:1.85}
+  .intro-card{border:1px solid var(--line);border-radius:16px;padding:24px 28px;margin-top:30px;background:var(--bg-2)}
+  .intro-card p{margin:0 0 20px;color:var(--text-2)}
+  .intro-card b{color:var(--teal);font-weight:500}
+  .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+  .stat .n{font-family:var(--serif);font-size:36px;color:var(--gold);line-height:1}
+  .stat .l{font-size:12px;color:var(--text-3);letter-spacing:.08em;margin-top:6px}
+  .cols{display:grid;grid-template-columns:230px 1fr;gap:50px;padding:42px 0 90px;align-items:start}
+  nav.toc{position:sticky;top:26px}
+  nav.toc .t{font-family:var(--mono);font-size:11px;letter-spacing:.2em;color:var(--text-3);margin-bottom:14px}
+  nav.toc a{display:block;padding:7px 14px;border-left:1px solid var(--line);
+    color:var(--text-2);text-decoration:none;font-size:14px;transition:.15s}
+  nav.toc a:hover{border-left-color:var(--teal);color:var(--teal);background:var(--bg-2)}
+  nav.toc a.exam{color:var(--gold)}
+  nav.toc summary{display:none}
+  section{margin-bottom:60px;scroll-margin-top:24px}
+  .sec-head{display:flex;align-items:baseline;gap:16px;border-bottom:1px solid var(--line-2);padding-bottom:12px;margin-bottom:24px}
+  .sec-num{font-family:var(--serif);font-size:28px;color:var(--gold);line-height:1}
+  .sec-head h2{font-family:var(--serif);font-size:clamp(22px,3.2vw,30px);margin:0;font-weight:700;letter-spacing:.02em}
+  h3{font-family:var(--serif);font-size:20px;margin:36px 0 12px;font-weight:500;color:var(--text)}
+  h4{font-size:16px;margin:22px 0 8px;color:var(--teal);font-weight:500}
+  p{margin:0 0 14px}
+  ul,ol{margin:0 0 16px;padding-left:22px}
+  li{margin-bottom:8px}
+  li::marker{color:var(--teal-dim)}
+  strong,b{font-weight:500;color:#FFF}
+  u{text-decoration-color:var(--teal-dim);text-underline-offset:3px}
+  code{font-family:var(--mono);font-size:.88em;background:var(--bg-3);padding:1px 6px;border-radius:4px;color:var(--teal)}
+  mark{background:rgba(201,169,97,.22);box-shadow:inset 0 -2px 0 rgba(201,169,97,.6);color:#FBF3E2;padding:1px 3px;border-radius:2px}
+  a.qtag{display:inline-block;font-family:var(--mono);font-size:11px;font-weight:600;border:1px solid var(--gold);color:var(--gold);padding:1px 7px;border-radius:4px;text-decoration:none;margin:0 3px;vertical-align:2px;white-space:nowrap;transition:.15s}
+  a.qtag:hover{background:var(--gold);color:var(--bg)}
+  .tagline{margin:-6px 0 18px;font-size:13.5px;color:var(--text-3)}
+  .box{border-radius:13px;padding:18px 22px;margin:20px 0;border:1px solid var(--line);background:var(--bg-2)}
+  .box .bt{font-weight:500;font-size:14.5px;margin-bottom:10px;display:flex;align-items:center;gap:9px;color:#FFF}
+  .box p:last-child,.box ul:last-child,.box ol:last-child{margin-bottom:0}
+  .badge{font-family:var(--mono);font-size:10px;padding:2px 8px;border-radius:3px;letter-spacing:.06em;border:1px solid currentColor;font-weight:600}
+  .box.exam{border-color:rgba(201,169,97,.45);background:rgba(201,169,97,.07)}
+  .box.exam .badge{color:var(--gold)}
+  .box.trap{border-color:rgba(229,139,133,.45);background:rgba(229,139,133,.07)}
+  .box.trap .badge{color:var(--rose)}
+  .box.key{border-color:rgba(127,201,190,.4);background:rgba(127,201,190,.07)}
+  .box.key .badge{color:var(--teal)}
+  .img-frame{background:#08100E;border:1px solid var(--line-2);border-radius:12px;padding:12px;margin:18px 0 20px;text-align:center}
+  .q-img{display:block;max-width:100%;height:auto;border-radius:8px;margin:0 auto;box-shadow:0 4px 14px rgba(0,0,0,.5)}
+  .img-caption{font-family:var(--mono);font-size:12px;color:var(--text-2);margin-top:10px;line-height:1.6}
+  .img-caption b{color:var(--gold);font-weight:600}
+  .tw{border:none;background:none;overflow:visible;border-radius:0;margin:20px 0}
+  .tw table{min-width:0;width:100%;border-collapse:separate;border-spacing:0;font-size:14.8px}
+  .tw thead{display:none}
+  .tw tbody tr{display:block;border:1px solid var(--line);border-radius:12px;background:var(--bg-2);margin-bottom:12px;padding:6px 0}
+  .tw tbody tr:nth-child(even){background:var(--bg-2)}
+  .tw tbody tr:last-child{margin-bottom:0}
+  .tw tbody td{display:block;border:none;padding:9px 16px}
+  .tw tbody td+td{border-top:1px dashed var(--line)}
+  .tw tbody td[data-label]::before{content:attr(data-label);display:block;font-family:var(--mono);font-size:11px;letter-spacing:.08em;color:var(--teal);margin-bottom:4px;font-weight:600}
+  .tw tbody td:first-child{font-size:16px;color:#FFF;font-weight:500}
+  .tw tbody td.mono{font-family:var(--mono);font-size:13.5px}
+  @media (min-width:769px){
+    .tw{overflow-x:auto;border:1px solid var(--line);border-radius:13px;background:var(--bg-2)}
+    .tw table{border-collapse:collapse}
+    .tw thead{display:table-header-group}
+    .tw thead th{background:var(--bg-3);color:var(--teal);font-weight:500;font-size:13.5px;padding:12px 16px;border-bottom:1px solid var(--line);text-align:left}
+    .tw tbody tr{display:table-row;border:none;background:none;margin-bottom:0;padding:0}
+    .tw tbody tr:nth-child(even){background:rgba(255,255,255,.018)}
+    .tw tbody td{display:table-cell;padding:12px 16px;border-bottom:1px solid var(--line)}
+    .tw tbody td+td{border-top:none}
+    .tw tbody tr:last-child td{border-bottom:none}
+    .tw tbody td[data-label]::before{display:none}
+    .tw tbody td:first-child{font-size:14.8px;font-weight:normal}
+  }
+  .quiz{border:1px solid var(--line-2);border-radius:14px;margin:24px 0;overflow:hidden;background:var(--bg-2)}
+  .quiz-top{display:flex;align-items:center;gap:10px;padding:12px 20px;background:var(--bg-3);border-bottom:1px solid var(--line)}
+  .quiz-top .lab{font-family:var(--serif);font-size:14px;letter-spacing:.16em;color:var(--gold)}
+  .quiz-top .yr{font-family:var(--mono);font-size:11.5px;color:var(--text-2);border:1px solid var(--line-2);padding:2px 8px;border-radius:4px}
+  .quiz-body{padding:18px 20px}
+  .quiz-body .stem{font-size:15.5px;line-height:1.85;margin:0 0 14px;color:var(--text)}
+  .opts{list-style:none;padding:0;margin:0 0 14px}
+  .opts li{padding:8px 12px;font-size:15px;border:1px solid var(--line);border-radius:8px;margin-bottom:7px;color:var(--text-2)}
+  details.rev{margin:0}
+  summary.toggle{display:inline-block;list-style:none;cursor:pointer;background:none;border:1px solid var(--teal-dim);color:var(--teal);font-family:var(--sans);font-size:13px;padding:7px 16px;border-radius:7px;font-weight:400;transition:.15s;-webkit-tap-highlight-color:transparent}
+  summary.toggle::-webkit-details-marker{display:none}
+  summary.toggle::marker{content:""}
+  summary.toggle:hover{background:var(--teal);color:var(--bg)}
+  summary.toggle::before{content:"顯示答案"}
+  .q summary.toggle::before{content:"顯示答案與詳解"}
+  details.rev[open] summary.toggle::before{content:"收合答案"}
+  .reveal{border-top:1px dashed var(--line-2);margin-top:14px;padding-top:14px}
+  .ans{font-family:var(--serif);font-weight:700;color:var(--gold);font-size:17px;margin-bottom:10px}
+  .reveal p{margin:0 0 9px;font-size:14.8px;color:var(--text-2)}
+  .reveal p b{color:#FFF}
+  .src{font-size:12px;color:var(--text-3);font-family:var(--mono);margin-top:12px}
+  .jump{font-size:12.5px;color:var(--teal-dim);text-decoration:none;border-bottom:1px solid var(--line-2)}
+  .jump:hover{color:var(--teal)}
+  .exam-head{border:1px solid var(--line-2);border-radius:16px;padding:26px;margin-bottom:26px;background:var(--bg-2)}
+  .exam-head h2{font-family:var(--serif);margin:0 0 10px;font-size:28px}
+  .exam-head p{color:var(--text-2);margin:0;font-size:15px}
+  .btn{font-family:var(--sans);font-size:13.5px;cursor:pointer;background:var(--teal);color:var(--bg);border:none;padding:10px 20px;border-radius:8px;margin-top:16px;font-weight:500}
+  .btn:hover{background:#9BDBD1}
+  .yrhead{font-family:var(--serif);font-size:23px;font-weight:700;margin:36px 0 16px;padding-left:16px;border-left:3px solid var(--gold);color:var(--gold)}
+  .q{background:var(--bg-2);border:1px solid var(--line);border-radius:13px;padding:20px 22px;margin-bottom:18px;scroll-margin-top:24px}
+  .q-no{font-family:var(--mono);font-size:11.5px;color:var(--gold);border:1px solid var(--gold);padding:2px 9px;border-radius:5px}
+  .q-topic{font-size:12.5px;color:var(--text-3);margin-left:10px}
+  .q-stem{margin:14px 0 12px;font-size:15.5px;line-height:1.85}
+  footer{border-top:1px solid var(--line);padding:28px 0 56px;color:var(--text-3);font-size:13.5px}
+  footer b{color:var(--text-2)}
+  @media (max-width:900px){
+    .cols{grid-template-columns:1fr;gap:0;padding-top:24px}
+    nav.toc{position:static;margin-bottom:32px;border:1px solid var(--line);border-radius:12px;padding:16px;background:var(--bg-2)}
+    nav.toc a{border-left:none;padding:6px 4px}
+    .stats{grid-template-columns:repeat(2,1fr);gap:16px}
+  }
+  @media (max-width:700px){
+    body{font-size:16px;line-height:1.85}
+    .wrap{padding:0 16px}
+    header.hero{padding:36px 0 30px}
+    .cols{padding:24px 0 50px}
+    section{margin-bottom:42px}
+    nav.toc{padding:0;overflow:hidden}
+    nav.toc .t{display:none}
+    nav.toc details{margin:0}
+    nav.toc summary{display:block;list-style:none;cursor:pointer;padding:14px 16px;font-family:var(--mono);font-size:12px;letter-spacing:.16em;color:var(--teal)}
+    nav.toc summary::-webkit-details-marker{display:none}
+    nav.toc summary::after{content:" ▾";color:var(--text-3)}
+    nav.toc details[open] summary::after{content:" ▴"}
+    nav.toc .toc-links{padding:0 10px 12px}
+    .box{padding:15px 16px;border-radius:11px}
+    p,li,td,.stem,.reveal p,.opts li,.q-stem{overflow-wrap:anywhere;word-break:break-word}
+    .quiz-body{padding:15px 16px}
+    .opts li{padding:9px 12px;font-size:15px}
+    .q{padding:16px 16px}
+    .sec-head{gap:12px}
+    ul,ol{padding-left:20px}
+    .toggle{width:100%;padding:11px 16px;font-size:14px}
+    summary.toggle{width:100%;text-align:center;padding:11px 16px;font-size:14px}
+    .btn{width:100%;padding:12px 16px}
+  }
+  @media print{
+    nav.toc,.btn,.toggle{display:none}
+    .reveal{display:block!important}
+    body{background:#fff;color:#000;font-size:11pt}
+  }
+</style>
+</head>
+<body>
+<header class="hero">
+  <div class="wrap">
+    <a class="backlink" href="index.html">← 返回 Block 7 目錄</a>
+    <div class="eyebrow"><span class="rule"></span>高醫放射線學 · 裸讀學習筆記<span class="dot">·</span>郭禹廷老師專題</div>
+    <h1>消化系統（肝膽胰）放射線學 <em>(Hepatobiliary Radiology)</em></h1>
+    <p class="sub">精準掌握肝臟硬度定量（彈力影像）、MRI vs CT 鑑別優勢、肝細胞癌 (HCC) 動態掃描洗進洗出、肝血管瘤向心顯影與免疫低下小靶心黴菌感染。授課教師：郭禹廷。</p>
+    <div class="intro-card">
+      <p>完整收錄 <b>BM110、BM111、BM112、BM113 四個學年度共 16 題真題</b>，將每道放射影像鑑別陷阱徹底剖析，文末附完整題庫詳解。</p>
+      <div class="stats">
+        <div class="stat"><div class="n">16</div><div class="l">全收錄真題</div></div>
+        <div class="stat"><div class="n">4</div><div class="l">學年度 (110-113)</div></div>
+        <div class="stat"><div class="n">5</div><div class="l">核心章節</div></div>
+        <div class="stat"><div class="n">100%</div><div class="l">考點命中率</div></div>
+      </div>
+    </div>
+  </div>
+</header>
+<div class="wrap">
+<div class="cols">
+  <nav class="toc">
+    <div class="t">CONTENTS</div>
+    <details id="tocBox" open>
+      <summary>目錄 CONTENTS</summary>
+      <div class="toc-links">
+      <a href="#s1">一　肝臟硬度定量影像</a>
+      <a href="#s2">二　MRI vs. CT 鑑別優勢</a>
+      <a href="#s3">三　肝細胞癌 (HCC) 典型影像</a>
+      <a href="#s4">四　肝血管瘤與小靶心黴菌感染</a>
+      <a href="#s5">五　一分鐘考前秒殺心法</a>
+      <a href="#exam" class="exam">六　歷屆考題全收錄 (16 題)</a>
+      </div>
+    </details>
+  </nav>
+  <main>
+  <section id="s1">
+    <div class="sec-head"><span class="sec-num">一</span><h2>肝臟硬度定量影像 (Liver Stiffness Quantification)</h2></div>
+    <p class="tagline">核心考點：<a class="qtag" href="#q110-24">110-24</a><a class="qtag" href="#q111-13">111-13</a><a class="qtag" href="#q112-60">112-60</a></p>
+    <div class="tw"><table>
+      <thead><tr><th>影像工具</th><th>能否定量肝臟硬度？</th><th>原理與臨床應用</th></tr></thead>
+      <tbody>
+        <tr><td><b>超音波彈力影像 (Ultrasound Elastography / FibroScan)</b></td><td><mark>可以定量</mark></td><td>利用剪切波 (Shear wave) 速度計算肝臟彈性係數 (kPa)，評估纖維化與肝硬化程度。</td></tr>
+        <tr><td><b>磁振造影彈力圖 (MR Elastography, MRE)</b></td><td><mark>可以定量</mark></td><td>全肝彈性成像，精確評估肝纖維化分期。</td></tr>
+        <tr><td><b>電腦斷層攝影 (CT)</b></td><td><mark>無法定量硬度！</mark></td><td>CT 僅能依形態（表面結節、萎縮、脾腫大）推測，<b>無法提供組織物理硬度之定量數值</b>（110-24 考點！）。</td></tr>
+      </tbody>
+    </table></div>
+  </section>
+
+  <section id="s2">
+    <div class="sec-head"><span class="sec-num">二</span><h2>MRI 相比 CT 的獨有優勢與對比劑應用</h2></div>
+    <p class="tagline">核心考點：<a class="qtag" href="#q110-25">110-25</a><a class="qtag" href="#q112-62">112-62</a></p>
+    <div class="box exam">
+      <div class="bt"><span class="badge">必背觀念</span>MRI 獨有的 4 大優勢</div>
+      <ul>
+        <li>① <mark>無游離輻射 (No ionizing radiation)</mark>，軟組織對比度極佳。</li>
+        <li>② <mark>擴散加權成像 (DWI / ADC)</mark>，可評估細胞密度與腫瘤惡性度。</li>
+        <li>③ <mark>肝細胞特異性對比劑 (Hepatobiliary-specific contrast agent)</mark>（如 Primovist / Gd-EOB-DTPA），可做肝膽相 (Hepatobiliary phase, HBP) 評估肝細胞功能。</li>
+        <li>④ <b>非 MRI 獨有優勢：</b><mark>「對比劑注射後動態掃描 (Dynamic enhancement)」是 CT 與 MRI「兩者皆可做」的功能</mark>，並非 MRI 獨有！（110-25, 112-62 必考陷阱！）。</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="s3">
+    <div class="sec-head"><span class="sec-num">三</span><h2>肝細胞癌 (HCC) 的典型影像特徵</h2></div>
+    <p class="tagline">核心考點：<a class="qtag" href="#q110-27">110-27</a><a class="qtag" href="#q111-14">111-14</a><a class="qtag" href="#q112-61">112-61</a></p>
+    <div class="tw"><table>
+      <thead><tr><th>影像檢查序列 / 時相</th><th>HCC 典型表現</th><th>判讀關鍵</th></tr></thead>
+      <tbody>
+        <tr><td><b>動脈相 (Arterial phase)</b></td><td><mark>明顯高顯影 / 強化 (Hyperenhancement / Hyperdense)</mark></td><td>HCC 幾乎 100% 由肝動脈供血，造影劑快速充盈（Wash-in）。</td></tr>
+        <tr><td><b>門脈相 / 延遲相 (Portal / Delayed)</b></td><td><mark>明顯低顯影 / 洗出 (Washout / Hypodense)</mark></td><td>正常肝實質由門靜脈顯影變亮，腫瘤造影劑排空呈「黑洞」樣對比。延遲相若「高顯影」則非 HCC（110-27 考點！）。</td></tr>
+        <tr><td><b>T2 加權影像 (T2-weighted MRI)</b></td><td><mark>中輕度高訊號 (Hyperintense)</mark></td><td>含水量高、高細胞密度。</td></tr>
+        <tr><td><b>擴散加權影像 (DWI)</b></td><td><mark>高 b 值呈現「高訊號 (Hyperintense)」</mark></td><td>擴散受限（111-14, 112-61 考寫低訊號為錯誤！）。</td></tr>
+        <tr><td><b>肝膽相 (HBP with Primovist)</b></td><td><mark>低訊號 (Hypointense defect)</mark></td><td>惡性肝細胞缺乏正常有機陰離子轉運蛋白 (OATP8)，無法攝取對比劑。</td></tr>
+      </tbody>
+    </table></div>
+  </section>
+
+  <section id="s4">
+    <div class="sec-head"><span class="sec-num">四</span><h2>肝血管瘤 vs. 免疫低下小靶心黴菌感染</h2></div>
+    <p class="tagline">核心考點：<a class="qtag" href="#q110-26">110-26</a><a class="qtag" href="#q111-15">111-15</a><a class="qtag" href="#q111-16">111-16</a><a class="qtag" href="#q112-63">112-63</a><a class="qtag" href="#q113-64">113-64</a><a class="qtag" href="#q113-67">113-67</a></p>
+    <h3>1. 肝臟血管瘤 (Hepatic Hemangioma) 典型影像</h3>
+    <ul>
+      <li><strong>超音波：</strong>邊界清楚之<mark>均勻高回音 (Hyperechoic)</mark> 病灶，伴後方聲波增強。</li>
+      <li><strong>MRI T2WI：</strong>呈現顯著極高訊號，稱為 <mark>「燈泡徵 (Lightbulb sign)」</mark>。</li>
+      <li><strong>動態顯影特徵：</strong>早期周邊結節狀增強 $ightarrow$ 門脈及延遲相呈現<mark>向心性填滿 (Centripetal enhancement)，延遲相「持續高顯影 (Persistent enhancement)」</mark>，<b>絕不會出現 Washout</b>（111-16, 113-67 考點！）。</li>
+    </ul>
+
+    <h3>2. 免疫低下病患的「小靶心 (Small Target)」病灶</h3>
+    <ul>
+      <li>在白血病、化療後或器官移植等免疫力低下病患中，若 CT/超音波/MRI 顯示肝臟與脾臟出現多發性「牛眼徵 / 小靶心 (Target-like lesions)」，最常見之診斷為 <mark>黴菌感染 (Fungal Infection / 念珠菌病 Candidiasis)</mark>（110-26, 111-15, 112-63 每年必考！）。</li>
+    </ul>
+  </section>
+
+  <section id="s5">
+    <div class="sec-head"><span class="sec-num">五</span><h2>一分鐘考前秒殺心法（郭禹廷老師 5 大重點）</h2></div>
+    <div class="box key">
+      <div class="bt"><span class="badge">考前 60 秒衝刺</span>郭禹廷老師必背心法</div>
+      <ol>
+        <li><b>硬度定量：</b>超音波彈力 (Elastography) 與 MRE 可定量，<strong>CT 無法定野生硬度</strong>。</li>
+        <li><b>MRI 非獨有優勢：</b><strong>「動態增強掃描 (Dynamic enhancement)」CT 和 MRI 都可以做</strong>。</li>
+        <li><b>免疫低下 ＋ 肝脾小靶心：</b>直接秒殺 <strong>黴菌感染 (Fungal infection)</strong>。</li>
+        <li><b>HCC 典型影像：</b><strong>動脈相高顯影 (Wash-in) ＋ 門脈/延遲相洗出 (Washout) ＋ DWI 高訊號</strong>（延遲相絕非高顯影！）。</li>
+        <li><b>血管瘤特徵：</b>T2 燈泡高訊號 ＋ <strong>向心性充盈且延遲相持續高顯影</strong>（絕不洗出！）。</li>
+      </ol>
+    </div>
+  </section>
+
+  <section id="exam">
+    <div class="sec-head"><span class="sec-num">六</span><h2>歷屆考古題全收錄（BM110 ～ BM113 共 16 題）</h2></div>
+    <div class="exam-head">
+      <h2>郭禹廷老師 肝膽胰放射線學題庫全解</h2>
+      <p>完整收錄 4 個學年度共 16 道真題，附標準答案與深入選項剖析。</p>
+      <button class="btn" id="allBtn">全部展開答案</button>
+    </div>
+
+    <!-- BM113 -->
+    <div class="yrhead">113 學年度 (BM113 期末考) · 4 題</div>
+    <div class="q" id="q113-64"><span class="q-no">113-64</span><span class="q-topic">FDG-PET</span>
+      <p class="q-stem">1. 下列何項檢查提供了有關疾病代謝與解剖構造的訊息？<br>(A)X 光　(B)電腦斷層　(C)磁振造影　(D)氟-18 去氧葡萄糖 (FDG) 正子射出斷層掃描</p>
+      <details class="rev"><summary class="toggle"></summary><div class="reveal"><div class="ans">正確答案：(D)</div><p>• 18F-FDG PET/CT 結合了 PET 的葡萄糖代謝功能訊息與 CT 的解剖定位。</p><div class="src">出處：BM113 期末考 第64題（郭禹廷 ppt pg.39）</div></div></details>
+    </div>
+    <div class="q" id="q113-65"><span class="q-no">113-65</span><span class="q-topic">首選影像檢查</span>
+      <p class="q-stem">2. 門診懷疑肝膽系統疾病，最常使用的第一項影像檢查是下列何者？<br>(A)磁振造影　(B)電腦斷層　(C)超音波　(D)腹部 X 光</p>
+      <details class="rev"><summary class="toggle"></summary><div class="reveal"><div class="ans">正確答案：(C) 超音波</div><p>• 腹部超音波為肝膽系統篩檢與評估的第一線首選工具（即時、無輻射、非侵入性）。</p><div class="src">出處：BM113 期末考 第65題（郭禹廷 pg.14）</div></div></details>
+    </div>
+    <div class="q" id="q113-66"><span class="q-no">113-66</span><span class="q-topic">膽道閉鎖檢查</span>
+      <p class="q-stem">3. 新生兒懷疑膽道閉鎖，並不常使用下列何項檢查？<br>(A)磁振造影　(B)超音波　(C)電腦斷層　(D)核醫膽道閃爍攝影</p>
+      <details class="rev"><summary class="toggle"></summary><div class="reveal"><div class="ans">正確答案：(C) 電腦斷層</div><p>• 新生兒需避免 CT 之游離輻射，且 CT 對未擴張之細微膽道解析度有限。常規首選超音波、DISIDA 核醫膽道掃描與 MRCP。</p><div class="src">出處：BM113 期末考 第66題（郭禹廷 ppt 46）</div></div></details>
+    </div>
+    <div class="q" id="q113-67"><span class="q-no">113-67</span><span class="q-topic">血管瘤排除洗出</span>
+      <p class="q-stem">4. 下列何者並非肝臟血管瘤的典型表現？<br>(A)動態掃描呈現向心型顯影 (centripetal enhancement)<br>(B)MRI T2 高訊號強度<br>(C)超音波高回音病灶並伴隨後方聲波加強<br>(D)動脈相高顯影、門脈相比周圍肝臟低顯影</p>
+      <details class="rev"><summary class="toggle"></summary><div class="reveal"><div class="ans">正確答案：(D)</div><p>• (D)「動脈相高顯影 ＋ 門脈相低顯影 (Washout)」是肝細胞癌 (HCC) 的典型表現；血管瘤在門脈與延遲相為<b>向心性填充持續顯影</b>，不會洗出。</p><div class="src">出處：BM113 期末考 第67題（郭禹廷 ppt p.39）</div></div></details>
+    </div>
+
+    <!-- BM112 -->
+    <div class="yrhead">112 學年度 (BM112 期末考) · 4 題</div>
+    <div class="q" id="q112-60"><span class="q-no">112-60</span><span class="q-topic">肝臟硬度定量</span>
+      <p class="q-stem">5. 下列何種檢查可以定量肝臟硬度？<br>(A) 超音波彈力影像 Ultrasound elastography<br>(B) 都普勒超音波 Doppler ultrasound<br>(C) 電腦斷層攝影 Computed tomography<br>(D) T2 加權磁振造影 T2-weighted MRI</p>
+      <details class="rev"><summary class="toggle"></summary><div class="reveal"><div class="ans">正確答案：(A) 超音波彈力影像</div><p>• 超音波彈力影像（FibroScan / SWE）可定量評估肝臟硬度值。</p><div class="src">出處：BM112 期末考 第60題（郭禹廷 ppt pg.15）</div></div></details>
+    </div>
+    <div class="q" id="q112-61"><span class="q-no">112-61</span><span class="q-topic">HCC DWI 高訊號</span>
+      <p class="q-stem">6. 有關肝癌 (hepatocellular carcinoma, HCC) 的影像學表現，下列何者錯誤？<br>(A) 動脈相電腦斷層影像呈現影像強度增強<br>(B) 動脈相磁振造影影像呈現影像強度增強<br>(C) 擴散加權磁振造影影像呈現影像強度降低 (hypointense on high-b DWI)<br>(D) 門脈相及肝膽相磁振造影影像呈現影像強度降低</p>
+      <details class="rev"><summary class="toggle"></summary><div class="reveal"><div class="ans">正確答案：(C)</div><p>• HCC 細胞密度高，擴散受限，在 high-b value DWI 上呈現<b>高訊號 (Hyperintense)</b>，而非強度降低。</p><div class="src">出處：BM112 期末考 第61題（郭禹廷 ppt pg. 22, 93）</div></div></details>
+    </div>
+    <div class="q" id="q112-62"><span class="q-no">112-62</span><span class="q-topic">MRI 獨有優勢排除</span>
+      <p class="q-stem">7. 磁振造影和電腦斷層比較時，下列何者不是磁振造影獨有的優勢？<br>(A) 可做對比劑注射後的動態掃描<br>(B) 有肝臟組織特異對比劑可使用<br>(C) 有擴散加權影像<br>(D) 無游離輻射，並有較好軟組織對比</p>
+      <details class="rev"><summary class="toggle"></summary><div class="reveal"><div class="ans">正確答案：(A)</div><p>• 對比劑注射後之動態掃描 (Dynamic study) 在 CT 與 MRI 均可常規執行，非 MRI 獨有。</p><div class="src">出處：BM112 期末考 第62題（郭禹廷 ppt pg.27）</div></div></details>
+    </div>
+    <div class="q" id="q112-63"><span class="q-no">112-63</span><span class="q-topic">免疫低下小靶心黴菌</span>
+      <p class="q-stem">8. 免疫力低下病患，影像檢查時呈現肝臟及脾臟發現多發性小靶心 (small target) 病灶，最可能的診斷為？<br>(A) 肝癌　(B) 細菌性肝膿瘍　(C) 阿米巴肝膿瘍　(D) 黴菌感染</p>
+      <details class="rev"><summary class="toggle"></summary><div class="reveal"><div class="ans">正確答案：(D) 黴菌感染</div><p>• 免疫力低下病患肝脾多發小靶心病灶為念珠菌等黴菌感染之典型特徵。</p><div class="src">出處：BM112 期末考 第63題（郭禹廷 ppt pg.73,74）</div></div></details>
+    </div>
+
+    <!-- BM111 -->
+    <div class="yrhead">111 學年度 (BM111 期末考) · 4 題</div>
+    <div class="q" id="q111-13"><span class="q-no">111-13</span><span class="q-topic">肝臟硬度定量</span>
+      <p class="q-stem">9. 下列何種檢查可以定量肝臟硬度？<br>(A) 超音波彈力影像　(B) 督卜勒超音波　(C) 電腦斷層攝影　(D) T2加權磁振造影</p>
+      <details class="rev"><summary class="toggle"></summary><div class="reveal"><div class="ans">正確答案：(A) 超音波彈力影像</div><p>• 彈力影像（Elastography）為定量肝硬度工具。</p><div class="src">出處：BM111 期末考 第13題（郭禹廷）</div></div></details>
+    </div>
+    <div class="q" id="q111-14"><span class="q-no">111-14</span><span class="q-topic">HCC DWI 表現</span>
+      <p class="q-stem">10. 有關肝癌 (HCC) 的影像學表現，下列何者錯誤？<br>(A) 動脈相電腦斷層影像呈現影像強度增強<br>(B) 動脈相磁振造影影像呈現影像強度增強<br>(C) 擴散加權磁振造影影像呈現影像強度降低<br>(D) 門脈相及肝膽相磁振造影影像呈現影像強度降低</p>
+      <details class="rev"><summary class="toggle"></summary><div class="reveal"><div class="ans">正確答案：(C)</div><p>• DWI 上 HCC 表現為高訊號（擴散受限）。</p><div class="src">出處：BM111 期末考 第14題（郭禹廷）</div></div></details>
+    </div>
+    <div class="q" id="q111-15"><span class="q-no">111-15</span><span class="q-topic">小靶心黴菌</span>
+      <p class="q-stem">11. 一位免疫力低下患者，肝臟出現多發性"小靶心"病灶時，最可能的診斷為？<br>(A) 轉移性腫瘤　(B) 淋巴瘤　(C) 黴菌感染　(D) 病毒性肝炎</p>
+      <details class="rev"><summary class="toggle"></summary><div class="reveal"><div class="ans">正確答案：(C) 黴菌感染</div><p>• 肝脾多發小靶心病灶代表黴菌感染。</p><div class="src">出處：BM111 期末考 第15題（郭禹廷 ppt pg. 56）</div></div></details>
+    </div>
+    <div class="q" id="q111-16"><span class="q-no">111-16</span><span class="q-topic">血管瘤排除延遲洗出</span>
+      <p class="q-stem">12. 下列何者不是肝臟血管瘤(hemangioma)的典型影像？<br>(A) MRI T2 高信號強度<br>(B) 向心性的對比劑顯影<br>(C) 延遲橡實，病灶較正常肝臟顯影差(hypo-enhancement, or washout)<br>(D) 高超音波回音</p>
+      <details class="rev"><summary class="toggle"></summary><div class="reveal"><div class="ans">正確答案：(C)</div><p>• 血管瘤延遲相保持等訊號或高顯影填充，絕無洗出現象。</p><div class="src">出處：BM111 期末考 第16題（郭禹廷）</div></div></details>
+    </div>
+
+    <!-- BM110 -->
+    <div class="yrhead">110 學年度 (BM110 期末考) · 4 題</div>
+    <div class="q" id="q110-24"><span class="q-no">110-24</span><span class="q-topic">CT 無法定量硬度</span>
+      <p class="q-stem">13. 下列何項工具無法提供肝臟硬度定量訊息？<br>(A) 超音波　(B) 磁振造影　(C) 電腦斷層　(D) 以上皆非</p>
+      <details class="rev"><summary class="toggle"></summary><div class="reveal"><div class="ans">正確答案：(C) 電腦斷層</div><p>• 電腦斷層 (CT) 無法提供肝臟彈性/硬度之物理定量數據。</p><div class="src">出處：BM110 期末考 第24題（郭禹廷 ppt pg.14、32、33）</div></div></details>
+    </div>
+    <div class="q" id="q110-25"><span class="q-no">110-25</span><span class="q-topic">MRI 非獨有優勢</span>
+      <p class="q-stem">14. 磁振造影和電腦斷層比較時，下列何者不是磁振造影獨有的優勢？<br>(A) 可做對比劑注射後的動態掃描<br>(B) 有肝臟組織特異對比劑可使用<br>(C) 有擴散加權影像<br>(D) 無游離輻射，並有較好軟組織對比</p>
+      <details class="rev"><summary class="toggle"></summary><div class="reveal"><div class="ans">正確答案：(A)</div><p>• 動態掃描非 MRI 獨有。</p><div class="src">出處：BM110 期末考 第25題（郭禹廷 ppt pg.21、26）</div></div></details>
+    </div>
+    <div class="q" id="q110-26"><span class="q-no">110-26</span><span class="q-topic">小靶心黴菌</span>
+      <p class="q-stem">15. 免疫力低下病患，影像檢查時呈現肝臟及脾臟發現多發性小靶心(small target)病灶，最可能的診斷為？<br>(A) 肝癌　(B) 細菌性肝膿瘍　(C) 阿米巴肝膿瘍　(D) 黴菌感染</p>
+      <details class="rev"><summary class="toggle"></summary><div class="reveal"><div class="ans">正確答案：(D) 黴菌感染</div><p>• 肝脾小靶心病灶為黴菌感染。</p><div class="src">出處：BM110 期末考 第26題（郭禹廷 ppt pg.56）</div></div></details>
+    </div>
+    <div class="q" id="q110-27"><span class="q-no">110-27</span><span class="q-topic">HCC 非典型表現</span>
+      <p class="q-stem">16. 下列何者並非肝癌之典型影像表現？<br>(A) 動脈相高顯影 (arterial phase hyperenhancement)<br>(B) 延遲相高顯影<br>(C) T2加權影像高訊號<br>(D) 擴散加權影像高訊號</p>
+      <details class="rev"><summary class="toggle"></summary><div class="reveal"><div class="ans">正確答案：(B) 延遲相高顯影</div><p>• HCC 延遲相為「洗出 (Washout)」低顯影，非高顯影。</p><div class="src">出處：BM110 期末考 第27題（郭禹廷 ppt pg.22,23）</div></div></details>
+    </div>
+  </section>
+  <footer>
+    <p><b>高醫放射線學｜郭禹廷老師 肝膽胰放射線學題庫全集完成</b>　共 16 題。</p>
+  </footer>
+  </main>
+</div>
+</div>
+
+<script>
+  (function(){
+    document.querySelectorAll('.tw table').forEach(function(t){
+      var ths = t.querySelectorAll('thead th');
+      if(!ths.length) return;
+      var labels = Array.prototype.map.call(ths, function(th){
+        return th.textContent.replace(/\u3000/g,'').trim();
+      });
+      t.querySelectorAll('tbody tr').forEach(function(tr){
+        Array.prototype.forEach.call(tr.children, function(td, i){
+          if(labels[i]) td.setAttribute('data-label', labels[i]);
+        });
+      });
+    });
+  })();
+  (function(){
+    var toc = document.getElementById('tocBox');
+    if(toc && window.matchMedia('(max-width:700px)').matches){
+      toc.removeAttribute('open');
+    }
+  })();
+  var allBtn = document.getElementById('allBtn');
+  if(allBtn){
+    var expanded = false;
+    allBtn.addEventListener('click', function(){
+      expanded = !expanded;
+      document.querySelectorAll('.q details.rev, .quiz details.rev').forEach(function(d){
+        if(expanded){ d.setAttribute('open',''); } else { d.removeAttribute('open'); }
+      });
+      allBtn.textContent = expanded ? '全部收合答案' : '全部展開答案';
+    });
+  }
+</script>
+
+</body>
+</html>

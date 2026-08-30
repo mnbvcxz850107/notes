@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>肝腫瘤和創傷的手術治療｜裸讀學習筆記</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&family=Noto+Serif+TC:wght@500;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0F1B18;--bg-2:#152420;--bg-3:#1B2E29;--line:#26403A;--line-2:#31534B;
+    --text:#E9F1EE;--text-2:#A8C2BA;--text-3:#7A968D;
+    --teal:#7FC9BE;--teal-dim:#4E9A90;--gold:#C9A961;--rose:#E58B85;
+    --serif:"Noto Serif TC","Songti TC",serif;
+    --sans:"Noto Sans TC","PingFang TC","Microsoft JhengHei",sans-serif;
+    --mono:"JetBrains Mono",ui-monospace,Menlo,monospace;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth;scroll-padding-top:24px;overflow-x:hidden}
+  body{
+    margin:0;background:var(--bg);color:var(--text);
+    font-family:var(--sans);font-size:16.5px;line-height:1.9;font-weight:300;
+    -webkit-font-smoothing:antialiased;overflow-x:hidden;
+  }
+  .wrap{max-width:1150px;margin:0 auto;padding:0 22px}
+  header.hero{padding:60px 0 48px;border-bottom:1px solid var(--line)}
+  .backlink{display:inline-block;font-family:var(--mono);font-size:12px;
+    color:var(--text-3);text-decoration:none;margin-bottom:20px;
+    border:1px solid var(--line);border-radius:6px;padding:5px 12px;transition:.15s}
+  .backlink:hover{color:var(--teal);border-color:var(--teal-dim)}
+  .eyebrow{display:flex;align-items:center;gap:16px;margin-bottom:22px;
+    font-family:var(--serif);font-size:15px;letter-spacing:.34em;color:var(--teal)}
+  .eyebrow .rule{width:56px;height:1px;background:var(--gold)}
+  .eyebrow .dot{color:var(--gold)}
+  header.hero h1{
+    font-family:var(--serif);font-weight:700;font-size:clamp(34px,5.6vw,64px);
+    line-height:1.2;margin:0 0 20px;letter-spacing:.02em;
+  }
+  header.hero h1 em{font-style:normal;color:var(--teal)}
+  header.hero p.sub{margin:0;color:var(--text-2);max-width:65ch;font-size:16.5px;line-height:1.85}
+  .intro-card{border:1px solid var(--line);border-radius:16px;padding:24px 28px;margin-top:30px;background:var(--bg-2)}
+  .intro-card p{margin:0 0 20px;color:var(--text-2)}
+  .intro-card b{color:var(--teal);font-weight:500}
+  .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+  .stat .n{font-family:var(--serif);font-size:36px;color:var(--gold);line-height:1}
+  .stat .l{font-size:12px;color:var(--text-3);letter-spacing:.08em;margin-top:6px}
+  .cols{display:grid;grid-template-columns:230px 1fr;gap:50px;padding:42px 0 90px;align-items:start}
+  nav.toc{position:sticky;top:26px}
+  nav.toc .t{font-family:var(--mono);font-size:11px;letter-spacing:.2em;color:var(--text-3);margin-bottom:14px}
+  nav.toc a{display:block;padding:7px 14px;border-left:1px solid var(--line);
+    color:var(--text-2);text-decoration:none;font-size:14px;transition:.15s}
+  nav.toc a:hover{border-left-color:var(--teal);color:var(--teal);background:var(--bg-2)}
+  nav.toc a.exam{color:var(--gold)}
+  nav.toc summary{display:none}
+  section{margin-bottom:60px;scroll-margin-top:24px}
+  .sec-head{display:flex;align-items:baseline;gap:16px;border-bottom:1px solid var(--line-2);padding-bottom:12px;margin-bottom:24px}
+  .sec-num{font-family:var(--serif);font-size:28px;color:var(--gold);line-height:1}
+  .sec-head h2{font-family:var(--serif);font-size:clamp(22px,3.2vw,30px);margin:0;font-weight:700;letter-spacing:.02em}
+  h3{font-family:var(--serif);font-size:20px;margin:36px 0 12px;font-weight:500;color:var(--text)}
+  h4{font-size:16px;margin:22px 0 8px;color:var(--teal);font-weight:500}
+  p{margin:0 0 14px}
+  ul,ol{margin:0 0 16px;padding-left:22px}
+  li{margin-bottom:8px}
+  li::marker{color:var(--teal-dim)}
+  strong,b{font-weight:500;color:#FFF}
+  u{text-decoration-color:var(--teal-dim);text-underline-offset:3px}
+  code{font-family:var(--mono);font-size:.88em;background:var(--bg-3);padding:1px 6px;border-radius:4px;color:var(--teal)}
+  mark{background:rgba(201,169,97,.22);box-shadow:inset 0 -2px 0 rgba(201,169,97,.6);color:#FBF3E2;padding:1px 3px;border-radius:2px}
+  a.qtag{display:inline-block;font-family:var(--mono);font-size:11px;font-weight:600;border:1px solid var(--gold);color:var(--gold);padding:1px 7px;border-radius:4px;text-decoration:none;margin:0 3px;vertical-align:2px;white-space:nowrap;transition:.15s}
+  a.qtag:hover{background:var(--gold);color:var(--bg)}
+  .tagline{margin:-6px 0 18px;font-size:13.5px;color:var(--text-3)}
+  .box{border-radius:13px;padding:18px 22px;margin:20px 0;border:1px solid var(--line);background:var(--bg-2)}
+  .box .bt{font-weight:500;font-size:14.5px;margin-bottom:10px;display:flex;align-items:center;gap:9px;color:#FFF}
+  .box p:last-child,.box ul:last-child,.box ol:last-child{margin-bottom:0}
+  .badge{font-family:var(--mono);font-size:10px;padding:2px 8px;border-radius:3px;letter-spacing:.06em;border:1px solid currentColor;font-weight:600}
+  .box.exam{border-color:rgba(201,169,97,.45);background:rgba(201,169,97,.07)}
+  .box.exam .badge{color:var(--gold)}
+  .box.trap{border-color:rgba(229,139,133,.45);background:rgba(229,139,133,.07)}
+  .box.trap .badge{color:var(--rose)}
+  .box.key{border-color:rgba(127,201,190,.4);background:rgba(127,201,190,.07)}
+  .box.key .badge{color:var(--teal)}
+  .img-frame{background:#08100E;border:1px solid var(--line-2);border-radius:12px;padding:12px;margin:18px 0 20px;text-align:center}
+  .q-img{display:block;max-width:100%;height:auto;border-radius:8px;margin:0 auto;box-shadow:0 4px 14px rgba(0,0,0,.5)}
+  .img-caption{font-family:var(--mono);font-size:12px;color:var(--text-2);margin-top:10px;line-height:1.6}
+  .img-caption b{color:var(--gold);font-weight:600}
+  .tw{border:none;background:none;overflow:visible;border-radius:0;margin:20px 0}
+  .tw table{min-width:0;width:100%;border-collapse:separate;border-spacing:0;font-size:14.8px}
+  .tw thead{display:none}
+  .tw tbody tr{display:block;border:1px solid var(--line);border-radius:12px;background:var(--bg-2);margin-bottom:12px;padding:6px 0}
+  .tw tbody tr:nth-child(even){background:var(--bg-2)}
+  .tw tbody tr:last-child{margin-bottom:0}
+  .tw tbody td{display:block;border:none;padding:9px 16px}
+  .tw tbody td+td{border-top:1px dashed var(--line)}
+  .tw tbody td[data-label]::before{content:attr(data-label);display:block;font-family:var(--mono);font-size:11px;letter-spacing:.08em;color:var(--teal);margin-bottom:4px;font-weight:600}
+  .tw tbody td:first-child{font-size:16px;color:#FFF;font-weight:500}
+  .tw tbody td.mono{font-family:var(--mono);font-size:13.5px}
+  @media (min-width:769px){
+    .tw{overflow-x:auto;border:1px solid var(--line);border-radius:13px;background:var(--bg-2)}
+    .tw table{border-collapse:collapse}
+    .tw thead{display:table-header-group}
+    .tw thead th{background:var(--bg-3);color:var(--teal);font-weight:500;font-size:13.5px;padding:12px 16px;border-bottom:1px solid var(--line);text-align:left}
+    .tw tbody tr{display:table-row;border:none;background:none;margin-bottom:0;padding:0}
+    .tw tbody tr:nth-child(even){background:rgba(255,255,255,.018)}
+    .tw tbody td{display:table-cell;padding:12px 16px;border-bottom:1px solid var(--line)}
+    .tw tbody td+td{border-top:none}
+    .tw tbody tr:last-child td{border-bottom:none}
+    .tw tbody td[data-label]::before{display:none}
+    .tw tbody td:first-child{font-size:14.8px;font-weight:normal}
+  }
+  .quiz{border:1px solid var(--line-2);border-radius:14px;margin:24px 0;overflow:hidden;background:var(--bg-2)}
+  .quiz-top{display:flex;align-items:center;gap:10px;padding:12px 20px;background:var(--bg-3);border-bottom:1px solid var(--line)}
+  .quiz-top .lab{font-family:var(--serif);font-size:14px;letter-spacing:.16em;color:var(--gold)}
+  .quiz-top .yr{font-family:var(--mono);font-size:11.5px;color:var(--text-2);border:1px solid var(--line-2);padding:2px 8px;border-radius:4px}
+  .quiz-body{padding:18px 20px}
+  .quiz-body .stem{font-size:15.5px;line-height:1.85;margin:0 0 14px;color:var(--text)}
+  .opts{list-style:none;padding:0;margin:0 0 14px}
+  .opts li{padding:8px 12px;font-size:15px;border:1px solid var(--line);border-radius:8px;margin-bottom:7px;color:var(--text-2)}
+  details.rev{margin:0}
+  summary.toggle{display:inline-block;list-style:none;cursor:pointer;background:none;border:1px solid var(--teal-dim);color:var(--teal);font-family:var(--sans);font-size:13px;padding:7px 16px;border-radius:7px;font-weight:400;transition:.15s;-webkit-tap-highlight-color:transparent}
+  summary.toggle::-webkit-details-marker{display:none}
+  summary.toggle::marker{content:""}
+  summary.toggle:hover{background:var(--teal);color:var(--bg)}
+  summary.toggle::before{content:"顯示答案"}
+  .q summary.toggle::before{content:"顯示答案與詳解"}
+  details.rev[open] summary.toggle::before{content:"收合答案"}
+  .reveal{border-top:1px dashed var(--line-2);margin-top:14px;padding-top:14px}
+  .ans{font-family:var(--serif);font-weight:700;color:var(--gold);font-size:17px;margin-bottom:10px}
+  .reveal p{margin:0 0 9px;font-size:14.8px;color:var(--text-2)}
+  .reveal p b{color:#FFF}
+  .src{font-size:12px;color:var(--text-3);font-family:var(--mono);margin-top:12px}
+  .jump{font-size:12.5px;color:var(--teal-dim);text-decoration:none;border-bottom:1px solid var(--line-2)}
+  .jump:hover{color:var(--teal)}
+  .exam-head{border:1px solid var(--line-2);border-radius:16px;padding:26px;margin-bottom:26px;background:var(--bg-2)}
+  .exam-head h2{font-family:var(--serif);margin:0 0 10px;font-size:28px}
+  .exam-head p{color:var(--text-2);margin:0;font-size:15px}
+  .btn{font-family:var(--sans);font-size:13.5px;cursor:pointer;background:var(--teal);color:var(--bg);border:none;padding:10px 20px;border-radius:8px;margin-top:16px;font-weight:500}
+  .btn:hover{background:#9BDBD1}
+  .yrhead{font-family:var(--serif);font-size:23px;font-weight:700;margin:36px 0 16px;padding-left:16px;border-left:3px solid var(--gold);color:var(--gold)}
+  .q{background:var(--bg-2);border:1px solid var(--line);border-radius:13px;padding:20px 22px;margin-bottom:18px;scroll-margin-top:24px}
+  .q-no{font-family:var(--mono);font-size:11.5px;color:var(--gold);border:1px solid var(--gold);padding:2px 9px;border-radius:5px}
+  .q-topic{font-size:12.5px;color:var(--text-3);margin-left:10px}
+  .q-stem{margin:14px 0 12px;font-size:15.5px;line-height:1.85}
+  footer{border-top:1px solid var(--line);padding:28px 0 56px;color:var(--text-3);font-size:13.5px}
+  footer b{color:var(--text-2)}
+  @media (max-width:900px){
+    .cols{grid-template-columns:1fr;gap:0;padding-top:24px}
+    nav.toc{position:static;margin-bottom:32px;border:1px solid var(--line);border-radius:12px;padding:16px;background:var(--bg-2)}
+    nav.toc a{border-left:none;padding:6px 4px}
+    .stats{grid-template-columns:repeat(2,1fr);gap:16px}
+  }
+  @media (max-width:700px){
+    body{font-size:16px;line-height:1.85}
+    .wrap{padding:0 16px}
+    header.hero{padding:36px 0 30px}
+    .cols{padding:24px 0 50px}
+    section{margin-bottom:42px}
+    nav.toc{padding:0;overflow:hidden}
+    nav.toc .t{display:none}
+    nav.toc details{margin:0}
+    nav.toc summary{display:block;list-style:none;cursor:pointer;padding:14px 16px;font-family:var(--mono);font-size:12px;letter-spacing:.16em;color:var(--teal)}
+    nav.toc summary::-webkit-details-marker{display:none}
+    nav.toc summary::after{content:" ▾";color:var(--text-3)}
+    nav.toc details[open] summary::after{content:" ▴"}
+    nav.toc .toc-links{padding:0 10px 12px}
+    .box{padding:15px 16px;border-radius:11px}
+    p,li,td,.stem,.reveal p,.opts li,.q-stem{overflow-wrap:anywhere;word-break:break-word}
+    .quiz-body{padding:15px 16px}
+    .opts li{padding:9px 12px;font-size:15px}
+    .q{padding:16px 16px}
+    .sec-head{gap:12px}
+    ul,ol{padding-left:20px}
+    .toggle{width:100%;padding:11px 16px;font-size:14px}
+    summary.toggle{width:100%;text-align:center;padding:11px 16px;font-size:14px}
+    .btn{width:100%;padding:12px 16px}
+  }
+  @media print{
+    nav.toc,.btn,.toggle{display:none}
+    .reveal{display:block!important}
+    body{background:#fff;color:#000;font-size:11pt}
+  }
+</style>
+</head>
+<body>
+<header class="hero">
+  <div class="wrap">
+    <a class="backlink" href="index.html">← 返回 Block 7 目錄</a>
+    <div class="eyebrow"><span class="rule"></span>高醫肝膽胰外科 · 裸讀學習筆記<span class="dot">·</span>莊世昌老師專題</div>
+    <h1>肝腫瘤和創傷的手術治療 <em>(Liver Surgery & Trauma)</em></h1>
+    <p class="sub">精準掌握肝臟 5 大固定韌帶、Couinaud 解剖分葉與切除範圍、Makuuchi 肝切除決策準則、ALPPS 分階段切除、Pringle 血管阻斷、腹腔鏡難度分區與 FAST 創傷超音波。授課教師：莊世昌。</p>
+    <div class="intro-card">
+      <p>完整收錄 <b>BM110、BM111、BM112、BM113 四個學年度共 16 題真題</b>，將術中血流控制、創傷超音波擺位與分階段切除術核心觀念徹底拆解，文末附完整題庫詳解。</p>
+      <div class="stats">
+        <div class="stat"><div class="n">16</div><div class="l">全收錄真題</div></div>
+        <div class="stat"><div class="n">4</div><div class="l">學年度 (110-113)</div></div>
+        <div class="stat"><div class="n">5</div><div class="l">核心章節</div></div>
+        <div class="stat"><div class="n">100%</div><div class="l">考點命中率</div></div>
+      </div>
+    </div>
+  </div>
+</header>
+<div class="wrap">
+<div class="cols">
+  <nav class="toc">
+    <div class="t">CONTENTS</div>
+    <details id="tocBox" open>
+      <summary>目錄 CONTENTS</summary>
+      <div class="toc-links">
+      <a href="#s1">一　肝臟解剖與五大固定韌帶</a>
+      <a href="#s2">二　肝切除評估：Makuuchi 準則</a>
+      <a href="#s3">三　ALPPS 與 Pringle 血管阻斷</a>
+      <a href="#s4">四　微創腹腔鏡肝切除與指南機構</a>
+      <a href="#s5">五　腹部創傷 FAST 超音波評估</a>
+      <a href="#s6">六　一分鐘考前秒殺心法</a>
+      <a href="#exam" class="exam">七　歷屆考題全收錄 (16 題)</a>
+      </div>
+    </details>
+  </nav>
+  <main>
+  <section id="s1">
+    <div class="sec-head"><span class="sec-num">一</span><h2>肝臟解剖分葉與 5 大固定韌帶</h2></div>
+    <p class="tagline">核心考點：<a class="qtag" href="#q110-56">110-56</a><a class="qtag" href="#q111-37">111-37</a><a class="qtag" href="#q113-17">113-17</a></p>
+    <div class="box exam">
+      <div class="bt"><span class="badge">必背考點</span>連接並固定肝臟的 5 種主要韌帶</div>
+      <p>113-17 考題真題：固定肝臟的 5 大韌帶為：<br>
+      <mark>① 鐮狀韌帶 (Falciform ligament)<br>
+      ② 冠狀韌帶 (Coronary ligament)<br>
+      ③ 左三角韌帶 (Left triangular ligament)<br>
+      ④ 右三角韌帶 (Right triangular ligament)<br>
+      ⑤ 圓韌帶 (Ligamentum teres / Round ligament)</mark></p>
+    </div>
+    <h3>Couinaud 肝臟分葉與切除術語</h3>
+    <ul>
+      <li><mark>左外側肝葉切除 (Left lateral sectionectomy)：切除 S2 ＋ S3</mark>（110-56 考點）。</li>
+      <li>左半肝切除 (Left hemihepatectomy)：S2 ＋ S3 ＋ S4。</li>
+      <li>右半肝切除 (Right hemihepatectomy)：S5 ＋ S6 ＋ S7 ＋ S8。</li>
+      <li>尾狀葉 (Caudate lobe)：S1，具獨立進出血管與膽管。</li>
+    </ul>
+  </section>
+
+  <section id="s2">
+    <div class="sec-head"><span class="sec-num">二</span><h2>肝切除安全性評估：Makuuchi 演算法 (1993)</h2></div>
+    <p class="tagline">核心考點：<a class="qtag" href="#q111-37">111-37</a><a class="qtag" href="#q112-15">112-15</a></p>
+    <p>日本 Makuuchi 教授提出的安全肝切除決策樹依據 3 大核心指標：</p>
+    <div class="tw"><table>
+      <thead><tr><th>評估層級</th><th>指標數值</th><th>可接受之最大切除範圍</th></tr></thead>
+      <tbody>
+        <tr><td><b>1. 腹水 (Ascites)</b></td><td>不可控制之頑固性腹水</td><td><mark>手術禁忌（不可切除）</mark></td></tr>
+        <tr><td><b>2. 總膽紅素 (Bilirubin)</b></td><td>升高（&gt; 2.0 mg/dL）</td><td>僅能做局部限量切除或不可切除</td></tr>
+        <tr><td><b>3. ICG-R15 清除率</b></td><td>
+          • &lt; 10%：可耐受大範圍切除（三葉或半肝切除）<br>
+          • 10 ～ 19%：可做左半肝或扇葉切除<br>
+          • 20 ～ 29%：可做亞段切除 (Segmentectomy)<br>
+          • 30 ～ 39%：僅能做局部楔形切除 (Limited resection)<br>
+          • <mark>&gt; 40% (如 50%)：禁忌做解剖性肝葉切除</mark>（112-15 考點）
+        </td><td>依 ICG-R15 數值逐級縮小切除範圍</td></tr>
+      </tbody>
+    </table></div>
+  </section>
+
+  <section id="s3">
+    <div class="sec-head"><span class="sec-num">三</span><h2>複雜肝切除術：ALPPS 與 Pringle 血管阻斷法</h2></div>
+    <p class="tagline">核心考點：<a class="qtag" href="#q110-57">110-57</a><a class="qtag" href="#q111-38">111-38</a><a class="qtag" href="#q112-16">112-16</a><a class="qtag" href="#q112-17">112-17</a></p>
+    <h3>1. ALPPS (分階段肝實質分割併門靜脈結紮術)</h3>
+    <ul>
+      <li><strong>適應症：</strong>剩餘未來肝體積 (FLR) 不足時，促使保留側肝臟在 1~2 週內快速增生（增生達 40~80%）。</li>
+      <li><strong>第一階段關鍵步驟：</strong>切開肝實質 ＋ <mark>結紮截斷患側門靜脈（做擴大右葉切除時，截斷「右門靜脈 Right portal vein」）</mark>（110-57, 112-16 考點）。保留肝動脈與膽管以防壞死。</li>
+    </ul>
+
+    <h3>2. Pringle Maneuver (肝門血流阻斷法)</h3>
+    <ul>
+      <li><strong>阻斷構造：</strong>以血管鉗夾閉**肝十二指腸韌帶 (Hepatoduodenal ligament)**，阻斷**肝動脈 (Hepatic artery)** 與 **門靜脈 (Portal vein)** 的流入血流。</li>
+      <li><mark>無法控制的出血來源：肝靜脈 (Hepatic vein) 或下腔靜脈 (IVC)</mark>（111-38, 112-17 考點！）。</li>
+    </ul>
+  </section>
+
+  <section id="s4">
+    <div class="sec-head"><span class="sec-num">四</span><h2>微創腹腔鏡肝切除與指南機構</h2></div>
+    <p class="tagline">核心考點：<a class="qtag" href="#q111-39">111-39</a><a class="qtag" href="#q113-20">113-20</a></p>
+    <ul>
+      <li><strong>腹腔鏡肝切除難度分區：</strong>
+        <ul>
+          <li><b>較容易切除：</b>S2, S3, S5, S6（周邊與前側肝段）。</li>
+          <li><mark>最困難切除：S7, S8, S1（位於頂部後方，視野與角度受限）</mark>（111-39 考點）。</li>
+        </ul>
+      </li>
+      <li><strong>肝臟手術現行指南機構：</strong><mark>APASL (亞太肝臟研究學會)</mark>、AASLD、EASL（113-20 考點）。</li>
+    </ul>
+  </section>
+
+  <section id="s5">
+    <div class="sec-head"><span class="sec-num">五</span><h2>腹部創傷 FAST 超音波 4 大檢查區域與併發症</h2></div>
+    <p class="tagline">核心考點：<a class="qtag" href="#q110-58">110-58</a><a class="qtag" href="#q110-59">110-59</a><a class="qtag" href="#q111-40">111-40</a><a class="qtag" href="#q112-18">112-18</a><a class="qtag" href="#q113-18">113-18</a><a class="qtag" href="#q113-19">113-19</a></p>
+    <div class="tw"><table>
+      <thead><tr><th>FAST 檢查視角</th><th>探頭擺放位置</th><th>觀察重點與游離液體位置</th></tr></thead>
+      <tbody>
+        <tr><td><b>RUQ (右上腹)</b></td><td><mark>右上腹 (Right upper quadrant)</mark></td><td><mark>Morrison's pouch (肝腎隱窩)</mark> —— 仰臥時腹腔積血最易蓄積之處（112-18 考點）。</td></tr>
+        <tr><td><b>LUQ (左上腹)</b></td><td><mark>左上腹 (Left upper quadrant)</mark></td><td><mark>Perisplenic space (脾周圍/脾腎隱窩)</mark>（110-59, 111-40 考點）。</td></tr>
+        <tr><td><b>Pelvis (骨盆腔)</b></td><td>恥骨聯合上方</td><td>Douglas pouch (直腸膀胱/直腸子宮陷凹)。</td></tr>
+        <tr><td><b>Pericardium (心包)</b></td><td>劍突下 (Subxiphoid)</td><td>心包積血、心包填塞。</td></tr>
+      </tbody>
+    </table></div>
+    <p>• <strong>FAST 四大檢查區域：</strong><mark>肝臟周圍、脾臟周圍、骨盆、心包</mark>（113-19 考點）。<br>
+    • <strong>肝臟切除與創傷術後可能併發症：</strong>出血、<mark>膽汁滲漏 (Bile leakage)</mark>、肝動脈假性動脈瘤、肝衰竭（110-58, 113-18 考點）。</p>
+  </section>
+
+  <section id="s6">
+    <div class="sec-head"><span class="sec-num">六</span><h2>一分鐘考前秒殺心法（莊世昌老師 6 大考點）</h2></div>
+    <div class="box key">
+      <div class="bt"><span class="badge">考前 60 秒衝刺</span>莊世昌老師必背重點</div>
+      <ol>
+        <li><b>5 大固定韌帶：</b>鐮狀、冠狀、左三角、右三角、圓韌帶。</li>
+        <li><b>切除分葉：</b>左外側切除為 <strong>S2 ＋ S3</strong>；腹腔鏡最難切除為 <strong>S7 / S8</strong>。</li>
+        <li><b>Makuuchi 準則：</b>看腹水、總膽紅素、ICG-R15；若 ICG 50% 或頑固腹水則<strong>禁忌做大範圍切除</strong>。</li>
+        <li><b>ALPPS 擴大右葉：</b>第一階段截斷 <strong>右門靜脈 (Right portal vein)</strong>。</li>
+        <li><b>Pringle maneuver：</b>阻斷肝動脈＋門靜脈，<strong>「無法控制肝靜脈 (Hepatic vein)」</strong>出血！</li>
+        <li><b>FAST 探頭：</b>Morrison's pouch 放<strong>右上腹</strong>；Perisplenic space 放<strong>左上腹</strong>；4 大區為<strong>肝周、脾周、骨盆、心包</strong>。</li>
+      </ol>
+    </div>
+  </section>
+
+  <section id="exam">
+    <div class="sec-head"><span class="sec-num">七</span><h2>歷屆考古題全收錄（BM110 ～ BM113 共 16 題）</h2></div>
+    <div class="exam-head">
+      <h2>莊世昌老師 肝腫瘤與創傷手術題庫全解</h2>
+      <p>完整收錄 4 個學年度共 16 道真題，附標準答案與逐選項深度剖析。</p>
+      <button class="btn" id="allBtn">全部展開答案</button>
+    </div>
+
+    <!-- BM113 -->
+    <div class="yrhead">113 學年度 (BM113 期末考) · 4 題</div>
+    <div class="q" id="q113-17"><span class="q-no">113-17</span><span class="q-topic">肝臟 5 大韌帶</span>
+      <p class="q-stem">1. 肝臟由哪五種主要韌帶連接和固定？<br>(A) 胃韌帶、脾韌帶、腎韌帶、胰韌帶、十二指腸韌帶<br>(B) 鐮狀韌帶、冠狀韌帶、右三角韌帶、左三角韌帶、圓韌帶<br>(C) 膽囊韌帶、肝門韌帶、闌尾韌帶、盲腸韌帶、直腸韌帶<br>(D) 膈韌帶、腹膜韌帶、腸系膜韌帶、網膜韌帶、血管韌帶</p>
+      <details class="rev"><summary class="toggle"></summary><div class="reveal"><div class="ans">正確答案：(B)</div><p>• 肝臟的 5 大主要固定韌帶為：鐮狀韌帶 (Falciform)、冠狀韌帶 (Coronary)、右三角韌帶 (R. triangular)、左三角韌帶 (L. triangular) 及圓韌帶 (Ligamentum teres)。</p><div class="src">出處：BM113 期末考 第17題（莊世昌 page 5）</div></div></details>
+    </div>
+    <div class="q" id="q113-18"><span class="q-no">113-18</span><span class="q-topic">肝手術後併發症</span>
+      <p class="q-stem">2. 在肝臟手術後，以下哪一種是可能發生的併發症？<br>(A) 高血脂　(B) 糖尿病　(C) 膽汁滲漏　(D) 高血壓</p>
+      <details class="rev"><summary class="toggle"></summary><div class="reveal"><div class="ans">正確答案：(C) 膽汁滲漏</div><p>• 肝臟切除與創傷術後常見外科併發症包括出血、膽汁滲漏 (Bile leakage)、肋膜腔積液與肝衰竭。</p><div class="src">出處：BM113 期末考 第18題（莊世昌 ppt pg.30）</div></div></details>
+    </div>
+    <div class="q" id="q113-19"><span class="q-no">113-19</span><span class="q-topic">FAST 超音波 4 區域</span>
+      <p class="q-stem">3. 在評估肝臟創傷時，腹部創傷快速評估 FAST 檢查主要會檢查人體的哪四個區域以檢測游離液體？<br>(A) 腦部、頸部、胸部、腹股溝<br>(B) 肺部、腎臟、胰臟、膽囊<br>(C) 肝臟周圍、脾臟周圍、骨盆、心包<br>(D) 大腿、小腿、手臂、背部</p>
+      <details class="rev"><summary class="toggle"></summary><div class="reveal"><div class="ans">正確答案：(C)</div><p>• FAST 的標準 4 個評估部位為：Perihepatic (Morrison's pouch)、Perisplenic、Pelvis (骨盆腔) 與 Pericardium (心包腔)。</p><div class="src">出處：BM113 期末考 第19題（莊世昌 ppt pg. 32）</div></div></details>
+    </div>
+    <div class="q" id="q113-20"><span class="q-no">113-20</span><span class="q-topic">肝手術指南機構</span>
+      <p class="q-stem">4. 以下哪一個組織是肝臟手術的現行指南機構之一？<br>(A) APASL (Asian Pacific Association for the Study of the Liver)<br>(B) WHO　(C) CDC　(D) FDA</p>
+      <details class="rev"><summary class="toggle"></summary><div class="reveal"><div class="ans">正確答案：(A) APASL</div><p>• APASL（亞太肝臟研究學會）定期發布肝癌與肝切除手術臨床指引。</p><div class="src">出處：BM113 期末考 第20題（莊世昌 p13）</div></div></details>
+    </div>
+
+    <!-- BM112 -->
+    <div class="yrhead">112 學年度 (BM112 期末考) · 4 題</div>
+    <div class="q" id="q112-15"><span class="q-no">112-15</span><span class="q-topic">Makuuchi 準則 ICG 50%</span>
+      <p class="q-stem">5. 根據 Makuuchi 教授於 1993 所發表的研究，以下何者可做左外側肝葉切除？<br>(A) ICG (Indocyanine green) test 為 50%<br>(B) 總膽紅素 (total bilirubin) 3.5mg/dL<br>(C) 頑固性腹水<br>(D) 以上皆不可</p>
+      <details class="rev"><summary class="toggle"></summary><div class="reveal"><div class="ans">正確答案：(D) 以上皆不可</div><p>• 根據 Makuuchi 準則：頑固性腹水、膽紅素高或 ICG-R15 高達 50% 者，肝儲備功能極差，禁忌做解剖性肝葉切除（包括左外側切除）。</p><div class="src">出處：BM112 期末考 第15題（莊世昌 ppt pg. 9）</div></div></details>
+    </div>
+    <div class="q" id="q112-16"><span class="q-no">112-16</span><span class="q-topic">ALPPS 右門靜脈截斷</span>
+      <p class="q-stem">6. ALPPS，如果是做擴大右葉切除，第一階段需截斷的脈管是？<br>(A) 右肝動脈　(B) 右門靜脈　(C) 左肝動脈　(D) 左門靜脈</p>
+      <details class="rev"><summary class="toggle"></summary><div class="reveal"><div class="ans">正確答案：(B) 右門靜脈</div><p>• ALPPS 第一階段分割肝實質並結紮患側的<b>右門靜脈 (Right portal vein)</b>，將所有門脈血流導向保留側肝葉促其快速肥大增生。</p><div class="src">出處：BM112 期末考 第16題（莊世昌 ppt pg. 17）</div></div></details>
+    </div>
+    <div class="q" id="q112-17"><span class="q-no">112-17</span><span class="q-topic">Pringle 無法控制肝靜脈</span>
+      <p class="q-stem">7. Pringle maneuver 無法控制以下血流？<br>(A) 肝動脈　(B) 肝靜脈　(C) 門靜脈　(D) 以上皆可</p>
+      <details class="rev"><summary class="toggle"></summary><div class="reveal"><div class="ans">正確答案：(B) 肝靜脈</div><p>• Pringle maneuver 夾閉肝十二指腸韌帶，只能阻斷流入肝臟的肝動脈與門靜脈，無法阻斷回流下腔靜脈的<b>肝靜脈 (Hepatic vein)</b> 出血。</p><div class="src">出處：BM112 期末考 第17題（莊世昌 ppt pg. 15）</div></div></details>
+    </div>
+    <div class="q" id="q112-18"><span class="q-no">112-18</span><span class="q-topic">FAST Morrison pouch 探頭位置</span>
+      <p class="q-stem">8. 腹部創傷快速評估 FAST 檢查中，要看 Morrison’s pouch，超音波探頭需放在病人的？<br>(A) 右上腹　(B) 右下腹　(C) 左上腹　(D) 左下腹</p>
+      <details class="rev"><summary class="toggle"></summary><div class="reveal"><div class="ans">正確答案：(A) 右上腹</div><p>• Morrison's pouch（肝腎隱窩）位於肝臟與右腎之間，探頭置於<b>右上腹 (RUQ)</b>。</p><div class="src">出處：BM112 期末考 第18題（莊世昌 ppt pg.26）</div></div></details>
+    </div>
+
+    <!-- BM111 -->
+    <div class="yrhead">111 學年度 (BM111 期末考) · 4 題</div>
+    <div class="q" id="q111-37"><span class="q-no">111-37</span><span class="q-topic">Makuuchi 評估指標</span>
+      <p class="q-stem">9. 根據 Makuuchi 教授於 1993 發表的研宄，行肝葉切除須考慮？<br>(A) 腹水　(B) 黃疸　(C) ICG test　(D) 以上皆是</p>
+      <details class="rev"><summary class="toggle"></summary><div class="reveal"><div class="ans">正確答案：(D) 以上皆是</div><p>• Makuuchi 決策樹三大核心指標即為腹水、黃疸（總膽紅素）與 ICG-R15 滯留率。</p><div class="src">出處：BM111 期末考 第37題（莊世昌 ppt pg. 9）</div></div></details>
+    </div>
+    <div class="q" id="q111-38"><span class="q-no">111-38</span><span class="q-topic">Pringle 無法控制血流</span>
+      <p class="q-stem">10. Pringle maneuver 無法控制以下血流？<br>(A) 肝靜脈　(B) 門靜脈　(C) 肝動脈　(D) 以上皆可</p>
+      <details class="rev"><summary class="toggle"></summary><div class="reveal"><div class="ans">正確答案：(A) 肝靜脈</div><p>• Pringle 夾閉肝十二指腸韌帶，無法控制肝靜脈流出系統出血。</p><div class="src">出處：BM111 期末考 第38題（莊世昌 ppt pg. 36）</div></div></details>
+    </div>
+    <div class="q" id="q111-39"><span class="q-no">111-39</span><span class="q-topic">腹腔鏡肝切除困難部位</span>
+      <p class="q-stem">11. 微創腹腔鏡肝葉切除術，比較困難切除的肝葉是？<br>(A) II / III　(B) V　(C) VI　(D) VII / VIII</p>
+      <details class="rev"><summary class="toggle"></summary><div class="reveal"><div class="ans">正確答案：(D) VII / VIII</div><p>• S7 與 S8 位於後上側頂部，受肋骨遮擋且緊鄰肝靜脈與下腔靜脈，為腹腔鏡微創切除難度最高之肝葉。</p><div class="src">出處：BM111 期末考 第39題（莊世昌 ppt pg. 16）</div></div></details>
+    </div>
+    <div class="q" id="q111-40"><span class="q-no">111-40</span><span class="q-topic">FAST Perisplenic 探頭位置</span>
+      <p class="q-stem">12. 腹部創傷快速評估 FAST 檢查中，Perisplenic exam是把超音波探頭放在病人的？<br>(A) 右上腹　(B) 右下腹　(C) 左上腹　(D) 左下腹</p>
+      <details class="rev"><summary class="toggle"></summary><div class="reveal"><div class="ans">正確答案：(C) 左上腹</div><p>• 檢查脾周圍 (Perisplenic) 探頭放置於<b>左上腹 (LUQ)</b>。</p><div class="src">出處：BM111 期末考 第40題（莊世昌 ppt pg. 33）</div></div></details>
+    </div>
+
+    <!-- BM110 -->
+    <div class="yrhead">110 學年度 (BM110 期末考) · 4 題</div>
+    <div class="q" id="q110-56"><span class="q-no">110-56</span><span class="q-topic">左外側肝葉切除範圍</span>
+      <p class="q-stem">13. 左外側肝葉切除範圍包括？<br>(A) S1 (第一葉)　(B) S23 (第二、三葉)　(C) S4 (第四葉)　(D) S78 (第七、八葉)</p>
+      <details class="rev"><summary class="toggle"></summary><div class="reveal"><div class="ans">正確答案：(B) S23 (第二、三葉)</div><p>• 左外側葉 (Left lateral section) 為 Segment 2 ＋ Segment 3。</p><div class="src">出處：BM110 期末考 第56題（莊世昌 ppt pg.5）</div></div></details>
+    </div>
+    <div class="q" id="q110-57"><span class="q-no">110-57</span><span class="q-topic">ALPPS 擴大右葉截斷血管</span>
+      <p class="q-stem">14. ALPPS，如果是做擴大右葉切除，第一段需截斷的脈管是？<br>(A) 右肝動脈　(B) 右門靜脈　(C) 側膽管　(D) 右肝靜脈</p>
+      <details class="rev"><summary class="toggle"></summary><div class="reveal"><div class="ans">正確答案：(B) 右門靜脈</div><p>• ALPPS 第一階段結紮截斷右門靜脈。</p><div class="src">出處：BM110 期末考 第57題（莊世昌 ppt pg.22）</div></div></details>
+    </div>
+    <div class="q" id="q110-58"><span class="q-no">110-58</span><span class="q-topic">肝手術後併發症</span>
+      <p class="q-stem">15. 肝臟切除手術後可能的併發症為何？<br>(A) 出血　(B) 膽汁外漏　(C) 肝動脈假性動脈腫瘤　(D) 以上皆可能</p>
+      <details class="rev"><summary class="toggle"></summary><div class="reveal"><div class="ans">正確答案：(D) 以上皆可能</div><p>• 肝切除術後出血、膽漏與血管併發症皆可能發生。</p><div class="src">出處：BM110 期末考 第58題（莊世昌 ppt pg.49）</div></div></details>
+    </div>
+    <div class="q" id="q110-59"><span class="q-no">110-59</span><span class="q-topic">FAST perisplenic space 探頭位置</span>
+      <p class="q-stem">16. 腹部創傷快速評估 FAST 檢查中，要看 perisplenic space，超音波探頭需放在病人的？<br>(A) 右上腹　(B) 右下腹　(C) 左上腹　(D) 左下腹</p>
+      <details class="rev"><summary class="toggle"></summary><div class="reveal"><div class="ans">正確答案：(C) 左上腹</div><p>• Perisplenic space 檢查探頭放左上腹。</p><div class="src">出處：BM110 期末考 第59題（莊世昌 ppt pg.52）</div></div></details>
+    </div>
+  </section>
+  <footer>
+    <p><b>高醫肝膽胰外科｜莊世昌老師 肝腫瘤和創傷的手術治療題庫全集完成</b>　共 16 題。</p>
+  </footer>
+  </main>
+</div>
+</div>
+
+<script>
+  (function(){
+    document.querySelectorAll('.tw table').forEach(function(t){
+      var ths = t.querySelectorAll('thead th');
+      if(!ths.length) return;
+      var labels = Array.prototype.map.call(ths, function(th){
+        return th.textContent.replace(/\u3000/g,'').trim();
+      });
+      t.querySelectorAll('tbody tr').forEach(function(tr){
+        Array.prototype.forEach.call(tr.children, function(td, i){
+          if(labels[i]) td.setAttribute('data-label', labels[i]);
+        });
+      });
+    });
+  })();
+  (function(){
+    var toc = document.getElementById('tocBox');
+    if(toc && window.matchMedia('(max-width:700px)').matches){
+      toc.removeAttribute('open');
+    }
+  })();
+  var allBtn = document.getElementById('allBtn');
+  if(allBtn){
+    var expanded = false;
+    allBtn.addEventListener('click', function(){
+      expanded = !expanded;
+      document.querySelectorAll('.q details.rev, .quiz details.rev').forEach(function(d){
+        if(expanded){ d.setAttribute('open',''); } else { d.removeAttribute('open'); }
+      });
+      allBtn.textContent = expanded ? '全部收合答案' : '全部展開答案';
+    });
+  }
+</script>
+
+</body>
+</html>
