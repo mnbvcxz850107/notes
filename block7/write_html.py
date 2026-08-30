@@ -1,0 +1,595 @@
+# coding=utf-8
+import os
+
+html_content = """<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>門脈高壓、肝硬化與衰竭｜裸讀學習筆記</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&family=Noto+Serif+TC:wght@500;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0F1B18;--bg-2:#152420;--bg-3:#1B2E29;--line:#26403A;--line-2:#31534B;
+    --text:#E9F1EE;--text-2:#A8C2BA;--text-3:#7A968D;
+    --teal:#7FC9BE;--teal-dim:#4E9A90;--gold:#C9A961;--rose:#E58B85;
+    --serif:"Noto Serif TC","Songti TC",serif;
+    --sans:"Noto Sans TC","PingFang TC","Microsoft JhengHei",sans-serif;
+    --mono:"JetBrains Mono",ui-monospace,Menlo,monospace;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth;scroll-padding-top:24px;overflow-x:hidden}
+  body{
+    margin:0;background:var(--bg);color:var(--text);
+    font-family:var(--sans);font-size:16.5px;line-height:1.9;font-weight:300;
+    -webkit-font-smoothing:antialiased;overflow-x:hidden;
+  }
+  .wrap{max-width:1150px;margin:0 auto;padding:0 22px}
+  header.hero{padding:60px 0 48px;border-bottom:1px solid var(--line)}
+  .backlink{display:inline-block;font-family:var(--mono);font-size:12px;
+    color:var(--text-3);text-decoration:none;margin-bottom:20px;
+    border:1px solid var(--line);border-radius:6px;padding:5px 12px;transition:.15s}
+  .backlink:hover{color:var(--teal);border-color:var(--teal-dim)}
+  .eyebrow{display:flex;align-items:center;gap:16px;margin-bottom:22px;
+    font-family:var(--serif);font-size:15px;letter-spacing:.34em;color:var(--teal)}
+  .eyebrow .rule{width:56px;height:1px;background:var(--gold)}
+  .eyebrow .dot{color:var(--gold)}
+  header.hero h1{
+    font-family:var(--serif);font-weight:700;font-size:clamp(34px,5.6vw,64px);
+    line-height:1.2;margin:0 0 20px;letter-spacing:.02em;
+  }
+  header.hero h1 em{font-style:normal;color:var(--teal)}
+  header.hero p.sub{margin:0;color:var(--text-2);max-width:65ch;font-size:16.5px;line-height:1.85}
+  .intro-card{border:1px solid var(--line);border-radius:16px;padding:24px 28px;margin-top:30px;background:var(--bg-2)}
+  .intro-card p{margin:0 0 20px;color:var(--text-2)}
+  .intro-card b{color:var(--teal);font-weight:500}
+  .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+  .stat .n{font-family:var(--serif);font-size:36px;color:var(--gold);line-height:1}
+  .stat .l{font-size:12px;color:var(--text-3);letter-spacing:.08em;margin-top:6px}
+  .cols{display:grid;grid-template-columns:230px 1fr;gap:50px;padding:42px 0 90px;align-items:start}
+  nav.toc{position:sticky;top:26px}
+  nav.toc .t{font-family:var(--mono);font-size:11px;letter-spacing:.2em;color:var(--text-3);margin-bottom:14px}
+  nav.toc a{display:block;padding:7px 14px;border-left:1px solid var(--line);
+    color:var(--text-2);text-decoration:none;font-size:14px;transition:.15s}
+  nav.toc a:hover{border-left-color:var(--teal);color:var(--teal);background:var(--bg-2)}
+  nav.toc a.exam{color:var(--gold)}
+  nav.toc summary{display:none}
+  section{margin-bottom:60px;scroll-margin-top:24px}
+  .sec-head{display:flex;align-items:baseline;gap:16px;border-bottom:1px solid var(--line-2);padding-bottom:12px;margin-bottom:24px}
+  .sec-num{font-family:var(--serif);font-size:28px;color:var(--gold);line-height:1}
+  .sec-head h2{font-family:var(--serif);font-size:clamp(22px,3.2vw,30px);margin:0;font-weight:700;letter-spacing:.02em}
+  h3{font-family:var(--serif);font-size:20px;margin:36px 0 12px;font-weight:500;color:var(--text)}
+  h4{font-size:16px;margin:22px 0 8px;color:var(--teal);font-weight:500}
+  p{margin:0 0 14px}
+  ul,ol{margin:0 0 16px;padding-left:22px}
+  li{margin-bottom:8px}
+  li::marker{color:var(--teal-dim)}
+  strong,b{font-weight:500;color:#FFF}
+  u{text-decoration-color:var(--teal-dim);text-underline-offset:3px}
+  code{font-family:var(--mono);font-size:.88em;background:var(--bg-3);padding:1px 6px;border-radius:4px;color:var(--teal)}
+  mark{background:rgba(201,169,97,.22);box-shadow:inset 0 -2px 0 rgba(201,169,97,.6);color:#FBF3E2;padding:1px 3px;border-radius:2px}
+  a.qtag{display:inline-block;font-family:var(--mono);font-size:11px;font-weight:600;border:1px solid var(--gold);color:var(--gold);padding:1px 7px;border-radius:4px;text-decoration:none;margin:0 3px;vertical-align:2px;white-space:nowrap;transition:.15s}
+  a.qtag:hover{background:var(--gold);color:var(--bg)}
+  .tagline{margin:-6px 0 18px;font-size:13.5px;color:var(--text-3)}
+  .box{border-radius:13px;padding:18px 22px;margin:20px 0;border:1px solid var(--line);background:var(--bg-2)}
+  .box .bt{font-weight:500;font-size:14.5px;margin-bottom:10px;display:flex;align-items:center;gap:9px;color:#FFF}
+  .box p:last-child,.box ul:last-child,.box ol:last-child{margin-bottom:0}
+  .badge{font-family:var(--mono);font-size:10px;padding:2px 8px;border-radius:3px;letter-spacing:.06em;border:1px solid currentColor;font-weight:600}
+  .box.exam{border-color:rgba(201,169,97,.45);background:rgba(201,169,97,.07)}
+  .box.exam .badge{color:var(--gold)}
+  .box.trap{border-color:rgba(229,139,133,.45);background:rgba(229,139,133,.07)}
+  .box.trap .badge{color:var(--rose)}
+  .box.key{border-color:rgba(127,201,190,.4);background:rgba(127,201,190,.07)}
+  .box.key .badge{color:var(--teal)}
+  .img-frame{background:#08100E;border:1px solid var(--line-2);border-radius:12px;padding:12px;margin:18px 0 20px;text-align:center}
+  .q-img{display:block;max-width:100%;height:auto;border-radius:8px;margin:0 auto;box-shadow:0 4px 14px rgba(0,0,0,.5)}
+  .img-caption{font-family:var(--mono);font-size:12px;color:var(--text-2);margin-top:10px;line-height:1.6}
+  .img-caption b{color:var(--gold);font-weight:600}
+  .tw{border:none;background:none;overflow:visible;border-radius:0;margin:20px 0}
+  .tw table{min-width:0;width:100%;border-collapse:separate;border-spacing:0;font-size:14.8px}
+  .tw thead{display:none}
+  .tw tbody tr{display:block;border:1px solid var(--line);border-radius:12px;background:var(--bg-2);margin-bottom:12px;padding:6px 0}
+  .tw tbody tr:nth-child(even){background:var(--bg-2)}
+  .tw tbody tr:last-child{margin-bottom:0}
+  .tw tbody td{display:block;border:none;padding:9px 16px}
+  .tw tbody td+td{border-top:1px dashed var(--line)}
+  .tw tbody td[data-label]::before{content:attr(data-label);display:block;font-family:var(--mono);font-size:11px;letter-spacing:.08em;color:var(--teal);margin-bottom:4px;font-weight:600}
+  .tw tbody td:first-child{font-size:16px;color:#FFF;font-weight:500}
+  .tw tbody td.mono{font-family:var(--mono);font-size:13.5px}
+  @media (min-width:769px){
+    .tw{overflow-x:auto;border:1px solid var(--line);border-radius:13px;background:var(--bg-2)}
+    .tw table{border-collapse:collapse}
+    .tw thead{display:table-header-group}
+    .tw thead th{background:var(--bg-3);color:var(--teal);font-weight:500;font-size:13.5px;padding:12px 16px;border-bottom:1px solid var(--line);text-align:left}
+    .tw tbody tr{display:table-row;border:none;background:none;margin-bottom:0;padding:0}
+    .tw tbody tr:nth-child(even){background:rgba(255,255,255,.018)}
+    .tw tbody td{display:table-cell;padding:12px 16px;border-bottom:1px solid var(--line)}
+    .tw tbody td+td{border-top:none}
+    .tw tbody tr:last-child td{border-bottom:none}
+    .tw tbody td[data-label]::before{display:none}
+    .tw tbody td:first-child{font-size:14.8px;font-weight:normal}
+  }
+  .quiz{border:1px solid var(--line-2);border-radius:14px;margin:24px 0;overflow:hidden;background:var(--bg-2)}
+  .quiz-top{display:flex;align-items:center;gap:10px;padding:12px 20px;background:var(--bg-3);border-bottom:1px solid var(--line)}
+  .quiz-top .lab{font-family:var(--serif);font-size:14px;letter-spacing:.16em;color:var(--gold)}
+  .quiz-top .yr{font-family:var(--mono);font-size:11.5px;color:var(--text-2);border:1px solid var(--line-2);padding:2px 8px;border-radius:4px}
+  .quiz-body{padding:18px 20px}
+  .quiz-body .stem{font-size:15.5px;line-height:1.85;margin:0 0 14px;color:var(--text)}
+  .opts{list-style:none;padding:0;margin:0 0 14px}
+  .opts li{padding:8px 12px;font-size:15px;border:1px solid var(--line);border-radius:8px;margin-bottom:7px;color:var(--text-2)}
+  details.rev{margin:0}
+  summary.toggle{display:inline-block;list-style:none;cursor:pointer;background:none;border:1px solid var(--teal-dim);color:var(--teal);font-family:var(--sans);font-size:13px;padding:7px 16px;border-radius:7px;font-weight:400;transition:.15s;-webkit-tap-highlight-color:transparent}
+  summary.toggle::-webkit-details-marker{display:none}
+  summary.toggle::marker{content:""}
+  summary.toggle:hover{background:var(--teal);color:var(--bg)}
+  summary.toggle::before{content:"顯示答案"}
+  .q summary.toggle::before{content:"顯示答案與詳解"}
+  details.rev[open] summary.toggle::before{content:"收合答案"}
+  .reveal{border-top:1px dashed var(--line-2);margin-top:14px;padding-top:14px}
+  .ans{font-family:var(--serif);font-weight:700;color:var(--gold);font-size:17px;margin-bottom:10px}
+  .reveal p{margin:0 0 9px;font-size:14.8px;color:var(--text-2)}
+  .reveal p b{color:#FFF}
+  .src{font-size:12px;color:var(--text-3);font-family:var(--mono);margin-top:12px}
+  .jump{font-size:12.5px;color:var(--teal-dim);text-decoration:none;border-bottom:1px solid var(--line-2)}
+  .jump:hover{color:var(--teal)}
+  .exam-head{border:1px solid var(--line-2);border-radius:16px;padding:26px;margin-bottom:26px;background:var(--bg-2)}
+  .exam-head h2{font-family:var(--serif);margin:0 0 10px;font-size:28px}
+  .exam-head p{color:var(--text-2);margin:0;font-size:15px}
+  .btn{font-family:var(--sans);font-size:13.5px;cursor:pointer;background:var(--teal);color:var(--bg);border:none;padding:10px 20px;border-radius:8px;margin-top:16px;font-weight:500}
+  .btn:hover{background:#9BDBD1}
+  .yrhead{font-family:var(--serif);font-size:23px;font-weight:700;margin:36px 0 16px;padding-left:16px;border-left:3px solid var(--gold);color:var(--gold)}
+  .q{background:var(--bg-2);border:1px solid var(--line);border-radius:13px;padding:20px 22px;margin-bottom:18px;scroll-margin-top:24px}
+  .q-no{font-family:var(--mono);font-size:11.5px;color:var(--gold);border:1px solid var(--gold);padding:2px 9px;border-radius:5px}
+  .q-topic{font-size:12.5px;color:var(--text-3);margin-left:10px}
+  .q-stem{margin:14px 0 12px;font-size:15.5px;line-height:1.85}
+  footer{border-top:1px solid var(--line);padding:28px 0 56px;color:var(--text-3);font-size:13.5px}
+  footer b{color:var(--text-2)}
+  @media (max-width:900px){
+    .cols{grid-template-columns:1fr;gap:0;padding-top:24px}
+    nav.toc{position:static;margin-bottom:32px;border:1px solid var(--line);border-radius:12px;padding:16px;background:var(--bg-2)}
+    nav.toc a{border-left:none;padding:6px 4px}
+    .stats{grid-template-columns:repeat(2,1fr);gap:16px}
+  }
+  @media (max-width:700px){
+    body{font-size:16px;line-height:1.85}
+    .wrap{padding:0 16px}
+    header.hero{padding:36px 0 30px}
+    .cols{padding:24px 0 50px}
+    section{margin-bottom:42px}
+    nav.toc{padding:0;overflow:hidden}
+    nav.toc .t{display:none}
+    nav.toc details{margin:0}
+    nav.toc summary{display:block;list-style:none;cursor:pointer;padding:14px 16px;font-family:var(--mono);font-size:12px;letter-spacing:.16em;color:var(--teal)}
+    nav.toc summary::-webkit-details-marker{display:none}
+    nav.toc summary::after{content:" ▾";color:var(--text-3)}
+    nav.toc details[open] summary::after{content:" ▴"}
+    nav.toc .toc-links{padding:0 10px 12px}
+    .box{padding:15px 16px;border-radius:11px}
+    p,li,td,.stem,.reveal p,.opts li,.q-stem{overflow-wrap:anywhere;word-break:break-word}
+    .quiz-body{padding:15px 16px}
+    .opts li{padding:9px 12px;font-size:15px}
+    .q{padding:16px 16px}
+    .sec-head{gap:12px}
+    ul,ol{padding-left:20px}
+    .toggle{width:100%;padding:11px 16px;font-size:14px}
+    summary.toggle{width:100%;text-align:center;padding:11px 16px;font-size:14px}
+    .btn{width:100%;padding:12px 16px}
+  }
+  @media print{
+    nav.toc,.btn,.toggle{display:none}
+    .reveal{display:block!important}
+    body{background:#fff;color:#000;font-size:11pt}
+  }
+</style>
+</head>
+<body>
+<header class="hero">
+  <div class="wrap">
+    <a class="backlink" href="index.html">← 返回 Block 7 目錄</a>
+    <div class="eyebrow"><span class="rule"></span>高醫肝膽胰內科 · 裸讀學習筆記<span class="dot">·</span>黃釧峰老師專題</div>
+    <h1>門脈高壓、肝硬化與衰竭 <em>(Portal HTN & Cirrhosis)</em></h1>
+    <p class="sub">從早期門脈高壓之高動力循環病理生理機轉、Child-Pugh 與 MELD 肝功能分級評估，到肝硬化診斷黃金準則與失代償併發症處置。用最白話的方式，帶你理解肝臟的末路狂花。</p>
+    <div class="intro-card">
+      <p>這份筆記將生硬的肝臟生理學轉化為生動的比喻，讓你不再死背生化數值，而是真正理解「為什麼」。完整收錄 <b>BM110、BM111、BM112、BM113 四個學年度期末考題</b>（共 8 題），深入解析 Child-Pugh 評估陷阱、血流動力學指標與肝硬化病理分期，文末附完整真題解析。</p>
+      <div class="stats">
+        <div class="stat"><div class="n">8</div><div class="l">全收錄真題</div></div>
+        <div class="stat"><div class="n">4</div><div class="l">學年度 (110-113)</div></div>
+        <div class="stat"><div class="n">4</div><div class="l">核心章節</div></div>
+        <div class="stat"><div class="n">100%</div><div class="l">考點命中率</div></div>
+      </div>
+    </div>
+  </div>
+</header>
+<div class="wrap">
+<div class="cols">
+  <nav class="toc">
+    <div class="t">CONTENTS</div>
+    <details id="tocBox" open>
+      <summary>目錄 CONTENTS</summary>
+      <div class="toc-links">
+      <a href="#s0">一　導讀：一個喝了二十年酒的男人</a>
+      <a href="#s1">二　門脈系統：消化道的高速公路</a>
+      <a href="#s2">三　肝硬化：肝臟的末路</a>
+      <a href="#s3">四　Child-Pugh 與 MELD：如何評估肝臟剩多少戰力？</a>
+      <a href="#s4">五　食道靜脈曲張出血：最致命的併發症</a>
+      <a href="#s5">六　腹水：肚子裡的水從哪來？</a>
+      <a href="#s6">七　肝性腦病變：氨氣攻擊大腦</a>
+      <a href="#s7">八　SBP 與 肝腎症候群 (HRS)</a>
+      <a href="#s8">九　急性肝衰竭 vs 慢性肝衰竭</a>
+      <a href="#s9">十　一分鐘考前秒殺心法</a>
+      <a href="#exam" class="exam">十一　歷屆考題全收錄 (8 題)</a>
+      </div>
+    </details>
+  </nav>
+  <main>
+  
+  <section id="s0">
+    <div class="sec-head"><span class="sec-num">一</span><h2>導讀：一個喝了二十年酒的男人</h2></div>
+    <p>52歲的老陳，是個有20年重度飲酒史的建築工人。某天晚上，他突然大量吐血 (hematemesis) 被送到急診。</p>
+    <p>急診醫師在檢查時發現，老陳的胸口有蜘蛛網般的紅斑 (spider angiomas)，肚子周圍靜脈曲張得像神話中的梅杜莎之頭 (caput medusae)，而且肚子脹大如鼓，裡面充滿了積水 (ascites)。</p>
+    <div class="box key">
+      <div class="bt"><span class="badge">臨床思考</span>為什麼肝壞了，會吐血？</div>
+      <p>這聽起來很違反直覺：肝臟在肚子裡，為什麼出事了會是「吐血」？<br>這就牽涉到我們今天的主題：<b>門脈高壓 (Portal Hypertension)</b>。<br>當肝臟因為長期酗酒而變成一塊堅硬的疤痕組織（肝硬化），原本應該流進肝臟的血液被堵住了，只好到處亂竄。其中一條「捷徑」就是食道靜脈。但食道靜脈本來就不是為了承受大血流設計的，結果就是血管被撐破，造成了致命的吐血。</p>
+    </div>
+    <p>接下來，我們將逐步拆解老陳身上的每一個症狀，看看肝硬化到底是如何一步步摧毀人體的系統平衡。</p>
+  </section>
+
+  <section id="s1">
+    <div class="sec-head"><span class="sec-num">二</span><h2>門脈系統：消化道的高速公路</h2></div>
+    <p class="tagline">核心考點：<a class="qtag" href="#q110-48">110-48</a><a class="qtag" href="#q111-43">111-43</a><a class="qtag" href="#q113-15">113-15</a></p>
+    <p>想像一下，腸胃道就像是一個大型的採礦場（吸收養分），而肝臟就是全國最大的加工廠與淨水廠。這兩者之間，有一條專屬的高速公路，叫做<b>門靜脈 (Portal Vein)</b>。</p>
+    <p>正常情況下，這條高速公路的壓力很低，大約只有 <b>5-10 mmHg</b>。當門脈壓力超過 <b>10-12 mmHg</b>，我們就稱為 <b>門脈高壓 (Portal Hypertension, PHT)</b>。</p>
+    
+    <h3>門脈高壓的三大塞車路段 (Anatomical Classification)</h3>
+    <p>高速公路塞車，可能發生在上交流道前、隧道內、或是下交流道後。門脈高壓也是如此：</p>
+    <div class="tw"><table>
+      <thead><tr><th>分類</th><th>比喻</th><th>常見原因</th></tr></thead>
+      <tbody>
+        <tr><td><b>肝前性 (Prehepatic)</b></td><td>交流道前就塞車了</td><td><b>門靜脈栓塞 (Portal vein thrombosis)</b>，血流根本進不到肝臟。</td></tr>
+        <tr><td><b>肝內性 (Intrahepatic)</b></td><td>肝臟內部道路崩塌</td><td>最常見的原因。因為<b>肝硬化 (Cirrhosis)</b> 或血吸蟲病 (schistosomiasis) 導致肝內血管扭曲狹窄。</td></tr>
+        <tr><td><b>肝後性 (Post-hepatic)</b></td><td>出了肝臟，去心臟的路被堵死</td><td><b>巴德-吉亞利症候群 (Budd-Chiari syndrome, 肝靜脈阻塞)</b> 或右心衰竭 (Right heart failure，血液回流不順)。</td></tr>
+      </tbody>
+    </table></div>
+
+    <h3>高動力循環 (Hyperdynamic Circulation) 陷阱題</h3>
+    <p>當門脈高壓發生時，身體會啟動一系列奇怪的代償反應。最常考的就是「高動力循環」。</p>
+    <p>因為肝臟生病了，無法清除體內的血管擴張物質（如一氧化氮 NO）。這些物質大量累積，導致<mark>周邊與內臟血管顯著「擴張」 (Vasodilation)</mark>。血管一擴張，血壓就會掉，心臟只好拼命跳來補救，這就造成了<b>心輸出量 (Cardiac output) 增加</b>與 <b>RAAS (腎素-血管張力素-醛固酮) 活化</b>。</p>
+    <div class="box trap">
+      <div class="bt"><span class="badge">必背誘答陷阱</span>血管到底是收縮還是擴張？</div>
+      <p>考試最喜歡出「周邊血管收縮」或「NO釋放減少」來騙人。請記住：<b>是擴張！是增加！</b>（111-43, 113-15 考點）。</p>
+    </div>
+    
+    <div class="quiz">
+      <div class="quiz-top"><span class="lab">INLINE EXAM</span><span class="yr">113-15</span></div>
+      <div class="quiz-body">
+        <p class="stem">早期門脈高壓(portal hypertension)的機轉不包含下列哪些？</p>
+        <ul class="opts">
+          <li>(A) 週邊血管收縮</li>
+          <li>(B) 心臟輸出增加</li>
+          <li>(C) nitric oxide (NO)合成增加</li>
+          <li>(D) renin-angiotensin 系統活化</li>
+        </ul>
+        <details class="rev">
+          <summary class="toggle"></summary>
+          <div class="reveal">
+            <div class="ans">正確答案：(A)</div>
+            <p>早期門脈高壓時，內皮細胞釋放 NO 增加，導致週邊與內臟血管「擴張」（而非收縮），這會讓有效循環血量相對不足，進而代償性引起心輸出量增加與 RAAS 系統活化。<a href="#q113-15" class="jump">前往完整題庫 →</a></p>
+          </div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <section id="s2">
+    <div class="sec-head"><span class="sec-num">三</span><h2>肝硬化：肝臟的末路</h2></div>
+    <p class="tagline">核心考點：<a class="qtag" href="#q110-49">110-49</a><a class="qtag" href="#q112-13">112-13</a></p>
+    <p>肝臟本來是一塊柔軟、充滿彈性、充滿工作細胞（肝細胞）的器官。但是，如果它反覆受到傷害（例如：B肝、C肝、酒精、非酒精性脂肪肝 NASH），就會發生發炎反應。</p>
+    <p>發炎久了，星狀細胞 (Stellate cells) 會分泌膠原蛋白，肝臟就會開始纖維化 (Fibrosis)。最後，整個肝臟變成一塊長滿結節的疤痕組織，這就是<b>肝硬化 (Cirrhosis)</b>。</p>
+    <p><b>比喻：</b>就像原本是柔軟的海綿，裡面有許多微小的通道可以吸水。但如果你在海綿裡面灌滿了三秒膠，它就會變得堅硬無比，水（血液）再也流不過去了。</p>
+
+    <h3>肝硬化的診斷黃金準則</h3>
+    <p>雖然我們可以用超音波（看到表面凹凸不平）、或是 FibroScan（量測肝臟硬度）來推測肝硬化，但學理上的<mark>黃金準則 (Gold Standard) 永遠是「肝切片病理檢查 (Liver Biopsy)」</mark>。</p>
+    <div class="box exam">
+      <div class="bt"><span class="badge">切片分數必背</span>兩個常考的病理評分</div>
+      <ul>
+        <li><b>Ishak fibrosis score = 6</b>（滿分6分，110-49 考點）</li>
+        <li><b>Metavir fibrosis score = 4 (F4)</b>（滿分4分，112-13 考點）</li>
+      </ul>
+      <p>只要看到這兩個分數封頂，就是肝硬化！</p>
+    </div>
+  </section>
+
+  <section id="s3">
+    <div class="sec-head"><span class="sec-num">四</span><h2>Child-Pugh 與 MELD：如何評估肝臟剩多少戰力？</h2></div>
+    <p class="tagline">核心考點：<a class="qtag" href="#q111-44">111-44</a><a class="qtag" href="#q113-16">113-16</a></p>
+    <p>當老陳被送到急診時，我們不能只說「他肝臟很爛」，我們需要一個客觀的數字來告訴外科醫師：「他如果動手術，死在手術台上的機率有多高？」這時候我們就需要評分系統。</p>
+    
+    <h3>1. Child-Pugh Score（歷史悠久，評估手術風險與預後）</h3>
+    <p>這個系統包含了 <b>5 大核心指標（3 個抽血生化 ＋ 2 個臨床症狀）</b>。為什麼選這五個？因為它們代表了肝臟的「合成能力」與「排毒能力」。</p>
+    <div class="tw"><table>
+      <thead><tr><th>評估項目</th><th>1 分</th><th>2 分</th><th>3 分</th><th>代表什麼意義？</th></tr></thead>
+      <tbody>
+        <tr><td><b>血清總膽紅素 (Total Bilirubin)</b></td><td>&lt; 2.0 mg/dL</td><td>2.0 ～ 3.0 mg/dL</td><td>&gt; 3.0 mg/dL</td><td>肝臟排泄廢物的能力</td></tr>
+        <tr><td><b>血清白蛋白 (Albumin)</b></td><td>&gt; 3.5 g/dL</td><td>2.8 ～ 3.5 g/dL</td><td>&lt; 2.8 g/dL</td><td>肝臟合成蛋白質的能力</td></tr>
+        <tr><td><b>凝血酶原時間延長 (PT / INR)</b></td><td>延長 &lt; 4 秒 (INR &lt; 1.7)</td><td>延長 4 ～ 6 秒 (INR 1.7-2.3)</td><td>延長 &gt; 6 秒 (INR &gt; 2.3)</td><td>肝臟合成凝血因子的能力</td></tr>
+        <tr><td><b>腹水 (Ascites)</b></td><td>無 (None)</td><td>輕度 / 藥物控制 (Mild)</td><td>中重度 / 難治性 (Severe)</td><td>門脈高壓與低白蛋白的結果</td></tr>
+        <tr><td><b>肝性腦病變 (Encephalopathy)</b></td><td>無 (None)</td><td>Grade 1 ～ 2</td><td>Grade 3 ～ 4</td><td>肝臟清除毒素（氨）的能力</td></tr>
+      </tbody>
+    </table></div>
+    <p>總分 5-6分為A級，7-9分為B級，10-15分為C級。C級代表肝功能極差。</p>
+    
+    <div class="box trap">
+      <div class="bt"><span class="badge">必背排除考點</span>哪些「不是」Child-Pugh 考量因素？</div>
+      <p>考試超級愛考排除題！<br>
+      • <mark>血氨濃度 (NH₃ 值)</mark> <b>不是</b>。我們看的是臨床病人有沒有昏迷，而不是抽血看 NH₃ 有多高。<br>
+      • <mark>aPTT</mark> <b>不是</b>。評估凝血功能是看 PT / INR。<br>
+      • <mark>胃食道靜脈曲張 (Esophageal varices)</mark> <b>不是</b>。這是併發症，不列入計分。</p>
+    </div>
+
+    <div class="quiz">
+      <div class="quiz-top"><span class="lab">INLINE EXAM</span><span class="yr">111-44</span></div>
+      <div class="quiz-body">
+        <p class="stem">肝硬化Child-Pugh Classification 不包含下列哪一項？</p>
+        <ul class="opts">
+          <li>(A) 血中總膽紅素 (Total bilirubin level)</li>
+          <li>(B) 血中白蛋白值 (albumin)</li>
+          <li>(C) 胃食道靜脈曲張</li>
+          <li>(D) 腹水 (ascites)</li>
+        </ul>
+        <details class="rev">
+          <summary class="toggle"></summary>
+          <div class="reveal">
+            <div class="ans">正確答案：(C)</div>
+            <p>Child-Pugh 分級只包含 5 項：Bilirubin, Albumin, PT/INR, 腹水, 肝昏迷。不包含胃食道靜脈曲張。<a href="#q111-44" class="jump">前往完整題庫 →</a></p>
+          </div>
+        </details>
+      </div>
+    </div>
+
+    <h3>2. MELD Score（更客觀，決定誰先換肝）</h3>
+    <p>Child-Pugh 的缺點是「腹水」和「腦病變」的主觀判斷成分太高。因此，為了公平分配極其珍貴的捐贈肝臟，我們發明了 MELD Score (Model for End-Stage Liver Disease)。</p>
+    <p>MELD 完全依賴抽血數值：<b>Bilirubin、INR、Creatinine (肌酸酐)</b>。分數從 6 到 40，分數越高，代表三個月內死亡率越高，就能越快排到肝臟移植。</p>
+  </section>
+
+  <section id="s4">
+    <div class="sec-head"><span class="sec-num">五</span><h2>食道靜脈曲張出血：最致命的併發症</h2></div>
+    <p>回到老陳吐血的故事。當門靜脈大塞車，血液為了回到心臟，只好走「側支循環 (Collateral circulation)」。食道下段的靜脈就是其中一條路。這些靜脈被高壓血液撐得像氣球一樣薄，一旦破裂，就會引發致命的大出血。</p>
+
+    <h3>如何治療與預防？</h3>
+    <ul>
+      <li><b>急性大出血時：</b>這時候是在跟死神搶時間。
+        <ul>
+          <li>藥物：趕快打 <mark>IV octreotide (體抑素類似物)</mark>。它可以讓內臟血管收縮，減少門脈血流。</li>
+          <li>內視鏡：做胃鏡，把破裂的血管像綁氣球一樣綁起來，這叫 <b>內視鏡靜脈曲張結紮術 (EVL / EBL)</b>，這是黃金標準。</li>
+          <li>抗生素：預防性給予抗生素（因為肝硬化病人大出血極易引發感染）。</li>
+        </ul>
+      </li>
+      <li><b>預防再出血：</b>命救回來後，要防止血管再次被撐破。
+        <ul>
+          <li>首選藥物是 <b>非選擇性 β-blocker (例如 propranolol)</b>，它可以降低心輸出量並收縮內臟血管，從源頭降低門脈壓力。</li>
+        </ul>
+      </li>
+    </ul>
+  </section>
+
+  <section id="s5">
+    <div class="sec-head"><span class="sec-num">六</span><h2>腹水：肚子裡的水從哪來？</h2></div>
+    <p>老陳的肚子裡裝滿了幾公升的液體，這就是腹水 (Ascites)。</p>
+    <p><b>病理機轉：</b>前面提過，門脈高壓會導致內臟血管擴張，身體以為「缺血了」，於是瘋狂活化 RAAS 系統，命令腎臟把所有的鈉和水都留下來（鈉滯留）。加上肝硬化導致白蛋白 (Albumin) 製造不足，血管內的「膠體滲透壓」太低，拉不住水分，水就全漏到腹腔裡了。</p>
+    
+    <h3>腹水的治療階梯</h3>
+    <ol>
+      <li><b>飲食控制：</b>低鈉飲食。</li>
+      <li><b>利尿劑：</b>首選是 <b>Spironolactone (保鉀型利尿劑，拮抗醛固酮)</b>，常合併 Furosemide 使用。</li>
+      <li><b>大量放液 (LVP)：</b>如果肚子脹到無法呼吸 (Tense ascites)，可以直接用針把水抽出來，但抽完記得要補充白蛋白，免得血壓崩盤。</li>
+    </ol>
+  </section>
+
+  <section id="s6">
+    <div class="sec-head"><span class="sec-num">七</span><h2>肝性腦病變 (HE)：氨氣攻擊大腦</h2></div>
+    <p>有時候，老陳會開始胡言亂語，甚至手會不由自主地拍打 (Flapping tremor / Asterixis)，這就是肝性腦病變 (Hepatic Encephalopathy, HE)。</p>
+    
+    <p><b>氨氣假說 (Ammonia hypothesis)：</b>我們腸道裡的細菌每天都在分解蛋白質，產生大量的氨 (NH3)。正常情況下，氨會經由門靜脈送到肝臟，轉化為無毒的尿素排出。但老陳的肝臟罷工了，有毒的氨直接順著側支循環進入大腦，毒害神經元。</p>
+
+    <h3>如何把氨趕出體內？</h3>
+    <ul>
+      <li><b>Lactulose (乳果糖)：</b>這是一種無法吸收的糖。它會讓腸道變酸，把 NH3 (氨氣) 轉變成 NH4+ (銨離子)。NH4+ 無法被腸道吸收，就會被拉肚子排出去。</li>
+      <li><b>Rifaximin：</b>一種抗生素，只在腸道作用不被吸收，可以把製造氨的腸道細菌殺死。</li>
+    </ul>
+  </section>
+
+  <section id="s7">
+    <div class="sec-head"><span class="sec-num">八</span><h2>自發性細菌性腹膜炎 (SBP) 與肝腎症候群 (HRS)</h2></div>
+    <p class="tagline">核心考點：<a class="qtag" href="#q112-14">112-14</a></p>
+    <p>當肝硬化進入失代償期 (Decompensated)，還會出現幾種可怕的併發症：</p>
+    
+    <div class="tw"><table>
+      <thead><tr><th>併發症</th><th>發生原因</th><th>診斷與治療</th></tr></thead>
+      <tbody>
+        <tr><td><b>自發性細菌性腹膜炎 (SBP)</b></td><td>腸道黏膜屏障破損，細菌直接「游」進腹水裡繁殖 (Bacterial Translocation)。</td><td>診斷：抽腹水發現 <b>PMN > 250/mm3</b>。<br>治療：打第三代頭孢菌素 (IV Cefotaxime)。</td></tr>
+        <tr><td><b>肝腎症候群 (HRS)</b></td><td>內臟血管極度擴張，腎臟以為大失血，於是腎動脈劇烈收縮，導致急性腎衰竭。其實腎臟本身沒壞，是被肝臟拖累的。</td><td>Type 1 (急性)：兩週內 Creatinine 翻倍。<br>治療：給予 <b>Terlipressin + 白蛋白</b>。</td></tr>
+        <tr><td><b>肌少症 (Sarcopenia)</b></td><td>蛋白質合成降低，加上慢性消耗。</td><td>預後極差的指標。</td></tr>
+      </tbody>
+    </table></div>
+    
+    <div class="box trap">
+      <div class="bt"><span class="badge">必背誘答陷阱</span>失代償性肝硬化的表現不包括什麼？</div>
+      <p>112-14 考題明確指出，<mark>骨質疏鬆 (Osteoporosis)</mark> 雖然可能在慢性肝病發生，但它<b>不是</b>失代償肝硬化急性特異的「主要臨床表現」。</p>
+    </div>
+  </section>
+
+  <section id="s8">
+    <div class="sec-head"><span class="sec-num">九</span><h2>急性肝衰竭 vs 慢性肝衰竭</h2></div>
+    <p>並非所有的肝衰竭都是慢慢磨出來的。有時候，一個健康的人可能在幾天內突然肝臟徹底罷工，這叫<b>急性肝衰竭 (Acute Liver Failure, ALF)</b>。</p>
+    <ul>
+      <li><b>定義：</b>在沒有慢性肝病史的情況下，發病 26 週內出現肝性腦病變 (Encephalopathy) 與凝血功能障礙。</li>
+      <li><b>常見原因：</b>
+        <ul>
+          <li>西方國家：Acetaminophen (普拿疼) 服藥過量。（解藥是 N-acetylcysteine）</li>
+          <li>台灣：<b>B型肝炎急性發作 (HBV reactivation)</b>。</li>
+        </ul>
+      </li>
+      <li><b>處置：</b>支持性療法，並盡速評估是否需要緊急換肝。</li>
+    </ul>
+  </section>
+
+  <section id="s9">
+    <div class="sec-head"><span class="sec-num">十</span><h2>一分鐘考前秒殺心法（黃釧峰老師必考重點）</h2></div>
+    <div class="box key">
+      <div class="bt"><span class="badge">考前 60 秒衝刺</span>記住這些就能拿分</div>
+      <ol>
+        <li><b>門脈高壓血流：</b>周邊與內臟血管<strong>擴張</strong>、<strong>NO 合成增加</strong>、心輸出量<strong>增加</strong>、RAAS <strong>活化</strong>（絕非周邊血管收縮！）。</li>
+        <li><b>Child-Pugh 排除題：</b>只記 5 項（Bilirubin, Albumin, PT/INR, 腹水, 肝昏迷），<strong>選項出現 NH3、aPTT、靜脈曲張一律選為非考量因素</strong>！</li>
+        <li><b>肝硬化黃金準則：</b>唯一標準為<strong>肝切片</strong>。關鍵數字：<strong>Ishak score 6 或 Metavir F4</strong>。</li>
+        <li><b>失代償重要表現：</b>肝腎症候群 (HRS)、腸菌移位 SBP、肌少症（骨質疏鬆非主要急性表現）。</li>
+      </ol>
+    </div>
+  </section>
+
+  <section id="exam">
+    <div class="sec-head"><span class="sec-num">十一</span><h2>歷屆考古題全收錄（BM110 ～ BM113 共 8 題）</h2></div>
+    <div class="exam-head">
+      <h2>黃釧峰老師 門脈高壓與肝硬化題庫全解</h2>
+      <p>完整收錄 4 個學年度共 8 道真題，附標準答案與逐選項深度剖析。</p>
+      <button class="btn" id="allBtn">全部展開答案</button>
+    </div>
+
+    <!-- BM113 -->
+    <div class="yrhead">113 學年度 (BM113 期末考) · 2 題</div>
+    <div class="q" id="q113-15">
+      <span class="q-no">113-15</span><span class="q-topic">早期門脈高壓機轉</span>
+      <p class="q-stem">1. 早期門脈高壓(portal hypertension)的機轉不包含下列哪些？<br>(A)週邊血管收縮　(B)心臟輸出增加　(C)nitric oxide (NO)合成增加　(D)renin-angiotensin 系統活化</p>
+      <details class="rev"><summary class="toggle"></summary><div class="reveal">
+        <div class="ans">正確答案：(A) 週邊血管收縮</div>
+        <p>• 早期門脈高壓的特徵是高動力循環：內皮細胞釋放 NO 增加 &rarr; <b>週邊與內臟血管「擴張」</b>（而非收縮） &rarr; 有效循環血量不足 &rarr; 代償性心輸出量增加 ＋ RAAS 系統活化水鈉滯留。</p>
+        <div class="src">出處：BM113 期末考 第15題（黃釧峰 ppt p.22）</div>
+      </div></details>
+    </div>
+
+    <div class="q" id="q113-16">
+      <span class="q-no">113-16</span><span class="q-topic">Child-Pugh 排除項目</span>
+      <p class="q-stem">2. 評估肝硬化Child-Pugh score時何者非考量因素<br>(A)aPTT (activated partial thromboplastin time) 值　(B)腹水　(C)肝昏迷　(D)albumin值</p>
+      <details class="rev"><summary class="toggle"></summary><div class="reveal">
+        <div class="ans">正確答案：(A) aPTT 值</div>
+        <p>• Child-Pugh 凝血功能評估的是 <b>PT / INR (凝血酶原時間)</b>，而非 aPTT。</p>
+        <div class="src">出處：BM113 期末考 第16題（黃釧峰 ppt p49）</div>
+      </div></details>
+    </div>
+
+    <!-- BM112 -->
+    <div class="yrhead">112 學年度 (BM112 期末考) · 2 題</div>
+    <div class="q" id="q112-13">
+      <span class="q-no">112-13</span><span class="q-topic">肝硬化黃金準則</span>
+      <p class="q-stem">3. 診斷肝硬化的黃金準則(gold standard)為？<br>(A) 肝切片病理呈現 Metavir fibrosis score 4<br>(B) Fibrosis 4 index (FIB-4) 值大於 6.5<br>(C) 肝纖維化超音波 Fibroscan 值大於 12 kPa<br>(D) 超音波呈現肝實質粗糙併脾臟腫大</p>
+      <details class="rev"><summary class="toggle"></summary><div class="reveal">
+        <div class="ans">正確答案：(A)</div>
+        <p>• 肝硬化確診之黃金標準永遠為<b>肝臟切片病理檢查 (Liver biopsy)</b>，呈現 Metavir score 4 (F4) 或 Ishak score 6。</p>
+        <div class="src">出處：BM112 期末考 第13題（黃釧峰 ppt pg.12）</div>
+      </div></details>
+    </div>
+
+    <div class="q" id="q112-14">
+      <span class="q-no">112-14</span><span class="q-topic">失代償肝硬化表現</span>
+      <p class="q-stem">4. 何者非失償性肝硬化(decompensated liver cirrhosis)患者重要與常見之臨床表現？<br>(A) 肝腎症候群(hepatorenal syndrome)<br>(B) 腸菌增生與移轉 (Intestinal bacterial overgrowth and translocation)<br>(C) 肌少症(sacropenia)<br>(D) 骨質疏鬆(osteoporosis)</p>
+      <details class="rev"><summary class="toggle"></summary><div class="reveal">
+        <div class="ans">正確答案：(D) 骨質疏鬆</div>
+        <p>• 肝腎症候群 (HRS)、腸菌移位引發自發性腹膜炎 (SBP)、肌少症 (Sarcopenia) 均為失代償性肝硬化極常見之主要臨床表現。骨質疏鬆非主要特異表徵。</p>
+        <div class="src">出處：BM112 期末考 第14題（黃釧峰 ppt pg.16）</div>
+      </div></details>
+    </div>
+
+    <!-- BM111 -->
+    <div class="yrhead">111 學年度 (BM111 期末考) · 2 題</div>
+    <div class="q" id="q111-43">
+      <span class="q-no">111-43</span><span class="q-topic">早期門脈高壓機轉</span>
+      <p class="q-stem">5. 何者非早期肝硬化門脈高壓的病生理反應或機轉<br>(A) 周邊血管擴張　(B) 心輸出增加　(C) 一氧化氮nitric oxide 釋放減少　(D) renin-angiotensin 系統活化</p>
+      <details class="rev"><summary class="toggle"></summary><div class="reveal">
+        <div class="ans">正確答案：(C) 一氧化氮釋放減少</div>
+        <p>• 早期門脈高壓時，內皮細胞受到剪切力刺激，<b>一氧化氮 (NO) 釋放是「增加」</b>促使血管擴張，而非減少。</p>
+        <div class="src">出處：BM111 期末考 第43題（黃釧峰 ppt pg. 18）</div>
+      </div></details>
+    </div>
+
+    <div class="q" id="q111-44">
+      <span class="q-no">111-44</span><span class="q-topic">Child-Pugh 排除項目</span>
+      <p class="q-stem">6. 肝硬化Child-Pugh Classification 不包含下列哪一項？<br>(A) 血中總膽紅素 (Total bilirubin level)　(B) 血中白蛋白值 (albumin)　(C) 胃食道靜脈曲張　(D) 腹水 (ascites)</p>
+      <details class="rev"><summary class="toggle"></summary><div class="reveal">
+        <div class="ans">正確答案：(C) 胃食道靜脈曲張</div>
+        <p>• Child-Pugh 分級包含 5 項：Bilirubin, Albumin, PT/INR, 腹水, 肝昏迷。不包含胃食道靜脈曲張。</p>
+        <div class="src">出處：BM111 期末考 第44題（黃釧峰 ppt pg. 47）</div>
+      </div></details>
+    </div>
+
+    <!-- BM110 -->
+    <div class="yrhead">110 學年度 (BM110 期末考) · 2 題</div>
+    <div class="q" id="q110-48">
+      <span class="q-no">110-48</span><span class="q-topic">Child-Pugh 排除 NH3</span>
+      <p class="q-stem">7. 評估肝硬化Child-Pugh score時何者非考量因素?<br>(A) prothrombin time值　(B) ascites　(C) NH3值　(D) albumin值</p>
+      <details class="rev"><summary class="toggle"></summary><div class="reveal">
+        <div class="ans">正確答案：(C) NH3值</div>
+        <p>• Child-Pugh 評估的是臨床肝性腦病變 (Encephalopathy) 分期，而非抽血血氨 (NH3) 數值。</p>
+        <div class="src">出處：BM110 期末考 第48題（黃釧峰 ppt pg.47）</div>
+      </div></details>
+    </div>
+
+    <div class="q" id="q110-49">
+      <span class="q-no">110-49</span><span class="q-topic">肝硬化黃金準則 Ishak 6</span>
+      <p class="q-stem">8. 診斷肝硬化的黃金準則(gold standard)為？<br>(A) 肝切片病理呈現 Ishak fibrosis score 6<br>(B) APRI(AST-to-platelets ratio index)值大於2<br>(C) 肝纖維化超音波Fibroscan 值大於10kPa<br>(D) 超音波呈現肝實質粗糙</p>
+      <details class="rev"><summary class="toggle"></summary><div class="reveal">
+        <div class="ans">正確答案：(A)</div>
+        <p>• 肝硬化確診黃金標準為肝切片病理檢查呈現 Ishak fibrosis score 6。</p>
+        <div class="src">出處：BM110 期末考 第49題（黃釧峰 ppt pg.10）</div>
+      </div></details>
+    </div>
+  </section>
+  <footer>
+    <p><b>高醫肝膽胰內科｜黃釧峰老師 門脈高壓、肝硬化與衰竭題庫全集完成</b>　共 8 題。</p>
+  </footer>
+  </main>
+</div>
+</div>
+
+<script>
+  (function(){
+    document.querySelectorAll('.tw table').forEach(function(t){
+      var ths = t.querySelectorAll('thead th');
+      if(!ths.length) return;
+      var labels = Array.prototype.map.call(ths, function(th){
+        return th.textContent.replace(/\u3000/g,'').trim();
+      });
+      t.querySelectorAll('tbody tr').forEach(function(tr){
+        Array.prototype.forEach.call(tr.children, function(td, i){
+          if(labels[i]) td.setAttribute('data-label', labels[i]);
+        });
+      });
+    });
+  })();
+  (function(){
+    var toc = document.getElementById('tocBox');
+    if(toc && window.matchMedia('(max-width:700px)').matches){
+      toc.removeAttribute('open');
+    }
+  })();
+  var allBtn = document.getElementById('allBtn');
+  if(allBtn){
+    var expanded = false;
+    allBtn.addEventListener('click', function(){
+      expanded = !expanded;
+      document.querySelectorAll('.q details.rev, .quiz details.rev').forEach(function(d){
+        if(expanded){ d.setAttribute('open',''); } else { d.removeAttribute('open'); }
+      });
+      allBtn.textContent = expanded ? '全部收合答案' : '全部展開答案';
+    });
+  }
+</script>
+
+</body>
+</html>
+"""
+
+with open('/Users/furyan/.gemini/antigravity/scratch/notes/block7/portal-hypertension-cirrhosis.html', 'w', encoding='utf-8') as f:
+    f.write(html_content)
+
+print("File written successfully!")

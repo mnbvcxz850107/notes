@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+html_content = """<!DOCTYPE html>
 <html lang="zh-Hant">
 <head>
 <meta charset="utf-8">
@@ -459,9 +459,6 @@
     <h3>2. 先天性膽道擴張症 (Choledochal cyst)</h3>
     <p>這是一種先天性膽管發育異常，膽管會不正常地膨大成囊腫。因為膽汁在囊腫內淤積，日後發生「膽管癌」的機率非常高，所以一旦診斷出來，通常需要將囊腫切除並進行重建。<br>
     分類上使用 <mark>Todani classification</mark>，其中<b>臨床上最常見的是「Type 1 (總膽管囊狀/梭形擴張)」</b>，佔了 80~90%。這也是考試極愛考的細節，常故意說是 Type 2 最常見。</p>
-
-    <h3>3. 壺腹癌 (Ampullary carcinoma)</h3>
-    
     
     <div class="quiz">
       <div class="quiz-top">
@@ -572,26 +569,7 @@
   <footer>
     <p><b>高醫肝膽胰外科｜王森稔／郭功楷老師 胰臟與膽道外科題庫全集完成</b>　共 12 題。</p>
   </footer>
-  
-<div class="box exam" style="border-left: 5px solid #e74c3c; background-color: #fdf2f0;">
-    <h3 style="color: #c0392b;">🚨 老師考訓：一級必會考題原稿 🚨</h3>
-    <div class="quiz">
-        <p class="quiz-question">一名 72 歲男性出現無痛性黃疸，經檢查後診斷為 ampulla of Vater 腫瘤，無 distant metastasis。下列何者最符合 ampullary carcinoma 的臨床特性？</p>
-        <ul class="quiz-options">
-            <li>A. 其 resectability 通常低於其他 biliary malignancies</li>
-            <li>B. 根治性治療主要為 hepatic lobectomy</li>
-            <li>C. Obstructive jaundice 是常見表現</li>
-            <li>D. 根治性手術為 simple cholecystectomy</li>
-        </ul>
-        <details>
-            <summary>解答與解析</summary>
-            <p><strong>答案：C. Obstructive jaundice 是常見表現</strong></p>
-            <p>解析：壺腹癌早期最常見的臨床表徵為阻塞性黃疸（約 70%–82%）。其手術切除率通常高於其他膽道惡性腫瘤（A 錯誤）；根治術式為胰十二指腸切除術（Whipple operation，B、D 錯誤）。</p>
-        </details>
-    </div>
-</div>
-
-</main>
+  </main>
 </div>
 </div>
 
@@ -601,7 +579,7 @@
       var ths = t.querySelectorAll('thead th');
       if(!ths.length) return;
       var labels = Array.prototype.map.call(ths, function(th){
-        return th.textContent.replace(/　/g,'').trim();
+        return th.textContent.replace(/\u3000/g,'').trim();
       });
       t.querySelectorAll('tbody tr').forEach(function(tr){
         Array.prototype.forEach.call(tr.children, function(td, i){
@@ -631,3 +609,7 @@
 
 </body>
 </html>
+"""
+import os
+with open('/Users/furyan/.gemini/antigravity/scratch/notes/block7/pancreatic-biliary-surgery.html', 'w', encoding='utf-8') as f:
+    f.write(html_content)

@@ -1,14 +1,6 @@
-<!DOCTYPE html>
-<html lang="zh-Hant">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>腹部影像解剖學｜裸讀學習筆記</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&family=Noto+Serif+TC:wght@500;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
-<style>
+import os
 
+css = """
   :root{
     --bg:#0F1B18;
     --bg-2:#152420;
@@ -232,7 +224,19 @@
     summary.toggle{width:100%;text-align:center;padding:11px 16px;font-size:14px}
     .btn{width:100%;padding:12px 16px}
   }
+"""
 
+html_content = """<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>腹部影像解剖學｜裸讀學習筆記</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&family=Noto+Serif+TC:wght@500;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+__CSS__
 </style>
 </head>
 <body>
@@ -333,8 +337,6 @@
       <div class="bt"><span class="badge">必考重點</span>特立獨行的 Segment 1</div>
       <p>大部分的肝節都是把血流匯集到肝靜脈，再流入下腔靜脈（IVC）。但是 <mark>Segment 1 (Caudate lobe) 的血流是「直接」注入 IVC</mark>，不需要經過那三條主要的肝靜脈！當病人有肝靜脈阻塞（Budd-Chiari syndrome）時，其他肝節會因為排不出血而腫脹壞死，唯獨 Segment 1 因為有自己的專屬排水管而存活，甚至會代償性變大。</p>
     </div>
-
-    
 
     <div class="quiz">
       <div class="quiz-top"><span class="lab">考古題</span><span class="yr">111 學年度 · 第 63 題</span></div>
@@ -461,12 +463,6 @@
       </tbody>
     </table></div>
 
-    
-
-    
-
-    
-
     <div class="quiz">
       <div class="quiz-top"><span class="lab">考古題</span><span class="yr">113 學年度 · 第 50 題</span></div>
       <div class="quiz-body">
@@ -491,36 +487,7 @@
 
   <!-- ============ 05 ============ -->
   <section id="s5">
-    <div class="sec-head"><span class="sec-num">五</span>
-<div class="box exam" style="border-left: 5px solid #e74c3c; background-color: #fdf2f0;">
-    <h3 style="color: #c0392b;">🚨 陳巧雲老師考訓：一級必會考點原稿 🚨</h3>
-    <p><strong>二、肝的分葉原理（Couinaud 肝分葉）</strong><br>
-    主要以 Hepatic vein、Portal vein 及解剖標誌劃分成 8 個 Segments：<br>
-    ● 垂直分界（Landmarks）：<br>
-    ○ 左肝 / 右肝：Middle hepatic vein 或 Cantlie’s line（膽囊 Gallbladder 與下腔靜脈 IVC 的連線）。<br>
-    ○ 右肝前段 / 後段：Right hepatic vein（前段為 S5/S8，後段為 S6/S7）。<br>
-    ○ 左肝內側 / 外側：Left hepatic vein 或 鐮狀韌帶（Falciform ligament）（內側為 S4a/S4b，外側為 S2/S3）。<br>
-    ● 水平分界（上下段）：<br>
-    ○ Portal vein（彎出去的 Umbilical vein / Left portal v.）平面。<br>
-    ○ 上段（Superior）：S2、S4a、S8、S7。<br>
-    ○ 下段（Inferior）：S3、S4b、S5、S6。<br>
-    ● 常考位置關係：<br>
-    ○ S1：尾葉（Caudate lobe），位於 IVC 與 Portal vein 夾角處。<br>
-    ○ 膽囊兩側：膽囊左側為 S4b，膽囊右側為 S5。</p>
-
-    <p><strong>五、腹膜內與腹膜外（後）構造（Intra- vs. Extra-peritoneum）</strong><br>
-    ● 腹膜內器官（Intraperitoneal organs）：<br>
-    胃、肝臟、膽囊、脾臟、小腸、橫結腸、乙狀結腸。<br>
-    ● 腹膜外 / 腹膜後器官（Retroperitoneal organs）：<br>
-    十二指腸、胰臟、腎臟與輸尿管、升結腸、降結腸、直腸、腹主動脈與下腔靜脈、膀胱、腎上腺。<br>
-    ● 重要臨床與空間概念：<br>
-    ○ 穿孔氣體位置：胃穿孔氣體聚於腹膜腔；十二指腸穿孔氣體聚於腹膜外／腹膜後間隙。<br>
-    ○ 開刀路徑：腎臟外傷由後方經腹膜後間隙進入；肝臟病變由前方開入腹膜腔。<br>
-    ○ 邊界韌帶：鐮狀韌帶分隔左右膈下間隙；胃肝韌帶、胃脾韌帶、脾腎韌帶共同構成小網膜囊（Lesser sac）的邊界。</p>
-</div>
-
-
-<h2>一分鐘考前秒殺心法</h2></div>
+    <div class="sec-head"><span class="sec-num">五</span><h2>一分鐘考前秒殺心法</h2></div>
     <div class="box key">
       <div class="bt"><span class="badge">考前 60 秒</span>把這五句唸完</div>
       <ol>
@@ -668,3 +635,9 @@
 
 </body>
 </html>
+"""
+
+import os
+os.makedirs('/Users/furyan/.gemini/antigravity/scratch/notes/block7', exist_ok=True)
+with open('/Users/furyan/.gemini/antigravity/scratch/notes/block7/abdominal-imaging-anatomy.html', 'w', encoding='utf-8') as f:
+    f.write(html_content.replace('__CSS__', css))

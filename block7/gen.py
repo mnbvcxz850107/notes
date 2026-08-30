@@ -1,4 +1,6 @@
-<!DOCTYPE html>
+import os
+
+html_content = """<!DOCTYPE html>
 <html lang="zh-Hant">
 <head>
 <meta charset="utf-8">
@@ -377,8 +379,6 @@
     <h3>為什麼它會流血？（這很重要！）</h3>
     <p>因為這個「小口袋」裡，經常含有<strong>異位的胃黏膜（Ectopic gastric mucosa）</strong>！這些迷路的胃黏膜細胞會分泌胃酸，而小腸的黏膜根本承受不住胃酸的腐蝕。於是，憩室周圍的小腸就會產生潰瘍、甚至大出血。這就是為什麼年輕人如果出現無痛性的大量血便，一定要懷疑它。</p>
 
-    
-
     <div class="tw"><table>
       <thead><tr><th colspan="2">梅克爾憩室的「Rule of 2s」（2的法則，必考！）</th></tr></thead>
       <tbody>
@@ -413,8 +413,6 @@
       <li><strong>重要標記：</strong>在免疫組織化學染色上，<mark>c-kit (CD117)</mark> 幾乎都是陽性！這是必考的專一性標記。</li>
       <li><strong>治療：</strong>除了手術切除，標靶藥物 <strong>Imatinib (Gleevec)</strong> 對晚期 GIST 有奇效。</li>
     </ul>
-
-    
 
     <h3>2. 神經內分泌腫瘤（NETs / Carcinoid tumor）</h3>
     <p>以前被稱為「類癌」。最常發生在小腸的末端（迴腸，Ileum）或闌尾。它們會分泌血清素（Serotonin）等血管活性物質。</p>
@@ -475,25 +473,7 @@
 
   <!-- ============ 06 ============ -->
   <section id="s6">
-    <div class="sec-head"><span class="sec-num">六</span>
-<div class="box exam" style="border-left: 5px solid #e74c3c; background-color: #fdf2f0;">
-    <h3 style="color: #c0392b;">🚨 王耀廣老師考訓：一級必會考點原稿 🚨</h3>
-    <p><strong>3. Meckel's Diverticulum（梅克爾憩室）</strong><br>
-    ● 胚胎機轉：卵黃管（vitelline duct）未完全閉合所致。<br>
-    ● 病理分類（必考陷阱）：屬於真性憩室（True diverticulum），包含腸壁全層構造，不是假性憩室。<br>
-    ● 臨床特徵（Rule of 2s 相關）：<br>
-    ○ 胃腸道最常見的先天性異常。<br>
-    ○ 男女發生比例約為 2 : 1。<br>
-    ○ 位置常在離迴盲瓣（ileocecal valve）60 公分（約 2 英呎）以內，長度約 2 英吋。<br>
-    ○ 成人大多無臨床症狀（asymptomatic）。</p>
-    
-    <p><strong>4. GIST（胃腸道間質瘤）</strong><br>
-    ● 最常見突變點位：KIT gene exon 11（佔絕大多數突變）。<br>
-    ● 其他突變位點（次要）：KIT exon 9、PDGFRA exon 18 / exon 12。</p>
-</div>
-
-
-<h2>一分鐘考前秒殺心法</h2></div>
+    <div class="sec-head"><span class="sec-num">六</span><h2>一分鐘考前秒殺心法</h2></div>
     <div class="grid9">
       <div class="cell"><b>不明原因出血首選</b>膠囊內視鏡（CE）。無痛但只能看不能切片。禁忌症為腸道狹窄。</div>
       <div class="cell"><b>小腸鏡治療首選</b>雙氣囊小腸鏡（DBE）。可切片、可止血、可電燒，但侵入性高需麻醉。</div>
@@ -638,4 +618,9 @@
 </script>
 
 </body>
-</html>
+</html>"""
+
+with open('/Users/furyan/.gemini/antigravity/scratch/notes/block7/small-bowel-disease.html', 'w', encoding='utf-8') as f:
+    f.write(html_content)
+
+print("done")
