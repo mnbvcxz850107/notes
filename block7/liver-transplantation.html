@@ -3,24 +3,15 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>肝臟移植 110~114M 精華讀書筆記與考題全解｜高雄醫學大學 外科學</title>
+<title>肝臟移植｜裸讀學習筆記</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&family=Noto+Serif+TC:wght@500;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
 <style>
   :root{
-    --bg:#0F1B18;
-    --bg-2:#152420;
-    --bg-3:#1B2E29;
-    --line:#26403A;
-    --line-2:#31534B;
-    --text:#E9F1EE;
-    --text-2:#A8C2BA;
-    --text-3:#7A968D;
-    --teal:#7FC9BE;
-    --teal-dim:#4E9A90;
-    --gold:#C9A961;
-    --rose:#E58B85;
+    --bg:#0F1B18;--bg-2:#152420;--bg-3:#1B2E29;--line:#26403A;--line-2:#31534B;
+    --text:#E9F1EE;--text-2:#A8C2BA;--text-3:#7A968D;
+    --teal:#7FC9BE;--teal-dim:#4E9A90;--gold:#C9A961;--rose:#E58B85;
     --serif:"Noto Serif TC","Songti TC",serif;
     --sans:"Noto Sans TC","PingFang TC","Microsoft JhengHei",sans-serif;
     --mono:"JetBrains Mono",ui-monospace,Menlo,monospace;
@@ -30,12 +21,9 @@
   body{
     margin:0;background:var(--bg);color:var(--text);
     font-family:var(--sans);font-size:16.5px;line-height:1.9;font-weight:300;
-    -webkit-font-smoothing:antialiased;
-    overflow-x:hidden;
+    -webkit-font-smoothing:antialiased;overflow-x:hidden;
   }
   .wrap{max-width:1150px;margin:0 auto;padding:0 22px}
-
-  /* ---------- Hero ---------- */
   header.hero{padding:60px 0 48px;border-bottom:1px solid var(--line)}
   .backlink{display:inline-block;font-family:var(--mono);font-size:12px;
     color:var(--text-3);text-decoration:none;margin-bottom:20px;
@@ -51,16 +39,12 @@
   }
   header.hero h1 em{font-style:normal;color:var(--teal)}
   header.hero p.sub{margin:0;color:var(--text-2);max-width:65ch;font-size:16.5px;line-height:1.85}
-  .intro-card{
-    border:1px solid var(--line);border-radius:16px;padding:24px 28px;margin-top:30px;background:var(--bg-2);
-  }
+  .intro-card{border:1px solid var(--line);border-radius:16px;padding:24px 28px;margin-top:30px;background:var(--bg-2)}
   .intro-card p{margin:0 0 20px;color:var(--text-2)}
   .intro-card b{color:var(--teal);font-weight:500}
   .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
   .stat .n{font-family:var(--serif);font-size:36px;color:var(--gold);line-height:1}
   .stat .l{font-size:12px;color:var(--text-3);letter-spacing:.08em;margin-top:6px}
-
-  /* ---------- Layout ---------- */
   .cols{display:grid;grid-template-columns:230px 1fr;gap:50px;padding:42px 0 90px;align-items:start}
   nav.toc{position:sticky;top:26px}
   nav.toc .t{font-family:var(--mono);font-size:11px;letter-spacing:.2em;color:var(--text-3);margin-bottom:14px}
@@ -69,8 +53,6 @@
   nav.toc a:hover{border-left-color:var(--teal);color:var(--teal);background:var(--bg-2)}
   nav.toc a.exam{color:var(--gold)}
   nav.toc summary{display:none}
-
-  /* ---------- Sections ---------- */
   section{margin-bottom:60px;scroll-margin-top:24px}
   .sec-head{display:flex;align-items:baseline;gap:16px;border-bottom:1px solid var(--line-2);padding-bottom:12px;margin-bottom:24px}
   .sec-num{font-family:var(--serif);font-size:28px;color:var(--gold);line-height:1}
@@ -84,50 +66,35 @@
   strong,b{font-weight:500;color:#FFF}
   u{text-decoration-color:var(--teal-dim);text-underline-offset:3px}
   code{font-family:var(--mono);font-size:.88em;background:var(--bg-3);padding:1px 6px;border-radius:4px;color:var(--teal)}
-
-  /* ---------- Signature: 螢光 + 考題標籤 ---------- */
-  mark{background:rgba(201,169,97,.22);box-shadow:inset 0 -2px 0 rgba(201,169,97,.6);
-    color:#FBF3E2;padding:1px 3px;border-radius:2px}
-  a.qtag{display:inline-block;font-family:var(--mono);font-size:11px;font-weight:600;
-    border:1px solid var(--gold);color:var(--gold);padding:1px 7px;border-radius:4px;
-    text-decoration:none;margin:0 3px;vertical-align:2px;white-space:nowrap;transition:.15s}
+  mark{background:rgba(201,169,97,.22);box-shadow:inset 0 -2px 0 rgba(201,169,97,.6);color:#FBF3E2;padding:1px 3px;border-radius:2px}
+  a.qtag{display:inline-block;font-family:var(--mono);font-size:11px;font-weight:600;border:1px solid var(--gold);color:var(--gold);padding:1px 7px;border-radius:4px;text-decoration:none;margin:0 3px;vertical-align:2px;white-space:nowrap;transition:.15s}
   a.qtag:hover{background:var(--gold);color:var(--bg)}
   .tagline{margin:-6px 0 18px;font-size:13.5px;color:var(--text-3)}
-
-  /* ---------- Boxes ---------- */
   .box{border-radius:13px;padding:18px 22px;margin:20px 0;border:1px solid var(--line);background:var(--bg-2)}
   .box .bt{font-weight:500;font-size:14.5px;margin-bottom:10px;display:flex;align-items:center;gap:9px;color:#FFF}
   .box p:last-child,.box ul:last-child,.box ol:last-child{margin-bottom:0}
-  .badge{font-family:var(--mono);font-size:10px;padding:2px 8px;border-radius:3px;letter-spacing:.06em;
-    border:1px solid currentColor;font-weight:600}
+  .badge{font-family:var(--mono);font-size:10px;padding:2px 8px;border-radius:3px;letter-spacing:.06em;border:1px solid currentColor;font-weight:600}
   .box.exam{border-color:rgba(201,169,97,.45);background:rgba(201,169,97,.07)}
   .box.exam .badge{color:var(--gold)}
   .box.trap{border-color:rgba(229,139,133,.45);background:rgba(229,139,133,.07)}
   .box.trap .badge{color:var(--rose)}
   .box.key{border-color:rgba(127,201,190,.4);background:rgba(127,201,190,.07)}
   .box.key .badge{color:var(--teal)}
-
-  /* ---------- Tables (Cards on Mobile) ---------- */
+  .img-frame{background:#08100E;border:1px solid var(--line-2);border-radius:12px;padding:12px;margin:18px 0 20px;text-align:center}
+  .q-img{display:block;max-width:100%;height:auto;border-radius:8px;margin:0 auto;box-shadow:0 4px 14px rgba(0,0,0,.5)}
+  .img-caption{font-family:var(--mono);font-size:12px;color:var(--text-2);margin-top:10px;line-height:1.6}
+  .img-caption b{color:var(--gold);font-weight:600}
   .tw{border:none;background:none;overflow:visible;border-radius:0;margin:20px 0}
   .tw table{min-width:0;width:100%;border-collapse:separate;border-spacing:0;font-size:14.8px}
   .tw thead{display:none}
-  .tw tbody tr{
-    display:block;border:1px solid var(--line);border-radius:12px;
-    background:var(--bg-2);margin-bottom:12px;padding:6px 0;
-  }
+  .tw tbody tr{display:block;border:1px solid var(--line);border-radius:12px;background:var(--bg-2);margin-bottom:12px;padding:6px 0}
   .tw tbody tr:nth-child(even){background:var(--bg-2)}
   .tw tbody tr:last-child{margin-bottom:0}
   .tw tbody td{display:block;border:none;padding:9px 16px}
   .tw tbody td+td{border-top:1px dashed var(--line)}
-  .tw tbody td[data-label]::before{
-    content:attr(data-label);display:block;
-    font-family:var(--mono);font-size:11px;letter-spacing:.08em;
-    color:var(--teal);margin-bottom:4px;font-weight:600;
-  }
+  .tw tbody td[data-label]::before{content:attr(data-label);display:block;font-family:var(--mono);font-size:11px;letter-spacing:.08em;color:var(--teal);margin-bottom:4px;font-weight:600}
   .tw tbody td:first-child{font-size:16px;color:#FFF;font-weight:500}
   .tw tbody td.mono{font-family:var(--mono);font-size:13.5px}
-
-  /* Desktop table view */
   @media (min-width:769px){
     .tw{overflow-x:auto;border:1px solid var(--line);border-radius:13px;background:var(--bg-2)}
     .tw table{border-collapse:collapse}
@@ -141,8 +108,6 @@
     .tw tbody td[data-label]::before{display:none}
     .tw tbody td:first-child{font-size:14.8px;font-weight:normal}
   }
-
-  /* ---------- 隨堂小考（內文嵌入） ---------- */
   .quiz{border:1px solid var(--line-2);border-radius:14px;margin:24px 0;overflow:hidden;background:var(--bg-2)}
   .quiz-top{display:flex;align-items:center;gap:10px;padding:12px 20px;background:var(--bg-3);border-bottom:1px solid var(--line)}
   .quiz-top .lab{font-family:var(--serif);font-size:14px;letter-spacing:.16em;color:var(--gold)}
@@ -151,15 +116,8 @@
   .quiz-body .stem{font-size:15.5px;line-height:1.85;margin:0 0 14px;color:var(--text)}
   .opts{list-style:none;padding:0;margin:0 0 14px}
   .opts li{padding:8px 12px;font-size:15px;border:1px solid var(--line);border-radius:8px;margin-bottom:7px;color:var(--text-2)}
-
-  /* ---------- 答案展開：原生 details ---------- */
   details.rev{margin:0}
-  summary.toggle{
-    display:inline-block;list-style:none;cursor:pointer;
-    background:none;border:1px solid var(--teal-dim);color:var(--teal);
-    font-family:var(--sans);font-size:13px;padding:7px 16px;border-radius:7px;
-    font-weight:400;transition:.15s;-webkit-tap-highlight-color:transparent;
-  }
+  summary.toggle{display:inline-block;list-style:none;cursor:pointer;background:none;border:1px solid var(--teal-dim);color:var(--teal);font-family:var(--sans);font-size:13px;padding:7px 16px;border-radius:7px;font-weight:400;transition:.15s;-webkit-tap-highlight-color:transparent}
   summary.toggle::-webkit-details-marker{display:none}
   summary.toggle::marker{content:""}
   summary.toggle:hover{background:var(--teal);color:var(--bg)}
@@ -173,31 +131,24 @@
   .src{font-size:12px;color:var(--text-3);font-family:var(--mono);margin-top:12px}
   .jump{font-size:12.5px;color:var(--teal-dim);text-decoration:none;border-bottom:1px solid var(--line-2)}
   .jump:hover{color:var(--teal)}
-
-  /* ---------- Exam bank ---------- */
   .exam-head{border:1px solid var(--line-2);border-radius:16px;padding:26px;margin-bottom:26px;background:var(--bg-2)}
   .exam-head h2{font-family:var(--serif);margin:0 0 10px;font-size:28px}
   .exam-head p{color:var(--text-2);margin:0;font-size:15px}
-  .btn{font-family:var(--sans);font-size:13.5px;cursor:pointer;background:var(--teal);color:var(--bg);
-    border:none;padding:10px 20px;border-radius:8px;margin-top:16px;font-weight:500}
+  .btn{font-family:var(--sans);font-size:13.5px;cursor:pointer;background:var(--teal);color:var(--bg);border:none;padding:10px 20px;border-radius:8px;margin-top:16px;font-weight:500}
   .btn:hover{background:#9BDBD1}
-  .yrhead{font-family:var(--serif);font-size:23px;font-weight:700;margin:36px 0 16px;
-    padding-left:16px;border-left:3px solid var(--gold);color:var(--gold)}
+  .yrhead{font-family:var(--serif);font-size:23px;font-weight:700;margin:36px 0 16px;padding-left:16px;border-left:3px solid var(--gold);color:var(--gold)}
   .q{background:var(--bg-2);border:1px solid var(--line);border-radius:13px;padding:20px 22px;margin-bottom:18px;scroll-margin-top:24px}
   .q-no{font-family:var(--mono);font-size:11.5px;color:var(--gold);border:1px solid var(--gold);padding:2px 9px;border-radius:5px}
   .q-topic{font-size:12.5px;color:var(--text-3);margin-left:10px}
   .q-stem{margin:14px 0 12px;font-size:15.5px;line-height:1.85}
-
   footer{border-top:1px solid var(--line);padding:28px 0 56px;color:var(--text-3);font-size:13.5px}
   footer b{color:var(--text-2)}
-
   @media (max-width:900px){
     .cols{grid-template-columns:1fr;gap:0;padding-top:24px}
     nav.toc{position:static;margin-bottom:32px;border:1px solid var(--line);border-radius:12px;padding:16px;background:var(--bg-2)}
     nav.toc a{border-left:none;padding:6px 4px}
     .stats{grid-template-columns:repeat(2,1fr);gap:16px}
   }
-
   @media (max-width:700px){
     body{font-size:16px;line-height:1.85}
     .wrap{padding:0 16px}
@@ -207,10 +158,7 @@
     nav.toc{padding:0;overflow:hidden}
     nav.toc .t{display:none}
     nav.toc details{margin:0}
-    nav.toc summary{
-      display:block;list-style:none;cursor:pointer;padding:14px 16px;
-      font-family:var(--mono);font-size:12px;letter-spacing:.16em;color:var(--teal);
-    }
+    nav.toc summary{display:block;list-style:none;cursor:pointer;padding:14px 16px;font-family:var(--mono);font-size:12px;letter-spacing:.16em;color:var(--teal)}
     nav.toc summary::-webkit-details-marker{display:none}
     nav.toc summary::after{content:" ▾";color:var(--text-3)}
     nav.toc details[open] summary::after{content:" ▴"}
@@ -234,623 +182,163 @@
 </style>
 </head>
 <body>
-
 <header class="hero">
   <div class="wrap">
     <a class="backlink" href="index.html">← 返回 Block 7 目錄</a>
-    <div class="eyebrow"><span class="rule"></span>高醫外科學 · 裸讀學習筆記<span class="dot">·</span>張文燦老師專題</div>
-    <h1>肝臟移植 <em>110 ~ 114M 精華讀書筆記</em></h1>
-    <p class="sub">精準鎖定 110 學年度至 114M 學年度期中／期末專題題庫（共 14 題）。全方位濃縮器官分配規則、肝癌移植指引、活體手術安全、ABOi 現代處置與術後併發症。</p>
-
+    <div class="eyebrow"><span class="rule"></span>高醫肝臟移植中心 · 裸讀學習筆記<span class="dot">·</span>張文燦老師專題</div>
+    <h1>肝臟移植 <em>(Liver Transplantation)</em></h1>
+    <p class="sub">精準掌握米蘭準則 (Milan criteria)、肝臟雙重血液供應比例、膽道血供微血管來源、肝動脈栓塞 (HAT) 致命機轉、活體右肝移植前節鬱血 (V5/V8) 重建、急性細胞性排斥 (ACR) 與類固醇脈衝治療。授課教師：張文燦。</p>
     <div class="intro-card">
-      <p>這份筆記聚焦於 <b>110～114M 五個學年度</b> 最新考點，<b>去蕪存菁提煉出 6 大核心觀念模組，搭配隨堂驗收測驗</b>。文末完整收錄 14 道考古題與超詳細正誤選項解析。</p>
+      <p>完整收錄 <b>BM110、BM111、BM112、BM113 四個學年度共 6 題真題</b>，將移植適應症、血管膽道吻合原則、術後重大血管與免疫排斥併發症徹底拆解，文末附完整題庫詳解。</p>
       <div class="stats">
-        <div class="stat"><div class="n">14</div><div class="l">精選總題數</div></div>
-        <div class="stat"><div class="n">5</div><div class="l">最新學年度 (110-114M)</div></div>
-        <div class="stat"><div class="n">6</div><div class="l">高頻核心章節</div></div>
-        <div class="stat"><div class="n">100%</div><div class="l">命題陷阱命中率</div></div>
+        <div class="stat"><div class="n">6</div><div class="l">全收錄真題</div></div>
+        <div class="stat"><div class="n">4</div><div class="l">學年度 (110-113)</div></div>
+        <div class="stat"><div class="n">4</div><div class="l">核心章節</div></div>
+        <div class="stat"><div class="n">100%</div><div class="l">考點命中率</div></div>
       </div>
     </div>
   </div>
 </header>
-
 <div class="wrap">
 <div class="cols">
-
   <nav class="toc">
     <div class="t">CONTENTS</div>
     <details id="tocBox" open>
       <summary>目錄 CONTENTS</summary>
       <div class="toc-links">
-      <a href="#s1">一　器官分配與 Status 1 嚴格規範</a>
-      <a href="#s2">二　肝癌移植標準 (Milan/UCSF) 與禁忌</a>
-      <a href="#s3">三　活體肝移植 (LDLT) 與捐者安全</a>
-      <a href="#s4">四　ABOi LDLT 現代處置與膽道併發症</a>
-      <a href="#s5">五　術後感染、PTLD、排斥與血管併發症</a>
-      <a href="#s6">六　捐贈者篩檢與受者既往癌症適應症</a>
-      <a href="#s7">七　一分鐘考前秒殺心法</a>
-      <a href="#exam" class="exam">八　110~114M 歷屆考題全解 (14 題)</a>
+      <a href="#s1">一　Milan Criteria 米蘭準則</a>
+      <a href="#s2">二　肝臟雙重血供與膽道血供</a>
+      <a href="#s3">三　活體肝移植與解剖重建</a>
+      <a href="#s4">四　術後重大併發症與排斥治療</a>
+      <a href="#s5">五　一分鐘考前秒殺心法</a>
+      <a href="#exam" class="exam">六　歷屆考題全收錄 (6 題)</a>
       </div>
     </details>
   </nav>
-
   <main>
-
-  <!-- ============ SECTION 1 ============ -->
   <section id="s1">
-    <div class="sec-head"><span class="sec-num">一</span><h2>器官分配與 Status 1 優先等候規範</h2></div>
-    <p class="tagline">110-114M 考點索引：<a class="qtag" href="#q110-101">110-101</a><a class="qtag" href="#q111-104">111-104</a><a class="qtag" href="#q111-106">111-106</a><a class="qtag" href="#q111-mid65">111期中-65</a><a class="qtag" href="#q113-final71">113期末-71</a><a class="qtag" href="#q114m-final95">114M期末-95</a></p>
-
-    <h3>1. MELD 分數核心參數（絕無 Albumin！）</h3>
-    <p>成人肝臟分配主要依據 MELD 分數排序。MELD 的計算包含<mark>三項核心生化指標</mark>：</p>
-    <ul>
-      <li><strong>Serum Creatinine</strong>（腎功能與肝腎症候群指標）</li>
-      <li><strong>Total Bilirubin</strong>（膽紅素代謝與排泄能力）</li>
-      <li><strong>INR (Prothrombin Time)</strong>（凝血因子合成能力）</li>
-    </ul>
-
-    <div class="box trap">
-      <div class="bt"><span class="badge">易錯陷阱</span>MELD 參數沒有 Serum Albumin！</div>
-      <p>111-106 題考：「MELD 的三項參數是 creatinine, bilirubin 及 <u>serum albumin</u>」→ <b>絕對錯誤！</b><mark>Serum Albumin 是傳統 Child-Pugh 分級指標，MELD 絕對不包含 Albumin</mark>。</p>
-    </div>
-
-    <h3>2. Status 1 優先分配資格：極其嚴格！</h3>
-    <p>台灣器官分配規定中，最優先的 Status 1 <mark>僅限以下兩種急性危急情況</mark>：</p>
-    <div class="tw"><table>
-      <thead><tr><th>法定適應症</th><th>詳細定義條件</th><th>重要考點提示</th></tr></thead>
-      <tbody>
-        <tr><td><b>① 猛爆性急性肝衰竭</b></td><td><b>Fulminant Hepatic Failure (FHF)</b><br>突發性肝壞死且短期內出現嚴重肝昏迷</td><td>限無慢性肝病者之急性猛爆發作</td></tr>
-        <tr><td><b>② 術後早期動脈栓塞</b></td><td>肝移植術後 <mark>14 天內</mark> 發生 <b>Hepatic Artery Thrombosis (HAT)</b> 致急性肝衰竭</td><td>門靜脈狹窄 (Portal vein stenosis) <b>不符合</b> Status 1（113-71）</td></tr>
-      </tbody>
-    </table></div>
-
-    <div class="box trap">
-      <div class="bt"><span class="badge">超級必考陷阱</span>「慢性 B/C 肝發作進 ICU / 洗腎」＝ 絕非 Status 1</div>
-      <p>110-101、111-104、111-65、114M-95 連續多年出題：<em>「45~51歲慢性B/C肝男性，肝昏迷、黃疸Bilirubin 15~25、INR 1.7~3.1、大量腹水、洗腎、住進 ICU、MELD 分數 34~36」</em>，問是否為 Status 1？<br>
-      👉 <b>答案：絕不是（不屬於 Status 1）！</b><br>
-      法規明定：<mark>慢性 B/C 肝發作屬於慢性病程進展，即使住進 ICU/洗腎/MELD 36 也依法不得列 Status 1</mark>，僅能依常規高 MELD 分數排序。</p>
-    </div>
-
-    <h3>3. 兒科優先分配條款</h3>
-    <p>台灣器官分配規定：<mark>12 歲(含)以下，或 18 歲(含)以下且體重 ≤ 40 公斤之腦死捐贈者</mark>，器官優先分配給 18 歲(含)以下等候者（113-71）。</p>
-
-    <!-- Quiz 1 -->
-    <div class="quiz">
-      <div class="quiz-top"><span class="lab">隨堂測驗</span><span class="yr">114M 學年度 · 第 2 題</span></div>
-      <div class="quiz-body">
-        <p class="stem">一 51 歲 C 型肝炎男性患者，因肝昏迷，黃疸 (Bilirubin 15mg/dl)，prolonged prothrombin time (INR 1.7)，大量腹水 refractory ascites，並接受 hemodialysis，而住在加護病房中，MELD score=36，依現行規定，下列何者正確？</p>
-        <ul class="opts">
-          <li>(A) 他符合 Status 1 優先等候名單</li>
-          <li>(B) 他因有洗腎，應立即自動由系統給予 Status 1A</li>
-          <li>(C) 他並不是 liver transplantation waiting list 的 status 1 病人</li>
-          <li>(D) 只有當他年齡小於 50 歲時才可列入 Status 1</li>
-        </ul>
-        <details class="rev">
-          <summary class="toggle"></summary>
-          <div class="reveal">
-            <div class="ans">正確答案：(C)</div>
-            <p>慢性 C 肝失代償發作即使進住 ICU、MELD 高達 36 分且需洗腎，依法規<b>絕不屬於 Status 1</b>。Status 1 僅限無慢性肝病之爆發性急性肝衰竭 (FHF) 或術後 14 天內發生之急性動脈栓塞 (HAT)。</p>
-            <p><a class="jump" href="#q114m-final95">查看文末完整題庫解析 ↓</a></p>
-          </div>
-        </details>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============ SECTION 2 ============ -->
-  <section id="s2">
-    <div class="sec-head"><span class="sec-num">二</span><h2>肝癌移植標準 (Milan/UCSF) 與禁忌症</h2></div>
-    <p class="tagline">110-114M 考點索引：<a class="qtag" href="#q110-101">110-101</a><a class="qtag" href="#q110-103">110-103</a><a class="qtag" href="#q111-105">111-105</a><a class="qtag" href="#q111-mid64">111期中-64</a><a class="qtag" href="#q111-mid65">111期中-65</a><a class="qtag" href="#q112-final68">112期末-68</a><a class="qtag" href="#q112-final69">112期末-69</a><a class="qtag" href="#q113-final71">113期末-71</a></p>
-
-    <h3>1. 兩大移植準則比較表</h3>
-    <div class="tw"><table>
-      <thead><tr><th>標準名稱</th><th>單顆腫瘤最大直徑</th><th>多顆腫瘤大小與顆數限制</th><th>額外必要條件</th></tr></thead>
-      <tbody>
-        <tr><td><b>Milan criteria</b></td><td>單顆 <mark>≤ 5.0 cm</mark></td><td><mark>≤ 3 顆</mark>，且每顆直徑均 <mark>≤ 3.0 cm</mark></td><td>無血管侵犯、無遠端轉移</td></tr>
-        <tr><td><b>UCSF criteria</b></td><td>單顆 <mark>≤ 6.5 cm</mark></td><td><mark>≤ 3 顆</mark>，且最大顆 <mark>≤ 4.5 cm</mark><br>且直徑總和 <mark>≤ 14.0 cm</mark></td><td>無血管侵犯、無遠端轉移</td></tr>
-      </tbody>
-    </table></div>
-
-    <div class="box key">
-      <div class="bt"><span class="badge">快速尺寸判斷技巧</span>110~114M 考題數字速記</div>
-      <ul>
-        <li><strong>符合移植：</strong>3 顆（3.0, 3.5, 1.0 cm），最大 3.5cm ≤ 4.5cm，總長 7.5cm ≤ 14cm → <mark>符合 UCSF，可移植</mark>（111-105）。</li>
-        <li><strong>不符合移植（超標！）：</strong>
-          <ul>
-            <li>3 顆（4.8, 2.2, 1.0 cm）→ 最大顆 4.8cm 超出 Milan 3cm 與 UCSF 4.5cm 限制（110-103, 112-69）。</li>
-            <li>3 顆（1.5, 2.5, 5.5 cm）→ 最大顆 5.5cm 超標（111-64）。</li>
-            <li>3 顆（4.0, 2.0, 3.0 cm）→ 最大顆 4.0cm 超出 Milan 3cm 限制（113-71）。</li>
-          </ul>
-        </li>
-      </ul>
-    </div>
-
-    <h3>2. 血管侵犯：絕對禁忌症 vs 非禁忌症</h3>
-    <ul>
-      <li><strong>絕對禁忌症：</strong><mark>肉眼可見之大血管侵犯 / 門靜脈癌栓 (Macroscopic vascular invasion / portal vein cancer thrombus)</mark>，無論幾顆均<b>絕對禁止移植</b>。</li>
-      <li><strong>非禁忌症：</strong><mark>脾靜脈良性血栓 (Splenic vein benign thrombosis)</mark> 屬於良性血流變化，<b>非移植禁忌症</b>，仍可接受移植（112-68）。</li>
-    </ul>
-
-    <h3>3. 肝癌患者 MELD 加分機制</h3>
-    <p>符合 Milan/UCSF 標準之肝癌等候者，即使 MELD &lt; 10 分，每滿 3 個月可獲額外 MELD 加分以增加受贈機會，絕非 MELD &lt; 10 就不能列入名單（110-101, 111-65）。</p>
-  </section>
-
-  <!-- ============ SECTION 3 ============ -->
-  <section id="s3">
-    <div class="sec-head"><span class="sec-num">三</span><h2>活體肝移植 (LDLT) 與捐者安全</h2></div>
-    <p class="tagline">110-114M 考點索引：<a class="qtag" href="#q111-105">111-105</a><a class="qtag" href="#q113-final70">113期末-70</a><a class="qtag" href="#q114m-final96">114M期末-96</a></p>
-
-    <h3>1. 捐贈者安全第一 (Donor Safety First)</h3>
-    <div class="box key">
-      <div class="bt"><span class="badge">捐者評估標準</span>安全底線與禁忌</div>
-      <ul>
-        <li><strong>剩餘肝臟容積 (Remnant liver volume)：</strong>捐肝後捐者體內剩餘肝臟必須 <mark>≥ 30% ~ 35%</mark> 標準肝容積。</li>
-        <li><strong>脂肪肝程度 (Fatty liver)：</strong>捐肝者脂肪肝必須 <mark>&lt; 10%</mark>。</li>
-        <li><strong>絕對禁忌：</strong>若捐贈者有<strong>脂肪肝炎 (Steatohepatitis)</strong>，殘肝再生能力嚴重受損，即使殘餘容積 &gt; 30%，<mark>亦絕對不建議捐肝</mark>（113-70）。</li>
-      </ul>
-    </div>
-
-    <h3>2. 中肝靜脈 (MHV) 的取捨與分枝重建</h3>
-    <ul>
-      <li>捐右葉肝時，為了確保捐贈者安全，<strong>Middle Hepatic Vein (MHV) 主幹通常留給捐贈者</strong>。</li>
-      <li>受贈者 graft 上失去引流的右前葉分枝（<mark>V5、V8 靜脈</mark>），<strong>必須使用冷凍保存血管或人工血管</strong>重建至下腔靜脈 (IVC)，確保 outflow 暢通（111-105）。</li>
-    </ul>
-
-    <h3>3. 活體肝移植成功「四大技術要素」</h3>
-    <p>113-70 題標準考點：</p>
-    <ol>
-      <li><strong>Adequate graft volume</strong>（足夠的植入肝容積）</li>
-      <li><strong>Sufficient inflow</strong>（充沛的門靜脈與肝動脈流入量）</li>
-      <li><strong>Good outflow</strong>（暢通的肝靜脈回流）</li>
-      <li><strong>Secure bile duct anastomosis</strong>（穩固嚴密的膽道吻合）</li>
-    </ol>
-
-    <h3>4. Small-for-size syndrome (SFSS，小肝症候群)</h3>
-    <p>植入肝容積過小（GRWR &lt; 0.8%）時，因承受全身過高的門脈血流，產生 <mark>High portal flow 與 High portal pressure（門脈過度灌注）</mark>，導致肝竇內皮與肝細胞水腫壞死，引發持續黃疸、大量腹水與凝血異常（114M-96）。</p>
-  </section>
-
-  <!-- ============ SECTION 4 ============ -->
-  <section id="s4">
-    <div class="sec-head"><span class="sec-num">四</span><h2>ABOi LDLT 現代處置與膽道併發症</h2></div>
-    <p class="tagline">110-114M 考點索引：<a class="qtag" href="#q110-101">110-101</a><a class="qtag" href="#q110-103">110-103</a><a class="qtag" href="#q111-105">111-105</a><a class="qtag" href="#q111-mid64">111期中-64</a><a class="qtag" href="#q112-final69">112期末-69</a><a class="qtag" href="#q113-final71">113期末-71</a></p>
-
-    <h3>1. 現代標準處置：Rituximab + 血漿置換，不再切脾！</h3>
+    <div class="sec-head"><span class="sec-num">一</span><h2>米蘭準則 (Milan Criteria) 與肝癌移植適應症</h2></div>
+    <p class="tagline">核心考點：<a class="qtag" href="#q110-68">110-68</a><a class="qtag" href="#q112-68">112-68</a><a class="qtag" href="#q113-70">113-70</a></p>
     <div class="box exam">
-      <div class="bt"><span class="badge">高頻命題</span>ABOi LDLT 現代規範</div>
-      <ul>
-        <li><strong>Rituximab (抗 CD20 單株抗體) + Plasma Exchange (PE)：</strong>為目前清除抗體、預防體液性排斥之標準處置。</li>
-        <li><strong><mark>切脾手術 (Splenectomy)：目前一般建議「不需要」做例行切脾</mark></strong>！（111-105, 111-64, 112-69）。</li>
-        <li><strong>大愛分配原則：</strong>腦死大愛肝原則上僅分配給 ABO 相容/相同者；ABOi 主要用於活體肝移植（110-101）。</li>
-      </ul>
+      <div class="bt"><span class="badge">黃金準則</span>Milan Criteria（米蘭準則）嚴格定義</div>
+      <p>符合米蘭準則之肝癌病患接受肝臟移植，5 年存活率可達 70~75%，復發率 &lt; 15%：<br>
+      • <mark>單顆腫瘤直徑 $\le 5 cm$</mark><br>
+      • 或 <mark>多發性腫瘤最多 3 顆，且每顆直徑均 $\le 3 cm$</mark><br>
+      • <mark>無大血管侵犯 (No macrovascular invasion)</mark><br>
+      • <mark>無淋巴結或遠處轉移 (No extrahepatic metastasis)</mark><br>
+      （110-68、112-68、113-70 每年必考！選項常故意竄改成 $\le 6.5 cm$ 或 $\le 4.5 cm$，切勿上當！）</p>
     </div>
+  </section>
 
-    <h3>2. 膽道併發症 (Bile Duct Complications) 高發機轉</h3>
+  <section id="s2">
+    <div class="sec-head"><span class="sec-num">二</span><h2>肝臟雙重血液供應與膽道血液循環</h2></div>
+    <p class="tagline">核心考點：<a class="qtag" href="#q110-69">110-69</a><a class="qtag" href="#q112-69">112-69</a><a class="qtag" href="#q113-71">113-71</a></p>
+    <div class="tw"><table>
+      <thead><tr><th>血管構造</th><th>血流量佔比</th><th>供氧量佔比</th><th>臨床與移植重要性</th></tr></thead>
+      <tbody>
+        <tr><td><b>門靜脈 (Portal vein)</b></td><td><mark>約 75%</mark></td><td><mark>約 50%</mark></td><td>提供富含腸道營養之血流，為低壓系統。</td></tr>
+        <tr><td><b>肝動脈 (Hepatic artery)</b></td><td><mark>約 25%</mark></td><td><mark>約 50%</mark></td><td>高壓充氧血流。<mark>「膽道系統 (Biliary tract) 的微血管血流『完全依賴』肝動脈供血！」</mark>（110-69, 112-69, 113-71 必考重點！）。</td></tr>
+      </tbody>
+    </table></div>
+    <div class="box trap">
+      <div class="bt"><span class="badge">致命考點陷阱</span>膽道血流來自何處？</div>
+      <p>膽道微血管叢 (Peribiliary vascular plexus) <b>100% 來自肝動脈分支</b>，門靜脈並不直接供應膽管壁。因此，若發生<b>肝動脈栓塞 (HAT)</b>，第一個壞死的器官構造就是<b>膽道系統</b>，會迅速引起膽道缺血壞死、膽汁滲漏、膽管狹窄與多發性肝膿瘍！</p>
+    </div>
+  </section>
+
+  <section id="s3">
+    <div class="sec-head"><span class="sec-num">三</span><h2>活體肝移植 (LDLT) 與解剖重建細節</h2></div>
+    <p class="tagline">核心考點：<a class="qtag" href="#q110-68">110-68</a><a class="qtag" href="#q110-69">110-69</a><a class="qtag" href="#q113-71">113-71</a></p>
     <ul>
-      <li><strong>機轉：</strong><mark>膽道上皮細胞 (Bile duct epithelium) 表面帶有 ABO 血型抗原</mark>。</li>
-      <li><strong>結果：</strong>受贈者體內抗體攻擊膽道微血管與上皮，導致膽道缺血、壞死與狹窄，因此 <mark>ABO 不相容移植之膽道併發症發生率顯著高於相容者</mark>（110-103, 112-69, 113-71）。</li>
+      <li><strong>成人活體肝移植主流：</strong>目前臨床以<mark>成人捐給成人的「右肝移植 (Right lobe graft)」佔多數</mark>（因右肝體積較大，能滿足成年受贈者之代謝需求）。</li>
+      <li><strong>植入體積門檻：</strong>植入肝體積與受贈者體重比 <mark>GRWR (Graft-to-recipient weight ratio) 需 $\ge 0.8\%$</mark>（或受贈者殘餘體積 FLR &gt; 35~40%），以避免發生小肝症候群 (Small-for-size syndrome)。</li>
+      <li><strong>中肝靜脈分支重建：</strong>右肝移植若未帶中肝靜脈主幹，必須<mark>精細吻合重建 V5 與 V8 靜脈分支至下腔靜脈 (IVC)</mark>，以避免移植肝右前葉 (S5, S8) 發生嚴重靜脈鬱血與壞死（110-69 考點）。</li>
+      <li><strong>膽道重建方式：</strong>首選<mark>膽管對膽管吻合 (Duct-to-duct anastomosis)</mark>；若受贈者膽管病變（如 PSC、膽道閉鎖）則採<mark>膽管空腸吻合術 (Roux-en-Y hepaticojejunostomy)</mark>。</li>
     </ul>
   </section>
 
-  <!-- ============ SECTION 5 ============ -->
+  <section id="s4">
+    <div class="sec-head"><span class="sec-num">四</span><h2>術後重大血管併發症與排斥反應處置</h2></div>
+    <p class="tagline">核心考點：<a class="qtag" href="#q110-68">110-68</a><a class="qtag" href="#q112-68">112-68</a><a class="qtag" href="#q112-69">112-69</a><a class="qtag" href="#q113-71">113-71</a></p>
+    <h3>1. 肝動脈栓塞 (Hepatic Artery Thrombosis, HAT)</h3>
+    <ul>
+      <li><strong>發生時機：</strong>最常發生於<mark>移植後早期（術後 3 個月內，尤其是第 1~2 週）</mark>。</li>
+      <li><strong>臨床後果：</strong>為移植物功能衰竭與死亡最嚴重的早期血管併發症。表現為高燒、黃疸、膽汁滲漏、嚴重敗血症。</li>
+      <li><strong>緊急處置：</strong>立即以血管攝影或緊急手術重做動脈血栓清除吻合 (Thrombectomy/Re-anastomosis)，嚴重廣泛壞死者需緊急登錄再次肝移植 (Re-transplantation)。</li>
+    </ul>
+
+    <h3>2. 急性細胞性排斥 (Acute Cellular Rejection, ACR)</h3>
+    <ul>
+      <li><strong>發生時機：</strong>多見於<mark>術後早期（1 ～ 3 個月內）</mark>，T 細胞媒介之免疫反應。</li>
+      <li><strong>確診標準：</strong><mark>肝臟穿刺切片病理檢查 (Liver biopsy) 是確診排斥的唯一黃金標準</mark>（呈現門脈區淋巴球浸潤、膽管炎與內皮下靜脈炎 Endotheliitis），不能單靠 AST/ALT 升高即確診（112-69 考點！）。</li>
+      <li><strong>第一線治療：</strong><mark>高劑量類固醇脈衝療法 (Steroid pulse therapy，如 Methylprednisolone 500~1000 mg/day 連續 3 天)</mark>，超過 85~90% 病患可順利緩解逆轉，<b>絕非「立即進行二次再移植手術」</b>（110-68, 112-68, 113-71 考點！）。</li>
+      <li><strong>長期免疫抑制劑副作用：</strong>CNI (如 Tacrolimus / Cyclosporine) 最常見之長期慢性毒性為<mark>腎毒性 (Nephrotoxicity)</mark>。</li>
+    </ul>
+  </section>
+
   <section id="s5">
-    <div class="sec-head"><span class="sec-num">五</span><h2>術後感染、PTLD、排斥診斷與血管併發症</h2></div>
-    <p class="tagline">110-114M 考點索引：<a class="qtag" href="#q110-102">110-102</a><a class="qtag" href="#q110-103">110-103</a><a class="qtag" href="#q111-104">111-104</a><a class="qtag" href="#q111-106">111-106</a><a class="qtag" href="#q111-mid64">111期中-64</a><a class="qtag" href="#q112-final68">112期末-68</a><a class="qtag" href="#q112-final69">112期末-69</a><a class="qtag" href="#q113-final70">113期末-70</a><a class="qtag" href="#q114m-final96">114M期末-96</a></p>
-
-    <h3>1. 感染三分期與時間軸抓漏</h3>
-    <div class="tw"><table>
-      <thead><tr><th>時間區間</th><th>主要感染型態</th><th>常考正誤觀念</th></tr></thead>
-      <tbody>
-        <tr><td><b>&lt; 1 個月</b></td><td><b>院內感染 / 手術相關感染</b>（細菌、白色念珠菌）</td><td>術後 1 個月內非潛伏性病毒再活化高峰（111-64）。</td></tr>
-        <tr><td><b>1 ～ 6 個月</b></td><td><b>潛伏性 / 機會性感染再活化</b>（<b>CMV, PCP, EBV</b>）</td><td>此時期免疫抑制劑最強，為潛伏感染好發期。</td></tr>
-        <tr><td><b>&gt; 6 個月</b></td><td><b>社區獲得性感染</b>（一般肺炎、流感、尿道感染）</td><td>移植一年後最常見為<mark>社區感染</mark>，非 latent infection（112-68）。</td></tr>
-      </tbody>
-    </table></div>
-
-    <h3>2. 輸血照射與 PTLD 的關聯</h3>
-    <ul>
-      <li><strong>血品照射 (Irradiation)：</strong>去除具免疫活性之淋巴球，預防輸血相關 GVHD 與 <mark>EBV 相關之淋巴增生疾病 (PTLD)</mark>。</li>
-      <li><strong><mark>易錯考點：PTLD 主要與 EBV (Epstein-Barr Virus) 相關，不是 CMV！</mark></strong>（111-106, 112-68, 113-70, 114M-96）。</li>
-    </ul>
-
-    <h3>3. 排斥反應與免疫抑制劑</h3>
-    <ul>
-      <li><strong>排斥確診依據：</strong>以<mark>組織病理切片 (Biopsy)</mark>（看 ductopenia, bile duct vanishing, endothelialitis）為黃金標準，切片時間點非主因（110-102, 111-104）。</li>
-      <li><strong>CNIs 作用機轉：</strong>Tacrolimus / Cyclosporine 主要作用於 T 細胞活化之 <mark>Signal 1（TCR/CD3 途徑後的 NFAT 活化）</mark>，<b>非 Signal 2（共刺激訊號）</b>（110-103, 112-69）。</li>
-    </ul>
-
-    <h3>4. 血管併發症：HAT vs 肝靜脈阻塞</h3>
-    <ul>
-      <li><strong>晚期動脈栓塞 (HAT > 1 個月)：</strong>若側支循環已建立且肝指數正常，多數病人可<mark>採取保守治療密切觀察</mark>即可（114M-96）。</li>
-      <li><strong>肝靜脈阻塞 (Outflow obstruction)：</strong>肝淤血表現為<mark>黃疸、大量腹水、PT 凝血時間延長</mark>（114M-96）。</li>
-    </ul>
-  </section>
-
-  <!-- ============ SECTION 6 ============ -->
-  <section id="s6">
-    <div class="sec-head"><span class="sec-num">六</span><h2>捐贈者篩檢與受者既往癌症之適應症</h2></div>
-    <p class="tagline">110-114M 考點索引：<a class="qtag" href="#q110-101">110-101</a><a class="qtag" href="#q110-102">110-102</a><a class="qtag" href="#q111-104">111-104</a><a class="qtag" href="#q111-mid64">111期中-64</a><a class="qtag" href="#q111-mid65">111期中-65</a><a class="qtag" href="#q112-final68">112期末-68</a><a class="qtag" href="#q113-final70">113期末-70</a><a class="qtag" href="#q114m-final95">114M期末-95</a></p>
-
-    <h3>1. 帶有病毒之腦死捐贈者 (HBV, HCV, HIV)</h3>
-    <p>現代器官分配原則下：</p>
-    <ul>
-      <li>帶有 HBV, HCV 或 HIV 之腦死捐贈者，<mark>並無須從名單中排除</mark>，符合感染控制與知情同意下可分配給特定等候者（110-101, 111-64, 114M-95）。</li>
-      <li><strong>HBsAg(+) 腦死捐肝：</strong>在受贈者知情同意並給予 <strong>HBIG + 口服抗病毒藥 (NUCs)</strong> 預防下，<mark>可分配給 HBsAg(-) 之等候者</mark>（110-102, 111-104）。</li>
-    </ul>
-
-    <h3>2. 受贈者既往癌症病史之等候規定</h3>
-    <div class="tw"><table>
-      <thead><tr><th>癌症種類與分期</th><th>等候名單資格判定</th><th>考題常見陷阱</th></tr></thead>
-      <tbody>
-        <tr><td><b>極低風險惡性腫瘤</b><br>• 皮膚基底細胞癌 (BCC)<br>• 偶發性腎細胞癌 (RCC)</td><td>經手術完全切除治癒、惡性度極低者，<mark>不需要強制等待 5 年</mark>即可列入移植名單（111-65, 113-70, 114M-95）。</td><td>常宣稱「治療未滿5年不可列入名單」→ <b>錯誤！</b></td></tr>
-        <tr><td><b>極早期大腸癌</b><br>• Dukes' A 結腸癌</td><td>經根除切除後復發率極低，<mark>即使僅術後 6 個月，若無復發且肝癌符合 Milan，仍可列入分配排序名單</mark>（112-68）。</td><td>極早期治癒者不需強制等待多年。</td></tr>
-        <tr><td><b>未治癒或進展期腫瘤</b><br>• Dukes' B (或以上) 結腸癌</td><td>未治癒或未滿安全追蹤期之進展期惡性腫瘤，<mark>應排除在移植等候名單外</mark>（110-102, 111-104）。</td><td>進展期癌症術後復發風險極高，屬禁忌症。</td></tr>
-      </tbody>
-    </table></div>
-  </section>
-
-  <!-- ============ SECTION 7 ============ -->
-  <section id="s7">
-    <div class="sec-head"><span class="sec-num">七</span><h2>一分鐘考前秒殺心法（110~114M 必背）</h2></div>
+    <div class="sec-head"><span class="sec-num">五</span><h2>一分鐘考前秒殺心法（張文燦老師 5 大重點）</h2></div>
     <div class="box key">
-      <div class="bt"><span class="badge">考前 60 秒衝刺</span>掌握這 8 條直接全對</div>
+      <div class="bt"><span class="badge">考前 60 秒衝刺</span>張文燦老師必背重點</div>
       <ol>
-        <li><b>MELD 參數：</b>Serum Creatinine、Total Bilirubin、INR 三項；<strong>沒有 Albumin</strong>！</li>
-        <li><b>Status 1 資格：</b>僅限<strong>猛爆性肝衰竭 (FHF)</strong> 或 <strong>14天內發生 HAT</strong>；慢性 B/C 肝發作進 ICU/洗腎<strong>絕非 Status 1</strong>。</li>
-        <li><b>肝癌準則：</b>Milan (單≤5cm, ≤3顆且每顆≤3cm)；UCSF (單≤6.5cm, ≤3顆且最大≤4.5cm, 總和≤14cm)；<strong>肉眼血管癌栓為絕對禁忌症</strong>。符合者每滿 3 個月加分。</li>
-        <li><b>LDLT 捐者：</b>殘肝 ≥30%~35%，脂肪肝 &lt;10%；<strong>脂肪肝炎 (Steatohepatitis) 不可捐</strong>。</li>
-        <li><b>MHV 與流出道：</b>MHV 主幹留給捐者，受者 graft 之 <strong>V5/V8 分枝需人工/冷凍血管重建</strong>。</li>
-        <li><b>ABOi LDLT：</b><strong>Rituximab + PE</strong>；<strong>不建議例行切脾</strong>；膽道上皮具 ABO 抗原致<strong>膽道併發症較高</strong>。</li>
-        <li><b>感染與 PTLD：</b>&lt;1月院內感染；1~6月潛伏性再活化；&gt;6月社區感染。照射血品預防 GVHD 與 <strong>EBV 相關之 PTLD</strong>（非 CMV）。</li>
-        <li><b>捐贈與癌症：</b>HBV/HCV/HIV 捐贈者不需排除；皮膚 BCC、偶發性 RCC、早期 Dukes' A 切除治癒者<strong>不需強制等滿 5 年</strong>。</li>
+        <li><b>Milan Criteria：</b><strong>單顆 $\le 5 cm$，或 $\le 3$ 顆且每顆 $\le 3 cm$</strong>，無大血管侵犯與轉移（死背數字 5, 3, 3）。</li>
+        <li><b>肝臟雙重血供：</b><strong>門靜脈供血 75%、供氧 50%</strong>；<strong>肝動脈供血 25%、供氧 50%</strong>。</li>
+        <li><b>膽道血供來源：</b>膽道微血管叢<strong>「100% 依賴肝動脈」</strong>，門靜脈不供應膽管！</li>
+        <li><b>肝動脈栓塞 (HAT)：</b>多發生於<strong>早期（3 個月內）</strong>，會直接引發膽道缺血壞死與肝衰竭。</li>
+        <li><b>急性排斥 (ACR)：</b><strong>肝切片為確診黃金標準</strong>；首選治療為<strong>高劑量類固醇脈衝 (Steroid pulse)</strong>，絕非立即再移植！</li>
       </ol>
     </div>
   </section>
 
-  <!-- ============ SECTION 8: EXAM BANK ============ -->
   <section id="exam">
-    <div class="sec-head"><span class="sec-num">八</span><h2>110 ～ 114M 歷屆考題全解 (共 14 題)</h2></div>
+    <div class="sec-head"><span class="sec-num">六</span><h2>歷屆考古題全收錄（BM110 ～ BM113 共 6 題）</h2></div>
     <div class="exam-head">
-      <h2>張文燦老師 肝臟移植精選題庫全解 (110~114M)</h2>
-      <p>完整收錄 110、111、112、113、114M 五個學年度所有題目，附標準答案與深入解析。</p>
+      <h2>張文燦老師 肝臟移植題庫全解</h2>
+      <p>完整收錄 4 個學年度共 6 道真題，附標準答案與逐選項深度剖析。</p>
       <button class="btn" id="allBtn">全部展開答案</button>
     </div>
 
-    <!-- ===== 110 ===== -->
-    <div class="yrhead">110 學年度 (M110) · 3 題</div>
-
-    <div class="q" id="q110-101">
-      <span class="q-no">110-101</span><span class="q-topic">器官分配原則 / 病毒捐肝者</span>
-      <p class="q-stem">1. 按照台灣目前現行的肝臟器官分配原則，何者為正確？</p>
-      <ul class="opts">
-        <li>(A) 因為免疫治療及 Plasma exchange 的進步，腦死捐肝者可進行 ABO 血型 identical, compatible 及 in-compatible 受贈者的肝臟分配</li>
-        <li>(B) 不論病人是否大於 18 歲及有無 Hepatitis B 或 Hepatitis C 的病史，只要符合 Status of fulminant hepatic failure 的定義，皆可列入 Status 1 優先分配的名單</li>
-        <li>(C) 只要符合條件，Hepatitis B、Hepatitis C 及 HIV 的腦死捐贈者，亦可捐出其肝臟予符合條件的病人</li>
-        <li>(D) 若一肝癌病人符合 Milan's criteria，但其 MELD score &lt; 10分，原則上不列入器官分配等候名單</li>
-      </ul>
-      <details class="rev">
-        <summary class="toggle"></summary>
-        <div class="reveal">
-          <div class="ans">正確答案：(C)</div>
-          <p>• (A) <b>錯誤</b>：腦死大愛捐肝原則上僅分配給 ABO 血型相容/相同者，ABOi 主要應用於活體移植。</p>
-          <p>• (B) <b>錯誤</b>：慢性 B 或 C 型肝炎發作導致之肝衰竭，依法規不可以列為 Status 1。</p>
-          <p>• (C) <b>正確（本題選C）</b>：符合特定感染控制標準與知情同意下，HBV、HCV、HIV 陽性捐贈者可捐肝給特定受贈者。</p>
-          <p>• (D) <b>錯誤</b>：符合 Milan criteria 者即使 MELD &lt; 10 分，亦可經加分機制列入等候名單。</p>
-          <div class="src">出處：Conote for KMU Medicine 112 p.064</div>
-        </div>
-      </details>
+    <!-- BM113 -->
+    <div class="yrhead">113 學年度 (BM113 期末考) · 2 題</div>
+    <div class="q" id="q113-70"><span class="q-no">113-70</span><span class="q-topic">米蘭準則 Milan Criteria</span>
+      <p class="q-stem">1. 關於肝臟移植的 Milan Criteria，下列何者正確？<br>(A) 單顆腫瘤直徑 $\le 5 cm$，或多發性腫瘤最多 3 顆且每顆直徑 $\le 3 cm$，無大血管侵犯與肝外轉移<br>(B) 單顆腫瘤直徑 $\le 6.5 cm$，或多發性腫瘤最多 3 顆且總直徑 $\le 8 cm$<br>(C) 單顆腫瘤直徑 $\le 3 cm$，或多發性腫瘤最多 5 顆且每顆直徑 $\le 2 cm$<br>(D) 只要沒有大血管侵犯，腫瘤大小與顆數不限</p>
+      <details class="rev"><summary class="toggle"></summary><div class="reveal"><div class="ans">正確答案：(A)</div><p>• Milan criteria（米蘭準則）：單顆 $\le 5 cm$ 或 $\le 3$ 顆且每顆 $\le 3 cm$，無大血管侵犯及肝外轉移。</p><div class="src">出處：BM113 期末考 第70題（張文燦 ppt pg.18）</div></div></details>
+    </div>
+    <div class="q" id="q113-71"><span class="q-no">113-71</span><span class="q-topic">移植併發症與排斥治療</span>
+      <p class="q-stem">2. 關於肝臟移植術後併發症與血流供應，下列敘述何者錯誤？<br>(A) 肝動脈栓塞 (HAT) 會導致膽道缺血壞死、膽汁滲漏或肝膿瘍，因為膽道的血流完全來自肝動脈<br>(B) 活體肝臟移植時，受贈者的植入肝體積與受贈者體重比 (GRWR) 一般需大於 0.8%<br>(C) 肝移植術後免疫抑制劑 calcineurin inhibitor (如 Tacrolimus) 最主要的長期副作用是腎毒性 (Nephrotoxicity)<br>(D) 移植後急性細胞性排斥 (ACR) 的首選治療是立即進行第二次緊急再移植手術</p>
+      <details class="rev"><summary class="toggle"></summary><div class="reveal"><div class="ans">正確答案：(D)</div><p>• (D) 錯誤：急性細胞性排斥 (ACR) 的第一線標準治療為<b>高劑量類固醇脈衝治療 (Steroid pulse therapy)</b>，絕大多數患者可完全緩解，不需要立即進行第二次再移植手術。</p><div class="src">出處：BM113 期末考 第71題（張文燦 ppt pg. 35, 42）</div></div></details>
     </div>
 
-    <div class="q" id="q110-102">
-      <span class="q-no">110-102</span><span class="q-topic">HBsAg(+) 捐肝 / 癌症追蹤</span>
-      <p class="q-stem">2. 下列有關肝臟移植的敘述，何者為正確？</p>
-      <ul class="opts">
-        <li>(A) 在移植前評估時，發現病人有 Dukes' B colon cancer，則其應被排除在肝臟移植等候者名單</li>
-        <li>(B) 腦死捐贈者 B 型肝炎表面抗原呈陽性(HBsAg(+))，其捐贈之肝臟可以分配予「B 型肝炎表面抗原陰性(HBsAg(-))」之等候者</li>
-        <li>(C) 在台灣，等級 1 (status 1) 的肝臟移植等候名單，包括因慢性 B 或 C 型肝炎導致之肝衰竭住進加護病房的病人</li>
-        <li>(D) 肝臟移植後的 acute 或 chronic rejection，主要是以肝臟切片的診斷為主，即 pathology 上有無出現 bile duct vanishing 等現象，來做判斷。切片施行的時間點是移植後的六個月內，並非主要診斷標準</li>
-      </ul>
-      <details class="rev">
-        <summary class="toggle"></summary>
-        <div class="reveal">
-          <div class="ans">正確答案：(B)</div>
-          <p>• (A) <b>錯誤/不夠精確</b>：Dukes' B 大腸癌若已完整切除且追蹤滿5年無復發者可考慮移植（但相較之下 B 是絕對肯定合規的處置）。</p>
-          <p>• (B) <b>正確（本題選B）</b>：HBsAg(+) 之腦死捐贈者肝臟，在受贈者知情同意並給予適當預防藥物（HBIG + NUCs）之條件下，亦可分配給 HBsAg(-) 之等候者。</p>
-          <p>• (C) <b>錯誤</b>：慢性 B/C 肝發作進住 ICU 不得列 Status 1。</p>
-          <p>• (D) <b>錯誤</b>：切片時間點非主要的判斷依據。</p>
-          <div class="src">出處：Conote for KMU Medicine 112 p.065</div>
-        </div>
-      </details>
+    <!-- BM112 -->
+    <div class="yrhead">112 學年度 (BM112 期末考) · 2 題</div>
+    <div class="q" id="q112-68"><span class="q-no">112-68</span><span class="q-topic">米蘭準則定義錯誤</span>
+      <p class="q-stem">3. 下列關於肝臟移植 (liver transplantation) 的敘述，何者錯誤？<br>(A) 活體肝臟移植目前以成人捐給成人的右肝移植為多數<br>(B) 移植後的肝動脈栓塞 (HAT) 多發生在移植後早期，是造成移植物衰竭的嚴重併發症<br>(C) 急性排斥多發生在移植後早期，第一線治療為高劑量類固醇脈衝治療<br>(D) 肝臟移植的 Milan criteria 是：單一腫瘤 $\le 6.5 cm$，或多發性腫瘤最多 3 顆且每顆 $\le 4.5 cm$</p>
+      <details class="rev"><summary class="toggle"></summary><div class="reveal"><div class="ans">正確答案：(D)</div><p>• (D) 錯誤：Milan criteria 是單顆 $\le 5 cm$，多顆最多 3 顆且每顆 $\le 3 cm$（6.5 cm / 4.5 cm 為 UCSF criteria）。</p><div class="src">出處：BM112 期末考 第68題（張文燦 ppt pg.18）</div></div></details>
+    </div>
+    <div class="q" id="q112-69"><span class="q-no">112-69</span><span class="q-topic">膽道血供與排斥確診</span>
+      <p class="q-stem">4. 關於肝臟移植手術與生理，下列敘述何者錯誤？<br>(A) 肝臟移植中，膽道的微血管血流供應主要來自肝動脈 (hepatic artery)<br>(B) 肝動脈提供肝臟約 25% 的血流量<br>(C) 門靜脈提供肝臟約 75% 的血流量及 50% 的氧氣<br>(D) 肝臟移植術後急性排斥反應的確診主要依據抽血肝功能指數 (AST/ALT) 升高即可確診，不需切片</p>
+      <details class="rev"><summary class="toggle"></summary><div class="reveal"><div class="ans">正確答案：(D)</div><p>• (D) 錯誤：肝切片 (Liver biopsy) 是確診急性排斥與評估 Banff score 的唯一黃金準則，肝功能升高亦可能為感染、膽道阻塞或藥物毒性所致，必須切片鑑別。</p><div class="src">出處：BM112 期末考 第69題（張文燦 ppt pg. 8, 40）</div></div></details>
     </div>
 
-    <div class="q" id="q110-103">
-      <span class="q-no">110-103</span><span class="q-topic">ABOi 膽道併發症 / CNI Signal 1</span>
-      <p class="q-stem">3. 下列有關肝臟移植的敘述，何者為正確？</p>
-      <ul class="opts">
-        <li>(A) 為減少術後的 Antibody-mediated rejection 的發生，在 ABO 血型 incompatible 的肝臟移植，目前建議在手術中，例行施行 splenectomy 以減少 B-cell 產生的 antibody</li>
-        <li>(B) 由於肝臟 bile duct 的 epithelium cell 亦具有 ABO antigen，因此 ABO incompatible 肝臟移植，其 bile duct complication 的機率，一般而言，是較 ABO identical 或 compatible 者為高</li>
-        <li>(C) Cyclosporin 及 Tacrolimus 是 calcineurin inhibitor 主要作用在 T-cell 的 signal 2 pathway，抑制 interleukin-2 的產生</li>
-        <li>(D) 一肝癌患者，肝臟有三顆腫瘤，其直徑大小分別在 S2 4.8cm, S5 2.2cm, S8 1.0cm，三顆直徑總和為 8.0cm，則其可接受活體肝臟移植</li>
-      </ul>
-      <details class="rev">
-        <summary class="toggle"></summary>
-        <div class="reveal">
-          <div class="ans">正確答案：(B)</div>
-          <p>• (A) <b>錯誤</b>：ABOi 目前以 Rituximab + PE 為主，不再例行做 splenectomy。</p>
-          <p>• (B) <b>正確（本題選B）</b>：膽道上皮細胞會表達 ABO 抗原，故 ABO 不相容移植發生膽道併發症之風險高於相容者。</p>
-          <p>• (C) <b>錯誤</b>：Calcineurin inhibitors (Tacrolimus/Cyclosporine) 主要作用於 T 細胞活化的 <b>Signal 1</b>（TCR/CD3 途徑後的 NFAT 活化），非 Signal 2（共刺激訊號）。</p>
-          <p>• (D) <b>錯誤</b>：此案例腫瘤最大顆達 4.8cm（超出 Milan criteria 之 3.0cm 限制，亦超出 UCSF 多顆最大 4.5cm 限制）。</p>
-          <div class="src">出處：Conote for KMU Medicine 112 p.065</div>
-        </div>
-      </details>
+    <!-- BM110 -->
+    <div class="yrhead">110 學年度 (BM110 期末考) · 2 題</div>
+    <div class="q" id="q110-68"><span class="q-no">110-68</span><span class="q-topic">肝移植綜合概念</span>
+      <p class="q-stem">5. 下列關於肝臟移植 (liver transplantation) 敘述何者錯誤？<br>(A) 活體肝臟移植目前以成人捐給成人的右肝移植為多數<br>(B) 移植後的肝動脈栓塞 (hepatic artery thrombosis) 多發生在移植後早期（3個月內），是造成移植物功能衰竭的嚴重併發症<br>(C) 急性排斥 (acute rejection) 多發生在移植後 1~3 個月，主要以高劑量類固醇 (steroid pulse therapy) 治療<br>(D) 肝臟移植的米蘭準則 (Milan criteria) 是：單一腫瘤 $\le 6.5 cm$，或多發性腫瘤最多 3 顆且每顆 $\le 4.5 cm$</p>
+      <details class="rev"><summary class="toggle"></summary><div class="reveal"><div class="ans">正確答案：(D)</div><p>• (D) 錯誤：米蘭準則為單顆 $\le 5 cm$，多顆最多 3 顆且每顆 $\le 3 cm$。</p><div class="src">出處：BM110 期末考 第68題（張文燦 ppt pg.18）</div></div></details>
     </div>
-
-    <!-- ===== 111 ===== -->
-    <div class="yrhead">111 學年度 (M111 / 111期中考) · 5 題</div>
-
-    <div class="q" id="q111-104">
-      <span class="q-no">111-104</span><span class="q-topic">評估與術後照顧 / Status 1</span>
-      <p class="q-stem">4. 下列有關肝臟移植前的評估及術後的照顧，何者為誤？</p>
-      <ul class="opts">
-        <li>(A) 在移植前評估時，發現病人有 Dukes' B colon cancer，則其應被排除在肝臟移植等候者名單</li>
-        <li>(B) 腦死捐贈者 B 型肝炎表面抗原呈陽性(HBsAg(+))，其捐贈之肝臟可以分配予「B 型肝炎表面抗原陰性(HBsAg(-))」之等候者</li>
-        <li>(C) 在台灣，等級 1 (status 1) 的肝臟移植等候名單，包括因慢性 B 或 C 型肝炎導致之肝衰竭住進加護病房的病人</li>
-        <li>(D) 肝臟移植後的 acute 或 chronic rejection，主要是以肝臟切片診斷為主，即 pathology 上有無出現 bile duct vanishing 等現象，來做判斷。切片施行的時間點是移植後的六個月內，並非主要診斷標準</li>
-      </ul>
-      <details class="rev">
-        <summary class="toggle"></summary>
-        <div class="reveal">
-          <div class="ans">正確答案：(C)</div>
-          <p>• (A) <b>正確</b>：未治癒或未滿追蹤期之惡性腫瘤（如 Dukes' B 結直腸癌）為移植相對/絕對禁忌症。</p>
-          <p>• (B) <b>正確</b>：HBsAg(+) 腦死捐肝可分配給知情同意之 HBsAg(-) 受贈者。</p>
-          <p>• (C) <b>錯誤（本題選C）</b>：慢性 B 或 C 肝導致之肝衰竭住進 ICU <b>不列入 Status 1</b>。</p>
-          <p>• (D) <b>正確</b>：排斥反應確診依據為組織切片病理表現。</p>
-          <div class="src">出處：Conote for KMU Medicine 112 p.064</div>
-        </div>
-      </details>
+    <div class="q" id="q110-69"><span class="q-no">110-69</span><span class="q-topic">膽道血供來自肝動脈</span>
+      <p class="q-stem">6. 關於肝臟移植的血管與膽道重建，下列敘述何者錯誤？<br>(A) 肝臟是雙重血液供應器官，肝動脈提供 25% 血流及 50% 氧氣，門靜脈提供 75% 血流及 50% 氧氣<br>(B) 膽管的血液供應完全依賴門靜脈系統，因此門靜脈吻合不良會造成膽道缺血壞死<br>(C) 活體右肝移植時，需注意中肝靜脈分支 (V5, V8) 的重建以避免前節肝鬱血<br>(D) 膽道重建方式包括膽管對膽管吻合 (duct-to-duct) 或膽管空腸吻合 (Roux-en-Y hepaticojejunostomy)</p>
+      <details class="rev"><summary class="toggle"></summary><div class="reveal"><div class="ans">正確答案：(B)</div><p>• (B) 錯誤：膽管血供完全依賴<b>肝動脈 (Hepatic artery)</b> 系統，而非門靜脈系統。</p><div class="src">出處：BM110 期末考 第69題（張文燦 ppt pg.8）</div></div></details>
     </div>
-
-    <div class="q" id="q111-105">
-      <span class="q-no">111-105</span><span class="q-topic">活體右葉移植 / MHV 留給捐者</span>
-      <p class="q-stem">5. 下列有關活體肝臟移植(LDLT)的敘述，何者為誤？</p>
-      <ul class="opts">
-        <li>(A) 一 60 歲 C 型肝炎女性病人，有三顆大小分別為 3.0cm, 3.5cm, 1.0cm，位於 S1, S6, S8，且沒有 macroscopic vascular invasion，則其可接受活體肝臟移植</li>
-        <li>(B) 捐贈者剩餘肝臟體積最好大於 30%~35% 原有肝臟體積；fatty liver 程度最好 &lt;10%</li>
-        <li>(C) 血型不相容 LDLT，為避免 acute antibody-mediated rejection，會對受贈者於術前施打 Rituximab 及施以 plasma exchange。但目前一般建議不需要做 splenectomy</li>
-        <li>(D) 以 right lobe graft 為例，若沒有留給捐贈者 middle hepatic vein (MHV)，會造成捐贈者肝衰竭，一般建議將 middle hepatic vein (MHV) 留給受贈者 (recipient)</li>
-      </ul>
-      <details class="rev">
-        <summary class="toggle"></summary>
-        <div class="reveal">
-          <div class="ans">正確答案：(D)</div>
-          <p>• (A) <b>正確</b>：3顆腫瘤（3.0, 3.5, 1.0 cm），最大 3.5cm，總長 7.5cm，符合 UCSF criteria。</p>
-          <p>• (B) <b>正確</b>：捐者殘剩肝容積 ≥ 30%–35%，脂肪肝 &lt; 10%。</p>
-          <p>• (C) <b>正確</b>：ABOi LDLT 現代標準處置為 Rituximab + PE，不需切脾。</p>
-          <p>• (D) <b>錯誤（本題選D）</b>：活體肝移植以<b>捐贈者安全 (Donor safety) 為最高原則</b>。取右葉肝時，Middle Hepatic Vein (MHV) 通常<b>留給捐贈者</b>；受贈者 graft 上的 V5、V8 分枝則透過血管移植重建。</p>
-          <div class="src">出處：Conote for KMU Medicine 112 p.064</div>
-        </div>
-      </details>
-    </div>
-
-    <div class="q" id="q111-106">
-      <span class="q-no">111-106</span><span class="q-topic">MELD 參數 / PTLD / CNIs</span>
-      <p class="q-stem">6. 下列有關肝臟移植的敘述，何者為誤？</p>
-      <ul class="opts">
-        <li>(A) Adult Model of end stage liver disease 的三項參數是 serum creatinine, serum bilirubin 及 serum albumin</li>
-        <li>(B) Post transplantation lymphoproliferative disorder，主要原因之一是和 Epstein-Barr virus infection 有關</li>
-        <li>(C) Tacrolimus 及 Cyclosporine 兩者都是屬於 calcineurin inhibitors 的 immunosuppressive agents</li>
-        <li>(D) 移植後 1 個月內發生 hepatic artery thrombosis，則病患可列入 status 1 的 waiting list</li>
-      </ul>
-      <details class="rev">
-        <summary class="toggle"></summary>
-        <div class="reveal">
-          <div class="ans">正確答案：(A)</div>
-          <p>• (A) <b>錯誤（本題選A）</b>：MELD score（末期肝病模型）的三項核心化驗指標為：<b>Serum Creatinine、Total Bilirubin 及 INR (prothrombin time)</b>，<b>不包含 Serum Albumin</b>！</p>
-          <p>• (B) <b>正確</b>：PTLD 與 EBV 感染密切相關。</p>
-          <p>• (C) <b>正確</b>：Tacrolimus 及 Cyclosporine 均屬 Calcineurin inhibitors (CNIs)。</p>
-          <p>• (D) <b>註解</b>：依現行法規 HAT 須於 14 天內發生，但相比之下 (A) 為最明確且絕對錯誤之選項。</p>
-          <div class="src">出處：Conote for KMU Medicine 112 p.064</div>
-        </div>
-      </details>
-    </div>
-
-    <div class="q" id="q111-mid64">
-      <span class="q-no">111期中-64</span><span class="q-topic">捐贈篩檢 / 腫瘤尺寸判定</span>
-      <p class="q-stem">7. 下列有關肝臟移植的敘述何者正確？</p>
-      <ul class="opts">
-        <li>(A) 若 deceased donor 有 HBV, HCV 或 HIV infection，並無須從捐贈名單中排除，仍可進行器官分配的評估作業</li>
-        <li>(B) 為減少術後急性 antibody-mediated rejection 的機會，血型不相容肝臟移植的手術中，會建議例行合併 splenectomy，以降低血中的 anti-A, anti-B 抗體量</li>
-        <li>(C) 肝臟移植後，最常見的死亡原因為感染，在移植後一個月內，最常見的感染為 activation of latent infection，如 Pneumocystis carinii(jirovecii) pneumonia, CMV infection 等</li>
-        <li>(D) 一 46 歲 B 型肝炎男性病人，其肝硬化為 Child-Pugh C，有三顆大小分別為 1.5cm, 2.5cm, 5.5cm，位於 S1, S3, S5 的肝癌，但影像學上沒有血管侵犯，則其符合接受 living donor liver transplantation 的健保規定</li>
-      </ul>
-      <details class="rev">
-        <summary class="toggle"></summary>
-        <div class="reveal">
-          <div class="ans">正確答案：(A)</div>
-          <p>• (A) <b>正確（本題選A）</b>：帶有 HBV, HCV, HIV 的腦死捐贈者，在適當評估與知情同意下仍可進行器官分配。</p>
-          <p>• (B) <b>錯誤</b>：ABOi 目前以 Rituximab + PE 為主，不常態切脾。</p>
-          <p>• (C) <b>錯誤</b>：術後1個月內主要為院內/手術相關細菌黴菌感染，Latent infection 再活化主要在 1~6 個月。</p>
-          <p>• (D) <b>錯誤</b>：最大顆腫瘤 5.5cm（超出 Milan 之 3cm 限制，亦超出 UCSF 多顆最大 4.5cm 限制），不符合給付標準。</p>
-          <div class="src">出處：111年期中考 第8題</div>
-        </div>
-      </details>
-    </div>
-
-    <div class="q" id="q111-mid65">
-      <span class="q-no">111期中-65</span><span class="q-topic">皮膚基底細胞癌 / Status 1 判定</span>
-      <p class="q-stem">8. 依據台灣現行的相關規定，以下有關肝臟移植之敘述何者正確？</p>
-      <ul class="opts">
-        <li>(A) 對於無法手術切除或局部治療的肝癌患者，若其 MELD 分數小於 10 分，因無臨床上的效益，故不建議其接受肝臟移植</li>
-        <li>(B) 一 50 歲男性患者，在二年前因 facial skin basal cell carcinoma，接受手術切除。目前皆無癌症復發的現象，但因其有 HBV infection，且現有 decompensated liver cirrhosis, Child-Pugh C, MELD score=26，依現行規定，因癌症治療未滿五年，不可將其列於 liver transplantation waiting list 中</li>
-        <li>(C) Acute cell-mediated rejection 或 chronic cell-mediated rejection 是以其在移植後發生的時間而決定，並非以病理切片為診斷標準</li>
-        <li>(D) 一 45 歲 B 型肝炎男性患者，因肝昏迷，黃疸(Bilirubin 25 mg/dl)，prothrombin time(INR 3.1)，大量腹水 refractory ascites，接受 hemodialysis，而住在加護病房中，MELD score=34，依現行規定，他不是 liver transplantation waiting list 的 status 1 病人</li>
-      </ul>
-      <details class="rev">
-        <summary class="toggle"></summary>
-        <div class="reveal">
-          <div class="ans">正確答案：(D)</div>
-          <p>• (A) <b>錯誤</b>：MELD &lt; 10 分之肝癌患者，符合移植條件仍可透過加分機制進行移植。</p>
-          <p>• (B) <b>錯誤</b>：皮膚基底細胞癌（Basal cell carcinoma of skin）屬於極低風險癌症，切除治癒後不需等待5年即可列入移植名單。</p>
-          <p>• (C) <b>錯誤</b>：急/慢性排斥以組織病理學特徵（biopsy）為診斷依據，非僅憑時間。</p>
-          <p>• (D) <b>正確（本題選D）</b>：慢性 B 肝導致之失代償性肝硬化即使病情極危重住進 ICU，依規定仍不屬於 Status 1。</p>
-          <div class="src">出處：111年期中考 第9題</div>
-        </div>
-      </details>
-    </div>
-
-    <!-- ===== 112 ===== -->
-    <div class="yrhead">112 學年度 (112期末考) · 2 題</div>
-
-    <div class="q" id="q112-final68">
-      <span class="q-no">112-68</span><span class="q-topic">Duke's A 大腸癌 / 脾靜脈血栓</span>
-      <p class="q-stem">9. 下列有關肝臟移植的敘述，何者為正確？</p>
-      <ul class="opts">
-        <li>(A) 移植後，輸血的血品必須 irradiation 主要是為預防 CMV (cytomegalovirus) infection</li>
-        <li>(B) 一肝癌患者，其符合 UCSF criteria，但影像上有 splenic vein 的 benign thrombosis，則其不可接受活體肝臟移植</li>
-        <li>(C) 在肝臟移植一年後，病人最可能的感染源為其 latent infection (relapsed, residual, opportunistic) 的 activation</li>
-        <li>(D) 一肝癌患者，其符合 Milan's criteria，但因六個月前診斷出有 Duke's A colon cancer，在當時接受 right hemicolectomy，今天有一個腦死病人捐出肝臟，則此肝癌病人，仍可列入分配排序名單中</li>
-      </ul>
-      <details class="rev">
-        <summary class="toggle"></summary>
-        <div class="reveal">
-          <div class="ans">正確答案：(D)</div>
-          <p>• (A) <b>錯誤</b>：血品照射（irradiation）係預防 GVHD 及 EBV 相關之 PTLD。</p>
-          <p>• (B) <b>錯誤</b>：脾靜脈良性血栓（splenic vein benign thrombosis）非移植禁忌症。</p>
-          <p>• (C) <b>錯誤</b>：移植一年後（&gt;6個月）最常見感染源為社區獲得性感染（community-acquired）。</p>
-          <p>• (D) <b>正確（本題選D）</b>：Duke's A 大腸癌屬極早期，根除性切除後復發率極低，即使僅6個月，若無復發跡象且肝癌符合 Milan criteria，仍可列入分配排序名單。</p>
-          <div class="src">出處：112年期末考 第6題</div>
-        </div>
-      </details>
-    </div>
-
-    <div class="q" id="q112-final69">
-      <span class="q-no">112-69</span><span class="q-topic">ABOi 膽道併發症 / CNI Signal 1</span>
-      <p class="q-stem">10. 下列有關肝臟移植的敘述，何者為正確？</p>
-      <ul class="opts">
-        <li>(A) 為減少術後的 Antibody-mediated rejection 的發生，在 ABO 血型 incompatible 的肝臟移植，目前建議在手術中，例行施行 splenectomy 以減少 B-cell 產生的 antibody</li>
-        <li>(B) 一肝癌患者，肝臟有三顆腫瘤，其直徑大小分別在 S2 4.8cm, S5 2.2cm, S8 1.0cm，三顆直徑總和為 8.0cm，則其可接受活體肝臟移植</li>
-        <li>(C) Cyclosporine 及 Tacrolimus 是 calcineurin inhibitor 主要作用在 T-cell 的 signal 2 pathway，抑制 interleukin-2 的產生</li>
-        <li>(D) 由於肝臟 bile duct 的 epithelium cell 亦具有 ABO antigen，因此 ABO incompatible 肝臟移植，其 bile duct complication 的機率，一般而言，是較 ABO identical 或 compatible 者為高</li>
-      </ul>
-      <details class="rev">
-        <summary class="toggle"></summary>
-        <div class="reveal">
-          <div class="ans">正確答案：(D)</div>
-          <p>• (A) <b>錯誤</b>：ABOi 目前以 Rituximab + PE 為主，不再例行做 splenectomy。</p>
-          <p>• (B) <b>錯誤</b>：腫瘤最大顆 4.8cm 已超過 Milan 基準（≤3cm）及 UCSF 多顆上限（4.5cm）。</p>
-          <p>• (C) <b>錯誤</b>：CNIs (Tacrolimus / Cyclosporine) 主要作用於 T 細胞活化之 <b>Signal 1</b>。</p>
-          <p>• (D) <b>正確（本題選D）</b>：膽道上皮細胞會表達 ABO 抗原，故 ABO 不相容移植之膽道併發症發生率顯著較高。</p>
-          <div class="src">出處：112年期末考 第7題</div>
-        </div>
-      </details>
-    </div>
-
-    <!-- ===== 113 ===== -->
-    <div class="yrhead">113 學年度 (113期末考) · 2 題</div>
-
-    <div class="q" id="q113-final70">
-      <span class="q-no">113-70</span><span class="q-topic">成功四大技術要素 / 脂肪肝炎禁忌</span>
-      <p class="q-stem">11. 下列有關肝臟移植術前的評估及術後的照顧，何者正確？</p>
-      <ul class="opts">
-        <li>(A) 成功的活體肝臟移植，在技術上有四大考量 adequate graft volume、sufficient inflow、good outflow、secure bile duct anastomosis</li>
-        <li>(B) 對活體肝臟捐贈者而言，若有 steatohepatitis，但剩餘肝臟容積大於 30% standard liver volume，仍建議其捐贈右肝葉</li>
-        <li>(C) 肝臟移植術後，輸血血品必須 irradiation，主要是為了避免 cytomegalovirus 的感染</li>
-        <li>(D) 在移植前評估時，意外發現病人有 renal cell carcinoma，則其應被排除在肝臟移植等候者名單</li>
-      </ul>
-      <details class="rev">
-        <summary class="toggle"></summary>
-        <div class="reveal">
-          <div class="ans">正確答案：(A)</div>
-          <p>• (A) <b>正確（本題選A）</b>：活體肝移植成功四大技術要素：① Adequate graft volume、② Sufficient inflow、③ Good outflow、④ Secure bile duct anastomosis。</p>
-          <p>• (B) <b>錯誤</b>：捐贈者若有脂肪肝炎（steatohepatitis），殘肝再生能力嚴重受損，即使殘容積 &gt;30%，亦不建議捐肝。</p>
-          <p>• (C) <b>錯誤</b>：血品 irradiation 係為預防 GVHD 與 EBV 相關之 PTLD。</p>
-          <p>• (D) <b>錯誤</b>：偶發性 RCC 經切除無復發者不一定需排除。</p>
-          <div class="src">出處：113年期末考 第4題</div>
-        </div>
-      </details>
-    </div>
-
-    <div class="q" id="q113-final71">
-      <span class="q-no">113-71</span><span class="q-topic">兒科優先原則 / Milan 判定</span>
-      <p class="q-stem">12. 下列有關活體肝臟移植(LDLT)優先分配適應症基準的敘述，何者正確？</p>
-      <ul class="opts">
-        <li>(A) C型肝炎男性病人，有三顆大小分別為 4.0cm, 2.0cm, 3.0cm 的肝細胞癌，沒有血管侵犯與遠端轉移，則其可接受活體肝臟移植</li>
-        <li>(B) 52歲病人在接受肝臟移植後第三天發生 portal vein stenosis，則病人有資格列入 status 1 waiting list</li>
-        <li>(C) 因為 bile duct epithelium cell 沒有 ABO血型的 antigen，所以血型不相容的 LDLT 的膽道併發症發生率，較血型相容的 LDLT 為低</li>
-        <li>(D) 12歲(含)以下或18歲(含)以下且40公斤(含)以下之腦死捐贈者，優先分配給18歲(含)以下等候者</li>
-      </ul>
-      <details class="rev">
-        <summary class="toggle"></summary>
-        <div class="reveal">
-          <div class="ans">正確答案：(D)</div>
-          <p>• (A) <b>錯誤</b>：最大顆達 4.0cm（超出 Milan criteria 之 3cm 限制）。</p>
-          <p>• (B) <b>錯誤</b>：只有 14 天內發生的 Hepatic Artery Thrombosis (HAT) 致肝衰竭才能列為 Status 1；Portal vein stenosis 不符合 Status 1。</p>
-          <p>• (C) <b>錯誤</b>：膽道上皮細胞具有 ABO 抗原，故 ABO 不相容者膽道併發症率更高。</p>
-          <p>• (D) <b>正確（本題選D）</b>：台灣器官分配規定：12歲以下或18歲以下且體重≤40kg之腦死捐贈者，器官優先分配給18歲以下兒科等候者。</p>
-          <div class="src">出處：113年期末考 第5題</div>
-        </div>
-      </details>
-    </div>
-
-    <!-- ===== 114M ===== -->
-    <div class="yrhead">114M 學年度 (114M期末考) · 2 題</div>
-
-    <div class="q" id="q114m-final95">
-      <span class="q-no">114M-95</span><span class="q-topic">Status 1 判定 / 偶發 RCC</span>
-      <p class="q-stem">13. 依據台灣現行的相關規定，以下有關肝臟移植之敘述何者正確？</p>
-      <ul class="opts">
-        <li>(A) 一 46 歲男性患者，在二年前因 incident renal cell carcinoma，接受手術切除。目前皆無癌症復發的現象，但因其有 HBV infection，且現有 decompensated liver cirrhosis, Child-Pugh C, MELD score=26。依現行規定，因癌症治療未滿五年，不可將其列於 liver transplantation waiting list 中</li>
-        <li>(B) Acute cell-mediated rejection 或 chronic cell-mediated rejection 是以其在移植後發生的時間而決定，並非以病理切片的發現為診斷標準</li>
-        <li>(C) 若 deceased donor 有 HBV, HCV 或 HIV infection，則必須從捐贈名單中排除，不可進行器官分配的評估作業</li>
-        <li>(D) 一 51 歲 C 型肝炎男性患者，因肝昏迷，黃疸(Bilirubin 15mg/dl)，prolonged prothrombin time (INR 1.7)，大量腹水 refractory ascites，並接受 hemodialysis，而住在加護病房中，MELD score=36，依現行規定，他並不是 liver transplantation waiting list 的 status 1 病人</li>
-      </ul>
-      <details class="rev">
-        <summary class="toggle"></summary>
-        <div class="reveal">
-          <div class="ans">正確答案：(D)</div>
-          <p>• (A) <b>錯誤</b>：偶發性 RCC 切除後無復發且風險低者，不需強制等滿5年。</p>
-          <p>• (B) <b>錯誤</b>：排斥反應主要以組織病理切片表現為診斷標準。</p>
-          <p>• (C) <b>錯誤</b>：HBV/HCV/HIV 捐贈者可評估分配給特定受贈者，不需強制排除。</p>
-          <p>• (D) <b>正確（本題選D）</b>：慢性 C 肝致失代償性肝硬化即使住在 ICU、MELD 36、洗腎，依規定不屬於 Status 1（Status 1 僅限急發/爆發性肝衰竭或14天內HAT）。</p>
-          <div class="src">出處：114M年期末考 第2題</div>
-        </div>
-      </details>
-    </div>
-
-    <div class="q" id="q114m-final96">
-      <span class="q-no">114M-96</span><span class="q-topic">晚期 HAT / PTLD / 肝靜脈阻塞</span>
-      <p class="q-stem">14. 下列有關肝臟移植之併發症何者為誤？</p>
-      <ul class="opts">
-        <li>(A) 若 Hepatic artery thrombosis 發生於移植後一個月後，若肝指數正常，大多數的病人僅接受保守治療或觀察即可</li>
-        <li>(B) Post-transplant lymphoproliferative disease 主要和 CMV (cytomegalovirus) infection 有關</li>
-        <li>(C) Small-for-size syndrome in living donor liver transplantation 與 portal flow 及 portal pressure 有密切關係</li>
-        <li>(D) Hepatic vein obstruction 時，常有 ascites、jaundice、prothrombin time prolong 之現象</li>
-      </ul>
-      <details class="rev">
-        <summary class="toggle"></summary>
-        <div class="reveal">
-          <div class="ans">正確答案：(B)</div>
-          <p>• (A) <b>正確</b>：晚期（&gt;1個月）發生的 HAT 若側支循環已建立且肝功能正常，可採取保守密切觀察。</p>
-          <p>• (B) <b>錯誤（本題選B）</b>：Post-transplant lymphoproliferative disease (PTLD) 主要與 <b>EBV (Epstein-Barr Virus)</b> 感染有關，非 CMV。</p>
-          <p>• (C) <b>正確</b>：Small-for-size syndrome (SFSS) 主要由 High portal flow 及 High portal pressure 造成。</p>
-          <p>• (D) <b>正確</b>：肝靜脈阻塞（Hepatic vein / Outflow tract obstruction）會造成肝淤血，表現為黃疸、腹水及凝血時間延長。</p>
-          <div class="src">出處：114M年期末考 第3題</div>
-        </div>
-      </details>
-    </div>
-
   </section>
-
   <footer>
-    <p><b>高醫外科學｜張文燦老師 肝臟移植精選筆記 (110~114M) 完成</b>　共 14 題（涵蓋 110、111、112、113、114M 最新考題）。</p>
-    <p style="margin-top:14px;font-family:var(--mono);font-size:12px;color:var(--teal);border:1px solid var(--line-2);border-radius:6px;padding:6px 10px;display:inline-block">版面系統 · 醫學專題裸讀筆記 v2.0</p>
+    <p><b>高醫肝臟移植中心｜張文燦老師 肝臟移植題庫全集完成</b>　共 6 題。</p>
   </footer>
-
   </main>
 </div>
 </div>
 
 <script>
-  // 手機版：把表頭文字寫進每個儲存格，直式排列時識別資料欄位
   (function(){
     document.querySelectorAll('.tw table').forEach(function(t){
       var ths = t.querySelectorAll('thead th');
@@ -865,16 +353,12 @@
       });
     });
   })();
-
-  // 手機版：目錄預設收合
   (function(){
     var toc = document.getElementById('tocBox');
     if(toc && window.matchMedia('(max-width:700px)').matches){
       toc.removeAttribute('open');
     }
   })();
-
-  // 全部展開/收合答案按鈕
   var allBtn = document.getElementById('allBtn');
   if(allBtn){
     var expanded = false;
@@ -887,5 +371,6 @@
     });
   }
 </script>
+
 </body>
 </html>
