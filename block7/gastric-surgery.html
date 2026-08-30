@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>胃腫瘤及消化性潰瘍之外科治療｜裸讀學習筆記</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&family=Noto+Serif+TC:wght@500;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0F1B18;
+    --bg-2:#152420;
+    --bg-3:#1B2E29;
+    --line:#26403A;
+    --line-2:#31534B;
+    --text:#E9F1EE;
+    --text-2:#A8C2BA;
+    --text-3:#7A968D;
+    --teal:#7FC9BE;
+    --teal-dim:#4E9A90;
+    --gold:#C9A961;
+    --rose:#E58B85;
+    --serif:"Noto Serif TC","Songti TC",serif;
+    --sans:"Noto Sans TC","PingFang TC","Microsoft JhengHei",sans-serif;
+    --mono:"JetBrains Mono",ui-monospace,Menlo,monospace;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth;scroll-padding-top:24px;overflow-x:hidden}
+  body{
+    margin:0;background:var(--bg);color:var(--text);
+    font-family:var(--sans);font-size:16.5px;line-height:1.9;font-weight:300;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  .wrap{max-width:1150px;margin:0 auto;padding:0 22px}
+
+  /* ---------- Hero ---------- */
+  header.hero{padding:66px 0 52px;border-bottom:1px solid var(--line)}
+  .backlink{display:inline-block;font-family:var(--mono);font-size:12px;
+    color:var(--text-3);text-decoration:none;margin-bottom:22px;
+    border:1px solid var(--line);border-radius:6px;padding:5px 12px;transition:.15s}
+  .backlink:hover{color:var(--teal);border-color:var(--teal-dim)}
+  .eyebrow{display:flex;align-items:center;gap:16px;margin-bottom:26px;
+    font-family:var(--serif);font-size:15px;letter-spacing:.34em;color:var(--teal)}
+  .eyebrow .rule{width:56px;height:1px;background:var(--gold)}
+  .eyebrow .dot{color:var(--gold)}
+  header.hero h1{
+    font-family:var(--serif);font-weight:700;font-size:clamp(38px,7vw,74px);
+    line-height:1.15;margin:0 0 22px;letter-spacing:.02em;
+  }
+  header.hero h1 em{font-style:normal;color:var(--teal)}
+  header.hero p.sub{margin:0;color:var(--text-2);max-width:62ch;font-size:17px;line-height:1.85}
+  .intro-card{
+    border:1px solid var(--line);border-radius:16px;padding:26px 30px;margin-top:34px;background:var(--bg-2);
+  }
+  .intro-card p{margin:0 0 22px;color:var(--text-2)}
+  .intro-card b{color:var(--teal);font-weight:500}
+  .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+  .stat .n{font-family:var(--serif);font-size:38px;color:var(--gold);line-height:1}
+  .stat .l{font-size:12.5px;color:var(--text-3);letter-spacing:.08em;margin-top:6px}
+
+  /* ---------- Layout ---------- */
+  .cols{display:grid;grid-template-columns:220px 1fr;gap:52px;padding:46px 0 90px;align-items:start}
+  nav.toc{position:sticky;top:26px}
+  nav.toc .t{font-family:var(--mono);font-size:11px;letter-spacing:.2em;color:var(--text-3);margin-bottom:14px}
+  nav.toc a{display:block;padding:7px 14px;border-left:1px solid var(--line);
+    color:var(--text-2);text-decoration:none;font-size:14px;transition:.15s}
+  nav.toc a:hover{border-left-color:var(--teal);color:var(--teal);background:var(--bg-2)}
+  nav.toc a.exam{color:var(--gold)}
+  nav.toc summary{display:none}
+
+  /* ---------- Sections ---------- */
+  section{margin-bottom:64px;scroll-margin-top:24px}
+  .sec-head{display:flex;align-items:baseline;gap:16px;border-bottom:1px solid var(--line-2);padding-bottom:12px;margin-bottom:26px}
+  .sec-num{font-family:var(--serif);font-size:30px;color:var(--gold);line-height:1}
+  .sec-head h2{font-family:var(--serif);font-size:clamp(23px,3.4vw,31px);margin:0;font-weight:700;letter-spacing:.02em}
+  h3{font-family:var(--serif);font-size:21px;margin:38px 0 12px;font-weight:500;color:var(--text)}
+  h4{font-size:16.5px;margin:24px 0 8px;color:var(--teal);font-weight:500}
+  p{margin:0 0 15px}
+  ul,ol{margin:0 0 17px;padding-left:22px}
+  li{margin-bottom:8px}
+  li::marker{color:var(--teal-dim)}
+  strong,b{font-weight:500;color:#FFF}
+  u{text-decoration-color:var(--teal-dim);text-underline-offset:3px}
+  code{font-family:var(--mono);font-size:.88em;background:var(--bg-3);padding:1px 6px;border-radius:4px;color:var(--teal)}
+
+  /* ---------- Signature: 螢光 + 年度標籤 ---------- */
+  mark{background:rgba(201,169,97,.22);box-shadow:inset 0 -2px 0 rgba(201,169,97,.6);
+    color:#FBF3E2;padding:1px 3px;border-radius:2px}
+  a.qtag{display:inline-block;font-family:var(--mono);font-size:11px;font-weight:600;
+    border:1px solid var(--gold);color:var(--gold);padding:1px 7px;border-radius:4px;
+    text-decoration:none;margin:0 3px;vertical-align:2px;white-space:nowrap;transition:.15s}
+  a.qtag:hover{background:var(--gold);color:var(--bg)}
+  .tagline{margin:-8px 0 18px;font-size:13.5px;color:var(--text-3)}
+
+  /* ---------- Boxes ---------- */
+  .box{border-radius:13px;padding:20px 24px;margin:22px 0;border:1px solid var(--line);background:var(--bg-2)}
+  .box .bt{font-weight:500;font-size:14.5px;margin-bottom:10px;display:flex;align-items:center;gap:9px;color:#FFF}
+  .box p:last-child,.box ul:last-child,.box ol:last-child{margin-bottom:0}
+  .badge{font-family:var(--mono);font-size:10px;padding:2px 8px;border-radius:3px;letter-spacing:.06em;
+    border:1px solid currentColor;font-weight:600}
+  .box.exam{border-color:rgba(201,169,97,.45);background:rgba(201,169,97,.07)}
+  .box.exam .badge{color:var(--gold)}
+  .box.trap{border-color:rgba(229,139,133,.45);background:rgba(229,139,133,.07)}
+  .box.trap .badge{color:var(--rose)}
+  .box.key{border-color:rgba(127,201,190,.4);background:rgba(127,201,190,.07)}
+  .box.key .badge{color:var(--teal)}
+
+  /* ---------- Tables ---------- */
+  .tw{overflow-x:auto;margin:22px 0;border:1px solid var(--line);border-radius:13px}
+  table{border-collapse:collapse;width:100%;min-width:540px;font-size:14.8px}
+  th,td{padding:12px 16px;text-align:left;border-bottom:1px solid var(--line);vertical-align:top}
+  thead th{background:var(--bg-3);color:var(--teal);font-weight:500;font-size:13.5px;letter-spacing:.04em}
+  tbody tr:last-child td{border-bottom:none}
+  tbody tr:nth-child(even){background:rgba(255,255,255,.018)}
+  td.mono,th.mono{font-family:var(--mono);font-size:13px}
+
+  /* ---------- 隨堂小考（內文嵌入） ---------- */
+  .quiz{border:1px solid var(--line-2);border-radius:14px;margin:26px 0;overflow:hidden;background:var(--bg-2)}
+  .quiz-top{display:flex;align-items:center;gap:10px;padding:12px 20px;background:var(--bg-3);border-bottom:1px solid var(--line)}
+  .quiz-top .lab{font-family:var(--serif);font-size:14px;letter-spacing:.16em;color:var(--gold)}
+  .quiz-top .yr{font-family:var(--mono);font-size:11.5px;color:var(--text-2);border:1px solid var(--line-2);padding:2px 8px;border-radius:4px}
+  .quiz-body{padding:20px 22px}
+  .quiz-body .stem{font-size:15.5px;line-height:1.85;margin:0 0 14px;color:var(--text)}
+  .opts{list-style:none;padding:0;margin:0 0 14px}
+  .opts li{padding:8px 12px;font-size:15px;border:1px solid var(--line);border-radius:8px;margin-bottom:7px;color:var(--text-2)}
+  .toggle{background:none;border:1px solid var(--teal-dim);color:var(--teal);font-family:var(--sans);
+    font-size:13px;padding:7px 16px;border-radius:7px;cursor:pointer;transition:.15s;font-weight:400}
+  .toggle:hover{background:var(--teal);color:var(--bg)}
+
+  /* ---------- 答案展開 ---------- */
+  details.rev{margin:0}
+  summary.toggle{
+    display:inline-block;list-style:none;cursor:pointer;
+    background:none;border:1px solid var(--teal-dim);color:var(--teal);
+    font-family:var(--sans);font-size:13px;padding:7px 16px;border-radius:7px;
+    font-weight:400;transition:.15s;-webkit-tap-highlight-color:transparent;
+  }
+  summary.toggle::-webkit-details-marker{display:none}
+  summary.toggle::marker{content:""}
+  summary.toggle:hover{background:var(--teal);color:var(--bg)}
+  summary.toggle::before{content:"顯示答案"}
+  .q summary.toggle::before{content:"顯示答案與詳解"}
+  details.rev[open] summary.toggle::before{content:"收合答案"}
+  details.rev .reveal{margin-top:14px}
+  .reveal{border-top:1px dashed var(--line-2);margin-top:14px;padding-top:14px}
+  .reveal[hidden]{display:none}
+  .ans{font-family:var(--serif);font-weight:700;color:var(--gold);font-size:17px;margin-bottom:10px}
+  .reveal p{margin:0 0 9px;font-size:14.8px;color:var(--text-2)}
+  .reveal p b{color:#FFF}
+  .src{font-size:12px;color:var(--text-3);font-family:var(--mono);margin-top:12px}
+  .jump{font-size:12.5px;color:var(--teal-dim);text-decoration:none;border-bottom:1px solid var(--line-2)}
+  .jump:hover{color:var(--teal)}
+
+  /* ---------- Exam bank ---------- */
+  .exam-head{border:1px solid var(--line-2);border-radius:16px;padding:30px;margin-bottom:28px;background:var(--bg-2)}
+  .exam-head h2{font-family:var(--serif);margin:0 0 10px;font-size:29px}
+  .exam-head p{color:var(--text-2);margin:0;font-size:15px}
+  .btn{font-family:var(--sans);font-size:13.5px;cursor:pointer;background:var(--teal);color:var(--bg);
+    border:none;padding:10px 20px;border-radius:8px;margin-top:18px;font-weight:500}
+  .btn:hover{background:#9BDBD1}
+  .yrhead{font-family:var(--serif);font-size:24px;font-weight:700;margin:40px 0 18px;
+    padding-left:16px;border-left:3px solid var(--gold);color:var(--gold)}
+  .q{background:var(--bg-2);border:1px solid var(--line);border-radius:13px;padding:22px 24px;margin-bottom:16px;scroll-margin-top:24px}
+  .q-no{font-family:var(--mono);font-size:11.5px;color:var(--gold);border:1px solid var(--gold);padding:2px 9px;border-radius:5px}
+  .q-topic{font-size:12.5px;color:var(--text-3);margin-left:10px}
+  .q-stem{margin:14px 0 12px;font-size:15.5px;line-height:1.85}
+
+  footer{border-top:1px solid var(--line);padding:30px 0 60px;color:var(--text-3);font-size:13.5px}
+  footer b{color:var(--text-2)}
+
+  @media (max-width:900px){
+    .cols{grid-template-columns:1fr;gap:0;padding-top:28px}
+    nav.toc{position:static;margin-bottom:36px;border:1px solid var(--line);border-radius:12px;padding:16px;background:var(--bg-2)}
+    nav.toc a{border-left:none;padding:6px 4px}
+    .stats{grid-template-columns:repeat(2,1fr);gap:20px}
+  }
+  .tw{border:none;background:none;overflow:visible;border-radius:0;margin:18px 0}
+  .tw table{min-width:0;width:100%;border-collapse:separate;border-spacing:0;font-size:15px}
+  .tw thead{display:none}
+  .tw tbody tr{
+    display:block;border:1px solid var(--line);border-radius:12px;
+    background:var(--bg-2);margin-bottom:12px;padding:4px 0;
+  }
+  .tw tbody tr:nth-child(even){background:var(--bg-2)}
+  .tw tbody tr:last-child{margin-bottom:0}
+  .tw tbody td{display:block;border:none;padding:10px 16px}
+  .tw tbody td+td{border-top:1px dashed var(--line)}
+  .tw tbody td[data-label]::before{
+    content:attr(data-label);display:block;
+    font-family:var(--mono);font-size:11px;letter-spacing:.08em;
+    color:var(--teal);margin-bottom:5px;
+  }
+  .tw tbody td:first-child{font-size:16.5px}
+  .tw tbody td.mono,.tw tbody td:first-child{color:var(--text)}
+
+  @media (max-width:700px){
+    body{font-size:16px;line-height:1.85}
+    .wrap{padding:0 16px}
+    header.hero{padding:40px 0 34px}
+    .cols{padding:28px 0 60px}
+    section{margin-bottom:46px}
+
+    nav.toc{padding:0;overflow:hidden}
+    nav.toc .t{display:none}
+    nav.toc details{margin:0}
+    nav.toc summary{
+      display:block;list-style:none;cursor:pointer;padding:14px 16px;
+      font-family:var(--mono);font-size:12px;letter-spacing:.16em;color:var(--teal);
+    }
+    nav.toc summary::-webkit-details-marker{display:none}
+    nav.toc summary::after{content:" ▾";color:var(--text-3)}
+    nav.toc details[open] summary::after{content:" ▴"}
+    nav.toc .toc-links{padding:0 10px 12px}
+
+    .box{padding:16px 18px;border-radius:11px}
+    p,li,td,.stem,.reveal p,.opts li,.q-stem{overflow-wrap:anywhere;word-break:break-word}
+    .quiz-body{padding:16px 16px}
+    .opts li{padding:9px 12px;font-size:15px}
+    .q{padding:18px 16px}
+    .sec-head{gap:12px}
+    ul,ol{padding-left:20px}
+    .toggle{width:100%;padding:11px 16px;font-size:14px}
+    summary.toggle{width:100%;text-align:center;padding:11px 16px;font-size:14px}
+    .btn{width:100%;padding:12px 16px}
+  }
+  @media print{
+    nav.toc,.btn,.toggle{display:none}
+    .reveal{display:block!important}
+    body{background:#fff;color:#000;font-size:11pt}
+    .tw thead{display:table-header-group!important}
+  }
+  @media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <a class="backlink" href="index.html">← 返回 Block 7 目錄</a>
+    <div class="eyebrow"><span class="rule"></span>裸讀學習筆記<span class="dot">·</span>由淺入深</div>
+    <h1>胃腫瘤及消化性潰瘍之外科治療</h1>
+    <p class="sub">從「為什麼胃會破洞」到「切胃還是切神經」，一次搞懂胃部手術的邏輯。授課教師：張琮琨。</p>
+
+    <div class="intro-card">
+      <p>這份筆記將深入探討消化性潰瘍與胃癌的外科治療原則，不僅告訴你做什麼手術，更重要的是<b>為什麼</b>這麼做。</p>
+      <div class="stats">
+        <div class="stat"><div class="n">1</div><div class="l">總題數</div></div>
+        <div class="stat"><div class="n">1</div><div class="l">BM110</div></div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+<div class="cols">
+
+  <nav class="toc">
+    <div class="t">CONTENTS</div>
+    <details id="tocBox" open>
+      <summary>目錄 CONTENTS</summary>
+      <div class="toc-links">
+      <a href="#s1">一　導讀：深夜的胃穿孔急診</a>
+      <a href="#s2">二　消化性潰瘍：為什麼會破洞？</a>
+      <a href="#s3">三　潰瘍的手術：切斷神經還是切掉胃？</a>
+      <a href="#s4">四　胃癌：無聲的殺手</a>
+      <a href="#s5">五　一分鐘考前秒殺心法</a>
+      <a href="#exam" class="exam">六　考古題全收錄</a>
+      </div>
+    </details>
+  </nav>
+
+  <main>
+
+  <section id="s1">
+    <div class="sec-head"><span class="sec-num">一</span><h2>導讀：深夜的胃穿孔急診</h2></div>
+    <p>想像你是一位在急診值班的醫師，凌晨兩點，救護車送來一位 55 歲男性。他原本只是有點「胃嘈嘈」，吃了一顆止痛藥想去睡覺，突然之間，肚子像被刀割一樣痛，痛到他整個人蜷縮在床上，冷汗直流。理學檢查發現他的肚子硬得像木板（board-like rigidity）。X 光一照，橫膈膜下出現了游離空氣（free air）。這是一個典型的<b>消化性潰瘍穿孔（Peptic Ulcer Perforation）</b>。</p>
+    <p>為什麼好好的胃會破一個洞？當內科藥物無法收拾殘局時，外科醫師該如何介入？是把洞補起來就好？還是要切斷神經？甚至要切掉一部分的胃？這堂課，我們將深入胃部手術的核心邏輯，理解那些看似複雜的手術名稱背後，其實都藏著為病人量身打造的解剖學智慧。</p>
+  </section>
+
+  <section id="s2">
+    <div class="sec-head"><span class="sec-num">二</span><h2>消化性潰瘍：為什麼會破洞？</h2></div>
+    <p>消化性潰瘍（Peptic Ulcer Disease, PUD）就像是胃腸道的防禦城牆崩潰了。我們的胃每天都會分泌強酸（胃酸）和消化酶（胃蛋白酶），用來消化食物。為了不讓胃把「自己」也消化掉，胃壁表面覆蓋著一層厚厚的黏液層，這就是城牆。當<b>攻擊因子（酸）大於防禦因子（黏液）</b>時，城牆就會被腐蝕，形成潰瘍。</p>
+    
+    <h3>兩大元凶：幽門螺旋桿菌與 NSAIDs</h3>
+    <p>造成城牆崩潰的最常見原因有兩個：</p>
+    <ul>
+      <li><strong>幽門螺旋桿菌（H. pylori）：</strong>這是最常見的原因。這種細菌就像是攻城錘，它會分泌酵素破壞黏液層，並引起發炎反應，讓胃酸更容易侵蝕胃壁。</li>
+      <li><strong>非類固醇消炎止痛藥（NSAIDs）：</strong>這類藥物（如阿斯匹靈、布洛芬）會抑制前列腺素（Prostaglandin）的合成。前列腺素是建造黏液城牆的重要材料，少了它，城牆就會變薄、變脆弱。這就是為什麼前面故事中的病人，吃了止痛藥後突然穿孔的原因。</li>
+    </ul>
+
+    <h3>胃潰瘍 vs 十二指腸潰瘍</h3>
+    <p>這兩者雖然都叫消化性潰瘍，但發生機制和表現有所不同：</p>
+    <div class="tw"><table>
+      <thead><tr><th>比較項目</th><th>胃潰瘍 (Gastric Ulcer)</th><th>十二指腸潰瘍 (Duodenal Ulcer)</th></tr></thead>
+      <tbody>
+        <tr><td data-label="比較項目"><b>主要原因</b></td><td data-label="胃潰瘍">防禦力下降（黏液變少）</td><td data-label="十二指腸潰瘍">攻擊力太強（胃酸過多）</td></tr>
+        <tr><td data-label="比較項目"><b>與進食的關係</b></td><td data-label="胃潰瘍">吃飽後更痛（食物刺激胃壁）</td><td data-label="十二指腸潰瘍">空腹時痛，吃東西後緩解（食物中和胃酸）</td></tr>
+        <tr><td data-label="比較項目"><b>惡性風險</b></td><td data-label="胃潰瘍"><mark>較高，必須做切片排除胃癌</mark></td><td data-label="十二指腸潰瘍">極低，幾乎不會變成癌症</td></tr>
+      </tbody>
+    </table></div>
+    
+    <div class="box key">
+      <div class="bt"><span class="badge">核心串連</span>為什麼十二指腸潰瘍是空腹痛？</div>
+      <p>把十二指腸想像成胃的下游。當你空腹時，胃裡沒有食物可以中和胃酸，強酸直接流到十二指腸，就會刺激潰瘍引起疼痛。當你吃東西後，食物扮演了緩衝劑的角色，吸收了部分胃酸，所以反而不痛了。這也是為什麼十二指腸潰瘍的病人經常在半夜被痛醒（因為距離上一餐太久了）。</p>
+    </div>
+  </section>
+
+  <section id="s3">
+    <div class="sec-head"><span class="sec-num">三</span><h2>潰瘍的手術：切斷神經還是切掉胃？</h2></div>
+    <p class="tagline">本節考點：<a class="qtag" href="#q110-06">110-06</a></p>
+    <p>在強效制酸劑（PPI）和除菌藥物發明之前，外科手術是治療潰瘍的主力。現在雖然內科治療效果很好，但遇到<b>大出血、穿孔、阻塞或內科治療無效</b>時，外科醫師還是得出手。手術的兩大核心目標是：<b>1. 減少胃酸分泌</b>、<b>2. 切除潰瘍病灶</b>。</p>
+
+    <h3>1. 迷走神經切斷術 (Vagotomy)：關掉胃酸的開關</h3>
+    <p>胃酸分泌主要受迷走神經控制。把神經切斷，胃酸分泌就會大幅減少。但神經切斷的位置大有學問：</p>
+    <ul>
+      <li><strong>主幹迷走神經切斷術 (Truncal Vagotomy)：</strong>在食道下端切斷迷走神經主幹。這招最有效，但副作用也最大。因為迷走神經不只控制胃酸，還控制整個腸胃道的蠕動。主幹切斷後，胃會「罷工」不動，食物下不去。所以，<mark>做 Truncal Vagotomy 必須同時加上引流手術（Drainage procedure，如幽門成形術 Pyloroplasty）</mark>，把胃的出口開大，讓食物可以順利排空。</li>
+      <li><strong>高選擇性迷走神經切斷術 (Highly Selective Vagotomy)：</strong>這是比較精緻的做法。只切斷支配胃壁（負責分泌胃酸）的神經分支，而保留控制胃竇和幽門（負責蠕動排空）的神經（稱為 Latarjet 神經）。這樣一來，胃酸減少了，但胃還是能正常蠕動，<mark>不需要做引流手術</mark>。這也是目前單純減少胃酸的首選術式。</li>
+    </ul>
+
+    <h3>2. 胃切除與重建：Billroth 兄弟與 Roux-en-Y</h3>
+    <p>如果潰瘍太大、流血不止或懷疑有惡性腫瘤，就需要把一部分的胃切除（Partial Gastrectomy），主要是切掉會分泌胃泌素（Gastrin）的胃竇部分。切完之後，剩下的胃要怎麼和腸子接起來？這就是重建手術。</p>
+    
+    <div class="tw"><table>
+      <thead><tr><th>重建術式</th><th>怎麼接？</th><th>特點與缺點</th></tr></thead>
+      <tbody>
+        <tr><td data-label="重建術式"><b>Billroth I (B-I)</b></td><td data-label="怎麼接？">胃 吻合 十二指腸</td><td data-label="特點與缺點">最符合正常生理構造。缺點：如果切除的胃太多，拉在一起會太緊（張力過大），容易裂開。</td></tr>
+        <tr><td data-label="重建術式"><b>Billroth II (B-II)</b></td><td data-label="怎麼接？">胃 吻合 空腸</td><td data-label="特點與缺點">將十二指腸封閉（盲端），把胃直接接到空腸。<mark>缺點：容易發生膽汁逆流（Afferent loop syndrome）。</mark></td></tr>
+        <tr><td data-label="重建術式"><b>Roux-en-Y</b></td><td data-label="怎麼接？">Y字型接法</td><td data-label="特點與缺點">將空腸切斷，一端接胃，另一端接在更下游的空腸。優點：<mark>完全避免膽汁逆流到胃</mark>，是目前胃癌重建的首選。</td></tr>
+      </tbody>
+    </table></div>
+
+    <div class="box trap">
+      <div class="bt"><span class="badge">易錯陷阱</span>Billroth II 的盲腸症候群 (Afferent loop syndrome)</div>
+      <p>在 Billroth II 手術中，膽汁和胰液會分泌到被封閉的十二指腸段（傳入端，Afferent loop）。如果這個迴路發生阻塞，膽汁積在裡面壓力升高，病人會突然噴射狀吐出大量不含食物的膽汁，吐完之後肚子就不痛了。這是 B-II 特有的併發症，考試常考！</p>
+    </div>
+
+    <!-- QUIZ 110-06 -->
+    <div class="quiz">
+      <div class="quiz-top"><span class="lab">考古題</span><span class="yr">110 學年度 · 第 6 題</span></div>
+      <div class="quiz-body">
+        <p class="stem">關於消化性潰瘍之外科治療，下列敘述何者<b>錯誤</b>？</p>
+        <ul class="opts">
+          <li>(A) 高選擇性迷走神經切斷術 (Highly selective vagotomy) 通常不需要合併引流手術 (Drainage procedure)。</li>
+          <li>(B) 主幹迷走神經切斷術 (Truncal vagotomy) 必須合併引流手術。</li>
+          <li>(C) Billroth I 重建手術是將殘餘的胃與空腸進行吻合。</li>
+          <li>(D) Roux-en-Y 重建手術可以有效防止膽汁逆流性胃炎。</li>
+        </ul>
+        <details class="rev">
+          <summary class="toggle"></summary>
+          <div class="reveal">
+          <div class="ans">答案：(C)</div>
+          <p>(C) <b>錯</b> —— Billroth I 是胃吻合<b>十二指腸</b>。胃吻合<b>空腸</b>的是 Billroth II。<br>(A)(B) 正確，高選擇性保留了排空功能，主幹切斷則會影響排空。(D) 正確，Roux-en-Y 的 Y 字型設計可避免膽汁逆流。</p>
+          <p><a class="jump" href="#q110-06">看文末完整詳解 ↓</a></p>
+        </div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <section id="s4">
+    <div class="sec-head"><span class="sec-num">四</span><h2>胃癌：無聲的殺手</h2></div>
+    <p>胃癌早期往往沒有明顯症狀，或是症狀跟普通的胃痛、消化不良很像，因此常被忽略，發現時往往已經是晚期。這也是為什麼在日本和韓國，會推行全民胃鏡篩檢。</p>
+
+    <h3>Lauren 組織學分類：腸型與瀰漫型</h3>
+    <p>這是在顯微鏡下看胃癌細胞長什麼樣子的分類，非常重要，因為這決定了癌症的惡性程度和治療策略：</p>
+    <ul>
+      <li><strong>腸型 (Intestinal type)：</strong>這類胃癌細胞長得有點像腸子裡的腺體。通常與 H. pylori 感染、慢性胃炎有關。這類腫瘤比較有明確的邊界，通常發生在年紀較大的病人身上。預後相對較好。</li>
+      <li><strong>瀰漫型 (Diffuse type)：</strong>這類癌細胞非常不合群，沒有形成腺體，而是一顆一顆散布在胃壁組織裡。最經典的就是<b>印戒細胞癌 (Signet ring cell carcinoma)</b>。這種癌細胞會讓胃壁變得非常厚且僵硬，像皮革一樣，稱為<b>皮革胃 (Linitis plastica)</b>。這類胃癌惡性度高，容易早期轉移，常見於年輕女性。預後較差。</li>
+    </ul>
+
+    <h3>胃癌的外科治療：切除與淋巴結廓清</h3>
+    <p>胃癌唯一可能治癒的方法就是手術切除。手術不僅要切除腫瘤，還要清除附近的淋巴結（Lymph node dissection）。</p>
+    <ul>
+      <li><strong>切除範圍：</strong>取決於腫瘤的位置。如果腫瘤在胃的下半部（遠端），可以做遠端胃切除術（Distal gastrectomy）。如果腫瘤在胃的上半部或中部，或者為了確保沒有殘留癌細胞（尤其是瀰漫型），通常需要做<b>全胃切除術（Total gastrectomy）</b>。全胃切除後，只能用空腸拉上來跟食道接在一起（Roux-en-Y 重建）。</li>
+      <li><strong>淋巴結廓清 (D2 Dissection)：</strong>這是胃癌手術的關鍵。胃周圍有非常豐富的淋巴網絡，癌細胞很容易跟著淋巴跑。目前標準的手術是 <b>D2 淋巴結廓清術</b>，意思是除了切除緊貼在胃旁邊的第一站（D1）淋巴結外，還要順著周圍的血管（如左胃動脈、肝總動脈等）把第二站（D2）的淋巴結也全部清除乾淨。這能顯著提高病人的存活率。</li>
+    </ul>
+  </section>
+
+  <section id="s5">
+    <div class="sec-head"><span class="sec-num">五</span><h2>一分鐘考前秒殺心法</h2></div>
+    <div class="box exam">
+      <div class="bt"><span class="badge">必考總結</span>進考場前，這幾句一定要在腦子裡</div>
+      <ul>
+        <li><b>十二指腸潰瘍</b>：空腹痛，吃東西緩解，幾乎不惡變。</li>
+        <li><b>胃潰瘍</b>：吃飽痛，有惡性可能（需切片）。</li>
+        <li><b>主幹迷走神經切斷 (Truncal Vagotomy)</b>：必加做引流術 (Drainage)。</li>
+        <li><b>高選擇性 (Highly Selective) Vagotomy</b>：不用做引流術。</li>
+        <li><b>Billroth I</b>：胃接十二指腸。</li>
+        <li><b>Billroth II</b>：胃接空腸（會有盲端，易引發 Afferent loop syndrome）。</li>
+        <li><b>Roux-en-Y</b>：防膽汁逆流首選。</li>
+        <li><b>瀰漫型胃癌 (Diffuse type)</b>：印戒細胞、皮革胃、惡性高、年輕女性。</li>
+        <li><b>胃癌標準淋巴廓清</b>：D2 Dissection。</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ============ EXAM BANK ============ -->
+  <section id="exam">
+    <div class="exam-head">
+      <h2>考古題全收錄</h2>
+      <p>綜合以上所有觀念，讓我們一次驗收歷屆考題。若有不確定的地方，請點擊「回顧觀念」複習。</p>
+    </div>
+
+    <div class="yrhead">BM110 學年度</div>
+
+    <div class="q" id="q110-06">
+      <div><span class="q-no">110-06</span><span class="q-topic">消化性潰瘍手術</span></div>
+      <p class="q-stem">關於消化性潰瘍之外科治療，下列敘述何者<b>錯誤</b>？</p>
+      <ul class="opts">
+        <li>(A) 高選擇性迷走神經切斷術 (Highly selective vagotomy) 通常不需要合併引流手術 (Drainage procedure)。</li>
+        <li>(B) 主幹迷走神經切斷術 (Truncal vagotomy) 必須合併引流手術。</li>
+        <li>(C) Billroth I 重建手術是將殘餘的胃與空腸進行吻合。</li>
+        <li>(D) Roux-en-Y 重建手術可以有效防止膽汁逆流性胃炎。</li>
+      </ul>
+      <details class="rev">
+        <summary class="toggle"></summary>
+        <div class="reveal">
+          <div class="ans">答案：(C)</div>
+          <p>這題考的是胃切除後重建的解剖構造。<br>
+          (C) <b>Billroth I (B-I)</b> 是將殘存的胃與<b>十二指腸 (Duodenum)</b> 吻合，這最符合原本的生理通道。將胃與<b>空腸 (Jejunum)</b> 吻合的術式是 <b>Billroth II (B-II)</b>。<br>
+          (A)(B) 主幹切斷會導致胃無法排空，所以必加引流術；高選擇性只切斷支配胃酸分泌的神經，保留了支配胃竇和幽門排空功能的神經，故不需引流。<br>
+          (D) Roux-en-Y 將空腸在遠端切斷接回，可讓膽汁和胰液在吻合處遠方才匯流，有效避免逆流至胃部。</p>
+          <a class="jump" href="#s3">→ 回顧：潰瘍的手術：切斷神經還是切掉胃？</a>
+        </div>
+      </details>
+    </div>
+
+  </section>
+
+  </main>
+</div>
+</div>
+
+<footer>
+  <div class="wrap">
+    <p><b>裸讀學習筆記</b><br>設計為協助醫學生快速建立核心觀念。這不是教科書的替代品，而是通往教科書的橋樑。</p>
+  </div>
+</footer>
+
+<script>
+  /* 手機版目錄收合 */
+  const tocBox = document.getElementById('tocBox');
+  function checkWidth(){
+    if(window.innerWidth <= 700){
+      tocBox.removeAttribute('open');
+    } else {
+      tocBox.setAttribute('open','open');
+    }
+  }
+  window.addEventListener('resize', checkWidth);
+  checkWidth();
+</script>
+
+</body>
+</html>
