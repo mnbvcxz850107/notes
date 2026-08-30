@@ -1,0 +1,810 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>腸腫瘤、阻塞、直腸肛門疾病及外科治療｜裸讀學習筆記</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&family=Noto+Serif+TC:wght@500;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0F1B18;
+    --bg-2:#152420;
+    --bg-3:#1B2E29;
+    --line:#26403A;
+    --line-2:#31534B;
+    --text:#E9F1EE;
+    --text-2:#A8C2BA;
+    --text-3:#7A968D;
+    --teal:#7FC9BE;
+    --teal-dim:#4E9A90;
+    --gold:#C9A961;
+    --rose:#E58B85;
+    --serif:"Noto Serif TC","Songti TC",serif;
+    --sans:"Noto Sans TC","PingFang TC","Microsoft JhengHei",sans-serif;
+    --mono:"JetBrains Mono",ui-monospace,Menlo,monospace;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth;scroll-padding-top:24px;overflow-x:hidden}
+  body{
+    margin:0;background:var(--bg);color:var(--text);
+    font-family:var(--sans);font-size:16.5px;line-height:1.9;font-weight:300;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  .wrap{max-width:1150px;margin:0 auto;padding:0 22px}
+
+  /* ---------- Hero ---------- */
+  header.hero{padding:66px 0 52px;border-bottom:1px solid var(--line)}
+  .backlink{display:inline-block;font-family:var(--mono);font-size:12px;
+    color:var(--text-3);text-decoration:none;margin-bottom:22px;
+    border:1px solid var(--line);border-radius:6px;padding:5px 12px;transition:.15s}
+  .backlink:hover{color:var(--teal);border-color:var(--teal-dim)}
+  .eyebrow{display:flex;align-items:center;gap:16px;margin-bottom:26px;
+    font-family:var(--serif);font-size:15px;letter-spacing:.34em;color:var(--teal)}
+  .eyebrow .rule{width:56px;height:1px;background:var(--gold)}
+  .eyebrow .dot{color:var(--gold)}
+  header.hero h1{
+    font-family:var(--serif);font-weight:700;font-size:clamp(38px,7vw,74px);
+    line-height:1.15;margin:0 0 22px;letter-spacing:.02em;
+  }
+  header.hero h1 em{font-style:normal;color:var(--teal)}
+  header.hero p.sub{margin:0;color:var(--text-2);max-width:62ch;font-size:17px;line-height:1.85}
+  .intro-card{
+    border:1px solid var(--line);border-radius:16px;padding:26px 30px;margin-top:34px;background:var(--bg-2);
+  }
+  .intro-card p{margin:0 0 22px;color:var(--text-2)}
+  .intro-card b{color:var(--teal);font-weight:500}
+  .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+  .stat .n{font-family:var(--serif);font-size:38px;color:var(--gold);line-height:1}
+  .stat .l{font-size:12.5px;color:var(--text-3);letter-spacing:.08em;margin-top:6px}
+
+  /* ---------- Layout ---------- */
+  .cols{display:grid;grid-template-columns:220px 1fr;gap:52px;padding:46px 0 90px;align-items:start}
+  nav.toc{position:sticky;top:26px}
+  nav.toc .t{font-family:var(--mono);font-size:11px;letter-spacing:.2em;color:var(--text-3);margin-bottom:14px}
+  nav.toc a{display:block;padding:7px 14px;border-left:1px solid var(--line);
+    color:var(--text-2);text-decoration:none;font-size:14px;transition:.15s}
+  nav.toc a:hover{border-left-color:var(--teal);color:var(--teal);background:var(--bg-2)}
+  nav.toc a.exam{color:var(--gold)}
+  nav.toc summary{display:none}
+
+  /* ---------- Sections ---------- */
+  section{margin-bottom:64px;scroll-margin-top:24px}
+  .sec-head{display:flex;align-items:baseline;gap:16px;border-bottom:1px solid var(--line-2);padding-bottom:12px;margin-bottom:26px}
+  .sec-num{font-family:var(--serif);font-size:30px;color:var(--gold);line-height:1}
+  .sec-head h2{font-family:var(--serif);font-size:clamp(23px,3.4vw,31px);margin:0;font-weight:700;letter-spacing:.02em}
+  h3{font-family:var(--serif);font-size:21px;margin:38px 0 12px;font-weight:500;color:var(--text)}
+  h4{font-size:16.5px;margin:24px 0 8px;color:var(--teal);font-weight:500}
+  p{margin:0 0 15px}
+  ul,ol{margin:0 0 17px;padding-left:22px}
+  li{margin-bottom:8px}
+  li::marker{color:var(--teal-dim)}
+  strong,b{font-weight:500;color:#FFF}
+  u{text-decoration-color:var(--teal-dim);text-underline-offset:3px}
+  code{font-family:var(--mono);font-size:.88em;background:var(--bg-3);padding:1px 6px;border-radius:4px;color:var(--teal)}
+
+  /* ---------- Signature: 螢光 + 年度標籤 ---------- */
+  mark{background:rgba(201,169,97,.22);box-shadow:inset 0 -2px 0 rgba(201,169,97,.6);
+    color:#FBF3E2;padding:1px 3px;border-radius:2px}
+  a.qtag{display:inline-block;font-family:var(--mono);font-size:11px;font-weight:600;
+    border:1px solid var(--gold);color:var(--gold);padding:1px 7px;border-radius:4px;
+    text-decoration:none;margin:0 3px;vertical-align:2px;white-space:nowrap;transition:.15s}
+  a.qtag:hover{background:var(--gold);color:var(--bg)}
+  .tagline{margin:-8px 0 18px;font-size:13.5px;color:var(--text-3)}
+
+  /* ---------- Boxes ---------- */
+  .box{border-radius:13px;padding:20px 24px;margin:22px 0;border:1px solid var(--line);background:var(--bg-2)}
+  .box .bt{font-weight:500;font-size:14.5px;margin-bottom:10px;display:flex;align-items:center;gap:9px;color:#FFF}
+  .box p:last-child,.box ul:last-child,.box ol:last-child{margin-bottom:0}
+  .badge{font-family:var(--mono);font-size:10px;padding:2px 8px;border-radius:3px;letter-spacing:.06em;
+    border:1px solid currentColor;font-weight:600}
+  .box.exam{border-color:rgba(201,169,97,.45);background:rgba(201,169,97,.07)}
+  .box.exam .badge{color:var(--gold)}
+  .box.trap{border-color:rgba(229,139,133,.45);background:rgba(229,139,133,.07)}
+  .box.trap .badge{color:var(--rose)}
+  .box.key{border-color:rgba(127,201,190,.4);background:rgba(127,201,190,.07)}
+  .box.key .badge{color:var(--teal)}
+
+  /* ---------- Tables ---------- */
+  .tw{overflow-x:auto;margin:22px 0;border:1px solid var(--line);border-radius:13px}
+  table{border-collapse:collapse;width:100%;min-width:540px;font-size:14.8px}
+  th,td{padding:12px 16px;text-align:left;border-bottom:1px solid var(--line);vertical-align:top}
+  thead th{background:var(--bg-3);color:var(--teal);font-weight:500;font-size:13.5px;letter-spacing:.04em}
+  tbody tr:last-child td{border-bottom:none}
+  tbody tr:nth-child(even){background:rgba(255,255,255,.018)}
+  td.mono,th.mono{font-family:var(--mono);font-size:13px}
+
+  /* ---------- 九分區 ---------- */
+  .grid9{display:grid;grid-template-columns:repeat(3,1fr);gap:9px;margin:24px 0}
+  .cell{background:var(--bg-2);border:1px solid var(--line);border-radius:11px;padding:14px 15px;font-size:13.5px;line-height:1.7}
+  .cell b{display:block;font-family:var(--mono);font-size:11px;color:var(--teal);margin-bottom:6px;letter-spacing:.08em;font-weight:600}
+
+  /* ---------- 隨堂小考（內文嵌入） ---------- */
+  .quiz{border:1px solid var(--line-2);border-radius:14px;margin:26px 0;overflow:hidden;background:var(--bg-2)}
+  .quiz-top{display:flex;align-items:center;gap:10px;padding:12px 20px;background:var(--bg-3);border-bottom:1px solid var(--line)}
+  .quiz-top .lab{font-family:var(--serif);font-size:14px;letter-spacing:.16em;color:var(--gold)}
+  .quiz-top .yr{font-family:var(--mono);font-size:11.5px;color:var(--text-2);border:1px solid var(--line-2);padding:2px 8px;border-radius:4px}
+  .quiz-body{padding:20px 22px}
+  .quiz-body .stem{font-size:15.5px;line-height:1.85;margin:0 0 14px;color:var(--text)}
+  .opts{list-style:none;padding:0;margin:0 0 14px}
+  .opts li{padding:8px 12px;font-size:15px;border:1px solid var(--line);border-radius:8px;margin-bottom:7px;color:var(--text-2)}
+  .toggle{background:none;border:1px solid var(--teal-dim);color:var(--teal);font-family:var(--sans);
+    font-size:13px;padding:7px 16px;border-radius:7px;cursor:pointer;transition:.15s;font-weight:400}
+  .toggle:hover{background:var(--teal);color:var(--bg)}
+
+  /* ---------- 答案展開：使用原生 details，不依賴 JavaScript ---------- */
+  details.rev{margin:0}
+  summary.toggle{
+    display:inline-block;list-style:none;cursor:pointer;
+    background:none;border:1px solid var(--teal-dim);color:var(--teal);
+    font-family:var(--sans);font-size:13px;padding:7px 16px;border-radius:7px;
+    font-weight:400;transition:.15s;-webkit-tap-highlight-color:transparent;
+  }
+  summary.toggle::-webkit-details-marker{display:none}
+  summary.toggle::marker{content:""}
+  summary.toggle:hover{background:var(--teal);color:var(--bg)}
+  summary.toggle::before{content:"顯示答案"}
+  .q summary.toggle::before{content:"顯示答案與詳解"}
+  details.rev[open] summary.toggle::before{content:"收合答案"}
+  details.rev .reveal{margin-top:14px}
+  .reveal{border-top:1px dashed var(--line-2);margin-top:14px;padding-top:14px}
+  .reveal[hidden]{display:none}
+  .ans{font-family:var(--serif);font-weight:700;color:var(--gold);font-size:17px;margin-bottom:10px}
+  .reveal p{margin:0 0 9px;font-size:14.8px;color:var(--text-2)}
+  .reveal p b{color:#FFF}
+  .src{font-size:12px;color:var(--text-3);font-family:var(--mono);margin-top:12px}
+  .jump{font-size:12.5px;color:var(--teal-dim);text-decoration:none;border-bottom:1px solid var(--line-2)}
+  .jump:hover{color:var(--teal)}
+
+  /* ---------- Exam bank ---------- */
+  .exam-head{border:1px solid var(--line-2);border-radius:16px;padding:30px;margin-bottom:28px;background:var(--bg-2)}
+  .exam-head h2{font-family:var(--serif);margin:0 0 10px;font-size:29px}
+  .exam-head p{color:var(--text-2);margin:0;font-size:15px}
+  .btn{font-family:var(--sans);font-size:13.5px;cursor:pointer;background:var(--teal);color:var(--bg);
+    border:none;padding:10px 20px;border-radius:8px;margin-top:18px;font-weight:500}
+  .btn:hover{background:#9BDBD1}
+  .yrhead{font-family:var(--serif);font-size:24px;font-weight:700;margin:40px 0 18px;
+    padding-left:16px;border-left:3px solid var(--gold);color:var(--gold)}
+  .q{background:var(--bg-2);border:1px solid var(--line);border-radius:13px;padding:22px 24px;margin-bottom:16px;scroll-margin-top:24px}
+  .q-no{font-family:var(--mono);font-size:11.5px;color:var(--gold);border:1px solid var(--gold);padding:2px 9px;border-radius:5px}
+  .q-topic{font-size:12.5px;color:var(--text-3);margin-left:10px}
+  .q-stem{margin:14px 0 12px;font-size:15.5px;line-height:1.85}
+  /* ---------- 醫學影像卡片 (Image Boxes) ---------- */
+  .img-frame{
+    background:#08100E;border:1px solid var(--line-2);border-radius:12px;
+    padding:12px;margin:16px 0 18px;text-align:center;
+  }
+  .q-img{
+    display:block;max-width:100%;height:auto;border-radius:8px;
+    margin:0 auto;box-shadow:0 4px 14px rgba(0,0,0,.5);
+  }
+  .img-caption{
+    font-family:var(--mono);font-size:12px;color:var(--text-2);
+    margin-top:10px;line-height:1.6;
+  }
+  .img-caption b{color:var(--gold);font-weight:600}
+
+
+  footer{border-top:1px solid var(--line);padding:30px 0 60px;color:var(--text-3);font-size:13.5px}
+  footer b{color:var(--text-2)}
+
+  @media (max-width:900px){
+    .cols{grid-template-columns:1fr;gap:0;padding-top:28px}
+    nav.toc{position:static;margin-bottom:36px;border:1px solid var(--line);border-radius:12px;padding:16px;background:var(--bg-2)}
+    nav.toc a{border-left:none;padding:6px 4px}
+    .grid9{grid-template-columns:1fr}
+    .stats{grid-template-columns:repeat(2,1fr);gap:20px}
+  }
+  /* ---------- 手機版：表格改為直式卡片，消除左右滑動 ---------- */
+
+  /* ---------- 表格一律直式卡片呈現（不依賴螢幕寬度判斷，因為部分 App 內建瀏覽器
+     不會依照真實裝置寬度計算版面，用 @media 寬度斷點會失效）---------- */
+  .tw{border:none;background:none;overflow:visible;border-radius:0;margin:18px 0}
+  .tw table{min-width:0;width:100%;border-collapse:separate;border-spacing:0;font-size:15px}
+  .tw thead{display:none}
+  .tw tbody tr{
+    display:block;border:1px solid var(--line);border-radius:12px;
+    background:var(--bg-2);margin-bottom:12px;padding:4px 0;
+  }
+  .tw tbody tr:nth-child(even){background:var(--bg-2)}
+  .tw tbody tr:last-child{margin-bottom:0}
+  .tw tbody td{display:block;border:none;padding:10px 16px}
+  .tw tbody td+td{border-top:1px dashed var(--line)}
+  .tw tbody td[data-label]::before{
+    content:attr(data-label);display:block;
+    font-family:var(--mono);font-size:11px;letter-spacing:.08em;
+    color:var(--teal);margin-bottom:5px;
+  }
+  .tw tbody td:first-child{font-size:16.5px}
+  .tw tbody td.mono,.tw tbody td:first-child{color:var(--text)}
+
+  @media (max-width:700px){
+    body{font-size:16px;line-height:1.85}
+    .wrap{padding:0 16px}
+    header.hero{padding:40px 0 34px}
+    .cols{padding:28px 0 60px}
+    section{margin-bottom:46px}
+
+    /* 目錄改為可收合，不佔滿整個第一屏 */
+    nav.toc{padding:0;overflow:hidden}
+    nav.toc .t{display:none}
+    nav.toc details{margin:0}
+    nav.toc summary{
+      display:block;list-style:none;cursor:pointer;padding:14px 16px;
+      font-family:var(--mono);font-size:12px;letter-spacing:.16em;color:var(--teal);
+    }
+    nav.toc summary::-webkit-details-marker{display:none}
+    nav.toc summary::after{content:" ▾";color:var(--text-3)}
+    nav.toc details[open] summary::after{content:" ▴"}
+    nav.toc .toc-links{padding:0 10px 12px}
+
+
+    /* 其他窄螢幕微調 */
+    .box{padding:16px 18px;border-radius:11px}
+    p,li,td,.stem,.reveal p,.opts li,.q-stem{overflow-wrap:anywhere;word-break:break-word}
+    .quiz-body{padding:16px 16px}
+    .opts li{padding:9px 12px;font-size:15px}
+    .q{padding:18px 16px}
+    .sec-head{gap:12px}
+    ul,ol{padding-left:20px}
+    .toggle{width:100%;padding:11px 16px;font-size:14px}
+    summary.toggle{width:100%;text-align:center;padding:11px 16px;font-size:14px}
+    .btn{width:100%;padding:12px 16px}
+  }
+  @media print{
+    nav.toc,.btn,.toggle{display:none}
+    .reveal{display:block!important}
+    body{background:#fff;color:#000;font-size:11pt}
+    .tw thead{display:table-header-group!important}
+  }
+  @media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <a class="backlink" href="index.html">← 返回 Block 7 目錄</a>
+    <div class="eyebrow"><span class="rule"></span>裸讀學習筆記<span class="dot">·</span>由淺入深</div>
+    <h1>腸腫瘤、直腸肛門疾病及外科治療</h1>
+    <p class="sub">從大腸息肉到直腸癌手術，解析「保肛門」的掙扎，並整理腸阻塞與常見肛門疾病。授課教師：蔡祥麟。</p>
+
+    <div class="intro-card">
+      <p>這份筆記涵蓋了 <b>BM111-BM113</b> 學年度所有跟「大腸直腸外科」相關的考題，把所有重要概念<b>嵌入到對應的觀念旁邊即時測驗</b>，文末再依年度完整羅列 15 題考古題。</p>
+      <div class="stats">
+        <div class="stat"><div class="n">15</div><div class="l">總題數</div></div>
+        <div class="stat"><div class="n">4</div><div class="l">BM113</div></div>
+        <div class="stat"><div class="n">6</div><div class="l">BM112</div></div>
+        <div class="stat"><div class="n">5</div><div class="l">BM111</div></div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+<div class="cols">
+
+  <nav class="toc">
+    <div class="t">CONTENTS</div>
+    <details id="tocBox" open>
+      <summary>目錄 CONTENTS</summary>
+      <div class="toc-links">
+      <a href="#s1">一　導讀：排便習慣改變的警訊</a>
+      <a href="#s2">二　腸道息肉與大腸直腸癌</a>
+      <a href="#s3">三　腸癌外科手術</a>
+      <a href="#s4">四　腸阻塞：交通癱瘓的腸道</a>
+      <a href="#s5">五　肛門直腸疾病</a>
+      <a href="#s6">六　一分鐘考前秒殺心法</a>
+      <a href="#exam" class="exam">七　考古題全收錄</a>
+      </div>
+    </details>
+  </nav>
+
+  <main>
+    <section id="s1">
+      <div class="sec-head"><span class="sec-num">一</span><h2>導讀：排便習慣改變的警訊</h2></div>
+      <p>「醫生，我最近大便都細細的，還常常覺得解不乾淨...」門診裡，60 歲的張伯伯憂心忡忡地說著。伴隨著最近三個月體重減輕了五公斤，這些都是經典的大腸直腸癌警訊。大腸，這個人體的「資源回收與廢棄物處理廠」，當它的管路長出腫瘤、或是因為發炎而導致阻塞時，就會發出一系列求救訊號。</p>
+      <p>在我們進入複雜的術式與分期前，請先想像大腸是一個長達 1.5 公尺的ㄇ字型水管。右邊（升結腸）的水管比較粗，裡面的便便還是水水的；左邊（降結腸、直腸）的水管比較細，便便已經成形變硬了。這個物理性質的差異，完美解釋了為什麼<b>右側大腸癌</b>常常以「慢性貧血」表現（腫瘤爛掉流血，但因為管子粗、便便水，所以不會塞住），而<b>左側大腸癌</b>常常以「腸阻塞、便秘、大便變細」表現。理解這個「水管理論」，你已經掌握了國考一半的直腸外科重點！</p>
+    </section>
+
+    <section id="s2">
+      <div class="sec-head"><span class="sec-num">二</span><h2>腸道息肉與大腸直腸癌：從良性到惡性</h2></div>
+      <p>大腸直腸癌 (Colorectal Cancer, CRC) 絕大多數是由良性的「息肉 (Polyp)」演變而來，這個過程被稱為 <b>adenoma-carcinoma sequence</b>，通常需要 5-10 年的時間。因此，大腸癌是可以透過大腸鏡早期發現並切除息肉來預防的。</p>
+      
+      <h3>息肉的種類：誰會變成癌症？</h3>
+      <p>大腸裡的息肉百百種，但不是每一種都會變壞：</p>
+      <ul>
+        <li><b>增生性息肉 (Hyperplastic polyp)</b>：最常見，通常小於 5 mm，不會變成癌症。這就像是皮膚上的小肉芽，無害。</li>
+        <li><b>腺瘤性息肉 (Adenomatous polyp)</b>：這就是大腸癌的前身！依據顯微鏡下的長相，又分為三種，惡性度依序為：<mark>管狀 (Tubular) &lt; 管狀絨毛狀 (Tubulo-villous) &lt; 絨毛狀 (Villous)</mark>。絨毛狀腺瘤的表面像地毯一樣，面積大，最容易藏污納垢並癌變。</li>
+      </ul>
+      <div class="box trap">
+        <div class="bt"><span class="badge">易錯陷阱</span>越大越危險！</div>
+        <p>在考題中，評估息肉惡性潛力有兩個最重要指標：一是<b>大小</b>（≥ 2 cm 的腺瘤癌變率極高），二是<b>組織型態</b>（Villous 惡性度最高）。</p>
+      </div>
+
+      <h3>家族性基因突變：FAP 與 HNPCC</h3>
+      <p>有些病人天生基因有缺陷，注定會長出一堆息肉或癌症：</p>
+      <ul>
+        <li><b>FAP (家族性腺瘤性息肉症)</b>：APC 基因突變。病人的大腸裡會長出成百上千顆息肉，就像地毯上一樣密密麻麻。如果不處理，<mark>100% 會在 40 歲前變成大腸癌</mark>。唯一的預防方法是早期把整個大腸切除。</li>
+        <li><b>HNPCC (遺傳性非息肉症大腸直腸癌，又稱 Lynch Syndrome)</b>：DNA 錯配修復 (MMR) 基因突變。病人息肉不多，但一旦長出來，變成癌症的速度非常快。常見於<b>右側大腸</b>，而且常合併子宮內膜癌、卵巢癌等其他癌症。</li>
+      </ul>
+
+      <h3>左側 vs. 右側大腸癌：症狀大不同</h3>
+      <div class="tw"><table>
+        <thead><tr><th>特徵</th><th>右側大腸癌 (盲腸、升結腸)</th><th>左側大腸癌 (降結腸、直腸)</th></tr></thead>
+        <tbody>
+          <tr><td><b>腸腔大小</b></td><td>較寬</td><td>較窄</td></tr>
+          <tr><td><b>糞便型態</b></td><td>液狀、水狀</td><td>固體成形</td></tr>
+          <tr><td><b>主要症狀</b></td><td><mark>隱血、慢性貧血、虛弱無力</mark>、腹部腫塊</td><td><mark>排便習慣改變(便秘/腹瀉交替)、大便變細、腸阻塞</mark>、鮮血便</td></tr>
+          <tr><td><b>發現時機</b></td><td>通常較晚，因為不會阻塞，長到很大才被發現</td><td>通常較早，因為會痛、會塞住</td></tr>
+        </tbody>
+      </table></div>
+
+      <div class="quiz">
+        <div class="quiz-top"><span class="lab">隨堂測驗</span><span class="yr">BM111</span></div>
+        <div class="quiz-body">
+          <p class="stem">關於右側大腸癌的敘述，下列何者正確？</p>
+          <ul class="opts">
+            <li>(A) 最常見的初期症狀為腸阻塞</li>
+            <li>(B) 患者常以缺鐵性貧血為最初表現</li>
+            <li>(C) 糞便通常已經成形，容易造成管腔狹窄</li>
+            <li>(D) 好發於 HNPCC 基因突變患者的左側結腸</li>
+          </ul>
+          <details class="rev">
+            <summary class="toggle"></summary>
+            <div class="reveal">
+              <div class="ans">答案：(B)</div>
+              <p>右側大腸管腔大，糞便呈液態，因此腫瘤不易造成阻塞。腫瘤表面潰瘍會導致慢性微量出血，病人常因<b>不明原因的缺鐵性貧血</b>才來就醫。(A)(C)是左側大腸癌特徵。(D) HNPCC 確實好發，但好發在右側大腸。</p>
+            </div>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <section id="s3">
+      <div class="sec-head"><span class="sec-num">三</span><h2>腸癌外科手術：要不要留肛門？</h2></div>
+      <p>大腸癌的治療以「手術切除」為主軸，搭配化學治療。外科醫師的原則很簡單：<b>把長腫瘤的腸段切掉，連同供應它的血管和淋巴結一起拿乾淨，然後把兩端接起來</b>。這就叫「根除性切除 (Radical resection)」。</p>
+
+      <h3>常見的大腸切除術式</h3>
+      <ul>
+        <li><b>右半結腸切除術 (Right Hemicolectomy)</b>：適用於盲腸、升結腸、肝曲的腫瘤。切除範圍包含這一段腸子，並將迴腸與橫結腸吻合。</li>
+        <li><b>左半結腸切除術 (Left Hemicolectomy)</b>：適用於降結腸的腫瘤。</li>
+        <li><b>低位骨盆腔前切除術 (Low Anterior Resection, LAR)</b>：針對<b>直腸上、中段</b>的腫瘤。外科醫師從腹部進去，切除腫瘤，然後把降結腸拉下來跟殘餘的直腸或肛門接合。<mark>病人可以保留肛門，術後仍可由原來的通道排便</mark>。</li>
+        <li><b>腹會陰聯合切除術 (Abdominoperineal Resection, APR)</b>：針對<b>超低位直腸癌（非常靠近肛門口的腫瘤）</b>。因為腫瘤已經吃到肛門括約肌，或者距離肛門口太近（通常小於 2-5 公分，視情況而定）無法安全吻合，只好從腹部和會陰部同時開刀，<mark>把整個直腸和肛門括約肌全部挖除</mark>。既然下面沒路了，就必須在左下腹做一個<b>永久性的人工肛門 (Permanent Colostomy)</b>。</li>
+      </ul>
+
+      <div class="box key">
+        <div class="bt"><span class="badge">臨床抉擇</span>LAR vs APR 的生死戰</div>
+        <p>「醫生，我可以不要做人工肛門嗎？」這是每個直腸癌病人最害怕的問題。決定能不能保留肛門的關鍵在於<b>腫瘤距離肛門緣 (Anal verge) 的距離</b>以及腫瘤是否侵犯括約肌。現代醫學會盡力使用術前放射化療 (Neoadjuvant CCRT) 來讓腫瘤縮小，以提高保留肛門 (執行 LAR) 的機會。</p>
+      </div>
+
+      <h3>急診常見：Hartmann's Procedure (哈特曼氏手術)</h3>
+      <p>想像一條塞住的高速公路，如果發生嚴重車禍，你第一件事是把傷患送醫，而不是立刻在原地重新鋪路。同理，當病人因為<b>左側大腸癌導致急性阻塞破裂</b>，或者<b>嚴重的憩室炎破裂導致滿肚子大便 (腹膜炎)</b> 時，腸子處於極度發炎水腫的狀態，這時候如果勉強把腸子接起來，傷口一定會破掉 (吻合處滲漏)。</p>
+      <p>這時外科醫師會使用 <b>Hartmann's procedure</b>：</p>
+      <ol>
+        <li>切除壞掉/長腫瘤的腸段 (通常是乙狀結腸)。</li>
+        <li><b>近端腸管：</b>拉出肚皮，做成「暫時性的人工肛門 (End colostomy)」，讓大便先排出來。</li>
+        <li><b>遠端直腸：</b>把它縫合封閉，留在骨盆腔裡休息。</li>
+        <li>等 3-6 個月後，病人營養狀況恢復、腹腔發炎消退，再開第二次刀把人工肛門接回去 (Reversal)。</li>
+      </ol>
+
+      <div class="quiz">
+        <div class="quiz-top"><span class="lab">隨堂測驗</span><span class="yr">BM112</span></div>
+        <div class="quiz-body">
+          <p class="stem">一位 65 歲男性因乙狀結腸癌引發急性大腸阻塞破裂，合併嚴重腹膜炎被送至急診。下列何種手術處置最為適當？</p>
+          <ul class="opts">
+            <li>(A) 一次性腫瘤切除並立即進行初級吻合 (Primary anastomosis)</li>
+            <li>(B) 僅放置大腸支架，不做手術</li>
+            <li>(C) 進行 Hartmann's procedure (切除病灶、近端造口、遠端縫閉)</li>
+            <li>(D) 進行腹會陰聯合切除術 (APR)</li>
+          </ul>
+          <details class="rev">
+            <summary class="toggle"></summary>
+            <div class="reveal">
+              <div class="ans">答案：(C)</div>
+              <p>在嚴重腹膜炎且腸道水腫、污染的情況下，進行一階段吻合(Primary anastomosis)發生滲漏的風險極高。此時標準作法是切除病灶並執行 Hartmann's procedure。APR 適用於非常靠近肛門的直腸癌，不適用於乙狀結腸。</p>
+            </div>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <section id="s4">
+      <div class="sec-head"><span class="sec-num">四</span><h2>腸阻塞：交通癱瘓的腸道</h2></div>
+      <p>腸阻塞 (Bowel Obstruction) 就像是水管被塞住了，上游的水下不去，管子就會越撐越大。病人會表現出經典的四大症狀：<mark>痛 (Abdominal pain)、吐 (Vomiting)、脹 (Distension)、閉 (Constipation/Obstipation，放不出屁、解不出便)</mark>。</p>
+
+      <h3>小腸阻塞 (SBO) vs. 大腸阻塞 (LBO)</h3>
+      <div class="tw"><table>
+        <thead><tr><th>特徵</th><th>小腸阻塞 (Small Bowel Obstruction)</th><th>大腸阻塞 (Large Bowel Obstruction)</th></tr></thead>
+        <tbody>
+          <tr><td><b>最常見原因</b></td><td><mark>腹部手術後沾黏 (Adhesion)</mark> (佔 60%)</td><td><mark>大腸直腸癌 (Colorectal cancer)</mark> (佔 60%)，其次為腸扭轉 (Volvulus)</td></tr>
+          <tr><td><b>嘔吐</b></td><td>出現早、頻繁，有時帶膽汁或糞便味</td><td>出現較晚（因為大腸離胃比較遠）</td></tr>
+          <tr><td><b>腹脹</b></td><td>中等程度，集中在肚臍周圍</td><td>非常明顯，整個肚子像鼓一樣</td></tr>
+          <tr><td><b>X光特徵</b></td><td>多發性氣液面 (Air-fluid levels)、小腸位於中央且有環狀皺襞 (Valvulae conniventes，橫跨整個管腔)</td><td>大腸位於周邊、有結腸袋 (Haustra，未完全橫跨管腔)</td></tr>
+        </tbody>
+      </table></div>
+
+      <h3>特別介紹：大腸扭轉 (Volvulus)</h3>
+      <p>這是一種大腸以腸繫膜為軸心自己扭轉打結的情況，會導致封閉式阻塞 (Closed-loop obstruction) 且容易缺血壞死。</p>
+      <ul>
+        <li><b>乙狀結腸扭轉 (Sigmoid Volvulus)</b>：最常見 (佔大腸扭轉的 75%)。好發於長期臥床、慢性便秘的老年人。X 光下可見經典的 <mark>咖啡豆徵象 (Coffee bean sign)</mark>，一個巨大的充氣腸段從骨盆腔朝右上腹延伸。治療初期可嘗試用大腸鏡解套，若失敗或有壞死跡象則需緊急手術。</li>
+        <li><b>盲腸扭轉 (Cecal Volvulus)</b>：較少見。好發於較年輕的女性。盲腸未固定好而扭轉，X 光像是一顆充氣的逗號。通常需要手術切除並吻合。</li>
+      </ul>
+    </section>
+
+    <section id="s5">
+      <div class="sec-head"><span class="sec-num">五</span><h2>肛門直腸疾病：痔瘡與廔管</h2></div>
+      
+      <h3>痔瘡 (Hemorrhoids)</h3>
+      <p>痔瘡本質上是肛門周圍的靜脈叢充血、血管墊 (Vascular cushion) 組織滑脫所造成。區分內痔與外痔的界線叫做<b>齒狀線 (Dentate line)</b>。</p>
+      <ul>
+        <li><b>內痔 (Internal Hemorrhoids)</b>：位於齒狀線以上，由內臟神經支配，<mark>沒有痛覺</mark>。主要症狀是<b>無痛性的鮮血便</b> (排便時滴在馬桶裡) 或脫垂。
+          <ul>
+            <li>第一度：只流血不脫出。</li>
+            <li>第二度：排便時脫出，但會自動縮回。</li>
+            <li>第三度：排便時脫出，需<b>用手推回</b>。</li>
+            <li>第四度：脫出在外，推不回去（常合併血栓或壞死）。</li>
+          </ul>
+        </li>
+        <li><b>外痔 (External Hemorrhoids)</b>：位於齒狀線以下，由體神經支配，<mark>非常痛</mark>。最常見的急症是<b>血栓性外痔 (Thrombosed external hemorrhoid)</b>，肛門口會突然腫起一顆紫藍色、極度疼痛的硬塊。</li>
+      </ul>
+
+      <h3>肛裂 (Anal Fissure)</h3>
+      <p>想像你大了一顆像石頭一樣硬的便便，經過肛門口時把黏膜撐破了，這就是肛裂。最常發生在肛門口的<mark>正後方 (Posterior midline)</mark>，因為這裡的血流供應最差。症狀是<b>排便時有撕裂痛，並伴隨衛生紙上的鮮血</b>。因為太痛了，括約肌會痙攣，導致傷口更缺血、更難癒合，形成惡性循環。</p>
+
+      <h3>肛門廔管 (Fistula-in-ano) 與肛門膿瘍</h3>
+      <p>肛門內有腺體會分泌黏液潤滑大便。如果腺體開口被細菌感染發炎，化膿積在裡面，就形成<b>肛門膿瘍 (Anorectal abscess)</b>，病人會痛到坐立難安。膿包如果自己破掉或被醫師切開引流後，約有一半的人會留下一條連接腸道內壁和肛門外皮膚的「隧道」，這就是<b>肛門廔管</b>，會不斷有膿血流出。</p>
+      <div class="box key">
+        <div class="bt"><span class="badge">考試重點</span>Goodsall's Rule (古德薩爾氏法則)</div>
+        <p>這是一個用來預測肛門廔管內口位置的臨床法則（以肛門為時鐘，病人呈截石位）：</p>
+        <ul>
+          <li><b>前半部 (Anterior)</b>的外口：其廔管通常是<b>直線型 (Radial)</b>，直通向肛門內的對應位置。</li>
+          <li><b>後半部 (Posterior)</b>的外口：其廔管通常是<b>彎曲型 (Curved)</b>，會繞到肛門內部的<b>正後方 (Posterior midline)</b>。</li>
+          <li>例外：外口距離肛門緣超過 3 公分的前半部廔管，可能也會彎向正後方。</li>
+        </ul>
+      </div>
+
+      <div class="quiz">
+        <div class="quiz-top"><span class="lab">隨堂測驗</span><span class="yr">BM111</span></div>
+        <div class="quiz-body">
+          <p class="stem">關於肛門直腸疾病的敘述，下列何者正確？</p>
+          <ul class="opts">
+            <li>(A) 內痔通常位於齒狀線以下，所以非常疼痛</li>
+            <li>(B) 第二度內痔在排便時會脫出，且必須用手指推回</li>
+            <li>(C) 肛裂最常見的位置在肛門的正前方</li>
+            <li>(D) 根據 Goodsall's rule，位於肛門後半部的廔管外口，其內口通常通向正後方</li>
+          </ul>
+          <details class="rev">
+            <summary class="toggle"></summary>
+            <div class="reveal">
+              <div class="ans">答案：(D)</div>
+              <p>(A) 內痔在齒狀線以上，無痛覺。(B) 第二度內痔會自動縮回，第三度才需要手推。(C) 肛裂最常見於正後方。(D) 完全符合 Goodsall's rule。</p>
+            </div>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <section id="s6">
+      <div class="sec-head"><span class="sec-num">六</span><h2>一分鐘考前秒殺心法</h2></div>
+      <div class="grid9">
+        <div class="cell"><b>大腸息肉</b>Adenomatous 中的 Villous 惡性度最高。FAP 100% 變癌，HNPCC 長得快。</div>
+        <div class="cell"><b>大腸癌左右之分</b>右側：貧血、虛弱、潛血；左側：阻塞、便秘、大便變細。</div>
+        <div class="cell"><b>直腸癌手術</b>能留肛門：LAR（較高位）；要挖掉做人工肛門：APR（極低位侵犯括約肌）。</div>
+        <div class="cell"><b>Hartmann's Procedure</b>用於急診阻塞破裂發炎時。切除病灶，近端造口，遠端縫閉，之後再接。</div>
+        <div class="cell"><b>腸阻塞鑑別</b>小腸：手術沾黏最常見。大腸：大腸癌最常見。乙狀結腸扭轉呈咖啡豆狀。</div>
+        <div class="cell"><b>痔瘡內外有別</b>內痔：齒線以上，無痛，流鮮血。外痔：齒線以下，很痛（血栓性外痔）。</div>
+        <div class="cell"><b>肛裂 Fissure</b>最常在正後方。大便撕裂痛，括約肌痙攣缺血。</div>
+        <div class="cell"><b>廔管 Fistula</b>源自肛門腺體感染發炎（膿瘍引流後）。遵守 Goodsall's rule。</div>
+        <div class="cell"><b>Goodsall's rule</b>後半部的外口，內口通向正後方；前半部的外口，直通直行。</div>
+      </div>
+    </section>
+
+    <section id="exam">
+      <div class="exam-head">
+        <h2>歷屆考題全收錄</h2>
+        <p>底下包含 BM111、BM112、BM113 有關「大腸直腸外科」的完整考題與重點解析。</p>
+        <button class="btn" onclick="document.querySelectorAll('.reveal').forEach(el=>el.parentElement.open=true)">展開全部詳解</button>
+      </div>
+
+      <div class="yrhead">BM113 學年度</div>
+
+      <div class="q" id="q113-1">
+        <div class="q-top"><span class="q-no">Q1</span><span class="q-topic">右側大腸癌症狀</span></div>
+        <div class="q-stem">右側結腸癌（Right-sided colon cancer）最常見的初期臨床表現為？</div>
+        <ul class="opts">
+          <li>(A) 大便變細且排便習慣改變</li>
+          <li>(B) 急性腸阻塞</li>
+          <li>(C) 不明原因的缺鐵性貧血</li>
+          <li>(D) 明顯的鮮血便（Hematochezia）</li>
+        </ul>
+        <details class="rev">
+          <summary class="toggle"></summary>
+          <div class="reveal">
+            <div class="ans">答案：(C)</div>
+            <p>右側大腸管腔較大，糞便為液態，腫瘤不易造成阻塞。腫瘤表面長期微量滲血，病人常表現為不明原因的虛弱及<b>缺鐵性貧血</b>。(A)和(B)是左側大腸癌常見症狀。(D) 鮮血便多見於下段直腸或肛門疾病。</p>
+          </div>
+        </details>
+      </div>
+
+      <div class="q" id="q113-2">
+        <div class="q-top"><span class="q-no">Q2</span><span class="q-topic">直腸癌手術</span></div>
+        <div class="q-stem">一名 55 歲男性被診斷為低位直腸癌，腫瘤下緣距離肛門緣（Anal verge）僅 1.5 公分，且侵犯肛門括約肌。對於此病患，最適當的治癒性手術為？</div>
+        <ul class="opts">
+          <li>(A) 低位骨盆腔前切除術 (Low anterior resection, LAR)</li>
+          <li>(B) 腹會陰聯合切除術 (Abdominoperineal resection, APR)</li>
+          <li>(C) 經肛門腫瘤局部切除術</li>
+          <li>(D) 右半結腸切除術</li>
+        </ul>
+        <details class="rev">
+          <summary class="toggle"></summary>
+          <div class="reveal">
+            <div class="ans">答案：(B)</div>
+            <p>腫瘤距離肛門過近且侵犯括約肌，無法保留足夠的安全距離與肛門功能，必須施行 APR（腹會陰聯合切除術），將直腸及肛門切除，並建立永久性人工肛門。</p>
+          </div>
+        </details>
+      </div>
+
+      <div class="q" id="q113-3">
+        <div class="q-top"><span class="q-no">Q3</span><span class="q-topic">腸阻塞原因</span></div>
+        <div class="q-stem">成年人發生大腸阻塞 (Large bowel obstruction) 最常見的原因是：</div>
+        <ul class="opts">
+          <li>(A) 手術後沾黏 (Adhesions)</li>
+          <li>(B) 大腸直腸癌 (Colorectal cancer)</li>
+          <li>(C) 疝氣嵌頓 (Incarcerated hernia)</li>
+          <li>(D) 發炎性腸道疾病 (IBD)</li>
+        </ul>
+        <details class="rev">
+          <summary class="toggle"></summary>
+          <div class="reveal">
+            <div class="ans">答案：(B)</div>
+            <p><b>大腸阻塞</b>最常見的原因是惡性腫瘤（大腸直腸癌），佔約 60%。(A) 手術後沾黏是<b>小腸阻塞</b>最常見的原因。</p>
+          </div>
+        </details>
+      </div>
+      
+      <div class="q" id="q113-4">
+        <div class="q-top"><span class="q-no">Q4</span><span class="q-topic">痔瘡分級</span></div>
+        <div class="q-stem">病患主訴排便時常有痔瘡脫出肛門外，排便結束後必須用手指將其推回肛門內。此為第幾度內痔？</div>
+        <ul class="opts">
+          <li>(A) 第一度</li>
+          <li>(B) 第二度</li>
+          <li>(C) 第三度</li>
+          <li>(D) 第四度</li>
+        </ul>
+        <details class="rev">
+          <summary class="toggle"></summary>
+          <div class="reveal">
+            <div class="ans">答案：(C)</div>
+            <p>第一度：不脫出。第二度：自行縮回。<b>第三度：需用手推回。</b>第四度：無法推回，卡在外面。</p>
+          </div>
+        </details>
+      </div>
+
+      <div class="yrhead">BM112 學年度</div>
+
+      <div class="q" id="q112-1">
+        <div class="q-top"><span class="q-no">Q5</span><span class="q-topic">大腸息肉</span></div>
+        <div class="q-stem">下列何種大腸息肉的惡性癌變潛力（Malignant potential）最高？</div>
+        <ul class="opts">
+          <li>(A) 增生性息肉 (Hyperplastic polyp)</li>
+          <li>(B) 發炎性息肉 (Inflammatory polyp)</li>
+          <li>(C) 管狀腺瘤 (Tubular adenoma)</li>
+          <li>(D) 絨毛狀腺瘤 (Villous adenoma)</li>
+        </ul>
+        <details class="rev">
+          <summary class="toggle"></summary>
+          <div class="reveal">
+            <div class="ans">答案：(D)</div>
+            <p>腺瘤 (Adenoma) 才有明顯癌變風險。其中惡性度依序為：Tubular &lt; Tubulovillous &lt; <b>Villous</b>。(A) 和 (B) 幾乎無癌變風險。</p>
+          </div>
+        </details>
+      </div>
+
+      <div class="q" id="q112-2">
+        <div class="q-top"><span class="q-no">Q6</span><span class="q-topic">遺傳性腸癌</span></div>
+        <div class="q-stem">關於家族性腺瘤性息肉症 (FAP)，下列敘述何者正確？</div>
+        <ul class="opts">
+          <li>(A) 導因於 MMR 基因的突變</li>
+          <li>(B) 大腸內通常只有不到 10 顆息肉</li>
+          <li>(C) 若不治療，幾乎 100% 會發展成大腸直腸癌</li>
+          <li>(D) 首選治療為每 5 年做一次大腸鏡追蹤即可</li>
+        </ul>
+        <details class="rev">
+          <summary class="toggle"></summary>
+          <div class="reveal">
+            <div class="ans">答案：(C)</div>
+            <p>FAP 是 <b>APC 基因</b>突變，大腸會長出上百至上千顆息肉，若不預防性切除大腸，<b>100% 變癌</b>。(A) MMR 基因突變是指 HNPCC (Lynch syndrome)。</p>
+          </div>
+        </details>
+      </div>
+
+      <div class="q" id="q112-3">
+        <div class="q-top"><span class="q-no">Q7</span><span class="q-topic">大腸扭轉</span></div>
+        <div class="q-stem">一名 75 歲長期臥床老人出現嚴重腹脹與便秘，腹部 X 光顯示巨大的「咖啡豆徵象 (Coffee bean sign)」佔據大部分腹腔。最可能的診斷為？</div>
+        <ul class="opts">
+          <li>(A) 盲腸扭轉 (Cecal volvulus)</li>
+          <li>(B) 乙狀結腸扭轉 (Sigmoid volvulus)</li>
+          <li>(C) 小腸沾黏阻塞</li>
+          <li>(D) 大腸直腸癌穿孔</li>
+        </ul>
+        <details class="rev">
+          <summary class="toggle"></summary>
+          <div class="reveal">
+            <div class="ans">答案：(B)</div>
+            <p><b>乙狀結腸扭轉</b>好發於長期便秘、臥床老人，X 光的經典表現就是從左下骨盆腔往右上腹延伸的巨大氣體陰影，形似咖啡豆。</p>
+          </div>
+        </details>
+      </div>
+      
+      <div class="q" id="q112-4">
+        <div class="q-top"><span class="q-no">Q8</span><span class="q-topic">Hartmann手術</span></div>
+        <div class="q-stem">在緊急情況下對左側結腸破裂且合併嚴重腹膜炎的病患進行 Hartmann's procedure，該手術包含哪些步驟？</div>
+        <ul class="opts">
+          <li>(A) 切除病灶腸段、近端結腸造口、遠端直腸縫合封閉</li>
+          <li>(B) 切除病灶腸段、兩端直接吻合</li>
+          <li>(C) 僅做近端結腸造口，不切除病灶</li>
+          <li>(D) 切除全部大腸，做迴腸造口</li>
+        </ul>
+        <details class="rev">
+          <summary class="toggle"></summary>
+          <div class="reveal">
+            <div class="ans">答案：(A)</div>
+            <p>Hartmann's procedure 的標準步驟：移除壞掉的腸段，近端拉出肚皮做造口，遠端縫合留在骨盆腔內。</p>
+          </div>
+        </details>
+      </div>
+      
+      <div class="q" id="q112-5">
+        <div class="q-top"><span class="q-no">Q9</span><span class="q-topic">肛裂</span></div>
+        <div class="q-stem">肛裂 (Anal fissure) 最常發生的解剖位置在哪裡？</div>
+        <ul class="opts">
+          <li>(A) 肛門正前方 (Anterior midline)</li>
+          <li>(B) 肛門正後方 (Posterior midline)</li>
+          <li>(C) 肛門左側</li>
+          <li>(D) 肛門右側</li>
+        </ul>
+        <details class="rev">
+          <summary class="toggle"></summary>
+          <div class="reveal">
+            <div class="ans">答案：(B)</div>
+            <p>絕大多數的肛裂發生在肛門的<b>正後方 (Posterior midline)</b>，因為該處的血液循環相對較差。若發生在側邊，需懷疑克隆氏症 (Crohn's disease) 或其他特殊感染。</p>
+          </div>
+        </details>
+      </div>
+
+      <div class="q" id="q112-6">
+        <div class="q-top"><span class="q-no">Q10</span><span class="q-topic">廔管</span></div>
+        <div class="q-stem">根據 Goodsall's rule，若肛門廔管的外口位於肛門的後半部（距離肛門緣 2 公分），其內口最可能通向何處？</div>
+        <ul class="opts">
+          <li>(A) 正後方 (Posterior midline)</li>
+          <li>(B) 正前方 (Anterior midline)</li>
+          <li>(C) 放射狀直線對應處</li>
+          <li>(D) 無法預測</li>
+        </ul>
+        <details class="rev">
+          <summary class="toggle"></summary>
+          <div class="reveal">
+            <div class="ans">答案：(A)</div>
+            <p>Goodsall's rule：位於橫切面<b>後半部</b>的外口，廔管路徑呈彎曲，通向肛門內的<b>正後方</b>；前半部的外口，則呈直線放射狀通向最近的內口。</p>
+          </div>
+        </details>
+      </div>
+
+      <div class="yrhead">BM111 學年度</div>
+      
+      <div class="q" id="q111-1">
+        <div class="q-top"><span class="q-no">Q11</span><span class="q-topic">憩室疾病</span></div>
+        <div class="q-stem">關於憩室疾病 (Diverticular disease) 下述描述何者有誤？</div>
+        <ul class="opts">
+          <li>(A) 大小約 0.5 to 1 cm 囊狀外包裝 (saccular outpouchings)，憩室通常位於腸繫膜帶與抗腸繫膜帶之間</li>
+          <li>(B) 大多數為假性憩室 (false diverticula)；亦即其黏膜層與黏膜下層會突出過大腸肌肉壁</li>
+          <li>(C) 乙狀結腸 (Sigmoid colon) 侵犯約佔 95%，右側憩室炎通常發生在較年長的病人</li>
+          <li>(D) 憩室炎發生膿瘍時可以考慮先給予電腦斷層引流術加上抗生素治療</li>
+        </ul>
+        <details class="rev">
+          <summary class="toggle"></summary>
+          <div class="reveal">
+            <div class="ans">答案：(C)</div>
+            <p>選項 (C) 的錯誤在於：在亞洲人（如台灣），<b>右側大腸憩室</b>反而相對常見，且常發生在<b>較年輕</b>的族群；而西方人多為左側乙狀結腸憩室，發生在老年人。此題為經典中西差異考點。</p>
+          </div>
+        </details>
+      </div>
+
+      <div class="q" id="q111-2">
+        <div class="q-top"><span class="q-no">Q12</span><span class="q-topic">左側大腸癌症狀</span></div>
+        <div class="q-stem">左側大腸癌患者較常出現的臨床症狀為何？</div>
+        <ul class="opts">
+          <li>(A) 慢性微量出血導致貧血</li>
+          <li>(B) 右下腹可觸摸到腫塊</li>
+          <li>(C) 糞便習慣改變、便秘、或大便變細</li>
+          <li>(D) 嚴重嘔吐綠色膽汁</li>
+        </ul>
+        <details class="rev">
+          <summary class="toggle"></summary>
+          <div class="reveal">
+            <div class="ans">答案：(C)</div>
+            <p>左側腸腔較窄，糞便已成形固態，腫瘤容易造成管腔阻塞狹窄，導致大便變細、便秘。貧血與右下腹腫塊多為右側大腸癌特徵。</p>
+          </div>
+        </details>
+      </div>
+
+      <div class="q" id="q111-3">
+        <div class="q-top"><span class="q-no">Q13</span><span class="q-topic">直腸癌手術抉擇</span></div>
+        <div class="q-stem">決定直腸癌患者接受 LAR 或 APR 手術的最關鍵因素是：</div>
+        <ul class="opts">
+          <li>(A) 病患的年齡</li>
+          <li>(B) 腫瘤距離肛門緣 (Anal verge) 的距離與括約肌是否受侵犯</li>
+          <li>(C) 腫瘤的大小 (直徑超過 5 公分)</li>
+          <li>(D) 是否有肝臟轉移</li>
+        </ul>
+        <details class="rev">
+          <summary class="toggle"></summary>
+          <div class="reveal">
+            <div class="ans">答案：(B)</div>
+            <p>若腫瘤距離肛門夠遠且未侵犯括約肌，可施作 LAR 保留肛門；若極低位且侵犯括約肌，則必須施作 APR 切除肛門做造口。</p>
+          </div>
+        </details>
+      </div>
+
+      <div class="q" id="q111-4">
+        <div class="q-top"><span class="q-no">Q14</span><span class="q-topic">大腸阻塞X光</span></div>
+        <div class="q-stem">區分小腸阻塞與大腸阻塞時，腹部 X 光影像上的特徵，何者指向「大腸阻塞」？</div>
+        <ul class="opts">
+          <li>(A) 腸管多位於腹腔中央</li>
+          <li>(B) 腸管內的環狀皺襞 (Valvulae conniventes) 橫跨整個管腔</li>
+          <li>(C) 腸管邊緣可見結腸袋 (Haustra) 且未完全橫跨管腔</li>
+          <li>(D) 呈現階梯狀的多發性氣液面</li>
+        </ul>
+        <details class="rev">
+          <summary class="toggle"></summary>
+          <div class="reveal">
+            <div class="ans">答案：(C)</div>
+            <p>大腸的特徵是位於腹腔周邊，且具有<b>結腸袋 (Haustra)</b>，其陰影不會完全橫跨整個管腔。(A)、(B)、(D) 皆為小腸阻塞特徵。</p>
+          </div>
+        </details>
+      </div>
+
+      <div class="q" id="q111-5">
+        <div class="q-top"><span class="q-no">Q15</span><span class="q-topic">外痔</span></div>
+        <div class="q-stem">一名年輕男性突發肛門劇痛，理學檢查發現肛門口有一顆紫藍色、質地堅硬且極度觸痛的腫塊。最適當的初步診斷為？</div>
+        <ul class="opts">
+          <li>(A) 肛裂</li>
+          <li>(B) 肛門廔管</li>
+          <li>(C) 第三度內痔脫出</li>
+          <li>(D) 血栓性外痔 (Thrombosed external hemorrhoid)</li>
+        </ul>
+        <details class="rev">
+          <summary class="toggle"></summary>
+          <div class="reveal">
+            <div class="ans">答案：(D)</div>
+            <p><b>血栓性外痔</b>的典型表現：突然發作、劇痛（因為外痔受體神經支配）、肛門緣呈現紫藍色硬塊。(C) 內痔無痛覺。(A) 肛裂不會有紫藍色腫塊。(B) 廔管多有慢性流膿病史。</p>
+          </div>
+        </details>
+      </div>
+
+    </section>
+  </main>
+</div>
+</div>
+
+<footer>
+  <div class="wrap">
+    <p><b>版權聲明：</b>本筆記為個人學習紀錄，內容參考共筆與上課講義整理。醫學知識日新月異，請以最新 Guidelines 為準。</p>
+  </div>
+</footer>
+<script>
+  /* 自動替表格加上 data-label 以支援手機版卡片顯示 */
+  document.querySelectorAll('.tw table').forEach(table => {
+    const headers = Array.from(table.querySelectorAll('thead th')).map(th => th.textContent.trim());
+    table.querySelectorAll('tbody tr').forEach(tr => {
+      Array.from(tr.querySelectorAll('td')).forEach((td, i) => {
+        if(headers[i]) td.setAttribute('data-label', headers[i]);
+      });
+    });
+  });
+</script>
+</body>
+</html>
