@@ -107,15 +107,20 @@
   .box.key{border-color:rgba(127,201,190,.4);background:rgba(127,201,190,.07)}
   .box.key .badge{color:var(--teal)}
 
-  /* ---------- Image Cue Box (專屬影像解構卡) ---------- */
-  .img-cue{
-    background:rgba(127,201,190,.06);border:1px solid var(--teal-dim);
-    border-radius:10px;padding:14px 18px;margin:12px 0 16px;font-size:14.5px;line-height:1.75;
+  /* ---------- 醫學影像卡片 (Image Boxes) ---------- */
+  .img-frame{
+    background:#08100E;border:1px solid var(--line-2);border-radius:12px;
+    padding:12px;margin:18px 0 20px;text-align:center;
   }
-  .img-cue .title{
-    font-family:var(--mono);font-size:12px;font-weight:600;color:var(--teal);
-    letter-spacing:.06em;margin-bottom:6px;display:flex;align-items:center;gap:8px;
+  .q-img{
+    display:block;max-width:100%;height:auto;border-radius:8px;
+    margin:0 auto;box-shadow:0 4px 14px rgba(0,0,0,.5);
   }
+  .img-caption{
+    font-family:var(--mono);font-size:12px;color:var(--text-2);
+    margin-top:10px;line-height:1.6;
+  }
+  .img-caption b{color:var(--gold);font-weight:600}
 
   /* ---------- Tables (Cards on Mobile) ---------- */
   .tw{border:none;background:none;overflow:visible;border-radius:0;margin:20px 0}
@@ -250,15 +255,15 @@
     <a class="backlink" href="index.html">← 返回 Block 7 目錄</a>
     <div class="eyebrow"><span class="rule"></span>高醫放射學 · 裸讀學習筆記<span class="dot">·</span>石明誠老師專題</div>
     <h1>消化系統<br><em>介入性放射學 (Interventional Radiology)</em></h1>
-    <p class="sub">全單元 100% 影像判讀題！精準剖析膽道支架路徑、PTCD、胰背動脈假性動脈瘤、DWI/ADC 訊號、TACE 碘油沉積與切片安全原則。授課教師：石明誠。</p>
+    <p class="sub">全單元 100% 影像判讀題！附考題原版醫學影像。精準剖析膽道支架路徑、PTCD、胰背動脈假性動脈瘤、DWI/ADC 訊號、TACE 碘油沉積與切片安全原則。授課教師：石明誠。</p>
 
     <div class="intro-card">
-      <p>這份筆記把 <b>石明誠老師歷年所有影像考古題（共 8 題）</b> 全面升級整理，<b>將每張原圖的解剖定位、對比劑流向與判讀特徵逐一解構</b>，文末收錄完整 8 道題庫與超詳細解析。</p>
+      <p>這份筆記完整收錄 <b>石明誠老師歷年所有影像考古題（共 8 題）</b>，<b>將每道考題與教學重點之真實醫學影像原圖逐一嵌入</b>，文末附錄 8 題完整詳解與秒殺心法。</p>
       <div class="stats">
         <div class="stat"><div class="n">8</div><div class="l">全收錄題數</div></div>
-        <div class="stat"><div class="n">100%</div><div class="l">影像判讀題型</div></div>
+        <div class="stat"><div class="n">100%</div><div class="l">原版影像附圖</div></div>
         <div class="stat"><div class="n">5</div><div class="l">核心解構章節</div></div>
-        <div class="stat"><div class="n">滿分</div><div class="l">秒殺考點命中</div></div>
+        <div class="stat"><div class="n">滿分</div><div class="l">高頻考點覆蓋</div></div>
       </div>
     </div>
   </div>
@@ -278,7 +283,7 @@
       <a href="#s4">四　TACE 與碘油 (Lipiodol) 沉積</a>
       <a href="#s5">五　影像導引切片之安全路徑</a>
       <a href="#s6">六　一分鐘考前秒殺心法</a>
-      <a href="#exam" class="exam">七　歷屆考題全收錄 (8 題)</a>
+      <a href="#exam" class="exam">七　歷屆考題全收錄 (8 題含圖)</a>
       </div>
     </details>
   </nav>
@@ -301,18 +306,35 @@
       </tbody>
     </table></div>
 
+    <div class="img-frame">
+      <img class="q-img" src="img/ir/q68_ptc_hepatic_duct.png" alt="PTC 膽道攝影：肝管分支與通入十二指腸">
+      <div class="img-caption">【圖 1】<b>PTC 膽道造影（Q68 附圖）：</b>顯影劑深入肝內肝管分支（箭頭），並有一粗大主幹向下延伸匯入十二指腸腸腔。</div>
+    </div>
+
+    <div class="img-frame">
+      <img class="q-img" src="img/ir/q66_metallic_biliary_stent.png" alt="KUB 腹部 X 光：肝外膽道金屬支架">
+      <div class="img-caption">【圖 2】<b>KUB 腹部 X 光（Q66 附圖）：</b>右上腹至中上腹可見縱向跨越之金屬網狀支架，順著肝外膽道（總肝管/總膽管）走向置放。</div>
+    </div>
+
     <h3>2. Afferent Loop Syndrome 的經膽管介入通路 (PTCD)</h3>
-    <div class="img-cue">
-      <div class="title">📸 影像解構【Q34 / 彩圖 6】</div>
-      <p>• <b>左圖 (Before)：</b>胃切除術後，十二指腸/輸入環 (Afferent loop) 因機械性阻塞而出現巨大擴張積液。<br>
-      • <b>右圖 (After)：</b>放射科介入醫師由病患右側經皮穿肝，經由 <mark>膽管 (Bile duct / PTCD 路徑)</mark> 順行穿刺進入阻塞的 Afferent loop，放置引流管與跨越狹窄段之金屬支架（Metallic stent），成功引流解壓。</p>
+    <p>胃切除術（如 Billroth II 或 Roux-en-Y）後若發生輸入環阻塞（Afferent loop syndrome），介入放射科除了經胃或直接穿刺外，可利用 **PTCD 經由膽管 (Bile duct)** 順行進入阻塞腸段，放置引流管與跨越狹窄之金屬支架。</p>
+
+    <div class="img-frame">
+      <img class="q-img" src="img/ir/q34_afferent_loop_ptcd.png" alt="Afferent loop PTCD 經膽管金屬支架置放">
+      <div class="img-caption">【圖 3】<b>Afferent Loop 介入前後對照（Q34 附圖 / 彩圖 6）：</b>左圖為阻塞擴張之十二指腸；右圖為經右側<b>膽管 (Bile duct)</b> 穿入置放引流管與金屬支架。</div>
+    </div>
+
+    <div class="img-frame">
+      <img class="q-img" src="img/ir/q34_ct_fluoroscopy_4panel.png" alt="Afferent loop CT 與透視造影 4-panel">
+      <div class="img-caption">【圖 4】<b>介入放射學完整序列（Q34 出處 ppt pg.3）：</b>CT 橫斷面與透視造影追蹤膽管進入 Afferent loop 之支架路徑。</div>
     </div>
 
     <!-- Quiz 1 -->
     <div class="quiz">
       <div class="quiz-top"><span class="lab">隨堂測驗</span><span class="yr">精選試題 · 第 34 題</span></div>
       <div class="quiz-body">
-        <p class="stem">對於 afferent 環綜合症的介入性選擇具有不同的通路，包括通過膽管和胰管直接穿刺 afferent 絆，甚至在內鏡超聲(EUS)引導下使用腔腔支架經胃引流裝置。根據附圖（經病患右側穿刺入肝、置入引流管與金屬支架穿過十二指腸），您認為我們已經為患者提供了緩解腹痛的開始通行路線？</p>
+        <p class="stem">對於 afferent 環綜合症的介入性選擇具有不同的通路，包括通過膽管和胰管直接穿刺 afferent 絆，甚至在內鏡超聲(EUS)引導下使用腔腔支架經胃引流裝置。根據附圖，您認為我們已經為患者提供了緩解腹痛的開始通行路線？</p>
+        <img class="q-img" src="img/ir/q34_afferent_loop_ptcd.png" alt="Q34 隨堂測驗附圖" style="max-height:220px;margin-bottom:14px">
         <ul class="opts">
           <li>(A) 膽管 (Bile duct)</li>
           <li>(B) 胃 (Stomach)</li>
@@ -337,24 +359,32 @@
     <p class="tagline">核心考點：<a class="qtag" href="#q35">Q35 (胰腺馬賽克氣體)</a><a class="qtag" href="#q45">Q45 (胰背動脈假性動脈瘤)</a></p>
 
     <h3>1. 胰腺壞死與馬賽克氣體收集 (Mosaic Gas Collection)</h3>
-    <div class="img-cue">
-      <div class="title">📸 影像解構【Q35 / "To Needle or not to Needle"】</div>
-      <p>• <b>CT 表現：</b>在後腹腔的十二指腸與 <mark>胰腺 (Pancreas)</mark> 區域出現散在斑駁的「馬賽克狀氣體收集 (Mosaic gas collection)」，代表嚴重壞死、感染性膿瘍 (Abscess) 或壞死積液伴隨產氣菌。<br>
-      • <b>介入處置原則：</b>胰臟位於後腹腔，穿刺引流時必須落實 <i>"To Needle or not to Needle"</i> 評估，應<mark>從病患側腹部 (Flank / Lateral approach) 進針</mark>，避開腹腔臟器。</p>
+    <p>腹部 CT 上於後腹腔之十二指腸與**胰腺 (Pancreas)** 區域出現斑駁的「馬賽克狀氣體收集 (Mosaic gas collection)」，提示胰腺壞死、產氣菌感染性膿瘍 (Abscess) 或腸道穿孔。穿刺引流時必須落實 <i>"To Needle or not to Needle"</i> 評估，應<mark>從病患側腹部 (Flank approach) 進針</mark>，避開前方腹腔器官。</p>
+
+    <div class="img-frame">
+      <img class="q-img" src="img/ir/q35_mosaic_gas_star.png" alt="胰腺馬賽克氣體收集">
+      <div class="img-caption">【圖 5】<b>胰腺馬賽克氣體（Q35 附圖）：</b>CT 上藍色星星標註之位置為<b>胰腺 (Pancreas)</b> 及其周圍後腹腔膿瘍產氣。</div>
+    </div>
+
+    <div class="img-frame">
+      <img class="q-img" src="img/ir/q35_to_needle_or_not.png" alt="To Needle or not to Needle 胰腺壞死膿瘍">
+      <div class="img-caption">【圖 6】<b>"To Needle or not to Needle"（Q35 出處 ppt pg.34）：</b>嚴重壞死性胰臟炎合併膿瘍時之后腹腔側路穿刺引流教學。</div>
     </div>
 
     <h3>2. 出血性假性動脈瘤與胰背動脈 (Dorsal Pancreatic Artery)</h3>
-    <div class="img-cue">
-      <div class="title">📸 影像解構【Q45 / 腹部血管攝影 Angiography】</div>
-      <p>• <b>血管解剖與病灶：</b>腹腔動脈幹 (Celiac trunk) 造影下，肝總動脈與脾動脈分支處，可見一條向下延伸供應胰腺的 <mark>胰背動脈 (Dorsal pancreatic artery)</mark> 形成局部膨出之造影劑外溢與假性動脈瘤 (Pseudoaneurysm bleeding)。<br>
-      • <b>臨床處置：</b>此為急性重症胰臟炎或外傷後之動脈侵蝕出血，介入放射科首選進行<b>經導管血管栓塞術 (Transcatheter arterial embolization, TAE)</b>。</p>
+    <p>重症胰臟炎釋出強烈消化酵素侵蝕動脈壁，可引發假性動脈瘤破裂出血。腹腔動脈幹 (Celiac trunk) 造影下，由主幹/脾動脈近端向下分支供應胰腺之 <mark>胰背動脈 (Dorsal pancreatic artery)</mark> 為最典型之出血動脈，可經導管動脈栓塞術 (TAE) 止血。</p>
+
+    <div class="img-frame">
+      <img class="q-img" src="img/ir/q45_dorsal_pancreatic_a.png" alt="Celiac Trunk 血管攝影：胰背動脈假性動脈瘤出血">
+      <div class="img-caption">【圖 7】<b>血管攝影假性動脈瘤（Q45 附圖）：</b>藍色箭頭明確指向源自 Celiac trunk 分支向下的<b>胰背動脈 (Dorsal pancreatic a.)</b> 出血瘤。</div>
     </div>
 
     <!-- Quiz 2 -->
     <div class="quiz">
       <div class="quiz-top"><span class="lab">隨堂測驗</span><span class="yr">精選試題 · 第 45 題</span></div>
       <div class="quiz-body">
-        <p class="stem">Which vessel causing pseudoaneurysm do you think bleeding is?（血管攝影顯示 Celiac trunk 分支出來向下走向胰腺之出血性假性動脈瘤，您認為是由什麼血管引起的？）</p>
+        <p class="stem">Which vessel causing pseudoaneurysm do you think bleeding is?（您認為圖中藍色箭頭所指之出血性假性動脈瘤是由什麼血管引起的？）</p>
+        <img class="q-img" src="img/ir/q45_dorsal_pancreatic_a.png" alt="Q45 隨堂測驗附圖" style="max-height:260px;margin-bottom:14px">
         <ul class="opts">
           <li>(A) Right gastric a. 右胃動脈</li>
           <li>(B) Left gastric a. 左胃動脈</li>
@@ -385,10 +415,9 @@
       • <b>臨床意義：</b><mark>「DWI 亮 ＋ ADC 暗」代表真正的擴散受限</mark>（如惡性腫瘤、細胞密度極高處或濃稠發炎膿瘍）。若兩者皆亮則僅為 T2 shine-through 假陽性。</p>
     </div>
 
-    <div class="img-cue">
-      <div class="title">📸 影像解構【Q46 / 腹部 MRI 橫斷面】</div>
-      <p>• <b>解剖對照：</b>橫向走行的亮帶結構為胰腺。在後腹腔靠近胰頭與十二指腸交界處，箭頭所指的圓形病灶在 DWI 呈現顯著亮訊號、在 ADC 呈現暗訊號（擴散受限）。<br>
-      • <b>診斷構造：</b>該構造為穿行於後腹腔之 <mark>總膽管 (Common bile duct)</mark> 處病變（如膽管癌或濃稠膽管積膿）。</p>
+    <div class="img-frame">
+      <img class="q-img" src="img/ir/q46_dwi_adc_common_bile_duct.png" alt="MRI DWI 亮 + ADC 暗：總膽管病變">
+      <div class="img-caption">【圖 8】<b>腹部 MRI 擴散加權對照（Q46 附圖）：</b>左側 DWI 變亮、右側 ADC 變暗（紅箭頭），橫向亮影為胰臟，病灶位於後腹腔匯入十二指腸之<b>總膽管 (Common bile duct)</b>。</div>
     </div>
   </section>
 
@@ -417,6 +446,16 @@
         </tr>
       </tbody>
     </table></div>
+
+    <div class="img-frame">
+      <img class="q-img" src="img/ir/q67_tace_pre_post.png" alt="TACE 治療前後碘油沉積對照 (1) Pre (2) Post">
+      <div class="img-caption">【圖 9】<b>TACE 栓塞治療前後（Q67 附圖）：</b>圖 (1) 栓塞前血管造影；圖 (2) 栓塞後高密度碘油保留於肝動脈、肝實質及分流門靜脈，但膽道不顯影。</div>
+    </div>
+
+    <div class="img-frame">
+      <img class="q-img" src="img/ir/q67_kub_overview.png" alt="KUB 全景">
+      <div class="img-caption">【圖 10】<b>腹部 KUB 全景（Q67 考卷大圖）：</b>顯示右上腹肝臟區域高密度栓塞碘油滯留之全景透視。</div>
+    </div>
   </section>
 
   <!-- ============ SECTION 5 ============ -->
@@ -456,10 +495,10 @@
 
   <!-- ============ SECTION 7: EXAM BANK ============ -->
   <section id="exam">
-    <div class="sec-head"><span class="sec-num">七</span><h2>歷屆考古題全收錄（共 8 題完整題庫）</h2></div>
+    <div class="sec-head"><span class="sec-num">七</span><h2>歷屆考古題全收錄（共 8 題完整題庫含附圖）</h2></div>
     <div class="exam-head">
       <h2>石明誠老師 消化系統介入性放射線學題庫全解</h2>
-      <p>完整收錄歷年 8 道影像專題試題，附影像解構、標準答案與逐選項深入剖析。</p>
+      <p>完整收錄歷年 8 道影像專題試題，每題均附原版醫學影像附圖、標準答案與深度解析。</p>
       <button class="btn" id="allBtn">全部展開答案</button>
     </div>
 
@@ -468,11 +507,7 @@
       <span class="q-no">Q34</span><span class="q-topic">Afferent Loop Syndrome / PTCD 膽道支架</span>
       <p class="q-stem">Therapeutic release management of afferent loop syndrome have different options and which one does interventional radiology provided for patent in below images?<br>
       （對於 afferent 環綜合症的介入性選擇具有不同的通路，包括通過膽管和胰管直接穿刺 afferent 絆，甚至在內鏡超聲(EUS)引導下使用腔腔支架經胃引流裝置。根據以下附圖，您認為我們已經為患者提供了緩解腹痛的開始通行路線？）</p>
-      <div class="img-cue">
-        <div class="title">📸 影像特徵與判讀關鍵【彩圖 6 / ppt pg.3】</div>
-        <p>• <b>左圖 (以前)：</b>影像可見十二指腸/輸入環因阻塞而出現明顯巨大擴張。<br>
-        • <b>右圖 (After)：</b>病人經由 PTCD 介入治療，從病患右側穿刺進入，引流管路經由 <b>bile duct (膽管)</b> 一路延伸至腸道，並在狹窄處放置金屬支架橫架其中。</p>
-      </div>
+      <img class="q-img" src="img/ir/q34_afferent_loop_ptcd.png" alt="Q34 附圖：Afferent loop PTCD 經膽管金屬支架">
       <ul class="opts">
         <li>(A) 膽管</li>
         <li>(B) 胃</li>
@@ -483,7 +518,10 @@
         <summary class="toggle"></summary>
         <div class="reveal">
           <div class="ans">正確答案：(A) 膽管</div>
-          <p>• <b>解析</b>：題目圖片與石明誠老師課堂講解照片相同。透過觀察引流管與金屬支架的放置位置可知，介入通行路線從病患右側進入，經由 <b>bile duct (膽管)</b> 一路延伸至腸道。亦可用解剖概念刪去法排除胃、胰腺或脾臟。</p>
+          <p>• <b>影像與解析</b>：題目圖片與石明誠老師課堂講解照片相同。<br>
+          • <b>左圖 (以前)：</b>從影像學可看出十二指腸因阻塞而出現明顯擴張的情形。<br>
+          • <b>右圖 (After)：</b>病人經由 PTCD 做介入性治療，除了放置引流管打通狹窄處，也使用了金屬支架橫架其中。透過觀察引流管的放置位置可知介入的通行路線從病患右側進入，經由 <b>bile duct (膽管)</b> 一路延伸至腸道。由解剖概念刪去法可知非經由胃、胰腺或脾臟。</p>
+          <img class="q-img" src="img/ir/q34_ct_fluoroscopy_4panel.png" alt="Q34 出處 4-panel 影像" style="max-height:260px;margin-top:10px">
           <div class="src">出處：石明誠 消化系統介入性放射線學 (ppt pg.3)</div>
         </div>
       </details>
@@ -493,10 +531,7 @@
     <div class="q" id="q35">
       <span class="q-no">Q35</span><span class="q-topic">後腹腔馬賽克氣體 / 胰腺壞死膿瘍</span>
       <p class="q-stem">Where do you think the mosaic gas collection location is / 認為馬賽克氣體收集位置（星）是？</p>
-      <div class="img-cue">
-        <div class="title">📸 影像特徵與判讀關鍵【To Needle or not to Needle / ppt pg.34】</div>
-        <p>• <b>CT 表現：</b>腹部 CT 顯示後腹腔中央與左側胰腺區域呈現混雜斑駁的馬賽克狀氣體收集 (mosaic gas collection)，合併周圍發炎浸潤與壞死積液。</p>
-      </div>
+      <img class="q-img" src="img/ir/q35_mosaic_gas_star.png" alt="Q35 附圖：胰腺馬賽克氣體收集" style="max-height:300px">
       <ul class="opts">
         <li>(A) 膀胱</li>
         <li>(B) 胰腺</li>
@@ -507,7 +542,8 @@
         <summary class="toggle"></summary>
         <div class="reveal">
           <div class="ans">正確答案：(B) 胰腺</div>
-          <p>• <b>解析</b>：依據老師 ppt 及上課口述內容，此張圖所呈現的 mosaic gas collection 為壞死組織、膿瘍 (abscess) 或與十二指腸相通之產氣，位置在十二指腸及<b>胰腺 (Pancreas)</b>，屬於後腹腔，臨床引流應從病患側面 (Flank approach) 進針。</p>
+          <p>• <b>影像與解析</b>：依據老師 ppt 及上課口述內容，此張圖所呈現的 mosaic gas collection 可能為壞死組織、糞便或膿瘍 (abscess)，位置在十二指腸及<b>胰腺 (Pancreas)</b>，屬於後腹腔，應從病患側面 (Flank approach) 做引流。</p>
+          <img class="q-img" src="img/ir/q35_to_needle_or_not.png" alt="To Needle or not to Needle 詳解圖" style="max-height:240px;margin-top:10px">
           <div class="src">出處：石明誠 消化系統介入性放射線學 (ppt pg.34)</div>
         </div>
       </details>
@@ -517,10 +553,7 @@
     <div class="q" id="q45">
       <span class="q-no">Q45</span><span class="q-topic">血管攝影 / 胰背動脈假性動脈瘤</span>
       <p class="q-stem">Which vessel causing pseudoaneurysm do you think bleeding is?<br>（你認為這種出血假性動脈瘤是由什麼血管引起的？）</p>
-      <div class="img-cue">
-        <div class="title">📸 影像特徵與判讀關鍵【Celiac Trunk Angiography】</div>
-        <p>• <b>血管攝影表現：</b>導管置於腹腔動脈幹 (Celiac trunk)，箭頭明顯指向從主幹向下分支出來、供應胰腺後方之胰背動脈瘤狀造影劑外溢與假性動脈瘤。</p>
-      </div>
+      <img class="q-img" src="img/ir/q45_dorsal_pancreatic_a.png" alt="Q45 附圖：血管攝影胰背動脈假性動脈瘤" style="max-height:360px">
       <ul class="opts">
         <li>(A) Right gastric a. 右胃動脈</li>
         <li>(B) Left gastric a. 左胃動脈</li>
@@ -531,7 +564,7 @@
         <summary class="toggle"></summary>
         <div class="reveal">
           <div class="ans">正確答案：(D) Dorsal pancreatic a. 胰背動脈</div>
-          <p>• <b>解析</b>：老師上課強烈暗示此為 <b>Dorsal pancreatic a. (胰背動脈)</b> 引起的假性動脈瘤出血。胰臟發炎引發周圍血管壁消化破壞時，胰背動脈為常受侵蝕之血管，可藉由介入性導管栓塞止血。</p>
+          <p>• <b>影像與解析</b>：老師上課強烈暗示此為 <b>Dorsal pancreatic a. (胰背動脈)</b>。導管置於腹腔動脈幹 (Celiac trunk)，藍色箭頭明顯指向從主幹分支出來向下走向胰腺之假性動脈瘤出血點，可藉由介入性放射科導管栓塞止血。</p>
           <div class="src">出處：石明誠 消化系統介入性放射線學</div>
         </div>
       </details>
@@ -541,10 +574,7 @@
     <div class="q" id="q46">
       <span class="q-no">Q46</span><span class="q-topic">MRI 擴散限制 / 總膽管病變</span>
       <p class="q-stem">What do you assume the most bright up retroperitoneum lesion under DWI and dark in ADC images arising from (arrow)?<br>（您認為 DWI 下的變亮病變和 ADC 圖像中的暗病變代表什麼？）</p>
-      <div class="img-cue">
-        <div class="title">📸 影像特徵與判讀關鍵【DWI Bright + ADC Dark】</div>
-        <p>• <b>MRI 訊號：</b>DWI 呈現高訊號白亮、ADC 呈現低訊號黑暗 $\rightarrow$ 擴散受限 (Restricted diffusion)。橫向亮帶為胰臟，箭頭所指位於後腹腔匯入十二指腸處為總膽管。</p>
-      </div>
+      <img class="q-img" src="img/ir/q46_dwi_adc_common_bile_duct.png" alt="Q46 附圖：DWI 亮 + ADC 暗總膽管病變" style="max-height:280px">
       <ul class="opts">
         <li>(A) Common bile 總膽管</li>
         <li>(B) pancreatic tail 胰尾</li>
@@ -555,7 +585,7 @@
         <summary class="toggle"></summary>
         <div class="reveal">
           <div class="ans">正確答案：(A) Common bile 總膽管</div>
-          <p>• <b>解析</b>：DWI 亮且 ADC 暗代表擴散受限（高細胞密度或惡性病灶）。從解剖位置可知橫向亮影為胰臟，而總膽管穿行於胰頭後方並與胰管一起匯入十二指腸，故箭頭所指之後腹腔病變為<b>總膽管 (Common bile duct)</b>。</p>
+          <p>• <b>影像與解析</b>：從圖中可以知道，橫向亮亮的那條是胰臟，而總膽管會和胰管一起匯入 12 指腸，故箭頭所指位於後腹腔匯入處之病變為<b>總膽管 (Common bile duct)</b>。DWI 亮 + ADC 暗代表組織擴散受限（惡性腫瘤或濃稠感染）。</p>
           <div class="src">出處：石明誠 消化系統介入性放射線學 (ppt pg. 口述)</div>
         </div>
       </details>
@@ -565,10 +595,7 @@
     <div class="q" id="q66">
       <span class="q-no">Q66</span><span class="q-topic">腹部 X 光 / 肝外膽道金屬支架</span>
       <p class="q-stem">Where do you think the metallic stent being mainly placed?<br>（您認為金屬支架主要放置在哪裡？）</p>
-      <div class="img-cue">
-        <div class="title">📸 影像特徵與判讀關鍵【KUB Metallic Stent】</div>
-        <p>• <b>X 光表現：</b>腹部平片顯示一網狀圓柱形金屬支架 (Metallic stent) 縱向跨越右上腹肝下緣，沿著膽道解剖走向延伸至中上腹十二指腸區域。</p>
-      </div>
+      <img class="q-img" src="img/ir/q66_metallic_biliary_stent.png" alt="Q66 附圖：KUB 金屬膽道支架" style="max-height:300px">
       <ul class="opts">
         <li>(A) Common hepatic artery 肝總動脈</li>
         <li>(B) Main portal vein 主門靜脈</li>
@@ -579,7 +606,7 @@
         <summary class="toggle"></summary>
         <div class="reveal">
           <div class="ans">正確答案：(C) Extrahepatic biliary tract 肝外膽道</div>
-          <p>• <b>解析</b>：金屬支架位於肝臟下緣往下延伸，順著總肝管與總膽管走向跨入十二指腸，符合<b>肝外膽道 (Extrahepatic biliary tract)</b> 支架置放，用於解除惡性阻塞性黃疸。</p>
+          <p>• <b>影像與解析</b>：金屬支架位於肝臟下緣往下延伸，沿著總肝管與總膽管走向跨入十二指腸，放置於<b>肝外膽道 (Extrahepatic biliary tract)</b>，用於引流惡性阻塞性黃疸。</p>
           <div class="src">出處：石明誠 消化系統介入性放射線學 老師補充ppt (ppt pg.1)</div>
         </div>
       </details>
@@ -589,10 +616,7 @@
     <div class="q" id="q67">
       <span class="q-no">Q67</span><span class="q-topic">TACE 碘油沉積 / 排除總膽管</span>
       <p class="q-stem">According to the right (mark as 1) pre and left (label 2) post interventional radiology treatment images, where do you think the embolization lipiodol dense material retained, except for<br>（根據右(標記為 1)介入放射治療前和左(標記為 2)介入放射治療後影像，您認為栓塞碘油緻密物質保留在哪裡，除了：）</p>
-      <div class="img-cue">
-        <div class="title">📸 影像特徵與判讀關鍵【TACE Pre vs. Post Lipiodol Retention】</div>
-        <p>• <b>治療前後對照：</b>圖 (1) 為 TACE 血管造影，圖 (2) 為治療後高密度碘油 (Lipiodol) 沉積。碘油保留於肝動脈分支、肝實質腫瘤區與經分流進入之門靜脈分支，但膽管系統不顯影。</p>
-      </div>
+      <img class="q-img" src="img/ir/q67_tace_pre_post.png" alt="Q67 附圖：TACE (1) Pre (2) Post 碘油沉積對照" style="max-height:240px">
       <ul class="opts">
         <li>(A) right portal vein 右門靜脈</li>
         <li>(B) 右肝動脈 right hepatic artery</li>
@@ -603,7 +627,8 @@
         <summary class="toggle"></summary>
         <div class="reveal">
           <div class="ans">正確答案：(D) common bile duct 膽道總管</div>
-          <p>• <b>解析</b>：TACE 經動脈灌注碘油，碘油會滯留在右肝動脈、右肝實質腫瘤，並可經腫瘤血管分流逆流入右門靜脈分支。但<b>膽道總管 (Common bile duct) 屬於膽汁引流管道、非血管</b>，與動脈無相通，故碘油絕不會沉積於膽道總管中。</p>
+          <p>• <b>影像與解析</b>：首先 (A) 選項門靜脈可以剔除，因門靜脈流向會向心，且腫瘤常有動脈-門脈分流使碘油逆流至門靜脈末梢。另外兩圖互相比較能發現注入與沉積的血管及實質，但<b>膽道總管 (Common bile duct) 屬於膽汁引流系統、非血管</b>，絕無法顯現碘油沉積，因此選擇 (D)。</p>
+          <img class="q-img" src="img/ir/q67_kub_overview.png" alt="Q67 考卷大圖" style="max-height:280px;margin-top:10px">
           <div class="src">出處：石明誠 消化系統介入性放射學 補充講義 (ppt pg.3)</div>
         </div>
       </details>
@@ -613,10 +638,7 @@
     <div class="q" id="q68">
       <span class="q-no">Q68</span><span class="q-topic">PTC 造影 / 肝管解剖辨識</span>
       <p class="q-stem">圖中箭頭所指的構造是什麼管道？<br>What is the duct indicated by the arrow in this image?</p>
-      <div class="img-cue">
-        <div class="title">📸 影像特徵與判讀關鍵【PTC Biliary Tree Fluoroscopy】</div>
-        <p>• <b>造影特徵：</b>顯影劑順著穿刺管道深入肝內分支，並且有一主要粗大管道向下延伸流入類似消化道之十二指腸腔內。</p>
-      </div>
+      <img class="q-img" src="img/ir/q68_ptc_hepatic_duct.png" alt="Q68 附圖：PTC 肝管造影" style="max-height:200px">
       <ul class="opts">
         <li>(A) 肝動脈 Hepatic artery</li>
         <li>(B) 肝門靜脈 Hepatic portal vein</li>
@@ -627,8 +649,8 @@
         <summary class="toggle"></summary>
         <div class="reveal">
           <div class="ans">正確答案：(C) 肝管 Hepatic duct</div>
-          <p>• <b>解析</b>：圖中的管道深入肝內，且有一分支流入消化道管道（十二指腸）。所有血管（肝動脈、門靜脈、肝靜脈）均不可能通入十二指腸，故唯一可能為膽道系統之<b>肝管 (Hepatic duct)</b>。</p>
-          <div class="src">出處：石明誠 消化系統介入性放射線學 上課口述</div>
+          <p>• <b>影像與解析</b>：圖中的管道深入肝內分支，且有一分支流入類似消化道的管道（十二指腸）。所有血管（肝動脈、門靜脈、肝靜脈）均不可能通入十二指腸，所以只能選<b>肝管 (Hepatic duct)</b>。</p>
+          <div class="src">出處：消化系統介入性放射線學 石明誠 上課口述</div>
         </div>
       </details>
     </div>
@@ -648,10 +670,10 @@
         <div class="reveal">
           <div class="ans">正確答案：(D) 以上構造均須避開 All of the above should be avoided.</div>
           <p>• <b>解析</b>：<br>
-          • 戳到<b>血管</b> $\rightarrow$ 內出血、血胸、假性動脈瘤。<br>
-          • 戳到<b>膽囊</b> $\rightarrow$ 膽汁滲漏引發膽汁性腹膜炎。<br>
-          • 戳到<b>胰臟</b> $\rightarrow$ 胰液外漏引發急性壞死性胰臟炎與胰廔管。<br>
-          做影像導引切片時的核心原則為：Shortest path to lesion, cross fewest and least critical structures，因此以上構造均必須嚴格避開。</p>
+          • 戳到<b>血管</b> ＝ 內出血、假性動脈瘤。<br>
+          • 戳到<b>膽囊</b> ＝ 膽汁滲漏造成膽汁性腹膜炎。<br>
+          • 戳到<b>胰臟</b> ＝ 胰液滲漏造成急性壞死性胰臟炎與胰廔管。<br>
+          做影像導引切片時，重點為：<b>Shortest path to lesion, cross fewest and least critical structures</b>，故以上構造均須避開。</p>
           <div class="src">出處：消化系統介入性放射線學 page 31</div>
         </div>
       </details>
@@ -660,7 +682,7 @@
   </section>
 
   <footer>
-    <p><b>高醫放射學｜石明誠老師 消化系統介入性放射學題庫全集完成</b>　共 8 題（完整收錄歷年所有影像考題與深度解構）。</p>
+    <p><b>高醫放射學｜石明誠老師 消化系統介入性放射學題庫全集完成</b>　共 8 題（完整收錄歷年所有影像考題、原版附圖與深度解構）。</p>
     <p style="margin-top:14px;font-family:var(--mono);font-size:12px;color:var(--teal);border:1px solid var(--line-2);border-radius:6px;padding:6px 10px;display:inline-block">版面系統 · 醫學專題裸讀筆記 v2.0</p>
   </footer>
 
