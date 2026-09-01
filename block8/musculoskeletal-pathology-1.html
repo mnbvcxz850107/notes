@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>肌肉骨骼病理學(I)｜裸讀學習筆記</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&family=Noto+Serif+TC:wght@500;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0F1B18;--bg-2:#152420;--bg-3:#1B2E29;--line:#26403A;--line-2:#31534B;
+    --text:#E9F1EE;--text-2:#A8C2BA;--text-3:#7A968D;
+    --teal:#7FC9BE;--teal-dim:#4E9A90;--gold:#C9A961;--rose:#E58B85;
+    --serif:"Noto Serif TC","Songti TC",serif;
+    --sans:"Noto Sans TC","PingFang TC","Microsoft JhengHei",sans-serif;
+    --mono:"JetBrains Mono",ui-monospace,Menlo,monospace;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth;scroll-padding-top:24px}
+  html{overflow-x:hidden}
+  body{margin:0;background:var(--bg);color:var(--text);font-family:var(--sans);
+    font-size:16.5px;line-height:1.9;font-weight:300;-webkit-font-smoothing:antialiased;
+    overflow-x:hidden}
+  .wrap{max-width:1150px;margin:0 auto;padding:0 22px}
+
+  header.hero{padding:66px 0 52px;border-bottom:1px solid var(--line)}
+  .backlink{display:inline-block;font-family:var(--mono);font-size:12px;
+    color:var(--text-3);text-decoration:none;margin-bottom:22px;
+    border:1px solid var(--line);border-radius:6px;padding:5px 12px;transition:.15s}
+  .backlink:hover{color:var(--teal);border-color:var(--teal-dim)}
+  .eyebrow{display:flex;align-items:center;gap:16px;margin-bottom:26px;
+    font-family:var(--serif);font-size:15px;letter-spacing:.34em;color:var(--teal)}
+  .eyebrow .rule{width:56px;height:1px;background:var(--gold)}
+  .eyebrow .dot{color:var(--gold)}
+  header.hero h1{font-family:var(--serif);font-weight:700;font-size:clamp(36px,6.4vw,68px);
+    line-height:1.15;margin:0 0 22px;letter-spacing:.02em}
+  header.hero h1 em{font-style:normal;color:var(--teal)}
+  header.hero p.sub{margin:0;color:var(--text-2);max-width:62ch;font-size:17px;line-height:1.85}
+  .intro-card{border:1px solid var(--line);border-radius:16px;padding:26px 30px;margin-top:34px;background:var(--bg-2)}
+  .intro-card p{margin:0 0 22px;color:var(--text-2)}
+  .intro-card b{color:var(--teal);font-weight:500}
+
+  .cols{display:grid;grid-template-columns:220px 1fr;gap:52px;padding:46px 0 90px;align-items:start}
+  @media (max-width: 800px) {
+    .cols { grid-template-columns: 1fr; }
+    nav.toc { display: none; }
+  }
+  nav.toc{position:sticky;top:26px}
+  nav.toc .t{font-family:var(--mono);font-size:11px;letter-spacing:.2em;color:var(--text-3);margin-bottom:14px}
+  nav.toc a{display:block;padding:7px 14px;border-left:1px solid var(--line);
+    color:var(--text-2);text-decoration:none;font-size:14px;transition:.15s}
+  nav.toc a:hover{border-left-color:var(--teal);color:var(--teal);background:var(--bg-2)}
+  nav.toc a.exam{color:var(--gold)}
+
+  section{margin-bottom:64px;scroll-margin-top:24px}
+  .sec-head{display:flex;align-items:baseline;gap:16px;border-bottom:1px solid var(--line-2);padding-bottom:12px;margin-bottom:26px}
+  .sec-num{font-family:var(--serif);font-size:30px;color:var(--gold);line-height:1}
+  .sec-head h2{font-family:var(--serif);font-size:clamp(23px,3.4vw,31px);margin:0;font-weight:700;letter-spacing:.02em}
+  h3{font-family:var(--serif);font-size:21px;margin:38px 0 12px;font-weight:500}
+  h4{font-size:16.5px;margin:24px 0 8px;color:var(--teal);font-weight:500}
+  p{margin:0 0 15px}
+  ul,ol{margin:0 0 17px;padding-left:22px}
+  li{margin-bottom:8px}
+  li::marker{color:var(--teal-dim)}
+  strong,b{font-weight:500;color:#FFF}
+  u{text-decoration-color:var(--teal-dim);text-underline-offset:3px}
+
+  .box{border-radius:13px;padding:20px 24px;margin:22px 0;border:1px solid var(--line);background:var(--bg-2)}
+  .box .bt{font-weight:500;font-size:14.5px;margin-bottom:10px;display:flex;align-items:center;gap:9px;color:#FFF}
+  .box p:last-child,.box ul:last-child,.box ol:last-child{margin-bottom:0}
+  .badge{font-family:var(--mono);font-size:10px;padding:2px 8px;border-radius:3px;letter-spacing:.06em;
+    border:1px solid currentColor;font-weight:600}
+  .box.exam{border-color:rgba(201,169,97,.45);background:rgba(201,169,97,.07)}
+  .box.exam .badge{color:var(--gold)}
+  .box.trap{border-color:rgba(229,139,133,.45);background:rgba(229,139,133,.07)}
+  .box.trap .badge{color:var(--rose)}
+  .box.key{border-color:rgba(127,201,190,.4);background:rgba(127,201,190,.07)}
+  .box.key .badge{color:var(--teal)}
+
+  /* 隨堂測驗 */
+  .quiz{background:var(--bg-3);border-radius:12px;padding:22px 26px;margin:32px 0;border:1px solid var(--line)}
+  .quiz-question{font-weight:500;color:#FFF;margin-bottom:16px;font-size:17px}
+  .quiz-options{list-style:none;padding:0;margin:0 0 20px}
+  .quiz-options li{background:var(--bg-2);border:1px solid var(--line);padding:10px 16px;
+    margin-bottom:8px;border-radius:8px;font-size:15px;cursor:default}
+  details{background:var(--bg-2);border:1px solid var(--line);border-radius:8px;overflow:hidden}
+  summary{padding:12px 16px;font-size:14.5px;font-weight:500;color:var(--teal);cursor:pointer;
+    user-select:none;background:rgba(127,201,190,.05)}
+  summary:hover{background:rgba(127,201,190,.1)}
+  details p{padding:16px;margin:0;font-size:15px;color:var(--text-2);border-top:1px solid var(--line)}
+</style>
+</head>
+<body>
+
+<div class="wrap">
+  <header class="hero">
+    <a href="../index.html" class="backlink">← 返回目錄</a>
+    <div class="eyebrow">
+      <div class="rule"></div>
+      BLOCK 8
+      <div class="dot">✦</div>
+      PATHOLOGY
+    </div>
+    <h1>肌肉骨骼病理學(I)</h1>
+    <p class="sub">從基因缺陷到骨質疏鬆、從感染到壞死，用臨床視角拆解骨骼系統的生老病死，破解陳建亨老師的最愛考點。</p>
+    
+    <div class="intro-card">
+      <p><b>臨床導讀：骨頭裡的秘密</b></p>
+      <p>一名七歲男童在學校體育課不小心輕輕摔了一跤，竟然造成了股骨骨折。急診醫師一照 X 光，發現這已經是他這三年來第三次骨折了，而且仔細一看，他的眼白（鞏膜）還帶有一點淡淡的藍色...<br><br>
+      另一邊的診間，一位五十歲的上班族因為長年應酬酗酒，最近連走路髖關節都痛得受不了，X 光發現股骨頭已經出現塌陷的月牙形陰影...<br><br>
+      骨頭不只是硬梆梆的支架，它是一個充滿活性、不斷代謝重建的「活器官」。從基因突變導致的發育異常，到代謝失衡引發的骨折，讓我們從這兩個病例開始，深入探索骨骼的病理學世界！</p>
+    </div>
+  </header>
+
+  <div class="cols">
+    <nav class="toc">
+      <div class="t">CONTENTS</div>
+      <a href="#sec-1">1. 先天性骨骼異常</a>
+      <a href="#sec-2">2. 骨折與骨壞死</a>
+      <a href="#sec-3">3. 骨髓炎與骨質疏鬆</a>
+      <a href="#sec-review" class="exam">一分鐘考前秒殺心法</a>
+      <a href="#sec-exam">歷屆考題全收錄</a>
+    </nav>
+
+    <main>
+      
+      <!-- Section 1 -->
+      <section id="sec-1">
+        <div class="sec-head">
+          <div class="sec-num">01</div>
+          <h2>先天性骨骼異常：基因決定的命運</h2>
+        </div>
+        <p>骨骼的發育需要精密的藍圖。當基因出現突變時，有人生下來骨頭就像玻璃一樣一碰就碎，有人四肢短小，也有人的骨頭硬得像大理石，卻毫無韌性。</p>
+
+        <h3>1. 成骨不全症 (Osteogenesis Imperfecta, OI)</h3>
+        <p>這就是導讀中那位「藍色鞏膜、反覆骨折」的小男孩得的病，俗稱<b>玻璃娃娃</b>。</p>
+        <p>最核心的問題在於製造骨骼基質的重要原料——<b>第一型膠原蛋白 (Type I Collagen)</b> 出了問題。</p>
+
+        <div class="box key">
+            <div class="bt"><span class="badge">高頻考點</span> 遺傳與突變基因</div>
+            <ul>
+                <li><b>致病基因：</b>與 17q21.3-q22 的 <code>COL1A1</code> 基因，或 7q21.3-q22 的 <code>COL1A2</code> 基因突變有關。</li>
+                <li><b>遺傳模式：</b>主要是<b>體染色體顯性遺傳 (Autosomal dominant)</b>，臨床上可進一步分為四型 (Four subtypes)。</li>
+                <li><b>臨床表現：</b>反覆骨折、聽力喪失、牙齒發育不良，以及經典的<b>藍色鞏膜 (Blue sclera)</b>。</li>
+            </ul>
+        </div>
+
+        <div class="box trap">
+            <div class="bt"><span class="badge">易錯陷阱</span> 眼睛的病變，不要張冠李戴！</div>
+            <p>考題非常喜歡騙你：「因為缺乏正常的 Type I collagen，病人的虹膜 (iris) 可能會出現 Lisch nodules (李氏結節)」。<br>
+            <b>錯！錯！錯！</b> Lisch nodules 是神經纖維瘤第一型 (Neurofibromatosis Type 1, NF1) 的特徵，跟成骨不全症完全無關！成骨不全症的眼睛特徵是<b>藍色鞏膜</b>。</p>
+        </div>
+
+        <h3>2. 軟骨發育不全症 (Achondroplasia)</h3>
+        <p>這是造成侏儒症 (Dwarfism) 最常見的原因。</p>
+
+        <div class="box key">
+            <div class="bt"><span class="badge">高頻考點</span> FGFR3 活化突變</div>
+            <ul>
+                <li><b>致病基因：</b>第 4 對染色體上的 <b>FGFR3 基因發生「活化突變 (Activating mutation)」</b>。</li>
+                <li><b>遺傳模式：</b>體染色體顯性遺傳 (Autosomal dominant)。</li>
+                <li><b>臨床表現：</b>患者特徵是<b>四肢短小，但脊椎長度正常</b>。</li>
+            </ul>
+        </div>
+
+        <div class="box trap">
+            <div class="bt"><span class="badge">易錯陷阱</span> 到底是哪一種骨化出問題？</div>
+            <p>我們的骨頭發育有兩種方式：一種是軟骨變硬骨的「軟骨內骨化 (Endochondral ossification)」，用來長長骨；另一種是直接由結締組織變硬骨的「膜內骨化 (Membranous ossification)」，用來長頭骨扁骨。<br>
+            軟骨發育不全症是<b>「軟骨內骨化」</b>出了問題！因此考題如果說「這類患者在骨骼發育過程中，缺乏正常的膜內骨化 (abnormal membranous ossification)」，這句話是<b>錯的</b>！他們的膜內骨化完全正常！</p>
+        </div>
+
+        <h3>3. 大理石骨病 (Osteopetrosis)</h3>
+        <p>正常的骨頭要不斷地「建設（成骨細胞）」與「拆除（破骨細胞）」。如果負責拆除的<b>破骨細胞 (Osteoclast) 罷工了（缺乏或失去吸收骨質的能力）</b>，骨頭就會不斷堆積。</p>
+
+        <ul style="margin-bottom:20px;">
+            <li><b>骨頭特徵：</b>骨頭密度極高，X 光下看起來又白又亮像大理石。</li>
+            <li><b>致命弱點：</b>雖然密度高，但內部結構就像粉筆一樣，<b>非常脆、極易骨折</b>。</li>
+            <li><b>併發症：</b>因為骨頭太厚，佔據了骨髓腔，導致<b>造血功能變差、肝脾腫大 (hepato-splenomegaly)、容易反覆感染</b>；骨頭增厚壓迫到神經孔，會造成<b>腦神經麻痺 (cranial nerve palsy)</b>。</li>
+            <li><b>治療：</b>因為破骨細胞是由造血幹細胞分化而來，所以這類病人可以接受<b>造血幹細胞移植 (Hematopoietic stem cell transplantation)</b> 來治療。</li>
+        </ul>
+
+        <div class="box trap">
+            <div class="bt"><span class="badge">易錯陷阱</span> 金剛狼的骨頭？</div>
+            <p>考題會故意說：「這些病人的骨頭硬得像金剛狼 (Wolverine) 一樣，讓他們『比較不容易骨折 (less prone to fractures)』」。<br>
+            <b>錯！</b>大理石骨病患者的骨頭很脆，<b>非常容易骨折</b>！</p>
+        </div>
+      </section>
+
+      <!-- Section 2 -->
+      <section id="sec-2">
+        <div class="sec-head">
+          <div class="sec-num">02</div>
+          <h2>骨折與缺血性骨壞死</h2>
+        </div>
+        
+        <h3>1. 骨折 (Bone Fracture) 的分類與癒合</h3>
+        <p>骨折不是只有受到強力撞擊才會發生。</p>
+        <ul>
+            <li><b>疲勞性骨折 (Stress fracture)：</b>長時間反覆受力引起，最常發生在需要承受體重的<b>腳部蹠骨 (metatarsal bones)</b>（例如行軍的新兵、長跑選手）。</li>
+            <li><b>病理性骨折 (Pathologic fracture)：</b>骨頭原本就因為疾病（如腫瘤、骨質疏鬆）而變得脆弱，輕微外力就斷了。</li>
+            <li><b>骨折的癒合：</b>大約在骨折後 <b>6 週</b>，骨折處會形成完整的<b>編織骨 (woven bone) 網狀結構</b>。</li>
+        </ul>
+
+        <h3>2. 缺血性骨壞死 (Osteonecrosis / Avascular Necrosis)</h3>
+        <p>回到導讀中那位酗酒大叔，他的髖關節痛就是因為血液循環被阻斷，導致骨頭餓死了。</p>
+
+        <div class="box key">
+            <div class="bt"><span class="badge">高頻考點</span> 骨壞死的三大元凶</div>
+            <p>骨壞死最常與以下三個因素有關：<b>外傷 (trauma)、長期酗酒 (chronic alcohol abuse)、使用類固醇 (steroid use)</b>。在長期酗酒的病人中，最常發生的部位就是<b>股骨頭 (femoral head)</b>。</p>
+        </div>
+
+        <div class="box trap">
+            <div class="bt"><span class="badge">易錯陷阱</span> 先死的是誰？感染是主因嗎？</div>
+            <ul>
+                <li>考題常說：「骨壞死大多是由感染 (infections) 引起的。」這句話是<b>錯的</b>！感染引起的那叫骨髓炎，骨壞死主要是不良習慣或外傷引起血管阻塞。</li>
+                <li>當股骨頭發生缺血時，因為血液供應來源的差異，<b>內部的骨髓 (medullary bone) 會先壞死</b>，而表面的皮質骨 (cortical bone) 和軟骨帽 (cartilage cap) 暫時還能存活。</li>
+            </ul>
+        </div>
+      </section>
+
+      <!-- Section 3 -->
+      <section id="sec-3">
+        <div class="sec-head">
+          <div class="sec-num">03</div>
+          <h2>骨髓炎與骨質疏鬆</h2>
+        </div>
+
+        <h3>1. 骨髓炎 (Osteomyelitis)</h3>
+        <p>骨頭如果被細菌入侵，就會發炎化膿。細菌可以透過直接接觸（如開放性骨折）或血液傳播（血行性）進入骨頭。</p>
+        <ul>
+            <li><b>位置差異：</b>在兒童，細菌最喜歡停留在<b>長骨的幹骺端 (metaphysis)</b>（尤其是膝關節附近）；而在成人，則較常見於腳部（如糖尿病足）。</li>
+            <li><b>特殊部位：</b>上頷骨與下頷骨的骨髓炎，通常與口腔衛生不良及<b>蛀牙 (dental caries)</b> 息息相關。</li>
+        </ul>
+
+        <div class="box trap">
+            <div class="bt"><span class="badge">易錯陷阱</span> 兒童最常見的致病菌是誰？</div>
+            <p>考題極度愛考：「在 5-10 歲兒童長骨幹骺端的骨髓炎，最常見的致病菌是大腸桿菌 (E. coli)。」<br>
+            <b>錯！</b>最常見的致病菌永遠是<b>金黃色葡萄球菌 (Staphylococcus aureus)</b>！E. coli 並非首位。</p>
+        </div>
+
+        <h3>2. 骨質疏鬆 (Osteoporosis) 與代謝性骨病</h3>
+        <p>這是一個無聲的殺手。人類的骨質大約在 <b>25-35 歲之間達到巔峰 (peak bone mass)</b>，之後如果吸收大於生成，骨質就會慢慢流失。病理下可見<b>骨小樑 (trabeculae) 變小變薄</b>，無法提供足夠的結構支撐。</p>
+        
+        <p><b>危險因子：</b>缺乏運動、酗酒、維生素 D 缺乏，以及<b>使用類固醇</b>。<br>
+        <span style="color:var(--rose)">注意陷阱：</span>考題會說「類固醇治療可以減緩骨質流失的速度 (slow down the rate)」，這是錯的！類固醇會<b>加速</b>骨質流失！</p>
+
+        <p><b>維生素 D 缺乏的影響：</b></p>
+        <ul>
+            <li>在兒童稱為<b>佝僂症 (Rickets)</b>。</li>
+            <li>在成人，維生素 D 缺乏可能導致虛弱、骨痛，甚至完全沒症狀。此時的骨骼病變稱為<b>軟骨症 (Osteomalacia)</b>，<span style="color:var(--rose)">絕不能稱為 Rickets（這是考點）</span>。</li>
+        </ul>
+
+      </section>
+
+      <!-- Section Review -->
+      <section id="sec-review">
+        <div class="sec-head">
+          <div class="sec-num">04</div>
+          <h2>一分鐘考前秒殺心法</h2>
+        </div>
+        <p>進考場前，請把這幾句話印在腦海裡：</p>
+        <ul>
+            <li><b>成骨不全症 (OI)</b> = Type I Collagen (COL1A1/COL1A2) 突變 = 藍色鞏膜 (絕對不是 Lisch nodules！)。</li>
+            <li><b>軟骨發育不全症</b> = FGFR3 突變 = 短肢但脊椎正常 = 缺乏正常的「軟骨內骨化」(膜內骨化完全正常！)。</li>
+            <li><b>大理石骨病</b> = 破骨細胞沒作用 = 骨頭很硬但極脆易斷 (絕不像金剛狼) = 可用造血幹細胞移植。</li>
+            <li><b>骨壞死 (AVN)</b> = 外傷/酗酒/類固醇引起 (不是感染) = 骨髓先死，表面皮質骨晚點死。</li>
+            <li><b>骨髓炎</b> = 兒童好發於長骨 Metaphysis = 最常見病原體是 <b>S. aureus</b> (絕對不是 E. coli！)。</li>
+            <li><b>骨質疏鬆與代謝</b> = 類固醇會「加速」流失 = 成人 Vit D 缺乏叫「軟骨症(Osteomalacia)」，兒童才叫 Rickets。</li>
+        </ul>
+      </section>
+
+      <!-- Section Exam -->
+      <section id="sec-exam">
+        <div class="sec-head">
+          <div class="sec-num">05</div>
+          <h2>歷屆考題全收錄</h2>
+        </div>
+        <p class="tagline">以下收錄 BM110-BM112「骨骼肌肉病理學I」相關考題，打鐵趁熱！</p>
+
+        <div class="quiz">
+            <p class="quiz-question">Which one of these descriptions about achondroplasia is incorrect?</p>
+            <ul class="quiz-options">
+                <li>(A) It involves chromosome 4 and is inherited in an autosomal dominant pattern.</li>
+                <li>(B) Patients usually have shortened limbs, but normal spinal length.</li>
+                <li>(C) During bone development, patients lack normal membranous ossification.</li>
+                <li>(D) It is associated with an activating mutation of FGFR3.</li>
+            </ul>
+            <details>
+                <summary>解答與解析</summary>
+                <p><b>答案：(C)</b><br>解析：Achondroplasia (軟骨發育不全) 是由於 FGFR3 基因活化突變，導致「軟骨內骨化 (endochondral ossification)」受到抑制，因此長骨無法變長造成短肢。但頭骨的「膜內骨化 (membranous ossification)」是完全正常的！這題連續考了三年，是超級重點。</p>
+            </details>
+        </div>
+
+        <div class="quiz">
+            <p class="quiz-question">Regarding osteogenesis imperfecta, which of the following descriptions is incorrect?</p>
+            <ul class="quiz-options">
+                <li>(A) Patients are unable to produce normal type I collagen.</li>
+                <li>(B) It is associated with mutations in the COL1A1 gene on 17q21.3–q22 and the COL1A2 gene on 7q21.3–q22.</li>
+                <li>(C) It is an autosomal dominant disorder that can be classified into four types.</li>
+                <li>(D) Due to the lack of normal type I collagen, patients' irises may develop Lisch nodules.</li>
+            </ul>
+            <details>
+                <summary>解答與解析</summary>
+                <p><b>答案：(D)</b><br>解析：成骨不全症的眼睛特徵是「藍色鞏膜 (Blue sclera)」。Lisch nodules (虹膜上的錯構瘤) 是神經纖維瘤第一型 (NF1) 的特徵，不要搞混了！</p>
+            </details>
+        </div>
+
+        <div class="quiz">
+            <p class="quiz-question">Which of the following descriptions about osteopetrosis is incorrect?</p>
+            <ul class="quiz-options">
+                <li>(A) Patients have bones as hard as marble (or Wolverine), which makes them less prone to fractures.</li>
+                <li>(B) The main cause is the inability to generate osteoclasts or the loss of bone resorption ability in generated osteoclasts.</li>
+                <li>(C) In addition to skeletal abnormalities, patients often exhibit conditions such as cranial nerve paralysis, recurrent bacterial infections, or hepatosplenomegaly.</li>
+                <li>(D) Patients can undergo hematopoietic stem cell transplantation for treatment.</li>
+            </ul>
+            <details>
+                <summary>解答與解析</summary>
+                <p><b>答案：(A)</b><br>解析：大理石骨病雖然骨質密度高，但內部結構異常，像粉筆一樣「非常容易骨折 (more prone to fractures)」，絕對不像金剛狼一樣堅固。</p>
+            </details>
+        </div>
+
+        <div class="quiz">
+            <p class="quiz-question">Regarding osteonecrosis (or avascular necrosis), which of the following descriptions is incorrect?</p>
+            <ul class="quiz-options">
+                <li>(A) It is mostly caused by infection.</li>
+                <li>(B) It is associated with trauma, chronic alcohol abuse, or steroid use.</li>
+                <li>(C) In patients with long-term alcohol abuse, osteonecrosis often occurs in the femoral head.</li>
+                <li>(D) When it occurs, the medullary bone is often affected first, while the overlying cortical bone and cartilage cap remain unaffected for the time being.</li>
+            </ul>
+            <details>
+                <summary>解答與解析</summary>
+                <p><b>答案：(A)</b><br>解析：缺血性骨壞死的主因是外傷、酗酒、類固醇造成血流阻斷，而非感染 (感染引起的是骨髓炎)。選項 (D) 也是常考的正確觀念，因血供差異，骨髓會先壞死。</p>
+            </details>
+        </div>
+
+        <div class="quiz">
+            <p class="quiz-question">Regarding osteomyelitis, which of the following descriptions is incorrect?</p>
+            <ul class="quiz-options">
+                <li>(A) Caused by bacterial infection through direct exposure or hematogenous spread.</li>
+                <li>(B) In children, it often occurs near the knee joint, while in adults it is more common in the foot.</li>
+                <li>(C) In 5–10-year-old children, osteomyelitis near the metaphysis of long bones is most commonly caused by Escherichia coli.</li>
+                <li>(D) Osteomyelitis of the maxillary bone and mandible is mostly associated with poor oral hygiene and dental caries.</li>
+            </ul>
+            <details>
+                <summary>解答與解析</summary>
+                <p><b>答案：(C)</b><br>解析：兒童血行性骨髓炎最常見的致病菌是「金黃色葡萄球菌 (S. aureus)」，選項故意寫 E. coli 來騙人。</p>
+            </details>
+        </div>
+
+        <div class="quiz">
+            <p class="quiz-question">Which of the following descriptions about fractures is most appropriate?</p>
+            <ul class="quiz-options">
+                <li>(A) Stress fractures often occur in weight-bearing bones of the feet.</li>
+                <li>(B) Fractures resulting from bone weakening due to disease are termed pathological fractures.</li>
+                <li>(C) After approximately six weeks, the fracture site will show a complete meshwork of woven bone.</li>
+                <li>(D) All of the above descriptions (A, B, C) are correct.</li>
+            </ul>
+            <details>
+                <summary>解答與解析</summary>
+                <p><b>答案：(D)</b><br>解析：A、B、C 的敘述皆為正確的病理學概念。</p>
+            </details>
+        </div>
+
+        <div class="quiz">
+            <p class="quiz-question">Which of the following statements is incorrect?</p>
+            <ul class="quiz-options">
+                <li>(A) Vitamin D deficiency in adults may cause weakness, pain, or even no symptoms at all.</li>
+                <li>(B) Bone lesions caused by vitamin D deficiency in adults are called rickets.</li>
+                <li>(C) Parathyroid adenoma or parathyroid hyperplasia can both lead to elevated parathyroid hormone levels in the body, which in turn affect bone structure.</li>
+                <li>(D) Chronic renal failure can also affect bone metabolism.</li>
+            </ul>
+            <details>
+                <summary>解答與解析</summary>
+                <p><b>答案：(B)</b><br>解析：成人的 Vit D 缺乏導致的骨骼病變稱為「軟骨症 (Osteomalacia)」。Rickets (佝僂症) 是專指發生在「兒童」骨骼發育生長板未閉合時的病變。</p>
+            </details>
+        </div>
+
+      </section>
+
+    </main>
+  </div>
+</div>
+
+</body>
+</html>
