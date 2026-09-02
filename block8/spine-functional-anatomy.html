@@ -90,6 +90,29 @@
     user-select:none;background:rgba(127,201,190,.05)}
   summary:hover{background:rgba(127,201,190,.1)}
   details p{padding:16px;margin:0;font-size:15px;color:var(--text-2);border-top:1px solid var(--line)}
+
+  /* 單字卡 */
+  .vocab-card { background: var(--bg-3); border: 1px solid var(--line); border-radius: 12px; margin-bottom: 12px; overflow: hidden; transition: .2s; }
+  .vocab-card:hover { border-color: var(--teal-dim); }
+  .vocab-card summary { padding: 18px 24px; display: flex; justify-content: space-between; align-items: center; cursor: pointer; list-style: none; background: transparent; }
+  .vocab-card summary::-webkit-details-marker { display: none; }
+  .vocab-card summary .en { font-family: var(--serif); font-size: 20px; font-weight: 700; color: #FFF; letter-spacing: .02em; }
+  .vocab-card summary .btn { font-size: 13px; background: rgba(127,201,190,.15); color: var(--teal); padding: 6px 12px; border-radius: 6px; border: 1px solid var(--teal-dim); transition: .2s; }
+  .vocab-card[open] summary .btn { display: none; }
+  .vocab-desc { padding: 0 24px 20px; }
+  .vocab-desc .zh { font-size: 19px; font-weight: 700; color: var(--gold); margin: 0 0 12px 0; border-top: 1px dashed var(--line); padding-top: 16px; }
+  .vocab-desc .hint { margin: 0; color: var(--text-2); font-size: 15.5px; line-height: 1.8; }
+  .vocab-desc .hint b { color: #FFF; }
+  
+  /* 歷屆考題年份收錄 */
+  .year-section { margin-top: 32px; border: 1px solid var(--line); border-radius: 16px; overflow: hidden; }
+  .year-header { background: var(--bg-2); padding: 16px 24px; font-family: var(--mono); font-size: 22px; font-weight: 700; color: var(--gold); border-bottom: 1px solid var(--line); }
+  .year-content { padding: 24px; }
+  .year-content .quiz { margin: 0 0 24px 0; background: transparent; border: 1px dashed var(--line); }
+  .year-content .quiz:last-child { margin-bottom: 0; }
+  .quiz.repeated { border: 2px solid var(--rose); background: rgba(229,139,133,.05); box-shadow: 0 0 15px rgba(229,139,133,.15); position: relative; }
+  .quiz.repeated::before { content: '🔥 連續四年必考題'; position: absolute; top: -14px; right: 20px; background: var(--rose); color: #FFF; font-size: 12px; font-weight: 700; padding: 4px 12px; border-radius: 20px; letter-spacing: .05em; }
+
 </style>
 </head>
 <body>
@@ -120,6 +143,8 @@
       <a href="#sec-2">2. 後韌帶複合體</a>
       <a href="#sec-3">3. 影像學：蘇格蘭梗犬與 MRI</a>
       <a href="#sec-review" class="exam">一分鐘考前秒殺心法</a>
+      <a href="#sec-vocab" class="exam" style="color: var(--teal);">📖 必考單字與諧音記憶</a>
+      <a href="#sec-exams" class="exam" style="color: var(--text);">📂 113-110歷年考題純享版</a>
     </nav>
 
     <main>
@@ -301,11 +326,148 @@
               <ul>
                 <li>狗鼻子 = 橫突</li>
                 <li>狗眼睛 = 椎弓根</li>
-                <li><b>狗脖子 = 關節間部 (Pars) $ightarrow$ 斷掉變項圈 = Spondylolysis</b></li>
+                <li><b>狗脖子 = 關節間部 (Pars) $
+ightarrow$ 斷掉變項圈 = Spondylolysis</b></li>
               </ul>
             </li>
             <li><b>T2 MRI 橫切面</b>：發亮的是水 (CSF)，中間黑灰色的才是脊髓 (Spinal cord)。</li>
         </ul>
+      </section>
+
+    
+      <!-- Section Vocab -->
+      <section id="sec-vocab">
+        <div class="sec-head">
+          <div class="sec-num">V</div>
+          <h2>必考單字與諧音記憶</h2>
+        </div>
+        <p>點擊右側按鈕顯示中文與獨家記憶法：</p>
+
+        <details class="vocab-card">
+          <summary><span class="en">Vertebral body</span> <span class="btn">顯示中文與記憶法</span></summary>
+          <div class="vocab-desc">
+            <p class="zh">椎體</p>
+            <p class="hint">💡 <b>解剖：</b> 脊椎前方的承重主體，跨越前柱 (Anterior column) 到中柱。</p>
+          </div>
+        </details>
+        <details class="vocab-card">
+          <summary><span class="en">Pedicle</span> <span class="btn">顯示中文與記憶法</span></summary>
+          <div class="vocab-desc">
+            <p class="zh">椎弓根</p>
+            <p class="hint">💡 <b>解剖：</b> 連接椎體與後方結構的橋樑。<br>💡 <b>影像：</b> 在 X 光斜位片上，它是蘇格蘭梗犬的「眼睛」。</p>
+          </div>
+        </details>
+        <details class="vocab-card">
+          <summary><span class="en">Pars interarticularis</span> <span class="btn">顯示中文與記憶法</span></summary>
+          <div class="vocab-desc">
+            <p class="zh">峽部</p>
+            <p class="hint">💡 <b>解剖：</b> 上下關節突之間的狹窄處。<br>💡 <b>影像：</b> 狗狗的「脖子」。如果斷掉就是 Spondylolysis (峽部裂)，狗狗會戴項圈。</p>
+          </div>
+        </details>
+        <details class="vocab-card">
+          <summary><span class="en">Spondylolysis</span> <span class="btn">顯示中文與記憶法</span></summary>
+          <div class="vocab-desc">
+            <p class="zh">脊椎峽部裂</p>
+            <p class="hint">💡 <b>字根：</b> Spondylo (脊椎) + lysis (裂開/溶解)。<br>💡 <b>記憶：</b> 狗狗脖子斷掉。</p>
+          </div>
+        </details>
+        <details class="vocab-card">
+          <summary><span class="en">Ligamentum flavum</span> <span class="btn">顯示中文與記憶法</span></summary>
+          <div class="vocab-desc">
+            <p class="zh">黃韌帶</p>
+            <p class="hint">💡 <b>字根：</b> flavum (黃色)。<br>💡 <b>功能：</b> 位於後柱，限制脊椎過度彎曲 (Flexion)。</p>
+          </div>
+        </details>
+        <details class="vocab-card">
+          <summary><span class="en">Nucleus pulposus</span> <span class="btn">顯示中文與記憶法</span></summary>
+          <div class="vocab-desc">
+            <p class="zh">髓核</p>
+            <p class="hint">💡 <b>特色：</b> 椎間盤的中心，富含蛋白多醣 (Proteoglycan) 與膠原蛋白，像水球一樣抵抗垂直壓力 (Axial load)。</p>
+          </div>
+        </details>
+      </section>
+
+      <!-- Section Exams -->
+      <section id="sec-exams">
+        <div class="sec-head">
+          <div class="sec-num">E</div>
+          <h2>113-110 歷年考題純享版</h2>
+        </div>
+        <p>以下羅列出本單元相關的歷屆考題。<br>
+        <span style="color:var(--rose)">🔥 <b>紅色發光外框</b>代表該題型在 113、112、111、110 年連續考了四次！這些絕對是老師的命題題庫，請務必精熟！</span></p>
+
+        <div class="year-section">
+          <div class="year-header">113 / 112 / 111 / 110 年 (考點完全雷同)</div>
+          <div class="year-content">
+
+            <div class="quiz repeated">
+              <p class="quiz-question">Which of the following statements about the structure of the spine is FALSE? (from BM110)</p>
+            <p class="quiz-translate">關於脊椎結構的敘述，下列何者為非？</p>
+            <ul class="quiz-options">
+                <li>(A) The vertebral body is the weight-bearing structure that exists in front of each vertebra.
+                    <span class="opt-zh">(A) 椎體是承重結構，存在於每一節脊椎的前方。</span>
+                </li>
+                <li>(B) The articular surface of the facet joint is covered with hyaline cartilage.
+                    <span class="opt-zh">(B) 小面關節的關節面覆蓋著透明軟骨。</span>
+                </li>
+                <li>(C) Dens is a special structure of the axis, which is part of the Atlantoaxial joint. This joint is responsible for rotation of the head.
+                    <span class="opt-zh">(C) 齒突是樞椎 (C2) 的特殊結構，為寰樞關節的一部分。此關節負責頭部的旋轉。</span>
+                </li>
+                <li>(D) The costal facet is connected to the ribs, which restricts the movement of the spine. Therefore, the thoracic spine is the least mobile part of the spinal column.
+                    <span class="opt-zh">(D) 肋骨小面與肋骨相連，限制了脊椎的活動。因此胸椎是脊柱中最不靈活的部分。</span>
+                </li>
+            </ul>
+            <details>
+                <summary>解答與解析</summary>
+                <p><b>答案：(A)</b><br>解析：老師最愛考的例外！C1 (寰椎 Atlas) 是沒有椎體 (Vertebral body) 的，因此選項說「每一節都有」是錯的。</p>
+            </details>
+            </div>
+            <div class="quiz repeated">
+              <p class="quiz-question">Which part of spine does NOT belong to the posterior ligamentous complex? (from BM111)</p>
+            <p class="quiz-translate">脊椎的哪一個部分不屬於後韌帶複合體？</p>
+            <ul class="quiz-options">
+                <li>(A) ligamentum flavum
+                    <span class="opt-zh">(A) 黃韌帶</span>
+                </li>
+                <li>(B) interspinous ligament
+                    <span class="opt-zh">(B) 棘間韌帶</span>
+                </li>
+                <li>(C) posterior longitudinal ligament
+                    <span class="opt-zh">(C) 後縱韌帶</span>
+                </li>
+                <li>(D) facet joint capsule
+                    <span class="opt-zh">(D) 小面關節囊</span>
+                </li>
+            </ul>
+            <details>
+                <summary>解答與解析</summary>
+                <p><b>答案：(C)</b><br>解析：後縱韌帶 (PLL) 位於椎體的後緣，被歸類在脊椎的中柱 (middle column) 穩定結構中，不屬於後方的 PLC。</p>
+            </details>
+            </div>
+            <div class="quiz repeated">
+              <p class="quiz-question">Which statement about lumbar spine x-rays is INCORRECT? (from BM111)</p>
+            <p class="quiz-translate">關於腰椎 X 光片的敘述，下列何者錯誤？</p>
+            <ul class="quiz-options">
+                <li>(A) In an oblique view, a Scotty Dog's tail fracture can be seen in the patient with a fracture of the transverse process of spine.
+                    <span class="opt-zh">(A) 在斜位影像中，若患者有脊椎橫突骨折，可見到蘇格蘭狗的「尾巴」骨折。</span>
+                </li>
+                <li>(B) The structure pointed by the arrow in the X-ray below is the facet joint of lumbar spine. (Image omitted)
+                    <span class="opt-zh">(B) 下圖 X 光片中箭頭所指的結構是腰椎的小面關節。</span>
+                </li>
+                <li>(C) The structure pointed by the arrows in these two X-ray pictures above is the pedicle of the lumbar spine. (Image omitted)
+                    <span class="opt-zh">(C) 上方兩張 X 光片中箭頭所指的結構是腰椎的椎弓根。</span>
+                </li>
+                <li>(D) Oblique view is often used to detect pars fractures, and the pars interarticularis is located in the neck of the Scotty Dog in x-ray.
+                    <span class="opt-zh">(D) 斜位影像常用來偵測峽部骨折，且關節間部 (pars interarticularis) 位於 X 光片中蘇格蘭狗的脖子處。</span>
+                </li>
+            </ul>
+            <details>
+                <summary>解答與解析</summary>
+                <p><b>答案：(A)</b><br>解析：橫突 (Transverse process) 對應的是狗狗的「鼻子 (Snout)」，而不是尾巴！</p>
+            </details>
+            </div>
+          </div>
+        </div>
       </section>
 
     </main>

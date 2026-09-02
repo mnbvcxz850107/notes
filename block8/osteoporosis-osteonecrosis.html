@@ -95,6 +95,29 @@
   .tw th{background:rgba(127,201,190,.1);color:var(--teal);padding:12px 16px;text-align:left;border-bottom:2px solid var(--teal-dim)}
   .tw td{padding:12px 16px;border-bottom:1px solid var(--line);color:var(--text-2)}
   .tw tr:hover td{background:var(--bg-2)}
+
+  /* 單字卡 */
+  .vocab-card { background: var(--bg-3); border: 1px solid var(--line); border-radius: 12px; margin-bottom: 12px; overflow: hidden; transition: .2s; }
+  .vocab-card:hover { border-color: var(--teal-dim); }
+  .vocab-card summary { padding: 18px 24px; display: flex; justify-content: space-between; align-items: center; cursor: pointer; list-style: none; background: transparent; }
+  .vocab-card summary::-webkit-details-marker { display: none; }
+  .vocab-card summary .en { font-family: var(--serif); font-size: 20px; font-weight: 700; color: #FFF; letter-spacing: .02em; }
+  .vocab-card summary .btn { font-size: 13px; background: rgba(127,201,190,.15); color: var(--teal); padding: 6px 12px; border-radius: 6px; border: 1px solid var(--teal-dim); transition: .2s; }
+  .vocab-card[open] summary .btn { display: none; }
+  .vocab-desc { padding: 0 24px 20px; }
+  .vocab-desc .zh { font-size: 19px; font-weight: 700; color: var(--gold); margin: 0 0 12px 0; border-top: 1px dashed var(--line); padding-top: 16px; }
+  .vocab-desc .hint { margin: 0; color: var(--text-2); font-size: 15.5px; line-height: 1.8; }
+  .vocab-desc .hint b { color: #FFF; }
+  
+  /* 歷屆考題年份收錄 */
+  .year-section { margin-top: 32px; border: 1px solid var(--line); border-radius: 16px; overflow: hidden; }
+  .year-header { background: var(--bg-2); padding: 16px 24px; font-family: var(--mono); font-size: 22px; font-weight: 700; color: var(--gold); border-bottom: 1px solid var(--line); }
+  .year-content { padding: 24px; }
+  .year-content .quiz { margin: 0 0 24px 0; background: transparent; border: 1px dashed var(--line); }
+  .year-content .quiz:last-child { margin-bottom: 0; }
+  .quiz.repeated { border: 2px solid var(--rose); background: rgba(229,139,133,.05); box-shadow: 0 0 15px rgba(229,139,133,.15); position: relative; }
+  .quiz.repeated::before { content: '🔥 連續四年必考題'; position: absolute; top: -14px; right: 20px; background: var(--rose); color: #FFF; font-size: 12px; font-weight: 700; padding: 4px 12px; border-radius: 20px; letter-spacing: .05em; }
+
 </style>
 </head>
 <body>
@@ -126,6 +149,8 @@
       <a href="#sec-3">3. 骨鬆用藥的新革命</a>
       <a href="#sec-4">4. 缺血性骨壞死對決</a>
       <a href="#sec-review" class="exam">考前快速總複習</a>
+      <a href="#sec-vocab" class="exam" style="color: var(--teal);">📖 必考單字與諧音記憶</a>
+      <a href="#sec-exams" class="exam" style="color: var(--text);">📂 113-110歷年考題純享版</a>
     </nav>
 
     <main>
@@ -310,8 +335,10 @@
         <h3>神級革命藥物：抗硬化蛋白抗體 (Anti-sclerostin antibody, Romosozumab)</h3>
         <p>這個藥物完美回答了阿嬤的問題。它能夠打破破骨與成骨必須綁在一起的 Coupling 限制，達成「雙重機制 (Dual effect)」：</p>
         <ol>
-            <li>它促進了 <b>Wnt 訊息傳遞路徑</b> $ightarrow$ <b>大幅增加骨質合成 (Increase bone synthesis)</b>。</li>
-            <li>它抑制了 <b>RANKL 依賴路徑</b> $ightarrow$ <b>減少骨質破壞 (Decrease bone breakdown)</b>。</li>
+            <li>它促進了 <b>Wnt 訊息傳遞路徑</b> $
+ightarrow$ <b>大幅增加骨質合成 (Increase bone synthesis)</b>。</li>
+            <li>它抑制了 <b>RANKL 依賴路徑</b> $
+ightarrow$ <b>減少骨質破壞 (Decrease bone breakdown)</b>。</li>
         </ol>
 
         <div class="box trap">
@@ -456,14 +483,226 @@
         </div>
         <p>進考場前，看到這些關鍵字直接反射選答案：</p>
         <ul>
-            <li><b>脆弱性骨折 (Fragility fracture)</b> $ightarrow$ 不管 T-score 多少，直接確診<b>骨質疏鬆</b>！</li>
-            <li><b>DXA 測量替代位置</b> $ightarrow$ 若腰椎/髖部不能測，測<b>非慣用手 (Non-dominant)</b> 前臂遠端 1/3。</li>
-            <li><b>RANKL 抑制劑 (Denosumab)</b> $ightarrow$ 結合並中和血液中的 <b>RANKL</b>，<u style="color:var(--rose)">不是</u>結合到破骨細胞的 RANK 受體。</li>
-            <li><b>抗硬化蛋白抗體 (Romosozumab)</b> $ightarrow$ 雙效神藥！促進 Wnt 增加造骨 + 抑制 RANKL 減少破骨。</li>
-            <li><b>維生素 D 檢驗黃金標準</b> $ightarrow$ 抽血驗肝臟代謝的 <b>25(OH)D</b>（小於 20 ng/ml 為缺乏）。</li>
-            <li><b>股骨頭缺血性壞死 (ONFH)</b> $ightarrow$ <b>男酗酒、女類固醇</b>。雙側居多。最早期診斷靠 <b>MRI</b>。晚期 X 光可見<b>新月徑 (Crescent sign)</b>。</li>
-            <li><b>膝關節骨壞死</b> $ightarrow$ 老年人<b>自發性 (Spontaneous)</b>。單側居多。</li>
+            <li><b>脆弱性骨折 (Fragility fracture)</b> $
+ightarrow$ 不管 T-score 多少，直接確診<b>骨質疏鬆</b>！</li>
+            <li><b>DXA 測量替代位置</b> $
+ightarrow$ 若腰椎/髖部不能測，測<b>非慣用手 (Non-dominant)</b> 前臂遠端 1/3。</li>
+            <li><b>RANKL 抑制劑 (Denosumab)</b> $
+ightarrow$ 結合並中和血液中的 <b>RANKL</b>，<u style="color:var(--rose)">不是</u>結合到破骨細胞的 RANK 受體。</li>
+            <li><b>抗硬化蛋白抗體 (Romosozumab)</b> $
+ightarrow$ 雙效神藥！促進 Wnt 增加造骨 + 抑制 RANKL 減少破骨。</li>
+            <li><b>維生素 D 檢驗黃金標準</b> $
+ightarrow$ 抽血驗肝臟代謝的 <b>25(OH)D</b>（小於 20 ng/ml 為缺乏）。</li>
+            <li><b>股骨頭缺血性壞死 (ONFH)</b> $
+ightarrow$ <b>男酗酒、女類固醇</b>。雙側居多。最早期診斷靠 <b>MRI</b>。晚期 X 光可見<b>新月徑 (Crescent sign)</b>。</li>
+            <li><b>膝關節骨壞死</b> $
+ightarrow$ 老年人<b>自發性 (Spontaneous)</b>。單側居多。</li>
         </ul>
+      </section>
+
+    
+      <!-- Section Vocab -->
+      <section id="sec-vocab">
+        <div class="sec-head">
+          <div class="sec-num">V</div>
+          <h2>必考單字與諧音記憶</h2>
+        </div>
+        <p>點擊右側按鈕顯示中文與獨家記憶法：</p>
+
+        <details class="vocab-card">
+          <summary><span class="en">Osteoporosis</span> <span class="btn">顯示中文與記憶法</span></summary>
+          <div class="vocab-desc">
+            <p class="zh">骨質疏鬆症</p>
+            <p class="hint">💡 <b>字根：</b> Osteo (骨) + porosis (多孔)。<br>💡 <b>陷阱：</b> 只要有「脆弱性骨折」就是骨鬆，不用管 T-score！</p>
+          </div>
+        </details>
+        <details class="vocab-card">
+          <summary><span class="en">Osteonecrosis</span> <span class="btn">顯示中文與記憶法</span></summary>
+          <div class="vocab-desc">
+            <p class="zh">缺血性骨壞死</p>
+            <p class="hint">💡 <b>字根：</b> Osteo (骨) + necrosis (壞死)。<br>💡 <b>特色：</b> 男酗酒、女類固醇。MRI 最早抓出，X光晚期看見 Crescent sign。</p>
+          </div>
+        </details>
+        <details class="vocab-card">
+          <summary><span class="en">Fragility fracture</span> <span class="btn">顯示中文與記憶法</span></summary>
+          <div class="vocab-desc">
+            <p class="zh">脆弱性骨折</p>
+            <p class="hint">💡 <b>記憶：</b> Fragile (脆弱的)。在平地跌倒就斷掉。</p>
+          </div>
+        </details>
+        <details class="vocab-card">
+          <summary><span class="en">Bisphosphonates</span> <span class="btn">顯示中文與記憶法</span></summary>
+          <div class="vocab-desc">
+            <p class="zh">雙磷酸鹽類</p>
+            <p class="hint">💡 <b>字根：</b> Bis (雙) + phospho (磷酸)。<br>💡 <b>機制：</b> 被破骨細胞吃掉後毒死它。</p>
+          </div>
+        </details>
+        <details class="vocab-card">
+          <summary><span class="en">Denosumab</span> <span class="btn">顯示中文與記憶法</span></summary>
+          <div class="vocab-desc">
+            <p class="zh">RANKL 抑制劑</p>
+            <p class="hint">💡 <b>機制：</b> 像海綿一樣吸走血液中的 RANKL，讓破骨細胞無法成熟。</p>
+          </div>
+        </details>
+        <details class="vocab-card">
+          <summary><span class="en">Romosozumab</span> <span class="btn">顯示中文與記憶法</span></summary>
+          <div class="vocab-desc">
+            <p class="zh">抗硬化蛋白抗體</p>
+            <p class="hint">💡 <b>特色：</b> 雙效神藥！同時促進造骨 (Wnt) 與抑制破骨 (RANKL)。</p>
+          </div>
+        </details>
+      </section>
+
+      <!-- Section Exams -->
+      <section id="sec-exams">
+        <div class="sec-head">
+          <div class="sec-num">E</div>
+          <h2>113-110 歷年考題純享版</h2>
+        </div>
+        <p>以下羅列出本單元相關的歷屆考題。<br>
+        <span style="color:var(--rose)">🔥 <b>紅色發光外框</b>代表該題型在 113、112、111、110 年連續考了四次！這些絕對是老師的命題題庫，請務必精熟！</span></p>
+
+        <div class="year-section">
+          <div class="year-header">113 / 112 / 111 / 110 年 (考點完全雷同)</div>
+          <div class="year-content">
+
+            <div class="quiz repeated">
+              <p class="quiz-question">Which of the following statements is incorrect? (from BM112 Q71)</p>
+            <p class="quiz-translate">關於骨質疏鬆的敘述，下列何者錯誤？</p>
+            <ul class="quiz-options">
+                <li>(A) The main pathogenesis of osteoporosis is an imbalance in bone remodeling.
+                    <span class="opt-zh">(A) 骨質疏鬆的主要致病機轉是骨骼重塑 (bone remodeling) 的失衡。</span>
+                </li>
+                <li>(B) The 1st-4th lumbar vertebrae and bilateral hips are common sites for DXA to detect bone density.
+                    <span class="opt-zh">(B) 第一至第四腰椎 (L1-L4) 及雙側髖關節是 DXA 偵測骨密度的常見部位。</span>
+                </li>
+                <li>(C) A 65-year-old woman slipped while walking and fractured the femoral neck of her right hip. DXA examination showed that the T-score of the left hip was -1.2 and the average bone density T-score of the lumbar spine was -1.4. Therefore, the woman is not an osteoporosis patient.
+                    <span class="opt-zh">(C) 一名 65 歲婦女走路滑倒導致右側股骨頸骨折。DXA 顯示左髖 T-score -1.2，腰椎 T-score -1.4。因此，該名婦女不算是骨鬆患者。</span>
+                </li>
+                <li>(D) When a young patient's Z-score is less than -2.0, it is necessary to carefully investigate whether there is secondary osteoporosis caused by disease or drugs.
+                    <span class="opt-zh">(D) 當年輕患者的 Z-score 小於 -2.0 時，必須仔細調查是否有疾病或藥物引起的次發性骨質疏鬆。</span>
+                </li>
+            </ul>
+            <details>
+                <summary>解答與解析</summary>
+                <p><b>答案：(C)</b><br>解析：這題完全還原了導讀的情境！走路滑倒就骨折屬於「脆弱性骨折 (Fragility fracture)」。一旦發生，臨床上就直接視為骨質疏鬆症，不需要理會 T-score 有沒有低於 -2.5。</p>
+            </details>
+            </div>
+            <div class="quiz repeated">
+              <p class="quiz-question">Which of the following statements is incorrect? (from BM111 Q50)</p>
+            <p class="quiz-translate">下列敘述何者錯誤？</p>
+            <ul class="quiz-options">
+                <li>(A) Smoking and alcohol consumption are risk factors for osteoporosis.
+                    <span class="opt-zh">(A) 抽菸與喝酒是骨質疏鬆的危險因子。</span>
+                </li>
+                <li>(B) When a patient has internal fixation in L1–L4 vertebrae or both hips, bone density can be measured by DXA at the distal one-third of the dominant forearm.
+                    <span class="opt-zh">(B) 當患者的 L1-L4 腰椎或雙髖有內固定時，可使用 DXA 測量慣用手 (dominant) 前臂遠端三分之一的骨密度。</span>
+                </li>
+                <li>(C) A 65-year-old woman was incidentally found to have an old compression fracture of L1 during a health check. DXA showed bilateral hip T-scores of -1.2/-1.3 and lumbar spine T-score of -2.2. This woman is still considered to have osteoporosis.
+                    <span class="opt-zh">(C) 65 歲婦女健檢意外發現 L1 舊壓迫性骨折。DXA 雙髖 T-score -1.2/-1.3，腰椎 -2.2。該婦女仍被認為患有骨質疏鬆症。</span>
+                </li>
+                <li>(D) In premenopausal women, a Z-score &le; -2.0 requires careful evaluation for secondary osteoporosis caused by disease or medication.
+                    <span class="opt-zh">(D) 在停經前婦女，若 Z-score &le; -2.0 需仔細評估是否有疾病或藥物引起的次發性骨鬆。</span>
+                </li>
+            </ul>
+            <details>
+                <summary>解答與解析</summary>
+                <p><b>答案：(B)</b><br>解析：當腰椎與髖部不能測量時，應該測量的是「非慣用手 (non-dominant forearm)」，因為慣用手常勞動，骨頭代償性變強，測出來會失真掩蓋骨鬆。(C) 選項因為有壓迫性骨折的病史（脆弱性骨折），所以即使 T-score 大於 -2.5 仍視為骨鬆，這是正確的敘述。</p>
+            </details>
+            </div>
+            <div class="quiz repeated">
+              <p class="quiz-question">Which of the following statements is correct? (from BM111 Q51)</p>
+            <p class="quiz-translate">下列敘述何者正確？</p>
+            <ul class="quiz-options">
+                <li>(A) Bone remodeling requires coupling between osteoclasts and osteoblasts.
+                    <span class="opt-zh">(A) 骨骼重塑 (Bone remodeling) 需要破骨細胞與成骨細胞之間的耦合 (coupling)。</span>
+                </li>
+                <li>(B) Daily intake of 1200 mg of calcium in osteoporosis patients reduces fracture risk.
+                    <span class="opt-zh">(B) 骨鬆患者每日攝取 1200 毫克鈣可降低骨折風險。</span>
+                </li>
+                <li>(C) Native vitamin D3 must be converted by the kidney to 25(OH)D3 to increase its activity.
+                    <span class="opt-zh">(C) 原生維生素 D3 必須由「腎臟」轉化為 25(OH)D3 以增加其活性。</span>
+                </li>
+                <li>(D) Vitamin D status is usually assessed by serum 1,25-dihydroxyvitamin D [1,25(OH)2D] levels.
+                    <span class="opt-zh">(D) 維生素 D 的狀態通常透過血清 1,25(OH)2D 濃度來評估。</span>
+                </li>
+            </ul>
+            <details>
+                <summary>解答與解析</summary>
+                <p><b>答案：(A)</b><br>解析：(B) 錯，對於已確立的骨鬆患者，單純補充鈣片不足以顯著降低骨折風險，必須搭配骨鬆藥物。(C) 錯，變成 25(OH)D3 是在「肝臟」進行；在腎臟是變成活性 1,25(OH)2D3。(D) 錯，臨床評估是抽血驗最穩定的 25(OH)D。</p>
+            </details>
+            </div>
+            <div class="quiz repeated">
+              <p class="quiz-question">Which of the following statements is correct? (from BM110 Q25)</p>
+            <p class="quiz-translate">關於骨質疏鬆藥物機制的敘述，下列何者正確？</p>
+            <ul class="quiz-options">
+                <li>(A) Bone modeling must have osteoclast and osteoblast coupling.
+                    <span class="opt-zh">(A) 骨骼塑型 (Bone modeling) 必須有破骨細胞與成骨細胞的耦合。</span>
+                </li>
+                <li>(B) RANK ligand inhibitor binds to RANK on osteoclasts to inhibit the maturation of osteoclasts.
+                    <span class="opt-zh">(B) RANKL 抑制劑會結合到破骨細胞上的 RANK，以抑制破骨細胞的成熟。</span>
+                </li>
+                <li>(C) The function of Selective estrogen receptor modulators (SERMs) is the same as that of estrogen, both of which can bind with estrogen receptor to be an estrogen agonist.
+                    <span class="opt-zh">(C) 選擇性雌激素受體調節劑 (SERMs) 的功能與雌激素相同，兩者皆為致效劑。</span>
+                </li>
+                <li>(D) Continuous administration of Parathyroid hormone increase bone formation.
+                    <span class="opt-zh">(D) 持續性給予 (Continuous) 副甲狀腺素會增加骨質生成。</span>
+                </li>
+                <li>(E) Anti-sclerostin antibody promote Wnt signaling pathway to increase bone synthesis and inhibits RANKL-dependent pathway to decrease bone breakdown.
+                    <span class="opt-zh">(E) 抗硬化蛋白抗體 (Anti-sclerostin) 會促進 Wnt 訊息路徑以增加骨合成，並抑制依賴 RANKL 的路徑以減少骨破壞。</span>
+                </li>
+            </ul>
+            <details>
+                <summary>解答與解析</summary>
+                <p><b>答案：(E)</b><br>解析：(A) 錯在「塑型 Modeling」不需要耦合，是「重塑 Remodeling」才需要。(B) 經典陷阱！RANKL 抑制劑是結合並中和血中的 RANKL，而不是結合到破骨細胞的 RANK 受體。(D) 必須是「間歇性給予 (intermittent)」PTH 才會長骨頭，持續給予 (continuous) 反而會破壞骨頭。</p>
+            </details>
+            </div>
+            <div class="quiz repeated">
+              <p class="quiz-question">Which of the following statements about osteonecrosis of the femoral head (ONFH) is correct? (from BM111 Q49)</p>
+            <p class="quiz-translate">關於股骨頭缺血性壞死 (ONFH) 的敘述，下列何者正確？</p>
+            <ul class="quiz-options">
+                <li>(A) MRI has low sensitivity for early ONFH and is not recommended as the first-line imaging modality.
+                    <span class="opt-zh">(A) MRI 對早期 ONFH 的敏感度低，不建議作為第一線影像學檢查。</span>
+                </li>
+                <li>(B) In bone scintigraphy, the typical crescent sign can be seen in ONFH.
+                    <span class="opt-zh">(B) 在骨骼閃爍造影 (核醫骨掃描) 中，ONFH 可見典型的新月徑 (crescent sign)。</span>
+                </li>
+                <li>(C) HIV infection does not increase the risk of ONFH.
+                    <span class="opt-zh">(C) HIV 感染不會增加 ONFH 的風險。</span>
+                </li>
+                <li>(D) Major risk factors include long-term use of corticosteroids, alcohol abuse, or hematologic disorders.
+                    <span class="opt-zh">(D) 主要危險因子包含長期使用皮質類固醇、酗酒、或血液疾病。</span>
+                </li>
+            </ul>
+            <details>
+                <summary>解答與解析</summary>
+                <p><b>答案：(D)</b><br>解析：(A) 錯，MRI 是早期診斷 ONFH 最敏感也最推薦的工具。(B) 錯，新月徑 (Crescent sign) 是看骨質塌陷，必須透過 X-ray 或 CT 才看得到結構，骨掃描只看得到代謝代謝冷熱區。(C) 錯，HIV 感染本身及治療用藥都會增加骨壞死風險。</p>
+            </details>
+            </div>
+            <div class="quiz repeated">
+              <p class="quiz-question">Regarding the description of femoral head necrosis, which of the following is correct? (from BM112 Q70)</p>
+            <p class="quiz-translate">關於骨壞死的敘述，下列何者正確？</p>
+            <ul class="quiz-options">
+                <li>(A) Smoking is the main cause of avascular necrosis of the femoral head in men.
+                    <span class="opt-zh">(A) 抽菸是男性股骨頭缺血性壞死的主因。</span>
+                </li>
+                <li>(B) When femoral head necrosis occurs, the typical crescent sign can be seen on a bone scan during a nuclear medicine examination.
+                    <span class="opt-zh">(B) 當股骨頭壞死發生時，在核醫骨骼掃描中可見典型的新月徑。</span>
+                </li>
+                <li>(C) The use of protease inhibitors is a risk factor for femoral head necrosis, but HIV infection does not increase the risk of the disease.
+                    <span class="opt-zh">(C) 使用蛋白酶抑制劑是危險因子，但 HIV 感染不會增加該疾病風險。</span>
+                </li>
+                <li>(D) The causes of knee osteonecrosis are often spontaneous and mostly unilateral.
+                    <span class="opt-zh">(D) 膝關節骨壞死的原因通常是自發性的 (spontaneous)，且多為單側。</span>
+                </li>
+            </ul>
+            <details>
+                <summary>解答與解析</summary>
+                <p><b>答案：(D)</b><br>解析：這題綜合了所有陷阱！(A) 男性主因是「酗酒」，不是抽菸。(B) 新月徑在 X 光看，骨掃描看不到。(C) HIV 本身也會增加風險。(D) 完美敘述了膝關節壞死與股骨頭壞死最大的差異（自發性 vs. 次發性；單側 vs. 雙側）。</p>
+            </details>
+            </div>
+          </div>
+        </div>
       </section>
 
     </main>
