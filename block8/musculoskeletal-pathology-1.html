@@ -80,10 +80,12 @@
 
   /* 隨堂測驗 */
   .quiz{background:var(--bg-3);border-radius:12px;padding:22px 26px;margin:32px 0;border:1px solid var(--line)}
-  .quiz-question{font-weight:500;color:#FFF;margin-bottom:16px;font-size:17px}
+  .quiz-question{font-weight:500;color:#FFF;margin-bottom:8px;font-size:17px}
+  .quiz-translate{font-size:14.5px;color:var(--text-3);margin-bottom:16px;border-left:2px solid var(--line-2);padding-left:12px}
   .quiz-options{list-style:none;padding:0;margin:0 0 20px}
   .quiz-options li{background:var(--bg-2);border:1px solid var(--line);padding:10px 16px;
     margin-bottom:8px;border-radius:8px;font-size:15px;cursor:default}
+  .quiz-options li .opt-zh{display:block;font-size:13.5px;color:var(--text-3);margin-top:4px}
   details{background:var(--bg-2);border:1px solid var(--line);border-radius:8px;overflow:hidden}
   summary{padding:12px 16px;font-size:14.5px;font-weight:500;color:var(--teal);cursor:pointer;
     user-select:none;background:rgba(127,201,190,.05)}
@@ -95,7 +97,7 @@
 
 <div class="wrap">
   <header class="hero">
-    <a href="../index.html" class="backlink">← 返回目錄</a>
+    <a href="index.html" class="backlink">← 返回目錄</a>
     <div class="eyebrow">
       <div class="rule"></div>
       BLOCK 8
@@ -120,7 +122,6 @@
       <a href="#sec-2">2. 骨折與骨壞死</a>
       <a href="#sec-3">3. 骨髓炎與骨質疏鬆</a>
       <a href="#sec-review" class="exam">一分鐘考前秒殺心法</a>
-      <a href="#sec-exam">歷屆考題全收錄</a>
     </nav>
 
     <main>
@@ -152,13 +153,37 @@
             <b>錯！錯！錯！</b> Lisch nodules 是神經纖維瘤第一型 (Neurofibromatosis Type 1, NF1) 的特徵，跟成骨不全症完全無關！成骨不全症的眼睛特徵是<b>藍色鞏膜</b>。</p>
         </div>
 
+        <div class="quiz">
+            <p class="quiz-question">Regarding osteogenesis imperfecta, which of the following descriptions is incorrect?</p>
+            <p class="quiz-translate">關於成骨不全症，下列敘述何者錯誤？</p>
+            <ul class="quiz-options">
+                <li>(A) Patients are unable to produce normal type I collagen.
+                    <span class="opt-zh">(A) 患者無法製造正常的第一型膠原蛋白。</span>
+                </li>
+                <li>(B) It is associated with mutations in the COL1A1 gene on 17q21.3–q22 and the COL1A2 gene on 7q21.3–q22.
+                    <span class="opt-zh">(B) 與 17q21.3-q22 的 COL1A1 基因和 7q21.3-q22 的 COL1A2 基因突變有關。</span>
+                </li>
+                <li>(C) It is an autosomal dominant disorder that can be classified into four types.
+                    <span class="opt-zh">(C) 它是一種體染色體顯性遺傳疾病，可分為四型。</span>
+                </li>
+                <li>(D) Due to the lack of normal type I collagen, patients' irises may develop Lisch nodules.
+                    <span class="opt-zh">(D) 由於缺乏正常的第一型膠原蛋白，患者的虹膜可能會長出 Lisch 結節。</span>
+                </li>
+            </ul>
+            <details>
+                <summary>解答與解析</summary>
+                <p><b>答案：(D)</b><br>解析：成骨不全症的眼睛特徵是「藍色鞏膜 (Blue sclera)」。Lisch nodules (虹膜上的錯構瘤) 是神經纖維瘤第一型 (NF1) 的特徵，不要搞混了！</p>
+            </details>
+        </div>
+
+
         <h3>2. 軟骨發育不全症 (Achondroplasia)</h3>
         <p>這是造成侏儒症 (Dwarfism) 最常見的原因。</p>
+
         <figure style="margin: 24px 0; text-align: center;">
           <img src="img/achondroplasia.jpg" alt="Achondroplasia Diagram" style="max-width: 100%; max-height: 400px; border-radius: 12px; border: 1px solid var(--line);">
           <figcaption style="font-size: 13.5px; color: var(--text-3); margin-top: 8px;">圖解：軟骨發育不全症中，長骨的「軟骨內骨化」受阻，但頭骨的「膜內骨化」正常。</figcaption>
         </figure>
-
 
         <div class="box key">
             <div class="bt"><span class="badge">高頻考點</span> FGFR3 活化突變</div>
@@ -175,13 +200,37 @@
             軟骨發育不全症是<b>「軟骨內骨化」</b>出了問題！因此考題如果說「這類患者在骨骼發育過程中，缺乏正常的膜內骨化 (abnormal membranous ossification)」，這句話是<b>錯的</b>！他們的膜內骨化完全正常！</p>
         </div>
 
+        <div class="quiz">
+            <p class="quiz-question">Which one of these descriptions about achondroplasia is incorrect?</p>
+            <p class="quiz-translate">關於軟骨發育不全症，下列敘述何者錯誤？</p>
+            <ul class="quiz-options">
+                <li>(A) It involves chromosome 4 and is inherited in an autosomal dominant pattern.
+                    <span class="opt-zh">(A) 與第 4 對染色體有關，以體染色體顯性模式遺傳。</span>
+                </li>
+                <li>(B) Patients usually have shortened limbs, but normal spinal length.
+                    <span class="opt-zh">(B) 患者通常四肢較短，但脊椎長度正常。</span>
+                </li>
+                <li>(C) During bone development, patients lack normal membranous ossification.
+                    <span class="opt-zh">(C) 在骨骼發育過程中，患者缺乏正常的膜內骨化。</span>
+                </li>
+                <li>(D) It is associated with an activating mutation of FGFR3.
+                    <span class="opt-zh">(D) 與 FGFR3 的活化突變有關。</span>
+                </li>
+            </ul>
+            <details>
+                <summary>解答與解析</summary>
+                <p><b>答案：(C)</b><br>解析：軟骨發育不全是由於 FGFR3 基因活化突變，導致「軟骨內骨化 (endochondral ossification)」受到抑制，長骨無法變長造成短肢。但頭骨的「膜內骨化 (membranous ossification)」是完全正常的！這題連續考了三年，是超級重點。</p>
+            </details>
+        </div>
+
+
         <h3>3. 大理石骨病 (Osteopetrosis)</h3>
         <p>正常的骨頭要不斷地「建設（成骨細胞）」與「拆除（破骨細胞）」。如果負責拆除的<b>破骨細胞 (Osteoclast) 罷工了（缺乏或失去吸收骨質的能力）</b>，骨頭就會不斷堆積。</p>
+
         <figure style="margin: 24px 0; text-align: center;">
           <img src="img/osteopetrosis.jpg" alt="Osteopetrosis Diagram" style="max-width: 100%; max-height: 400px; border-radius: 12px; border: 1px solid var(--line);">
           <figcaption style="font-size: 13.5px; color: var(--text-3); margin-top: 8px;">圖解：大理石骨病缺乏骨髓腔，骨質雖密但內部充滿微小裂痕，像粉筆一樣極易脆裂骨折。</figcaption>
         </figure>
-
 
         <ul style="margin-bottom:20px;">
             <li><b>骨頭特徵：</b>骨頭密度極高，X 光下看起來又白又亮像大理石。</li>
@@ -195,6 +244,30 @@
             <p>考題會故意說：「這些病人的骨頭硬得像金剛狼 (Wolverine) 一樣，讓他們『比較不容易骨折 (less prone to fractures)』」。<br>
             <b>錯！</b>大理石骨病患者的骨頭很脆，<b>非常容易骨折</b>！</p>
         </div>
+
+        <div class="quiz">
+            <p class="quiz-question">Which of the following descriptions about osteopetrosis is incorrect?</p>
+            <p class="quiz-translate">關於大理石骨病，下列敘述何者錯誤？</p>
+            <ul class="quiz-options">
+                <li>(A) Patients have bones as hard as marble (or Wolverine), which makes them less prone to fractures.
+                    <span class="opt-zh">(A) 患者的骨頭硬如大理石（或金剛狼），使他們較不易骨折。</span>
+                </li>
+                <li>(B) The main cause is the inability to generate osteoclasts or the loss of bone resorption ability in generated osteoclasts.
+                    <span class="opt-zh">(B) 主因是無法生成破骨細胞，或生成的破骨細胞失去吸收骨質的能力。</span>
+                </li>
+                <li>(C) In addition to skeletal abnormalities, patients often exhibit conditions such as cranial nerve paralysis, recurrent bacterial infections, or hepatosplenomegaly.
+                    <span class="opt-zh">(C) 除了骨骼異常，患者常出現腦神經麻痺、反覆細菌感染或肝脾腫大等狀況。</span>
+                </li>
+                <li>(D) Patients can undergo hematopoietic stem cell transplantation for treatment.
+                    <span class="opt-zh">(D) 患者可接受造血幹細胞移植進行治療。</span>
+                </li>
+            </ul>
+            <details>
+                <summary>解答與解析</summary>
+                <p><b>答案：(A)</b><br>解析：大理石骨病雖然骨質密度高，但內部結構異常，像粉筆一樣「非常容易骨折 (more prone to fractures)」，絕對不像金剛狼一樣堅固。</p>
+            </details>
+        </div>
+
       </section>
 
       <!-- Section 2 -->
@@ -212,13 +285,36 @@
             <li><b>骨折的癒合：</b>大約在骨折後 <b>6 週</b>，骨折處會形成完整的<b>編織骨 (woven bone) 網狀結構</b>。</li>
         </ul>
 
+        <div class="quiz">
+            <p class="quiz-question">Which of the following descriptions about fractures is most appropriate?</p>
+            <p class="quiz-translate">關於骨折的敘述，下列何者最為適切？</p>
+            <ul class="quiz-options">
+                <li>(A) Stress fractures often occur in weight-bearing bones of the feet.
+                    <span class="opt-zh">(A) 疲勞性骨折常發生在腳部的承重骨（如蹠骨）。</span>
+                </li>
+                <li>(B) Fractures resulting from bone weakening due to disease are termed pathological fractures.
+                    <span class="opt-zh">(B) 由於疾病導致骨骼脆弱而引發的骨折稱為病理性骨折。</span>
+                </li>
+                <li>(C) After approximately six weeks, the fracture site will show a complete meshwork of woven bone.
+                    <span class="opt-zh">(C) 大約六週後，骨折處會出現完整的編織骨網狀結構。</span>
+                </li>
+                <li>(D) All of the above descriptions (A, B, C) are correct.
+                    <span class="opt-zh">(D) 以上敘述 (A, B, C) 皆正確。</span>
+                </li>
+            </ul>
+            <details>
+                <summary>解答與解析</summary>
+                <p><b>答案：(D)</b><br>解析：A、B、C 的敘述皆為正確的病理學概念。</p>
+            </details>
+        </div>
+
         <h3>2. 缺血性骨壞死 (Osteonecrosis / Avascular Necrosis)</h3>
         <p>回到導讀中那位酗酒大叔，他的髖關節痛就是因為血液循環被阻斷，導致骨頭餓死了。</p>
+
         <figure style="margin: 24px 0; text-align: center;">
           <img src="img/avascular_necrosis.jpg" alt="Avascular Necrosis Diagram" style="max-width: 100%; max-height: 400px; border-radius: 12px; border: 1px solid var(--line);">
           <figcaption style="font-size: 13.5px; color: var(--text-3); margin-top: 8px;">圖解：股骨頭缺血性壞死。內部的骨髓 (Medullary bone) 會先壞死，而表面的皮質骨與軟骨帽初期仍存活。</figcaption>
         </figure>
-
 
         <div class="box key">
             <div class="bt"><span class="badge">高頻考點</span> 骨壞死的三大元凶</div>
@@ -232,6 +328,30 @@
                 <li>當股骨頭發生缺血時，因為血液供應來源的差異，<b>內部的骨髓 (medullary bone) 會先壞死</b>，而表面的皮質骨 (cortical bone) 和軟骨帽 (cartilage cap) 暫時還能存活。</li>
             </ul>
         </div>
+
+        <div class="quiz">
+            <p class="quiz-question">Regarding osteonecrosis (or avascular necrosis), which of the following descriptions is incorrect?</p>
+            <p class="quiz-translate">關於缺血性骨壞死，下列敘述何者錯誤？</p>
+            <ul class="quiz-options">
+                <li>(A) It is mostly caused by infection.
+                    <span class="opt-zh">(A) 它大多是由感染引起的。</span>
+                </li>
+                <li>(B) It is associated with trauma, chronic alcohol abuse, or steroid use.
+                    <span class="opt-zh">(B) 它與外傷、長期酗酒或使用類固醇有關。</span>
+                </li>
+                <li>(C) In patients with long-term alcohol abuse, osteonecrosis often occurs in the femoral head.
+                    <span class="opt-zh">(C) 在長期酗酒的患者中，骨壞死常發生在股骨頭。</span>
+                </li>
+                <li>(D) When it occurs, the medullary bone is often affected first, while the overlying cortical bone and cartilage cap remain unaffected for the time being.
+                    <span class="opt-zh">(D) 發生時，內部的骨髓通常最先受影響，而覆蓋其上的皮質骨與軟骨帽暫時不受影響。</span>
+                </li>
+            </ul>
+            <details>
+                <summary>解答與解析</summary>
+                <p><b>答案：(A)</b><br>解析：缺血性骨壞死的主因是外傷、酗酒、類固醇造成血流阻斷，而非感染 (感染引起的是骨髓炎)。選項 (D) 也是常考的正確觀念，因血供差異，骨髓會先壞死。</p>
+            </details>
+        </div>
+
       </section>
 
       <!-- Section 3 -->
@@ -254,6 +374,29 @@
             <b>錯！</b>最常見的致病菌永遠是<b>金黃色葡萄球菌 (Staphylococcus aureus)</b>！E. coli 並非首位。</p>
         </div>
 
+        <div class="quiz">
+            <p class="quiz-question">Regarding osteomyelitis, which of the following descriptions is incorrect?</p>
+            <p class="quiz-translate">關於骨髓炎，下列敘述何者錯誤？</p>
+            <ul class="quiz-options">
+                <li>(A) Caused by bacterial infection through direct exposure or hematogenous spread.
+                    <span class="opt-zh">(A) 由直接暴露或血行傳播的細菌感染引起。</span>
+                </li>
+                <li>(B) In children, it often occurs near the knee joint, while in adults it is more common in the foot.
+                    <span class="opt-zh">(B) 在兒童，常發生在膝關節附近；而在成人，更常見於腳部。</span>
+                </li>
+                <li>(C) In 5–10-year-old children, osteomyelitis near the metaphysis of long bones is most commonly caused by Escherichia coli.
+                    <span class="opt-zh">(C) 在 5-10 歲兒童，長骨幹骺端附近的骨髓炎最常由大腸桿菌 (E. coli) 引起。</span>
+                </li>
+                <li>(D) Osteomyelitis of the maxillary bone and mandible is mostly associated with poor oral hygiene and dental caries.
+                    <span class="opt-zh">(D) 上頷骨與下頷骨的骨髓炎主要與口腔衛生不良及蛀牙有關。</span>
+                </li>
+            </ul>
+            <details>
+                <summary>解答與解析</summary>
+                <p><b>答案：(C)</b><br>解析：兒童血行性骨髓炎最常見的致病菌是「金黃色葡萄球菌 (S. aureus)」，選項故意寫 E. coli 來騙人。</p>
+            </details>
+        </div>
+
         <h3>2. 骨質疏鬆 (Osteoporosis) 與代謝性骨病</h3>
         <p>這是一個無聲的殺手。人類的骨質大約在 <b>25-35 歲之間達到巔峰 (peak bone mass)</b>，之後如果吸收大於生成，骨質就會慢慢流失。病理下可見<b>骨小樑 (trabeculae) 變小變薄</b>，無法提供足夠的結構支撐。</p>
         
@@ -265,6 +408,29 @@
             <li>在兒童稱為<b>佝僂症 (Rickets)</b>。</li>
             <li>在成人，維生素 D 缺乏可能導致虛弱、骨痛，甚至完全沒症狀。此時的骨骼病變稱為<b>軟骨症 (Osteomalacia)</b>，<span style="color:var(--rose)">絕不能稱為 Rickets（這是考點）</span>。</li>
         </ul>
+
+        <div class="quiz">
+            <p class="quiz-question">Which of the following statements is incorrect?</p>
+            <p class="quiz-translate">下列敘述何者錯誤？</p>
+            <ul class="quiz-options">
+                <li>(A) Vitamin D deficiency in adults may cause weakness, pain, or even no symptoms at all.
+                    <span class="opt-zh">(A) 成人缺乏維生素 D 可能會導致虛弱、骨痛，甚至完全沒有症狀。</span>
+                </li>
+                <li>(B) Bone lesions caused by vitamin D deficiency in adults are called rickets.
+                    <span class="opt-zh">(B) 成人因維生素 D 缺乏引起的骨骼病變稱為佝僂症 (Rickets)。</span>
+                </li>
+                <li>(C) Parathyroid adenoma or parathyroid hyperplasia can both lead to elevated parathyroid hormone levels in the body, which in turn affect bone structure.
+                    <span class="opt-zh">(C) 副甲狀腺腺瘤或副甲狀腺增生皆可導致體內副甲狀腺素升高，進而影響骨骼結構。</span>
+                </li>
+                <li>(D) Chronic renal failure can also affect bone metabolism.
+                    <span class="opt-zh">(D) 慢性腎衰竭也會影響骨骼代謝。</span>
+                </li>
+            </ul>
+            <details>
+                <summary>解答與解析</summary>
+                <p><b>答案：(B)</b><br>解析：成人的 Vit D 缺乏導致的骨骼病變稱為「軟骨症 (Osteomalacia)」。Rickets (佝僂症) 是專指發生在「兒童」骨骼發育生長板未閉合時的病變。</p>
+            </details>
+        </div>
 
       </section>
 
@@ -283,114 +449,6 @@
             <li><b>骨髓炎</b> = 兒童好發於長骨 Metaphysis = 最常見病原體是 <b>S. aureus</b> (絕對不是 E. coli！)。</li>
             <li><b>骨質疏鬆與代謝</b> = 類固醇會「加速」流失 = 成人 Vit D 缺乏叫「軟骨症(Osteomalacia)」，兒童才叫 Rickets。</li>
         </ul>
-      </section>
-
-      <!-- Section Exam -->
-      <section id="sec-exam">
-        <div class="sec-head">
-          <div class="sec-num">05</div>
-          <h2>歷屆考題全收錄</h2>
-        </div>
-        <p class="tagline">以下收錄 BM110-BM112「骨骼肌肉病理學I」相關考題，打鐵趁熱！</p>
-
-        <div class="quiz">
-            <p class="quiz-question">Which one of these descriptions about achondroplasia is incorrect?</p>
-            <ul class="quiz-options">
-                <li>(A) It involves chromosome 4 and is inherited in an autosomal dominant pattern.</li>
-                <li>(B) Patients usually have shortened limbs, but normal spinal length.</li>
-                <li>(C) During bone development, patients lack normal membranous ossification.</li>
-                <li>(D) It is associated with an activating mutation of FGFR3.</li>
-            </ul>
-            <details>
-                <summary>解答與解析</summary>
-                <p><b>答案：(C)</b><br>解析：Achondroplasia (軟骨發育不全) 是由於 FGFR3 基因活化突變，導致「軟骨內骨化 (endochondral ossification)」受到抑制，因此長骨無法變長造成短肢。但頭骨的「膜內骨化 (membranous ossification)」是完全正常的！這題連續考了三年，是超級重點。</p>
-            </details>
-        </div>
-
-        <div class="quiz">
-            <p class="quiz-question">Regarding osteogenesis imperfecta, which of the following descriptions is incorrect?</p>
-            <ul class="quiz-options">
-                <li>(A) Patients are unable to produce normal type I collagen.</li>
-                <li>(B) It is associated with mutations in the COL1A1 gene on 17q21.3–q22 and the COL1A2 gene on 7q21.3–q22.</li>
-                <li>(C) It is an autosomal dominant disorder that can be classified into four types.</li>
-                <li>(D) Due to the lack of normal type I collagen, patients' irises may develop Lisch nodules.</li>
-            </ul>
-            <details>
-                <summary>解答與解析</summary>
-                <p><b>答案：(D)</b><br>解析：成骨不全症的眼睛特徵是「藍色鞏膜 (Blue sclera)」。Lisch nodules (虹膜上的錯構瘤) 是神經纖維瘤第一型 (NF1) 的特徵，不要搞混了！</p>
-            </details>
-        </div>
-
-        <div class="quiz">
-            <p class="quiz-question">Which of the following descriptions about osteopetrosis is incorrect?</p>
-            <ul class="quiz-options">
-                <li>(A) Patients have bones as hard as marble (or Wolverine), which makes them less prone to fractures.</li>
-                <li>(B) The main cause is the inability to generate osteoclasts or the loss of bone resorption ability in generated osteoclasts.</li>
-                <li>(C) In addition to skeletal abnormalities, patients often exhibit conditions such as cranial nerve paralysis, recurrent bacterial infections, or hepatosplenomegaly.</li>
-                <li>(D) Patients can undergo hematopoietic stem cell transplantation for treatment.</li>
-            </ul>
-            <details>
-                <summary>解答與解析</summary>
-                <p><b>答案：(A)</b><br>解析：大理石骨病雖然骨質密度高，但內部結構異常，像粉筆一樣「非常容易骨折 (more prone to fractures)」，絕對不像金剛狼一樣堅固。</p>
-            </details>
-        </div>
-
-        <div class="quiz">
-            <p class="quiz-question">Regarding osteonecrosis (or avascular necrosis), which of the following descriptions is incorrect?</p>
-            <ul class="quiz-options">
-                <li>(A) It is mostly caused by infection.</li>
-                <li>(B) It is associated with trauma, chronic alcohol abuse, or steroid use.</li>
-                <li>(C) In patients with long-term alcohol abuse, osteonecrosis often occurs in the femoral head.</li>
-                <li>(D) When it occurs, the medullary bone is often affected first, while the overlying cortical bone and cartilage cap remain unaffected for the time being.</li>
-            </ul>
-            <details>
-                <summary>解答與解析</summary>
-                <p><b>答案：(A)</b><br>解析：缺血性骨壞死的主因是外傷、酗酒、類固醇造成血流阻斷，而非感染 (感染引起的是骨髓炎)。選項 (D) 也是常考的正確觀念，因血供差異，骨髓會先壞死。</p>
-            </details>
-        </div>
-
-        <div class="quiz">
-            <p class="quiz-question">Regarding osteomyelitis, which of the following descriptions is incorrect?</p>
-            <ul class="quiz-options">
-                <li>(A) Caused by bacterial infection through direct exposure or hematogenous spread.</li>
-                <li>(B) In children, it often occurs near the knee joint, while in adults it is more common in the foot.</li>
-                <li>(C) In 5–10-year-old children, osteomyelitis near the metaphysis of long bones is most commonly caused by Escherichia coli.</li>
-                <li>(D) Osteomyelitis of the maxillary bone and mandible is mostly associated with poor oral hygiene and dental caries.</li>
-            </ul>
-            <details>
-                <summary>解答與解析</summary>
-                <p><b>答案：(C)</b><br>解析：兒童血行性骨髓炎最常見的致病菌是「金黃色葡萄球菌 (S. aureus)」，選項故意寫 E. coli 來騙人。</p>
-            </details>
-        </div>
-
-        <div class="quiz">
-            <p class="quiz-question">Which of the following descriptions about fractures is most appropriate?</p>
-            <ul class="quiz-options">
-                <li>(A) Stress fractures often occur in weight-bearing bones of the feet.</li>
-                <li>(B) Fractures resulting from bone weakening due to disease are termed pathological fractures.</li>
-                <li>(C) After approximately six weeks, the fracture site will show a complete meshwork of woven bone.</li>
-                <li>(D) All of the above descriptions (A, B, C) are correct.</li>
-            </ul>
-            <details>
-                <summary>解答與解析</summary>
-                <p><b>答案：(D)</b><br>解析：A、B、C 的敘述皆為正確的病理學概念。</p>
-            </details>
-        </div>
-
-        <div class="quiz">
-            <p class="quiz-question">Which of the following statements is incorrect?</p>
-            <ul class="quiz-options">
-                <li>(A) Vitamin D deficiency in adults may cause weakness, pain, or even no symptoms at all.</li>
-                <li>(B) Bone lesions caused by vitamin D deficiency in adults are called rickets.</li>
-                <li>(C) Parathyroid adenoma or parathyroid hyperplasia can both lead to elevated parathyroid hormone levels in the body, which in turn affect bone structure.</li>
-                <li>(D) Chronic renal failure can also affect bone metabolism.</li>
-            </ul>
-            <details>
-                <summary>解答與解析</summary>
-                <p><b>答案：(B)</b><br>解析：成人的 Vit D 缺乏導致的骨骼病變稱為「軟骨症 (Osteomalacia)」。Rickets (佝僂症) 是專指發生在「兒童」骨骼發育生長板未閉合時的病變。</p>
-            </details>
-        </div>
-
       </section>
 
     </main>
