@@ -38,12 +38,27 @@
   p.sub{margin:0;color:var(--text-2);max-width:60ch;font-size:17px}
 
   main{padding:46px 0 80px}
-  .list-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:20px}
-  .item{display:block;border:1px solid var(--line);border-radius:12px;background:var(--bg-2);
-    padding:20px 24px;text-decoration:none;color:inherit;transition:.15s}
-  .item:hover{border-color:var(--teal-dim);background:var(--bg-3)}
-  .item h3{margin:0 0 10px;font-family:var(--serif);font-size:19px;font-weight:700;line-height:1.4}
-  .item .meta{font-family:var(--mono);font-size:12px;color:var(--text-3)}
+  .lead{font-family:var(--mono);font-size:11px;letter-spacing:.2em;color:var(--text-3);margin-bottom:20px}
+
+  .card{display:block;text-decoration:none;color:inherit;
+    border:1px solid var(--line);border-radius:16px;background:var(--bg-2);
+    padding:26px 30px;margin-bottom:16px;transition:.15s}
+  .card:hover{border-color:var(--teal-dim);background:var(--bg-3)}
+  .card-top{display:flex;align-items:baseline;gap:14px;flex-wrap:wrap;margin-bottom:8px}
+  .card h2{font-family:var(--serif);font-size:22px;margin:0;font-weight:700;flex:1;min-width:0}
+  .qn{font-family:var(--mono);font-size:12px;color:var(--text-2);
+    border:1px solid var(--line-2);padding:3px 11px;border-radius:20px;white-space:nowrap}
+  .card p{margin:0;color:var(--text-2);font-size:14.5px;line-height:1.75}
+  .teacher{margin-top:14px;font-family:var(--mono);font-size:12px;color:var(--text-3)}
+
+  footer{border-top:1px solid var(--line);padding:26px 0 60px;color:var(--text-3);font-size:13.5px}
+
+  @media (max-width:700px){
+    .wrap{padding:0 16px}
+    header.hero{padding:40px 0 30px}
+    .card{padding:20px 20px}
+    .card h2{font-size:20px}
+  }
 </style>
 </head>
 <body>
@@ -53,25 +68,34 @@
     <a href="../index.html" class="backlink">← 返回總目錄</a>
     <div class="eyebrow"><span class="rule"></span>BLOCK 8<span class="dot">·</span>肌肉骨骼系統</div>
     <h1>科目<em>列表</em></h1>
-    <p class="sub">選擇你想複習的科目，展開故事型的深度學習之旅。</p>
+    <p class="sub">依科目分類的期末考重點整理。點擊進入各科，展開深度學習與即時測驗。</p>
   </div>
 </header>
 
 <main>
 <div class="wrap">
-  <div class="list-grid">
-    <a href="musculoskeletal-pathology-1.html" class="item">
-      <h3>肌肉骨骼病理學(I)</h3>
-      <div class="meta">陳建亨 · 7 題</div>
-    </a>
-  
-    <a href="musculoskeletal-pathology-2.html" class="item">
-      <h3>肌肉骨骼病理學(II)</h3>
-      <div class="meta">陳建亨 · 6 題</div>
-    </a>
-  </div>
+  <div class="lead">SUBJECTS</div>
+
+  <a class="card" href="musculoskeletal-pathology-1.html">
+    <div class="card-top"><h2>肌肉骨骼病理學(I)</h2><span class="qn">7 題</span></div>
+    <p>先天性骨骼異常（成骨不全、軟骨發育不全、大理石骨病）、骨折與缺血性骨壞死（骨髓先死）、骨髓炎與骨質疏鬆（成人維生素D缺乏為軟骨症）。</p>
+    <div class="teacher">陳建亨　·　110 ／ 111 ／ 112</div>
+  </a>
+
+  <a class="card" href="musculoskeletal-pathology-2.html">
+    <div class="card-top"><h2>肌肉骨骼病理學(II)</h2><span class="qn">6 題</span></div>
+    <p>軟組織與肉瘤（染色體變異陷阱、脂肪肉瘤位置）、神經肌肉交界疾病（Lambert-Eaton vs MG）、肌纖維特性（紅肌與白肌的脂肪肝醣大反轉）、肌少症。</p>
+    <div class="teacher">陳建亨　·　110 ／ 111 ／ 112</div>
+  </a>
+
 </div>
 </main>
+
+<footer>
+  <div class="wrap">
+    <p>內容依各學年度考古題詳解整理，若與老師上課投影片有出入，請以上課內容為準。</p>
+  </div>
+</footer>
 
 </body>
 </html>
