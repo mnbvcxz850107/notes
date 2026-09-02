@@ -111,6 +111,8 @@
   .year-content { padding: 24px; }
   .year-content .quiz { margin: 0 0 24px 0; background: transparent; border: 1px dashed var(--line); }
   .year-content .quiz:last-child { margin-bottom: 0; }
+  .quiz.repeated { border: 2px solid var(--rose); background: rgba(229,139,133,.05); box-shadow: 0 0 15px rgba(229,139,133,.15); position: relative; }
+  .quiz.repeated::before { content: '🔥 連續三年必考'; position: absolute; top: -14px; right: 20px; background: var(--rose); color: #FFF; font-size: 12px; font-weight: 700; padding: 4px 12px; border-radius: 20px; letter-spacing: .05em; }
 </style>
 </head>
 <body>
@@ -546,18 +548,20 @@
         </details>
       </section>
 
+      
       <!-- Section Exams -->
       <section id="sec-exams">
         <div class="sec-head">
           <div class="sec-num">09</div>
           <h2>歷年考題純享版</h2>
         </div>
-        <p>前面已經將考題打散在各個觀念中，這裡為您重新依年份羅列，方便考前刷題測驗手感！陳建亭老師的題目連三年幾乎一模一樣，只要寫熟就穩拿滿分。</p>
+        <p>前面已經將考題打散在各個觀念中，這裡為您重新依年份完整羅列，方便考前刷題測驗手感！<br>
+        <span style="color:var(--rose)">🔥 <b>紅色發光外框</b>代表該題型在 110、111、112 年連續考了三次以上！這些絕對是老師的命題題庫，進考場前一定要背到爛掉！</span></p>
 
         <div class="year-section">
           <div class="year-header">112 年 (BM112)</div>
           <div class="year-content">
-            <div class="quiz">
+            <div class="quiz repeated">
               <p class="quiz-question">85. Which one of these descriptions about achondroplasia is incorrect?</p>
               <ul class="quiz-options">
                 <li>(A) It involves chromosome 4 and is inherited in an autosomal dominant pattern.</li>
@@ -577,7 +581,7 @@
               </ul>
               <details><summary>解答</summary><p><b>(A)</b> 雖然硬如大理石，但極脆，<b>非常容易</b>骨折 (more prone to fractures)。</p></details>
             </div>
-            <div class="quiz">
+            <div class="quiz repeated">
               <p class="quiz-question">87. Which of the following descriptions about osteogenesis imperfecta is incorrect?</p>
               <ul class="quiz-options">
                 <li>(A) Patients cannot produce normal type I collagen.</li>
@@ -588,6 +592,16 @@
               <details><summary>解答</summary><p><b>(D)</b> Lisch nodules 是第一型神經纖維瘤 (NF1) 的特徵，與 OI 無關。</p></details>
             </div>
             <div class="quiz">
+              <p class="quiz-question">88. Which of the following descriptions about fractures is most appropriate?</p>
+              <ul class="quiz-options">
+                <li>(A) Stress fractures often occur in weight-bearing bones of the feet.</li>
+                <li>(B) Fractures resulting from bone weakening due to disease are termed pathological fractures.</li>
+                <li>(C) After approximately six weeks, the fracture site will show a complete meshwork of woven bone.</li>
+                <li>(D) All of the above descriptions (A, B, C) are correct.</li>
+              </ul>
+              <details><summary>解答</summary><p><b>(D)</b> 以上皆是。</p></details>
+            </div>
+            <div class="quiz repeated">
               <p class="quiz-question">89. Which of the following statements about osteonecrosis (avascular necrosis) is incorrect?</p>
               <ul class="quiz-options">
                 <li>(A) It is mostly caused by infections.</li>
@@ -597,7 +611,7 @@
               </ul>
               <details><summary>解答</summary><p><b>(A)</b> 骨壞死主要是血管阻塞 (外傷、酗酒、類固醇)，不是感染。</p></details>
             </div>
-            <div class="quiz">
+            <div class="quiz repeated">
               <p class="quiz-question">90. Which of the following descriptions about osteomyelitis is incorrect?</p>
               <ul class="quiz-options">
                 <li>(A) It is caused by bacterial infections either through direct exposure or bloodstream transmission.</li>
@@ -613,45 +627,124 @@
         <div class="year-section">
           <div class="year-header">111 年 (BM111)</div>
           <div class="year-content">
-            <p style="color:var(--text-3); font-size:14.5px; margin-bottom:16px;">註：111 年題目選項與 112 年幾乎 100% 雷同，為節省篇幅僅列出題目與答案。</p>
-            <ul>
-                <li><b>Q74. Regarding osteogenesis imperfecta, which is incorrect?</b><br>
-                答案：(D) patients' irises may develop Lisch nodules.</li>
-                <li><b>Q75. Regarding osteonecrosis, which of the following descriptions is incorrect?</b><br>
-                答案：(A) It is mostly caused by infection.</li>
-                <li><b>Q76. Which of the following descriptions about achondroplasia is incorrect?</b><br>
-                答案：(C) During bone development, patients lack normal membranous ossification.</li>
-                <li><b>Q77. Regarding osteomyelitis, which of the following descriptions is incorrect?</b><br>
-                答案：(C) most commonly caused by Escherichia coli.</li>
-                <li><b>Q78. Regarding osteoporosis, which of the following descriptions is incorrect?</b><br>
-                答案：(C) Steroid therapy can slow down the rate of bone loss. (類固醇會加速骨質流失)</li>
-            </ul>
+            <div class="quiz repeated">
+              <p class="quiz-question">74. Regarding osteogenesis imperfecta, which of the following descriptions is incorrect?</p>
+              <ul class="quiz-options">
+                <li>(A) Patients are unable to produce normal type I collagen.</li>
+                <li>(B) It is associated with mutations in the COL1A1 gene on 17q21.3-q22 and the COL1A2 gene on 7q21.3-q22.</li>
+                <li>(C) It is an autosomal dominant disorder that can be classified into four types.</li>
+                <li>(D) Due to the lack of normal type I collagen, patients' irises may develop Lisch nodules.</li>
+              </ul>
+              <details><summary>解答</summary><p><b>(D)</b> Lisch nodules 與成骨不全症無關。</p></details>
+            </div>
+            <div class="quiz repeated">
+              <p class="quiz-question">75. Regarding osteonecrosis (or avascular necrosis), which of the following descriptions is incorrect?</p>
+              <ul class="quiz-options">
+                <li>(A) It is mostly caused by infection.</li>
+                <li>(B) It is associated with trauma, chronic alcohol abuse, or steroid use.</li>
+                <li>(C) In patients with long-term alcohol abuse, osteonecrosis often occurs in the femoral head.</li>
+                <li>(D) When it occurs, the medullary bone is often affected first, while the overlying cortical bone and cartilage cap remain unaffected for the time being.</li>
+              </ul>
+              <details><summary>解答</summary><p><b>(A)</b> 骨壞死不是由感染引起的。</p></details>
+            </div>
+            <div class="quiz repeated">
+              <p class="quiz-question">76. Which of the following descriptions about achondroplasia is incorrect?</p>
+              <ul class="quiz-options">
+                <li>(A) It involves chromosome 4 and is inherited in an autosomal dominant pattern.</li>
+                <li>(B) Patients usually have shortened limbs, but normal spinal length.</li>
+                <li>(C) During bone development, patients lack normal membranous ossification.</li>
+                <li>(D) It is associated with an activating mutation of FGFR3.</li>
+              </ul>
+              <details><summary>解答</summary><p><b>(C)</b> 缺乏的是軟骨內骨化，膜內骨化完全正常。</p></details>
+            </div>
+            <div class="quiz repeated">
+              <p class="quiz-question">77. Regarding osteomyelitis, which of the following descriptions is incorrect?</p>
+              <ul class="quiz-options">
+                <li>(A) Caused by bacterial infection through direct exposure or hematogenous spread.</li>
+                <li>(B) In children, it often occurs near the knee joint, while in adults it is more common in the foot.</li>
+                <li>(C) In 5–10-year-old children, osteomyelitis near the metaphysis of long bones is most commonly caused by Escherichia coli.</li>
+                <li>(D) Osteomyelitis of the maxillary bone and mandible is mostly associated with poor oral hygiene and dental caries.</li>
+              </ul>
+              <details><summary>解答</summary><p><b>(C)</b> 最常見是金黃色葡萄球菌 (S. aureus)。</p></details>
+            </div>
+            <div class="quiz">
+              <p class="quiz-question">78. Regarding osteoporosis, which of the following descriptions is incorrect?</p>
+              <ul class="quiz-options">
+                <li>(A) In humans, bone mass usually peaks around 25–35 years of age.</li>
+                <li>(B) Patients' trabeculae become smaller and thinner, failing to provide adequate structural support.</li>
+                <li>(C) Steroid therapy can slow down the rate of bone loss.</li>
+                <li>(D) Lack of exercise, alcohol abuse, and vitamin D deficiency are possible causes.</li>
+              </ul>
+              <details><summary>解答</summary><p><b>(C)</b> 類固醇治療會「加速」骨質流失，而不是減緩。</p></details>
+            </div>
           </div>
         </div>
 
         <div class="year-section">
           <div class="year-header">110 年 (BM110)</div>
           <div class="year-content">
-            <p style="color:var(--text-3); font-size:14.5px; margin-bottom:16px;">註：110 年題目選項依然與 112 年幾乎 100% 雷同，為節省篇幅僅列出題目與答案。</p>
-            <ul>
-                <li><b>Q50. Which one of these descriptions about achondroplasia is wrong?</b><br>
-                答案：(C) These patients have abnormal membranous ossification.</li>
-                <li><b>Q51. Which one of these descriptions about osteopetrosis is wrong?</b><br>
-                答案：(A) The bones of these patients are as hard as Wolverine. (雖然像金剛狼一樣硬，但脆如玻璃易碎)</li>
-                <li><b>Q52. Which one of these descriptions about osteogenesis imperfecta is wrong?</b><br>
-                答案：(D) These patients might have iris hamartoma (Lisch nodules)</li>
-                <li><b>Q54. Which one of these descriptions about osteonecrosis (or avascular necrosis) is wrong?</b><br>
-                答案：(A) It often results from infection.</li>
-                <li><b>Q55. Which one of these descriptions about osteomyelitis is wrong?</b><br>
-                答案：(C) E.Coli. are the most common pathogen...</li>
-            </ul>
+            <div class="quiz repeated">
+              <p class="quiz-question">50. Which one of these descriptions about achondroplasia is wrong?</p>
+              <ul class="quiz-options">
+                <li>(A) It is related with chromosome 4p16.3 with autosomal dominant pattern.</li>
+                <li>(B) These patients have short limbs and normal vertebral length.</li>
+                <li>(C) These patients have abnormal membranous ossification.</li>
+                <li>(D) This entity is related with activating mutation of FGFR3 gene.</li>
+              </ul>
+              <details><summary>解答</summary><p><b>(C)</b> 膜內骨化完全正常。</p></details>
+            </div>
+            <div class="quiz">
+              <p class="quiz-question">51. Which one of these descriptions about osteopetrosis is wrong?</p>
+              <ul class="quiz-options">
+                <li>(A) The bones of these patients are as hard as Wolverine.</li>
+                <li>(B) Osteoclasts are absent or lose the ability for bone resorption.</li>
+                <li>(C) Besides skeletal abnormality, these patients might also have cranial nerve palsy, recurrent infection and hepato-splenomegaly.</li>
+                <li>(D) These patients could receive hematopoietic stem cell transplantation for treatment.</li>
+              </ul>
+              <details><summary>解答</summary><p><b>(A)</b> 骨頭雖然硬化，但極度脆弱易碎，不像金剛狼的骨骼。</p></details>
+            </div>
+            <div class="quiz repeated">
+              <p class="quiz-question">52. Which one of these descriptions about osteogenesis imperfecta is wrong?</p>
+              <ul class="quiz-options">
+                <li>(A) These patients lose the ability to produce normal type I collagen</li>
+                <li>(B) This entity is related with 17q21.3-q22 (COL1A1 gene) or 7q21.3-q22 (COL1A2 genes) mutation</li>
+                <li>(C) This entity is autosomal dominant pattern and further devided into four subtypes</li>
+                <li>(D) These patients might have iris hamartoma (Lisch nodules) due to lack of normal type I collagen</li>
+              </ul>
+              <details><summary>解答</summary><p><b>(D)</b> Lisch nodules 與成骨不全症無關。</p></details>
+            </div>
+            <div class="quiz">
+              <p class="quiz-question">53. Which one of these descriptions about bone fracture is adequate ?</p>
+              <ul class="quiz-options">
+                <li>(A) Stress fracture usually occurs in metatarsal bones of feet.</li>
+                <li>(B) Fracture of bones which are previous weakened by diseases is called pathologic fracture.</li>
+                <li>(C) There are complete meshwork of woven bones about 6 weeks after bone fracture.</li>
+                <li>(D) All these descriptions are correct.</li>
+              </ul>
+              <details><summary>解答</summary><p><b>(D)</b> 以上皆是。</p></details>
+            </div>
+            <div class="quiz repeated">
+              <p class="quiz-question">54. Which one of these descriptions about osteonecrosis (or avascular necrosis) is wrong ?</p>
+              <ul class="quiz-options">
+                <li>(A) It often results from infection.</li>
+                <li>(B) It is usually related with trauma, alcoholism or steroid administration.</li>
+                <li>(C) Osteonecrosis usually occurs in the femoral head of the patients with alcoholism.</li>
+                <li>(D) When osteonecrosis occurs in the femoral head, the medullary bone is dead with viable overlying cortical bone and cartilage cap initially.</li>
+              </ul>
+              <details><summary>解答</summary><p><b>(A)</b> 不是感染引起的。</p></details>
+            </div>
+            <div class="quiz repeated">
+              <p class="quiz-question">55. Which one of these descriptions about osteomyelitis is wrong?</p>
+              <ul class="quiz-options">
+                <li>(A) The pathogenic bacteria usually infect the bone via direct trauma or blood stream.</li>
+                <li>(B) Osteomyelitis usually occurs near the knee joints of kids, but in the feet of adults.</li>
+                <li>(C) E.Coli. are the most common pathogen of osteomyelitis in the 5-10 year-old kid. It usually occurs in the metaphysics of long bones.</li>
+                <li>(D) The osteomyelitis of maxillary and mandible bones is usually related with poor oral hygiene and dental caries.</li>
+              </ul>
+              <details><summary>解答</summary><p><b>(C)</b> 最常見是金黃色葡萄球菌 (S. aureus)。</p></details>
+            </div>
           </div>
         </div>
       </section>
 
     </main>
-  </div>
-</div>
-
-</body>
-</html>
