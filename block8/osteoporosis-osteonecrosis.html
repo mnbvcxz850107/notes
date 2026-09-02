@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>骨質疏鬆與骨壞死｜裸讀學習筆記</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&family=Noto+Serif+TC:wght@500;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0F1B18;--bg-2:#152420;--bg-3:#1B2E29;--line:#26403A;--line-2:#31534B;
+    --text:#E9F1EE;--text-2:#A8C2BA;--text-3:#7A968D;
+    --teal:#7FC9BE;--teal-dim:#4E9A90;--gold:#C9A961;--rose:#E58B85;
+    --serif:"Noto Serif TC","Songti TC",serif;
+    --sans:"Noto Sans TC","PingFang TC","Microsoft JhengHei",sans-serif;
+    --mono:"JetBrains Mono",ui-monospace,Menlo,monospace;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth;scroll-padding-top:24px;overflow-x:hidden}
+  body{margin:0;background:var(--bg);color:var(--text);font-family:var(--sans);
+    font-size:16.5px;line-height:1.9;font-weight:300;-webkit-font-smoothing:antialiased;
+    overflow-x:hidden}
+  .wrap{max-width:1150px;margin:0 auto;padding:0 22px}
+
+  header.hero{padding:66px 0 52px;border-bottom:1px solid var(--line)}
+  .backlink{display:inline-block;font-family:var(--mono);font-size:12px;
+    color:var(--text-3);text-decoration:none;margin-bottom:22px;
+    border:1px solid var(--line);border-radius:6px;padding:5px 12px;transition:.15s}
+  .backlink:hover{color:var(--teal);border-color:var(--teal-dim)}
+  .eyebrow{display:flex;align-items:center;gap:16px;margin-bottom:26px;
+    font-family:var(--serif);font-size:15px;letter-spacing:.34em;color:var(--teal)}
+  .eyebrow .rule{width:56px;height:1px;background:var(--gold)}
+  .eyebrow .dot{color:var(--gold)}
+  header.hero h1{font-family:var(--serif);font-weight:700;font-size:clamp(36px,6.4vw,68px);
+    line-height:1.15;margin:0 0 22px;letter-spacing:.02em}
+  header.hero h1 em{font-style:normal;color:var(--teal)}
+  header.hero p.sub{margin:0;color:var(--text-2);max-width:62ch;font-size:17px;line-height:1.85}
+  .intro-card{border:1px solid var(--line);border-radius:16px;padding:26px 30px;margin-top:34px;background:var(--bg-2)}
+  .intro-card p{margin:0 0 22px;color:var(--text-2)}
+  .intro-card b{color:var(--teal);font-weight:500}
+
+  .cols{display:grid;grid-template-columns:220px 1fr;gap:52px;padding:46px 0 90px;align-items:start}
+  @media (max-width: 800px) {
+    .cols { grid-template-columns: 1fr; }
+    nav.toc { display: none; }
+  }
+  nav.toc{position:sticky;top:26px}
+  nav.toc .t{font-family:var(--mono);font-size:11px;letter-spacing:.2em;color:var(--text-3);margin-bottom:14px}
+  nav.toc a{display:block;padding:7px 14px;border-left:1px solid var(--line);
+    color:var(--text-2);text-decoration:none;font-size:14px;transition:.15s}
+  nav.toc a:hover{border-left-color:var(--teal);color:var(--teal);background:var(--bg-2)}
+  nav.toc a.exam{color:var(--gold)}
+
+  section{margin-bottom:64px;scroll-margin-top:24px}
+  .sec-head{display:flex;align-items:baseline;gap:16px;border-bottom:1px solid var(--line-2);padding-bottom:12px;margin-bottom:26px}
+  .sec-num{font-family:var(--serif);font-size:30px;color:var(--gold);line-height:1}
+  .sec-head h2{font-family:var(--serif);font-size:clamp(23px,3.4vw,31px);margin:0;font-weight:700;letter-spacing:.02em}
+  h3{font-family:var(--serif);font-size:21px;margin:38px 0 12px;font-weight:500}
+  h4{font-size:16.5px;margin:24px 0 8px;color:var(--teal);font-weight:500}
+  p{margin:0 0 15px}
+  ul,ol{margin:0 0 17px;padding-left:22px}
+  li{margin-bottom:8px}
+  li::marker{color:var(--teal-dim)}
+  strong,b{font-weight:500;color:#FFF}
+  u{text-decoration-color:var(--teal-dim);text-underline-offset:3px}
+
+  .box{border-radius:13px;padding:20px 24px;margin:22px 0;border:1px solid var(--line);background:var(--bg-2)}
+  .box .bt{font-weight:500;font-size:14.5px;margin-bottom:10px;display:flex;align-items:center;gap:9px;color:#FFF}
+  .box p:last-child,.box ul:last-child,.box ol:last-child{margin-bottom:0}
+  .badge{font-family:var(--mono);font-size:10px;padding:2px 8px;border-radius:3px;letter-spacing:.06em;
+    border:1px solid currentColor;font-weight:600}
+  .box.exam{border-color:rgba(201,169,97,.45);background:rgba(201,169,97,.07)}
+  .box.exam .badge{color:var(--gold)}
+  .box.trap{border-color:rgba(229,139,133,.45);background:rgba(229,139,133,.07)}
+  .box.trap .badge{color:var(--rose)}
+  .box.key{border-color:rgba(127,201,190,.4);background:rgba(127,201,190,.07)}
+  .box.key .badge{color:var(--teal)}
+
+  /* 隨堂測驗 */
+  .quiz{background:var(--bg-3);border-radius:12px;padding:22px 26px;margin:32px 0;border:1px solid var(--line)}
+  .quiz-question{font-weight:500;color:#FFF;margin-bottom:8px;font-size:17px}
+  .quiz-translate{font-size:14.5px;color:var(--text-3);margin-bottom:16px;border-left:2px solid var(--line-2);padding-left:12px}
+  .quiz-options{list-style:none;padding:0;margin:0 0 20px}
+  .quiz-options li{background:var(--bg-2);border:1px solid var(--line);padding:10px 16px;
+    margin-bottom:8px;border-radius:8px;font-size:15px;cursor:default}
+  .quiz-options li .opt-zh{display:block;font-size:13.5px;color:var(--text-3);margin-top:4px}
+  details{background:var(--bg-2);border:1px solid var(--line);border-radius:8px;overflow:hidden}
+  summary{padding:12px 16px;font-size:14.5px;font-weight:500;color:var(--teal);cursor:pointer;
+    user-select:none;background:rgba(127,201,190,.05)}
+  summary:hover{background:rgba(127,201,190,.1)}
+  details p{padding:16px;margin:0;font-size:15px;color:var(--text-2);border-top:1px solid var(--line)}
+</style>
+</head>
+<body>
+
+<div class="wrap">
+  <header class="hero">
+    <a href="index.html" class="backlink">← 返回目錄</a>
+    <div class="eyebrow">
+      <div class="rule"></div>
+      BLOCK 8
+      <div class="dot">✦</div>
+      ORTHOPEDICS
+    </div>
+    <h1>骨質疏鬆與骨壞死</h1>
+    <p class="sub">從脆弱的骨小樑到餓死的股骨頭。破解林松彥老師專屬的臨床診斷陷阱與用藥機制。</p>
+    
+    <div class="intro-card">
+      <p><b>臨床導讀：一跌倒就骨折，難道不是骨鬆嗎？</b></p>
+      <p>一位 65 歲的阿嬤在平地走路時不小心滑倒，竟然就造成了腰椎第一節 (L1) 壓迫性骨折。家屬很緊張地帶她去做雙能量 X 光吸收儀 (DXA) 測量骨質密度，結果出來：T-score 是 -1.5。<br><br>
+      家屬鬆了一口氣：「醫生，報告說 -2.5 以下才是骨質疏鬆，所以阿嬤的骨頭還算健康對吧？」<br>
+      如果您是醫師，您會怎麼回答？<br><br>
+      林松彥老師的考題非常重視**「臨床診斷的直覺」**。在接下來的章節中，我們將破解這個連考了三年的陷阱題，並帶您認識骨壞死的危險因子。</p>
+    </div>
+  </header>
+
+  <div class="cols">
+    <nav class="toc">
+      <div class="t">CONTENTS</div>
+      <a href="#sec-1">1. 骨質疏鬆的臨床診斷</a>
+      <a href="#sec-2">2. 骨骼重塑與藥物</a>
+      <a href="#sec-3">3. 缺血性骨壞死</a>
+      <a href="#sec-review" class="exam">一分鐘考前秒殺心法</a>
+    </nav>
+
+    <main>
+      
+      <!-- Section 1 -->
+      <section id="sec-1">
+        <div class="sec-head">
+          <div class="sec-num">01</div>
+          <h2>骨質疏鬆的臨床診斷與 DXA</h2>
+        </div>
+        
+        <p>骨質疏鬆 (Osteoporosis) 的主要病理機轉是「骨骼重塑 (Bone remodeling)」的失衡，也就是破骨細胞的吸收大於成骨細胞的生成。這是一個需要兩者耦合 (coupling) 的過程。</p>
+
+        <h3>DXA 雙能量 X 光吸收儀</h3>
+        <p>這是目前測量骨質密度 (BMD) 的黃金標準。
+        <ul>
+            <li><b>測量部位：</b>標準測量位置是 <b>腰椎第 1 至 4 節 (L1-L4)</b> 以及 <b>雙側髖關節 (Bilateral hips)</b>。</li>
+            <li><b>何時測量手臂？</b>除非患者腰椎或髖部有打鋼釘內固定 (internal fixation)，才會改測量<b>非慣用手 (non-dominant)</b> 的前臂遠端三分之一。</li>
+            <li><b>T-score 的意義：</b>將患者的骨質密度與 <b>30歲健康的白人年輕女性</b> 做比較。小於 -2.5 即為骨質疏鬆。</li>
+            <li><b>Z-score 的意義：</b>如果年輕患者測出 Z-score &le; -2.0，代表他的骨頭比同年齡的人差很多，必須仔細檢查是否有<b>次發性原因 (Secondary osteoporosis)</b>（如疾病或藥物引起）。</li>
+        </ul></p>
+
+        <div class="box trap">
+            <div class="bt"><span class="badge">易錯陷阱</span> 脆弱性骨折 = 骨質疏鬆！</div>
+            <p>這就是導讀中阿嬤的故事，<b>連續三年</b>出現在林松彥老師的考卷中！<br>
+            只要患者在「低衝擊力」下（例如平地滑倒、從站立高度跌倒）發生了<b>脆弱性骨折 (Fragility fracture)</b>，即使他的 DXA T-score 只有 -1.2 或 -1.5（未達 -2.5 的標準），在臨床上<b>直接確診為骨質疏鬆症！</b></p>
+        </div>
+
+        <div class="quiz">
+            <p class="quiz-question">Which of the following statements is incorrect? (from BM112)</p>
+            <p class="quiz-translate">關於骨質疏鬆的敘述，下列何者錯誤？</p>
+            <ul class="quiz-options">
+                <li>(A) The main pathogenesis of osteoporosis is an imbalance in bone remodeling.
+                    <span class="opt-zh">(A) 骨質疏鬆的主要致病機轉是骨骼重塑 (bone remodeling) 的失衡。</span>
+                </li>
+                <li>(B) The 1st-4th lumbar vertebrae and bilateral hips are common sites for DXA to detect bone density.
+                    <span class="opt-zh">(B) 第一至第四腰椎 (L1-L4) 及雙側髖關節是 DXA 偵測骨密度的常見部位。</span>
+                </li>
+                <li>(C) A 65-year-old woman slipped while walking and fractured the femoral neck of her right hip. DXA examination showed that the T-score of the left hip was -1.2 and the average bone density T-score of the lumbar spine was -1.4. Therefore, the woman is not an osteoporosis patient.
+                    <span class="opt-zh">(C) 一名 65 歲婦女走路滑倒導致右側股骨頸骨折。DXA 檢查顯示左髖 T-score 為 -1.2，腰椎平均 T-score 為 -1.4。因此，該名婦女不算是骨質疏鬆症患者。</span>
+                </li>
+                <li>(D) When a young patient's Z-score is less than -2.0, it is necessary to carefully investigate whether there is secondary osteoporosis caused by disease or drugs.
+                    <span class="opt-zh">(D) 當年輕患者的 Z-score 小於 -2.0 時，必須仔細調查是否有疾病或藥物引起的次發性骨質疏鬆。</span>
+                </li>
+            </ul>
+            <details>
+                <summary>解答與解析</summary>
+                <p><b>答案：(C)</b><br>解析：走路滑倒就骨折屬於「脆弱性骨折 (Fragility fracture)」。一旦發生脆弱性骨折，臨床上就直接視為骨質疏鬆症，不需要管 T-score 有沒有低於 -2.5。</p>
+            </details>
+        </div>
+
+        <div class="quiz">
+            <p class="quiz-question">Which of the following statements is incorrect? (from BM111)</p>
+            <p class="quiz-translate">下列敘述何者錯誤？</p>
+            <ul class="quiz-options">
+                <li>(A) Smoking and alcohol consumption are risk factors for osteoporosis.
+                    <span class="opt-zh">(A) 抽菸與喝酒是骨質疏鬆的危險因子。</span>
+                </li>
+                <li>(B) When a patient has internal fixation in L1–L4 vertebrae or both hips, bone density can be measured by DXA at the distal one-third of the dominant forearm.
+                    <span class="opt-zh">(B) 當患者的 L1-L4 腰椎或雙髖有關節內固定時，可以使用 DXA 測量慣用手 (dominant) 前臂遠端三分之一的骨密度。</span>
+                </li>
+                <li>(C) A 65-year-old woman was incidentally found to have an old compression fracture of L1 during a health check. DXA showed bilateral hip T-scores of -1.2/-1.3 and lumbar spine T-score of -2.2. This woman is still considered to have osteoporosis.
+                    <span class="opt-zh">(C) 一名 65 歲婦女在健檢時意外發現有 L1 的舊壓迫性骨折。DXA 顯示雙髖 T-score 為 -1.2/-1.3，腰椎為 -2.2。該婦女仍被認為患有骨質疏鬆症。</span>
+                </li>
+                <li>(D) In premenopausal women, a Z-score &le; -2.0 requires careful evaluation for secondary osteoporosis caused by disease or medication.
+                    <span class="opt-zh">(D) 在停經前婦女，若 Z-score &le; -2.0 需仔細評估是否有疾病或藥物引起的次發性骨質疏鬆。</span>
+                </li>
+            </ul>
+            <details>
+                <summary>解答與解析</summary>
+                <p><b>答案：(B)</b><br>解析：當腰椎與髖部不能測量時，應該測量的是「非慣用手 (non-dominant forearm)」的前臂遠端三分之一，因為非慣用手較少承受重力，骨質流失較明顯，測量較為準確。(C) 選項因為有壓迫性骨折的病史，所以視為骨鬆是正確的。</p>
+            </details>
+        </div>
+
+      </section>
+
+      <!-- Section 2 -->
+      <section id="sec-2">
+        <div class="sec-head">
+          <div class="sec-num">02</div>
+          <h2>骨骼重塑與創新藥物</h2>
+        </div>
+
+        <p>在正常的生理狀態下，骨骼重塑 (Bone remodeling) 必須仰賴破骨細胞與成骨細胞的合作 (Coupling)。傳統的骨鬆藥物（如雙磷酸鹽）是藉由「減少破骨細胞活性」來減緩骨質流失。</p>
+        <p><b>創新突破：抗硬化蛋白抗體 (Anti-sclerostin antibody, 例如 Romosozumab)</b><br>
+        這是一種革命性的藥物，它打破了破壞與建設必須綁在一起的規則（Uncoupling）。它透過促進 Wnt 訊息傳遞路徑來<b>「大幅增加骨質合成 (Increase bone synthesis)」</b>，同時抑制 RANKL 路徑來<b>「減少骨質破壞 (Decrease bone breakdown)」</b>，雙管齊下！</p>
+
+        <div class="quiz">
+            <p class="quiz-question">Which of the following statements is correct? (from BM110)</p>
+            <p class="quiz-translate">下列敘述何者正確？</p>
+            <ul class="quiz-options">
+                <li>(A) Bone modeling must have osteoclast and osteoblast coupling.
+                    <span class="opt-zh">(A) 骨骼塑型 (Bone modeling) 必須有破骨細胞與成骨細胞的耦合。</span>
+                </li>
+                <li>(B) RANK ligand inhibitor binds to RANK on osteoclasts to inhibit the maturation of osteoclasts.
+                    <span class="opt-zh">(B) RANKL 抑制劑會結合到破骨細胞上的 RANK，以抑制破骨細胞的成熟。</span>
+                </li>
+                <li>(C) The function of Selective estrogen receptor modulators (SERMs) is the same as that of estrogen, both of which can bind with estrogen receptor to be an estrogen agonist.
+                    <span class="opt-zh">(C) 選擇性雌激素受體調節劑 (SERMs) 的功能與雌激素相同，兩者皆可結合雌激素受體作為致效劑。</span>
+                </li>
+                <li>(D) Continuous administration of Parathyroid hormone increase bone formation.
+                    <span class="opt-zh">(D) 持續性給予 (Continuous) 副甲狀腺素會增加骨質生成。</span>
+                </li>
+                <li>(E) Anti-sclerostin antibody promote Wnt signaling pathway to increase bone synthesis and inhibits RANKL-dependent pathway to decrease bone breakdown.
+                    <span class="opt-zh">(E) 抗硬化蛋白抗體 (Anti-sclerostin) 會促進 Wnt 訊息路徑以增加骨合成，並抑制依賴 RANKL 的路徑以減少骨破壞。</span>
+                </li>
+            </ul>
+            <details>
+                <summary>解答與解析</summary>
+                <p><b>答案：(E)</b><br>解析：(A) 錯在「塑型 Modeling」不需要耦合，是「重塑 Remodeling」才需要。(B) RANKL 抑制劑 (如 Denosumab) 是結合並中和血中的 RANKL，而不是結合到破骨細胞的 RANK。(D) 必須是「間歇性給予 (intermittent)」PTH 才會長骨頭，持續給予會破壞骨頭。</p>
+            </details>
+        </div>
+
+      </section>
+
+      <!-- Section 3 -->
+      <section id="sec-3">
+        <div class="sec-head">
+          <div class="sec-num">03</div>
+          <h2>缺血性骨壞死 (Osteonecrosis)</h2>
+        </div>
+
+        <p>骨頭因為缺乏血液供應而餓死，最常發生在股骨頭 (Femoral head) 與膝關節 (Knee)。兩者的成因有很大的差異：</p>
+
+        <div class="tw">
+            <table>
+                <thead>
+                    <tr>
+                        <th>特徵</th>
+                        <th>股骨頭壞死 (ONFH)</th>
+                        <th>膝關節骨壞死 (Knee Osteonecrosis)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><b>主要成因</b></td>
+                        <td>多為<b>次發性 (Secondary)</b>：<br>男性以<b>酗酒</b>為主；女性以<b>長期使用類固醇 (如 SLE 病患)</b>為主。<br>其他危險因子：血液疾病、潛水夫病 (Caisson disease)。</td>
+                        <td>多為<b>自發性 (Spontaneous)</b>或特發性。<br>與藥物或酗酒的關聯性較低。</td>
+                    </tr>
+                    <tr>
+                        <td><b>發生位置</b></td>
+                        <td>常為<b>雙側 (Bilateral)</b>。</td>
+                        <td>大多為<b>單側 (Unilateral)</b>。</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <figure style="margin: 24px 0; text-align: center;">
+          <img src="img/avascular_necrosis.jpg" alt="Avascular Necrosis Diagram" style="max-width: 100%; max-height: 400px; border-radius: 12px; border: 1px solid var(--line);">
+          <figcaption style="font-size: 13.5px; color: var(--text-3); margin-top: 8px;">圖解：股骨頭缺血性壞死。軟骨下的骨質塌陷會在 X 光或 CT 上形成經典的「新月徑 (Crescent sign)」。</figcaption>
+        </figure>
+
+        <ul>
+            <li><b>影像學診斷：</b>最敏感、能最早發現骨壞死的工具是 <b>MRI</b>。當病情進展到晚期，軟骨下骨質塌陷時，會在 X 光片上看到經典的<b>「新月徑 (Crescent sign)」</b>。</li>
+            <li>HIV 感染本身也是股骨頭壞死的危險因子之一。</li>
+        </ul>
+
+        <div class="quiz">
+            <p class="quiz-question">Regarding the description of femoral head necrosis, which of the following is correct?</p>
+            <p class="quiz-translate">關於股骨頭壞死的敘述，下列何者正確？</p>
+            <ul class="quiz-options">
+                <li>(A) Smoking is the main cause of avascular necrosis of the femoral head in men.
+                    <span class="opt-zh">(A) 抽菸是男性股骨頭缺血性壞死的主因。</span>
+                </li>
+                <li>(B) When femoral head necrosis occurs, the typical crescent sign can be seen on a bone scan during a nuclear medicine examination.
+                    <span class="opt-zh">(B) 當股骨頭壞死發生時，在核子醫學的骨骼掃描 (bone scan) 中可見典型的新月徑 (crescent sign)。</span>
+                </li>
+                <li>(C) The use of protease inhibitors is a risk factor for femoral head necrosis, but HIV infection does not increase the risk of the disease.
+                    <span class="opt-zh">(C) 使用蛋白酶抑制劑是股骨頭壞死的危險因子，但 HIV 感染不會增加該疾病的風險。</span>
+                </li>
+                <li>(D) The causes of knee osteonecrosis are often spontaneous and mostly unilateral.
+                    <span class="opt-zh">(D) 膝關節骨壞死的原因通常是自發性的，且多為單側。</span>
+                </li>
+            </ul>
+            <details>
+                <summary>解答與解析</summary>
+                <p><b>答案：(D)</b><br>解析：(A) 男性主因是「酗酒 (Alcohol)」。(B) 新月徑 (Crescent sign) 主要是看 X 光或 CT 上的軟骨下骨折塌陷，骨掃描看不到新月徑。(C) HIV 感染本身就會增加骨壞死的風險。</p>
+            </details>
+        </div>
+
+      </section>
+
+      <!-- Section Review -->
+      <section id="sec-review">
+        <div class="sec-head">
+          <div class="sec-num">04</div>
+          <h2>一分鐘考前秒殺心法</h2>
+        </div>
+        <p>進考場前，把這幾點記熟：</p>
+        <ul>
+            <li><b>阿嬤滑倒骨折：</b>不管 T-score 多少，只要是低衝擊力的「脆弱性骨折」，就是骨質疏鬆！</li>
+            <li><b>DXA 測量位置：</b>L1-L4 和雙側髖部。如果不能測，才去測「非慣用手」前臂遠端。</li>
+            <li><b>抗硬化蛋白抗體 (Anti-sclerostin)：</b>神藥！能同時增加造骨 (Wnt) 並減少破骨 (抑制 RANKL)。</li>
+            <li><b>股骨頭壞死 (ONFH)：</b>男酗酒、女類固醇。潛水夫病也是原因。MRI 最敏感。</li>
+            <li><b>膝關節骨壞死：</b>自發性 (Spontaneous)，單側居多。</li>
+        </ul>
+      </section>
+
+    </main>
+  </div>
+</div>
+
+</body>
+</html>

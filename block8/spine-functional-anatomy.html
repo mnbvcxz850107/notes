@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>脊椎之骨科功能解剖學｜裸讀學習筆記</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&family=Noto+Serif+TC:wght@500;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0F1B18;--bg-2:#152420;--bg-3:#1B2E29;--line:#26403A;--line-2:#31534B;
+    --text:#E9F1EE;--text-2:#A8C2BA;--text-3:#7A968D;
+    --teal:#7FC9BE;--teal-dim:#4E9A90;--gold:#C9A961;--rose:#E58B85;
+    --serif:"Noto Serif TC","Songti TC",serif;
+    --sans:"Noto Sans TC","PingFang TC","Microsoft JhengHei",sans-serif;
+    --mono:"JetBrains Mono",ui-monospace,Menlo,monospace;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth;scroll-padding-top:24px;overflow-x:hidden}
+  body{margin:0;background:var(--bg);color:var(--text);font-family:var(--sans);
+    font-size:16.5px;line-height:1.9;font-weight:300;-webkit-font-smoothing:antialiased;
+    overflow-x:hidden}
+  .wrap{max-width:1150px;margin:0 auto;padding:0 22px}
+
+  header.hero{padding:66px 0 52px;border-bottom:1px solid var(--line)}
+  .backlink{display:inline-block;font-family:var(--mono);font-size:12px;
+    color:var(--text-3);text-decoration:none;margin-bottom:22px;
+    border:1px solid var(--line);border-radius:6px;padding:5px 12px;transition:.15s}
+  .backlink:hover{color:var(--teal);border-color:var(--teal-dim)}
+  .eyebrow{display:flex;align-items:center;gap:16px;margin-bottom:26px;
+    font-family:var(--serif);font-size:15px;letter-spacing:.34em;color:var(--teal)}
+  .eyebrow .rule{width:56px;height:1px;background:var(--gold)}
+  .eyebrow .dot{color:var(--gold)}
+  header.hero h1{font-family:var(--serif);font-weight:700;font-size:clamp(36px,6.4vw,68px);
+    line-height:1.15;margin:0 0 22px;letter-spacing:.02em}
+  header.hero h1 em{font-style:normal;color:var(--teal)}
+  header.hero p.sub{margin:0;color:var(--text-2);max-width:62ch;font-size:17px;line-height:1.85}
+  .intro-card{border:1px solid var(--line);border-radius:16px;padding:26px 30px;margin-top:34px;background:var(--bg-2)}
+  .intro-card p{margin:0 0 22px;color:var(--text-2)}
+  .intro-card b{color:var(--teal);font-weight:500}
+
+  .cols{display:grid;grid-template-columns:220px 1fr;gap:52px;padding:46px 0 90px;align-items:start}
+  @media (max-width: 800px) {
+    .cols { grid-template-columns: 1fr; }
+    nav.toc { display: none; }
+  }
+  nav.toc{position:sticky;top:26px}
+  nav.toc .t{font-family:var(--mono);font-size:11px;letter-spacing:.2em;color:var(--text-3);margin-bottom:14px}
+  nav.toc a{display:block;padding:7px 14px;border-left:1px solid var(--line);
+    color:var(--text-2);text-decoration:none;font-size:14px;transition:.15s}
+  nav.toc a:hover{border-left-color:var(--teal);color:var(--teal);background:var(--bg-2)}
+  nav.toc a.exam{color:var(--gold)}
+
+  section{margin-bottom:64px;scroll-margin-top:24px}
+  .sec-head{display:flex;align-items:baseline;gap:16px;border-bottom:1px solid var(--line-2);padding-bottom:12px;margin-bottom:26px}
+  .sec-num{font-family:var(--serif);font-size:30px;color:var(--gold);line-height:1}
+  .sec-head h2{font-family:var(--serif);font-size:clamp(23px,3.4vw,31px);margin:0;font-weight:700;letter-spacing:.02em}
+  h3{font-family:var(--serif);font-size:21px;margin:38px 0 12px;font-weight:500}
+  h4{font-size:16.5px;margin:24px 0 8px;color:var(--teal);font-weight:500}
+  p{margin:0 0 15px}
+  ul,ol{margin:0 0 17px;padding-left:22px}
+  li{margin-bottom:8px}
+  li::marker{color:var(--teal-dim)}
+  strong,b{font-weight:500;color:#FFF}
+  u{text-decoration-color:var(--teal-dim);text-underline-offset:3px}
+
+  .box{border-radius:13px;padding:20px 24px;margin:22px 0;border:1px solid var(--line);background:var(--bg-2)}
+  .box .bt{font-weight:500;font-size:14.5px;margin-bottom:10px;display:flex;align-items:center;gap:9px;color:#FFF}
+  .box p:last-child,.box ul:last-child,.box ol:last-child{margin-bottom:0}
+  .badge{font-family:var(--mono);font-size:10px;padding:2px 8px;border-radius:3px;letter-spacing:.06em;
+    border:1px solid currentColor;font-weight:600}
+  .box.exam{border-color:rgba(201,169,97,.45);background:rgba(201,169,97,.07)}
+  .box.exam .badge{color:var(--gold)}
+  .box.trap{border-color:rgba(229,139,133,.45);background:rgba(229,139,133,.07)}
+  .box.trap .badge{color:var(--rose)}
+  .box.key{border-color:rgba(127,201,190,.4);background:rgba(127,201,190,.07)}
+  .box.key .badge{color:var(--teal)}
+
+  /* 隨堂測驗 */
+  .quiz{background:var(--bg-3);border-radius:12px;padding:22px 26px;margin:32px 0;border:1px solid var(--line)}
+  .quiz-question{font-weight:500;color:#FFF;margin-bottom:8px;font-size:17px}
+  .quiz-translate{font-size:14.5px;color:var(--text-3);margin-bottom:16px;border-left:2px solid var(--line-2);padding-left:12px}
+  .quiz-options{list-style:none;padding:0;margin:0 0 20px}
+  .quiz-options li{background:var(--bg-2);border:1px solid var(--line);padding:10px 16px;
+    margin-bottom:8px;border-radius:8px;font-size:15px;cursor:default}
+  .quiz-options li .opt-zh{display:block;font-size:13.5px;color:var(--text-3);margin-top:4px}
+  details{background:var(--bg-2);border:1px solid var(--line);border-radius:8px;overflow:hidden}
+  summary{padding:12px 16px;font-size:14.5px;font-weight:500;color:var(--teal);cursor:pointer;
+    user-select:none;background:rgba(127,201,190,.05)}
+  summary:hover{background:rgba(127,201,190,.1)}
+  details p{padding:16px;margin:0;font-size:15px;color:var(--text-2);border-top:1px solid var(--line)}
+</style>
+</head>
+<body>
+
+<div class="wrap">
+  <header class="hero">
+    <a href="index.html" class="backlink">← 返回目錄</a>
+    <div class="eyebrow">
+      <div class="rule"></div>
+      BLOCK 8
+      <div class="dot">✦</div>
+      ORTHOPEDICS
+    </div>
+    <h1>脊椎之骨科功能解剖學</h1>
+    <p class="sub">從椎間盤的營養來源到 X 光片上的蘇格蘭梗犬 (Scotty Dog)，結合解剖與放射學影像，一次搞懂高志銘老師的愛考題。</p>
+    
+    <div class="intro-card">
+      <p><b>臨床導讀：找出下背痛的元凶</b></p>
+      <p>一位搬家工人因為長期的下背痛來到門診。醫師為他照了腰椎的「斜位 X 光片 (Oblique view)」，並指著片子上的一隻「狗狗」說：「你看，這隻狗的脖子斷掉了，這叫做脊椎峽部裂 (Spondylolysis)。」<br><br>
+      人類的脊柱是由許多精巧的關節、韌帶與椎間盤組成的避震系統。要看懂背痛的原因，除了要熟記解剖構造，還要學會在 2D 的 X 光片上找到那隻傳說中的「蘇格蘭梗犬」！</p>
+    </div>
+  </header>
+
+  <div class="cols">
+    <nav class="toc">
+      <div class="t">CONTENTS</div>
+      <a href="#sec-1">1. 脊椎骨與椎間盤解剖</a>
+      <a href="#sec-2">2. 後韌帶複合體</a>
+      <a href="#sec-3">3. 影像學：蘇格蘭梗犬與 MRI</a>
+      <a href="#sec-review" class="exam">一分鐘考前秒殺心法</a>
+    </nav>
+
+    <main>
+      
+      <!-- Section 1 -->
+      <section id="sec-1">
+        <div class="sec-head">
+          <div class="sec-num">01</div>
+          <h2>脊椎骨與椎間盤解剖</h2>
+        </div>
+        
+        <p>脊椎是由 33 塊脊椎骨堆疊而成，中間夾著椎間盤作為緩衝。</p>
+        
+        <h3>脊椎骨 (Vertebrae)</h3>
+        <ul>
+            <li><b>椎體 (Vertebral body)：</b>位於脊椎的「前方 (Anterior)」，是主要承受重量的結構。<br>
+            <span style="color:var(--rose)">超級陷阱：</span>考題常說「每一節脊椎前方都有椎體」。這是錯的！<b>第一頸椎 C1 (寰椎 Atlas) 沒有椎體！</b></li>
+            <li><b>小面關節 (Facet joint)：</b>關節面覆蓋著<b>透明軟骨 (Hyaline cartilage)</b>（注意，不是纖維軟骨！），關節腔內有滑液。關節囊上有豐富的痛覺神經末梢，是脊椎退化性關節炎疼痛的主要來源。</li>
+            <li><b>寰樞關節 (Atlantoaxial joint)：</b>由 C1 與 C2 組成。C2 向上突出的<b>齒突 (Dens / Odontoid process)</b> 是這個關節的核心，負責頭部的<b>左右旋轉 (Rotation)</b>。</li>
+            <li><b>胸椎 (Thoracic spine)：</b>胸椎兩側有肋骨小面 (Costal facet) 與肋骨相連，這使得胸椎的活動度被大幅限制，是整條脊柱中<b>最不靈活</b>的一段。</li>
+        </ul>
+
+        <h3>椎間盤 (Intervertebral disc)</h3>
+        <p>人體總共有 <b>23 個</b>椎間盤，大約佔了整個脊柱長度的 20~33%。<br>
+        <span style="color:var(--rose)">陷阱：</span>椎間盤並不是「每一節之間都有」。C0-C1 與 C1-C2 之間是沒有椎間盤的！</p>
+        <ul>
+            <li><b>髓核 (Nucleus pulposus)：</b>位於中央，含有大量親水性的蛋白聚醣 (Proteoglycans) 與水份，主要由 <b>Type II 膠原蛋白</b>組成。</li>
+            <li><b>纖維環 (Annulus fibrosus)：</b>外圈強韌的結構，由纖維軟骨與 Type I 膠原蛋白組成。</li>
+            <li><b>營養來源：</b>椎間盤是無血管的，它的營養完全仰賴上下軟骨終板 (End plate) 的<b>被動擴散 (Passive diffusion)</b>。</li>
+        </ul>
+
+        <div class="quiz">
+            <p class="quiz-question">Which of the following statements about the structure of the spine is FALSE? (from BM110)</p>
+            <p class="quiz-translate">關於脊椎結構的敘述，下列何者為非？</p>
+            <ul class="quiz-options">
+                <li>(A) The vertebral body is the weight-bearing structure that exists in front of each vertebra.
+                    <span class="opt-zh">(A) 椎體是承重結構，存在於每一節脊椎的前方。</span>
+                </li>
+                <li>(B) The articular surface of the facet joint is covered with hyaline cartilage.
+                    <span class="opt-zh">(B) 小面關節的關節面覆蓋著透明軟骨。</span>
+                </li>
+                <li>(C) Dens is a special structure of the axis, which is part of the Atlantoaxial joint. This joint is responsible for rotation of the head.
+                    <span class="opt-zh">(C) 齒突是樞椎 (C2) 的特殊結構，為寰樞關節的一部分。此關節負責頭部的旋轉。</span>
+                </li>
+                <li>(D) The costal facet is connected to the ribs, which restricts the movement of the spine. Therefore, the thoracic spine is the least mobile part of the spinal column.
+                    <span class="opt-zh">(D) 肋骨小面與肋骨相連，限制了脊椎的活動。因此胸椎是脊柱中最不靈活的部分。</span>
+                </li>
+            </ul>
+            <details>
+                <summary>解答與解析</summary>
+                <p><b>答案：(A)</b><br>解析：老師最愛考的例外！C1 (寰椎 Atlas) 是沒有椎體 (Vertebral body) 的，因此選項說「每一節都有」是錯的。</p>
+            </details>
+        </div>
+
+      </section>
+
+      <!-- Section 2 -->
+      <section id="sec-2">
+        <div class="sec-head">
+          <div class="sec-num">02</div>
+          <h2>後韌帶複合體 (Posterior Ligamentous Complex)</h2>
+        </div>
+        
+        <p>脊椎要能穩定不滑脫，後方的韌帶群扮演了煞車的角色。<b>後韌帶複合體 (PLC)</b> 包含：</p>
+        <ol>
+            <li>棘上韌帶 (Supraspinous ligament)</li>
+            <li>棘間韌帶 (Interspinous ligament)</li>
+            <li>黃韌帶 (Ligamentum flavum)</li>
+            <li>小面關節囊 (Facet joint capsule)</li>
+        </ol>
+
+        <div class="box trap">
+            <div class="bt"><span class="badge">易錯陷阱</span> 誰不在後面？</div>
+            <p>考題超愛問：「下列何者不屬於後韌帶複合體 (PLC)？」<br>
+            常見的錯誤選項有兩個：<br>
+            1. <b>後縱韌帶 (Posterior longitudinal ligament, PLL)：</b>雖然名字有「後」，但它其實貼在「椎體的正後方」，屬於脊椎的<b>中柱 (Middle column)</b>，不屬於後韌帶複合體。<br>
+            2. <b>棘突 (Spinous process)：</b>它是骨頭！不是韌帶！</p>
+        </div>
+
+        <div class="quiz">
+            <p class="quiz-question">Which part of spine does NOT belong to the posterior ligamentous complex? (from BM111)</p>
+            <p class="quiz-translate">脊椎的哪一個部分不屬於後韌帶複合體？</p>
+            <ul class="quiz-options">
+                <li>(A) ligamentum flavum
+                    <span class="opt-zh">(A) 黃韌帶</span>
+                </li>
+                <li>(B) interspinous ligament
+                    <span class="opt-zh">(B) 棘間韌帶</span>
+                </li>
+                <li>(C) posterior longitudinal ligament
+                    <span class="opt-zh">(C) 後縱韌帶</span>
+                </li>
+                <li>(D) facet joint capsule
+                    <span class="opt-zh">(D) 小面關節囊</span>
+                </li>
+            </ul>
+            <details>
+                <summary>解答與解析</summary>
+                <p><b>答案：(C)</b><br>解析：後縱韌帶 (PLL) 位於椎體的後緣，被歸類在脊椎的中柱 (middle column) 穩定結構中，不屬於後方的 PLC。</p>
+            </details>
+        </div>
+
+      </section>
+
+      <!-- Section 3 -->
+      <section id="sec-3">
+        <div class="sec-head">
+          <div class="sec-num">03</div>
+          <h2>影像學：蘇格蘭梗犬與 MRI</h2>
+        </div>
+
+        <h3>X光片上的蘇格蘭梗犬 (Scotty Dog Sign)</h3>
+        <p>當我們照<b>腰椎的斜位 X 光片 (Oblique view)</b> 時，脊椎後方的骨頭結構會疊影成一隻可愛的蘇格蘭梗犬。如果狗狗的「脖子」斷了，就代表發生了<b>脊椎峽部裂 (Spondylolysis)</b>。</p>
+
+        <figure style="margin: 24px 0; text-align: center;">
+          <img src="img/scotty_dog_spine.jpg" alt="Scotty Dog Sign Diagram" style="max-width: 100%; max-height: 500px; border-radius: 12px; border: 1px solid var(--line);">
+          <figcaption style="font-size: 13.5px; color: var(--text-3); margin-top: 8px;">圖解：腰椎斜位 X 光片上的 Scotty Dog。脖子斷裂 (戴項圈) 代表 Pars interarticularis 骨折。</figcaption>
+        </figure>
+
+        <ul>
+            <li><b>狗鼻子 (Snout)：</b>橫突 (Transverse process)</li>
+            <li><b>狗眼睛 (Eye)：</b>椎弓根 (Pedicle)</li>
+            <li><b>狗脖子 (Neck)：</b>關節間部 (Pars interarticularis)。此處骨折稱為峽部裂。</li>
+            <li><b>狗耳朵 (Ear)：</b>上關節突 (Superior articular process)</li>
+            <li><b>狗前腿 (Front leg)：</b>下關節突 (Inferior articular process)</li>
+        </ul>
+
+        <div class="quiz">
+            <p class="quiz-question">Which statement about lumbar spine x-rays is INCORRECT? (from BM111)</p>
+            <p class="quiz-translate">關於腰椎 X 光片的敘述，下列何者錯誤？</p>
+            <ul class="quiz-options">
+                <li>(A) In an oblique view, a Scotty Dog's tail fracture can be seen in the patient with a fracture of the transverse process of spine.
+                    <span class="opt-zh">(A) 在斜位影像中，若患者有脊椎橫突骨折，可見到蘇格蘭狗的「尾巴」骨折。</span>
+                </li>
+                <li>(B) The structure pointed by the arrow in the X-ray below is the facet joint of lumbar spine. (Image omitted)
+                    <span class="opt-zh">(B) 下圖 X 光片中箭頭所指的結構是腰椎的小面關節。</span>
+                </li>
+                <li>(C) The structure pointed by the arrows in these two X-ray pictures above is the pedicle of the lumbar spine. (Image omitted)
+                    <span class="opt-zh">(C) 上方兩張 X 光片中箭頭所指的結構是腰椎的椎弓根。</span>
+                </li>
+                <li>(D) Oblique view is often used to detect pars fractures, and the pars interarticularis is located in the neck of the Scotty Dog in x-ray.
+                    <span class="opt-zh">(D) 斜位影像常用來偵測峽部骨折，且關節間部 (pars interarticularis) 位於 X 光片中蘇格蘭狗的脖子處。</span>
+                </li>
+            </ul>
+            <details>
+                <summary>解答與解析</summary>
+                <p><b>答案：(A)</b><br>解析：橫突 (Transverse process) 對應的是狗狗的「鼻子 (Snout)」，而不是尾巴！</p>
+            </details>
+        </div>
+
+        <h3>脊椎 MRI 橫切面 (Axial T2-weighted)</h3>
+        <p>在 T2 加權的 MRI 影像中，<b>水份會呈現亮白色 (High signal)</b>。</p>
+        
+        <figure style="margin: 24px 0; text-align: center;">
+          <img src="img/spine_mri_axial.jpg" alt="Spine MRI Axial Diagram" style="max-width: 100%; max-height: 400px; border-radius: 12px; border: 1px solid var(--line);">
+          <figcaption style="font-size: 13.5px; color: var(--text-3); margin-top: 8px;">圖解：脊椎 T2 MRI 橫切面。外圈白色亮環是腦脊髓液 (CSF)，中間黑灰色的實體才是脊髓 (Spinal cord)。</figcaption>
+        </figure>
+
+        <div class="box trap">
+            <div class="bt"><span class="badge">易錯陷阱</span> 那一圈白白的是什麼？</div>
+            <p>在看 MRI T2 橫切面時，中央椎管內會有一圈「非常亮的白色環」，裡面包著一個「深灰色的圓形」。<br>
+            考題會用箭頭指著外圈那層「白色的水」，騙你說那是脊髓 (Spinal cord)。<br>
+            <b>錯！</b>外圍發亮的水是<b>腦脊髓液 (CSF)</b>，裡面那個深灰色不發亮的實心構造才是<b>脊髓 (Spinal cord)</b>！</p>
+        </div>
+
+      </section>
+
+      <!-- Section Review -->
+      <section id="sec-review">
+        <div class="sec-head">
+          <div class="sec-num">04</div>
+          <h2>一分鐘考前秒殺心法</h2>
+        </div>
+        <ul>
+            <li><b>椎體 (Vertebral body)</b>：存在於每一節，<span style="color:var(--rose)">C1 例外 (無椎體)</span>。</li>
+            <li><b>椎間盤 (Disc)</b>：營養靠上下終板「擴散」。<span style="color:var(--rose)">C1-C2 之間沒有椎間盤！</span></li>
+            <li><b>後韌帶複合體 (PLC)</b>：包含棘上、棘間、黃韌帶、小面關節囊。<span style="color:var(--rose)">「後」縱韌帶不屬於 PLC！</span></li>
+            <li><b>Scotty Dog (斜位 X 光)</b>：
+              <ul>
+                <li>狗鼻子 = 橫突</li>
+                <li>狗眼睛 = 椎弓根</li>
+                <li><b>狗脖子 = 關節間部 (Pars) $ightarrow$ 斷掉變項圈 = Spondylolysis</b></li>
+              </ul>
+            </li>
+            <li><b>T2 MRI 橫切面</b>：發亮的是水 (CSF)，中間黑灰色的才是脊髓 (Spinal cord)。</li>
+        </ul>
+      </section>
+
+    </main>
+  </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>骨細胞生理與實驗技術｜裸讀學習筆記</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&family=Noto+Serif+TC:wght@500;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0F1B18;--bg-2:#152420;--bg-3:#1B2E29;--line:#26403A;--line-2:#31534B;
+    --text:#E9F1EE;--text-2:#A8C2BA;--text-3:#7A968D;
+    --teal:#7FC9BE;--teal-dim:#4E9A90;--gold:#C9A961;--rose:#E58B85;
+    --serif:"Noto Serif TC","Songti TC",serif;
+    --sans:"Noto Sans TC","PingFang TC","Microsoft JhengHei",sans-serif;
+    --mono:"JetBrains Mono",ui-monospace,Menlo,monospace;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth;scroll-padding-top:24px;overflow-x:hidden}
+  body{margin:0;background:var(--bg);color:var(--text);font-family:var(--sans);
+    font-size:16.5px;line-height:1.9;font-weight:300;-webkit-font-smoothing:antialiased;
+    overflow-x:hidden}
+  .wrap{max-width:1150px;margin:0 auto;padding:0 22px}
+
+  header.hero{padding:66px 0 52px;border-bottom:1px solid var(--line)}
+  .backlink{display:inline-block;font-family:var(--mono);font-size:12px;
+    color:var(--text-3);text-decoration:none;margin-bottom:22px;
+    border:1px solid var(--line);border-radius:6px;padding:5px 12px;transition:.15s}
+  .backlink:hover{color:var(--teal);border-color:var(--teal-dim)}
+  .eyebrow{display:flex;align-items:center;gap:16px;margin-bottom:26px;
+    font-family:var(--serif);font-size:15px;letter-spacing:.34em;color:var(--teal)}
+  .eyebrow .rule{width:56px;height:1px;background:var(--gold)}
+  .eyebrow .dot{color:var(--gold)}
+  header.hero h1{font-family:var(--serif);font-weight:700;font-size:clamp(36px,6.4vw,68px);
+    line-height:1.15;margin:0 0 22px;letter-spacing:.02em}
+  header.hero h1 em{font-style:normal;color:var(--teal)}
+  header.hero p.sub{margin:0;color:var(--text-2);max-width:62ch;font-size:17px;line-height:1.85}
+  .intro-card{border:1px solid var(--line);border-radius:16px;padding:26px 30px;margin-top:34px;background:var(--bg-2)}
+  .intro-card p{margin:0 0 22px;color:var(--text-2)}
+  .intro-card b{color:var(--teal);font-weight:500}
+
+  .cols{display:grid;grid-template-columns:220px 1fr;gap:52px;padding:46px 0 90px;align-items:start}
+  @media (max-width: 800px) {
+    .cols { grid-template-columns: 1fr; }
+    nav.toc { display: none; }
+  }
+  nav.toc{position:sticky;top:26px}
+  nav.toc .t{font-family:var(--mono);font-size:11px;letter-spacing:.2em;color:var(--text-3);margin-bottom:14px}
+  nav.toc a{display:block;padding:7px 14px;border-left:1px solid var(--line);
+    color:var(--text-2);text-decoration:none;font-size:14px;transition:.15s}
+  nav.toc a:hover{border-left-color:var(--teal);color:var(--teal);background:var(--bg-2)}
+  nav.toc a.exam{color:var(--gold)}
+
+  section{margin-bottom:64px;scroll-margin-top:24px}
+  .sec-head{display:flex;align-items:baseline;gap:16px;border-bottom:1px solid var(--line-2);padding-bottom:12px;margin-bottom:26px}
+  .sec-num{font-family:var(--serif);font-size:30px;color:var(--gold);line-height:1}
+  .sec-head h2{font-family:var(--serif);font-size:clamp(23px,3.4vw,31px);margin:0;font-weight:700;letter-spacing:.02em}
+  h3{font-family:var(--serif);font-size:21px;margin:38px 0 12px;font-weight:500}
+  h4{font-size:16.5px;margin:24px 0 8px;color:var(--teal);font-weight:500}
+  p{margin:0 0 15px}
+  ul,ol{margin:0 0 17px;padding-left:22px}
+  li{margin-bottom:8px}
+  li::marker{color:var(--teal-dim)}
+  strong,b{font-weight:500;color:#FFF}
+  u{text-decoration-color:var(--teal-dim);text-underline-offset:3px}
+
+  .box{border-radius:13px;padding:20px 24px;margin:22px 0;border:1px solid var(--line);background:var(--bg-2)}
+  .box .bt{font-weight:500;font-size:14.5px;margin-bottom:10px;display:flex;align-items:center;gap:9px;color:#FFF}
+  .box p:last-child,.box ul:last-child,.box ol:last-child{margin-bottom:0}
+  .badge{font-family:var(--mono);font-size:10px;padding:2px 8px;border-radius:3px;letter-spacing:.06em;
+    border:1px solid currentColor;font-weight:600}
+  .box.exam{border-color:rgba(201,169,97,.45);background:rgba(201,169,97,.07)}
+  .box.exam .badge{color:var(--gold)}
+  .box.trap{border-color:rgba(229,139,133,.45);background:rgba(229,139,133,.07)}
+  .box.trap .badge{color:var(--rose)}
+  .box.key{border-color:rgba(127,201,190,.4);background:rgba(127,201,190,.07)}
+  .box.key .badge{color:var(--teal)}
+
+  /* 隨堂測驗 */
+  .quiz{background:var(--bg-3);border-radius:12px;padding:22px 26px;margin:32px 0;border:1px solid var(--line)}
+  .quiz-question{font-weight:500;color:#FFF;margin-bottom:8px;font-size:17px}
+  .quiz-translate{font-size:14.5px;color:var(--text-3);margin-bottom:16px;border-left:2px solid var(--line-2);padding-left:12px}
+  .quiz-options{list-style:none;padding:0;margin:0 0 20px}
+  .quiz-options li{background:var(--bg-2);border:1px solid var(--line);padding:10px 16px;
+    margin-bottom:8px;border-radius:8px;font-size:15px;cursor:default}
+  .quiz-options li .opt-zh{display:block;font-size:13.5px;color:var(--text-3);margin-top:4px}
+  details{background:var(--bg-2);border:1px solid var(--line);border-radius:8px;overflow:hidden}
+  summary{padding:12px 16px;font-size:14.5px;font-weight:500;color:var(--teal);cursor:pointer;
+    user-select:none;background:rgba(127,201,190,.05)}
+  summary:hover{background:rgba(127,201,190,.1)}
+  details p{padding:16px;margin:0;font-size:15px;color:var(--text-2);border-top:1px solid var(--line)}
+</style>
+</head>
+<body>
+
+<div class="wrap">
+  <header class="hero">
+    <a href="index.html" class="backlink">← 返回目錄</a>
+    <div class="eyebrow">
+      <div class="rule"></div>
+      BLOCK 8
+      <div class="dot">✦</div>
+      RESEARCH & LAB
+    </div>
+    <h1>骨細胞生理與實驗技術</h1>
+    <p class="sub">從 Alizarin Red 到雙光子縮時攝影，掌握鄭琮霖老師最愛考的骨細胞研究利器。</p>
+    
+    <div class="intro-card">
+      <p><b>實驗室裡的骨頭探秘</b></p>
+      <p>在骨科學的研究中，我們不能總是把老鼠的骨頭拿出來看。如果我們想在培養皿裡觀察「成骨細胞」到底有沒有乖乖分泌鈣質，或者想偷看「破骨細胞」是如何爬行並啃食骨頭的，我們該用什麼武器？<br><br>
+      鄭琮霖老師在國考與期中考裡最喜歡考的，就是這幾個經典的實驗室技術。本單元雖然短，但考點非常集中！</p>
+    </div>
+  </header>
+
+  <div class="cols">
+    <nav class="toc">
+      <div class="t">CONTENTS</div>
+      <a href="#sec-1">1. 骨細胞染色技術</a>
+      <a href="#sec-2">2. 細胞活體攝影</a>
+    </nav>
+
+    <main>
+      
+      <!-- Section 1 -->
+      <section id="sec-1">
+        <div class="sec-head">
+          <div class="sec-num">01</div>
+          <h2>骨細胞特異性染色技術</h2>
+        </div>
+        
+        <p>不同的骨細胞有各自對應的「專屬染劑」。</p>
+
+        <figure style="margin: 24px 0; text-align: center;">
+          <img src="img/osteoclast_lab.jpg" alt="Bone Cell Lab Staining" style="max-width: 100%; max-height: 450px; border-radius: 12px; border: 1px solid var(--line);">
+          <figcaption style="font-size: 13.5px; color: var(--text-3); margin-top: 8px;">圖解：左圖為染出鮮紅色鈣化結節的 Alizarin Red Staining；右圖為染出紫色多核破骨細胞的 TRAP Staining。</figcaption>
+        </figure>
+
+        <h3>1. 茜素紅染色 (Alizarin-red staining)</h3>
+        <ul>
+            <li><b>目標對象：</b>成骨細胞 (Osteoblast) 的產物。</li>
+            <li><b>作用原理：</b>茜素紅會與鈣離子結合，形成鮮紅色的沉澱物。</li>
+            <li><b>應用：</b>用來評估培養皿中是否有**鈣質沉積 (Calcium deposits)**或組織鈣化 (Tissue calcification)，藉此判斷成骨細胞的活性。</li>
+        </ul>
+
+        <h3>2. TRAP 染色 (Tartrate-resistant acid phosphatase)</h3>
+        <ul>
+            <li><b>目標對象：</b>破骨細胞 (Osteoclast)。</li>
+            <li><b>作用原理：</b>破骨細胞富含抗酒石酸酸性磷酸酶 (TRAP)。染色後，多核的破骨細胞會呈現紫紅色。</li>
+            <li><b>應用：</b>用來計算並觀察破骨細胞的數量與型態。</li>
+        </ul>
+
+        <div class="quiz">
+            <p class="quiz-question">Which assay can be used to evaluate the calcium deposits or tissue calcification? (from BM110)</p>
+            <p class="quiz-translate">下列哪一種檢測方法可用來評估鈣質沉積或組織鈣化？</p>
+            <ul class="quiz-options">
+                <li>(A) MTT assay
+                    <span class="opt-zh">(A) MTT 檢測 (測量細胞存活率)</span>
+                </li>
+                <li>(B) Alizarin-red staining
+                    <span class="opt-zh">(B) 茜素紅染色</span>
+                </li>
+                <li>(C) Bone resorption assay
+                    <span class="opt-zh">(C) 骨吸收檢測</span>
+                </li>
+                <li>(D) Tartrate-resistant acid phosphatase (TRAP) staining
+                    <span class="opt-zh">(D) TRAP 染色</span>
+                </li>
+            </ul>
+            <details>
+                <summary>解答與解析</summary>
+                <p><b>答案：(B)</b><br>解析：評估「鈣化 / 鈣質沉積 (Calcium deposits)」要用 Alizarin-red staining。如果是要看「破骨細胞」，才會選 (D) TRAP staining。</p>
+            </details>
+        </div>
+
+      </section>
+
+      <!-- Section 2 -->
+      <section id="sec-2">
+        <div class="sec-head">
+          <div class="sec-num">02</div>
+          <h2>細胞活體攝影 (Live-cell Imaging)</h2>
+        </div>
+        
+        <p>如果我們不只要看細胞「長什麼樣子」，還要看細胞「怎麼移動」和「怎麼工作」，染色技術就無法做到了，因為染色會把細胞固定並殺死。</p>
+        
+        <h3>縮時攝影技術 (Time-lapse recording)</h3>
+        <ul>
+            <li><b>單一破骨細胞的遷移 (Migration)：</b>要知道破骨細胞是怎麼在骨頭表面爬行的，最好的方法就是使用 <b>Time-lapse recording (縮時攝影)</b>。</li>
+            <li><b>雙光子縮時攝影 (Two-Photon Time-Lapse recording)：</b>這是更高階的技術，因為穿透力強、對細胞傷害小，可以「同時觀察 (simultaneous observation)」活體內單一破骨細胞的<b>遷移 (migration)</b>與<b>骨吸收活性 (bone resorption activity)</b>。</li>
+        </ul>
+
+        <div class="quiz">
+            <p class="quiz-question">Which of the following experimental methods would allow simultaneous observation of both migration and bone resorption activity in individual osteoclasts? (from BM111)</p>
+            <p class="quiz-translate">下列哪種實驗方法可以同時觀察單個破骨細胞的遷移和骨吸收活性？</p>
+            <ul class="quiz-options">
+                <li>(A) MicroCT
+                    <span class="opt-zh">(A) 微電腦斷層掃描</span>
+                </li>
+                <li>(B) Bone resorption assay
+                    <span class="opt-zh">(B) 骨吸收檢測</span>
+                </li>
+                <li>(C) Two Photon Time-Lapse recording
+                    <span class="opt-zh">(C) 雙光子縮時攝影</span>
+                </li>
+                <li>(D) Immunohistochemistry staining (IHC)
+                    <span class="opt-zh">(D) 免疫組織化學染色</span>
+                </li>
+            </ul>
+            <details>
+                <summary>解答與解析</summary>
+                <p><b>答案：(C)</b><br>解析：要「同時觀察動態過程 (Migration + Activity)」，只有縮時攝影 (Time-Lapse recording) 辦得到。(A) 只能看靜態骨頭結構，(B) 只能看結果，(D) 染色會把細胞殺死，無法觀察活體動態。</p>
+            </details>
+        </div>
+
+      </section>
+
+    </main>
+  </div>
+</div>
+
+</body>
+</html>
