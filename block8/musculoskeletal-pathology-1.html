@@ -91,6 +91,26 @@
     user-select:none;background:rgba(127,201,190,.05)}
   summary:hover{background:rgba(127,201,190,.1)}
   details p{padding:16px;margin:0;font-size:15px;color:var(--text-2);border-top:1px solid var(--line)}
+
+  /* 單字卡 */
+  .vocab-card { background: var(--bg-3); border: 1px solid var(--line); border-radius: 12px; margin-bottom: 12px; overflow: hidden; transition: .2s; }
+  .vocab-card:hover { border-color: var(--teal-dim); }
+  .vocab-card summary { padding: 18px 24px; display: flex; justify-content: space-between; align-items: center; cursor: pointer; list-style: none; background: transparent; }
+  .vocab-card summary::-webkit-details-marker { display: none; }
+  .vocab-card summary .en { font-family: var(--serif); font-size: 20px; font-weight: 700; color: #FFF; letter-spacing: .02em; }
+  .vocab-card summary .btn { font-size: 13px; background: rgba(127,201,190,.15); color: var(--teal); padding: 6px 12px; border-radius: 6px; border: 1px solid var(--teal-dim); transition: .2s; }
+  .vocab-card[open] summary .btn { display: none; }
+  .vocab-desc { padding: 0 24px 20px; }
+  .vocab-desc .zh { font-size: 19px; font-weight: 700; color: var(--gold); margin: 0 0 12px 0; border-top: 1px dashed var(--line); padding-top: 16px; }
+  .vocab-desc .hint { margin: 0; color: var(--text-2); font-size: 15.5px; line-height: 1.8; }
+  .vocab-desc .hint b { color: #FFF; }
+  
+  /* 歷屆考題年份收錄 */
+  .year-section { margin-top: 32px; border: 1px solid var(--line); border-radius: 16px; overflow: hidden; }
+  .year-header { background: var(--bg-2); padding: 16px 24px; font-family: var(--mono); font-size: 22px; font-weight: 700; color: var(--gold); border-bottom: 1px solid var(--line); }
+  .year-content { padding: 24px; }
+  .year-content .quiz { margin: 0 0 24px 0; background: transparent; border: 1px dashed var(--line); }
+  .year-content .quiz:last-child { margin-bottom: 0; }
 </style>
 </head>
 <body>
@@ -121,7 +141,9 @@
       <a href="#sec-1">1. 先天性骨骼異常</a>
       <a href="#sec-2">2. 骨折與骨壞死</a>
       <a href="#sec-3">3. 骨髓炎與骨質疏鬆</a>
-      <a href="#sec-review" class="exam">一分鐘考前秒殺心法</a>
+            <a href="#sec-review" class="exam">一分鐘考前秒殺心法</a>
+      <a href="#sec-vocab" class="exam" style="color: var(--teal);">📖 必考單字與諧音記憶</a>
+      <a href="#sec-exams" class="exam" style="color: var(--text);">📂 歷年考題純享版</a>
     </nav>
 
     <main>
@@ -457,6 +479,174 @@
             <li><b>骨髓炎</b> = 兒童好發於長骨 Metaphysis = 最常見病原體是 <b>S. aureus</b> (絕對不是 E. coli！)。</li>
             <li><b>骨質疏鬆與代謝</b> = 類固醇會「加速」流失 = 成人 Vit D 缺乏叫「軟骨症(Osteomalacia)」，兒童才叫 Rickets。</li>
         </ul>
+      </section>
+
+    
+      <!-- Section Vocab -->
+      <section id="sec-vocab">
+        <div class="sec-head">
+          <div class="sec-num">08</div>
+          <h2>必考單字與諧音記憶</h2>
+        </div>
+        <p>病理學的單字又長又難背，但只要拆解字根或用一點諧音梗，就能輕鬆記住！點擊右側按鈕顯示中文與獨家記憶法：</p>
+
+        <details class="vocab-card">
+          <summary><span class="en">Achondroplasia</span> <span class="btn">顯示中文與記憶法</span></summary>
+          <div class="vocab-desc">
+            <p class="zh">軟骨發育不全症 (侏儒症)</p>
+            <p class="hint">💡 <b>字根拆解：</b> a- (無) + chondro (軟骨) + plasia (生長/發育)。<br>
+            💡 <b>諧音記憶：</b> 想像一個叫「阿空」的人去「捉」東西（<b>A-chon-dro</b>），因為手臂太短捉不到，這就是短肢侏儒症。</p>
+          </div>
+        </details>
+
+        <details class="vocab-card">
+          <summary><span class="en">Osteogenesis Imperfecta (OI)</span> <span class="btn">顯示中文與記憶法</span></summary>
+          <div class="vocab-desc">
+            <p class="zh">成骨不全症 (玻璃娃娃)</p>
+            <p class="hint">💡 <b>字根拆解：</b> Osteo (骨頭) + genesis (生成/創造) + Imperfecta (不完美的)。<br>
+            💡 <b>關聯記憶：</b> 創造出來的骨頭不完美，因為缺乏 Type I 膠原蛋白。注意會伴隨藍色鞏膜 (Blue sclera)，但絕對<b>沒有</b> Lisch nodules (這是神經纖維瘤的特徵，老師最愛用這個騙人)。</p>
+          </div>
+        </details>
+
+        <details class="vocab-card">
+          <summary><span class="en">Osteopetrosis</span> <span class="btn">顯示中文與記憶法</span></summary>
+          <div class="vocab-desc">
+            <p class="zh">大理石骨病 (骨質石化症)</p>
+            <p class="hint">💡 <b>字根拆解：</b> Osteo (骨) + petro (石頭, 像 petroleum 石油)。<br>
+            💡 <b>臨床記憶：</b> 骨頭像「石頭」一樣硬，但也像石頭一樣脆，容易骨折。原因是破骨細胞 (Osteoclast) 罷工，骨頭只建不拆，導致骨髓腔被填滿，引發貧血與肝脾腫大。</p>
+          </div>
+        </details>
+
+        <details class="vocab-card">
+          <summary><span class="en">Osteomyelitis</span> <span class="btn">顯示中文與記憶法</span></summary>
+          <div class="vocab-desc">
+            <p class="zh">骨髓炎</p>
+            <p class="hint">💡 <b>字根拆解：</b> Osteo (骨) + myel (骨髓) + itis (發炎)。<br>
+            💡 <b>考試重點：</b> 小孩最常見於長骨的幹骺端 (Metaphysis)，大人常見於足部。最常見致病菌是金黃色葡萄球菌 (<b>S. aureus</b>)，老師常故意寫成 E. coli 來騙人。</p>
+          </div>
+        </details>
+
+        <details class="vocab-card">
+          <summary><span class="en">Sequestrum & Involucrum</span> <span class="btn">顯示中文與記憶法</span></summary>
+          <div class="vocab-desc">
+            <p class="zh">死骨 & 包殼 (骨髓炎特徵)</p>
+            <p class="hint">💡 <b>字根與諧音：</b> <br>
+            <b>Sequestrum</b> (死骨)：Sequester 有隔離、扣押的意思。被發炎組織隔離而缺血壞死的骨頭。諧音：「<b>死貴</b>」(Se-ques)。<br>
+            <b>Involucrum</b> (包殼)：Involve 有包圍的意思。為了包住死骨，外面新長出來的活骨殼。</p>
+          </div>
+        </details>
+
+        <details class="vocab-card">
+          <summary><span class="en">Avascular Necrosis (AVN)</span> <span class="btn">顯示中文與記憶法</span></summary>
+          <div class="vocab-desc">
+            <p class="zh">缺血性骨壞死</p>
+            <p class="hint">💡 <b>字根拆解：</b> A- (無) + vascular (血管) + Necrosis (壞死)。<br>
+            💡 <b>考試重點：</b> 最常發生在股骨頭 (Femoral head)。死掉的順序是從裡面的骨髓 (Medullary bone) 先死，外面的皮質骨和軟骨最後才死。晚期 X 光可見新月徑 (Crescent sign)。</p>
+          </div>
+        </details>
+      </section>
+
+      <!-- Section Exams -->
+      <section id="sec-exams">
+        <div class="sec-head">
+          <div class="sec-num">09</div>
+          <h2>歷年考題純享版</h2>
+        </div>
+        <p>前面已經將考題打散在各個觀念中，這裡為您重新依年份羅列，方便考前刷題測驗手感！陳建亭老師的題目連三年幾乎一模一樣，只要寫熟就穩拿滿分。</p>
+
+        <div class="year-section">
+          <div class="year-header">112 年 (BM112)</div>
+          <div class="year-content">
+            <div class="quiz">
+              <p class="quiz-question">85. Which one of these descriptions about achondroplasia is incorrect?</p>
+              <ul class="quiz-options">
+                <li>(A) It involves chromosome 4 and is inherited in an autosomal dominant pattern.</li>
+                <li>(B) Patients usually have shortened limbs, but normal spinal length.</li>
+                <li>(C) During bone development, patients lack normal membranous ossification.</li>
+                <li>(D) It is associated with an activating mutation of FGFR3.</li>
+              </ul>
+              <details><summary>解答</summary><p><b>(C)</b> 錯在 membranous (膜內)。他們缺乏的是 endochondral (軟骨內) 骨化。</p></details>
+            </div>
+            <div class="quiz">
+              <p class="quiz-question">86. Which of the following descriptions about osteopetrosis is incorrect?</p>
+              <ul class="quiz-options">
+                <li>(A) Patients have bones as hard as marble, which makes them less prone to fractures.</li>
+                <li>(B) The main cause is the inability to generate osteoclasts or the loss of bone resorption ability...</li>
+                <li>(C) Patients often exhibit conditions such as cranial nerve paralysis, recurrent bacterial infections, or hepatosplenomegaly.</li>
+                <li>(D) Patients can undergo hematopoietic stem cell transplantation for treatment.</li>
+              </ul>
+              <details><summary>解答</summary><p><b>(A)</b> 雖然硬如大理石，但極脆，<b>非常容易</b>骨折 (more prone to fractures)。</p></details>
+            </div>
+            <div class="quiz">
+              <p class="quiz-question">87. Which of the following descriptions about osteogenesis imperfecta is incorrect?</p>
+              <ul class="quiz-options">
+                <li>(A) Patients cannot produce normal type I collagen.</li>
+                <li>(B) Mutations in the COL1A1 gene and COL1A2 genes are associated with the condition.</li>
+                <li>(C) It follows an autosomal dominant inheritance pattern and can be categorized into four types.</li>
+                <li>(D) Due to the lack of normal type I collagen, patients' irises may exhibit Lisch nodules.</li>
+              </ul>
+              <details><summary>解答</summary><p><b>(D)</b> Lisch nodules 是第一型神經纖維瘤 (NF1) 的特徵，與 OI 無關。</p></details>
+            </div>
+            <div class="quiz">
+              <p class="quiz-question">89. Which of the following statements about osteonecrosis (avascular necrosis) is incorrect?</p>
+              <ul class="quiz-options">
+                <li>(A) It is mostly caused by infections.</li>
+                <li>(B) It is associated with trauma, alcohol abuse, or steroid use.</li>
+                <li>(C) In patients with prolonged alcohol abuse, osteonecrosis often occurs in the femoral head.</li>
+                <li>(D) Osteonecrosis typically first affects the medullary bone, sparing the overlying cortical bone...</li>
+              </ul>
+              <details><summary>解答</summary><p><b>(A)</b> 骨壞死主要是血管阻塞 (外傷、酗酒、類固醇)，不是感染。</p></details>
+            </div>
+            <div class="quiz">
+              <p class="quiz-question">90. Which of the following descriptions about osteomyelitis is incorrect?</p>
+              <ul class="quiz-options">
+                <li>(A) It is caused by bacterial infections either through direct exposure or bloodstream transmission.</li>
+                <li>(B) In children, it often occurs near the knee joint, while in adults, it's more common in the feet.</li>
+                <li>(C) Osteomyelitis near the metaphysis of long bones in 5-10-year-old children is often caused by common E. coli bacteria.</li>
+                <li>(D) Osteomyelitis can occur in the maxillary and mandible bones, often related to poor oral hygiene.</li>
+              </ul>
+              <details><summary>解答</summary><p><b>(C)</b> 最常見致病菌是金黃色葡萄球菌 (Staphylococcus aureus)，不是 E. coli。</p></details>
+            </div>
+          </div>
+        </div>
+
+        <div class="year-section">
+          <div class="year-header">111 年 (BM111)</div>
+          <div class="year-content">
+            <p style="color:var(--text-3); font-size:14.5px; margin-bottom:16px;">註：111 年題目選項與 112 年幾乎 100% 雷同，為節省篇幅僅列出題目與答案。</p>
+            <ul>
+                <li><b>Q74. Regarding osteogenesis imperfecta, which is incorrect?</b><br>
+                答案：(D) patients' irises may develop Lisch nodules.</li>
+                <li><b>Q75. Regarding osteonecrosis, which of the following descriptions is incorrect?</b><br>
+                答案：(A) It is mostly caused by infection.</li>
+                <li><b>Q76. Which of the following descriptions about achondroplasia is incorrect?</b><br>
+                答案：(C) During bone development, patients lack normal membranous ossification.</li>
+                <li><b>Q77. Regarding osteomyelitis, which of the following descriptions is incorrect?</b><br>
+                答案：(C) most commonly caused by Escherichia coli.</li>
+                <li><b>Q78. Regarding osteoporosis, which of the following descriptions is incorrect?</b><br>
+                答案：(C) Steroid therapy can slow down the rate of bone loss. (類固醇會加速骨質流失)</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="year-section">
+          <div class="year-header">110 年 (BM110)</div>
+          <div class="year-content">
+            <p style="color:var(--text-3); font-size:14.5px; margin-bottom:16px;">註：110 年題目選項依然與 112 年幾乎 100% 雷同，為節省篇幅僅列出題目與答案。</p>
+            <ul>
+                <li><b>Q50. Which one of these descriptions about achondroplasia is wrong?</b><br>
+                答案：(C) These patients have abnormal membranous ossification.</li>
+                <li><b>Q51. Which one of these descriptions about osteopetrosis is wrong?</b><br>
+                答案：(A) The bones of these patients are as hard as Wolverine. (雖然像金剛狼一樣硬，但脆如玻璃易碎)</li>
+                <li><b>Q52. Which one of these descriptions about osteogenesis imperfecta is wrong?</b><br>
+                答案：(D) These patients might have iris hamartoma (Lisch nodules)</li>
+                <li><b>Q54. Which one of these descriptions about osteonecrosis (or avascular necrosis) is wrong?</b><br>
+                答案：(A) It often results from infection.</li>
+                <li><b>Q55. Which one of these descriptions about osteomyelitis is wrong?</b><br>
+                答案：(C) E.Coli. are the most common pathogen...</li>
+            </ul>
+          </div>
+        </div>
       </section>
 
     </main>
