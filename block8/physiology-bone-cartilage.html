@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>骨與軟骨生理學｜裸讀學習筆記</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&family=Noto+Serif+TC:wght@500;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0F1B18;--bg-2:#152420;--bg-3:#1B2E29;--line:#26403A;--line-2:#31534B;
+    --text:#E9F1EE;--text-2:#A8C2BA;--text-3:#7A968D;
+    --teal:#7FC9BE;--teal-dim:#4E9A90;--gold:#C9A961;--rose:#E58B85;
+    --serif:"Noto Serif TC","Songti TC",serif;
+    --sans:"Noto Sans TC","PingFang TC","Microsoft JhengHei",sans-serif;
+    --mono:"JetBrains Mono",ui-monospace,Menlo,monospace;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth;scroll-padding-top:24px;overflow-x:hidden}
+  body{margin:0;background:var(--bg);color:var(--text);font-family:var(--sans);
+    font-size:16.5px;line-height:1.9;font-weight:300;-webkit-font-smoothing:antialiased;
+    overflow-x:hidden}
+  .wrap{max-width:1150px;margin:0 auto;padding:0 22px}
+
+  header.hero{padding:66px 0 52px;border-bottom:1px solid var(--line)}
+  .backlink{display:inline-block;font-family:var(--mono);font-size:12px;
+    color:var(--text-3);text-decoration:none;margin-bottom:22px;
+    border:1px solid var(--line);border-radius:6px;padding:5px 12px;transition:.15s}
+  .backlink:hover{color:var(--teal);border-color:var(--teal-dim)}
+  .eyebrow{display:flex;align-items:center;gap:16px;margin-bottom:26px;
+    font-family:var(--serif);font-size:15px;letter-spacing:.34em;color:var(--teal)}
+  .eyebrow .rule{width:56px;height:1px;background:var(--gold)}
+  .eyebrow .dot{color:var(--gold)}
+  header.hero h1{font-family:var(--serif);font-weight:700;font-size:clamp(36px,6.4vw,68px);
+    line-height:1.15;margin:0 0 22px;letter-spacing:.02em}
+  header.hero h1 em{font-style:normal;color:var(--teal)}
+  header.hero p.sub{margin:0;color:var(--text-2);max-width:62ch;font-size:17px;line-height:1.85}
+  .intro-card{border:1px solid var(--line);border-radius:16px;padding:26px 30px;margin-top:34px;background:var(--bg-2)}
+  .intro-card p{margin:0 0 22px;color:var(--text-2)}
+  .intro-card b{color:var(--teal);font-weight:500}
+
+  .cols{display:grid;grid-template-columns:220px 1fr;gap:52px;padding:46px 0 90px;align-items:start}
+  @media (max-width: 800px) {
+    .cols { grid-template-columns: 1fr; }
+    nav.toc { display: none; }
+  }
+  nav.toc{position:sticky;top:26px}
+  nav.toc .t{font-family:var(--mono);font-size:11px;letter-spacing:.2em;color:var(--text-3);margin-bottom:14px}
+  nav.toc a{display:block;padding:7px 14px;border-left:1px solid var(--line);
+    color:var(--text-2);text-decoration:none;font-size:14px;transition:.15s}
+  nav.toc a:hover{border-left-color:var(--teal);color:var(--teal);background:var(--bg-2)}
+  nav.toc a.exam{color:var(--gold)}
+
+  section{margin-bottom:64px;scroll-margin-top:24px}
+  .sec-head{display:flex;align-items:baseline;gap:16px;border-bottom:1px solid var(--line-2);padding-bottom:12px;margin-bottom:26px}
+  .sec-num{font-family:var(--serif);font-size:30px;color:var(--gold);line-height:1}
+  .sec-head h2{font-family:var(--serif);font-size:clamp(23px,3.4vw,31px);margin:0;font-weight:700;letter-spacing:.02em}
+  h3{font-family:var(--serif);font-size:21px;margin:38px 0 12px;font-weight:500}
+  h4{font-size:16.5px;margin:24px 0 8px;color:var(--teal);font-weight:500}
+  p{margin:0 0 15px}
+  ul,ol{margin:0 0 17px;padding-left:22px}
+  li{margin-bottom:8px}
+  li::marker{color:var(--teal-dim)}
+  strong,b{font-weight:500;color:#FFF}
+  u{text-decoration-color:var(--teal-dim);text-underline-offset:3px}
+
+  .box{border-radius:13px;padding:20px 24px;margin:22px 0;border:1px solid var(--line);background:var(--bg-2)}
+  .box .bt{font-weight:500;font-size:14.5px;margin-bottom:10px;display:flex;align-items:center;gap:9px;color:#FFF}
+  .box p:last-child,.box ul:last-child,.box ol:last-child{margin-bottom:0}
+  .badge{font-family:var(--mono);font-size:10px;padding:2px 8px;border-radius:3px;letter-spacing:.06em;
+    border:1px solid currentColor;font-weight:600}
+  .box.exam{border-color:rgba(201,169,97,.45);background:rgba(201,169,97,.07)}
+  .box.exam .badge{color:var(--gold)}
+  .box.trap{border-color:rgba(229,139,133,.45);background:rgba(229,139,133,.07)}
+  .box.trap .badge{color:var(--rose)}
+  .box.key{border-color:rgba(127,201,190,.4);background:rgba(127,201,190,.07)}
+  .box.key .badge{color:var(--teal)}
+
+  /* 隨堂測驗 */
+  .quiz{background:var(--bg-3);border-radius:12px;padding:22px 26px;margin:32px 0;border:1px solid var(--line)}
+  .quiz-question{font-weight:500;color:#FFF;margin-bottom:8px;font-size:17px}
+  .quiz-translate{font-size:14.5px;color:var(--text-3);margin-bottom:16px;border-left:2px solid var(--line-2);padding-left:12px}
+  .quiz-options{list-style:none;padding:0;margin:0 0 20px}
+  .quiz-options li{background:var(--bg-2);border:1px solid var(--line);padding:10px 16px;
+    margin-bottom:8px;border-radius:8px;font-size:15px;cursor:default}
+  .quiz-options li .opt-zh{display:block;font-size:13.5px;color:var(--text-3);margin-top:4px}
+  details{background:var(--bg-2);border:1px solid var(--line);border-radius:8px;overflow:hidden}
+  summary{padding:12px 16px;font-size:14.5px;font-weight:500;color:var(--teal);cursor:pointer;
+    user-select:none;background:rgba(127,201,190,.05)}
+  summary:hover{background:rgba(127,201,190,.1)}
+  details p{padding:16px;margin:0;font-size:15px;color:var(--text-2);border-top:1px solid var(--line)}
+</style>
+</head>
+<body>
+
+<div class="wrap">
+  <header class="hero">
+    <a href="index.html" class="backlink">← 返回目錄</a>
+    <div class="eyebrow">
+      <div class="rule"></div>
+      BLOCK 8
+      <div class="dot">✦</div>
+      PHYSIOLOGY
+    </div>
+    <h1>骨與軟骨生理學</h1>
+    <p class="sub">從成骨細胞到骨質疏鬆動物實驗，揭開骨骼不斷破壞與重建的動態循環。授課教師：薛元碩 / 何美泠。</p>
+    
+    <div class="intro-card">
+      <p><b>臨床導讀：骨頭不是石頭，它是活的！</b></p>
+      <p>一名停經後的 65 歲婦女在浴室滑倒，造成了嚴重的股骨頸骨折。她很疑惑：「我每天都有喝牛奶，為什麼骨頭還會這麼脆？」<br><br>
+      其實，骨頭並不是像石頭一樣死氣沉沉的固體，它是一個<b>充滿血管、持續在進行「拆除與重建」的活器官 (living, dynamic, and vascular tissue)</b>。當女性停經後，保護骨骼的雌激素 (Estrogen) 下降，負責「拆除」的破骨細胞就會失控，導致骨質流失遠大於生成。<br><br>
+      在這個單元中，我們將從微觀的細胞生理，一路探索到如何用小鼠實驗來模擬人類的骨質疏鬆症！</p>
+    </div>
+  </header>
+
+  <div class="cols">
+    <nav class="toc">
+      <div class="t">CONTENTS</div>
+      <a href="#sec-1">1. 骨骼的本質與結構</a>
+      <a href="#sec-2">2. 兩種骨化過程</a>
+      <a href="#sec-3">3. 軟骨生理學與組織</a>
+      <a href="#sec-4">4. 骨骼重塑與荷爾蒙</a>
+      <a href="#sec-5">5. 動物實驗模式</a>
+      <a href="#sec-review" class="exam">一分鐘考前秒殺心法</a>
+    </nav>
+
+    <main>
+      
+      <!-- Section 1 -->
+      <section id="sec-1">
+        <div class="sec-head">
+          <div class="sec-num">01</div>
+          <h2>骨骼的本質與結構</h2>
+        </div>
+        
+        <p>在一般人的印象中，骨頭是白白硬硬的固體，但生理學第一堂課就是要打破這個迷思。</p>
+        <ul>
+            <li><b>骨骼的本質：</b>骨骼是一個活生生的、動態的、且富含血管的組織 (living, dynamic, vascular tissue)。它不是一塊死氣沉沉的鈣質。</li>
+            <li><b>骨骼的成熟度：</b>在成人所有成熟的骨骼中，骨基質中的膠原蛋白纖維都是平行排列的，這稱為<b>層板骨 (Lamellar bone)</b>。而剛受傷癒合或胚胎期的骨頭則是排列混亂的編織骨 (Woven bone)。</li>
+            <li><b>骨膜 (Periosteum)：</b>包覆在骨頭外層的薄膜，它的主要功能是負責骨骼的<b>生長與修復 (Bone growth and repair)</b>。</li>
+            <li><b>膠原蛋白 (Collagen)：</b>骨骼中最主要的蛋白質。如果膠原蛋白基因發生突變，就會導致成骨不全症 (Osteogenesis Imperfecta，玻璃娃娃)。</li>
+        </ul>
+
+        <div class="box trap">
+            <div class="bt"><span class="badge">易錯陷阱</span> 骨頭是由鈣化的「細胞」組成？</div>
+            <p>考題會騙你：「Bones are formed by calcified cells (骨頭是由鈣化的細胞組成)。」<br>
+            <b>錯！</b>骨頭是由「細胞 (成骨細胞)」分泌出來的「細胞外基質 (extracellular matrix)」鈣化而成的。鈣化的是基質，不是細胞本身！</p>
+        </div>
+
+        <div class="quiz">
+            <p class="quiz-question">Which statement best describes the general nature of bone tissue?</p>
+            <p class="quiz-translate">下列哪項敘述最能描述骨組織的一般性質？</p>
+            <ul class="quiz-options">
+                <li>(A) It is an inert structure made of solid calcium.
+                    <span class="opt-zh">(A) 它是一種由固體鈣製成的惰性結構。</span>
+                </li>
+                <li>(B) It is a static organ primarily for storage.
+                    <span class="opt-zh">(B) 它是一個主要用於儲存的靜態器官。</span>
+                </li>
+                <li>(C) It is a living, dynamic, and vascular tissue.
+                    <span class="opt-zh">(C) 它是一個活生生的、動態的、且富含血管的組織。</span>
+                </li>
+                <li>(D) It is composed solely of compact bone.
+                    <span class="opt-zh">(D) 它完全由緻密骨組成。</span>
+                </li>
+            </ul>
+            <details>
+                <summary>解答與解析</summary>
+                <p><b>答案：(C)</b><br>解析：骨頭是活的、不斷在改變且富含血流的組織。</p>
+            </details>
+        </div>
+
+        <div class="quiz">
+            <p class="quiz-question">Which type of bone consists of parallel layers of collagen fibers and is found in all mature bones?</p>
+            <p class="quiz-translate">哪種類型的骨頭由平行層狀的膠原纖維組成，且存在於所有成熟骨骼中？</p>
+            <ul class="quiz-options">
+                <li>(A) Woven bone
+                    <span class="opt-zh">(A) 編織骨</span>
+                </li>
+                <li>(B) Compact bone
+                    <span class="opt-zh">(B) 緻密骨</span>
+                </li>
+                <li>(C) Lamellar bone
+                    <span class="opt-zh">(C) 層板骨</span>
+                </li>
+                <li>(D) Trabecular bone
+                    <span class="opt-zh">(D) 骨小樑</span>
+                </li>
+            </ul>
+            <details>
+                <summary>解答與解析</summary>
+                <p><b>答案：(C)</b><br>解析：成熟的骨頭其膠原纖維會平行排列，稱為 Lamellar bone (層板骨)。Woven bone (編織骨) 則出現在發育中或骨折剛癒合時。</p>
+            </details>
+        </div>
+
+      </section>
+
+      <!-- Section 2 -->
+      <section id="sec-2">
+        <div class="sec-head">
+          <div class="sec-num">02</div>
+          <h2>兩種骨化過程 (Ossification)</h2>
+        </div>
+        
+        <p>人類的骨頭有兩種截然不同的生長方式。頭骨等扁平骨喜歡直接「無中生有」，而四肢的長骨則喜歡先「打好軟骨草稿」再蓋房子。</p>
+
+        <figure style="margin: 24px 0; text-align: center;">
+          <img src="img/bone_ossification.jpg" alt="Bone Ossification Diagram" style="max-width: 100%; border-radius: 12px; border: 1px solid var(--line);">
+          <figcaption style="font-size: 13.5px; color: var(--text-3); margin-top: 8px;">圖解：膜內骨化 (直接由間質細胞變成骨頭) vs. 軟骨內骨化 (先形成軟骨模型，再由血管入侵形成骨頭)。</figcaption>
+        </figure>
+
+        <h3>1. 膜內骨化 (Intramembranous Ossification)</h3>
+        <ul>
+            <li><b>不經過軟骨階段！</b>它是直接由胚胎的<b>間質細胞 (Mesenchymal cells)</b> 聚集，分化成成骨細胞 (Osteoblasts)。</li>
+            <li>成骨細胞會分泌類骨質 (Osteoid) 並鈣化，形成骨化中心。</li>
+            <li>這種方式主要用來形成扁平骨，例如<b>頭顱骨 (Skull)</b> 與鎖骨。</li>
+        </ul>
+
+        <h3>2. 軟骨內骨化 (Endochondral Ossification)</h3>
+        <ul>
+            <li><b>必須先有軟骨模型！</b>它是由<b>透明軟骨 (Hyaline cartilage)</b> 作為草稿。</li>
+            <li><b>生長順序 (超級必考題)：</b>
+                <ol>
+                    <li>軟骨細胞開始增生 (Proliferate)。</li>
+                    <li>軟骨細胞肥大 (Hypertrophy) 並開始鈣化 (Calcification)。</li>
+                    <li>血管入侵 (Vascular invasion) 帶來成骨細胞，這條入侵的血管稱為<b>骨膜芽 (Periosteal bud)</b>。</li>
+                </ol>
+            </li>
+            <li><b>骨化中心位置：</b>血管入侵的位置在長骨的<b>骨幹 (Diaphysis)</b> 中段，這裡會形成「初級骨化中心 (Primary ossification center)」。</li>
+        </ul>
+
+        <div class="box trap">
+            <div class="bt"><span class="badge">易錯陷阱</span> 軟骨內骨化的方向</div>
+            <p>考題會說：「軟骨組織持續生長，並從兩端 (both ends) 開始鈣化」。<br>
+            <b>錯！</b>初級骨化中心是從長骨的「正中央 (Diaphysis 骨幹)」開始鈣化，然後才往兩端蔓延。兩端 (Epiphysis 骨骺) 是後來才形成次級骨化中心的。</p>
+        </div>
+
+        <div class="quiz">
+            <p class="quiz-question">Which of the following best describes the initial step in intramembranous ossification?</p>
+            <p class="quiz-translate">下列何者最能描述「膜內骨化」的初始步驟？</p>
+            <ul class="quiz-options">
+                <li>(A) Formation of cartilage model by chondroblasts
+                    <span class="opt-zh">(A) 由成軟骨細胞形成軟骨模型</span>
+                </li>
+                <li>(B) Transformation of osteocytes into osteoblasts
+                    <span class="opt-zh">(B) 骨細胞轉化為成骨細胞</span>
+                </li>
+                <li>(C) Clustering of mesenchymal cells and differentiation into osteoblasts
+                    <span class="opt-zh">(C) 間質細胞聚集並分化為成骨細胞</span>
+                </li>
+                <li>(D) Vascular invasion of hyaline cartilage
+                    <span class="opt-zh">(D) 血管入侵透明軟骨</span>
+                </li>
+            </ul>
+            <details>
+                <summary>解答與解析</summary>
+                <p><b>答案：(C)</b><br>解析：膜內骨化的特點就是「不經過軟骨」，直接由間質細胞 (Mesenchymal cells) 聚集分化成成骨細胞開始。</p>
+            </details>
+        </div>
+
+        <div class="quiz">
+            <p class="quiz-question">What is the correct sequence of events in the primary center of endochondral ossification?</p>
+            <p class="quiz-translate">在軟骨內骨化的初級骨化中心，下列事件的正確發生順序為何？</p>
+            <ul class="quiz-options">
+                <li>(A) Periosteal bud invades &rarr; cartilage model forms &rarr; ossification center develops
+                    <span class="opt-zh">(A) 骨膜芽入侵 &rarr; 軟骨模型形成 &rarr; 骨化中心發育</span>
+                </li>
+                <li>(B) Chondrocytes proliferate &rarr; hypertrophy &rarr; calcification &rarr; vascular invasion
+                    <span class="opt-zh">(B) 軟骨細胞增生 &rarr; 肥大 &rarr; 鈣化 &rarr; 血管入侵</span>
+                </li>
+                <li>(C) Bone collar forms &rarr; mesenchyme condenses &rarr; chondrocyte hypertrophy &rarr; ossification
+                    <span class="opt-zh">(C) 骨領形成 &rarr; 間質濃縮 &rarr; 軟骨細胞肥大 &rarr; 骨化</span>
+                </li>
+                <li>(D) Osteoclast activity begins &rarr; epiphyseal plate forms &rarr; cartilage calcifies
+                    <span class="opt-zh">(D) 破骨細胞活性開始 &rarr; 生長板形成 &rarr; 軟骨鈣化</span>
+                </li>
+            </ul>
+            <details>
+                <summary>解答與解析</summary>
+                <p><b>答案：(B)</b><br>解析：標準的軟骨內骨化順序：軟骨細胞先增生排隊，接著細胞變胖肥大(Hypertrophy)，周圍基質開始鈣化，最後血管帶著造骨細胞入侵(Vascular invasion)。</p>
+            </details>
+        </div>
+
+      </section>
+
+      <!-- Section 3 -->
+      <section id="sec-3">
+        <div class="sec-head">
+          <div class="sec-num">03</div>
+          <h2>軟骨生理學與組織</h2>
+        </div>
+        
+        <p>軟骨是一個非常特別的組織，它沒有血管、沒有神經，完全靠滲透來獲取營養。</p>
+
+        <div class="box trap">
+            <div class="bt"><span class="badge">易錯陷阱</span> 軟骨有豐富血流？</div>
+            <p>考題會說：「Cartilage is directly supplied with nutrients by blood vessels (軟骨由血管直接供應營養)」。<br>
+            <b>錯！</b>軟骨是無血管 (Avascular) 的組織，它的營養來自周圍軟骨膜或關節液的擴散作用。</p>
+        </div>
+
+        <figure style="margin: 24px 0; text-align: center;">
+          <img src="img/cartilage_histology.jpg" alt="Cartilage Histology Diagram" style="max-width: 100%; border-radius: 12px; border: 1px solid var(--line);">
+          <figcaption style="font-size: 13.5px; color: var(--text-3); margin-top: 8px;">圖解：人體三大軟骨的顯微特徵對比。考試若出現紫色平滑基質就是透明軟骨！</figcaption>
+        </figure>
+
+        <h3>人體三大軟骨分類</h3>
+        <p>這三種軟骨的位置與成分是必考連連看：</p>
+        <ul>
+            <li><b>透明軟骨 (Hyaline Cartilage)：</b>人體最常見。主要由 <b>Type II 膠原蛋白</b> 組成。顯微鏡下基質看起來平滑如玻璃。<br>
+            📍 <b>位置：</b>肋骨末端、關節面、呼吸道。</li>
+            <li><b>彈性軟骨 (Elastic Cartilage)：</b>含有大量彈性纖維，具有絕佳彎曲彈性。<br>
+            📍 <b>位置：</b>外耳 (External ear)、會厭 (Epiglottis)。</li>
+            <li><b>纖維軟骨 (Fibrocartilage)：</b>非常強韌，含有大量 Type I 膠原蛋白。<span style="color:var(--rose)">最重要的特徵：它是唯一「沒有軟骨膜 (perichondrium)」的軟骨。</span><br>
+            📍 <b>位置：</b>椎間盤 (Intervertebral discs)、恥骨聯合。</li>
+        </ul>
+
+        <div class="quiz">
+            <p class="quiz-question">Which of the following correctly matches the cartilage type with its main structural feature?</p>
+            <p class="quiz-translate">下列何者正確配對了軟骨類型與其主要結構特徵？</p>
+            <ul class="quiz-options">
+                <li>(A) Hyaline cartilage &ndash; abundant elastic fibers
+                    <span class="opt-zh">(A) 透明軟骨 &ndash; 豐富的彈性纖維</span>
+                </li>
+                <li>(B) Elastic cartilage &ndash; type I collagen dominance
+                    <span class="opt-zh">(B) 彈性軟骨 &ndash; 第一型膠原蛋白為主</span>
+                </li>
+                <li>(C) Fibrocartilage &ndash; absence of perichondrium
+                    <span class="opt-zh">(C) 纖維軟骨 &ndash; 缺乏軟骨膜</span>
+                </li>
+                <li>(D) Articular cartilage &ndash; highly vascularized tissue
+                    <span class="opt-zh">(D) 關節軟骨 &ndash; 高度血管化的組織</span>
+                </li>
+            </ul>
+            <details>
+                <summary>解答與解析</summary>
+                <p><b>答案：(C)</b><br>解析：纖維軟骨 (Fibrocartilage) 為了承受巨大壓力，是沒有軟骨膜 (perichondrium) 包覆的。(A) 錯，透明軟骨是 Type II 膠原為主。(D) 錯，所有軟骨都是無血管的。</p>
+            </details>
+        </div>
+
+      </section>
+
+      <!-- Section 4 -->
+      <section id="sec-4">
+        <div class="sec-head">
+          <div class="sec-num">04</div>
+          <h2>骨骼重塑與荷爾蒙調節</h2>
+        </div>
+
+        <h3>1. 骨骼重塑的 ARF 循環</h3>
+        <p>骨頭的更新就像道路施工，有一定的標準作業流程，簡稱 <b>ARF Cycle</b>：</p>
+        <ol>
+            <li><b>A (Activation) 活化：</b>先召喚負責拆除的破骨細胞 (Osteoclast)。</li>
+            <li><b>R (Resorption) 吸收：</b>多核的破骨細胞分泌酸性物質，將舊的骨質溶解破壞。</li>
+            <li><b>Reversal 反轉：</b>過渡期。</li>
+            <li><b>F (Formation) 形成：</b>最後由單核的成骨細胞 (Osteoblast) 進場，鋪上新的骨基質。</li>
+        </ol>
+        <p>口訣：先破壞 (Resorption) 再建設 (Formation)。</p>
+
+        <div class="quiz">
+            <p class="quiz-question">What is the correct order of the ARF cycle in bone remodeling?</p>
+            <p class="quiz-translate">骨骼重塑中 ARF 循環的正確順序為何？</p>
+            <ul class="quiz-options">
+                <li>(A) Activation &rarr; Formation &rarr; Resorption
+                    <span class="opt-zh">(A) 活化 &rarr; 形成 &rarr; 吸收</span>
+                </li>
+                <li>(B) Resorption &rarr; Reversal &rarr; Activation &rarr; Formation
+                    <span class="opt-zh">(B) 吸收 &rarr; 反轉 &rarr; 活化 &rarr; 形成</span>
+                </li>
+                <li>(C) Activation &rarr; Resorption &rarr; Reversal &rarr; Formation
+                    <span class="opt-zh">(C) 活化 &rarr; 吸收 &rarr; 反轉 &rarr; 形成</span>
+                </li>
+                <li>(D) Formation &rarr; Activation &rarr; Resorption &rarr; Reversal
+                    <span class="opt-zh">(D) 形成 &rarr; 活化 &rarr; 吸收 &rarr; 反轉</span>
+                </li>
+            </ul>
+            <details>
+                <summary>解答與解析</summary>
+                <p><b>答案：(C)</b><br>解析：必須先 Activate 破骨細胞，進行 Resorption 拆除舊骨，過渡 Reversal 後，再進行 Formation 蓋新骨。</p>
+            </details>
+        </div>
+
+        <h3>2. 骨質疏鬆與荷爾蒙大亂鬥</h3>
+        <p>臨床上，如果 DEXA 測出的骨質密度 <b>T-score &lt; -2.5 SD</b> (與 30 歲健康年輕人相比)，即可診斷為骨質疏鬆症 (Osteoporosis)。</p>
+
+        <p>哪些荷爾蒙在控制這場拆除與建設的遊戲？</p>
+        <ul>
+            <li><b>雌激素 (Estrogen)：</b>保護骨頭的衛兵。它會<b>抑制破骨細胞的生成 (inhibits osteoclastogenesis)</b>。停經後雌激素下降，破骨細胞就會大暴走。</li>
+            <li><b>降鈣素 (Calcitonin)：</b>也是保護者。它會抑制破骨細胞的功能，藉此降低血鈣。</li>
+            <li><b>副甲狀腺素 (PTH)：</b>這是個雙面刃！
+                <ul>
+                    <li>生理上，它會促進破骨細胞吸收骨質以<b>升高血鈣</b>。</li>
+                    <li>但在臨床治療上，如果用藥物<b>「間歇性給予 (intermittent administration)」</b>低劑量的 PTH，反而會神奇地<b>刺激成骨細胞，增加骨質生成！</b>這是非常愛考的觀念。</li>
+                </ul>
+            </li>
+            <li><b>雙磷酸鹽類 (Bisphosphonate)：</b>臨床上最常用的骨鬆藥物，機制是直接毒殺並抑制破骨細胞，減少骨質吸收 (Suppress bone resorption)。</li>
+        </ul>
+
+        <div class="quiz">
+            <p class="quiz-question">Which one of the follows can promote bone resorption physiologically, but if by intermittent administration can increase bone formation?</p>
+            <p class="quiz-translate">下列何者在生理上會促進骨質吸收，但若以「間歇性給予」的方式，反而能增加骨質生成？</p>
+            <ul class="quiz-options">
+                <li>(A) PTH
+                    <span class="opt-zh">(A) 副甲狀腺素</span>
+                </li>
+                <li>(B) Calcitonin
+                    <span class="opt-zh">(B) 降鈣素</span>
+                </li>
+                <li>(C) Anti-sclerostin
+                    <span class="opt-zh">(C) 抗硬化蛋白</span>
+                </li>
+                <li>(D) OPG
+                    <span class="opt-zh">(D) 骨保護素</span>
+                </li>
+            </ul>
+            <details>
+                <summary>解答與解析</summary>
+                <p><b>答案：(A)</b><br>解析：PTH 生理上是溶骨升血鈣。但臨床藥物 (如 Teriparatide) 利用每日皮下注射造成的「間歇性血中濃度脈衝」，反而可以強烈刺激成骨作用，是少數能「促進骨生成」的骨鬆藥物。</p>
+            </details>
+        </div>
+
+      </section>
+
+      <!-- Section 5 -->
+      <section id="sec-5">
+        <div class="sec-head">
+          <div class="sec-num">05</div>
+          <h2>動物實驗模式</h2>
+        </div>
+        
+        <p>為了研究骨骼與肌肉疾病，科學家會使用老鼠來建立實驗模型。</p>
+        
+        <ul>
+            <li><b>停經後骨質疏鬆模型：</b>最標準且最常使用的方法是將雌性老鼠進行<b>卵巢切除術 (Ovariectomy)</b>，模擬人類停經後雌激素陡降的狀態。</li>
+            <li><b>其他骨鬆模型：</b>注射糖皮質素 (類固醇)、基因改造小鼠。<br>
+            <span style="color:var(--rose)">陷阱：</span>把骨頭打斷再接回去 (Breaking and resetting bones) 只會誘發骨折癒合，不會導致全身性的骨質疏鬆！</li>
+            <li><b>握力測試 (Grip strength test)：</b>讓老鼠抓住桿子並往後拉，這是用來評估肌肉疾病小鼠的<b>肌肉力量與神經肌肉功能 (muscular strength and neuromuscular function)</b>，而不是用來測量智力或反射。</li>
+        </ul>
+
+        <div class="quiz">
+            <p class="quiz-question">Which of the following is the most appropriate animal model to mimic post-menopausal osteoporosis?</p>
+            <p class="quiz-translate">下列何者是模擬「停經後骨質疏鬆症」最合適的動物模型？</p>
+            <ul class="quiz-options">
+                <li>(A) Tail suspension
+                    <span class="opt-zh">(A) 尾部懸吊</span>
+                </li>
+                <li>(B) Ovariectomy
+                    <span class="opt-zh">(B) 卵巢切除術</span>
+                </li>
+                <li>(C) Glucocorticoid administration
+                    <span class="opt-zh">(C) 給予糖皮質素 (類固醇)</span>
+                </li>
+                <li>(D) Immobilization of limbs
+                    <span class="opt-zh">(D) 肢體固定不動</span>
+                </li>
+            </ul>
+            <details>
+                <summary>解答與解析</summary>
+                <p><b>答案：(B)</b><br>解析：停經後骨鬆的主因是缺乏雌激素。將雌鼠卵巢切除 (Ovariectomy, OVX) 是最完美模擬缺乏雌激素的標準實驗模型。</p>
+            </details>
+        </div>
+
+      </section>
+
+      <!-- Section Review -->
+      <section id="sec-review">
+        <div class="sec-head">
+          <div class="sec-num">06</div>
+          <h2>一分鐘考前秒殺心法</h2>
+        </div>
+        <p>進考場前，看到這些敘述直接反射：</p>
+        <ul>
+            <li><b>骨骼本質</b>：活的、動態的、有血管！(絕對不是惰性鈣塊)。</li>
+            <li><b>骨膜 (Periosteum)</b>：負責生長與修復。</li>
+            <li><b>膜內骨化</b>：沒有軟骨！直接由 Mesenchymal cells 變 Osteoblasts (頭顱骨)。</li>
+            <li><b>軟骨內骨化</b>：從骨幹 (Diaphysis) 也就是初級骨化中心開始血管入侵。</li>
+            <li><b>三大軟骨</b>：
+              <ul>
+                <li>透明軟骨 (最常見, Type II 膠原)</li>
+                <li>彈性軟骨 (外耳, 會厭)</li>
+                <li>纖維軟骨 (椎間盤, <b>唯一沒有軟骨膜！</b>)</li>
+              </ul>
+            </li>
+            <li><b>ARF 循環</b>：先活化 $ightarrow$ 破壞吸收 (Resorption) $ightarrow$ 建設生成 (Formation)。</li>
+            <li><b>PTH 副甲狀腺素</b>：間歇性給藥 (Intermittent) 可促進骨生成。</li>
+            <li><b>動物實驗</b>：停經後骨鬆選「卵巢切除 (Ovariectomy)」。測肌力選「握力測試」。</li>
+        </ul>
+      </section>
+
+    </main>
+  </div>
+</div>
+
+</body>
+</html>
