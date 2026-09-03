@@ -118,6 +118,13 @@
   .quiz.repeated { border: 2px solid var(--rose); background: rgba(229,139,133,.05); box-shadow: 0 0 15px rgba(229,139,133,.15); position: relative; }
   .quiz.repeated::before { content: '🔥 連續四年必考題'; position: absolute; top: -14px; right: 20px; background: var(--rose); color: #FFF; font-size: 12px; font-weight: 700; padding: 4px 12px; border-radius: 20px; letter-spacing: .05em; }
 
+
+  /* Responsive Mobile Fixes */
+  img { max-width: 100%; height: auto; }
+  .tw, .table-wrapper { width: 100%; overflow-x: auto; -webkit-overflow-scrolling: touch; margin: 24px 0; }
+  table { min-width: 0 !important; word-break: break-word; }
+  .vocab-card summary { flex-wrap: wrap; gap: 12px; }
+  .vocab-card summary .en { word-break: break-word; line-height: 1.3; }
 </style>
 </head>
 <body>
