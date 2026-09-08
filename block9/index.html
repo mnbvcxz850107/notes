@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Block 9｜科目目錄</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&family=Noto+Serif+TC:wght@500;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0F1B18;--bg-2:#152420;--bg-3:#1B2E29;--line:#26403A;--line-2:#31534B;
+    --text:#E9F1EE;--text-2:#A8C2BA;--text-3:#7A968D;
+    --teal:#7FC9BE;--teal-dim:#4E9A90;--gold:#C9A961;--rose:#E58B85;
+    --serif:"Noto Serif TC","Songti TC",serif;
+    --sans:"Noto Sans TC","PingFang TC","Microsoft JhengHei",sans-serif;
+    --mono:"JetBrains Mono",ui-monospace,Menlo,monospace;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth;overflow-x:hidden}
+  body{margin:0;background:var(--bg);color:var(--text);font-family:var(--sans);
+    font-size:16.5px;line-height:1.9;font-weight:300;-webkit-font-smoothing:antialiased;
+    overflow-x:hidden}
+  .wrap{max-width:900px;margin:0 auto;padding:0 22px}
+
+  header.hero{padding:52px 0 40px;border-bottom:1px solid var(--line)}
+  .backlink{display:inline-block;font-family:var(--mono);font-size:12px;
+    color:var(--text-3);text-decoration:none;margin-bottom:22px;
+    border:1px solid var(--line);border-radius:6px;padding:5px 12px;transition:.15s}
+  .backlink:hover{color:var(--teal);border-color:var(--teal-dim)}
+  .eyebrow{display:flex;align-items:center;gap:16px;margin-bottom:22px;
+    font-family:var(--serif);font-size:15px;letter-spacing:.34em;color:var(--teal)}
+  .eyebrow .rule{width:56px;height:1px;background:var(--gold)}
+  .eyebrow .dot{color:var(--gold)}
+  h1{font-family:var(--serif);font-weight:700;font-size:clamp(32px,6vw,54px);
+    line-height:1.2;margin:0 0 20px;letter-spacing:.02em}
+  h1 em{font-style:normal;color:var(--teal)}
+  p.sub{margin:0;color:var(--text-2);max-width:60ch;font-size:17px}
+
+  main{padding:46px 0 80px}
+  .lead{font-family:var(--mono);font-size:11px;letter-spacing:.2em;color:var(--text-3);margin-bottom:20px}
+
+  .card{display:block;text-decoration:none;color:inherit;
+    border:1px solid var(--line);border-radius:16px;background:var(--bg-2);
+    padding:26px 30px;margin-bottom:16px;transition:.15s}
+  .card:hover{border-color:var(--teal-dim);background:var(--bg-3)}
+  .card-top{display:flex;align-items:baseline;gap:14px;flex-wrap:wrap;margin-bottom:8px}
+  .card h2{font-family:var(--serif);font-size:22px;margin:0;font-weight:700;flex:1;min-width:0}
+  .qn{font-family:var(--mono);font-size:12px;color:var(--text-2);
+    border:1px solid var(--line-2);padding:3px 11px;border-radius:20px;white-space:nowrap}
+  .card p{margin:0;color:var(--text-2);font-size:14.5px;line-height:1.75}
+  .teacher{margin-top:14px;font-family:var(--mono);font-size:12px;color:var(--text-3)}
+
+  .empty{border:1px dashed var(--line-2);border-radius:16px;background:var(--bg-2);
+    padding:44px 30px;text-align:center}
+  .empty-tag{font-family:var(--mono);font-size:11px;letter-spacing:.3em;color:var(--gold);margin-bottom:12px}
+  .empty p{margin:0;color:var(--text-2);font-size:14.5px;line-height:1.75}
+
+  footer{border-top:1px solid var(--line);padding:26px 0 60px;color:var(--text-3);font-size:13.5px}
+
+  @media (max-width:700px){
+    .wrap{padding:0 16px}
+    header.hero{padding:40px 0 30px}
+    .card{padding:20px 20px}
+    .card h2{font-size:20px}
+    .empty{padding:34px 20px}
+  }
+
+  /* Responsive Mobile Fixes */
+  img { max-width: 100%; height: auto; }
+  .tw, .table-wrapper { width: 100%; overflow-x: auto; -webkit-overflow-scrolling: touch; margin: 24px 0; }
+  table { min-width: 0 !important; word-break: break-word; }
+  .vocab-card summary { flex-wrap: wrap; gap: 12px; }
+  .vocab-card summary .en { word-break: break-word; line-height: 1.3; }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <a href="../index.html" class="backlink">← 返回總目錄</a>
+    <div class="eyebrow"><span class="rule"></span>BLOCK 9</div>
+    <h1>科目<em>列表</em></h1>
+    <p class="sub">本 Block 科目內容建置中。科目上架後，將依科目分類的期末考重點整理，點擊進入各科可展開深度學習與即時測驗。</p>
+  </div>
+</header>
+
+<main>
+<div class="wrap">
+  <div class="lead">SUBJECTS</div>
+
+  <!-- ==========================================================
+       新增科目卡片：複製下方整段卡片，改 href="xxxx.html"、
+       科目名稱、題數、簡介與授課教師即可。新增時請移除此
+       整段註解（含開頭與結尾的註解標記），把卡片貼在其位置。
+       ==========================================================
+  <a class="card" href="xxxx.html">
+    <div class="card-top"><h2>科目名稱</h2><span class="qn">N 題</span></div>
+    <p>科目簡介。</p>
+    <div class="teacher">授課教師　·　學年度</div>
+  </a>
+  -->
+
+  <div class="empty">
+    <div class="empty-tag">COMING SOON</div>
+    <p>目前尚未發布任何科目。科目頁面建置完成後，會以卡片形式列於此處。</p>
+  </div>
+
+</div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p>本 Block 內容依各學年度考古題詳解整理，若與老師上課投影片有出入，請以上課內容為準。</p>
+  </div>
+</footer>
+
+</body>
+</html>
