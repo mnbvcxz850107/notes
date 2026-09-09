@@ -1,0 +1,679 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>骨質疏鬆與骨壞死 林松彥</title>
+<style>
+:root{
+  color-scheme: dark;
+  --bg:#0b0e13; --panel:#141922; --panel2:#1b2230; --line:#2a3340;
+  --ink:#e8ecf3; --dim:#a3adbd; --gold:#e5b567; --cyan:#6fd3c7;
+  --rose:#e88b8b; --violet:#a99bf0;
+}
+*{box-sizing:border-box}
+html{font-size:150%}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font-family:"Noto Sans TC","PingFang TC","Helvetica Neue",system-ui,sans-serif;
+  line-height:1.85; overflow-wrap:anywhere;}
+/* Width follows the device, not the font size: px breakpoints stay put
+   while rem-based type scales with the 150% root. */
+.container{width:100%;max-width:none;margin:0 auto;
+  padding:clamp(.85rem,2.2vw,2.2rem);}
+@media (min-width:760px){ .container{max-width:730px} }
+@media (min-width:1024px){ .container{max-width:980px} }
+@media (min-width:1440px){ .container{max-width:1300px} }
+@media (min-width:1920px){ .container{max-width:1640px} }
+img{max-width:100%;height:auto}
+svg{max-width:100%;height:auto;display:block}
+h1{font-size:1.6rem;line-height:1.35;margin:.2rem 0 .6rem}
+h2{font-size:1.24rem;margin:2.4rem 0 .7rem;padding-bottom:.4rem;
+  border-bottom:1px solid var(--line);color:var(--gold)}
+h3{font-size:1.06rem;margin:1.5rem 0 .5rem;color:var(--cyan)}
+p{margin:.7rem 0}
+header#subject-overview{background:linear-gradient(160deg,#182031,#0e1219);
+  border:1px solid var(--line);border-radius:14px;padding:1.2rem;margin:.6rem 0 1.4rem}
+.meta{color:var(--dim);font-size:.86rem;margin:.3rem 0 0}
+nav#toc{background:var(--panel);border:1px solid var(--line);
+  border-radius:12px;padding:.9rem 1.1rem;margin:1.2rem 0}
+nav#toc ol{margin:.4rem 0 0;padding-left:1.3rem}
+nav#toc a{color:var(--ink);text-decoration:none;border-bottom:1px dotted var(--line)}
+.story{background:var(--panel2);border-left:3px solid var(--violet);
+  border-radius:0 10px 10px 0;padding:.9rem 1.1rem;margin:1.1rem 0}
+.story .tag{display:block;color:var(--violet);font-size:.78rem;
+  letter-spacing:.12em;margin-bottom:.35rem}
+.reality{background:var(--panel);border-left:3px solid var(--cyan);
+  border-radius:0 10px 10px 0;padding:.9rem 1.1rem;margin:1.1rem 0}
+.reality .tag{display:block;color:var(--cyan);font-size:.78rem;
+  letter-spacing:.12em;margin-bottom:.35rem}
+.keybox{background:#12202b;border:1px solid #26485a;border-radius:10px;
+  padding:.85rem 1rem;margin:1.1rem 0}
+.keybox b{color:var(--cyan)}
+.warn{background:#2a1c1c;border:1px solid #573434;border-radius:10px;
+  padding:.85rem 1rem;margin:1.1rem 0;color:#f0cfcf}
+article{background:var(--panel);border:1px solid var(--line);
+  border-radius:12px;padding:.95rem 1.05rem;margin:1.1rem 0}
+article .qhead{display:block;color:var(--gold);font-size:.82rem;
+  letter-spacing:.06em;margin-bottom:.45rem}
+article .stem{margin:.2rem 0 .5rem}
+article ul.opts{list-style:none;margin:.3rem 0 .2rem;padding:0}
+article ul.opts li{padding:.16rem 0 .16rem .2rem;color:#dbe2ec}
+details{background:#0f141c;border:1px solid var(--line);
+  border-radius:10px;padding:.15rem .8rem;margin:.6rem 0}
+details summary{cursor:pointer;padding:.6rem 0;color:var(--gold);
+  font-weight:600;min-height:44px;display:flex;align-items:center}
+details[data-kind="answer"] .ans{font-size:1.05rem;color:var(--cyan);font-weight:700}
+div[data-kind="zh-translation"]{background:#141c26;border:1px dashed #33465c;
+  border-radius:8px;padding:.7rem .85rem;margin:.5rem 0 .8rem}
+div[data-kind="zh-translation"] p{margin:.35rem 0}
+.src{color:var(--dim);font-size:.84rem;margin-top:.6rem}
+.quote{border-left:2px solid var(--gold);padding-left:.75rem;color:#f0e2c6}
+.infer{color:#f0d9a8;font-size:.92rem}
+figure{margin:1.3rem 0;background:var(--panel2);border:1px solid var(--line);
+  border-radius:12px;padding:.9rem}
+figcaption{color:var(--dim);font-size:.85rem;margin-top:.6rem;text-align:center}
+dl.vocab{margin:0}
+dl.vocab dt{color:var(--cyan);font-weight:700;margin-top:.9rem}
+dl.vocab dd{margin:.2rem 0 0;padding-left:0}
+dl.vocab .root{color:var(--dim);font-size:.86rem}
+.cram{background:var(--panel);border:1px solid var(--line);
+  border-radius:12px;padding:.4rem 1.1rem;margin:1rem 0}
+.cram li{margin:.55rem 0}
+.yearchip{display:inline-block;background:#233046;color:#bcd0ea;
+  border-radius:999px;padding:.05rem .55rem;font-size:.76rem;margin-right:.4rem}
+article.repeat{border:2px solid #e05252;box-shadow:0 0 0 3px rgba(224,82,82,.12)}
+article.repeat .qhead{color:#f08a8a}
+.repeat-badge{display:inline-block;background:#3a1c1c;border:1px solid #7d3a3a;
+  color:#f0a8a8;border-radius:999px;padding:.1rem .6rem;font-size:.76rem;
+  margin-left:.4rem;white-space:nowrap}
+.repeat-note{color:#e6a5a5;font-size:.84rem;margin:.45rem 0 0}
+figure.boxfig{margin:1.5rem 0 .5rem;background:transparent;border:0;padding:0}
+figure.boxfig img{border-radius:12px;border:1px solid var(--line);display:block;width:100%}
+figure.boxfig figcaption{color:var(--dim);font-size:.82rem;margin-top:.5rem;
+  text-align:left;line-height:1.6}
+figure.boxfig .figtag{color:var(--violet);font-size:.76rem;letter-spacing:.1em;
+  display:block;margin-bottom:.3rem}
+.ending{color:var(--dim);font-style:italic;margin:1.6rem 0 2.4rem}
+</style></head>
+<body>
+<div class="container">
+
+<header id="subject-overview">
+  <h1>骨質疏鬆與骨壞死</h1>
+  <p>這一科其實是兩個獨立的臨床問題，但考法高度一致：<b>都在問「你憑什麼說它壞了」。</b>骨壞死靠影像——哪一種檢查看得到什麼徵象；骨質疏鬆靠數字——T-score、Z-score、以及那條「有低創傷性骨折就不看數字」的例外規則。</p>
+  <p>範圍涵蓋股骨頭壞死的危險因子與影像判讀、骨質疏鬆的 DXA 測量部位與診斷準則，以及骨重塑機轉、鈣與維生素 D 的補充，還有作用在 Wnt 與 RANKL 兩條路徑上的標靶藥物。</p>
+  <p class="meta">命題老師：林松彥 ｜ 收錄 111、112、113 三年期中考共 9 題 ｜ 四份期末考卷皆無本科題目</p>
+</header>
+
+<nav id="toc">
+  <b>目錄</b>
+  <ol>
+    <li><a href="#chapter-1">看不見的斷水：股骨頭壞死</a></li>
+    <li><a href="#chapter-2">數字說了算，除非骨頭先說話：骨質疏鬆的診斷</a></li>
+    <li><a href="#chapter-3">拆與蓋的收支表：骨代謝與用藥</a></li>
+    <li><a href="#chapter-cram">考前速記</a></li>
+    <li><a href="#chapter-vocab">單字表</a></li>
+    <li><a href="#chapter-final">歷年考題總複習</a></li>
+  </ol>
+</nav>
+<!-- ================= CHAPTER 1 ================= -->
+<section id="chapter-1" data-chapter-kind="story">
+<h2>一、看不見的斷水：股骨頭壞死</h2>
+
+<figure class="boxfig" data-visual-id="obox-01-story" data-image-kind="story" data-explanation-verified="true">
+<span class="figtag">臨床場景</span>
+<img data-visual-id="obox-01-story" src="img/obox-01-story.webp" alt="臨床場景：放射科的判讀室裡，同一顆股骨頭被四台機器輪流看過。　插圖沿用同一組角色與場景設定。" loading="lazy" decoding="async" width="1365" height="768">
+<figcaption>臨床場景：放射科的判讀室裡，同一顆股骨頭被四台機器輪流看過。　插圖沿用同一組角色與場景設定。</figcaption>
+</figure>
+<div class="story" data-prose-kind="story"><span class="tag">故事</span>
+<p>放射科的判讀室裡，同一顆股骨頭被四台機器輪流看過。</p>
+<p>第一台是<b>X 光</b>。它只看得到礦物質的濃淡，所以早期什麼都看不出來；等到壞死區域塌陷、在關節面下裂出一道弧形空隙，它才終於顯影——那道弧就是<b>新月徵</b>。它是<b>塌陷已經開始</b>的訊號，不是早期訊號。</p>
+<p>第二台是<b>核子醫學掃描</b>。它看的是代謝活性，壞死中心沒有活性、周圍修復區反而過度活躍，於是呈現一個中空的環——<b>甜甜圈</b>。</p>
+<p>第三台是<b>MRI</b>。它最早、最敏感，能在骨頭還沒塌之前就看到壞死區與活骨的交界——一條亮暗並行的<b>雙線徵</b>。所以它是第一線。</p>
+<p>至於斷水的原因：長期類固醇、酗酒、血液疾病是三大主力。男性以酗酒居多——注意，這是骨科裡少數男性發生率高於女性的疾病。還有一項容易被漏掉：<b>HIV 感染本身</b>就是危險因子，不需要用到蛋白酶抑制劑。</p>
+</div>
+
+<figure class="boxfig" data-visual-id="obox-02-reality" data-image-kind="mechanism" data-explanation-verified="true">
+<span class="figtag">機轉圖解</span>
+<img data-visual-id="obox-02-reality" src="img/obox-02-reality.webp" alt="機轉圖解：ONFH（osteonecrosis of the femoral head，股骨頭壞死）的主要危險因子：長期使。" loading="lazy" decoding="async" width="1365" height="768">
+<figcaption>機轉圖解：ONFH（osteonecrosis of the femoral head，股骨頭壞死）的主要危險因子：長期使。</figcaption>
+</figure>
+<div class="reality"><span class="tag">回到現實</span>
+<p><b>ONFH（osteonecrosis of the femoral head，股骨頭壞死）</b>的主要危險因子：<b>長期使用類固醇、酗酒、血液疾病</b>。</p>
+<p><b>影像三徵對應三種檢查，年年考、年年換位置：</b></p>
+<p>　• <b>Crescent sign 新月徵 → X 光</b>（官方詳解：「在X光下才會呈現crescent sign」；111 年詳解補充其在 <b>stage II</b> 即可見，非 stage III）</p>
+<p>　• <b>Donut-like change 甜甜圈 → 核子醫學檢查</b></p>
+<p>　• <b>Double line sign 雙線徵 → MRI</b>；MRI 對早期 ONFH <b>敏感度高</b>，是第一線檢查</p>
+<p><b>HIV 感染本身即為危險因子</b>，不是只有蛋白酶抑制劑才算。骨壞死是少數<b>男性發生率高於女性</b>的骨病，男性成因以酗酒為主。膝關節骨壞死多為自發性且<b>多為單側</b>。</p>
+</div>
+
+<figure class="boxfig" data-visual-id="obox-03-warn" data-image-kind="comparison" data-explanation-verified="true">
+<span class="figtag">陷阱圖解</span>
+<img data-visual-id="obox-03-warn" src="img/obox-03-warn.webp" alt="易錯點圖解：三年三種問法，全部圍繞同一組對應關係。" loading="lazy" decoding="async" width="1365" height="768">
+<figcaption>易錯點圖解：三年三種問法，全部圍繞同一組對應關係。</figcaption>
+</figure>
+<div class="warn"><span class="tag">易錯</span>
+<p><b>三年三種問法，全部圍繞同一組對應關係。</b>命題者的手法是把「徵象」與「檢查」錯配：把新月徵放到核子醫學、把甜甜圈放到 MRI、或把 MRI 說成不敏感。只要把「<b>新月＝X光、甜甜圈＝核醫、雙線＝MRI</b>」背成一句，這三年的第一題都能秒解。</p>
+</div>
+
+<article data-question-id="113-bm113-p61-q49" data-placement="chapter">
+  <span class="qhead">113 年 第 49 題</span>
+  <p class="stem">Which of the following statements about osteonecrosis of the femoral head (ONFH) is correct?</p>
+  <ul class="opts">
+    <li>(A) MRI has low sensitivity for early ONFH and is not recommended as the first-line imaging modality.</li>
+    <li>(B) In bone scintigraphy, the typical crescent sign can be seen in ONFH.</li>
+    <li>(C) HIV infection does not increase the risk of ONFH.</li>
+    <li>(D) Major risk factors include long-term use of corticosteroids, alcohol abuse, or hematologic disorders.</li>
+  </ul>
+  <details data-kind="answer">
+    <summary>答案與詳解</summary>
+    <div data-kind="zh-translation">
+      <p><strong>中文題目：</strong>下列關於股骨頭壞死（ONFH）的敘述，何者正確？</p>
+      <p>(A) MRI 對早期 ONFH 敏感度低，不建議作為第一線影像檢查。</p>
+      <p>(B) 在骨骼核醫掃描中，可見到典型的新月徵。</p>
+      <p>(C) HIV 感染不會增加 ONFH 的風險。</p>
+      <p>(D) 主要危險因子包括長期使用類固醇、酗酒或血液疾病。</p>
+    </div>
+    <p class="ans">答案：D</p>
+    <p class="quote">詳解原文:「(A) MRI 具有高敏感性。(B) 在X光下才會呈現crescent sign。(C) HIV也會增加ONFH風險。」</p>
+    <p>三個錯誤選項正好各打掉一個常見誤解：(A) 把 MRI 說成不敏感（實際上最敏感、是第一線）；(B) 把新月徵放到核醫（應在 X 光）；(C) 把 HIV 排除在危險因子外（HIV 本身就是）。(D) 的三大危險因子是本科必背。</p>
+    <p class="src">出處：骨質疏鬆與骨壞死 林松彥 p.8,10,11 ｜ BM113_Block8期中考詳解.pdf 第 61 頁</p>
+  </details>
+</article>
+
+<article data-question-id="112-bm112-p89-q70" data-placement="chapter">
+  <span class="qhead">112 年 第 70 題</span>
+  <p class="stem">Regarding the description of femoral head necrosis, which of the following is correct?</p>
+  <ul class="opts">
+    <li>(A) Smoking is the main cause of avascular necrosis of the femoral head in men.</li>
+    <li>(B) When femoral head necrosis occurs, the typical crescent sign can be seen on a bone scan during a nuclear medicine examination.</li>
+    <li>(C) The use of protease inhibitors is a risk factor for femoral head necrosis, but HIV infection does not increase the risk of the disease.</li>
+    <li>(D) The causes of knee osteonecrosis are often spontaneous and mostly unilateral.</li>
+  </ul>
+  <details data-kind="answer">
+    <summary>答案與詳解</summary>
+    <div data-kind="zh-translation">
+      <p><strong>中文題目：</strong>關於股骨頭壞死的敘述，下列何者正確？</p>
+      <p>(A) 吸菸是男性股骨頭缺血性壞死的主要原因。</p>
+      <p>(B) 股骨頭壞死發生時，核子醫學骨骼掃描可見典型的新月徵。</p>
+      <p>(C) 使用蛋白酶抑制劑是股骨頭壞死的危險因子，但 HIV 感染本身不增加此病風險。</p>
+      <p>(D) 膝關節骨壞死的成因多為自發性，且多為單側。</p>
+    </div>
+    <p class="ans">答案：D</p>
+    <p><b>來源僅答案鍵</b>——原卷詳解欄空白。<span class="infer">依 111、113 年同考點的官方詳解逐項對照（推論）</span>：(A) 男性主因是<b>酗酒</b>而非吸菸（111 年詳解明載）；(B) 新月徵見於 <b>X 光</b>，核醫看到的是甜甜圈變化；(C) 111 年詳解明確指出「HIV病毒的感染本身就是骨壞死的risk factor」，故本敘述錯誤；(D) 膝關節骨壞死多為自發性且多單側，為正確敘述。</p>
+    <p class="src">出處：林松彥 骨壞死症及骨質疏鬆症 (ppt pg.7,8,10,16) ｜ BM112_Block 8 期中考(含申覆內容與結果).pdf 第 89 頁</p>
+  </details>
+</article>
+
+<article data-question-id="111-bm111-p56-q70" data-placement="chapter">
+  <span class="qhead">111 年 第 70 題</span>
+  <p class="stem">Regarding the description of osteonecrosis of femoral head, which of the following is correct?</p>
+  <ul class="opts">
+    <li>(A) Drinking alcohol is the main cause of femoral head avascular necrosis in women</li>
+    <li>(B) Crescent sign is a typical finding in X ray in stage III of femoral head osteo-necrosis</li>
+    <li>(C) HIV infection is a risk factor even without protease inhibitors</li>
+    <li>(D) Donut-like change could be seen in MRI in avascular necrosis of the femoral head</li>
+  </ul>
+  <details data-kind="answer">
+    <summary>答案與詳解</summary>
+    <div data-kind="zh-translation">
+      <p><strong>中文題目：</strong>關於股骨頭骨壞死的敘述，下列何者正確？</p>
+      <p>(A) 酗酒是<b>女性</b>股骨頭缺血性壞死的主要原因。</p>
+      <p>(B) 新月徵是股骨頭壞死<b>第三期</b>在 X 光下的典型發現。</p>
+      <p>(C) 即使未使用蛋白酶抑制劑，HIV 感染本身仍是危險因子。</p>
+      <p>(D) 股骨頭缺血性壞死在 MRI 上可見甜甜圈狀變化。</p>
+    </div>
+    <p class="ans">答案：C</p>
+    <p class="quote">詳解原文:「(A) 老師上課特別強調，骨頭疾病多數女性發生率高，少數像是骨壞死反而是男性發生率高，其中男生常見的原因又以喝酒居多。(B) Crescent sign是在stage II就可以看到的finding。(C) 正確，HIV病毒的感染本身就是骨壞死的risk factor。(D) donut like是核子醫學檢查的finding，MRI是double line sign。」</p>
+    <p>這則詳解一次交代了本章全部關鍵：性別差異、新月徵的<b>分期</b>（stage II 而非 III）、HIV 的獨立風險、以及三種影像徵象的正確歸屬。整段值得背下來——後兩年的題目都是從這裡變化出來的。</p>
+    <p class="src">出處：林松彥 骨質疏鬆與骨壞死 ｜ BM111 BLOCK-8 期中考詳解.pdf 第 56 頁</p>
+  </details>
+</article>
+</section>
+
+<!-- ================= CHAPTER 2 ================= -->
+<section id="chapter-2" data-chapter-kind="story">
+<h2>二、數字說了算，除非骨頭先說話：骨質疏鬆的診斷</h2>
+
+<figure class="boxfig" data-visual-id="obox-04-story" data-image-kind="story" data-explanation-verified="true">
+<span class="figtag">臨床場景</span>
+<img data-visual-id="obox-04-story" src="img/obox-04-story.webp" alt="臨床場景：骨密度室門口貼著一張流程圖，門診醫師每天照著走。　插圖沿用同一組角色與場景設定。" loading="lazy" decoding="async" width="1365" height="768">
+<figcaption>臨床場景：骨密度室門口貼著一張流程圖，門診醫師每天照著走。　插圖沿用同一組角色與場景設定。</figcaption>
+</figure>
+<div class="story" data-prose-kind="story"><span class="tag">故事</span>
+<p>骨密度室門口貼著一張流程圖，門診醫師每天照著走。</p>
+<p><b>先量哪裡？</b>標準位置是<b>腰椎與雙側髖部</b>。但如果這兩處都被鋼板釘住了，測到的是金屬不是骨頭，這時候改測前臂——而且是<b>非慣用手</b>的橈骨遠端三分之一，因為慣用手長期使用會讓骨密度偏高，量出來會低估風險。</p>
+<p><b>再看數字。</b>T-score 拿你跟年輕健康族群比，≤ −2.5 就是骨質疏鬆。Z-score 拿你跟同齡人比，年輕人如果 ≤ −2.0，代表「同齡都沒這麼差」，要回頭找是不是疾病或藥物造成的續發性骨鬆。</p>
+<p><b>但有一條凌駕數字的規則。</b>如果病人已經因為<b>輕微外力</b>——走路滑倒這種——就發生骨折，那骨頭已經用行動證明它不夠強了。這時候不管 T-score 是不是還在 −1.5、−2.2，<b>照樣診斷骨質疏鬆</b>。三年考三次，考的都是這一條。</p>
+</div>
+
+<figure class="boxfig" data-visual-id="obox-05-reality" data-image-kind="mechanism" data-explanation-verified="true">
+<span class="figtag">機轉圖解</span>
+<img data-visual-id="obox-05-reality" src="img/obox-05-reality.webp" alt="機轉圖解：DXA 標準測量部位：腰椎（L1–L4）與雙側髖部。" loading="lazy" decoding="async" width="1365" height="768">
+<figcaption>機轉圖解：DXA 標準測量部位：腰椎（L1–L4）與雙側髖部。</figcaption>
+</figure>
+<div class="reality"><span class="tag">回到現實</span>
+<p><b>DXA 標準測量部位</b>：腰椎（L1–L4）與雙側髖部。當腰椎或雙髖有內固定物時，改測<b>非慣用側前臂橈骨遠端 1/3</b>（113 年第 50 題的錯誤選項就是把「非慣用手」寫成「慣用手」）。</p>
+<p><b>T-score</b>：與年輕健康成人比較，≤ −2.5 診斷骨質疏鬆。<b>Z-score</b>：與同齡比較，<b>≤ −2.0</b> 時須詳查續發性骨質疏鬆（疾病或藥物所致）。111 年第 71 題的錯誤選項正是把這裡寫成「T-score less than 2.0」。</p>
+<p><b>凌駕數字的診斷規則：發生低創傷性骨折（low traumatic fracture）或有脊椎骨折病史者，即使 T-score &gt; −2.5，仍應診斷為骨質疏鬆。</b>走路滑倒造成的骨折即屬低創傷性骨折。</p>
+<p>骨質疏鬆的核心機轉是 <b>bone remodeling（骨重塑）失衡</b>，不是 bone modeling——這一個字連續三年被拿來設陷阱。吸菸與飲酒為危險因子。</p>
+</div>
+
+<figure class="boxfig" data-visual-id="obox-06-keybox" data-image-kind="mechanism" data-explanation-verified="true">
+<span class="figtag">重點圖解</span>
+<img data-visual-id="obox-06-keybox" src="img/obox-06-keybox.webp" alt="重點圖解：modeling vs remodeling：modeling 是塑形（生長期改變形狀，破骨與成骨各自作用、不需。" loading="lazy" decoding="async" width="1365" height="768">
+<figcaption>重點圖解：modeling vs remodeling：modeling 是塑形（生長期改變形狀，破骨與成骨各自作用、不需。</figcaption>
+</figure>
+<div class="keybox">
+<p><b>modeling vs remodeling：</b>modeling 是塑形（生長期改變形狀，破骨與成骨各自作用、不需偶聯）；<b>remodeling 是重塑</b>（成熟骨的汰舊換新，破骨與成骨必須<b>偶聯</b>、有先後順序）。骨質疏鬆壞的是 remodeling。</p>
+</div>
+
+<article data-question-id="113-bm113-p63-q50" data-placement="chapter">
+  <span class="qhead">113 年 第 50 題</span>
+  <p class="stem">Which of the following statements is incorrect?</p>
+  <ul class="opts">
+    <li>(A) Smoking and alcohol consumption are risk factors for osteoporosis.</li>
+    <li>(B) When a patient has internal fixation in L1–L4 vertebrae or both hips, bone density can be measured by DXA at the distal one-third of the dominant forearm.</li>
+    <li>(C) A 65-year-old woman was incidentally found to have an old compression fracture of L1 during a health check. DXA showed bilateral hip T-scores of -1.2/-1.3 and lumbar spine T-score of -2.2. This woman is still considered to have osteoporosis.</li>
+    <li>(D) In premenopausal women, a Z-score ≤ -2.0 requires careful evaluation for secondary osteoporosis caused by disease or medication.</li>
+  </ul>
+  <details data-kind="answer">
+    <summary>答案與詳解</summary>
+    <div data-kind="zh-translation">
+      <p><strong>中文題目：</strong>下列敘述何者不正確？</p>
+      <p>(A) 吸菸與飲酒是骨質疏鬆的危險因子。</p>
+      <p>(B) 當患者 L1–L4 椎體或雙側髖部有內固定物時，可用 DXA 測量<b>慣用手</b>前臂橈骨遠端三分之一的骨密度。</p>
+      <p>(C) 一位 65 歲女性健檢時意外發現 L1 陳舊性壓迫性骨折，DXA 顯示雙髖 T-score 為 -1.2/-1.3、腰椎 T-score 為 -2.2。此女性仍應視為骨質疏鬆。</p>
+      <p>(D) 停經前女性 Z-score ≤ -2.0 時，須仔細評估是否為疾病或藥物造成的續發性骨質疏鬆。</p>
+    </div>
+    <p class="ans">答案：B</p>
+    <p class="quote">詳解原文:「要測非慣用手的橈骨⅓喔，這hen簡單吧」</p>
+    <p>(B) 唯一的錯字是 <b>dominant（慣用）</b>，正解是<b>非慣用側</b>。(C) 正是「低創傷性／脊椎骨折病史凌駕 T-score」規則的應用——T-score 只有 −2.2 仍診斷骨質疏鬆。(D) 的 Z-score ≤ −2.0 為續發性骨鬆的評估門檻。</p>
+    <p class="src">出處：骨質疏鬆與骨壞死 林松彥 ｜ BM113_Block8期中考詳解.pdf 第 63 頁</p>
+  </details>
+</article>
+
+<article data-question-id="112-bm112-p91-q71" data-placement="chapter">
+  <span class="qhead">112 年 第 71 題</span>
+  <p class="stem">Which of the following statements is incorrect?</p>
+  <ul class="opts">
+    <li>(A) The main pathogenesis of osteoporosis is an imbalance in bone remodeling.</li>
+    <li>(B) The 1st-4th lumbar vertebrae and bilateral hips are common sites for DXA to detect bone density.</li>
+    <li>(C) A 65-year-old woman slipped while walking and fractured the femoral neck of her right hip. DXA examination showed that the T-score of the left hip was -1.2 and the average bone density T-score of the lumbar spine was -1.4. Therefore, the woman is not an osteoporosis patient.</li>
+    <li>(D) When a young patient's Z-score is less than -2.0, it is necessary to carefully investigate whether there is secondary osteoporosis caused by disease or drugs.</li>
+  </ul>
+  <details data-kind="answer">
+    <summary>答案與詳解</summary>
+    <div data-kind="zh-translation">
+      <p><strong>中文題目：</strong>下列敘述何者不正確？</p>
+      <p>(A) 骨質疏鬆的主要機轉是骨重塑失衡。</p>
+      <p>(B) 第 1–4 腰椎與雙側髖部是 DXA 測量骨密度的常見部位。</p>
+      <p>(C) 一位 65 歲女性走路時滑倒造成右髖股骨頸骨折。DXA 顯示左髖 T-score 為 -1.2、腰椎平均 T-score 為 -1.4，因此該女性不是骨質疏鬆患者。</p>
+      <p>(D) 年輕患者 Z-score 小於 -2.0 時，須仔細調查是否為疾病或藥物造成的續發性骨質疏鬆。</p>
+    </div>
+    <p class="ans">答案：C</p>
+    <p class="quote">詳解原文:「當發生低創傷性骨折(low traumatic fracture)或脊椎骨折病史,即使骨密度T值>-2.5也得診斷為骨質疏鬆。選項中的女士是因走路滑倒造成脊椎骨折,符合低創傷性骨折的定義。」</p>
+    <p>(A)(B)(D) 三個正確選項恰好把本章的三個核心事實各講一遍：機轉是 remodeling 失衡、標準測量部位、Z-score 門檻。(C) 是唯一錯誤——它只看數字而忽略了低創傷性骨折這條凌駕規則。</p>
+    <p class="src">出處：林松彥 骨質疏鬆與骨壞死 (ppt pg.40) ｜ BM112_Block 8 期中考(含申覆內容與結果).pdf 第 91 頁</p>
+  </details>
+</article>
+
+<article data-question-id="111-bm111-p58-q71" data-placement="chapter">
+  <span class="qhead">111 年 第 71 題</span>
+  <p class="stem">Which of the following statements is correct?</p>
+  <ul class="opts">
+    <li>(A) The main pathogenesis of osteoporosis is the imbalance of bone modeling.</li>
+    <li>(B) The lumbar spine and bilateral hips are common sites for testing bone density.</li>
+    <li>(C) A 65-year-old woman got a slip falling while walking and suffered a fracture of the first lumbar vertebra (L1 compression fracture). The DXA examination showed that T-score of the female neck is -1.2 and the average T-score of L2-L4 is -1.5. The woman was not eligible for the diagnosis of osteoporosis.</li>
+    <li>(D) It is necessary to careful survey for coexisting problems or diseases with osteoporosis, when the T-score less than 2.0 was noted in young patients.</li>
+  </ul>
+  <details data-kind="answer">
+    <summary>答案與詳解</summary>
+    <div data-kind="zh-translation">
+      <p><strong>中文題目：</strong>下列敘述何者正確？</p>
+      <p>(A) 骨質疏鬆的主要機轉是骨<b>塑形（modeling）</b>失衡。</p>
+      <p>(B) 腰椎與雙側髖部是測量骨密度的常見部位。</p>
+      <p>(C) 一位 65 歲女性走路滑倒造成第一腰椎壓迫性骨折。DXA 顯示股骨頸 T-score 為 -1.2、L2-L4 平均 T-score 為 -1.5，因此該女性不符合骨質疏鬆的診斷。</p>
+      <p>(D) 年輕患者出現 <b>T-score</b> 小於 2.0 時，須仔細評估骨質疏鬆的共病或疾病。</p>
+    </div>
+    <p class="ans">答案：B</p>
+    <p class="quote">詳解原文:「(A) 應改為bone remodeling。(B) 正確。(C) 走路時滑倒骨折屬於低創傷性骨折，因此即使T-score(-1.5)>-2.5，也可以診斷為骨質疏鬆。(D) 應改為Z-score<-2時需careful survey。」</p>
+    <p>本題把三個陷阱一次擺滿：(A) modeling／remodeling 一字之差；(C) 忽略低創傷性骨折的凌駕規則；(D) 把 Z-score 寫成 T-score。三者在後兩年都被單獨拆出來重考過。</p>
+    <p class="src">出處：林松彥 骨質疏鬆與骨壞死 ｜ BM111 BLOCK-8 期中考詳解.pdf 第 58 頁</p>
+  </details>
+</article>
+</section>
+<!-- ================= CHAPTER 3 ================= -->
+<section id="chapter-3" data-chapter-kind="story">
+<h2>三、拆與蓋的收支表：骨代謝與用藥</h2>
+
+<figure class="boxfig" data-visual-id="obox-07-story" data-image-kind="story" data-explanation-verified="true">
+<span class="figtag">臨床場景</span>
+<img data-visual-id="obox-07-story" src="img/obox-07-story.webp" alt="臨床場景：治療骨質疏鬆，本質上是在調整一張收支表：拆得太多、蓋得太少，就把兩邊各推一把。　插圖沿用同一組角色與場景設定。" loading="lazy" decoding="async" width="1365" height="768">
+<figcaption>臨床場景：治療骨質疏鬆，本質上是在調整一張收支表：拆得太多、蓋得太少，就把兩邊各推一把。　插圖沿用同一組角色與場景設定。</figcaption>
+</figure>
+<div class="story" data-prose-kind="story"><span class="tag">故事</span>
+<p>治療骨質疏鬆，本質上是在調整一張收支表：拆得太多、蓋得太少，就把兩邊各推一把。</p>
+<p><b>先看拆的那一側。</b>破骨細胞要成熟，得先收到一個叫 RANKL 的訊號——那是成骨細胞端發出的「開工令」。擋住這個訊號，拆除就停下來。注意方向：RANKL 是<b>促進</b>破骨細胞成熟的，抑制劑要擋的是這個配體，不是去激活它。</p>
+<p><b>再看蓋的那一側。</b>有一個叫 sclerostin 的煞車蛋白，專門壓抑 Wnt 這條促進造骨的路。<b>抗硬化蛋白抗體</b>把煞車鬆開，Wnt 通了、造骨變多；而且它同時還壓下 RANKL 那條路，減少拆除——一藥兩用，這是它最常被考的特點。</p>
+<p><b>副甲狀腺素則是個怪東西。</b>它到底促進造骨還是促進拆骨，取決於<b>怎麼給</b>：連續給藥是拆，<b>間斷給藥</b>才是蓋。</p>
+<p><b>最後是原料。</b>維生素 D3 進了身體要先到<b>肝臟</b>轉成 25(OH)D3 才有活性——不是腎臟（腎臟做的是後面那一步）。抽血看營養狀態也是看 <b>25(OH)D</b>：低於 20 ng/mL 是缺乏、20–30 是不足、超過 30 才算充足。至於鈣——每天 1200 毫克是建議攝取量，但<b>單靠補鈣並不能預防骨折</b>。這一點老師在申覆回覆裡講得很重。</p>
+</div>
+
+<figure class="boxfig" data-visual-id="obox-08-reality" data-image-kind="mechanism" data-explanation-verified="true">
+<span class="figtag">機轉圖解</span>
+<img data-visual-id="obox-08-reality" src="img/obox-08-reality.webp" alt="機轉圖解：Modeling vs remodeling：bone remodeling 才需要破骨與成骨的偶聯（coupl。" loading="lazy" decoding="async" width="1365" height="768">
+<figcaption>機轉圖解：Modeling vs remodeling：bone remodeling 才需要破骨與成骨的偶聯（coupl。</figcaption>
+</figure>
+<div class="reality"><span class="tag">回到現實</span>
+<p><b>Modeling vs remodeling</b>：<b>bone remodeling 才需要破骨與成骨的偶聯（coupling）並有先後順序</b>；modeling 沒有。三年三次都把這兩個字互換來設陷阱。</p>
+<p><b>RANKL 路徑</b>：RANKL 促進破骨細胞成熟與作用；RANK ligand inhibitor 抑制的是這條路徑。111 年的錯誤選項把它寫成「binds to RANK on osteoclasts」並把 RANKL 的作用方向弄反。</p>
+<p><b>PTH</b>：<b>間斷性給藥才促進骨質生成</b>，連續給藥不會。</p>
+<p><b>Anti-sclerostin antibody（抗硬化蛋白抗體）</b>：促進 <b>Wnt</b> 訊號路徑以增加骨合成，同時抑制 <b>RANKL</b> 依賴路徑以減少骨破壞——同時作用於造骨與破骨兩端。</p>
+<p><b>維生素 D</b>：原型 D3 由<b>肝臟</b>轉換為 25(OH)D3（不是腎臟）；營養狀態以 <b>25(OH)D</b> 評估，<b>&lt; 20 ng/mL 為缺乏</b>、20–30 為不足、&gt; 30 為充足。不是看 1,25(OH)₂D。</p>
+<p><b>鈣</b>：每日 1200 mg 為停經後婦女的建議補充量，且須與維生素 D 併用；但<b>單獨補鈣不能預防骨折</b>（112 年申覆後老師明確重申）。</p>
+</div>
+
+<article data-question-id="113-bm113-p63-q51" data-placement="chapter">
+  <span class="qhead">113 年 第 51 題</span>
+  <p class="stem">Which of the following statements is correct?</p>
+  <ul class="opts">
+    <li>(A) Bone remodeling requires coupling between osteoclasts and osteoblasts.</li>
+    <li>(B) Daily intake of 1200 mg of calcium in osteoporosis patients reduces fracture risk.</li>
+    <li>(C) Native vitamin D3 must be converted by the kidney to 25(OH)D3 to increase its activity.</li>
+    <li>(D) Vitamin D status is usually assessed by serum 1,25-dihydroxyvitamin D [1,25(OH)₂D] levels.</li>
+  </ul>
+  <details data-kind="answer">
+    <summary>答案與詳解</summary>
+    <div data-kind="zh-translation">
+      <p><strong>中文題目：</strong>下列敘述何者正確？</p>
+      <p>(A) 骨重塑需要破骨細胞與成骨細胞之間的偶聯。</p>
+      <p>(B) 骨質疏鬆患者每日攝取 1200 mg 鈣可降低骨折風險。</p>
+      <p>(C) 原型維生素 D3 必須由腎臟轉換為 25(OH)D3 才能提高活性。</p>
+      <p>(D) 維生素 D 的營養狀態通常以血清 1,25-二羥基維生素 D 濃度評估。</p>
+    </div>
+    <p class="ans">答案：A</p>
+    <p class="quote">詳解原文:「(A) 可以看到bone remodeling cycle中osteoclast和osteoblast都有參與。(B) 補充鈣不會減少骨折風險。(C) 是在肝臟轉換。」</p>
+    <p>注意本題把 111／112 年的陷阱<b>反過來用</b>：前兩年是把 remodeling 寫成 modeling 當錯誤選項，這一年直接把正確的 remodeling 敘述當成答案。(D) 的評估指標應為 25(OH)D 而非 1,25(OH)₂D。</p>
+    <p class="src">出處：林松彥老師 上課講義 ｜ BM113_Block8期中考詳解.pdf 第 63 頁</p>
+  </details>
+</article>
+
+<article data-question-id="112-bm112-p92-q72" data-placement="chapter">
+  <span class="qhead">112 年 第 72 題 ｜ 本題經申覆</span>
+  <p class="stem">Which of the following statements is correct?</p>
+  <ul class="opts">
+    <li>(A) Bone modeling requires coupling of osteoclasts and osteoblasts.</li>
+    <li>(B) Patients with osteoporosis need to take 1200 mg of calcium daily to reduce the incidence of fractures.</li>
+    <li>(C) Prototype vitamin D3 needs to be converted into 25(OH)D3 by the kidneys to increase vitamin D3 activity.</li>
+    <li>(D) 25(OH)D &lt; 20 ng/ml is considered vitamin D deficiency.</li>
+  </ul>
+  <details data-kind="answer">
+    <summary>答案與詳解</summary>
+    <div data-kind="zh-translation">
+      <p><strong>中文題目：</strong>下列敘述何者正確？</p>
+      <p>(A) 骨塑形需要破骨細胞與成骨細胞的偶聯。</p>
+      <p>(B) 骨質疏鬆患者每日需攝取 1200 mg 鈣以降低骨折發生率。</p>
+      <p>(C) 原型維生素 D3 需由腎臟轉換為 25(OH)D3 以提高活性。</p>
+      <p>(D) 25(OH)D 小於 20 ng/ml 視為維生素 D 缺乏。</p>
+    </div>
+    <p class="ans">答案：D（申覆後維持原答案）</p>
+    <p class="quote">詳解原文:「(A) 應改為remodeling。(B) 老師上課講義中有提到建議停經後的婦女每日補充量為1200 mg/day, 且必須同時有vitamin D才有效, 但未提到已經osteoporosis的患者, 若每日補充量為1200 mg是否有改善的效果。(C) 應改為liver。(D) 正確, &gt;30 ng/ml為充足, 20-30 ng/ml為insufficiency, &lt;20 ng/ml為deficiency。」</p>
+    <p><b>老師的申覆回覆（逐字）：</b></p>
+    <p class="quote">「B. 不認同解釋。每日單位1200mg不能預防骨折。上課特別強調1200mg的calcium不能預防骨折。 每日1200mg的calcium被建議骨鬆患者使用，但不是使用就可以預防骨折。」</p>
+    <p>申覆的爭點在於「1200 mg 是建議攝取量」與「1200 mg 能預防骨折」是兩回事。老師的立場很明確：<b>建議補充 ≠ 能預防骨折</b>。113 年第 51 題的 (B) 又考了一次同一句，官方詳解直接寫「補充鈣不會減少骨折風險」。</p>
+    <p class="src">出處：林松彥 骨質疏鬆與骨壞死 (ppt pg.49) ｜ BM112_Block 8 期中考(含申覆內容與結果).pdf 第 92 頁</p>
+  </details>
+</article>
+
+<article data-question-id="111-bm111-p59-q72" data-placement="chapter">
+  <span class="qhead">111 年 第 72 題</span>
+  <p class="stem">Which of the following statements is correct?</p>
+  <ul class="opts">
+    <li>(A) Bone modeling must have osteoclast and osteoblast coupling</li>
+    <li>(B) RANK ligand inhibitor binds to RANK on osteoclasts to inhibit the maturation of osteoclasts</li>
+    <li>(C) Continuous administration of Parathyroid hormone increase bone formation</li>
+    <li>(D) Anti-sclerostin antibody promotes Wnt signaling pathway to increase bone synthesis and inhibits RANKL-dependent pathway to decrease bone breakdown</li>
+  </ul>
+  <details data-kind="answer">
+    <summary>答案與詳解</summary>
+    <div data-kind="zh-translation">
+      <p><strong>中文題目：</strong>下列敘述何者正確？</p>
+      <p>(A) 骨塑形必須有破骨細胞與成骨細胞的偶聯。</p>
+      <p>(B) RANK 配體抑制劑結合破骨細胞上的 RANK 以抑制破骨細胞成熟。</p>
+      <p>(C) 連續給予副甲狀腺素會增加骨質生成。</p>
+      <p>(D) 抗硬化蛋白抗體促進 Wnt 訊號路徑以增加骨合成，並抑制 RANKL 依賴路徑以減少骨破壞。</p>
+    </div>
+    <p class="ans">答案：D</p>
+    <p class="quote">詳解原文:「(A) Remodeling才會有先後順序之分。(B) RANKL應該為促進嗜骨細胞的成熟和作用。(C) 可參考下圖，間斷性給藥才能促進骨質。(D) 正確，左邊是Wnt pathway，右邊是RANKL的pathway。」</p>
+    <p>(D) 是全科最值得記的一個藥理事實：<b>抗硬化蛋白抗體同時作用於兩端</b>——鬆開 Wnt 的煞車以增加造骨，並抑制 RANKL 路徑以減少破骨。(C) 的關鍵字是 <b>continuous</b>：PTH 要<b>間斷</b>給才促進骨質生成。</p>
+    <p class="src">出處：林松彥 骨質疏鬆與骨壞死 ｜ BM111 BLOCK-8 期中考詳解.pdf 第 59 頁</p>
+  </details>
+</article>
+</section>
+
+<!-- ================= CRAM ================= -->
+<section id="chapter-cram" data-chapter-kind="cram">
+<h2>四、考前速記</h2>
+<div class="cram">
+<ul>
+<li><b>影像三徵對應：新月徵 crescent sign ＝ X 光</b>（stage II 即可見）、<b>甜甜圈 donut-like ＝ 核子醫學</b>、<b>雙線徵 double line ＝ MRI</b>。MRI 敏感度最高、是第一線。</li>
+<li><b>ONFH 危險因子</b>：長期類固醇、酗酒、血液疾病。<b>HIV 感染本身即為危險因子</b>，不需蛋白酶抑制劑。骨壞死是少數<b>男性多於女性</b>的骨病，男性主因為酗酒。膝關節骨壞死多自發性、多單側。</li>
+<li><b>DXA 部位</b>：腰椎 L1–L4 ＋ 雙髖；有內固定物時改測<b>非慣用側</b>前臂橈骨遠端 1/3。</li>
+<li><b>T-score</b> ≤ −2.5 診斷骨質疏鬆；<b>Z-score ≤ −2.0</b>（年輕人／停經前女性）須查續發性骨鬆。別把兩者搞混。</li>
+<li><b>凌駕規則：有低創傷性骨折或脊椎骨折病史，T-score 再高也診斷骨質疏鬆。</b>三年考三次。</li>
+<li><b>modeling ≠ remodeling</b>：需要破骨／成骨<b>偶聯與先後順序</b>的是 <b>remodeling</b>；骨質疏鬆壞的也是 remodeling。</li>
+<li><b>RANKL 促進</b>破骨細胞成熟；抑制劑擋的是這條路徑。</li>
+<li><b>PTH 要間斷給藥才促進骨生成</b>，連續給不會。</li>
+<li><b>抗硬化蛋白抗體</b>＝促 Wnt（增合成）＋ 抑 RANKL（減破壞），兩端同時作用。</li>
+<li><b>維生素 D3 在肝臟</b>轉為 25(OH)D3（不是腎臟）；營養狀態看 <b>25(OH)D</b>：&lt;20 缺乏、20–30 不足、&gt;30 充足。</li>
+<li><b>每日 1200 mg 鈣是建議攝取量，但單獨補鈣不能預防骨折</b>（112 年申覆維持原答案）。</li>
+</ul>
+</div>
+</section>
+
+<!-- ================= VOCAB ================= -->
+<section id="chapter-vocab" data-chapter-kind="vocab">
+<h2>五、單字表</h2>
+<dl class="vocab">
+<dt>osteonecrosis of the femoral head (ONFH)</dt>
+<dd><span class="root">osteo-（骨）+ necrosis（壞死）</span>　股骨頭壞死。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>又稱 avascular necrosis——名字就寫著病因是缺血。股骨頭血供末端型、少側枝，一斷就沒備援。</p></details></dd>
+
+<dt>crescent sign</dt>
+<dd><span class="root">crescent（新月）</span>　新月徵，關節面下的弧形透亮帶，見於 <b>X 光</b>，stage II 即可出現。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>軟骨下骨塌陷後留下的一彎縫隙。是「已經開始塌」的訊號，不是最早期訊號。</p></details></dd>
+
+<dt>double line sign</dt>
+<dd><span class="root">double line（雙線）</span>　雙線徵，<b>MRI</b> 上壞死區與活骨交界的高低訊號並行帶。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>MRI 才有兩條線。看到題目把它放進 X 光或核醫就是錯的。</p></details></dd>
+
+<dt>donut-like change</dt>
+<dd><span class="root">donut（甜甜圈）</span>　甜甜圈變化，<b>核子醫學</b>檢查的表現：中心無攝取、周邊修復區高攝取。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>中間死掉沒訊號＝甜甜圈的洞；周圍在修復＝那圈麵包。</p></details></dd>
+
+<dt>DXA</dt>
+<dd><span class="root">Dual-energy X-ray Absorptiometry</span>　雙能量 X 光吸收儀，測骨密度的標準工具。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>雙能量＝用兩種能量的 X 光分離軟組織與骨質。標準部位是腰椎＋雙髖。</p></details></dd>
+
+<dt>T-score</dt>
+<dd><span class="root">T＝young adult 對照</span>　與<b>年輕健康成人</b>比較的標準差值，≤ −2.5 診斷骨質疏鬆。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>T 想成 <b>T</b>op（顛峰骨量）。跟人生最好的時候比。</p></details></dd>
+
+<dt>Z-score</dt>
+<dd><span class="root">Z＝age-matched 對照</span>　與<b>同齡</b>比較的標準差值，≤ −2.0 須查續發性骨質疏鬆。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>跟同輩比。同輩都沒這麼差 → 一定有別的原因（疾病或藥物）。</p></details></dd>
+
+<dt>low traumatic fracture</dt>
+<dd><span class="root">low trauma（低創傷）</span>　低創傷性骨折，如站立高度跌倒即骨折。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>骨頭已用行動證明它不夠強，這時<b>不看 T-score</b> 也診斷骨質疏鬆。本科三年必考。</p></details></dd>
+
+<dt>bone modeling</dt>
+<dd><span class="root">model（塑形）</span>　骨塑形。生長期改變骨的形狀與大小，破骨與成骨<b>各自獨立作用</b>。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>塑形＝雕出形狀，不需要兩邊配合。</p></details></dd>
+
+<dt>bone remodeling</dt>
+<dd><span class="root">re-（重新）+ model</span>　骨重塑。成熟骨的汰舊換新，破骨與成骨<b>必須偶聯且有先後順序</b>。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>re- ＝重來一次。骨質疏鬆壞的是這個，不是 modeling。一字之差三年考三次。</p></details></dd>
+
+<dt>coupling</dt>
+<dd><span class="root">couple（成對、耦合）</span>　偶聯。破骨與成骨活動在時間與空間上互相銜接。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>拆完才蓋、蓋在剛拆的地方——這種銜接只出現在 remodeling。</p></details></dd>
+
+<dt>RANKL</dt>
+<dd><span class="root">Receptor Activator of Nuclear factor Kappa-B Ligand</span>　由成骨細胞端釋出，<b>促進</b>破骨細胞成熟與作用。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>名字裡的 <b>Activator</b> 就說明方向是「促進」。抑制劑擋的是這個配體。</p></details></dd>
+
+<dt>sclerostin</dt>
+<dd><span class="root">sclero-（硬化）+ -stin</span>　硬化蛋白，由骨細胞分泌，<b>抑制 Wnt</b> 路徑而減少造骨。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>它是造骨的煞車。抗體把煞車拿掉 → 造骨增加。</p></details></dd>
+
+<dt>Wnt signaling pathway</dt>
+<dd><span class="root">Wingless + Int-1 合稱</span>　促進成骨細胞分化與骨形成的訊號路徑。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>抗硬化蛋白抗體＝促 Wnt（蓋）＋ 抑 RANKL（拆），一藥管兩端。</p></details></dd>
+
+<dt>parathyroid hormone (PTH)</dt>
+<dd><span class="root">para-（旁）+ thyroid（甲狀腺）</span>　副甲狀腺素。<b>間斷</b>給藥促進骨生成，<b>連續</b>給藥則否。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>同一個荷爾蒙，給法決定方向。看到 continuous 就要警覺。</p></details></dd>
+
+<dt>25(OH)D</dt>
+<dd><span class="root">25-hydroxyvitamin D</span>　骨化二醇，評估維生素 D 營養狀態的指標。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>&lt;20 缺乏、20–30 不足、&gt;30 充足。抽血看的是它，不是 1,25(OH)₂D。</p></details></dd>
+
+<dt>hepatic 25-hydroxylation</dt>
+<dd><span class="root">hepatic（肝的）</span>　維生素 D3 在<b>肝臟</b>轉為 25(OH)D3 的第一步羥化。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>先肝後腎：肝做 25 位、腎做 1 位。題目把第一步說成腎臟就是錯的。</p></details></dd>
+
+<dt>secondary osteoporosis</dt>
+<dd><span class="root">secondary（續發性）</span>　由疾病或藥物造成的骨質疏鬆。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>年輕人 Z-score ≤ −2.0 就要往這裡查——不是天生體質差，是有別的病因。</p></details></dd>
+</dl>
+</section>
+<section id="chapter-final" data-chapter-kind="final_questions">
+<h2>六、歷年考題總複習</h2>
+<p class="meta">依年度由新到舊、同年依原始題號排列。共 9 題。<b style="color:#f08a8a">紅框</b>＝同一考點在兩個以上年度重複出現。</p>
+<h3><span class="yearchip">113 年</span>第 49–51 題</h3>
+<article data-question-id="113-bm113-p61-q49" data-placement="final" class="repeat">
+  <span class="qhead">113 年 第 49 題</span><span class="repeat-badge">重複考點 ×3</span>
+  <p class="repeat-note">同考點：111 第70題、112 第70題　—　股骨頭壞死的危險因子與影像徵象</p>
+  <p class="stem">Which of the following statements about osteonecrosis of the femoral head (ONFH) is correct?</p>
+  <ul class="opts"><li>(A) MRI has low sensitivity for early ONFH and is not recommended as the first-line imaging modality.</li><li>(B) In bone scintigraphy, the typical crescent sign can be seen in ONFH.</li><li>(C) HIV infection does not increase the risk of ONFH.</li><li>(D) Major risk factors include long-term use of corticosteroids, alcohol abuse, or hematologic disorders.</li></ul>
+  <details data-kind="answer"><summary>答案與詳解</summary>
+    <div data-kind="zh-translation"><p><strong>中文題目：</strong>下列關於股骨頭壞死（ONFH）的敘述，何者正確？</p>
+      <p>(A) MRI 對早期 ONFH 敏感度低，不建議作為第一線影像檢查。</p>
+      <p>(B) 在骨骼核醫掃描中，可見到典型的新月徵。</p>
+      <p>(C) HIV 感染不會增加 ONFH 的風險。</p>
+      <p>(D) 主要危險因子包括長期使用類固醇、酗酒或血液疾病。</p></div>
+    <p class="ans">答案：D</p>
+    <p>三大危險因子＝類固醇／酗酒／血液疾病；MRI 敏感度高、新月徵見於 X 光、HIV 本身即風險。<span class="src"> ｜ BM113_Block8期中考詳解 第 61 頁</span></p>
+  </details>
+</article>
+<article data-question-id="113-bm113-p63-q50" data-placement="final" class="repeat">
+  <span class="qhead">113 年 第 50 題</span><span class="repeat-badge">重複考點 ×3</span>
+  <p class="repeat-note">同考點：111 第71題、112 第71題　—　骨質疏鬆的 DXA 測量與診斷準則</p>
+  <p class="stem">Which of the following statements is incorrect?</p>
+  <ul class="opts"><li>(A) Smoking and alcohol consumption are risk factors for osteoporosis.</li><li>(B) When a patient has internal fixation in L1–L4 vertebrae or both hips, bone density can be measured by DXA at the distal one-third of the dominant forearm.</li><li>(C) A 65-year-old woman was incidentally found to have an old compression fracture of L1 during a health check. DXA showed bilateral hip T-scores of -1.2/-1.3 and lumbar spine T-score of -2.2. This woman is still considered to have osteoporosis.</li><li>(D) In premenopausal women, a Z-score ≤ -2.0 requires careful evaluation for secondary osteoporosis caused by disease or medication.</li></ul>
+  <details data-kind="answer"><summary>答案與詳解</summary>
+    <div data-kind="zh-translation"><p><strong>中文題目：</strong>下列敘述何者不正確？</p>
+      <p>(A) 吸菸與飲酒是骨質疏鬆的危險因子。</p>
+      <p>(B) 當患者 L1–L4 椎體或雙側髖部有內固定物時，可用 DXA 測量<b>慣用手</b>前臂橈骨遠端三分之一的骨密度。</p>
+      <p>(C) 一位 65 歲女性健檢時意外發現 L1 陳舊性壓迫性骨折，DXA 顯示雙髖 T-score 為 -1.2/-1.3、腰椎 T-score 為 -2.2。此女性仍應視為骨質疏鬆。</p>
+      <p>(D) 停經前女性 Z-score ≤ -2.0 時，須仔細評估是否為疾病或藥物造成的續發性骨質疏鬆。</p></div>
+    <p class="ans">答案：B</p>
+    <p>有內固定物時要測非慣用側前臂，不是慣用側。<span class="src"> ｜ BM113_Block8期中考詳解 第 63 頁</span></p>
+  </details>
+</article>
+<article data-question-id="113-bm113-p63-q51" data-placement="final" class="repeat">
+  <span class="qhead">113 年 第 51 題</span><span class="repeat-badge">重複考點 ×3</span>
+  <p class="repeat-note">同考點：111 第72題、112 第72題　—　骨重塑機轉、鈣與維生素 D、標靶藥物</p>
+  <p class="stem">Which of the following statements is correct?</p>
+  <ul class="opts"><li>(A) Bone remodeling requires coupling between osteoclasts and osteoblasts.</li><li>(B) Daily intake of 1200 mg of calcium in osteoporosis patients reduces fracture risk.</li><li>(C) Native vitamin D3 must be converted by the kidney to 25(OH)D3 to increase its activity.</li><li>(D) Vitamin D status is usually assessed by serum 1,25-dihydroxyvitamin D [1,25(OH)₂D] levels.</li></ul>
+  <details data-kind="answer"><summary>答案與詳解</summary>
+    <div data-kind="zh-translation"><p><strong>中文題目：</strong>下列敘述何者正確？</p>
+      <p>(A) 骨重塑需要破骨細胞與成骨細胞之間的偶聯。</p>
+      <p>(B) 骨質疏鬆患者每日攝取 1200 mg 鈣可降低骨折風險。</p>
+      <p>(C) 原型維生素 D3 必須由腎臟轉換為 25(OH)D3 才能提高活性。</p>
+      <p>(D) 維生素 D 的營養狀態通常以血清 1,25-二羥基維生素 D 濃度評估。</p></div>
+    <p class="ans">答案：A</p>
+    <p>remodeling 需要偶聯；補鈣不減骨折風險，D3 在肝臟轉換。<span class="src"> ｜ BM113_Block8期中考詳解 第 63 頁</span></p>
+  </details>
+</article>
+<h3><span class="yearchip">112 年</span>第 70–72 題</h3>
+<article data-question-id="112-bm112-p89-q70" data-placement="final" class="repeat">
+  <span class="qhead">112 年 第 70 題 ｜ 來源僅答案鍵</span><span class="repeat-badge">重複考點 ×3</span>
+  <p class="repeat-note">同考點：111 第70題、113 第49題　—　股骨頭壞死的危險因子與影像徵象</p>
+  <p class="stem">Regarding the description of femoral head necrosis, which of the following is correct?</p>
+  <ul class="opts"><li>(A) Smoking is the main cause of avascular necrosis of the femoral head in men.</li><li>(B) When femoral head necrosis occurs, the typical crescent sign can be seen on a bone scan during a nuclear medicine examination.</li><li>(C) The use of protease inhibitors is a risk factor for femoral head necrosis, but HIV infection does not increase the risk of the disease.</li><li>(D) The causes of knee osteonecrosis are often spontaneous and mostly unilateral.</li></ul>
+  <details data-kind="answer"><summary>答案與詳解</summary>
+    <div data-kind="zh-translation"><p><strong>中文題目：</strong>關於股骨頭壞死的敘述，下列何者正確？</p>
+      <p>(A) 吸菸是男性股骨頭缺血性壞死的主要原因。</p>
+      <p>(B) 股骨頭壞死發生時，核子醫學骨骼掃描可見典型的新月徵。</p>
+      <p>(C) 使用蛋白酶抑制劑是股骨頭壞死的危險因子，但 HIV 感染本身不增加此病風險。</p>
+      <p>(D) 膝關節骨壞死的成因多為自發性，且多為單側。</p></div>
+    <p class="ans">答案：D</p>
+    <p>膝關節骨壞死多自發性且多單側；男性主因是酗酒非吸菸，新月徵在 X 光不在核醫。<span class="src"> ｜ BM112_Block 8 期中考(含申覆內容與結果) 第 89 頁</span></p>
+  </details>
+</article>
+<article data-question-id="112-bm112-p91-q71" data-placement="final" class="repeat">
+  <span class="qhead">112 年 第 71 題</span><span class="repeat-badge">重複考點 ×3</span>
+  <p class="repeat-note">同考點：111 第71題、113 第50題　—　骨質疏鬆的 DXA 測量與診斷準則</p>
+  <p class="stem">Which of the following statements is incorrect?</p>
+  <ul class="opts"><li>(A) The main pathogenesis of osteoporosis is an imbalance in bone remodeling.</li><li>(B) The 1st-4th lumbar vertebrae and bilateral hips are common sites for DXA to detect bone density.</li><li>(C) A 65-year-old woman slipped while walking and fractured the femoral neck of her right hip. DXA examination showed that the T-score of the left hip was -1.2 and the average bone density T-score of the lumbar spine was -1.4. Therefore, the woman is not an osteoporosis patient.</li><li>(D) When a young patient&#x27;s Z-score is less than -2.0, it is necessary to carefully investigate whether there is secondary osteoporosis caused by disease or drugs.</li></ul>
+  <details data-kind="answer"><summary>答案與詳解</summary>
+    <div data-kind="zh-translation"><p><strong>中文題目：</strong>下列敘述何者不正確？</p>
+      <p>(A) 骨質疏鬆的主要機轉是骨重塑失衡。</p>
+      <p>(B) 第 1–4 腰椎與雙側髖部是 DXA 測量骨密度的常見部位。</p>
+      <p>(C) 一位 65 歲女性走路時滑倒造成右髖股骨頸骨折。DXA 顯示左髖 T-score 為 -1.2、腰椎平均 T-score 為 -1.4，因此該女性不是骨質疏鬆患者。</p>
+      <p>(D) 年輕患者 Z-score 小於 -2.0 時，須仔細調查是否為疾病或藥物造成的續發性骨質疏鬆。</p></div>
+    <p class="ans">答案：C</p>
+    <p>低創傷性骨折凌駕 T-score，該女性仍屬骨質疏鬆。<span class="src"> ｜ BM112_Block 8 期中考(含申覆內容與結果) 第 91 頁</span></p>
+  </details>
+</article>
+<article data-question-id="112-bm112-p92-q72" data-placement="final" class="repeat">
+  <span class="qhead">112 年 第 72 題</span><span class="repeat-badge">重複考點 ×3</span>
+  <p class="repeat-note">同考點：111 第72題、113 第51題　—　骨重塑機轉、鈣與維生素 D、標靶藥物</p>
+  <p class="stem">Which of the following statements is correct?</p>
+  <ul class="opts"><li>(A) Bone modeling requires coupling of osteoclasts and osteoblasts.</li><li>(B) Patients with osteoporosis need to take 1200 mg of calcium daily to reduce the incidence of fractures.</li><li>(C) Prototype vitamin D3 needs to be converted into 25(OH)D3 by the kidneys to increase vitamin D3 activity.</li><li>(D) 25(OH)D &lt; 20 ng/ml is considered vitamin D deficiency.</li></ul>
+  <details data-kind="answer"><summary>答案與詳解</summary>
+    <div data-kind="zh-translation"><p><strong>中文題目：</strong>下列敘述何者正確？</p>
+      <p>(A) 骨塑形需要破骨細胞與成骨細胞的偶聯。</p>
+      <p>(B) 骨質疏鬆患者每日需攝取 1200 mg 鈣以降低骨折發生率。</p>
+      <p>(C) 原型維生素 D3 需由腎臟轉換為 25(OH)D3 以提高活性。</p>
+      <p>(D) 25(OH)D 小於 20 ng/ml 視為維生素 D 缺乏。</p></div>
+    <p class="ans">答案：D</p>
+    <p>25(OH)D &lt; 20 ng/ml 為缺乏；申覆後維持原答案。<span class="src"> ｜ BM112_Block 8 期中考(含申覆內容與結果) 第 92 頁</span></p>
+  </details>
+</article>
+<h3><span class="yearchip">111 年</span>第 70–72 題</h3>
+<article data-question-id="111-bm111-p56-q70" data-placement="final" class="repeat">
+  <span class="qhead">111 年 第 70 題</span><span class="repeat-badge">重複考點 ×3</span>
+  <p class="repeat-note">同考點：112 第70題、113 第49題　—　股骨頭壞死的危險因子與影像徵象</p>
+  <p class="stem">Regarding the description of osteonecrosis of femoral head, which of the following is correct?</p>
+  <ul class="opts"><li>(A) Drinking alcohol is the main cause of femoral head avascular necrosis in women</li><li>(B) Crescent sign is a typical finding in X ray in stage III of femoral head osteo-necrosis</li><li>(C) HIV infection is a risk factor even without protease inhibitors</li><li>(D) Donut-like change could be seen in MRI in avascular necrosis of the femoral head</li></ul>
+  <details data-kind="answer"><summary>答案與詳解</summary>
+    <div data-kind="zh-translation"><p><strong>中文題目：</strong>關於股骨頭骨壞死的敘述，下列何者正確？</p>
+      <p>(A) 酗酒是<b>女性</b>股骨頭缺血性壞死的主要原因。</p>
+      <p>(B) 新月徵是股骨頭壞死<b>第三期</b>在 X 光下的典型發現。</p>
+      <p>(C) 即使未使用蛋白酶抑制劑，HIV 感染本身仍是危險因子。</p>
+      <p>(D) 股骨頭缺血性壞死在 MRI 上可見甜甜圈狀變化。</p></div>
+    <p class="ans">答案：C</p>
+    <p>HIV 感染本身即為危險因子；新月徵 stage II 可見，甜甜圈屬核醫、MRI 是雙線徵。<span class="src"> ｜ BM111 BLOCK-8 期中考詳解 第 56 頁</span></p>
+  </details>
+</article>
+<article data-question-id="111-bm111-p58-q71" data-placement="final" class="repeat">
+  <span class="qhead">111 年 第 71 題</span><span class="repeat-badge">重複考點 ×3</span>
+  <p class="repeat-note">同考點：112 第71題、113 第50題　—　骨質疏鬆的 DXA 測量與診斷準則</p>
+  <p class="stem">Which of the following statements is correct?</p>
+  <ul class="opts"><li>(A) The main pathogenesis of osteoporosis is the imbalance of bone modeling.</li><li>(B) The lumbar spine and bilateral hips are common sites for testing bone density.</li><li>(C) A 65-year-old woman got a slip falling while walking and suffered a fracture of the first lumbar vertebra (L1 compression fracture). The DXA examination showed that T-score of the female neck is -1.2 and the average T-score of L2-L4 is -1.5. The woman was not eligible for the diagnosis of osteoporosis.</li><li>(D) It is necessary to careful survey for coexisting problems or diseases with osteoporosis, when the T-score less than 2.0 was noted in young patients.</li></ul>
+  <details data-kind="answer"><summary>答案與詳解</summary>
+    <div data-kind="zh-translation"><p><strong>中文題目：</strong>下列敘述何者正確？</p>
+      <p>(A) 骨質疏鬆的主要機轉是骨<b>塑形（modeling）</b>失衡。</p>
+      <p>(B) 腰椎與雙側髖部是測量骨密度的常見部位。</p>
+      <p>(C) 一位 65 歲女性走路滑倒造成第一腰椎壓迫性骨折。DXA 顯示股骨頸 T-score 為 -1.2、L2-L4 平均 T-score 為 -1.5，因此該女性不符合骨質疏鬆的診斷。</p>
+      <p>(D) 年輕患者出現 <b>T-score</b> 小於 2.0 時，須仔細評估骨質疏鬆的共病或疾病。</p></div>
+    <p class="ans">答案：B</p>
+    <p>標準測量部位是腰椎與雙髖；modeling 應為 remodeling，門檻應為 Z-score。<span class="src"> ｜ BM111 BLOCK-8 期中考詳解 第 58 頁</span></p>
+  </details>
+</article>
+<article data-question-id="111-bm111-p59-q72" data-placement="final" class="repeat">
+  <span class="qhead">111 年 第 72 題</span><span class="repeat-badge">重複考點 ×3</span>
+  <p class="repeat-note">同考點：112 第72題、113 第51題　—　骨重塑機轉、鈣與維生素 D、標靶藥物</p>
+  <p class="stem">Which of the following statements is correct?</p>
+  <ul class="opts"><li>(A) Bone modeling must have osteoclast and osteoblast coupling</li><li>(B) RANK ligand inhibitor binds to RANK on osteoclasts to inhibit the maturation of osteoclasts</li><li>(C) Continuous administration of Parathyroid hormone increase bone formation</li><li>(D) Anti-sclerostin antibody promotes Wnt signaling pathway to increase bone synthesis and inhibits RANKL-dependent pathway to decrease bone breakdown</li></ul>
+  <details data-kind="answer"><summary>答案與詳解</summary>
+    <div data-kind="zh-translation"><p><strong>中文題目：</strong>下列敘述何者正確？</p>
+      <p>(A) 骨塑形必須有破骨細胞與成骨細胞的偶聯。</p>
+      <p>(B) RANK 配體抑制劑結合破骨細胞上的 RANK 以抑制破骨細胞成熟。</p>
+      <p>(C) 連續給予副甲狀腺素會增加骨質生成。</p>
+      <p>(D) 抗硬化蛋白抗體促進 Wnt 訊號路徑以增加骨合成，並抑制 RANKL 依賴路徑以減少骨破壞。</p></div>
+    <p class="ans">答案：D</p>
+    <p>抗硬化蛋白抗體促 Wnt 並抑 RANKL；PTH 需間斷給藥。<span class="src"> ｜ BM111 BLOCK-8 期中考詳解 第 59 頁</span></p>
+  </details>
+</article>
+<p class="ending">三年九題，其實只有三個考點——影像徵象的歸屬、診斷的凌駕規則、以及 remodeling 這個字。</p>
+</section>
+</div>
+</body>
+</html>
