@@ -12,10 +12,18 @@
   --rose:#e88b8b; --violet:#a99bf0;
 }
 *{box-sizing:border-box}
+html{font-size:150%}
 body{margin:0;background:var(--bg);color:var(--ink);
   font-family:"Noto Sans TC","PingFang TC","Helvetica Neue",system-ui,sans-serif;
   line-height:1.85; overflow-wrap:anywhere;}
-.container{max-width:46rem;margin:0 auto;padding:1.15rem;}
+/* Width follows the device, not the font size: px breakpoints stay put
+   while rem-based type scales with the 150% root. */
+.container{width:100%;max-width:none;margin:0 auto;
+  padding:clamp(.85rem,2.2vw,2.2rem);}
+@media (min-width:760px){ .container{max-width:730px} }
+@media (min-width:1024px){ .container{max-width:980px} }
+@media (min-width:1440px){ .container{max-width:1300px} }
+@media (min-width:1920px){ .container{max-width:1640px} }
 img{max-width:100%;height:auto}
 svg{max-width:100%;height:auto;display:block}
 h1{font-size:1.6rem;line-height:1.35;margin:.2rem 0 .6rem}
@@ -79,6 +87,12 @@ article.repeat .qhead{color:#f08a8a}
   color:#f0a8a8;border-radius:999px;padding:.1rem .6rem;font-size:.76rem;
   margin-left:.4rem;white-space:nowrap}
 .repeat-note{color:#e6a5a5;font-size:.84rem;margin:.45rem 0 0}
+figure.boxfig{margin:1.5rem 0 .5rem;background:transparent;border:0;padding:0}
+figure.boxfig img{border-radius:12px;border:1px solid var(--line);display:block;width:100%}
+figure.boxfig figcaption{color:var(--dim);font-size:.82rem;margin-top:.5rem;
+  text-align:left;line-height:1.6}
+figure.boxfig .figtag{color:var(--violet);font-size:.76rem;letter-spacing:.1em;
+  display:block;margin-bottom:.3rem}
 .ending{color:var(--dim);font-style:italic;margin:1.6rem 0 2.4rem}
 </style>
 </head>
@@ -111,18 +125,33 @@ article.repeat .qhead{color:#f08a8a}
 <section id="chapter-1" data-chapter-kind="story">
 <h2>一、骨頭是活的城</h2>
 
+<figure class="boxfig" data-visual-id="box-01-story" data-image-kind="story" data-explanation-verified="true">
+<span class="figtag">故事場景</span>
+<img data-visual-id="box-01-story" src="img/box-01-story.webp" alt="骨城場景：你以為骨城是一座石頭堆的死城。故事插圖沿用同一組角色與場景設定。" loading="lazy" decoding="async" width="1365" height="768">
+<figcaption>骨城場景：你以為骨城是一座石頭堆的死城。故事插圖沿用同一組角色與場景設定。</figcaption>
+</figure>
 <div class="story" data-prose-kind="story"><span class="tag">故事</span>
 <p>你以為骨城是一座石頭堆的死城。走近才發現不是——城牆裡有水管，有巡邏員，晚上還有工班在敲敲打打。</p>
 <p>城裡有三種人。<b>砌牆工</b>負責倒水泥、把牆疊高；<b>拆除隊</b>負責把老舊的牆敲掉；還有<b>住戶</b>，他們原本也是砌牆工，倒水泥的時候不小心把自己封進了牆裡，從此住在牆的小空腔中，靠細細的通道跟外面聯絡，變成城裡最靈敏的感測器——哪面牆被壓、哪面牆要裂，他們最先知道。</p>
 <p>關鍵在這裡：<b>被封進牆裡的是人，硬掉的是水泥。</b>砌牆工先把水泥漿倒出去，水泥漿在體外慢慢結晶變硬。人沒有變成石頭，人只是住在石頭裡面。這句話你先記著，第一題就考它。</p>
 </div>
 
+<figure class="boxfig" data-visual-id="box-02-reality" data-image-kind="mechanism" data-explanation-verified="true">
+<span class="figtag">機轉圖解</span>
+<img data-visual-id="box-02-reality" src="img/box-02-reality.webp" alt="機轉圖解：砌牆工是 osteoblast（成骨細胞），拆除隊是 osteoclast（破骨細胞），住戶。" loading="lazy" decoding="async" width="1365" height="768">
+<figcaption>機轉圖解：砌牆工是 osteoblast（成骨細胞），拆除隊是 osteoclast（破骨細胞），住戶。</figcaption>
+</figure>
 <div class="reality"><span class="tag">回到現實</span>
 <p>砌牆工是 <b>osteoblast</b>（成骨細胞），拆除隊是 <b>osteoclast</b>（破骨細胞），住戶是 <b>osteocyte</b>（骨細胞）。osteocyte 就是被自己分泌的基質包埋起來的 osteoblast，住在 lacuna（骨小腔）裡，靠 canaliculi（骨小管）互相連通，負責感知力學訊號。</p>
 <p>水泥漿是 <b>osteoid</b>（類骨質），主要成分是 type I collagen。它被分泌到細胞外之後才礦化，礦物質是 <b>hydroxyapatite</b>（氫氧磷灰石，Ca₁₀(PO₄)₆(OH)₂），不是純鈣。骨頭因此不是惰性的石頭，而是有血管、有代謝活性、持續 remodeling 的活組織。</p>
 <p>拆除隊的出身跟另外兩者不同：osteoblast 與 osteocyte 來自間質幹細胞（mesenchymal）系統，而 <b>osteoclast 來自單核球／巨噬細胞系（monocyte）</b>，由多個前驅細胞融合成多核細胞。這個「出身不同」是考點。</p>
 </div>
 
+<figure class="boxfig" data-visual-id="box-03-keybox" data-image-kind="mechanism" data-explanation-verified="true">
+<span class="figtag">重點圖解</span>
+<img data-visual-id="box-03-keybox" src="img/box-03-keybox.webp" alt="重點圖解：本章最容易被扣分的一句話：「骨頭是由鈣化的細胞構成的」——錯。" loading="lazy" decoding="async" width="1365" height="768">
+<figcaption>重點圖解：本章最容易被扣分的一句話：「骨頭是由鈣化的細胞構成的」——錯。</figcaption>
+</figure>
 <div class="keybox">
 <p><b>本章最容易被扣分的一句話：</b>「骨頭是由鈣化的細胞構成的」——錯。細胞不會鈣化，鈣化的是細胞分泌到外面的 osteoid。</p>
 </div>
@@ -188,11 +217,21 @@ article.repeat .qhead{color:#f08a8a}
 <section id="chapter-2" data-chapter-kind="story">
 <h2>二、兩種砌法，一間工務所</h2>
 
+<figure class="boxfig" data-visual-id="box-04-story" data-image-kind="story" data-explanation-verified="true">
+<span class="figtag">故事場景</span>
+<img data-visual-id="box-04-story" src="img/box-04-story.webp" alt="骨城場景：城裡的牆有兩種砌法。故事插圖沿用同一組角色與場景設定。" loading="lazy" decoding="async" width="1365" height="768">
+<figcaption>骨城場景：城裡的牆有兩種砌法。故事插圖沿用同一組角色與場景設定。</figcaption>
+</figure>
 <div class="story" data-prose-kind="story"><span class="tag">故事</span>
 <p>城裡的牆有兩種砌法。急著擋住缺口的時候，工班亂中有序地把磚往上堆，纖維交錯亂搭——快，但不整齊。等到不趕時間了，他們會把亂牆拆掉重砌，這次一層一層平行疊上去，像書頁一樣。成年的骨城，牆面幾乎都是後面這種。</p>
 <p>城牆外面還有一間永遠亮著燈的<b>工務所</b>。裡面坐著一群還沒分派工作的學徒。城牆哪裡破了，學徒就從這裡被叫出去，臨時受訓成砌牆工趕過去補。工務所不是儲藏室，也不是拆除隊的辦公室——它是<b>人力來源</b>。</p>
 </div>
 
+<figure class="boxfig" data-visual-id="box-05-reality" data-image-kind="mechanism" data-explanation-verified="true">
+<span class="figtag">機轉圖解</span>
+<img data-visual-id="box-05-reality" src="img/box-05-reality.webp" alt="機轉圖解：亂砌的是 woven bone（編織骨）：collagen 纖維隨機交織，出現在胎兒骨、骨折。" loading="lazy" decoding="async" width="1365" height="768">
+<figcaption>機轉圖解：亂砌的是 woven bone（編織骨）：collagen 纖維隨機交織，出現在胎兒骨、骨折。</figcaption>
+</figure>
 <div class="reality"><span class="tag">回到現實</span>
 <p>亂砌的是 <b>woven bone</b>（編織骨）：collagen 纖維隨機交織，出現在胎兒骨、骨折癒合早期、快速生長處。整齊疊層的是 <b>lamellar bone</b>（板層骨）：collagen 纖維平行排列成層，是所有成熟骨的組成方式。</p>
 <p>這裡有個很多人混淆的層次問題：<b>lamellar 是「排列方式」，compact 與 trabecular 是「巨觀結構」。</b>Compact bone 由同心圓排列的骨板（osteon／哈維氏系統）構成，trabecular bone 是不規則網狀的骨小梁——但兩者的骨質本身都是 lamellar。所以問「平行層狀且存在於所有成熟骨」時，答案是 lamellar，不是 compact。</p>
@@ -252,6 +291,11 @@ article.repeat .qhead{color:#f08a8a}
 <section id="chapter-3" data-chapter-kind="story">
 <h2>三、建城的兩條路：膜內骨化與軟骨內骨化</h2>
 
+<figure class="boxfig" data-visual-id="box-06-story" data-image-kind="story" data-explanation-verified="true">
+<span class="figtag">故事場景</span>
+<img data-visual-id="box-06-story" src="img/box-06-story.webp" alt="骨城場景：骨城不是一夜之間長出來的。故事插圖沿用同一組角色與場景設定。" loading="lazy" decoding="async" width="1365" height="768">
+<figcaption>骨城場景：骨城不是一夜之間長出來的。故事插圖沿用同一組角色與場景設定。</figcaption>
+</figure>
 <div class="story" data-prose-kind="story"><span class="tag">故事</span>
 <p>骨城不是一夜之間長出來的。開拓時有兩種完全不同的做法。</p>
 <p><b>第一條路很直接</b>：一群新人在空地上聚集，就地受訓成砌牆工，直接開始倒水泥。沒有鷹架、沒有模板，牆就從一片結締組織薄膜裡長出來。這叫「就地起牆」。</p>
@@ -259,11 +303,21 @@ article.repeat .qhead{color:#f08a8a}
 <p>兩條路都會經過一段「水泥還沒乾」的亂砌期，最後才整修成整齊的板層牆。</p>
 </div>
 
+<figure class="boxfig" data-visual-id="box-07-reality" data-image-kind="mechanism" data-explanation-verified="true">
+<span class="figtag">機轉圖解</span>
+<img data-visual-id="box-07-reality" src="img/box-07-reality.webp" alt="機轉圖解：Intramembranous ossification（膜內骨化）：從纖維結締組織膜直接成。" loading="lazy" decoding="async" width="1365" height="768">
+<figcaption>機轉圖解：Intramembranous ossification（膜內骨化）：從纖維結締組織膜直接成。</figcaption>
+</figure>
 <div class="reality"><span class="tag">回到現實</span>
 <p><b>Intramembranous ossification</b>（膜內骨化）：從<b>纖維結締組織膜</b>直接成骨，見於顱骨扁平骨、鎖骨。順序是 mesenchymal cells 聚集 → 分化為 <b>osteoprogenitor cells</b> → 再分化為 <b>osteoblasts</b>（形成骨化中心）→ 分泌 osteoid → osteoid 鈣化形成 woven bone → 改建為 compact bone。</p>
 <p><b>Endochondral ossification</b>（軟骨內骨化）：先形成 <b>hyaline cartilage</b>（透明軟骨）模型，見於大部分長骨。順序是軟骨模型形成 → chondrocyte 增生、肥大 → 基質鈣化 → 血管侵入（periosteal bud）→ 初級骨化中心（<b>從中央開始</b>）→ 血管延伸至骨骺形成次級骨化中心。</p>
 </div>
 
+<figure class="boxfig" data-visual-id="box-08-warn" data-image-kind="comparison" data-explanation-verified="true">
+<span class="figtag">陷阱圖解</span>
+<img data-visual-id="box-08-warn" src="img/box-08-warn.webp" alt="易錯點圖解：膜內骨化來自纖維結締組織膜而非纖維軟骨；軟骨內骨化自中央開始鈣化；間質細胞不會直接變成骨細胞。" loading="lazy" decoding="async" width="1365" height="768">
+<figcaption>易錯點圖解：膜內骨化來自纖維結締組織膜而非纖維軟骨；軟骨內骨化自中央開始鈣化；間質細胞不會直接變成骨細胞。</figcaption>
+</figure>
 <div class="warn">
 <p><b>兩個高頻陷阱：</b></p>
 <p>① 膜內骨化的來源是<b>纖維結締組織膜</b>，不是 fibrocartilage（纖維軟骨）。名字裡有 fibro 就選它，是最常見的誤答。</p>
@@ -467,6 +521,11 @@ article.repeat .qhead{color:#f08a8a}
 <section id="chapter-4" data-chapter-kind="story">
 <h2>四、拆與蓋的循環：ARF 與它的補給線</h2>
 
+<figure class="boxfig" data-visual-id="box-09-story" data-image-kind="story" data-explanation-verified="true">
+<span class="figtag">故事場景</span>
+<img data-visual-id="box-09-story" src="img/box-09-story.webp" alt="骨城場景：骨城最反直覺的一條規矩是：永遠是拆除隊先動工。故事插圖沿用同一組角色與場景設定。" loading="lazy" decoding="async" width="1365" height="768">
+<figcaption>骨城場景：骨城最反直覺的一條規矩是：永遠是拆除隊先動工。故事插圖沿用同一組角色與場景設定。</figcaption>
+</figure>
 <div class="story" data-prose-kind="story"><span class="tag">故事</span>
 <p>骨城最反直覺的一條規矩是：<b>永遠是拆除隊先動工。</b></p>
 <p>流程固定成一套四拍。第一拍，有人吹哨把<b>拆除隊叫醒</b>；第二拍，拆除隊把那段舊牆<b>啃掉</b>，留下一個坑；第三拍是<b>交接</b>，拆除隊撤走，砌牆工進場清點；第四拍，砌牆工把坑<b>填回去</b>。四拍走完，那段牆就換新了。</p>
@@ -474,6 +533,11 @@ article.repeat .qhead{color:#f08a8a}
 <p>唯一在名單上顯得不重要的是<b>鉀</b>。它管的是別的城務，跟砌牆這條線關係最小。</p>
 </div>
 
+<figure class="boxfig" data-visual-id="box-10-reality" data-image-kind="mechanism" data-explanation-verified="true">
+<span class="figtag">機轉圖解</span>
+<img data-visual-id="box-10-reality" src="img/box-10-reality.webp" alt="機轉圖解：骨重塑循環叫 ARF cycle，順序固定為 Activation → Resorption。" loading="lazy" decoding="async" width="1365" height="768">
+<figcaption>機轉圖解：骨重塑循環叫 ARF cycle，順序固定為 Activation → Resorption。</figcaption>
+</figure>
 <div class="reality"><span class="tag">回到現實</span>
 <p>骨重塑循環叫 <b>ARF cycle</b>，順序固定為 <b>Activation → Resorption → Reversal → Formation</b>：破骨細胞活化 → 破骨細胞吸收骨質 → 逆轉期（成骨細胞接手）→ 成骨細胞形成新骨。</p>
 <p>影響因子：Vitamin C 催化 collagen 合成（羥化脯胺酸所需），缺乏導致骨膠原合成下降；Vitamin A、D、B12 以及錳、鎂都對重塑有影響；<b>PTH 過多</b>促進骨吸收。<b>鉀</b>對骨重塑的影響相對最小，是題目設定的「較不相關」答案。</p>
@@ -603,6 +667,11 @@ article.repeat .qhead{color:#f08a8a}
 <section id="chapter-5" data-chapter-kind="story">
 <h2>五、軟墊區：軟骨</h2>
 
+<figure class="boxfig" data-visual-id="box-11-story" data-image-kind="story" data-explanation-verified="true">
+<span class="figtag">故事場景</span>
+<img data-visual-id="box-11-story" src="img/box-11-story.webp" alt="骨城場景：骨城的關節處鋪著一層軟墊。故事插圖沿用同一組角色與場景設定。" loading="lazy" decoding="async" width="1365" height="768">
+<figcaption>骨城場景：骨城的關節處鋪著一層軟墊。故事插圖沿用同一組角色與場景設定。</figcaption>
+</figure>
 <div class="story" data-prose-kind="story"><span class="tag">故事</span>
 <p>骨城的關節處鋪著一層軟墊。做軟墊的師傅跟砌牆工是同鄉——都是那批沒分派工作的新人出身，只是走了不同的路。</p>
 <p>軟墊區有一條奇怪的規矩：<b>不准鋪水管。</b>整個軟墊區沒有一條血管，養分得從邊緣慢慢滲進來。代價是這裡出事修不快，成年之後幾乎補不回來。</p>
@@ -610,6 +679,11 @@ article.repeat .qhead{color:#f08a8a}
 <p>軟墊有三種材質。<b>透明墊</b>最常見，鋪在肋骨末端、關節面、生長板；<b>纖維墊</b>最耐壓，塞在椎間盤；<b>彈性墊</b>最會回彈，用在耳朵和會厭。</p>
 </div>
 
+<figure class="boxfig" data-visual-id="box-12-reality" data-image-kind="mechanism" data-explanation-verified="true">
+<span class="figtag">機轉圖解</span>
+<img data-visual-id="box-12-reality" src="img/box-12-reality.webp" alt="機轉圖解：軟骨細胞與骨細胞同樣源自 mesenchymal cells。" loading="lazy" decoding="async" width="1365" height="768">
+<figcaption>機轉圖解：軟骨細胞與骨細胞同樣源自 mesenchymal cells。</figcaption>
+</figure>
 <div class="reality"><span class="tag">回到現實</span>
 <p>軟骨細胞與骨細胞同樣源自 <b>mesenchymal cells</b>。<b>Chondroblast</b>（軟骨母細胞）可由間質細胞分化，也可由 <b>perichondrium</b>（軟骨膜）分化而來；當它被自己分泌的細胞外基質包圍，就成為 <b>chondrocyte</b>（軟骨細胞）。<b>關鍵：chondrocyte 仍然會製造細胞外基質</b>，不是只有 chondroblast 會。</p>
 <p><b>軟骨無血管</b>（avascular），養分靠基質擴散，因此成年後再生能力差。</p>
@@ -787,12 +861,22 @@ article.repeat .qhead{color:#f08a8a}
 <section id="chapter-6" data-chapter-kind="story">
 <h2>六、在實驗室裡把城弄壞</h2>
 
+<figure class="boxfig" data-visual-id="box-13-story" data-image-kind="story" data-explanation-verified="true">
+<span class="figtag">故事場景</span>
+<img data-visual-id="box-13-story" src="img/box-13-story.webp" alt="骨城場景：要研究骨城怎麼垮，得先想辦法讓它垮。故事插圖沿用同一組角色與場景設定。" loading="lazy" decoding="async" width="1365" height="768">
+<figcaption>骨城場景：要研究骨城怎麼垮，得先想辦法讓它垮。故事插圖沿用同一組角色與場景設定。</figcaption>
+</figure>
 <div class="story" data-prose-kind="story"><span class="tag">故事</span>
 <p>要研究骨城怎麼垮，得先想辦法讓它垮。研究員手上有三種合法手段：<b>灌類固醇</b>讓砌牆工士氣低落；<b>拿掉卵巢</b>切斷保護荷爾蒙的供應；<b>直接改基因</b>，讓城裡天生就少一種工人。</p>
 <p>但你不能拿槌子把牆敲斷再接回去——那是製造<b>骨折</b>，不是製造<b>骨質疏鬆</b>。前者是局部外傷，後者是全身性的骨量流失，是兩件事。</p>
 <p>城垮了之後怎麼量？兩種測法很像但問的不同。<b>轉輪</b>看老鼠能在轉動的棒子上撐多久，測的是<b>協調</b>；<b>抓握</b>看牠前肢抓不抓得牢，測的是<b>肌力</b>。</p>
 </div>
 
+<figure class="boxfig" data-visual-id="box-14-reality" data-image-kind="mechanism" data-explanation-verified="true">
+<span class="figtag">機轉圖解</span>
+<img data-visual-id="box-14-reality" src="img/box-14-reality.webp" alt="機轉圖解：骨質疏鬆動物模式的常見誘發方式：注射 glucocorticoids、雌鼠 ovariect。" loading="lazy" decoding="async" width="1365" height="768">
+<figcaption>機轉圖解：骨質疏鬆動物模式的常見誘發方式：注射 glucocorticoids、雌鼠 ovariect。</figcaption>
+</figure>
 <div class="reality"><span class="tag">回到現實</span>
 <p>骨質疏鬆動物模式的常見誘發方式：注射 <b>glucocorticoids</b>、雌鼠 <b>ovariectomy</b>（去卵巢，模擬停經後骨鬆）、<b>基因改造</b>。「把骨頭打斷再接回去」屬於骨折模型，講義未列為骨鬆誘發法。</p>
 <p>功能評估：<b>Rota-rod test</b> 測 motor coordination（動作協調、小腦與平衡），指標是 latency to fall；<b>Grip strength test</b> 測 muscle strength 與 neuromuscular function，主要測前肢，指標是掉落比例。</p>
