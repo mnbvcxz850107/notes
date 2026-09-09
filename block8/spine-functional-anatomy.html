@@ -1,0 +1,1108 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>脊椎之骨科功能解剖學 (含影像學)</title>
+<style>
+:root{
+  color-scheme: dark;
+  --bg:#0b0e13; --panel:#141922; --panel2:#1b2230; --line:#2a3340;
+  --ink:#e8ecf3; --dim:#a3adbd; --gold:#e5b567; --cyan:#6fd3c7;
+  --rose:#e88b8b; --violet:#a99bf0;
+}
+*{box-sizing:border-box}
+html{font-size:150%}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font-family:"Noto Sans TC","PingFang TC","Helvetica Neue",system-ui,sans-serif;
+  line-height:1.85; overflow-wrap:anywhere;}
+/* Width follows the device, not the font size: px breakpoints stay put
+   while rem-based type scales with the 150% root. */
+.container{width:100%;max-width:none;margin:0 auto;
+  padding:clamp(.85rem,2.2vw,2.2rem);}
+@media (min-width:760px){ .container{max-width:730px} }
+@media (min-width:1024px){ .container{max-width:980px} }
+@media (min-width:1440px){ .container{max-width:1300px} }
+@media (min-width:1920px){ .container{max-width:1640px} }
+img{max-width:100%;height:auto}
+svg{max-width:100%;height:auto;display:block}
+h1{font-size:1.6rem;line-height:1.35;margin:.2rem 0 .6rem}
+h2{font-size:1.24rem;margin:2.4rem 0 .7rem;padding-bottom:.4rem;
+  border-bottom:1px solid var(--line);color:var(--gold)}
+h3{font-size:1.06rem;margin:1.5rem 0 .5rem;color:var(--cyan)}
+p{margin:.7rem 0}
+header#subject-overview{background:linear-gradient(160deg,#182031,#0e1219);
+  border:1px solid var(--line);border-radius:14px;padding:1.2rem;margin:.6rem 0 1.4rem}
+.meta{color:var(--dim);font-size:.86rem;margin:.3rem 0 0}
+nav#toc{background:var(--panel);border:1px solid var(--line);
+  border-radius:12px;padding:.9rem 1.1rem;margin:1.2rem 0}
+nav#toc ol{margin:.4rem 0 0;padding-left:1.3rem}
+nav#toc a{color:var(--ink);text-decoration:none;border-bottom:1px dotted var(--line)}
+.story{background:var(--panel2);border-left:3px solid var(--violet);
+  border-radius:0 10px 10px 0;padding:.9rem 1.1rem;margin:1.1rem 0}
+.story .tag{display:block;color:var(--violet);font-size:.78rem;
+  letter-spacing:.12em;margin-bottom:.35rem}
+.reality{background:var(--panel);border-left:3px solid var(--cyan);
+  border-radius:0 10px 10px 0;padding:.9rem 1.1rem;margin:1.1rem 0}
+.reality .tag{display:block;color:var(--cyan);font-size:.78rem;
+  letter-spacing:.12em;margin-bottom:.35rem}
+.keybox{background:#12202b;border:1px solid #26485a;border-radius:10px;
+  padding:.85rem 1rem;margin:1.1rem 0}
+.keybox b{color:var(--cyan)}
+.warn{background:#2a1c1c;border:1px solid #573434;border-radius:10px;
+  padding:.85rem 1rem;margin:1.1rem 0;color:#f0cfcf}
+article{background:var(--panel);border:1px solid var(--line);
+  border-radius:12px;padding:.95rem 1.05rem;margin:1.1rem 0}
+article .qhead{display:block;color:var(--gold);font-size:.82rem;
+  letter-spacing:.06em;margin-bottom:.45rem}
+article .stem{margin:.2rem 0 .5rem}
+article ul.opts{list-style:none;margin:.3rem 0 .2rem;padding:0}
+article ul.opts li{padding:.16rem 0 .16rem .2rem;color:#dbe2ec}
+details{background:#0f141c;border:1px solid var(--line);
+  border-radius:10px;padding:.15rem .8rem;margin:.6rem 0}
+details summary{cursor:pointer;padding:.6rem 0;color:var(--gold);
+  font-weight:600;min-height:44px;display:flex;align-items:center}
+details[data-kind="answer"] .ans{font-size:1.05rem;color:var(--cyan);font-weight:700}
+div[data-kind="zh-translation"]{background:#141c26;border:1px dashed #33465c;
+  border-radius:8px;padding:.7rem .85rem;margin:.5rem 0 .8rem}
+div[data-kind="zh-translation"] p{margin:.35rem 0}
+.src{color:var(--dim);font-size:.84rem;margin-top:.6rem}
+.quote{border-left:2px solid var(--gold);padding-left:.75rem;color:#f0e2c6}
+.infer{color:#f0d9a8;font-size:.92rem}
+figure{margin:1.3rem 0;background:var(--panel2);border:1px solid var(--line);
+  border-radius:12px;padding:.9rem}
+figcaption{color:var(--dim);font-size:.85rem;margin-top:.6rem;text-align:center}
+dl.vocab{margin:0}
+dl.vocab dt{color:var(--cyan);font-weight:700;margin-top:.9rem}
+dl.vocab dd{margin:.2rem 0 0;padding-left:0}
+dl.vocab .root{color:var(--dim);font-size:.86rem}
+.cram{background:var(--panel);border:1px solid var(--line);
+  border-radius:12px;padding:.4rem 1.1rem;margin:1rem 0}
+.cram li{margin:.55rem 0}
+.yearchip{display:inline-block;background:#233046;color:#bcd0ea;
+  border-radius:999px;padding:.05rem .55rem;font-size:.76rem;margin-right:.4rem}
+article.repeat{border:2px solid #e05252;box-shadow:0 0 0 3px rgba(224,82,82,.12)}
+article.repeat .qhead{color:#f08a8a}
+.repeat-badge{display:inline-block;background:#3a1c1c;border:1px solid #7d3a3a;
+  color:#f0a8a8;border-radius:999px;padding:.1rem .6rem;font-size:.76rem;
+  margin-left:.4rem;white-space:nowrap}
+.repeat-note{color:#e6a5a5;font-size:.84rem;margin:.45rem 0 0}
+figure.boxfig{margin:1.5rem 0 .5rem;background:transparent;border:0;padding:0}
+figure.boxfig img{border-radius:12px;border:1px solid var(--line);display:block;width:100%}
+figure.boxfig figcaption{color:var(--dim);font-size:.82rem;margin-top:.5rem;
+  text-align:left;line-height:1.6}
+figure.boxfig .figtag{color:var(--violet);font-size:.76rem;letter-spacing:.1em;
+  display:block;margin-bottom:.3rem}
+.ending{color:var(--dim);font-style:italic;margin:1.6rem 0 2.4rem}
+</style></head>
+<body>
+<div class="container">
+
+<header id="subject-overview">
+  <h1>脊椎之骨科功能解剖學 (含影像學)</h1>
+  <p>脊椎不是一根骨頭，是二十四個可動單元疊起來的柱子。這一科要回答兩層問題：<b>它是怎麼組起來的</b>——椎體、關節突關節、椎間盤、韌帶各自負責什麼；以及<b>你怎麼在片子上看見它</b>——哪一種角度看得到哪一個構造，哪一條線超過幾毫米就是異常。</p>
+  <p>範圍涵蓋兩門課：<b>脊椎之骨科功能解剖學</b>——椎間盤的成分與營養、C1 沒有真正椎體、關節突關節與寰樞關節；以及<b>肌肉骨骼影像解剖學(3)-脊椎</b>——三柱理論與後方韌帶複合體、腰椎斜位片的蘇格蘭梗犬、頸椎與 MRI 的判讀標準。</p>
+  <p class="meta">命題老師：高志銘 ｜ 收錄 111、112、113 期中考與 111、112 期末考共 18 題 ｜ 110 與 113 期末考無本科題目</p>
+</header>
+
+<nav id="toc">
+  <b>目錄</b>
+  <ol>
+    <li><a href="#chapter-1">會漏水的墊片：椎間盤</a></li>
+    <li><a href="#chapter-2">第一節沒有身體：脊椎的骨性構造</a></li>
+    <li><a href="#chapter-3">三根柱子與後方那束繩：三柱理論與 PLC</a></li>
+    <li><a href="#chapter-4">片子裡的蘇格蘭梗犬：腰椎斜位片</a></li>
+    <li><a href="#chapter-5">頸椎與 MRI：幾毫米算異常</a></li>
+    <li><a href="#chapter-cram">考前速記</a></li>
+    <li><a href="#chapter-vocab">單字表</a></li>
+    <li><a href="#chapter-final">歷年考題總複習</a></li>
+  </ol>
+</nav>
+<!-- ================= CHAPTER 1 ================= -->
+<section id="chapter-1" data-chapter-kind="story">
+<h2>一、會漏水的墊片：椎間盤</h2>
+
+<figure class="boxfig" data-visual-id="sbox-01-story" data-image-kind="story" data-explanation-verified="true">
+<span class="figtag">解剖場景</span>
+<img data-visual-id="sbox-01-story" src="img/sbox-01-story.webp" alt="解剖場景：把脊椎想成一疊石磚，磚與磚之間夾著會吸水的墊片。　插圖沿用同一組角色與場景設定。" loading="lazy" decoding="async" width="1365" height="768">
+<figcaption>解剖場景：把脊椎想成一疊石磚，磚與磚之間夾著會吸水的墊片。　插圖沿用同一組角色與場景設定。</figcaption>
+</figure>
+<div class="story" data-prose-kind="story"><span class="tag">故事</span>
+<p>把脊椎想成一疊石磚，磚與磚之間夾著會吸水的墊片。</p>
+<p>墊片有兩層。<b>中心是一包水</b>——靠大量親水的蛋白聚醣把水抓住，被壓的時候水壓往四面撐開，軸向的力就被分散掉了。<b>外圈是一圈斜向纏繞的粗纖維</b>，用第一型膠原纏成好幾層，負責箍住中心那包水、限制椎體亂動。</p>
+<p>這片墊子有個致命的設計限制：<b>它沒有血管。</b>養分只能從上下兩片終板慢慢滲進來。所以它修得慢、老化早，而且一旦終板鈣化，整片墊子就開始餓死。</p>
+<p>還有一件事最常被考錯——<b>不是每兩節之間都有墊片。</b>最上面那兩節（C1 和 C2）之間沒有，因為它們的關係是「轉」不是「壓」；而 S2 以下也沒有，因為薦椎已經融合成一整塊。從 C2-C3 開始到 L5-S1，總共 23 片。</p>
+</div>
+
+<figure class="boxfig" data-visual-id="sbox-02-reality" data-image-kind="structure" data-explanation-verified="true">
+<span class="figtag">構造圖解</span>
+<img data-visual-id="sbox-02-reality" src="img/sbox-02-reality.webp" alt="構造圖解：Nucleus pulposus（髓核）：富含親水性蛋白聚醣（proteoglycan）與第二型膠原，主要功能是抵抗。" loading="lazy" decoding="async" width="1365" height="768">
+<figcaption>構造圖解：Nucleus pulposus（髓核）：富含親水性蛋白聚醣（proteoglycan）與第二型膠原，主要功能是抵抗。</figcaption>
+</figure>
+<div class="reality"><span class="tag">回到現實</span>
+<p><b>Nucleus pulposus（髓核）</b>：富含<b>親水性蛋白聚醣（proteoglycan）</b>與<b>第二型膠原</b>，主要功能是<b>抵抗軸向負荷</b>。</p>
+<p><b>Annulus fibrosus（纖維環）</b>：以<b>第一型膠原</b>與纖維軟骨為主，功能是限制椎體的活動。<b>注意方向：type I 在纖維環、type II 在髓核</b>，112 年第 20 題的錯誤選項就是把 type I 放進髓核。</p>
+<p><b>營養來源</b>：椎間盤無血管，養分主要由<b>終板（end plate）被動擴散</b>而來。這一句三年三度出現在正確選項裡。</p>
+<p><b>分布</b>：椎間盤<b>從 C2–C3 開始存在，直到 L5–S1，共 23 片</b>；<b>C1–C2 之間沒有</b>（寰樞關節負責旋轉），<b>S2 以後也沒有</b>。111 年說「每一節之間都有」、112 年說「有 23 片位於每一節之間」——前者錯在「每一節」，後者錯在同一件事，只是換了數字包裝。</p>
+</div>
+
+<figure class="boxfig" data-visual-id="sbox-03-warn" data-image-kind="comparison" data-explanation-verified="true">
+<span class="figtag">陷阱圖解</span>
+<img data-visual-id="sbox-03-warn" src="img/sbox-03-warn.webp" alt="易錯點圖解：112 年第 19 題的 (B) 是個雙層陷阱。" loading="lazy" decoding="async" width="1365" height="768">
+<figcaption>易錯點圖解：112 年第 19 題的 (B) 是個雙層陷阱。</figcaption>
+</figure>
+<div class="warn"><span class="tag">易錯</span>
+<p><b>112 年第 19 題的 (B) 是個雙層陷阱。</b>「There are 23 intervertebral discs」這個<b>數字是對的</b>，錯的是後半句「located between each level of spine」——因為 C1–C2 之間與 S2 以下都沒有。看到數字先別急著判對錯，要看完整句。</p>
+</div>
+
+<article data-question-id="113-bm113-p31-q22" data-placement="chapter">
+  <span class="qhead">113 年 第 22 題</span>
+  <p class="stem">Which of the following statements about the structure of spine is NOT true?</p>
+  <ul class="opts">
+    <li>(A) Dens is part of the Atlantoaxial joint, which is responsible for cervical rotation.</li>
+    <li>(B) Pain-sensitive nerve endings supply the joint capsule, which is the main source of pain in osteoarthritis.</li>
+    <li>(C) Nutrients of the intervertebral disc are mainly obtained by passive diffusion from the end plate.</li>
+    <li>(D) The ligamentum flavum is located in the posterior column of the spine and the main function is to limit motion of spine during flexion.</li>
+  </ul>
+  <details data-kind="answer">
+    <summary>答案與詳解</summary>
+    <div data-kind="zh-translation">
+      <p><strong>中文題目：</strong>下列關於脊椎構造的敘述，何者<b>不正確</b>？</p>
+      <p>(A) 齒突是寰樞關節的一部分，該關節負責頸椎旋轉。</p>
+      <p>(B) 對疼痛敏感的神經末梢分布於關節囊，是骨關節炎疼痛的主要來源。</p>
+      <p>(C) 椎間盤的養分主要由終板被動擴散取得。</p>
+      <p>(D) 黃韌帶位於脊椎後柱，主要功能是限制脊椎前彎時的活動。</p>
+    </div>
+    <p class="ans">答案：D</p>
+    <p><b>來源僅答案鍵</b>——原卷詳解欄空白。<span class="infer">依 112 年第 19 題的官方詳解判讀（推論）</span>：該詳解明寫「黃韌帶位於 posterior column，且其<b>彈性允許其可以在彎曲時伸展而不限制運動</b>」。所以 (D) 的錯誤在後半句——黃韌帶的位置沒錯，但它的功能<b>不是</b>限制前彎。(A)(B)(C) 皆為講義明列的正確敘述。</p>
+    <p><b>與 112 年第 19 題對照：</b>112 年把同一個選項寫成「cannot limit motion of spine during flexion」（正確），113 年改成「the main function is to limit motion during flexion」（錯誤）。<b>同一個構造、相反的敘述，答案就翻面。</b></p>
+    <p class="src">出處：脊椎之骨科功能解剖學 高志銘 ppt p.13, 20, 22, 39, 52 ｜ BM113_Block8期中考詳解.pdf 第 31 頁</p>
+  </details>
+</article>
+
+<article data-question-id="112-bm112-p27-q19" data-placement="chapter">
+  <span class="qhead">112 年 第 19 題</span>
+  <p class="stem">Which of the following statements about the structure of spine is NOT true?</p>
+  <ul class="opts">
+    <li>(A) Dens is part of the Atlantoaxial joint, which is responsible for cervical rotation.</li>
+    <li>(B) There are 23 intervertebral discs located between each level of spine.</li>
+    <li>(C) Nutrients of the intervertebral disc are mainly obtained by passive diffusion through the end plate.</li>
+    <li>(D) The ligamentum flavum is located in the posterior column of the spine and cannot limit motion of spine during flexion.</li>
+  </ul>
+  <details data-kind="answer">
+    <summary>答案與詳解</summary>
+    <div data-kind="zh-translation">
+      <p><strong>中文題目：</strong>下列關於脊椎構造的敘述，何者<b>不正確</b>？</p>
+      <p>(A) 齒突是寰樞關節的一部分，該關節負責頸椎旋轉。</p>
+      <p>(B) 共有 23 片椎間盤，位於每一節脊椎之間。</p>
+      <p>(C) 椎間盤的養分主要經由終板被動擴散取得。</p>
+      <p>(D) 黃韌帶位於脊椎後柱，且無法限制脊椎前彎時的活動。</p>
+    </div>
+    <p class="ans">答案：B</p>
+    <p class="quote">詳解原文:「(A)正確，寰樞關節由C1與C2節段組成，主要負責頸椎大部分的旋轉動作，其中齒突(dens)位於C2。(B)錯誤，椎間盤從C2-C3之間開始存在，直到L5-S1，S2以後的脊椎之間不存在椎間盤。(C)正確，椎間盤的營養物質經由終板被動擴散。(D)正確，黃韌帶(ligamentum flavum)位於posterior column，且其彈性允許其可以在彎曲時伸展而不限制運動。」</p>
+    <p>這則詳解是本章的核心資料：一次交代了寰樞關節與齒突的位置、椎間盤的起訖範圍、營養途徑，以及黃韌帶的位置與功能。<b>四個選項在 113 年被拆開重考，(D) 還被反轉成錯誤敘述。</b></p>
+    <p class="src">出處：高志銘 脊椎之骨科功能解剖學(ppt pg.13, 14, 20, 22, 52) ｜ BM112_Block 8 期中考(含申覆內容與結果).pdf 第 27 頁</p>
+  </details>
+</article>
+
+<article data-question-id="111-bm111-p17-q19" data-placement="chapter">
+  <span class="qhead">111 年 第 19 題</span>
+  <p class="stem">Which of the following statements about the intervertebral disc is not true?</p>
+  <ul class="opts">
+    <li>(A) Nucleus pulposus has large proportion of hydrophilic proteoglycans.</li>
+    <li>(B) Nutrients of the intervertebral disc are mainly obtained by passive diffusion through the end plate.</li>
+    <li>(C) The intervertebral discs are distributed between each level of vertebra and account for approximately 20% to 33% of the spine height.</li>
+    <li>(D) The composition of annulus fibrosus includes type I collagen and fibrocartilage, and its main function is to limit the motion of the vertebral body.</li>
+  </ul>
+  <details data-kind="answer">
+    <summary>答案與詳解</summary>
+    <div data-kind="zh-translation">
+      <p><strong>中文題目：</strong>下列關於椎間盤的敘述，何者<b>不正確</b>？</p>
+      <p>(A) 髓核含大量親水性蛋白聚醣。</p>
+      <p>(B) 椎間盤的養分主要經由終板被動擴散取得。</p>
+      <p>(C) 椎間盤分布於每一節椎體之間，約占脊椎高度的 20% 至 33%。</p>
+      <p>(D) 纖維環的組成包含第一型膠原與纖維軟骨，主要功能是限制椎體的活動。</p>
+    </div>
+    <p class="ans">答案：C</p>
+    <p class="quote">詳解原文:「(C) 並不是每個椎體間都有椎間盤，例如C1和C2間, S2之後沒有」</p>
+    <p>注意 (C) 有兩個資訊：「分布於每一節之間」與「占脊椎高度 20–33%」。<b>錯的是前半，後半的比例是正確的</b>——這也是為什麼 112 年可以把數字換成「23 片」而依然是錯的：錯的一直是「每一節之間」這個說法。(A)(D) 交代了髓核與纖維環的成分分工，是下一題的伏筆。</p>
+    <p class="src">出處：高志銘 脊椎之骨科功能解剖學(ppt pg.14) ｜ BM111 BLOCK-8 期中考詳解.pdf 第 17 頁</p>
+  </details>
+</article>
+</section>
+
+<!-- ================= CHAPTER 2 ================= -->
+<section id="chapter-2" data-chapter-kind="story">
+<h2>二、第一節沒有身體：脊椎的骨性構造</h2>
+
+<figure class="boxfig" data-visual-id="sbox-04-story" data-image-kind="story" data-explanation-verified="true">
+<span class="figtag">解剖場景</span>
+<img data-visual-id="sbox-04-story" src="img/sbox-04-story.webp" alt="解剖場景：從下往上數，每一節脊椎前面都有一塊承重的方磚——直到你數到最上面那一節。　插圖沿用同一組角色與場景設定。" loading="lazy" decoding="async" width="1365" height="768">
+<figcaption>解剖場景：從下往上數，每一節脊椎前面都有一塊承重的方磚——直到你數到最上面那一節。　插圖沿用同一組角色與場景設定。</figcaption>
+</figure>
+<div class="story" data-prose-kind="story"><span class="tag">故事</span>
+<p>從下往上數，每一節脊椎前面都有一塊承重的方磚——直到你數到最上面那一節。</p>
+<p><b>C1 沒有方磚。</b>它是一個環，中間空著；那塊本來該屬於它的方磚，跑去長在 C2 的頭上，變成一根往上戳的柱子——齒突。於是 C1 套在這根柱子上轉，頸部大部分的旋轉都靠這一節完成。「承重方磚在每一節前方」這句話聽起來理所當然，但只要有 C1 在，它就是錯的。這一句三年考三次。</p>
+<p>再往下看關節突關節。它是<b>滑液關節</b>：關節面覆的是<b>透明軟骨</b>，腔內有 1~1.5 毫升滑液，關節囊上布滿痛覺神經末梢——所以退化性關節炎的痛主要來自這裡。</p>
+<p>胸椎則被肋骨綁住了。肋骨透過肋凹與胸椎相接，活動被限制，因此<b>胸椎是整條脊柱最不靈活的一段</b>。</p>
+</div>
+
+<figure class="boxfig" data-visual-id="sbox-05-reality" data-image-kind="structure" data-explanation-verified="true">
+<span class="figtag">構造圖解</span>
+<img data-visual-id="sbox-05-reality" src="img/sbox-05-reality.webp" alt="構造圖解：C1（Atlas）沒有真正的椎體——這是本科出現頻率最高的單一事實。" loading="lazy" decoding="async" width="1365" height="768">
+<figcaption>構造圖解：C1（Atlas）沒有真正的椎體——這是本科出現頻率最高的單一事實。</figcaption>
+</figure>
+<div class="reality"><span class="tag">回到現實</span>
+<p><b>C1（Atlas）沒有真正的椎體</b>——這是本科出現頻率最高的單一事實。111 年考「椎體存在於每一節前方」（錯，因為 C1）、112 年把同一句放在錯誤選項裡、113 年再問「所有頸椎都有位於前方的椎體」（錯）。</p>
+<p><b>Dens（齒突）</b>是 axis（C2）的特殊構造，構成<b>寰樞關節（Atlantoaxial joint）</b>，負責頸椎大部分的<b>旋轉</b>。</p>
+<p><b>Facet joint（關節突關節）</b>：關節面覆蓋<b>透明軟骨（hyaline cartilage）</b>，不是纖維軟骨；腰椎關節突關節內約有 <b>1~1.5 ml 滑液</b>。關節囊有痛覺神經末梢，是骨關節炎疼痛的主要來源。</p>
+<p><b>胸椎</b>透過<b>肋凹（costal facets）</b>與肋骨相連，活動受限，是脊柱中<b>最不靈活</b>的一段。</p>
+<p><b>髓核</b>富含蛋白聚醣與膠原，主要功能是<b>抵抗軸向負荷</b>。</p>
+</div>
+
+<article data-question-id="113-bm113-p33-q24" data-placement="chapter">
+  <span class="qhead">113 年 第 24 題</span>
+  <p class="stem">Which of the following statements about the structure of spine is CORRECT?</p>
+  <ul class="opts">
+    <li>(A) The spinal process of C7 is on the center of gravity of the spinal column in normal adult.</li>
+    <li>(B) The articular surface of the facet joint is covered with fibrocartilage, and like other joint, there is synovial fluid presented in facet joints.</li>
+    <li>(C) Nucleus pulposus has large proportion of proteoglycan and collagen, and the main function is to resist axial loads.</li>
+    <li>(D) All cervical vertebrae have vertebral body located at the front of the spine.</li>
+  </ul>
+  <details data-kind="answer">
+    <summary>答案與詳解</summary>
+    <div data-kind="zh-translation">
+      <p><strong>中文題目：</strong>下列關於脊椎構造的敘述，何者<b>正確</b>？</p>
+      <p>(A) 正常成人 C7 的棘突位於脊柱的重心線上。</p>
+      <p>(B) 關節突關節的關節面覆蓋纖維軟骨，且如同其他關節，關節內有滑液。</p>
+      <p>(C) 髓核含大量蛋白聚醣與膠原，主要功能是抵抗軸向負荷。</p>
+      <p>(D) 所有頸椎都有位於脊椎前方的椎體。</p>
+    </div>
+    <p class="ans">答案：C</p>
+    <p><b>來源僅答案鍵</b>——原卷詳解欄空白。<span class="infer">依 111、112 年同考點的官方詳解逐項對照（推論）</span>：(B) 關節突關節覆蓋的是<b>透明軟骨</b>而非纖維軟骨（112 年詳解明載）；(D) <b>C1 沒有真正的椎體</b>（111、112 年詳解均明載），故「所有頸椎」為錯；(A) 正常成人脊柱重心線並不通過 C7 棘突。(C) 髓核抵抗軸向負荷為正確敘述。</p>
+    <p class="src">出處：脊椎之骨科功能解剖學_高志銘 p.10-15-22-37 ｜ BM113_Block8期中考詳解.pdf 第 33 頁</p>
+  </details>
+</article>
+
+<article data-question-id="112-bm112-p31-q20" data-placement="chapter">
+  <span class="qhead">112 年 第 20 題</span>
+  <p class="stem">Which of the following statements about the structure of spine is CORRECT?</p>
+  <ul class="opts">
+    <li>(A) The ribs and thoracic vertebrae are connected by costal facets, which restricts the movement of thoracic spine.</li>
+    <li>(B) The articular surface of the facet joint is covered with fibrocartilage, and approximately 1~1.5 ml of synovial fluid is present in facet joints.</li>
+    <li>(C) Nucleus pulposus has large proportion of type I collagen fibers.</li>
+    <li>(D) The vertebral body is the weight-bearing structure that exists in front of each level of vertebra.</li>
+  </ul>
+  <details data-kind="answer">
+    <summary>答案與詳解</summary>
+    <div data-kind="zh-translation">
+      <p><strong>中文題目：</strong>下列關於脊椎構造的敘述，何者<b>正確</b>？</p>
+      <p>(A) 肋骨與胸椎透過肋凹相連，限制了胸椎的活動。</p>
+      <p>(B) 關節突關節的關節面覆蓋纖維軟骨，關節內約有 1~1.5 ml 滑液。</p>
+      <p>(C) 髓核含大量第一型膠原纖維。</p>
+      <p>(D) 椎體是承重構造，存在於每一節脊椎的前方。</p>
+    </div>
+    <p class="ans">答案：A</p>
+    <p class="quote">詳解原文:「(A) 為正確的敘述。(B) The articular surface of the facet joint is covered with hyaline cartilage, and approximately 1~1.5 ml of synovial fluid is present in (lumbar) facet joints. (C) Annulus fibrosus has large proportion of type I collagen fibers. 補充：Nucleus pulposus has large proportion of type II collagen fibers. (D) The vertebral body is the weight-bearing structure that exists in front of each level of vertebra, except for C1 (Atlas). C1缺乏真正的椎體。」</p>
+    <p>本題把三個錯誤各設一個字的陷阱：(B) 把 hyaline 換成 fibrocartilage；(C) 把 type II 換成 type I（且應屬纖維環）；(D) 少了 <b>except for C1</b>。三者在 113 年都被再考一次。</p>
+    <p class="src">出處：高志銘 脊椎之骨科功能解剖學(ppt pg.15, 21, 25, 37) ｜ BM112_Block 8 期中考(含申覆內容與結果).pdf 第 31 頁</p>
+  </details>
+</article>
+
+<article data-question-id="111-bm111-p18-q20" data-placement="chapter">
+  <span class="qhead">111 年 第 20 題</span>
+  <p class="stem">Which of the following statements about the structure of spine is false?</p>
+  <ul class="opts">
+    <li>(A) The vertebral body is the weight-bearing structure that exists in front of each level of vertebra.</li>
+    <li>(B) The articular surface of the facet joint is covered with hyaline cartilage.</li>
+    <li>(C) Dens is a special structure of axis, which is part of the Atlantoaxial joint. This joint is responsible for cervical rotation.</li>
+    <li>(D) The ribs and thoracic vertebrae are connected to each other by costal facets, which restricts the movement of the spine. Therefore, the thoracic spine is the least mobile part of the spinal column.</li>
+  </ul>
+  <details data-kind="answer">
+    <summary>答案與詳解</summary>
+    <div data-kind="zh-translation">
+      <p><strong>中文題目：</strong>下列關於脊椎構造的敘述，何者<b>錯誤</b>？</p>
+      <p>(A) 椎體是承重構造，存在於每一節脊椎的前方。</p>
+      <p>(B) 關節突關節的關節面覆蓋透明軟骨。</p>
+      <p>(C) 齒突是樞椎的特殊構造，構成寰樞關節的一部分，該關節負責頸椎旋轉。</p>
+      <p>(D) 肋骨與胸椎透過肋凹相連，限制脊椎活動，因此胸椎是脊柱中最不靈活的一段。</p>
+    </div>
+    <p class="ans">答案：A</p>
+    <p class="quote">詳解原文:「(A) C1並沒有 true ventral body」</p>
+    <p>(B)(C)(D) 三個正確選項在 112、113 年都被拿去當素材：(B) 被改成 fibrocartilage 變成錯誤選項、(C) 幾乎逐字重複出現、(D) 在 112 年成為正確答案。<b>把這四句一起背，等於同時準備了三年份。</b></p>
+    <p class="src">出處：高志銘 脊椎之骨科功能解剖學(ppt pg.21) ｜ BM111 BLOCK-8 期中考詳解.pdf 第 18 頁</p>
+  </details>
+</article>
+</section>
+<!-- ================= CHAPTER 3 ================= -->
+<section id="chapter-3" data-chapter-kind="story">
+<h2>三、三根柱子與後方那束繩：三柱理論與 PLC</h2>
+
+<figure class="boxfig" data-visual-id="sbox-06-story" data-image-kind="story" data-explanation-verified="true">
+<span class="figtag">解剖場景</span>
+<img data-visual-id="sbox-06-story" src="img/sbox-06-story.webp" alt="解剖場景：要判斷一節脊椎斷得穩不穩，創傷外科醫師會把它從前到後切成三段。　插圖沿用同一組角色與場景設定。" loading="lazy" decoding="async" width="1365" height="768">
+<figcaption>解剖場景：要判斷一節脊椎斷得穩不穩，創傷外科醫師會把它從前到後切成三段。　插圖沿用同一組角色與場景設定。</figcaption>
+</figure>
+<div class="story" data-prose-kind="story"><span class="tag">故事</span>
+<p>要判斷一節脊椎斷得穩不穩，創傷外科醫師會把它從前到後切成三段。</p>
+<p><b>前柱</b>是椎體的前三分之二加前縱韌帶。<b>中柱</b>是椎體的後三分之一加<b>後縱韌帶</b>。<b>後柱</b>是椎弓根以後的全部——椎板、棘突、關節突關節，以及一束把它們綁在一起的韌帶。</p>
+<p>注意這條分界線：<b>椎體被切成兩半，前三分之二歸前柱、後三分之一歸中柱——它沒有延伸到後柱。</b>這是連續兩年（113 期中、112 期末）出現的同一個錯誤選項。</p>
+<p>而<b>後縱韌帶的位置最容易被誤判</b>。它的名字裡有「後」，但它貼在椎體的<b>後表面</b>，也就是中柱裡面——不屬於後柱，更不屬於後方韌帶複合體。這一句在 111 期中、112 期中、113 期中、111 期末四次考卷裡反覆出現。</p>
+<p>至於<b>後方韌帶複合體（PLC）</b>，成員只有四個：黃韌帶、棘間韌帶、棘上韌帶、關節突關節囊。<b>棘突是骨頭不是韌帶</b>，所以它也不在裡面——112 年就用這個當答案。</p>
+</div>
+
+<figure class="boxfig" data-visual-id="sbox-07-reality" data-image-kind="structure" data-explanation-verified="true">
+<span class="figtag">構造圖解</span>
+<img data-visual-id="sbox-07-reality" src="img/sbox-07-reality.webp" alt="構造圖解：三柱理論（three-column model）。" loading="lazy" decoding="async" width="1365" height="768">
+<figcaption>構造圖解：三柱理論（three-column model）。</figcaption>
+</figure>
+<div class="reality"><span class="tag">回到現實</span>
+<p><b>三柱理論（three-column model）</b>：</p>
+<p>　• <b>前柱</b>＝椎體前 2/3 ＋ 前縱韌帶</p>
+<p>　• <b>中柱</b>＝椎體後 1/3 ＋ <b>後縱韌帶（PLL）</b></p>
+<p>　• <b>後柱</b>＝椎弓根以後的骨性結構 ＋ 後方韌帶複合體</p>
+<p><b>椎體只跨越前柱與中柱，不會延伸到後柱</b>（113 期中第 19 題 (C)、112 期末第 13 題 (C) 都用這句當錯誤選項）。</p>
+<p><b>後方韌帶複合體（PLC）的四個成員</b>：<b>ligamentum flavum（黃韌帶）、interspinous ligament（棘間韌帶）、supraspinous ligament（棘上韌帶）、facet joint capsule（關節突關節囊）</b>。</p>
+<p><b>不屬於 PLC 的兩個常見誘答</b>：<b>posterior longitudinal ligament（後縱韌帶，屬中柱）</b>與 <b>spinous process（棘突，是骨性結構而非韌帶）</b>。</p>
+</div>
+
+<figure class="boxfig" data-visual-id="sbox-08-keybox" data-image-kind="mechanism" data-explanation-verified="true">
+<span class="figtag">重點圖解</span>
+<img data-visual-id="sbox-08-keybox" src="img/sbox-08-keybox.webp" alt="重點圖解：一句話收掉四題：後縱韌帶在中柱，不在後柱、不在 PLC。" loading="lazy" decoding="async" width="1365" height="768">
+<figcaption>重點圖解：一句話收掉四題：後縱韌帶在中柱，不在後柱、不在 PLC。</figcaption>
+</figure>
+<div class="keybox">
+<p><b>一句話收掉四題：後縱韌帶在中柱，不在後柱、不在 PLC。</b>111 期中第 21 題、113 期中第 23 題、111 期末第 40 題答案都是它；112 期中第 21 題則換成棘突。</p>
+</div>
+
+<article data-question-id="113-bm113-p32-q23" data-placement="chapter">
+  <span class="qhead">113 年 第 23 題</span>
+  <p class="stem">Which part of spine does NOT belong to the posterior ligamentous complex?</p>
+  <ul class="opts">
+    <li>(A) ligamentum flavum</li>
+    <li>(B) interspinous ligament</li>
+    <li>(C) posterior longitudinal ligament</li>
+    <li>(D) facet joint capsule</li>
+  </ul>
+  <details data-kind="answer">
+    <summary>答案與詳解</summary>
+    <div data-kind="zh-translation">
+      <p><strong>中文題目：</strong>下列脊椎構造中，何者<b>不屬於</b>後方韌帶複合體？</p>
+      <p>(A) 黃韌帶　(B) 棘間韌帶　(C) 後縱韌帶　(D) 關節突關節囊</p>
+    </div>
+    <p class="ans">答案：C</p>
+    <p class="quote">詳解原文:「Post. ligamentous complex includes ligamentum flavum, interspinous lig., facet capsule, and supraspinous lig.」</p>
+    <p>詳解直接列出 PLC 的完整成員清單，值得整句背下來。後縱韌帶不在名單上——它貼在椎體後表面，屬<b>中柱</b>。</p>
+    <p class="src">出處：肌肉骨骼影像解剖學-脊椎 高志銘 ppt p.68 ｜ BM113_Block8期中考詳解.pdf 第 32 頁</p>
+  </details>
+</article>
+
+<article data-question-id="112-bm112-p33-q21" data-placement="chapter">
+  <span class="qhead">112 年 第 21 題</span>
+  <p class="stem">Which part of spine does NOT belong to the posterior ligamentous complex?</p>
+  <ul class="opts">
+    <li>(A) ligamentum flavum</li>
+    <li>(B) supraspinous ligament</li>
+    <li>(C) spinous process</li>
+    <li>(D) facet capsule</li>
+  </ul>
+  <details data-kind="answer">
+    <summary>答案與詳解</summary>
+    <div data-kind="zh-translation">
+      <p><strong>中文題目：</strong>下列脊椎構造中，何者<b>不屬於</b>後方韌帶複合體？</p>
+      <p>(A) 黃韌帶　(B) 棘上韌帶　(C) 棘突　(D) 關節突關節囊</p>
+    </div>
+    <p class="ans">答案：C</p>
+    <p class="quote">詳解原文:「由上圖可以看到posterior ligamentous complex包含(A),(B),(D)以及interspinous ligament，並不包含spinous process。」</p>
+    <p>本年換了誘答方式：不用後縱韌帶，改用<b>棘突</b>。理由不同但同樣乾脆——<b>PLC 是「韌帶」複合體，棘突是骨頭</b>。這也順帶把 PLC 的第四個成員（棘間韌帶）補進了選項之外的詳解裡。</p>
+    <p class="src">出處：高志銘 脊椎之骨科功能解剖學(ppt pg.20) ｜ BM112_Block 8 期中考(含申覆內容與結果).pdf 第 33 頁</p>
+  </details>
+</article>
+
+<article data-question-id="111-bm111-p18-q21" data-placement="chapter">
+  <span class="qhead">111 年 第 21 題</span>
+  <p class="stem">Which part of spine does not belong to the posterior ligamentous complex?</p>
+  <ul class="opts">
+    <li>(A) ligamentum flavum</li>
+    <li>(B) interspinous ligament</li>
+    <li>(C) posterior longitudinal ligament</li>
+    <li>(D) facet joint capsule</li>
+  </ul>
+  <details data-kind="answer">
+    <summary>答案與詳解</summary>
+    <div data-kind="zh-translation">
+      <p><strong>中文題目：</strong>下列脊椎構造中，何者<b>不屬於</b>後方韌帶複合體？</p>
+      <p>(A) 黃韌帶　(B) 棘間韌帶　(C) 後縱韌帶　(D) 關節突關節囊</p>
+    </div>
+    <p class="ans">答案：C</p>
+    <p class="quote">詳解原文:「posterior longitudinal ligament 屬於 middle column」</p>
+    <p>與 113 年第 23 題<b>逐字相同</b>。兩年隔了一屆仍原題重出，是本科最穩定的送分題。</p>
+    <p class="src">出處：高志銘 脊椎之骨科功能解剖學(ppt pg.20) ｜ BM111 BLOCK-8 期中考詳解.pdf 第 18 頁</p>
+  </details>
+</article>
+
+<article data-question-id="112fin-bm112-p12-q13" data-placement="chapter">
+  <span class="qhead">112 年 期末考 第 13 題</span>
+  <p class="stem">Which of the following statements about the three-column model of spine is incorrect?</p>
+  <ul class="opts">
+    <li>(A) Posterior longitudinal ligament is located in the middle column of spine</li>
+    <li>(B) The facet joint capsule is one of the components of the posterior ligamentous complex and is located in the posterior column of spine</li>
+    <li>(C) Vertebral body spans from the anterior column to the posterior column of spine</li>
+    <li>(D) The ligamentum flavum is located in the posterior column of the spine</li>
+  </ul>
+  <details data-kind="answer">
+    <summary>答案與詳解</summary>
+    <div data-kind="zh-translation">
+      <p><strong>中文題目：</strong>下列關於脊椎三柱理論的敘述，何者<b>不正確</b>？</p>
+      <p>(A) 後縱韌帶位於脊椎中柱。</p>
+      <p>(B) 關節突關節囊是後方韌帶複合體的成員之一，位於脊椎後柱。</p>
+      <p>(C) 椎體從前柱一路延伸到後柱。</p>
+      <p>(D) 黃韌帶位於脊椎後柱。</p>
+    </div>
+    <p class="ans">答案：C</p>
+    <p><b>來源僅答案鍵</b>——原卷詳解欄空白。<span class="infer">依 113 年期中第 19 題的官方詳解判讀（推論）</span>：該詳解明寫「Vertebral body 的前⅔在 Anterior column，後⅓在 middle column，<b>並沒有跨到 posterior column</b>」。(A)(B)(D) 皆為三柱理論的正確歸屬。</p>
+    <p class="src">出處：高志銘 肌肉骨骼影像解剖學(3)-脊椎 ppt pg.20 ｜ BM112_Block 8 期末考.pdf 第 12 頁</p>
+  </details>
+</article>
+
+<article data-question-id="111fin-bm111-p33-q40" data-placement="chapter">
+  <span class="qhead">111 年 期末考 第 40 題</span>
+  <p class="stem">Which of the following structures does not belong to the posterior column of the spine?</p>
+  <ul class="opts">
+    <li>(A) ligamentum flavum</li>
+    <li>(B) spinous process</li>
+    <li>(C) posterior longitudinal ligament</li>
+    <li>(D) facet joint</li>
+  </ul>
+  <details data-kind="answer">
+    <summary>答案與詳解</summary>
+    <div data-kind="zh-translation">
+      <p><strong>中文題目：</strong>下列構造中，何者<b>不屬於</b>脊椎後柱？</p>
+      <p>(A) 黃韌帶　(B) 棘突　(C) 後縱韌帶　(D) 關節突關節</p>
+    </div>
+    <p class="ans">答案：C</p>
+    <p class="quote">詳解原文:「Posterior Longitudinal Ligament屬於middle column喔！」</p>
+    <p>注意本題問的是<b>後柱</b>而非 PLC——所以<b>棘突</b>這次是正確選項（骨性後柱結構），不再是答案。<b>同一組構造，問「後柱」與問「PLC」的正解不同</b>：問 PLC 時棘突不算（它不是韌帶），問後柱時棘突算。</p>
+    <p class="src">出處：高志銘 肌肉骨骼影像解剖學(3)-脊椎(ppt pg.73) ｜ BM111 BLOCK-8 期末考詳解.pdf 第 33 頁</p>
+  </details>
+</article>
+</section>
+
+<!-- ================= CHAPTER 4 ================= -->
+<section id="chapter-4" data-chapter-kind="story">
+<h2>四、片子裡的蘇格蘭梗犬：腰椎斜位片</h2>
+
+<figure class="boxfig" data-visual-id="sbox-09-story" data-image-kind="story" data-explanation-verified="true">
+<span class="figtag">解剖場景</span>
+<img data-visual-id="sbox-09-story" src="img/sbox-09-story.webp" alt="解剖場景：把腰椎轉四十五度拍一張，片子上會浮出一隻側面的狗。　插圖沿用同一組角色與場景設定。" loading="lazy" decoding="async" width="1365" height="768">
+<figcaption>解剖場景：把腰椎轉四十五度拍一張，片子上會浮出一隻側面的狗。　插圖沿用同一組角色與場景設定。</figcaption>
+</figure>
+<div class="story" data-prose-kind="story"><span class="tag">故事</span>
+<p>把腰椎轉四十五度拍一張，片子上會浮出一隻側面的狗。</p>
+<p>這隻狗的每個部位都對應一個真實構造：<b>眼睛是椎弓根</b>、<b>耳朵是上關節突</b>、<b>前腳是下關節突</b>、<b>脖子是關節突間部（pars interarticularis）</b>、<b>尾巴是對側的上關節突</b>。</p>
+<p>會用到這隻狗，是因為<b>脖子最容易斷</b>。峽部骨折（pars fracture）在正面片上幾乎看不到，但在斜位片上就是狗脖子上一圈項鍊——這是斜位片存在的主要理由。</p>
+<p>而<b>尾巴</b>是三年來被反覆設陷阱的地方。尾巴是<b>對側的上關節突</b>，不是橫突。所以「尾巴斷了代表橫突骨折」這句話錯，「尾巴斷了代表對側上關節突骨折」才對。111 期末、112 期末、113 期中都考過同一句，只是把它擺在不同選項位置。</p>
+</div>
+
+<figure class="boxfig" data-visual-id="sbox-10-reality" data-image-kind="structure" data-explanation-verified="true">
+<span class="figtag">構造圖解</span>
+<img data-visual-id="sbox-10-reality" src="img/sbox-10-reality.webp" alt="構造圖解：腰椎斜位片（oblique view）的 Scotty Dog（蘇格蘭梗犬）對應。" loading="lazy" decoding="async" width="1365" height="768">
+<figcaption>構造圖解：腰椎斜位片（oblique view）的 Scotty Dog（蘇格蘭梗犬）對應。</figcaption>
+</figure>
+<div class="reality"><span class="tag">回到現實</span>
+<p><b>腰椎斜位片（oblique view）的 Scotty Dog（蘇格蘭梗犬）對應：</b></p>
+<p>　• <b>眼睛 eye ＝ pedicle（椎弓根）</b>　• <b>耳朵 ear ＝ superior articular process（上關節突）</b></p>
+<p>　• <b>前腳 foreleg ＝ inferior articular process（下關節突）</b>　• <b>脖子 neck ＝ pars interarticularis（關節突間部）</b></p>
+<p>　• <b>尾巴 tail ＝ 對側的 superior articular process</b></p>
+<p><b>斜位片的主要用途是偵測 pars fracture（峽部骨折）</b>，因為 pars interarticularis 就位於狗的脖子。</p>
+<p><b>三年重複的陷阱：狗尾巴骨折 ≠ 橫突骨折。</b>尾巴代表的是<b>對側上關節突</b>。112 期末詳解寫得最完整：「a Scotty Dog's tail fracture can be seen in the patient with a fracture of the <b>superior articular process of opposite side</b> of spine.」</p>
+<p>另外 111 期末第 41 題附帶考了一個影像原則：<b>要看清楚頸椎神經孔要用斜位片</b>，不是側位片。</p>
+</div>
+
+<article data-question-id="113-bm113-p29-q20" data-placement="chapter">
+  <span class="qhead">113 年 第 20 題</span>
+  <p class="stem">Which statement about lumbar spine x-rays is INCORRECT?</p>
+  <ul class="opts">
+    <li>(A) In an oblique view, a Scotty Dog's tail fracture can be seen in the patient with a fracture of the transverse process of spine.</li>
+    <li>(B) The structure pointed by the arrow in the X-ray below is the facet joint of lumbar spine.</li>
+    <li>(C) The structure pointed by the arrows in these two X-ray pictures above is the pedicle of the lumbar spine.</li>
+    <li>(D) Oblique view is often used to detect pars fractures, and the pars interarticularis is located in the neck of the Scotty Dog in x-ray.</li>
+  </ul>
+  <details data-kind="answer">
+    <summary>答案與詳解</summary>
+    <div data-kind="zh-translation">
+      <p><strong>中文題目：</strong>下列關於腰椎 X 光的敘述，何者<b>不正確</b>？</p>
+      <p>(A) 在斜位片中，蘇格蘭梗犬的尾巴骨折見於橫突骨折的病人。</p>
+      <p>(B) 下圖 X 光中箭頭所指的構造是腰椎的關節突關節。</p>
+      <p>(C) 上面兩張 X 光中箭頭所指的構造是腰椎的椎弓根。</p>
+      <p>(D) 斜位片常用於偵測峽部骨折，關節突間部位於 X 光中蘇格蘭梗犬的脖子。</p>
+    </div>
+    <p class="ans">答案：A</p>
+    <p class="quote">詳解原文:「(A) Scotty Dog’s tail = superior articular process of opposite side」</p>
+    <p>(C) 提醒了另一個對應：<b>眼睛＝椎弓根</b>。(D) 則是狗脖子＝峽部，也是斜位片的用途所在。整題只有 (A) 把尾巴誤配成橫突。</p>
+    <p class="src">出處：肌肉骨骼影像解剖學(3)-脊椎 高志銘 ｜ BM113_Block8期中考詳解.pdf 第 29 頁</p>
+  </details>
+</article>
+
+<article data-question-id="112fin-bm112-p13-q14" data-placement="chapter">
+  <span class="qhead">112 年 期末考 第 14 題</span>
+  <p class="stem">Which statement about lumbar spine x-rays is incorrect?</p>
+  <ul class="opts">
+    <li>(A) Oblique view is often used to detect pars fractures, and the pars interarticularis is located in the neck of the Scotty Dog in x-ray.</li>
+    <li>(B) The structure pointed by the arrow in the X-ray below is the facet joint of lumbar spine.</li>
+    <li>(C) The structure pointed by the arrows in these two X-ray pictures above is the pedicle of the lumbar spine.</li>
+    <li>(D) In an oblique view, a Scotty Dog's tail fracture can be seen in the patient with a fracture of the transverse process of spine.</li>
+  </ul>
+  <details data-kind="answer">
+    <summary>答案與詳解</summary>
+    <div data-kind="zh-translation">
+      <p><strong>中文題目：</strong>下列關於腰椎 X 光的敘述，何者<b>不正確</b>？</p>
+      <p>(A) 斜位片常用於偵測峽部骨折，關節突間部位於蘇格蘭梗犬的脖子。</p>
+      <p>(B) 下圖 X 光中箭頭所指的構造是腰椎的關節突關節。</p>
+      <p>(C) 上面兩張 X 光中箭頭所指的構造是腰椎的椎弓根。</p>
+      <p>(D) 在斜位片中，蘇格蘭梗犬的尾巴骨折見於橫突骨折的病人。</p>
+    </div>
+    <p class="ans">答案：D</p>
+    <p class="quote">詳解原文:「In an oblique view, a Scotty Dog's tail fracture can be seen in the patient with a fracture of the superior articular process of opposite side of spine.」</p>
+    <p>與 113 年期中第 20 題<b>是同一題，只是把錯誤選項從 (A) 移到 (D)</b>。四個選項的內容完全一樣，順序被打散。這種「換位置不換內容」是本科很典型的手法。</p>
+    <p class="src">出處：高志銘 肌肉骨骼影像解剖學(3)-脊椎 (ppt pg.34) ｜ BM112_Block 8 期末考.pdf 第 13 頁</p>
+  </details>
+</article>
+
+<article data-question-id="111fin-bm111-p33-q41" data-placement="chapter">
+  <span class="qhead">111 年 期末考 第 41 題</span>
+  <p class="stem">Which statement about lumbar spine x-rays is incorrect?</p>
+  <ul class="opts">
+    <li>(A) Oblique view is often used to detect pars fractures, and the pars interarticularis is located in the neck of the Scotty Dog in x-ray.</li>
+    <li>(B) In the oblique view, the Scotty Dog's ears form a facet joint with the adjacent Scotty Dog's foreleg.</li>
+    <li>(C) The structure pointed by the arrows in these two X-ray pictures is the pedicle of the lumbar spine.</li>
+    <li>(D) If you want to clearly examine the neural foramen of the cervical spine on x-ray, a cervical spine lateral view is a better choice</li>
+  </ul>
+  <details data-kind="answer">
+    <summary>答案與詳解</summary>
+    <div data-kind="zh-translation">
+      <p><strong>中文題目：</strong>下列關於腰椎 X 光的敘述，何者<b>不正確</b>？</p>
+      <p>(A) 斜位片常用於偵測峽部骨折，關節突間部位於蘇格蘭梗犬的脖子。</p>
+      <p>(B) 在斜位片中，蘇格蘭梗犬的耳朵與鄰近梗犬的前腳形成關節突關節。</p>
+      <p>(C) 這兩張 X 光中箭頭所指的構造是腰椎的椎弓根。</p>
+      <p>(D) 若要在 X 光上清楚檢查頸椎神經孔，頸椎側位片是較佳的選擇。</p>
+    </div>
+    <p class="ans">答案：D</p>
+    <p class="quote">詳解原文:「要以cervical spine oblique view才能看清楚invertebral foramina = neural foramen」</p>
+    <p>(B) 補上了另一組對應關係：<b>耳朵（上關節突）與鄰近梗犬的前腳（下關節突）構成關節突關節</b>——這正是關節突關節的組成方式。(D) 則是把腰椎題與頸椎影像原則混在一起考。</p>
+    <p><b>注意這一題與 113 年期中第 19 題有張力：</b>此處判定「側位片較佳」為<b>錯誤</b>，而 113 年期中第 19 題的 (B)「lateral view and oblique view 都可以檢查神經孔」被判為<b>正確</b>，老師在申覆回覆中說明「並不代表 lateral view 無法檢查神經孔」。<b>要分清楚問的是「可不可以」還是「哪個較佳」</b>——可以，但斜位片才是首選。</p>
+    <p class="src">出處：高志銘 肌肉骨骼影像解剖學(3)-脊椎(ppt pg.24) ｜ BM111 BLOCK-8 期末考詳解.pdf 第 33 頁</p>
+  </details>
+</article>
+</section>
+<!-- ================= CHAPTER 5 ================= -->
+<section id="chapter-5" data-chapter-kind="story">
+<h2>五、頸椎與 MRI：幾毫米算異常</h2>
+
+<figure class="boxfig" data-visual-id="sbox-11-story" data-image-kind="story" data-explanation-verified="true">
+<span class="figtag">解剖場景</span>
+<img data-visual-id="sbox-11-story" src="img/sbox-11-story.webp" alt="解剖場景：頸椎側位片是急診最常拍的一張，上面有幾條線是必看的。　插圖沿用同一組角色與場景設定。" loading="lazy" decoding="async" width="1365" height="768">
+<figcaption>解剖場景：頸椎側位片是急診最常拍的一張，上面有幾條線是必看的。　插圖沿用同一組角色與場景設定。</figcaption>
+</figure>
+<div class="story" data-prose-kind="story"><span class="tag">故事</span>
+<p>頸椎側位片是急診最常拍的一張，上面有幾條線是必看的。</p>
+<p><b>第一條是寰齒間距。</b>C1 前弓的後緣到齒突前緣之間那道縫，正常應該很窄；一旦變寬，代表把齒突綁住的韌帶鬆了，C1 對 C2 有脫位。</p>
+<p><b>第二條是椎前軟組織。</b>脊椎前面那層軟組織如果腫起來，通常意味著出血或感染。它的正常厚度<b>上下不同</b>：在 C2 的高度應小於 7 mm，到 C6 的高度可以到 22 mm——因為下面有食道與氣管。<b>把這兩個數字對調就是錯的</b>，111 期末與 112 期末各考了一次，方向相反。</p>
+<p><b>還有兩個角度問題。</b>齒突在正面片上會被門牙擋住，所以要拍<b>張口位</b>；而 C1 沒有椎體，所以「用側位片檢查寰椎的椎體」這句話本身就不成立。</p>
+<p>至於 MRI：<b>T2 加權下，含水多的東西是亮的</b>——腦脊髓液亮、正常椎間盤亮，脂肪也偏亮。而腰椎下段的椎管裡已經沒有脊髓了，只剩一束神經根散開來，那叫<b>馬尾</b>。把馬尾說成脊髓，是這三年反覆出現的同一個錯誤。</p>
+</div>
+
+<figure class="boxfig" data-visual-id="sbox-12-reality" data-image-kind="structure" data-explanation-verified="true">
+<span class="figtag">構造圖解</span>
+<img data-visual-id="sbox-12-reality" src="img/sbox-12-reality.webp" alt="構造圖解：Atlantodens interval（ADI，寰齒間距）。" loading="lazy" decoding="async" width="1365" height="768">
+<figcaption>構造圖解：Atlantodens interval（ADI，寰齒間距）。</figcaption>
+</figure>
+<div class="reality"><span class="tag">回到現實</span>
+<p><b>Atlantodens interval（ADI，寰齒間距）</b>：頸椎<b>側位片</b>可用來偵測 <b>C1 與 C2 之間的脫位</b>。</p>
+<p><b>椎前軟組織（pre-vertebral soft tissue）正常厚度</b>：<b>C2 &lt; 7 mm</b>、<b>C6 &lt; 22 mm</b>（111 期末詳解逐字：「prevertebral soft tissue C2&lt;7mm, C6&lt;22mm」）。</p>
+<p><b>齒突（dens）</b>：頸椎 X 光要檢查齒突，建議用<b>張口位（open mouth view）</b>而非一般正位（AP view）。</p>
+<p><b>Atlas（C1）沒有椎體</b>，所以「用標準頸椎側位片檢查寰椎的椎體」為錯誤敘述（112 期末第 15 題 (C)）。</p>
+<p><b>MRI T2 加權</b>：椎間盤與脂肪組織<b>皆呈相對高訊號</b>。111 期末的錯誤選項把它寫成 low signal，113 期中則把同一句當成正確選項。</p>
+<p><b>馬尾（cauda equina）</b>：腰椎椎管內箭頭所指的束狀構造是<b>馬尾／神經根</b>，不是脊髓（脊髓約終止於 L1–L2）。這是本章三年三度出現的同一個誤答。</p>
+<p><b>頸椎神經孔</b>：<b>斜位片（oblique view）</b>是看神經孔的首選；側位片並非「無法」檢查，但不是較佳選擇（見 113 年申覆回覆）。</p>
+</div>
+
+<figure class="boxfig" data-visual-id="sbox-13-warn" data-image-kind="comparison" data-explanation-verified="true">
+<span class="figtag">陷阱圖解</span>
+<img data-visual-id="sbox-13-warn" src="img/sbox-13-warn.webp" alt="易錯點圖解：兩組數字、兩個方向，最容易背反： ① 椎前軟組織：C2 小於 7、C6 小於 22。" loading="lazy" decoding="async" width="1365" height="768">
+<figcaption>易錯點圖解：兩組數字、兩個方向，最容易背反： ① 椎前軟組織：C2 小於 7、C6 小於 22。</figcaption>
+</figure>
+<div class="warn"><span class="tag">易錯</span>
+<p><b>兩組數字、兩個方向，最容易背反：</b></p>
+<p>① <b>椎前軟組織：C2 小於 7、C6 小於 22。</b>位置愈低、容許愈厚。</p>
+<p>② <b>T2 亮、T1 暗（就椎間盤而言）。</b>112 期末把它換成 T1 說「椎間盤與脂肪都高訊號」，那是錯的。</p>
+</div>
+
+<article data-question-id="113-bm113-p26-q19" data-placement="chapter">
+  <span class="qhead">113 年 第 19 題 ｜ 本題經申覆，(B)(D) 皆給分</span>
+  <p class="stem">Which of the following statements about the structure of spine is CORRECT?</p>
+  <ul class="opts">
+    <li>(A) The facet joint is composed of superior and inferior facet, and all superior facets face medially, and the inferior facets face laterally.</li>
+    <li>(B) If you want to check the neural foramen of the cervical spine, you can use the lateral view and oblique view of the cervical spine x-ray.</li>
+    <li>(C) Vertebral body spans from the anterior column to the posterior column of spine.</li>
+    <li>(D) In AP view of thoracic spine x-ray, the tracheal bifurcation can be used to estimate the position of T7.</li>
+  </ul>
+  <details data-kind="answer">
+    <summary>答案與詳解</summary>
+    <div data-kind="zh-translation">
+      <p><strong>中文題目：</strong>下列關於脊椎構造的敘述，何者<b>正確</b>？</p>
+      <p>(A) 關節突關節由上、下關節突組成，所有上關節突面朝內側，下關節突面朝外側。</p>
+      <p>(B) 若要檢查頸椎神經孔，可使用頸椎 X 光的側位片與斜位片。</p>
+      <p>(C) 椎體從前柱一路延伸到後柱。</p>
+      <p>(D) 在胸椎正位片中，氣管分叉處可用來估計 T7 的位置。</p>
+    </div>
+    <p class="ans">答案：B（申覆後 (B)(D) 皆給分）</p>
+    <p class="quote">詳解原文:「(A) 不是所有的facets都面對一樣的方向。(B) Cervical spine x-ray Oblique view可以看到神經孔。(C) Vertebral body的前⅔在Anterior column，後⅓在middle column，並沒有跨到posterior column。(D) thoracic spine x ray AP view，Tracheal Bifurcation 大約在T4位置，如果往下算，確實可以estimate出T7的位置。」</p>
+    <p><b>兩則申覆與老師回覆（逐字）：</b></p>
+    <p class="quote">同學對 (B)：「老師上課時有提醒,要評估頸椎的神經孔，應使用頸椎斜位 X 光; 如需更細部的神經根或軟組織信息，則以 CT 或 MRI 為首選。此題目(B)lat.view檢查神經孔的敘述並不準確，請老師斟酌給分」——老師回覆：「如同學所述，若要更細部的檢查可利用CT或MRI，並不代表cervical spine lateral view 無法檢查神經孔。」</p>
+    <p class="quote">同學對 (D)：「已知tracheal bifurcation 為T4-T5之高度，則可依此推算鄰近之T7位置，因選項用字"estimate"⋯認為語意上並不是詢問 "exactly"，故希望老師開放D選項」——老師回覆：「B, D皆同意給分」。</p>
+    <p>(C) 是三柱理論的錯誤選項，與 112 期末第 13 題同一句。氣管分叉約在 <b>T4</b>，往下數可推估 T7。</p>
+    <p class="src">出處：肌肉骨骼影像解剖學(3)-脊椎 高志銘 ppt pg.24、29、68 ｜ BM113_Block8期中考詳解.pdf 第 26 頁</p>
+  </details>
+</article>
+
+<article data-question-id="113-bm113-p29-q21" data-placement="chapter">
+  <span class="qhead">113 年 第 21 題</span>
+  <p class="stem">Which of the following statements about the radiologic anatomy of spine is INCORRECT?</p>
+  <ul class="opts">
+    <li>(A) The structure pointed by the arrow in the T2-weighted image of MRI below is the spinal cord.</li>
+    <li>(B) In the T2-weighted image of MRI, the intervertebral disc and fat tissue both appear as a relative high signal intensity</li>
+    <li>(C) Atlantodens interval (ADI) in cervical spine x-ray lateral view can be used to detect the dislocation between C1 and C2.</li>
+    <li>(D) The normal thickness of the pre-vertebral soft tissue in the lateral view of cervical spine x-ray should be less than 22mm at C6 level</li>
+  </ul>
+  <details data-kind="answer">
+    <summary>答案與詳解</summary>
+    <div data-kind="zh-translation">
+      <p><strong>中文題目：</strong>下列關於脊椎影像解剖的敘述，何者<b>不正確</b>？</p>
+      <p>(A) 下方 MRI T2 加權影像中箭頭所指的構造是脊髓。</p>
+      <p>(B) 在 MRI T2 加權影像中，椎間盤與脂肪組織皆呈相對高訊號。</p>
+      <p>(C) 頸椎側位片的寰齒間距（ADI）可用來偵測 C1 與 C2 之間的脫位。</p>
+      <p>(D) 頸椎側位片中，椎前軟組織在 C6 高度的正常厚度應小於 22 mm。</p>
+    </div>
+    <p class="ans">答案：A</p>
+    <p class="quote">詳解原文:「（A）箭頭所指為cauda equina」</p>
+    <p>(B)(C)(D) 三個正確選項各自是一個必背事實：T2 下椎間盤與脂肪皆亮、ADI 用於偵測 C1–C2 脫位、C6 椎前軟組織 &lt; 22 mm。(A) 的馬尾／脊髓混淆在 111 期末、112 期末也各考過一次。</p>
+    <p class="src">出處：肌肉骨骼影像解剖學(3)-脊椎 高志銘 ppt p.26, 59 ｜ BM113_Block8期中考詳解.pdf 第 29 頁</p>
+  </details>
+</article>
+
+<article data-question-id="112fin-bm112-p14-q15" data-placement="chapter">
+  <span class="qhead">112 年 期末考 第 15 題</span>
+  <p class="stem">Which of the following statements about the radiologic anatomy of spine is correct?</p>
+  <ul class="opts">
+    <li>(A) The structure pointed by the arrow in the T2-weighted image of MRI below is the cauda equina.</li>
+    <li>(B) In the T1-weighted image of MRI, the intervertebral disc and fat tissue both appear as a relative high signal intensity</li>
+    <li>(C) Standard cervical spine lateral view can be used to examine the vertebral body of the Atlas.</li>
+    <li>(D) The normal thickness of the pre-vertebral soft tissue in the lateral view of cervical spine x-ray should be less than 7mm at C6 level</li>
+  </ul>
+  <details data-kind="answer">
+    <summary>答案與詳解</summary>
+    <div data-kind="zh-translation">
+      <p><strong>中文題目：</strong>下列關於脊椎影像解剖的敘述，何者<b>正確</b>？</p>
+      <p>(A) 下方 MRI T2 加權影像中箭頭所指的構造是馬尾。</p>
+      <p>(B) 在 MRI T1 加權影像中，椎間盤與脂肪組織皆呈相對高訊號。</p>
+      <p>(C) 標準頸椎側位片可用來檢查寰椎的椎體。</p>
+      <p>(D) 頸椎側位片中，椎前軟組織在 C6 高度的正常厚度應小於 7 mm。</p>
+    </div>
+    <p class="ans">答案：A</p>
+    <p class="quote">詳解原文:「(C) Atlas沒有vertebral body」</p>
+    <p>本題把三年來的四個考點全部打包成一題：(A) 馬尾（這次是<b>正確</b>敘述）、(B) 把 T2 改成 <b>T1</b>（椎間盤在 T1 是低訊號）、(C) <b>C1 沒有椎體</b>（呼應第二章）、(D) 把 C6 的 22 mm 換成 <b>7 mm</b>（那是 C2 的數字）。四個陷阱各對應一個必背事實。</p>
+    <p class="src">出處：高志銘 肌肉骨骼影像解剖學(3)-脊椎 (ppt pg.26, 60) ｜ BM112_Block 8 期末考.pdf 第 14 頁</p>
+  </details>
+</article>
+
+<article data-question-id="111fin-bm111-p34-q42" data-placement="chapter">
+  <span class="qhead">111 年 期末考 第 42 題</span>
+  <p class="stem">Which of the following statements about the radiologic anatomy of spine is correct?</p>
+  <ul class="opts">
+    <li>(A) The structure pointed by the arrow in the picture is the spinal cord, which is located in the spinal canal.</li>
+    <li>(B) In the T2-weighted image of MRI, the intervertebral disc and fat tissue both appear as a relative low signal intensity</li>
+    <li>(C) To examine the dens of Axis by cervical X-ray, it is generally recommended to use open mouth view rather than anteroposterior projection image (AP view)</li>
+    <li>(D) The normal soft tissue thickness of the pre-vertebral soft tissue in cervical spine should be less than 22mm at C2 level</li>
+  </ul>
+  <details data-kind="answer">
+    <summary>答案與詳解</summary>
+    <div data-kind="zh-translation">
+      <p><strong>中文題目：</strong>下列關於脊椎影像解剖的敘述，何者<b>正確</b>？</p>
+      <p>(A) 圖中箭頭所指的構造是位於椎管內的脊髓。</p>
+      <p>(B) 在 MRI T2 加權影像中，椎間盤與脂肪組織皆呈相對低訊號。</p>
+      <p>(C) 以頸椎 X 光檢查樞椎齒突時，一般建議使用張口位而非正位片。</p>
+      <p>(D) 頸椎椎前軟組織在 C2 高度的正常厚度應小於 22 mm。</p>
+    </div>
+    <p class="ans">答案：C</p>
+    <p class="quote">詳解原文:「(A) 箭頭指的位置是cauda equina/nerve roots。(B) 期中考影像學有教過，這兩個在T2都是亮的。(D) prevertebral soft tissue C2&lt;7mm, C6&lt;22mm」</p>
+    <p>(D) 的詳解一次給出兩個數字，是本章最值得抄下來的一句：<b>C2 &lt; 7 mm、C6 &lt; 22 mm</b>。本題把 22 mm 錯放到 C2，112 期末則把 7 mm 錯放到 C6——<b>兩年用同一組數字、往相反方向設陷阱</b>。</p>
+    <p class="src">出處：高志銘 肌肉骨骼影像解剖學(3)-脊椎 ｜ BM111 BLOCK-8 期末考詳解.pdf 第 34 頁</p>
+  </details>
+</article>
+</section>
+
+<!-- ================= CRAM ================= -->
+<section id="chapter-cram" data-chapter-kind="cram">
+<h2>六、考前速記</h2>
+<div class="cram">
+<ul>
+<li><b>椎間盤從 C2–C3 到 L5–S1，共 23 片</b>；<b>C1–C2 之間沒有、S2 以後沒有</b>。約占脊椎高度 20–33%。</li>
+<li><b>髓核＝蛋白聚醣＋type II 膠原</b>，抗軸向負荷；<b>纖維環＝type I 膠原＋纖維軟骨</b>，限制椎體活動。別把 type I／II 對調。</li>
+<li><b>椎間盤無血管，養分靠終板被動擴散。</b></li>
+<li><b>C1（Atlas）沒有真正的椎體</b>——三年出現四次的單一事實。齒突長在 C2，構成寰樞關節負責<b>旋轉</b>。</li>
+<li><b>關節突關節面覆蓋透明軟骨</b>（不是纖維軟骨），腰椎關節突關節內約 1~1.5 ml 滑液；<b>關節囊的痛覺神經末梢是骨關節炎疼痛主因</b>。</li>
+<li><b>胸椎因肋凹與肋骨相連，是脊柱最不靈活的一段。</b></li>
+<li><b>三柱：</b>前柱＝椎體前 2/3＋ALL；中柱＝椎體後 1/3＋<b>PLL</b>；後柱＝椎弓根以後＋PLC。<b>椎體不跨到後柱。</b></li>
+<li><b>PLC 四成員：黃韌帶、棘間韌帶、棘上韌帶、關節突關節囊。</b><b>後縱韌帶（在中柱）與棘突（是骨頭）都不算。</b></li>
+<li><b>問「後柱」與問「PLC」答案不同</b>：棘突屬後柱，但不屬 PLC。</li>
+<li><b>蘇格蘭梗犬：眼＝椎弓根、耳＝上關節突、前腳＝下關節突、脖子＝峽部、尾巴＝<u>對側</u>上關節突。</b>尾巴<b>不是</b>橫突。斜位片用來看 pars fracture。</li>
+<li><b>椎前軟組織：C2 &lt; 7 mm、C6 &lt; 22 mm。</b>兩個數字別對調。</li>
+<li><b>T2 加權：椎間盤與脂肪皆高訊號。</b>換成 T1 就錯。</li>
+<li><b>腰椎椎管內箭頭所指＝馬尾（cauda equina），不是脊髓。</b>三年三度出現。</li>
+<li><b>ADI</b>（側位片）偵測 C1–C2 脫位；<b>齒突用張口位</b>；<b>頸椎神經孔首選斜位片</b>（側位並非不能看，但非較佳）。</li>
+<li><b>氣管分叉約在 T4</b>，可用來推估 T7 位置。</li>
+</ul>
+</div>
+</section>
+
+<!-- ================= VOCAB ================= -->
+<section id="chapter-vocab" data-chapter-kind="vocab">
+<h2>七、單字表</h2>
+<dl class="vocab">
+<dt>nucleus pulposus</dt>
+<dd><span class="root">nucleus（核）+ pulposus（果肉般的）</span>　髓核。富含蛋白聚醣與 type II 膠原，抵抗軸向負荷。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>pulp＝果肉。想成一包被壓就往外撐的果凍。</p></details></dd>
+
+<dt>annulus fibrosus</dt>
+<dd><span class="root">annulus（環）+ fibrosus（纖維的）</span>　纖維環。以 type I 膠原與纖維軟骨層層斜向纏繞。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>annulus＝環（比較 annual 年輪）。外圈的箍，限制椎體亂動。</p></details></dd>
+
+<dt>end plate</dt>
+<dd><span class="root">end（終端）+ plate（板）</span>　終板。椎體與椎間盤之間的軟骨層，椎間盤養分由此被動擴散。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>椎間盤唯一的補給口。終板鈣化＝斷糧。</p></details></dd>
+
+<dt>atlas (C1)</dt>
+<dd><span class="root">希臘神話中扛天的巨神 Atlas</span>　寰椎。<b>沒有真正的椎體</b>，呈環狀。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>Atlas 用肩膀扛天——它托著頭顱，本身沒有「身體」（椎體）。三年考四次。</p></details></dd>
+
+<dt>axis (C2) / dens</dt>
+<dd><span class="root">axis（軸）／dens（拉丁：牙齒）</span>　樞椎與其齒突。齒突是 C1 旋轉所繞的軸。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>axis＝軸心，dens＝像牙齒一樣往上戳的柱子。頸椎旋轉靠這一節。</p></details></dd>
+
+<dt>atlantoaxial joint</dt>
+<dd><span class="root">atlanto-（寰椎）+ axial（樞椎）</span>　寰樞關節，負責頸椎大部分旋轉。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>C1 套在 C2 的齒突上轉。所以這兩節之間沒有椎間盤——功能是轉不是壓。</p></details></dd>
+
+<dt>facet joint</dt>
+<dd><span class="root">facet（小平面）</span>　關節突關節。滑液關節，關節面覆<b>透明軟骨</b>，腰椎內約 1~1.5 ml 滑液。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>是真正的滑液關節，所以覆的是 hyaline 而非 fibrocartilage。關節囊有痛覺神經，是退化性關節炎痛的來源。</p></details></dd>
+
+<dt>costal facet</dt>
+<dd><span class="root">costa（肋骨）+ facet</span>　肋凹。胸椎與肋骨的接合面，限制胸椎活動。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>被肋骨綁住 → 胸椎是脊柱最不靈活的一段。</p></details></dd>
+
+<dt>posterior longitudinal ligament (PLL)</dt>
+<dd><span class="root">posterior（後）+ longitudinal（縱向）</span>　後縱韌帶。貼在椎體後表面，屬<b>中柱</b>。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>名字有「後」但不在後柱——它在椎體後面，而椎體屬前／中柱。四份考卷考過同一句。</p></details></dd>
+
+<dt>ligamentum flavum</dt>
+<dd><span class="root">ligamentum（韌帶）+ flavum（黃色的）</span>　黃韌帶。位於後柱，彈性高，前彎時可伸展而<b>不限制</b>運動。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>flavum＝黃（比較 flavonoid 類黃酮）。富含彈性蛋白所以呈黃色、也所以有彈性。</p></details></dd>
+
+<dt>posterior ligamentous complex (PLC)</dt>
+<dd><span class="root">posterior + ligamentous（韌帶的）+ complex（複合體）</span>　後方韌帶複合體：黃韌帶、棘間韌帶、棘上韌帶、關節突關節囊。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>名字裡有 <b>ligamentous</b>——只收韌帶類。棘突是骨頭，後縱韌帶在中柱，兩者都不算。</p></details></dd>
+
+<dt>three-column model</dt>
+<dd><span class="root">Denis 三柱理論</span>　前柱／中柱／後柱，用於判斷脊椎骨折的穩定度。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>椎體被分界線切成兩半：前 2/3 前柱、後 1/3 中柱。<b>不跨到後柱。</b></p></details></dd>
+
+<dt>pars interarticularis</dt>
+<dd><span class="root">pars（部分）+ inter-（之間）+ articularis（關節的）</span>　關節突間部，位於蘇格蘭梗犬的<b>脖子</b>。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>字面「兩個關節突之間的那一段」。這裡骨折＝pars fracture，斜位片才看得清楚。</p></details></dd>
+
+<dt>Scotty Dog sign</dt>
+<dd><span class="root">Scotty Dog（蘇格蘭梗犬）</span>　腰椎斜位片上的擬形：眼＝椎弓根、耳＝上關節突、前腳＝下關節突、脖子＝峽部、尾＝<b>對側</b>上關節突。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>只有<b>尾巴</b>指的是「對側」的構造，其餘都是同側。尾巴≠橫突，三年考三次。</p></details></dd>
+
+<dt>pedicle</dt>
+<dd><span class="root">拉丁 pediculus＝小腳</span>　椎弓根，斜位片上是狗的<b>眼睛</b>。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>連接椎體與後方骨性結構的橋。正位片上是一對「貓頭鷹的眼睛」。</p></details></dd>
+
+<dt>atlantodens interval (ADI)</dt>
+<dd><span class="root">atlanto-（寰椎）+ dens（齒突）+ interval（間距）</span>　寰齒間距，側位片上偵測 C1–C2 脫位。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>間距變寬＝橫韌帶鬆了＝C1 對 C2 不穩。類風濕性關節炎病人要特別注意。</p></details></dd>
+
+<dt>pre-vertebral soft tissue</dt>
+<dd><span class="root">pre-（前）+ vertebral（椎體的）</span>　椎前軟組織。<b>C2 &lt; 7 mm、C6 &lt; 22 mm</b>。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>位置愈低愈寬鬆——因為 C6 前面還有食道與氣管。數字別對調。</p></details></dd>
+
+<dt>open mouth view</dt>
+<dd><span class="root">open mouth（張口）</span>　張口位，檢查齒突的標準投照角度。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>正位片會被門牙擋住齒突，所以要請病人張嘴拍。</p></details></dd>
+
+<dt>oblique view</dt>
+<dd><span class="root">oblique（斜的）</span>　斜位片。腰椎用來看峽部（蘇格蘭梗犬），頸椎用來看神經孔。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>兩個部位、兩個用途，但都是「正面側面看不到、要轉個角度才現形」。</p></details></dd>
+
+<dt>cauda equina</dt>
+<dd><span class="root">拉丁 cauda（尾）+ equina（馬的）</span>　馬尾。脊髓約止於 L1–L2，其下椎管內為散開的神經根束。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>字面就是「馬的尾巴」——一束散開的神經根。腰椎 MRI 上箭頭指的是它，不是脊髓。</p></details></dd>
+
+<dt>T2-weighted image</dt>
+<dd><span class="root">T2 加權</span>　MRI 序列。含水多的組織呈高訊號：腦脊髓液、正常椎間盤、脂肪皆偏亮。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>「T2 水亮」。題目把 T2 換成 T1 或把 high 換成 low 都是錯的。</p></details></dd>
+
+<dt>neural foramen</dt>
+<dd><span class="root">neural（神經的）+ foramen（孔）</span>　神經孔，神經根離開脊椎的通道。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>頸椎首選<b>斜位片</b>；更細部資訊用 CT／MRI。側位片並非不能看，但不是較佳選擇。</p></details></dd>
+</dl>
+</section>
+<section id="chapter-final" data-chapter-kind="final_questions">
+<h2>八、歷年考題總複習</h2>
+<p class="meta">依年度由新到舊、同年依原始題號排列。共 18 題（期中 12、期末 6）。<b style="color:#f08a8a">紅框</b>＝同一考點在兩個以上年度重複出現。</p>
+<h3><span class="yearchip">113 年</span>第 19–24 題</h3>
+<article data-question-id="113-bm113-p26-q19" data-placement="final">
+  <span class="qhead">113 年 第 19 題</span>
+  
+  <p class="stem">Which of the following statements about the structure of spine is CORRECT?</p>
+  <ul class="opts"><li>(A) The facet joint is composed of superior and inferior facet, and all superior facets face medially, and the inferior facets face laterally.</li><li>(B) If you want to check the neural foramen of the cervical spine, you can use the lateral view and oblique view of the cervical spine x-ray.</li><li>(C) Vertebral body spans from the anterior column to the posterior column of spine.</li><li>(D) In AP view of thoracic spine x-ray, the tracheal bifurcation can be used to estimate the position of T7.</li></ul>
+  <details data-kind="answer"><summary>答案與詳解</summary>
+    <div data-kind="zh-translation"><p><strong>中文題目：</strong>下列關於脊椎構造的敘述，何者<b>正確</b>？</p>
+      <p>(A) 關節突關節由上、下關節突組成，所有上關節突面朝內側，下關節突面朝外側。</p>
+      <p>(B) 若要檢查頸椎神經孔，可使用頸椎 X 光的側位片與斜位片。</p>
+      <p>(C) 椎體從前柱一路延伸到後柱。</p>
+      <p>(D) 在胸椎正位片中，氣管分叉處可用來估計 T7 的位置。</p></div>
+    <p class="ans">答案：B</p>
+    <p>頸椎神經孔可用斜位（首選）；申覆後 B、D 皆給分。<span class="src"> ｜ BM113_Block8期中考詳解 第 26 頁</span></p>
+  </details>
+</article>
+<article data-question-id="113-bm113-p29-q20" data-placement="final" class="repeat">
+  <span class="qhead">113 年 第 20 題</span><span class="repeat-badge">重複考點 ×3</span>
+  <p class="repeat-note">同考點：111 第41題、112 第14題　—　腰椎斜位片與蘇格蘭梗犬</p>
+  <p class="stem">Which statement about lumbar spine x-rays is INCORRECT?</p>
+  <ul class="opts"><li>(A) In an oblique view, a Scotty Dog&#x27;s tail fracture can be seen in the patient with a fracture of the transverse process of spine.</li><li>(B) The structure pointed by the arrow in the X-ray below is the facet joint of lumbar spine.</li><li>(C) The structure pointed by the arrows in these two X-ray pictures above is the pedicle of the lumbar spine.</li><li>(D) Oblique view is often used to detect pars fractures, and the pars interarticularis is located in the neck of the Scotty Dog in x-ray.</li></ul>
+  <details data-kind="answer"><summary>答案與詳解</summary>
+    <div data-kind="zh-translation"><p><strong>中文題目：</strong>下列關於腰椎 X 光的敘述，何者<b>不正確</b>？</p>
+      <p>(A) 在斜位片中，蘇格蘭梗犬的尾巴骨折見於橫突骨折的病人。</p>
+      <p>(B) 下圖 X 光中箭頭所指的構造是腰椎的關節突關節。</p>
+      <p>(C) 上面兩張 X 光中箭頭所指的構造是腰椎的椎弓根。</p>
+      <p>(D) 斜位片常用於偵測峽部骨折，關節突間部位於 X 光中蘇格蘭梗犬的脖子。</p></div>
+    <p class="ans">答案：A</p>
+    <p>狗尾巴＝對側上關節突，不是橫突。<span class="src"> ｜ BM113_Block8期中考詳解 第 29 頁</span></p>
+  </details>
+</article>
+<article data-question-id="113-bm113-p29-q21" data-placement="final" class="repeat">
+  <span class="qhead">113 年 第 21 題</span><span class="repeat-badge">重複考點 ×3</span>
+  <p class="repeat-note">同考點：111 第42題、112 第15題　—　頸椎與 MRI 影像判讀標準</p>
+  <p class="stem">Which of the following statements about the radiologic anatomy of spine is INCORRECT?</p>
+  <ul class="opts"><li>(A) The structure pointed by the arrow in the T2-weighted image of MRI below is the spinal cord.</li><li>(B) In the T2-weighted image of MRI, the intervertebral disc and fat tissue both appear as a relative high signal intensity</li><li>(C) Atlantodens interval (ADI) in cervical spine x-ray lateral view can be used to detect the dislocation between C1 and C2.</li><li>(D) The normal thickness of the pre-vertebral soft tissue in the lateral view of cervical spine x-ray should be less than 22mm at C6 level</li></ul>
+  <details data-kind="answer"><summary>答案與詳解</summary>
+    <div data-kind="zh-translation"><p><strong>中文題目：</strong>下列關於脊椎影像解剖的敘述，何者<b>不正確</b>？</p>
+      <p>(A) 下方 MRI T2 加權影像中箭頭所指的構造是脊髓。</p>
+      <p>(B) 在 MRI T2 加權影像中，椎間盤與脂肪組織皆呈相對高訊號。</p>
+      <p>(C) 頸椎側位片的寰齒間距（ADI）可用來偵測 C1 與 C2 之間的脫位。</p>
+      <p>(D) 頸椎側位片中，椎前軟組織在 C6 高度的正常厚度應小於 22 mm。</p></div>
+    <p class="ans">答案：A</p>
+    <p>腰椎椎管內箭頭所指是馬尾而非脊髓。<span class="src"> ｜ BM113_Block8期中考詳解 第 29 頁</span></p>
+  </details>
+</article>
+<article data-question-id="113-bm113-p31-q22" data-placement="final" class="repeat">
+  <span class="qhead">113 年 第 22 題 ｜ 來源僅答案鍵</span><span class="repeat-badge">重複考點 ×3</span>
+  <p class="repeat-note">同考點：111 第19題、112 第19題　—　椎間盤的成分、營養與分布</p>
+  <p class="stem">Which of the following statements about the structure of spine is NOT true?</p>
+  <ul class="opts"><li>(A) Dens is part of the Atlantoaxial joint, which is responsible for cervical rotation.</li><li>(B) Pain-sensitive nerve endings supply the joint capsule, which is the main source of pain in osteoarthritis.</li><li>(C) Nutrients of the intervertebral disc are mainly obtained by passive diffusion from the end plate.</li><li>(D) The ligamentum flavum is located in the posterior column of the spine and the main function is to limit motion of spine during flexion.</li></ul>
+  <details data-kind="answer"><summary>答案與詳解</summary>
+    <div data-kind="zh-translation"><p><strong>中文題目：</strong>下列關於脊椎構造的敘述，何者<b>不正確</b>？</p>
+      <p>(A) 齒突是寰樞關節的一部分，該關節負責頸椎旋轉。</p>
+      <p>(B) 對疼痛敏感的神經末梢分布於關節囊，是骨關節炎疼痛的主要來源。</p>
+      <p>(C) 椎間盤的養分主要由終板被動擴散取得。</p>
+      <p>(D) 黃韌帶位於脊椎後柱，主要功能是限制脊椎前彎時的活動。</p></div>
+    <p class="ans">答案：D</p>
+    <p>黃韌帶位於後柱，但其彈性使其不限制前彎。<span class="src"> ｜ BM113_Block8期中考詳解 第 31 頁</span></p>
+  </details>
+</article>
+<article data-question-id="113-bm113-p32-q23" data-placement="final" class="repeat">
+  <span class="qhead">113 年 第 23 題</span><span class="repeat-badge">重複考點 ×5</span>
+  <p class="repeat-note">同考點：111 第21題、112 第21題、111 第40題、112 第13題　—　後方韌帶複合體與三柱歸屬</p>
+  <p class="stem">Which part of spine does NOT belong to the posterior ligamentous complex?</p>
+  <ul class="opts"><li>(A) ligamentum flavum</li><li>(B) interspinous ligament</li><li>(C) posterior longitudinal ligament</li><li>(D) facet joint capsule</li></ul>
+  <details data-kind="answer"><summary>答案與詳解</summary>
+    <div data-kind="zh-translation"><p><strong>中文題目：</strong>下列脊椎構造中，何者<b>不屬於</b>後方韌帶複合體？</p>
+      <p>(A) 黃韌帶　(B) 棘間韌帶　(C) 後縱韌帶　(D) 關節突關節囊</p></div>
+    <p class="ans">答案：C</p>
+    <p>PLC＝黃韌帶＋棘間＋棘上＋關節突關節囊；後縱韌帶屬中柱。<span class="src"> ｜ BM113_Block8期中考詳解 第 32 頁</span></p>
+  </details>
+</article>
+<article data-question-id="113-bm113-p33-q24" data-placement="final" class="repeat">
+  <span class="qhead">113 年 第 24 題 ｜ 來源僅答案鍵</span><span class="repeat-badge">重複考點 ×3</span>
+  <p class="repeat-note">同考點：111 第20題、112 第20題　—　脊椎骨性構造：C1 無椎體、關節突關節、胸椎</p>
+  <p class="stem">Which of the following statements about the structure of spine is CORRECT?</p>
+  <ul class="opts"><li>(A) The spinal process of C7 is on the center of gravity of the spinal column in normal adult.</li><li>(B) The articular surface of the facet joint is covered with fibrocartilage, and like other joint, there is synovial fluid presented in facet joints.</li><li>(C) Nucleus pulposus has large proportion of proteoglycan and collagen, and the main function is to resist axial loads.</li><li>(D) All cervical vertebrae have vertebral body located at the front of the spine.</li></ul>
+  <details data-kind="answer"><summary>答案與詳解</summary>
+    <div data-kind="zh-translation"><p><strong>中文題目：</strong>下列關於脊椎構造的敘述，何者<b>正確</b>？</p>
+      <p>(A) 正常成人 C7 的棘突位於脊柱的重心線上。</p>
+      <p>(B) 關節突關節的關節面覆蓋纖維軟骨，且如同其他關節，關節內有滑液。</p>
+      <p>(C) 髓核含大量蛋白聚醣與膠原，主要功能是抵抗軸向負荷。</p>
+      <p>(D) 所有頸椎都有位於脊椎前方的椎體。</p></div>
+    <p class="ans">答案：C</p>
+    <p>髓核抗軸向負荷；C1 沒有椎體，關節突關節覆透明軟骨。<span class="src"> ｜ BM113_Block8期中考詳解 第 33 頁</span></p>
+  </details>
+</article>
+<h3><span class="yearchip">112 年</span>第 13–21 題</h3>
+<article data-question-id="112fin-bm112-p12-q13" data-placement="final" class="repeat">
+  <span class="qhead">112 年 第 13 題 ｜ 來源僅答案鍵</span><span class="repeat-badge">重複考點 ×5</span>
+  <p class="repeat-note">同考點：111 第21題、112 第21題、113 第23題、111 第40題　—　後方韌帶複合體與三柱歸屬</p>
+  <p class="stem">Which of the following statements about the three-column model of spine is incorrect?</p>
+  <ul class="opts"><li>(A) Posterior longitudinal ligament is located in the middle column of spine</li><li>(B) The facet joint capsule is one of the components of the posterior ligamentous complex and is located in the posterior column of spine</li><li>(C) Vertebral body spans from the anterior column to the posterior column of spine</li><li>(D) The ligamentum flavum is located in the posterior column of the spine</li></ul>
+  <details data-kind="answer"><summary>答案與詳解</summary>
+    <div data-kind="zh-translation"><p><strong>中文題目：</strong>下列關於脊椎三柱理論的敘述，何者<b>不正確</b>？</p>
+      <p>(A) 後縱韌帶位於脊椎中柱。</p>
+      <p>(B) 關節突關節囊是後方韌帶複合體的成員之一，位於脊椎後柱。</p>
+      <p>(C) 椎體從前柱一路延伸到後柱。</p>
+      <p>(D) 黃韌帶位於脊椎後柱。</p></div>
+    <p class="ans">答案：C</p>
+    <p>椎體只跨前柱與中柱，不到後柱。<span class="src"> ｜ BM112_Block 8 期末考 第 12 頁</span></p>
+  </details>
+</article>
+<article data-question-id="112fin-bm112-p13-q14" data-placement="final" class="repeat">
+  <span class="qhead">112 年 第 14 題</span><span class="repeat-badge">重複考點 ×3</span>
+  <p class="repeat-note">同考點：113 第20題、111 第41題　—　腰椎斜位片與蘇格蘭梗犬</p>
+  <p class="stem">Which statement about lumbar spine x-rays is incorrect?</p>
+  <ul class="opts"><li>(A) Oblique view is often used to detect pars fractures, and the pars interarticularis is located in the neck of the Scotty Dog in x-ray.</li><li>(B) The structure pointed by the arrow in the X-ray below is the facet joint of lumbar spine.</li><li>(C) The structure pointed by the arrows in these two X-ray pictures above is the pedicle of the lumbar spine.</li><li>(D) In an oblique view, a Scotty Dog&#x27;s tail fracture can be seen in the patient with a fracture of the transverse process of spine.</li></ul>
+  <details data-kind="answer"><summary>答案與詳解</summary>
+    <div data-kind="zh-translation"><p><strong>中文題目：</strong>下列關於腰椎 X 光的敘述，何者<b>不正確</b>？</p>
+      <p>(A) 斜位片常用於偵測峽部骨折，關節突間部位於蘇格蘭梗犬的脖子。</p>
+      <p>(B) 下圖 X 光中箭頭所指的構造是腰椎的關節突關節。</p>
+      <p>(C) 上面兩張 X 光中箭頭所指的構造是腰椎的椎弓根。</p>
+      <p>(D) 在斜位片中，蘇格蘭梗犬的尾巴骨折見於橫突骨折的病人。</p></div>
+    <p class="ans">答案：D</p>
+    <p>與 113 年第 20 題同題，錯誤選項換到 (D)。<span class="src"> ｜ BM112_Block 8 期末考 第 13 頁</span></p>
+  </details>
+</article>
+<article data-question-id="112fin-bm112-p14-q15" data-placement="final" class="repeat">
+  <span class="qhead">112 年 第 15 題</span><span class="repeat-badge">重複考點 ×3</span>
+  <p class="repeat-note">同考點：113 第21題、111 第42題　—　頸椎與 MRI 影像判讀標準</p>
+  <p class="stem">Which of the following statements about the radiologic anatomy of spine is correct?</p>
+  <ul class="opts"><li>(A) The structure pointed by the arrow in the T2-weighted image of MRI below is the cauda equina.</li><li>(B) In the T1-weighted image of MRI, the intervertebral disc and fat tissue both appear as a relative high signal intensity</li><li>(C) Standard cervical spine lateral view can be used to examine the vertebral body of the Atlas.</li><li>(D) The normal thickness of the pre-vertebral soft tissue in the lateral view of cervical spine x-ray should be less than 7mm at C6 level</li></ul>
+  <details data-kind="answer"><summary>答案與詳解</summary>
+    <div data-kind="zh-translation"><p><strong>中文題目：</strong>下列關於脊椎影像解剖的敘述，何者<b>正確</b>？</p>
+      <p>(A) 下方 MRI T2 加權影像中箭頭所指的構造是馬尾。</p>
+      <p>(B) 在 MRI T1 加權影像中，椎間盤與脂肪組織皆呈相對高訊號。</p>
+      <p>(C) 標準頸椎側位片可用來檢查寰椎的椎體。</p>
+      <p>(D) 頸椎側位片中，椎前軟組織在 C6 高度的正常厚度應小於 7 mm。</p></div>
+    <p class="ans">答案：A</p>
+    <p>T1 下椎間盤非高訊號；C1 無椎體；C6 是 22mm 不是 7mm。<span class="src"> ｜ BM112_Block 8 期末考 第 14 頁</span></p>
+  </details>
+</article>
+<article data-question-id="112-bm112-p27-q19" data-placement="final" class="repeat">
+  <span class="qhead">112 年 第 19 題</span><span class="repeat-badge">重複考點 ×3</span>
+  <p class="repeat-note">同考點：111 第19題、113 第22題　—　椎間盤的成分、營養與分布</p>
+  <p class="stem">Which of the following statements about the structure of spine is NOT true?</p>
+  <ul class="opts"><li>(A) Dens is part of the Atlantoaxial joint, which is responsible for cervical rotation.</li><li>(B) There are 23 intervertebral discs located between each level of spine.</li><li>(C) Nutrients of the intervertebral disc are mainly obtained by passive diffusion through the end plate.</li><li>(D) The ligamentum flavum is located in the posterior column of the spine and cannot limit motion of spine during flexion.</li></ul>
+  <details data-kind="answer"><summary>答案與詳解</summary>
+    <div data-kind="zh-translation"><p><strong>中文題目：</strong>下列關於脊椎構造的敘述，何者<b>不正確</b>？</p>
+      <p>(A) 齒突是寰樞關節的一部分，該關節負責頸椎旋轉。</p>
+      <p>(B) 共有 23 片椎間盤，位於每一節脊椎之間。</p>
+      <p>(C) 椎間盤的養分主要經由終板被動擴散取得。</p>
+      <p>(D) 黃韌帶位於脊椎後柱，且無法限制脊椎前彎時的活動。</p></div>
+    <p class="ans">答案：B</p>
+    <p>椎間盤共 23 片，但不是每一節之間都有：C1-C2 與 S2 以下沒有。<span class="src"> ｜ BM112_Block 8 期中考(含申覆內容與結果) 第 27 頁</span></p>
+  </details>
+</article>
+<article data-question-id="112-bm112-p31-q20" data-placement="final" class="repeat">
+  <span class="qhead">112 年 第 20 題</span><span class="repeat-badge">重複考點 ×3</span>
+  <p class="repeat-note">同考點：111 第20題、113 第24題　—　脊椎骨性構造：C1 無椎體、關節突關節、胸椎</p>
+  <p class="stem">Which of the following statements about the structure of spine is CORRECT?</p>
+  <ul class="opts"><li>(A) The ribs and thoracic vertebrae are connected by costal facets, which restricts the movement of thoracic spine.</li><li>(B) The articular surface of the facet joint is covered with fibrocartilage, and approximately 1~1.5 ml of synovial fluid is present in facet joints.</li><li>(C) Nucleus pulposus has large proportion of type I collagen fibers.</li><li>(D) The vertebral body is the weight-bearing structure that exists in front of each level of vertebra.</li></ul>
+  <details data-kind="answer"><summary>答案與詳解</summary>
+    <div data-kind="zh-translation"><p><strong>中文題目：</strong>下列關於脊椎構造的敘述，何者<b>正確</b>？</p>
+      <p>(A) 肋骨與胸椎透過肋凹相連，限制了胸椎的活動。</p>
+      <p>(B) 關節突關節的關節面覆蓋纖維軟骨，關節內約有 1~1.5 ml 滑液。</p>
+      <p>(C) 髓核含大量第一型膠原纖維。</p>
+      <p>(D) 椎體是承重構造，存在於每一節脊椎的前方。</p></div>
+    <p class="ans">答案：A</p>
+    <p>胸椎受肋凹限制活動；type I 在纖維環、type II 在髓核；C1 例外。<span class="src"> ｜ BM112_Block 8 期中考(含申覆內容與結果) 第 31 頁</span></p>
+  </details>
+</article>
+<article data-question-id="112-bm112-p33-q21" data-placement="final" class="repeat">
+  <span class="qhead">112 年 第 21 題</span><span class="repeat-badge">重複考點 ×5</span>
+  <p class="repeat-note">同考點：111 第21題、113 第23題、111 第40題、112 第13題　—　後方韌帶複合體與三柱歸屬</p>
+  <p class="stem">Which part of spine does NOT belong to the posterior ligamentous complex?</p>
+  <ul class="opts"><li>(A) ligamentum flavum</li><li>(B) supraspinous ligament</li><li>(C) spinous process</li><li>(D) facet capsule</li></ul>
+  <details data-kind="answer"><summary>答案與詳解</summary>
+    <div data-kind="zh-translation"><p><strong>中文題目：</strong>下列脊椎構造中，何者<b>不屬於</b>後方韌帶複合體？</p>
+      <p>(A) 黃韌帶　(B) 棘上韌帶　(C) 棘突　(D) 關節突關節囊</p></div>
+    <p class="ans">答案：C</p>
+    <p>棘突是骨性結構，不屬於後方韌帶複合體。<span class="src"> ｜ BM112_Block 8 期中考(含申覆內容與結果) 第 33 頁</span></p>
+  </details>
+</article>
+<h3><span class="yearchip">111 年</span>第 19–42 題</h3>
+<article data-question-id="111-bm111-p17-q19" data-placement="final" class="repeat">
+  <span class="qhead">111 年 第 19 題</span><span class="repeat-badge">重複考點 ×3</span>
+  <p class="repeat-note">同考點：112 第19題、113 第22題　—　椎間盤的成分、營養與分布</p>
+  <p class="stem">Which of the following statements about the intervertebral disc is not true?</p>
+  <ul class="opts"><li>(A) Nucleus pulposus has large proportion of hydrophilic proteoglycans.</li><li>(B) Nutrients of the intervertebral disc are mainly obtained by passive diffusion through the end plate.</li><li>(C) The intervertebral discs are distributed between each level of vertebra and account for approximately 20% to 33% of the spine height.</li><li>(D) The composition of annulus fibrosus includes type I collagen and fibrocartilage, and its main function is to limit the motion of the vertebral body.</li></ul>
+  <details data-kind="answer"><summary>答案與詳解</summary>
+    <div data-kind="zh-translation"><p><strong>中文題目：</strong>下列關於椎間盤的敘述，何者<b>不正確</b>？</p>
+      <p>(A) 髓核含大量親水性蛋白聚醣。</p>
+      <p>(B) 椎間盤的養分主要經由終板被動擴散取得。</p>
+      <p>(C) 椎間盤分布於每一節椎體之間，約占脊椎高度的 20% 至 33%。</p>
+      <p>(D) 纖維環的組成包含第一型膠原與纖維軟骨，主要功能是限制椎體的活動。</p></div>
+    <p class="ans">答案：C</p>
+    <p>並非每個椎體間都有椎間盤；20–33% 的高度比例是對的。<span class="src"> ｜ BM111 BLOCK-8 期中考詳解 第 17 頁</span></p>
+  </details>
+</article>
+<article data-question-id="111-bm111-p18-q20" data-placement="final" class="repeat">
+  <span class="qhead">111 年 第 20 題</span><span class="repeat-badge">重複考點 ×3</span>
+  <p class="repeat-note">同考點：112 第20題、113 第24題　—　脊椎骨性構造：C1 無椎體、關節突關節、胸椎</p>
+  <p class="stem">Which of the following statements about the structure of spine is false?</p>
+  <ul class="opts"><li>(A) The vertebral body is the weight-bearing structure that exists in front of each level of vertebra.</li><li>(B) The articular surface of the facet joint is covered with hyaline cartilage.</li><li>(C) Dens is a special structure of axis, which is part of the Atlantoaxial joint. This joint is responsible for cervical rotation.</li><li>(D) The ribs and thoracic vertebrae are connected to each other by costal facets, which restricts the movement of the spine. Therefore, the thoracic spine is the least mobile part of the spinal column.</li></ul>
+  <details data-kind="answer"><summary>答案與詳解</summary>
+    <div data-kind="zh-translation"><p><strong>中文題目：</strong>下列關於脊椎構造的敘述，何者<b>錯誤</b>？</p>
+      <p>(A) 椎體是承重構造，存在於每一節脊椎的前方。</p>
+      <p>(B) 關節突關節的關節面覆蓋透明軟骨。</p>
+      <p>(C) 齒突是樞椎的特殊構造，構成寰樞關節的一部分，該關節負責頸椎旋轉。</p>
+      <p>(D) 肋骨與胸椎透過肋凹相連，限制脊椎活動，因此胸椎是脊柱中最不靈活的一段。</p></div>
+    <p class="ans">答案：A</p>
+    <p>C1 沒有真正的椎體。<span class="src"> ｜ BM111 BLOCK-8 期中考詳解 第 18 頁</span></p>
+  </details>
+</article>
+<article data-question-id="111-bm111-p18-q21" data-placement="final" class="repeat">
+  <span class="qhead">111 年 第 21 題</span><span class="repeat-badge">重複考點 ×5</span>
+  <p class="repeat-note">同考點：112 第21題、113 第23題、111 第40題、112 第13題　—　後方韌帶複合體與三柱歸屬</p>
+  <p class="stem">Which part of spine does not belong to the posterior ligamentous complex?</p>
+  <ul class="opts"><li>(A) ligamentum flavum</li><li>(B) interspinous ligament</li><li>(C) posterior longitudinal ligament</li><li>(D) facet joint capsule</li></ul>
+  <details data-kind="answer"><summary>答案與詳解</summary>
+    <div data-kind="zh-translation"><p><strong>中文題目：</strong>下列脊椎構造中，何者<b>不屬於</b>後方韌帶複合體？</p>
+      <p>(A) 黃韌帶　(B) 棘間韌帶　(C) 後縱韌帶　(D) 關節突關節囊</p></div>
+    <p class="ans">答案：C</p>
+    <p>後縱韌帶屬中柱，與 113 年第 23 題逐字相同。<span class="src"> ｜ BM111 BLOCK-8 期中考詳解 第 18 頁</span></p>
+  </details>
+</article>
+<article data-question-id="111fin-bm111-p33-q40" data-placement="final" class="repeat">
+  <span class="qhead">111 年 第 40 題</span><span class="repeat-badge">重複考點 ×5</span>
+  <p class="repeat-note">同考點：111 第21題、112 第21題、113 第23題、112 第13題　—　後方韌帶複合體與三柱歸屬</p>
+  <p class="stem">Which of the following structures does not belong to the posterior column of the spine?</p>
+  <ul class="opts"><li>(A) ligamentum flavum</li><li>(B) spinous process</li><li>(C) posterior longitudinal ligament</li><li>(D) facet joint</li></ul>
+  <details data-kind="answer"><summary>答案與詳解</summary>
+    <div data-kind="zh-translation"><p><strong>中文題目：</strong>下列構造中，何者<b>不屬於</b>脊椎後柱？</p>
+      <p>(A) 黃韌帶　(B) 棘突　(C) 後縱韌帶　(D) 關節突關節</p></div>
+    <p class="ans">答案：C</p>
+    <p>問的是後柱：棘突屬後柱，後縱韌帶不屬於。<span class="src"> ｜ BM111 BLOCK-8 期末考詳解 第 33 頁</span></p>
+  </details>
+</article>
+<article data-question-id="111fin-bm111-p33-q41" data-placement="final" class="repeat">
+  <span class="qhead">111 年 第 41 題</span><span class="repeat-badge">重複考點 ×3</span>
+  <p class="repeat-note">同考點：113 第20題、112 第14題　—　腰椎斜位片與蘇格蘭梗犬</p>
+  <p class="stem">Which statement about lumbar spine x-rays is incorrect?</p>
+  <ul class="opts"><li>(A) Oblique view is often used to detect pars fractures, and the pars interarticularis is located in the neck of the Scotty Dog in x-ray.</li><li>(B) In the oblique view, the Scotty Dog&#x27;s ears form a facet joint with the adjacent Scotty Dog&#x27;s foreleg.</li><li>(C) The structure pointed by the arrows in these two X-ray pictures is the pedicle of the lumbar spine.</li><li>(D) If you want to clearly examine the neural foramen of the cervical spine on x-ray, a cervical spine lateral view is a better choice</li></ul>
+  <details data-kind="answer"><summary>答案與詳解</summary>
+    <div data-kind="zh-translation"><p><strong>中文題目：</strong>下列關於腰椎 X 光的敘述，何者<b>不正確</b>？</p>
+      <p>(A) 斜位片常用於偵測峽部骨折，關節突間部位於蘇格蘭梗犬的脖子。</p>
+      <p>(B) 在斜位片中，蘇格蘭梗犬的耳朵與鄰近梗犬的前腳形成關節突關節。</p>
+      <p>(C) 這兩張 X 光中箭頭所指的構造是腰椎的椎弓根。</p>
+      <p>(D) 若要在 X 光上清楚檢查頸椎神經孔，頸椎側位片是較佳的選擇。</p></div>
+    <p class="ans">答案：D</p>
+    <p>頸椎神經孔要用斜位片，側位片非較佳選擇。<span class="src"> ｜ BM111 BLOCK-8 期末考詳解 第 33 頁</span></p>
+  </details>
+</article>
+<article data-question-id="111fin-bm111-p34-q42" data-placement="final" class="repeat">
+  <span class="qhead">111 年 第 42 題</span><span class="repeat-badge">重複考點 ×3</span>
+  <p class="repeat-note">同考點：113 第21題、112 第15題　—　頸椎與 MRI 影像判讀標準</p>
+  <p class="stem">Which of the following statements about the radiologic anatomy of spine is correct?</p>
+  <ul class="opts"><li>(A) The structure pointed by the arrow in the picture is the spinal cord, which is located in the spinal canal.</li><li>(B) In the T2-weighted image of MRI, the intervertebral disc and fat tissue both appear as a relative low signal intensity</li><li>(C) To examine the dens of Axis by cervical X-ray, it is generally recommended to use open mouth view rather than anteroposterior projection image (AP view)</li><li>(D) The normal soft tissue thickness of the pre-vertebral soft tissue in cervical spine should be less than 22mm at C2 level</li></ul>
+  <details data-kind="answer"><summary>答案與詳解</summary>
+    <div data-kind="zh-translation"><p><strong>中文題目：</strong>下列關於脊椎影像解剖的敘述，何者<b>正確</b>？</p>
+      <p>(A) 圖中箭頭所指的構造是位於椎管內的脊髓。</p>
+      <p>(B) 在 MRI T2 加權影像中，椎間盤與脂肪組織皆呈相對低訊號。</p>
+      <p>(C) 以頸椎 X 光檢查樞椎齒突時，一般建議使用張口位而非正位片。</p>
+      <p>(D) 頸椎椎前軟組織在 C2 高度的正常厚度應小於 22 mm。</p></div>
+    <p class="ans">答案：C</p>
+    <p>齒突用張口位；椎前軟組織 C2&lt;7mm、C6&lt;22mm。<span class="src"> ｜ BM111 BLOCK-8 期末考詳解 第 34 頁</span></p>
+  </details>
+</article>
+<p class="ending">七份卷宗歸檔。骨頭壞掉的方式就這幾種——認出是哪一種，剩下的就只是把細節填回去。</p>
+</section>
+</div>
+</body>
+</html>
