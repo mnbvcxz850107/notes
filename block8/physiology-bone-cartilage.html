@@ -1,0 +1,1178 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>骨與軟骨生理學 (含動物實驗)</title>
+<style>
+:root{
+  color-scheme: dark;
+  --bg:#0b0e13; --panel:#141922; --panel2:#1b2230; --line:#2a3340;
+  --ink:#e8ecf3; --dim:#a3adbd; --gold:#e5b567; --cyan:#6fd3c7;
+  --rose:#e88b8b; --violet:#a99bf0;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font-family:"Noto Sans TC","PingFang TC","Helvetica Neue",system-ui,sans-serif;
+  line-height:1.85; overflow-wrap:anywhere;}
+.container{max-width:46rem;margin:0 auto;padding:1.15rem;}
+img{max-width:100%;height:auto}
+svg{max-width:100%;height:auto;display:block}
+h1{font-size:1.6rem;line-height:1.35;margin:.2rem 0 .6rem}
+h2{font-size:1.24rem;margin:2.4rem 0 .7rem;padding-bottom:.4rem;
+  border-bottom:1px solid var(--line);color:var(--gold)}
+h3{font-size:1.06rem;margin:1.5rem 0 .5rem;color:var(--cyan)}
+p{margin:.7rem 0}
+header#subject-overview{background:linear-gradient(160deg,#182031,#0e1219);
+  border:1px solid var(--line);border-radius:14px;padding:1.2rem;margin:.6rem 0 1.4rem}
+.meta{color:var(--dim);font-size:.86rem;margin:.3rem 0 0}
+nav#toc{background:var(--panel);border:1px solid var(--line);
+  border-radius:12px;padding:.9rem 1.1rem;margin:1.2rem 0}
+nav#toc ol{margin:.4rem 0 0;padding-left:1.3rem}
+nav#toc a{color:var(--ink);text-decoration:none;border-bottom:1px dotted var(--line)}
+.story{background:var(--panel2);border-left:3px solid var(--violet);
+  border-radius:0 10px 10px 0;padding:.9rem 1.1rem;margin:1.1rem 0}
+.story .tag{display:block;color:var(--violet);font-size:.78rem;
+  letter-spacing:.12em;margin-bottom:.35rem}
+.reality{background:var(--panel);border-left:3px solid var(--cyan);
+  border-radius:0 10px 10px 0;padding:.9rem 1.1rem;margin:1.1rem 0}
+.reality .tag{display:block;color:var(--cyan);font-size:.78rem;
+  letter-spacing:.12em;margin-bottom:.35rem}
+.keybox{background:#12202b;border:1px solid #26485a;border-radius:10px;
+  padding:.85rem 1rem;margin:1.1rem 0}
+.keybox b{color:var(--cyan)}
+.warn{background:#2a1c1c;border:1px solid #573434;border-radius:10px;
+  padding:.85rem 1rem;margin:1.1rem 0;color:#f0cfcf}
+article{background:var(--panel);border:1px solid var(--line);
+  border-radius:12px;padding:.95rem 1.05rem;margin:1.1rem 0}
+article .qhead{display:block;color:var(--gold);font-size:.82rem;
+  letter-spacing:.06em;margin-bottom:.45rem}
+article .stem{margin:.2rem 0 .5rem}
+article ul.opts{list-style:none;margin:.3rem 0 .2rem;padding:0}
+article ul.opts li{padding:.16rem 0 .16rem .2rem;color:#dbe2ec}
+details{background:#0f141c;border:1px solid var(--line);
+  border-radius:10px;padding:.15rem .8rem;margin:.6rem 0}
+details summary{cursor:pointer;padding:.6rem 0;color:var(--gold);
+  font-weight:600;min-height:44px;display:flex;align-items:center}
+details[data-kind="answer"] .ans{font-size:1.05rem;color:var(--cyan);font-weight:700}
+div[data-kind="zh-translation"]{background:#141c26;border:1px dashed #33465c;
+  border-radius:8px;padding:.7rem .85rem;margin:.5rem 0 .8rem}
+div[data-kind="zh-translation"] p{margin:.35rem 0}
+.src{color:var(--dim);font-size:.84rem;margin-top:.6rem}
+.quote{border-left:2px solid var(--gold);padding-left:.75rem;color:#f0e2c6}
+.infer{color:#f0d9a8;font-size:.92rem}
+figure{margin:1.3rem 0;background:var(--panel2);border:1px solid var(--line);
+  border-radius:12px;padding:.9rem}
+figcaption{color:var(--dim);font-size:.85rem;margin-top:.6rem;text-align:center}
+dl.vocab{margin:0}
+dl.vocab dt{color:var(--cyan);font-weight:700;margin-top:.9rem}
+dl.vocab dd{margin:.2rem 0 0;padding-left:0}
+dl.vocab .root{color:var(--dim);font-size:.86rem}
+.cram{background:var(--panel);border:1px solid var(--line);
+  border-radius:12px;padding:.4rem 1.1rem;margin:1rem 0}
+.cram li{margin:.55rem 0}
+.yearchip{display:inline-block;background:#233046;color:#bcd0ea;
+  border-radius:999px;padding:.05rem .55rem;font-size:.76rem;margin-right:.4rem}
+article.repeat{border:2px solid #e05252;box-shadow:0 0 0 3px rgba(224,82,82,.12)}
+article.repeat .qhead{color:#f08a8a}
+.repeat-badge{display:inline-block;background:#3a1c1c;border:1px solid #7d3a3a;
+  color:#f0a8a8;border-radius:999px;padding:.1rem .6rem;font-size:.76rem;
+  margin-left:.4rem;white-space:nowrap}
+.repeat-note{color:#e6a5a5;font-size:.84rem;margin:.45rem 0 0}
+.ending{color:var(--dim);font-style:italic;margin:1.6rem 0 2.4rem}
+</style>
+</head>
+<body>
+<div class="container">
+
+<header id="subject-overview">
+  <h1>骨與軟骨生理學 (含動物實驗)</h1>
+  <p>骨頭看起來像石頭，但它是全身代謝最忙碌的組織之一：有血管、有活細胞、每天都在拆掉一部分再蓋回去。這一科要回答的核心問題只有一個——<b>一塊會自己重蓋的骨頭，是怎麼蓋起來、怎麼維持、又是什麼在決定它蓋得好不好。</b></p>
+  <p>範圍涵蓋兩門課：<b>骨與軟骨生理學</b>——骨組織的本質與分類、膜內與軟骨內兩條骨化路徑、ARF 重塑循環與其影響因子、軟骨的生成與三種型別；以及<b>生理學實驗－骨骼肌肉疾患動物實驗模式</b>——如何誘發骨質疏鬆動物模式，以及抓握力與轉棒測試如何評估肌力與協調。</p>
+  <p class="meta">命題老師：薛元碩 ｜ 收錄 112、113 兩年期中考共 20 題 ｜ 出處涵蓋「骨與軟骨生理學」與「生理學實驗－骨骼肌肉疾患動物實驗模式」｜ 111 年此科由何美泠命題，不在本範圍</p>
+</header>
+
+<nav id="toc">
+  <b>目錄</b>
+  <ol>
+    <li><a href="#chapter-1">骨頭是活的城</a></li>
+    <li><a href="#chapter-2">兩種砌法，一間工務所</a></li>
+    <li><a href="#chapter-3">建城的兩條路：膜內骨化與軟骨內骨化</a></li>
+    <li><a href="#chapter-4">拆與蓋的循環：ARF 與它的補給線</a></li>
+    <li><a href="#chapter-5">軟墊區：軟骨</a></li>
+    <li><a href="#chapter-6">在實驗室裡把城弄壞</a></li>
+    <li><a href="#chapter-cram">考前速記</a></li>
+    <li><a href="#chapter-vocab">單字表</a></li>
+    <li><a href="#chapter-final">歷年考題總複習</a></li>
+  </ol>
+</nav>
+
+<!-- ================= CHAPTER 1 ================= -->
+<section id="chapter-1" data-chapter-kind="story">
+<h2>一、骨頭是活的城</h2>
+
+<div class="story" data-prose-kind="story"><span class="tag">故事</span>
+<p>你以為骨城是一座石頭堆的死城。走近才發現不是——城牆裡有水管，有巡邏員，晚上還有工班在敲敲打打。</p>
+<p>城裡有三種人。<b>砌牆工</b>負責倒水泥、把牆疊高；<b>拆除隊</b>負責把老舊的牆敲掉；還有<b>住戶</b>，他們原本也是砌牆工，倒水泥的時候不小心把自己封進了牆裡，從此住在牆的小空腔中，靠細細的通道跟外面聯絡，變成城裡最靈敏的感測器——哪面牆被壓、哪面牆要裂，他們最先知道。</p>
+<p>關鍵在這裡：<b>被封進牆裡的是人，硬掉的是水泥。</b>砌牆工先把水泥漿倒出去，水泥漿在體外慢慢結晶變硬。人沒有變成石頭，人只是住在石頭裡面。這句話你先記著，第一題就考它。</p>
+</div>
+
+<div class="reality"><span class="tag">回到現實</span>
+<p>砌牆工是 <b>osteoblast</b>（成骨細胞），拆除隊是 <b>osteoclast</b>（破骨細胞），住戶是 <b>osteocyte</b>（骨細胞）。osteocyte 就是被自己分泌的基質包埋起來的 osteoblast，住在 lacuna（骨小腔）裡，靠 canaliculi（骨小管）互相連通，負責感知力學訊號。</p>
+<p>水泥漿是 <b>osteoid</b>（類骨質），主要成分是 type I collagen。它被分泌到細胞外之後才礦化，礦物質是 <b>hydroxyapatite</b>（氫氧磷灰石，Ca₁₀(PO₄)₆(OH)₂），不是純鈣。骨頭因此不是惰性的石頭，而是有血管、有代謝活性、持續 remodeling 的活組織。</p>
+<p>拆除隊的出身跟另外兩者不同：osteoblast 與 osteocyte 來自間質幹細胞（mesenchymal）系統，而 <b>osteoclast 來自單核球／巨噬細胞系（monocyte）</b>，由多個前驅細胞融合成多核細胞。這個「出身不同」是考點。</p>
+</div>
+
+<div class="keybox">
+<p><b>本章最容易被扣分的一句話：</b>「骨頭是由鈣化的細胞構成的」——錯。細胞不會鈣化，鈣化的是細胞分泌到外面的 osteoid。</p>
+</div>
+
+<figure data-visual-id="osteoblast-to-osteocyte" data-image-kind="mechanism" data-explanation-verified="true">
+<img data-visual-id="osteoblast-to-osteocyte" src="img/osteoblast-to-osteocyte.webp" alt="成骨細胞分泌類骨質並逐漸被包埋，最終成為位於骨陷窩內、以骨小管相連的骨細胞" loading="lazy" decoding="async" width="1365" height="768">
+<figcaption>成骨細胞 → 骨細胞的包埋過程。左：osteoblast 在骨表面分泌未礦化的 osteoid；中：其中一個被自己分泌的基質包住；右：成為位於 lacuna 內、以 canaliculi 向外連通的 osteocyte。<b>礦化的是細胞外的基質，不是細胞本身</b>——這正是 112 年第 60 題申覆的核心。</figcaption>
+</figure>
+<article data-question-id="113-bm113-p68-q55" data-placement="chapter">
+  <span class="qhead">113 年 第 55 題</span>
+  <p class="stem">Which statement best describes the general nature of bone tissue?</p>
+  <ul class="opts">
+    <li>(A) It is an inert structure made of solid calcium.</li>
+    <li>(B) It is a static organ primarily for storage.</li>
+    <li>(C) It is a living, dynamic, and vascular tissue.</li>
+    <li>(D) It is composed solely of compact bone.</li>
+  </ul>
+  <details data-kind="answer">
+    <summary>答案與詳解</summary>
+    <div data-kind="zh-translation">
+      <p><strong>中文題目：</strong>下列哪一項最能描述骨組織的一般本質？</p>
+      <p>(A) 它是由固體鈣構成的惰性結構。</p>
+      <p>(B) 它是一個以儲存為主要功能的靜態器官。</p>
+      <p>(C) 它是有生命的、動態的、且具血管的組織。</p>
+      <p>(D) 它僅由緻密骨構成。</p>
+    </div>
+    <p class="ans">答案：C</p>
+    <p class="quote">詳解原文:「(A)錯在「inert」與「solid calcium」。骨頭主要礦物質是 hydroxyapatite (Ca₁₀(PO₄)₆(OH)₂)，不是純鈣，也不是惰性。它具有代謝活性與血管結構。(B)雖然骨有儲存鈣、磷的功能，但非「靜態器官」，它持續進行 remodeling。(D)骨頭除了 compact bone，還有 spongy/trabecular bone，兩者共同構成骨結構。」</p>
+    <p>三個錯誤選項各打掉一個常見誤解：(A) 打掉「惰性 + 純鈣」，(B) 打掉「靜態」，(D) 打掉「只有緻密骨」。骨頭同時具備 compact 與 spongy/trabecular 兩種結構。</p>
+    <p class="src">出處：骨與軟骨生理學 薛元碩 ppt p.6 ｜ BM113_Block8期中考詳解.pdf 第 68 頁</p>
+  </details>
+</article>
+
+<article data-question-id="112-bm112-p78-q60" data-placement="chapter">
+  <span class="qhead">112 年 第 60 題 ｜ 本題經申覆</span>
+  <p class="stem">Which of the following statements about “bones” is less accurate?</p>
+  <ul class="opts">
+    <li>(A) Bones are formed by calcified cells.</li>
+    <li>(B) Spongy bone contains bone marrow, which has a hematopoietic function.</li>
+    <li>(C) Osteoclasts differentiate from monocytes.</li>
+    <li>(D) Bones have a detoxification function.</li>
+  </ul>
+  <details data-kind="answer">
+    <summary>答案與詳解</summary>
+    <div data-kind="zh-translation">
+      <p><strong>中文題目：</strong>下列關於「骨」的敘述，何者較不正確？</p>
+      <p>(A) 骨是由鈣化的細胞所形成。</p>
+      <p>(B) 海綿骨含有骨髓，具有造血功能。</p>
+      <p>(C) 破骨細胞由單核球分化而來。</p>
+      <p>(D) 骨具有解毒功能。</p>
+    </div>
+    <p class="ans">答案：A（申覆後維持原答案）</p>
+    <p class="quote">詳解原文:「(A) 骨頭的鈣化是由 osteoblast 分泌的 alkaline phosphatase enzymes 負責的」</p>
+    <p><b>老師的申覆回覆（逐字）：</b></p>
+    <p class="quote">「本題是要從ABCD中選出較不正確的選項, 其中(A)指出骨頭由鈣化的細胞所組成, 這並不正確. 骨頭可包括:鈣鹽 +protein+Osteocytes+osteoblasts+osteoclasts等, 但這些細胞並不會鈣化, 而是細胞先分泌osteoid到細胞外, osteoid再鈣化，同學提出的原文應該解釋為:osteoid最終會鈣化, 而非osteocytes會鈣化。」</p>
+    <p>(B) 正確：海綿骨的骨小梁之間就是紅骨髓所在，具造血功能。(C) 正確，而且是必背的出身差異：osteoclast 來自 monocyte／巨噬細胞系，不是來自成骨那一系。(D) 骨作為鉛等重金屬的沉積庫，題目視為可接受敘述；本題要選的是「較不正確」，(A) 的錯誤最明確。</p>
+    <p class="src">出處：薛元碩 骨與軟骨生理學（ppt. p.9, 21, 23, 31）｜ BM112_Block 8 期中考(含申覆內容與結果).pdf 第 78 頁</p>
+  </details>
+</article>
+</section>
+
+<!-- ================= CHAPTER 2 ================= -->
+<section id="chapter-2" data-chapter-kind="story">
+<h2>二、兩種砌法，一間工務所</h2>
+
+<div class="story" data-prose-kind="story"><span class="tag">故事</span>
+<p>城裡的牆有兩種砌法。急著擋住缺口的時候，工班亂中有序地把磚往上堆，纖維交錯亂搭——快，但不整齊。等到不趕時間了，他們會把亂牆拆掉重砌，這次一層一層平行疊上去，像書頁一樣。成年的骨城，牆面幾乎都是後面這種。</p>
+<p>城牆外面還有一間永遠亮著燈的<b>工務所</b>。裡面坐著一群還沒分派工作的學徒。城牆哪裡破了，學徒就從這裡被叫出去，臨時受訓成砌牆工趕過去補。工務所不是儲藏室，也不是拆除隊的辦公室——它是<b>人力來源</b>。</p>
+</div>
+
+<div class="reality"><span class="tag">回到現實</span>
+<p>亂砌的是 <b>woven bone</b>（編織骨）：collagen 纖維隨機交織，出現在胎兒骨、骨折癒合早期、快速生長處。整齊疊層的是 <b>lamellar bone</b>（板層骨）：collagen 纖維平行排列成層，是所有成熟骨的組成方式。</p>
+<p>這裡有個很多人混淆的層次問題：<b>lamellar 是「排列方式」，compact 與 trabecular 是「巨觀結構」。</b>Compact bone 由同心圓排列的骨板（osteon／哈維氏系統）構成，trabecular bone 是不規則網狀的骨小梁——但兩者的骨質本身都是 lamellar。所以問「平行層狀且存在於所有成熟骨」時，答案是 lamellar，不是 compact。</p>
+<p>工務所是 <b>periosteum</b>（骨膜）。它的內層又叫 cambium layer，含 <b>osteoprogenitor cells</b>（骨原前驅細胞），可分化為 osteoblast，所以骨膜的主要功能是<b>骨的生長與修復</b>，不是儲脂、不是肌肉收縮、也不是給破骨細胞當錨點。</p>
+</div>
+
+<figure data-visual-id="woven-vs-lamellar" data-image-kind="comparison" data-explanation-verified="true">
+<img data-visual-id="woven-vs-lamellar" src="img/woven-vs-lamellar.webp" alt="編織骨的膠原纖維隨機交織，板層骨的膠原纖維平行成層並可見同心圓骨板圍繞中央血管" loading="lazy" decoding="async" width="1365" height="768">
+<figcaption>左：woven bone，膠原纖維隨機交織。右上：lamellar bone，纖維平行成層。右下：同心圓骨板圍繞central canal 與其中的血管，即 compact bone 的 osteon（哈維氏系統）。注意 lamellar 講的是<b>纖維排列方式</b>，compact／trabecular 講的是巨觀結構。</figcaption>
+</figure>
+<article data-question-id="113-bm113-p69-q56" data-placement="chapter">
+  <span class="qhead">113 年 第 56 題</span>
+  <p class="stem">Which type of bone consists of parallel layers of collagen fibers and is found in all mature bones?</p>
+  <ul class="opts">
+    <li>(A) Woven bone</li>
+    <li>(B) Compact bone</li>
+    <li>(C) Lamellar bone</li>
+    <li>(D) Trabecular bone</li>
+  </ul>
+  <details data-kind="answer">
+    <summary>答案與詳解</summary>
+    <div data-kind="zh-translation">
+      <p><strong>中文題目：</strong>哪一種骨是由平行排列的膠原纖維層所構成，且存在於所有成熟骨中？</p>
+      <p>(A) 編織骨　(B) 緻密骨　(C) 板層骨　(D) 骨小梁（海綿骨）</p>
+    </div>
+    <p class="ans">答案：C</p>
+    <p class="quote">詳解原文:「板層骨(lamellar bone)具有平行排列的膠原纖維。(A) 編織骨(woven bone)的膠原纖維隨機排列並交織在一起。(B) 緻密骨(compact bone)由同心環狀排列的骨板組成。(D) 骨小梁(trabecular bone)由呈不規則網狀結構的骨板組成。」</p>
+    <p>陷阱在 (B)：compact bone 的骨質確實是 lamellar，但題目問的是「平行層狀排列」這個特徵本身的名稱，且 compact 只是骨的一種巨觀形式，無法涵蓋「所有成熟骨」。(D) 同理，trabecular 是網狀排列的巨觀結構。</p>
+    <p class="src">出處：骨與軟骨生理學 薛元碩 p.25 ｜ BM113_Block8期中考詳解.pdf 第 69 頁</p>
+  </details>
+</article>
+
+<article data-question-id="113-bm113-p70-q57" data-placement="chapter">
+  <span class="qhead">113 年 第 57 題</span>
+  <p class="stem">What is the main function of the periosteum in bone?</p>
+  <ul class="opts">
+    <li>(A) Fat storage</li>
+    <li>(B) Muscle contraction</li>
+    <li>(C) Bone growth and repair</li>
+    <li>(D) Osteoclast anchoring</li>
+  </ul>
+  <details data-kind="answer">
+    <summary>答案與詳解</summary>
+    <div data-kind="zh-translation">
+      <p><strong>中文題目：</strong>骨膜在骨骼中的主要功能是什麼？</p>
+      <p>(A) 儲存脂肪　(B) 肌肉收縮　(C) 骨的生長與修復　(D) 破骨細胞的錨定</p>
+    </div>
+    <p class="ans">答案：C</p>
+    <p class="quote">詳解原文:「骨骼生長與修復 (Bone Growth and Repair): 骨膜內含骨原前驅細胞 (osteoprogenitor cells)，這些細胞能夠分化成成骨細胞(osteoblasts)。骨膜的內層（或稱造骨層/cambium layer）含有造骨幹細胞，當骨頭需要修復時，這些幹細胞會從此處釋放出來」</p>
+    <p>(A) 儲脂是黃骨髓的功能，不是骨膜。(B) 骨膜是肌腱附著處，但收縮的是肌肉本身，骨膜不會收縮。(D) 破骨細胞作用於骨表面（含骨內膜側），骨膜的定位是提供成骨細胞來源，不是錨定破骨細胞。</p>
+    <p class="src">出處：骨與軟骨生理學 薛元碩 p.36-40 ｜ BM113_Block8期中考詳解.pdf 第 70 頁</p>
+  </details>
+</article>
+</section>
+
+<!-- ================= CHAPTER 3 ================= -->
+<section id="chapter-3" data-chapter-kind="story">
+<h2>三、建城的兩條路：膜內骨化與軟骨內骨化</h2>
+
+<div class="story" data-prose-kind="story"><span class="tag">故事</span>
+<p>骨城不是一夜之間長出來的。開拓時有兩種完全不同的做法。</p>
+<p><b>第一條路很直接</b>：一群新人在空地上聚集，就地受訓成砌牆工，直接開始倒水泥。沒有鷹架、沒有模板，牆就從一片結締組織薄膜裡長出來。這叫「就地起牆」。</p>
+<p><b>第二條路繞了一圈</b>：先請軟墊師傅用軟骨做一個<b>等比例的模型</b>，形狀先擺在那裡。等模型長到夠大，<b>從模型正中央</b>開始鈣化，血管挖通道進來，工班沿著通道進駐，把中央的軟骨換成真骨——這是初級骨化中心。之後血管再往兩端的骨骺伸過去，形成次級骨化中心。中間留一條沒換掉的軟骨帶，就是生長板。</p>
+<p>兩條路都會經過一段「水泥還沒乾」的亂砌期，最後才整修成整齊的板層牆。</p>
+</div>
+
+<div class="reality"><span class="tag">回到現實</span>
+<p><b>Intramembranous ossification</b>（膜內骨化）：從<b>纖維結締組織膜</b>直接成骨，見於顱骨扁平骨、鎖骨。順序是 mesenchymal cells 聚集 → 分化為 <b>osteoprogenitor cells</b> → 再分化為 <b>osteoblasts</b>（形成骨化中心）→ 分泌 osteoid → osteoid 鈣化形成 woven bone → 改建為 compact bone。</p>
+<p><b>Endochondral ossification</b>（軟骨內骨化）：先形成 <b>hyaline cartilage</b>（透明軟骨）模型，見於大部分長骨。順序是軟骨模型形成 → chondrocyte 增生、肥大 → 基質鈣化 → 血管侵入（periosteal bud）→ 初級骨化中心（<b>從中央開始</b>）→ 血管延伸至骨骺形成次級骨化中心。</p>
+</div>
+
+<div class="warn">
+<p><b>兩個高頻陷阱：</b></p>
+<p>① 膜內骨化的來源是<b>纖維結締組織膜</b>，不是 fibrocartilage（纖維軟骨）。名字裡有 fibro 就選它，是最常見的誤答。</p>
+<p>② 軟骨內骨化的鈣化<b>從中央開始</b>，不是從兩端開始。兩端（骨骺）是後來才有的次級骨化中心。</p>
+<p>③ mesenchymal cells <b>不會直接變成 osteocytes</b>，中間要經過 osteoprogenitor → osteoblast，osteocyte 是 osteoblast 被埋起來之後的最終型態。</p>
+</div>
+
+<figure data-visual-id="ossification-two-routes" data-image-kind="comparison" data-explanation-verified="true">
+<svg viewBox="0 0 380 900" role="img" aria-labelledby="ossi-title">
+  <title id="ossi-title">膜內骨化與軟骨內骨化的流程對照圖</title>
+  <defs><marker id="arD" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto" markerUnits="userSpaceOnUse">
+    <path d="M0 0 L10 4 L0 8 z" fill="#6fd3c7"/></marker></defs>
+  <rect x="0" y="0" width="380" height="900" fill="#1b2230"/>
+  <text x="16" y="32" fill="#e5b567" font-size="19" font-weight="bold">Intramembranous</text>
+  <text x="16" y="54" fill="#e5b567" font-size="17" font-weight="bold">膜內骨化</text>
+  <text x="16" y="78" fill="#a3adbd" font-size="14">來源：纖維結締組織膜</text>
+  <text x="16" y="98" fill="#a3adbd" font-size="14">（顱骨、鎖骨）</text>
+  <g font-size="15">
+    <rect x="16" y="112" width="348" height="50" rx="8" fill="#233046" stroke="#3a5170"/>
+    <text x="30" y="134" fill="#e8ecf3">Mesenchymal cells</text>
+    <text x="30" y="153" fill="#a3adbd" font-size="14">間質細胞聚集</text>
+    <rect x="16" y="180" width="348" height="50" rx="8" fill="#233046" stroke="#3a5170"/>
+    <text x="30" y="202" fill="#e8ecf3">Osteoprogenitor cells</text>
+    <text x="30" y="221" fill="#a3adbd" font-size="14">骨原前驅細胞（不可跳過）</text>
+    <rect x="16" y="248" width="348" height="50" rx="8" fill="#2b3d52" stroke="#4a6a91"/>
+    <text x="30" y="270" fill="#e8ecf3">Osteoblasts</text>
+    <text x="30" y="289" fill="#a3adbd" font-size="14">成骨細胞 → 形成骨化中心</text>
+    <rect x="16" y="316" width="348" height="50" rx="8" fill="#233046" stroke="#3a5170"/>
+    <text x="30" y="338" fill="#e8ecf3">Osteoid → 鈣化</text>
+    <text x="30" y="357" fill="#a3adbd" font-size="14">形成 woven bone 編織骨</text>
+    <rect x="16" y="384" width="348" height="50" rx="8" fill="#233046" stroke="#3a5170"/>
+    <text x="30" y="406" fill="#e8ecf3">Compact bone</text>
+    <text x="30" y="425" fill="#a3adbd" font-size="14">緻密骨（改建完成）</text>
+  </g>
+  <g stroke="#6fd3c7" stroke-width="2.4" fill="none" marker-end="url(#arD)">
+    <path d="M190 163 L190 179"/><path d="M190 231 L190 247"/>
+    <path d="M190 299 L190 315"/><path d="M190 367 L190 383"/>
+  </g>
+  <text x="16" y="458" fill="#e88b8b" font-size="14">✗ 不是 fibrocartilage（纖維軟骨）</text>
+  <text x="16" y="478" fill="#e88b8b" font-size="14">✗ 間質細胞不直接變 osteocyte</text>
+  <line x1="16" y1="500" x2="364" y2="500" stroke="#2a3340" stroke-width="1.5"/>
+  <text x="16" y="534" fill="#e5b567" font-size="19" font-weight="bold">Endochondral</text>
+  <text x="16" y="556" fill="#e5b567" font-size="17" font-weight="bold">軟骨內骨化</text>
+  <text x="16" y="580" fill="#a3adbd" font-size="14">來源：hyaline cartilage 透明軟骨模型</text>
+  <text x="16" y="600" fill="#a3adbd" font-size="14">（大部分長骨）</text>
+  <g font-size="15">
+    <rect x="16" y="614" width="348" height="46" rx="8" fill="#233046" stroke="#3a5170"/>
+    <text x="30" y="634" fill="#e8ecf3">① Cartilage model 軟骨模型</text>
+    <text x="30" y="652" fill="#a3adbd" font-size="14">先做出等比例形狀</text>
+    <rect x="16" y="676" width="348" height="46" rx="8" fill="#233046" stroke="#3a5170"/>
+    <text x="30" y="696" fill="#e8ecf3">② Chondrocyte 增生 → 肥大</text>
+    <text x="30" y="714" fill="#a3adbd" font-size="14">proliferate → hypertrophy</text>
+    <rect x="16" y="738" width="348" height="46" rx="8" fill="#233046" stroke="#3a5170"/>
+    <text x="30" y="758" fill="#e8ecf3">③ Calcification 基質鈣化</text>
+    <text x="30" y="776" fill="#a3adbd" font-size="14">從中央開始，不是兩端</text>
+    <rect x="16" y="800" width="348" height="46" rx="8" fill="#2b3d52" stroke="#4a6a91"/>
+    <text x="30" y="820" fill="#e8ecf3">④ Vascular invasion 血管侵入</text>
+    <text x="30" y="838" fill="#a3adbd" font-size="14">血管一定最後才進來</text>
+  </g>
+  <g stroke="#6fd3c7" stroke-width="2.4" fill="none" marker-end="url(#arD)">
+    <path d="M190 661 L190 675"/><path d="M190 723 L190 737"/><path d="M190 785 L190 799"/>
+  </g>
+  <text x="16" y="872" fill="#6fd3c7" font-size="14">→ 初級骨化中心（中央）→ 次級骨化中心（骨骺）</text>
+  <text x="16" y="892" fill="#e88b8b" font-size="14">✗ 鈣化不從兩端開始</text>
+</svg>
+<figcaption>兩條骨化路徑的流程與各自的高頻陷阱。上：膜內骨化。下：軟骨內骨化。</figcaption>
+</figure>
+
+<figure data-visual-id="endochondral-longitudinal" data-image-kind="sequence" data-explanation-verified="true">
+<img data-visual-id="endochondral-longitudinal" src="img/endochondral-longitudinal.webp" alt="軟骨內骨化五階段縱切面：軟骨模型、骨領與鈣化、初級骨化中心、次級骨化中心、成熟骨" loading="lazy" decoding="async" width="1365" height="768">
+<figcaption>軟骨內骨化的縱切面全程。① 透明軟骨模型 → ② 骨領形成、中央軟骨細胞肥大並鈣化 → ③ 血管芽侵入中央，形成<b>初級</b>骨化中心與骨髓腔 → ④ 血管到達兩端骨骺，形成<b>次級</b>骨化中心 → ⑤ 成熟骨，僅生長板與關節面殘留軟骨。<b>骨化由中央往兩端</b>，血管一定最後才進來。</figcaption>
+</figure>
+
+
+<article data-question-id="112-bm112-p81-q61" data-placement="chapter">
+  <span class="qhead">112 年 第 61 題</span>
+  <p class="stem">Which of the following statements about “ossification” is less accurate?</p>
+  <ul class="opts">
+    <li>(A) Intramembranous ossification is one of the methods.</li>
+    <li>(B) Intramembranous ossification is formed from fibrocartilage.</li>
+    <li>(C) Endochondral ossification is one of the methods.</li>
+    <li>(D) Endochondral ossification is formed from hyaline cartilage.</li>
+  </ul>
+  <details data-kind="answer">
+    <summary>答案與詳解</summary>
+    <div data-kind="zh-translation">
+      <p><strong>中文題目：</strong>下列關於「骨化」的敘述，何者較不正確？</p>
+      <p>(A) 膜內骨化是其中一種方式。</p>
+      <p>(B) 膜內骨化是由纖維軟骨形成的。</p>
+      <p>(C) 軟骨內骨化是其中一種方式。</p>
+      <p>(D) 軟骨內骨化是由透明軟骨形成的。</p>
+    </div>
+    <p class="ans">答案：B</p>
+    <p class="quote">詳解原文:「(B) Intramembranous ossification 直接從骨頭或纖維結締組織膜內開始形成」</p>
+    <p>(A)(C) 正確：骨化就是這兩種方式。(D) 正確：軟骨內骨化的模型是 hyaline cartilage。(B) 的錯誤在於把「纖維結締組織膜」偷換成「纖維軟骨」——膜內骨化完全不經過任何軟骨階段，這正是它跟軟骨內骨化的根本差別。</p>
+    <p class="src">出處：薛元碩 骨與軟骨生理學 (ppt pg. 34) ｜ BM112_Block 8 期中考(含申覆內容與結果).pdf 第 81 頁</p>
+  </details>
+</article>
+
+<article data-question-id="112-bm112-p81-q62" data-placement="chapter">
+  <span class="qhead">112 年 第 62 題</span>
+  <p class="stem">Which of the following statements about “the process of intramembranous ossification” is less accurate?</p>
+  <ul class="opts">
+    <li>(A) Mesenchymal cells differentiate into osteocytes, forming an ossification center.</li>
+    <li>(B) Cells secrete osteoid.</li>
+    <li>(C) The osteoid calcifies, forming woven bone.</li>
+    <li>(D) Compact bone is formed.</li>
+  </ul>
+  <details data-kind="answer">
+    <summary>答案與詳解</summary>
+    <div data-kind="zh-translation">
+      <p><strong>中文題目：</strong>下列關於「膜內骨化過程」的敘述，何者較不正確？</p>
+      <p>(A) 間質細胞分化為骨細胞，形成骨化中心。</p>
+      <p>(B) 細胞分泌類骨質。</p>
+      <p>(C) 類骨質鈣化，形成編織骨。</p>
+      <p>(D) 形成緻密骨。</p>
+    </div>
+    <p class="ans">答案：A</p>
+    <p class="quote">詳解原文:「(A) mesenchymal cells首先分化為osteoprogenitor cells，然後再分化為osteoblasts，而不是直接分化為osteocytes。osteocytes是由osteoblasts進一步分化而來的。」</p>
+    <p>(B)(C)(D) 依序是膜內骨化的正確後續：分泌 osteoid → 鈣化成 woven bone → 改建成 compact bone。(A) 錯在跳過兩級分化，而且形成骨化中心的是 osteoblast，不是 osteocyte——osteocyte 是被包埋後的終點，不可能是起點。</p>
+    <p class="src">出處：薛元碩 骨與軟骨生理學 ｜ BM112_Block 8 期中考(含申覆內容與結果).pdf 第 81 頁</p>
+  </details>
+</article>
+
+<article data-question-id="113-bm113-p71-q58" data-placement="chapter">
+  <span class="qhead">113 年 第 58 題</span>
+  <p class="stem">Which of the following best describes the initial step in intramembranous ossification?</p>
+  <ul class="opts">
+    <li>(A) Formation of cartilage model by chondroblasts</li>
+    <li>(B) Transformation of osteocytes into osteoblasts</li>
+    <li>(C) Clustering of mesenchymal cells and differentiation into osteoblasts</li>
+    <li>(D) Vascular invasion of hyaline cartilage</li>
+  </ul>
+  <details data-kind="answer">
+    <summary>答案與詳解</summary>
+    <div data-kind="zh-translation">
+      <p><strong>中文題目：</strong>下列何者最能描述膜內骨化的起始步驟？</p>
+      <p>(A) 由軟骨母細胞形成軟骨模型</p>
+      <p>(B) 骨細胞轉變為成骨細胞</p>
+      <p>(C) 間質細胞聚集並分化為成骨細胞</p>
+      <p>(D) 血管侵入透明軟骨</p>
+    </div>
+    <p class="ans">答案：C</p>
+    <p><b>來源僅答案鍵</b>——本題原卷詳解欄空白，以下為<span class="infer">依 112 年第 62 題官方詳解與同科講義推得的說明（推論）</span>：(A) 與 (D) 描述的都是軟骨內骨化的步驟，放在膜內骨化題目裡是跨路徑的干擾項。(B) 方向相反，osteocyte 是 osteoblast 的終末型態，不會逆轉回去。(C) 正確：膜內骨化起於間質細胞聚集並沿 osteoprogenitor 分化為 osteoblast，形成骨化中心。</p>
+    <p class="src">出處：骨與軟骨生理學 薛元碩 p.35, 41, 44 ｜ BM113_Block8期中考詳解.pdf 第 71 頁</p>
+  </details>
+</article>
+
+<article data-question-id="112-bm112-p86-q66" data-placement="chapter">
+  <span class="qhead">112 年 第 66 題</span>
+  <p class="stem">Which of the following statements about “the process of endochondral ossification” is less accurate?</p>
+  <ul class="opts">
+    <li>(A) Cartilage tissue is formed first.</li>
+    <li>(B) Cartilage tissue continues to grow and begins calcifying from both ends.</li>
+    <li>(C) Blood vessels form in the center of the cartilage tissue, creating the primary ossification center.</li>
+    <li>(D) Blood vessels extend to the epiphysis, forming the secondary ossification center.</li>
+  </ul>
+  <details data-kind="answer">
+    <summary>答案與詳解</summary>
+    <div data-kind="zh-translation">
+      <p><strong>中文題目：</strong>下列關於「軟骨內骨化過程」的敘述，何者較不正確？</p>
+      <p>(A) 先形成軟骨組織。</p>
+      <p>(B) 軟骨組織持續生長，並從兩端開始鈣化。</p>
+      <p>(C) 血管在軟骨組織中央形成，產生初級骨化中心。</p>
+      <p>(D) 血管延伸至骨骺，形成次級骨化中心。</p>
+    </div>
+    <p class="ans">答案：B</p>
+    <p class="quote">詳解原文:「(B)應是從軟骨的中心開始骨化」</p>
+    <p>(A)(C)(D) 串起來正好是完整流程：軟骨模型 → 中央初級骨化中心 → 骨骺次級骨化中心。(B) 把方向弄反了。記法：<b>骨化由內向外、由中央往兩端</b>，兩端最後才輪到，中間留下的殘餘軟骨就是生長板。</p>
+    <p class="src">出處：骨與軟骨生理學 薛元碩 (ppt pg. 43) ｜ BM112_Block 8 期中考(含申覆內容與結果).pdf 第 86 頁</p>
+  </details>
+</article>
+
+<article data-question-id="113-bm113-p72-q59" data-placement="chapter">
+  <span class="qhead">113 年 第 59 題</span>
+  <p class="stem">What is the correct sequence of events in the primary center of endochondral ossification?</p>
+  <ul class="opts">
+    <li>(A) Periosteal bud invades → cartilage model forms → ossification center develops</li>
+    <li>(B) Chondrocytes proliferate → hypertrophy → calcification → vascular invasion</li>
+    <li>(C) Bone collar forms → mesenchyme condenses → chondrocyte hypertrophy → ossification</li>
+    <li>(D) Osteoclast activity begins → epiphyseal plate forms → cartilage calcifies</li>
+  </ul>
+  <details data-kind="answer">
+    <summary>答案與詳解</summary>
+    <div data-kind="zh-translation">
+      <p><strong>中文題目：</strong>軟骨內骨化的初級骨化中心，其事件的正確順序為何？</p>
+      <p>(A) 骨膜芽侵入 → 軟骨模型形成 → 骨化中心發育</p>
+      <p>(B) 軟骨細胞增生 → 肥大 → 鈣化 → 血管侵入</p>
+      <p>(C) 骨領形成 → 間質聚集 → 軟骨細胞肥大 → 骨化</p>
+      <p>(D) 破骨細胞活性開始 → 生長板形成 → 軟骨鈣化</p>
+    </div>
+    <p class="ans">答案：B</p>
+    <p class="quote">詳解原文:「(A) Cartilage model forms → periosteal bud invades → ossification center develops (B) 正確 (C) Mesenchyme condenses → chondrocyte hypertrophy → bone collar forms → ossification (D) Cartilage calcifies → osteoclast activity begins → epiphyseal plate forms」</p>
+    <p>這題三個錯誤選項全部是<b>把正確事件的順序打亂</b>，不是內容錯——詳解直接把每一項的正確排序寫出來，非常值得整段背。核心邏輯：血管一定<b>最後</b>才進來，因為它是被已經肥大、鈣化的軟骨吸引進來的。看到選項把 vascular invasion 或 periosteal bud 放在最前面，直接刪。</p>
+    <p class="src">出處：骨與軟骨生理學 薛元碩 ppt p.35, 42, 43, 45 ｜ BM113_Block8期中考詳解.pdf 第 72 頁</p>
+  </details>
+</article>
+</section>
+
+<!-- ================= CHAPTER 4 ================= -->
+<section id="chapter-4" data-chapter-kind="story">
+<h2>四、拆與蓋的循環：ARF 與它的補給線</h2>
+
+<div class="story" data-prose-kind="story"><span class="tag">故事</span>
+<p>骨城最反直覺的一條規矩是：<b>永遠是拆除隊先動工。</b></p>
+<p>流程固定成一套四拍。第一拍，有人吹哨把<b>拆除隊叫醒</b>；第二拍，拆除隊把那段舊牆<b>啃掉</b>，留下一個坑；第三拍是<b>交接</b>，拆除隊撤走，砌牆工進場清點；第四拍，砌牆工把坑<b>填回去</b>。四拍走完，那段牆就換新了。</p>
+<p>而工班要幹活得有補給。<b>維生素 C</b> 是水泥的黏著劑——沒有它，膠原蛋白根本合不起來，牆會鬆散。<b>維生素 A、D、B12</b>、<b>錳、鎂</b>各有各的角色。副甲狀腺素則是那個吹哨子的人，喊太多次，拆除隊就會過勞加班，牆愈拆愈薄。</p>
+<p>唯一在名單上顯得不重要的是<b>鉀</b>。它管的是別的城務，跟砌牆這條線關係最小。</p>
+</div>
+
+<div class="reality"><span class="tag">回到現實</span>
+<p>骨重塑循環叫 <b>ARF cycle</b>，順序固定為 <b>Activation → Resorption → Reversal → Formation</b>：破骨細胞活化 → 破骨細胞吸收骨質 → 逆轉期（成骨細胞接手）→ 成骨細胞形成新骨。</p>
+<p>影響因子：Vitamin C 催化 collagen 合成（羥化脯胺酸所需），缺乏導致骨膠原合成下降；Vitamin A、D、B12 以及錳、鎂都對重塑有影響；<b>PTH 過多</b>促進骨吸收。<b>鉀</b>對骨重塑的影響相對最小，是題目設定的「較不相關」答案。</p>
+</div>
+
+<figure data-visual-id="arf-cycle" data-image-kind="sequence" data-explanation-verified="true">
+<svg viewBox="0 0 380 420" role="img" aria-labelledby="arf-title">
+  <title id="arf-title">骨重塑 ARF 循環的四個階段順序圖</title>
+  <defs><marker id="arA" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto" markerUnits="userSpaceOnUse">
+    <path d="M0 0 L10 4 L0 8 z" fill="#6fd3c7"/></marker></defs>
+  <rect x="0" y="0" width="380" height="420" fill="#1b2230"/>
+  <text x="16" y="30" fill="#e5b567" font-size="18" font-weight="bold">ARF cycle 骨重塑四階段</text>
+  <text x="16" y="52" fill="#a3adbd" font-size="14">順序固定，永遠先拆後蓋</text>
+  <g font-size="15">
+    <rect x="16" y="66" width="300" height="54" rx="9" fill="#3a2733" stroke="#7d4a5c"/>
+    <text x="30" y="88" fill="#e88b8b" font-weight="bold">① Activation 活化</text>
+    <text x="30" y="109" fill="#e8ecf3" font-size="14">破骨細胞被叫醒（osteoclast）</text>
+    <rect x="16" y="136" width="300" height="54" rx="9" fill="#3a2733" stroke="#7d4a5c"/>
+    <text x="30" y="158" fill="#e88b8b" font-weight="bold">② Resorption 骨吸收</text>
+    <text x="30" y="179" fill="#e8ecf3" font-size="14">啃掉舊骨，留下吸收陷窩</text>
+    <rect x="16" y="206" width="300" height="54" rx="9" fill="#2b3340" stroke="#4a5870"/>
+    <text x="30" y="228" fill="#a99bf0" font-weight="bold">③ Reversal 逆轉／交接</text>
+    <text x="30" y="249" fill="#e8ecf3" font-size="14">成骨細胞接手（最易漏掉）</text>
+    <rect x="16" y="276" width="300" height="54" rx="9" fill="#1f3a35" stroke="#3f7a6e"/>
+    <text x="30" y="298" fill="#6fd3c7" font-weight="bold">④ Formation 骨形成</text>
+    <text x="30" y="319" fill="#e8ecf3" font-size="14">osteoblast 把坑填回去</text>
+  </g>
+  <g stroke="#6fd3c7" stroke-width="2.4" fill="none" marker-end="url(#arA)">
+    <path d="M166 121 L166 135"/><path d="M166 191 L166 205"/><path d="M166 261 L166 275"/>
+  </g>
+  <path d="M330 303 L352 303 L352 93 L330 93" stroke="#4a5870" stroke-width="2"
+        fill="none" stroke-dasharray="5 4"/>
+  <text x="336" y="200" fill="#a3adbd" font-size="13" transform="rotate(90 336 200)">循環重複</text>
+  <text x="16" y="360" fill="#e88b8b" font-size="14">A 指的是「破骨細胞」活化，不是成骨細胞</text>
+  <text x="16" y="384" fill="#a3adbd" font-size="14">112 年考 (1)~(4) 排序，113 年考英文名稱排序，</text>
+  <text x="16" y="404" fill="#a3adbd" font-size="14">兩年考的是同一個序列。</text>
+</svg>
+<figcaption>ARF 循環的固定順序。兩年份用不同題型考同一個序列。</figcaption>
+</figure>
+
+<article data-question-id="112-bm112-p84-q64" data-placement="chapter">
+  <span class="qhead">112 年 第 64 題</span>
+  <p class="stem">The following (1)-(4) are the steps of bone remodeling. Which sequence is the more correct order of occurrence? (1) Activation of osteoblasts; (2) Osteoblasts form new bone; (3) Activation of osteoclasts; (4) Osteoclasts resorb bone.</p>
+  <ul class="opts">
+    <li>(A) 1234</li><li>(B) 2143</li><li>(C) 4321</li><li>(D) 3412</li>
+  </ul>
+  <details data-kind="answer">
+    <summary>答案與詳解</summary>
+    <div data-kind="zh-translation">
+      <p><strong>中文題目：</strong>下列 (1)-(4) 是骨重塑的步驟，哪一個順序較正確？(1) 成骨細胞活化；(2) 成骨細胞形成新骨；(3) 破骨細胞活化；(4) 破骨細胞吸收骨質。</p>
+      <p>(A) 1234　(B) 2143　(C) 4321　(D) 3412</p>
+    </div>
+    <p class="ans">答案：D</p>
+    <p class="quote">詳解原文:「根據講義內容，Bone remodeling (ARF cycle)的順序為: - Activation of OC cells (對應3) - OC cell Resorption (對應4) - Reversal (OB cells take over) (對應1) - Formation(OB cells form bone) (對應2) 故(D)正確」</p>
+    <p>注意題目的編號設計：(1) 是 osteoblast 活化，對應 ARF 的 <b>Reversal</b> 階段，不是最前面的 Activation——ARF 的 A 指的是破骨細胞活化。抓到這點，(A) 1234 這個看似自然的順序就被排除了。(C) 4321 把吸收放在活化之前，(B) 2143 把形成放在最前面，都違反「先拆後蓋」。</p>
+    <p class="src">出處：骨與軟骨生理學 薛元碩 (ppt. pg49) ｜ BM112_Block 8 期中考(含申覆內容與結果).pdf 第 84 頁</p>
+  </details>
+</article>
+
+<article data-question-id="113-bm113-p75-q60" data-placement="chapter">
+  <span class="qhead">113 年 第 60 題</span>
+  <p class="stem">What is the correct order of the ARF cycle in bone remodeling?</p>
+  <ul class="opts">
+    <li>(A) Activation → Formation → Resorption</li>
+    <li>(B) Resorption → Reversal → Activation → Formation</li>
+    <li>(C) Activation → Resorption → Reversal → Formation</li>
+    <li>(D) Formation → Activation → Resorption → Reversal</li>
+  </ul>
+  <details data-kind="answer">
+    <summary>答案與詳解</summary>
+    <div data-kind="zh-translation">
+      <p><strong>中文題目：</strong>骨重塑中 ARF 循環的正確順序為何？</p>
+      <p>(A) 活化 → 形成 → 吸收</p>
+      <p>(B) 吸收 → 逆轉 → 活化 → 形成</p>
+      <p>(C) 活化 → 吸收 → 逆轉 → 形成</p>
+      <p>(D) 形成 → 活化 → 吸收 → 逆轉</p>
+    </div>
+    <p class="ans">答案：C</p>
+    <p><b>來源僅答案鍵</b>——本題原卷詳解欄空白。以下<span class="infer">依 112 年第 64 題的官方詳解逐項對照（推論）</span>：官方詳解已明列順序為 Activation of OC → Resorption → Reversal → Formation，(C) 完全吻合。(A) 缺少 Reversal 且把 Formation 提前；(B) 把 Activation 放到吸收之後，因果顛倒；(D) 以 Formation 起始，違反「先拆後蓋」。</p>
+    <p class="src">出處：生理學實驗-骨質疏鬆動物模式 薛元碩 ppt p. 49 ｜ BM113_Block8期中考詳解.pdf 第 75 頁</p>
+  </details>
+</article>
+
+<article data-question-id="112-bm112-p82-q63" data-placement="chapter">
+  <span class="qhead">112 年 第 63 題</span>
+  <p class="stem">Which of the following factors is less likely to influence bone remodeling?</p>
+  <ul class="opts">
+    <li>(A) Manganese deficiency</li>
+    <li>(B) Vitamin A deficiency</li>
+    <li>(C) Potassium deficiency</li>
+    <li>(D) Excessive parathyroid hormone.</li>
+  </ul>
+  <details data-kind="answer">
+    <summary>答案與詳解</summary>
+    <div data-kind="zh-translation">
+      <p><strong>中文題目：</strong>下列哪一個因子較不可能影響骨重塑？</p>
+      <p>(A) 錳缺乏　(B) 維生素 A 缺乏　(C) 鉀缺乏　(D) 副甲狀腺素過多</p>
+    </div>
+    <p class="ans">答案：C</p>
+    <p class="quote">詳解原文:「(A)錳和鎂缺乏會對骨質重塑有影響。(B)維他命A,B12,C,D對骨質重塑都有影響。(C)鉀對於骨質重塑較小。(D)副甲狀腺對骨質重塑有影響。」</p>
+    <p>把講義的清單背成兩組就不會錯：<b>有影響</b>＝維生素 A、B12、C、D ＋ 錳、鎂 ＋ PTH；<b>影響最小</b>＝鉀。這題問的是「較不可能」，所以選相對無關的那一個。</p>
+    <p class="src">出處：薛元碩 骨與軟骨生理學 (p.52~53) ｜ BM112_Block 8 期中考(含申覆內容與結果).pdf 第 82 頁</p>
+  </details>
+</article>
+
+<article data-question-id="113-bm113-p76-q61" data-placement="chapter">
+  <span class="qhead">113 年 第 61 題</span>
+  <p class="stem">Which vitamin deficiency leads to decreased collagen synthesis in bone?</p>
+  <ul class="opts">
+    <li>(A) Vitamin D</li><li>(B) Vitamin A</li><li>(C) Vitamin C</li><li>(D) Vitamin B12</li>
+  </ul>
+  <details data-kind="answer">
+    <summary>答案與詳解</summary>
+    <div data-kind="zh-translation">
+      <p><strong>中文題目：</strong>缺乏哪一種維生素會導致骨中膠原蛋白合成減少？</p>
+      <p>(A) 維生素 D　(B) 維生素 A　(C) 維生素 C　(D) 維生素 B12</p>
+    </div>
+    <p class="ans">答案：C</p>
+    <p class="quote">詳解原文:「Vitamin C 能催化 Collagen 合成，入學有考過~」</p>
+    <p>四個選項都是 112 年第 63 題詳解裡「對骨重塑有影響」的維生素，所以不能靠「哪個有關」來選，必須認<b>作用機轉</b>：專門管 collagen 合成的是 Vitamin C。Vitamin D 主要管鈣磷吸收與礦化，方向不同。這兩題放在一起看，正好示範同一份清單可以從兩個角度出題。</p>
+    <p class="src">出處：生理學實驗-骨質疏鬆動物模式 薛元碩 ppt p. 53 ｜ BM113_Block8期中考詳解.pdf 第 76 頁</p>
+  </details>
+</article>
+</section>
+
+<!-- ================= CHAPTER 5 ================= -->
+<section id="chapter-5" data-chapter-kind="story">
+<h2>五、軟墊區：軟骨</h2>
+
+<div class="story" data-prose-kind="story"><span class="tag">故事</span>
+<p>骨城的關節處鋪著一層軟墊。做軟墊的師傅跟砌牆工是同鄉——都是那批沒分派工作的新人出身，只是走了不同的路。</p>
+<p>軟墊區有一條奇怪的規矩：<b>不准鋪水管。</b>整個軟墊區沒有一條血管，養分得從邊緣慢慢滲進來。代價是這裡出事修不快，成年之後幾乎補不回來。</p>
+<p>師傅分兩級。年輕的<b>學徒師傅</b>還在外圍走動、還會分裂；等他被自己鋪出來的墊料包在中間、動不了了，就升格成<b>坐鎮師傅</b>——但他<b>沒有退休</b>，坐在裡面照樣繼續生產墊料。這點跟骨城不一樣：骨城裡被封進牆裡的住戶不再砌牆，軟墊區裡被包住的師傅還在做工。</p>
+<p>軟墊有三種材質。<b>透明墊</b>最常見，鋪在肋骨末端、關節面、生長板；<b>纖維墊</b>最耐壓，塞在椎間盤；<b>彈性墊</b>最會回彈，用在耳朵和會厭。</p>
+</div>
+
+<div class="reality"><span class="tag">回到現實</span>
+<p>軟骨細胞與骨細胞同樣源自 <b>mesenchymal cells</b>。<b>Chondroblast</b>（軟骨母細胞）可由間質細胞分化，也可由 <b>perichondrium</b>（軟骨膜）分化而來；當它被自己分泌的細胞外基質包圍，就成為 <b>chondrocyte</b>（軟骨細胞）。<b>關鍵：chondrocyte 仍然會製造細胞外基質</b>，不是只有 chondroblast 會。</p>
+<p><b>軟骨無血管</b>（avascular），養分靠基質擴散，因此成年後再生能力差。</p>
+<p>三型分布：<b>Hyaline</b>（透明軟骨）＝肋軟骨末端、關節軟骨、生長板、氣管；<b>Fibrocartilage</b>（纖維軟骨）＝椎間盤、恥骨聯合、半月板，以 type I collagen 為主且<b>無軟骨膜</b>；<b>Elastic</b>（彈性軟骨）＝外耳、會厭，富含彈性纖維。</p>
+</div>
+
+<figure data-visual-id="cartilage-three-types" data-image-kind="comparison" data-explanation-verified="true">
+<svg viewBox="0 0 380 560" role="img" aria-labelledby="cart-title">
+  <title id="cart-title">三型軟骨的分布位置與結構特徵對照圖</title>
+  <rect x="0" y="0" width="380" height="560" fill="#1b2230"/>
+  <text x="16" y="30" fill="#e5b567" font-size="18" font-weight="bold">三型軟骨對照</text>
+  <text x="16" y="52" fill="#a3adbd" font-size="14">三型全部無血管（avascular）</text>
+  <g font-size="14.5">
+    <rect x="16" y="66" width="348" height="146" rx="10" fill="#1f2e33" stroke="#3f6a70"/>
+    <text x="30" y="90" fill="#6fd3c7" font-size="16" font-weight="bold">Hyaline 透明軟骨</text>
+    <text x="30" y="114" fill="#a3adbd">分布</text>
+    <text x="86" y="114" fill="#e8ecf3">肋骨末端、關節軟骨</text>
+    <text x="86" y="136" fill="#e8ecf3">生長板、氣管</text>
+    <text x="30" y="162" fill="#a3adbd">特徵</text>
+    <text x="86" y="162" fill="#e8ecf3">type II collagen 為主</text>
+    <text x="86" y="184" fill="#e8ecf3">有軟骨膜</text>
+    <text x="86" y="204" fill="#a3adbd" font-size="13">關節軟骨屬 hyaline 的一種</text>
+
+    <rect x="16" y="226" width="348" height="146" rx="10" fill="#332a1f" stroke="#7a6438"/>
+    <text x="30" y="250" fill="#e5b567" font-size="16" font-weight="bold">Fibrocartilage 纖維軟骨</text>
+    <text x="30" y="274" fill="#a3adbd">分布</text>
+    <text x="86" y="274" fill="#e8ecf3">椎間盤、恥骨聯合</text>
+    <text x="86" y="296" fill="#e8ecf3">半月板</text>
+    <text x="30" y="322" fill="#a3adbd">特徵</text>
+    <text x="86" y="322" fill="#e8ecf3">type I collagen 為主</text>
+    <text x="86" y="344" fill="#e88b8b">無軟骨膜 ★考點</text>
+    <text x="86" y="364" fill="#a3adbd" font-size="13">三型中唯一沒有軟骨膜</text>
+
+    <rect x="16" y="386" width="348" height="122" rx="10" fill="#2b2338" stroke="#6a5a91"/>
+    <text x="30" y="410" fill="#a99bf0" font-size="16" font-weight="bold">Elastic 彈性軟骨</text>
+    <text x="30" y="434" fill="#a3adbd">分布</text>
+    <text x="86" y="434" fill="#e8ecf3">外耳 external ear</text>
+    <text x="86" y="456" fill="#e8ecf3">會厭 epiglottis</text>
+    <text x="30" y="482" fill="#a3adbd">特徵</text>
+    <text x="86" y="482" fill="#e8ecf3">富含彈性纖維、有軟骨膜</text>
+  </g>
+  <text x="16" y="534" fill="#e88b8b" font-size="14">★ 耳朵＝elastic，不是 hyaline</text>
+  <text x="16" y="554" fill="#a3adbd" font-size="13.5">112 第68題、113 第62題連兩年正反考</text>
+</svg>
+<figcaption>三型軟骨的分布與特徵。耳朵屬彈性軟骨是連兩年的考點。</figcaption>
+</figure>
+
+<figure data-visual-id="cartilage-histology" data-image-kind="comparison" data-explanation-verified="true">
+<img data-visual-id="cartilage-histology" src="img/cartilage-histology.webp" alt="三型軟骨的組織學外觀對照：透明軟骨、彈性軟骨、纖維軟骨的基質與纖維差異" loading="lazy" decoding="async" width="1365" height="768">
+<figcaption>三型軟骨在顯微鏡下的樣子。左：hyaline，均質玻璃樣基質，有軟骨膜。中：elastic，基質中密布交錯的彈性纖維，有軟骨膜。右：fibrocartilage，粗大平行的膠原纖維束、軟骨細胞排成列，<b>外側沒有軟骨膜</b>——這是 113 年第 63 題的答案。</figcaption>
+</figure>
+
+
+<article data-question-id="112-bm112-p86-q67" data-placement="chapter">
+  <span class="qhead">112 年 第 67 題</span>
+  <p class="stem">Which of the following statements about “chondrogenesis” is less accurate?</p>
+  <ul class="opts">
+    <li>(A) Chondroblasts can differentiate from mesenchymal cells.</li>
+    <li>(B) Chondroblasts can also differentiate from the perichondrium.</li>
+    <li>(C) Chondroblasts surrounded by extracellular matrix become chondrocytes.</li>
+    <li>(D) Only chondroblasts can produce extracellular matrix.</li>
+  </ul>
+  <details data-kind="answer">
+    <summary>答案與詳解</summary>
+    <div data-kind="zh-translation">
+      <p><strong>中文題目：</strong>下列關於「軟骨生成」的敘述，何者較不正確？</p>
+      <p>(A) 軟骨母細胞可由間質細胞分化而來。</p>
+      <p>(B) 軟骨母細胞也可由軟骨膜分化而來。</p>
+      <p>(C) 被細胞外基質包圍的軟骨母細胞會成為軟骨細胞。</p>
+      <p>(D) 只有軟骨母細胞能產生細胞外基質。</p>
+    </div>
+    <p class="ans">答案：D</p>
+    <p class="quote">詳解原文:「(A)(B)正確 (C) 正確 (D) 錯，chondrocytes也會」</p>
+    <p>錯在「Only」這個字。(A)(B) 交代 chondroblast 的兩個來源，(C) 交代它變成 chondrocyte 的方式，這三項都對。(D) 的陷阱是把骨的邏輯套到軟骨上——骨細胞被包埋後主要轉為感測角色，但<b>軟骨細胞被包埋後仍持續分泌基質</b>。這是骨與軟骨最值得對比記憶的一組差異。</p>
+    <p class="src">出處：骨與軟骨生理學 薛元碩 (ppt pg.35, 41, 63) ｜ BM112_Block 8 期中考(含申覆內容與結果).pdf 第 86 頁</p>
+  </details>
+</article>
+
+<article data-question-id="112-bm112-p85-q65" data-placement="chapter">
+  <span class="qhead">112 年 第 65 題</span>
+  <p class="stem">Which of the following statements about “cartilage” is less accurate?</p>
+  <ul class="opts">
+    <li>(A) Cartilage secretes extracellular matrix.</li>
+    <li>(B) Like bone cells, cartilage cells are derived from mesenchymal cells.</li>
+    <li>(C) Cartilage is directly supplied with nutrients by blood vessels.</li>
+    <li>(D) Cartilage can regenerate after adulthood.</li>
+  </ul>
+  <details data-kind="answer">
+    <summary>答案與詳解</summary>
+    <div data-kind="zh-translation">
+      <p><strong>中文題目：</strong>下列關於「軟骨」的敘述，何者較不正確？</p>
+      <p>(A) 軟骨會分泌細胞外基質。</p>
+      <p>(B) 與骨細胞一樣，軟骨細胞源自間質細胞。</p>
+      <p>(C) 軟骨由血管直接供應養分。</p>
+      <p>(D) 軟骨在成年後仍可再生。</p>
+    </div>
+    <p class="ans">答案：C</p>
+    <p class="quote">詳解原文:「(C) 軟骨沒有血管」</p>
+    <p>(C) 是最明確的錯誤：軟骨 avascular，養分靠擴散。(D) 值得注意——軟骨成年後再生能力<b>很差但非零</b>，題目要選「較不正確」，而 (C) 是絕對錯誤，所以 (C) 勝出。遇到「較不正確」題型，要比較的是錯誤的程度，不是找唯一的錯。</p>
+    <p class="src">出處：骨與軟骨生理學 薛元碩 (ppt pg. 41, 60, 86) ｜ BM112_Block 8 期中考(含申覆內容與結果).pdf 第 85 頁</p>
+  </details>
+</article>
+
+<article data-question-id="113-bm113-p78-q63" data-placement="chapter">
+  <span class="qhead">113 年 第 63 題</span>
+  <p class="stem">Which of the following correctly matches the cartilage type with its main structural feature?</p>
+  <ul class="opts">
+    <li>(A) Hyaline cartilage – abundant elastic fibers</li>
+    <li>(B) Elastic cartilage – type I collagen dominance</li>
+    <li>(C) Fibrocartilage – absence of perichondrium</li>
+    <li>(D) Articular cartilage – highly vascularized tissue</li>
+  </ul>
+  <details data-kind="answer">
+    <summary>答案與詳解</summary>
+    <div data-kind="zh-translation">
+      <p><strong>中文題目：</strong>下列何者正確配對了軟骨型別與其主要結構特徵？</p>
+      <p>(A) 透明軟骨 — 富含彈性纖維</p>
+      <p>(B) 彈性軟骨 — 以第一型膠原蛋白為主</p>
+      <p>(C) 纖維軟骨 — 無軟骨膜</p>
+      <p>(D) 關節軟骨 — 高度血管化的組織</p>
+    </div>
+    <p class="ans">答案：C</p>
+    <p><b>來源僅答案鍵</b>——本題原卷詳解欄空白。以下<span class="infer">依同科講義與 112 年第 65、68 題官方詳解推得（推論）</span>：(A) 錯位，富含彈性纖維的是 elastic cartilage，不是 hyaline。(B) 錯位，type I collagen 為主的是 fibrocartilage；elastic 以 type II 加彈性纖維為主。(D) 直接違反「軟骨無血管」，且關節軟骨正是最典型的無血管、修復差的例子。(C) 正確：三型之中唯獨 fibrocartilage 缺乏軟骨膜。</p>
+    <p class="src">出處：薛元碩＿骨與軟骨生理學 p81. ｜ BM113_Block8期中考詳解.pdf 第 78 頁</p>
+  </details>
+</article>
+
+<article data-question-id="112-bm112-p87-q68" data-placement="chapter">
+  <span class="qhead">112 年 第 68 題</span>
+  <p class="stem">Which of the following statements about “the distribution of the three types of cartilage” is less accurate?</p>
+  <ul class="opts">
+    <li>(A) The cartilage at the ends of the ribs is hyaline cartilage.</li>
+    <li>(B) The cartilages at the intervertebral discs are fibrocartilage.</li>
+    <li>(C) The cartilages at the epiphyseal plates are hyaline cartilage.</li>
+    <li>(D) The cartilage in the ear is hyaline cartilage.</li>
+  </ul>
+  <details data-kind="answer">
+    <summary>答案與詳解</summary>
+    <div data-kind="zh-translation">
+      <p><strong>中文題目：</strong>下列關於「三型軟骨分布」的敘述，何者較不正確？</p>
+      <p>(A) 肋骨末端的軟骨是透明軟骨。</p>
+      <p>(B) 椎間盤的軟骨是纖維軟骨。</p>
+      <p>(C) 生長板的軟骨是透明軟骨。</p>
+      <p>(D) 耳朵的軟骨是透明軟骨。</p>
+    </div>
+    <p class="ans">答案：D</p>
+    <p class="quote">詳解原文:「(D)The cartilage in the ear is elastic cartilage」</p>
+    <p>(A)(B)(C) 是三型分布的標準對應，可以整組背下來。(D) 是本科連兩年的固定考點：<b>耳朵＝elastic cartilage</b>。113 年第 62 題把同一個知識點反過來問（問外耳與會厭屬於哪一型），因此這組配對務必雙向都記熟。</p>
+    <p class="src">出處：骨與軟骨生理學 薛元碩(ppt pg.77) ｜ BM112_Block 8 期中考(含申覆內容與結果).pdf 第 87 頁</p>
+  </details>
+</article>
+
+<article data-question-id="113-bm113-p77-q62" data-placement="chapter">
+  <span class="qhead">113 年 第 62 題</span>
+  <p class="stem">Which type of cartilage is found in the external ear and epiglottis?</p>
+  <ul class="opts">
+    <li>(A) Hyaline cartilage</li><li>(B) Fibrocartilage</li>
+    <li>(C) Elastic cartilage</li><li>(D) Articular cartilage</li>
+  </ul>
+  <details data-kind="answer">
+    <summary>答案與詳解</summary>
+    <div data-kind="zh-translation">
+      <p><strong>中文題目：</strong>外耳與會厭中所見的是哪一型軟骨？</p>
+      <p>(A) 透明軟骨　(B) 纖維軟骨　(C) 彈性軟骨　(D) 關節軟骨</p>
+    </div>
+    <p class="ans">答案：C</p>
+    <p class="quote">詳解原文:「外耳和會厭軟骨源自於『elastic cartilage』」</p>
+    <p>與 112 年第 68 題是同一考點的正反問法。(D) 關節軟骨其實屬於 hyaline 的一種，把它跟三型並列本身就是干擾設計；真正要選的分類是 elastic。</p>
+    <p class="src">出處：薛元碩＿骨與軟骨生理學 p77. ｜ BM113_Block8期中考詳解.pdf 第 77 頁</p>
+  </details>
+</article>
+</section>
+
+<!-- ================= CHAPTER 6 ================= -->
+<section id="chapter-6" data-chapter-kind="story">
+<h2>六、在實驗室裡把城弄壞</h2>
+
+<div class="story" data-prose-kind="story"><span class="tag">故事</span>
+<p>要研究骨城怎麼垮，得先想辦法讓它垮。研究員手上有三種合法手段：<b>灌類固醇</b>讓砌牆工士氣低落；<b>拿掉卵巢</b>切斷保護荷爾蒙的供應；<b>直接改基因</b>，讓城裡天生就少一種工人。</p>
+<p>但你不能拿槌子把牆敲斷再接回去——那是製造<b>骨折</b>，不是製造<b>骨質疏鬆</b>。前者是局部外傷，後者是全身性的骨量流失，是兩件事。</p>
+<p>城垮了之後怎麼量？兩種測法很像但問的不同。<b>轉輪</b>看老鼠能在轉動的棒子上撐多久，測的是<b>協調</b>；<b>抓握</b>看牠前肢抓不抓得牢，測的是<b>肌力</b>。</p>
+</div>
+
+<div class="reality"><span class="tag">回到現實</span>
+<p>骨質疏鬆動物模式的常見誘發方式：注射 <b>glucocorticoids</b>、雌鼠 <b>ovariectomy</b>（去卵巢，模擬停經後骨鬆）、<b>基因改造</b>。「把骨頭打斷再接回去」屬於骨折模型，講義未列為骨鬆誘發法。</p>
+<p>功能評估：<b>Rota-rod test</b> 測 motor coordination（動作協調、小腦與平衡），指標是 latency to fall；<b>Grip strength test</b> 測 muscle strength 與 neuromuscular function，主要測前肢，指標是掉落比例。</p>
+</div>
+
+<article data-question-id="112-bm112-p88-q69" data-placement="chapter">
+  <span class="qhead">112 年 第 69 題</span>
+  <p class="stem">Which of the following is not a method to induce an osteoporosis animal model?</p>
+  <ul class="opts">
+    <li>(A) Injecting glucocorticoids</li>
+    <li>(B) Ovariectomy in female mice</li>
+    <li>(C) Breaking and resetting bones</li>
+    <li>(D) Genetically modifying mice.</li>
+  </ul>
+  <details data-kind="answer">
+    <summary>答案與詳解</summary>
+    <div data-kind="zh-translation">
+      <p><strong>中文題目：</strong>下列何者不是誘發骨質疏鬆動物模式的方法？</p>
+      <p>(A) 注射糖皮質素　(B) 雌鼠去卵巢術　(C) 將骨頭打斷再復位　(D) 基因改造小鼠</p>
+    </div>
+    <p class="ans">答案：C</p>
+    <p class="quote">詳解原文:「如圖，講義中並未提到(C)breaking and resetting bones」</p>
+    <p>(A)(B)(D) 三者分別對應類固醇性骨鬆、停經後骨鬆、基因模型，是講義列出的三條標準路徑。(C) 製造的是骨折癒合模型，屬於不同研究主題——注意詳解的措辭是「講義中並未提到」，也就是以課程範圍為準，不是宣稱該方法在學理上絕對不存在。</p>
+    <p class="src">出處：生理學實驗-骨質疏鬆動物模式 薛元碩(ppt pg.13～14) ｜ BM112_Block 8 期中考(含申覆內容與結果).pdf 第 88 頁</p>
+  </details>
+</article>
+
+<article data-question-id="113-bm113-p67-q54" data-placement="chapter">
+  <span class="qhead">113 年 第 54 題</span>
+  <p class="stem">What is the purpose of the grip strength test in animal studies?</p>
+  <ul class="opts">
+    <li>(A) To assess reflex and pain response</li>
+    <li>(B) To evaluate memory and learning</li>
+    <li>(C) To measure motor coordination</li>
+    <li>(D) To assess muscular strength and neuromuscular function</li>
+  </ul>
+  <details data-kind="answer">
+    <summary>答案與詳解</summary>
+    <div data-kind="zh-translation">
+      <p><strong>中文題目：</strong>動物研究中，抓握力測試的目的是什麼？</p>
+      <p>(A) 評估反射與疼痛反應</p>
+      <p>(B) 評估記憶與學習</p>
+      <p>(C) 測量動作協調</p>
+      <p>(D) 評估肌力與神經肌肉功能</p>
+    </div>
+    <p class="ans">答案：D</p>
+    <p class="quote">詳解原文:「Grip strength test 主要測試前肢，評估：1. 肌力 (muscle strength) 2. 神經肌肉功能 (neuromuscular function) 3. 神經傳導與肌肉收縮能力。流程：讓小鼠的前肢抓住一條薄線或水平桿，研究者輕拉動物尾部，使其試著保持抓握。評估方式：掉落比例 (Percentage of animals losing the catching reflex)；肌力變差的小鼠會因為抓不牢而提早掉落。對照 Rota-rod test：評估動作協調能力 (motor coordination)，包括肌肉功能、小腦、平衡與協調；將小鼠放在會持續旋轉的圓柱棒上，觀察其掉落時間 (Latency to fall)，經過訓練動物須能在棒上至少維持1分鐘，越快掉落表示其運動協調或肌力越差。」</p>
+    <p>(C) 是本題唯一有威脅的干擾項，因為它正是<b>另一個測驗（Rota-rod）</b>的目的。原卷特別附上兩者的完整對照表，等於明示這組區別是考試重點：<b>轉輪＝協調，抓握＝肌力</b>。(A) 反射與疼痛、(B) 記憶與學習分別屬於其他行為測驗，與本組無關。</p>
+    <p class="src">出處：生理學實驗-骨質疏鬆動物模式 薛元碩 ppt p.32 ｜ BM113_Block8期中考詳解.pdf 第 67 頁</p>
+  </details>
+</article>
+</section>
+
+<!-- ================= CRAM ================= -->
+<section id="chapter-cram" data-chapter-kind="cram">
+<h2>七、考前速記</h2>
+<div class="cram">
+<ul>
+<li><b>細胞不會鈣化</b>，鈣化的是分泌到細胞外的 osteoid；礦物是 hydroxyapatite，不是純鈣。</li>
+<li>osteoblast／osteocyte 出自間質系統，<b>osteoclast 出自 monocyte</b>。</li>
+<li>分化鏈：mesenchymal → osteoprogenitor → osteoblast → osteocyte，<b>不可跳級、不可逆向</b>。</li>
+<li><b>Woven</b>＝纖維隨機（未成熟、骨折早期）；<b>Lamellar</b>＝纖維平行成層（所有成熟骨）。compact／trabecular 是巨觀結構，兩者骨質都是 lamellar。</li>
+<li><b>Periosteum</b> 的主功能＝骨的生長與修復，因為 cambium layer 藏著 osteoprogenitor。</li>
+<li><b>膜內骨化</b>來自纖維結締組織膜（<span class="infer">不是 fibrocartilage</span>）；<b>軟骨內骨化</b>來自 hyaline cartilage。</li>
+<li>軟骨內骨化<b>從中央開始</b>鈣化 → 初級骨化中心；骨骺的是次級骨化中心。血管一定最後才進來。</li>
+<li><b>ARF＝Activation → Resorption → Reversal → Formation</b>。永遠先拆後蓋；A 指的是破骨細胞活化。</li>
+<li>骨重塑影響因子：維生素 A、B12、C、D ＋ 錳、鎂 ＋ PTH 有影響；<b>鉀影響最小</b>。<b>Vitamin C 專管 collagen 合成</b>。</li>
+<li><b>軟骨無血管</b>，養分靠擴散，成年後修復差。</li>
+<li><b>chondrocyte 被包埋後仍會分泌基質</b>——與骨細胞不同，考「Only chondroblasts…」必錯。</li>
+<li>三型分布：hyaline＝肋末端／關節／生長板／氣管；fibrocartilage＝椎間盤／恥骨聯合／半月板、type I 為主、<b>無軟骨膜</b>；elastic＝<b>外耳、會厭</b>。</li>
+<li>骨鬆動物模式＝類固醇／去卵巢／基因改造；<b>打斷骨頭是骨折模型，不是骨鬆</b>。</li>
+<li><b>Rota-rod＝協調（latency to fall）；Grip strength＝肌力與神經肌肉功能（前肢）</b>。</li>
+</ul>
+</div>
+</section>
+
+<!-- ================= VOCAB ================= -->
+<section id="chapter-vocab" data-chapter-kind="vocab">
+<h2>八、單字表</h2>
+<dl class="vocab">
+<dt>osteoid</dt>
+<dd><span class="root">oste-（骨）+ -oid（像…的）</span>　類骨質。骨的未礦化有機基質，主成分 type I collagen。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>「像骨但還不是骨」＝還沒乾的水泥。細胞先分泌它，它才在細胞外鈣化。</p></details></dd>
+
+<dt>osteoblast</dt>
+<dd><span class="root">oste-（骨）+ -blast（生芽、造者）</span>　成骨細胞。分泌 osteoid 並促進礦化。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>-blast 一律是「製造者」：chondroblast 造軟骨、fibroblast 造纖維。</p></details></dd>
+
+<dt>osteocyte</dt>
+<dd><span class="root">oste-（骨）+ -cyte（細胞）</span>　骨細胞。被自身基質包埋的 osteoblast，住在 lacuna，經 canaliculi 連通，感知力學訊號。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>-blast 是動工中，-cyte 是定居後。定居後的骨細胞不再砌牆，但軟骨的 -cyte 仍在做工。</p></details></dd>
+
+<dt>osteoclast</dt>
+<dd><span class="root">oste-（骨）+ -clast（打碎，源自 klastos）</span>　破骨細胞。來自單核球系，多核，負責骨吸收。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>clast＝break，跟 iconoclast（打破偶像者）同源。出身跟另外兩種骨細胞不同，這點常考。</p></details></dd>
+
+<dt>osteoprogenitor cell</dt>
+<dd><span class="root">pro-（在前）+ genitor（產生者）</span>　骨原前驅細胞。介於間質細胞與成骨細胞之間，存在於骨膜 cambium layer。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>「祖先細胞」。它的存在就是為了證明 mesenchymal 不能直接跳到 osteocyte。</p></details></dd>
+
+<dt>intramembranous ossification</dt>
+<dd><span class="root">intra-（在內）+ membran-（膜）+ -ous</span>　膜內骨化。由纖維結締組織膜直接成骨，見於顱骨、鎖骨。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>字面就是「在膜裡面」。膜＝membrane，不是 cartilage——名字沒有軟骨，過程也沒有軟骨。</p></details></dd>
+
+<dt>endochondral ossification</dt>
+<dd><span class="root">endo-（在內）+ chondr-（軟骨）+ -al</span>　軟骨內骨化。先做 hyaline cartilage 模型再置換成骨，見於長骨。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>chondr- 出現就跟軟骨有關。字面「在軟骨之內」＝在軟骨模型裡面把骨長出來。</p></details></dd>
+
+<dt>ossification center</dt>
+<dd><span class="root">oss-（骨，拉丁 os）+ -ification（化）</span>　骨化中心。初級位於骨幹中央，次級位於骨骺。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>初級在中間、次級在兩端；先中央後兩端，順序不可顛倒。</p></details></dd>
+
+<dt>periosteum</dt>
+<dd><span class="root">peri-（周圍）+ oste-（骨）+ -um</span>　骨膜。內層 cambium layer 含 osteoprogenitor，主司骨生長與修復。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>peri-＝周圍，比較 pericardium（心包）、perichondrium（軟骨膜）。</p></details></dd>
+
+<dt>perichondrium</dt>
+<dd><span class="root">peri-（周圍）+ chondr-（軟骨）</span>　軟骨膜。可分化出 chondroblast；<b>纖維軟骨缺乏它</b>。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>三型軟骨中唯一沒有軟骨膜的是 fibrocartilage，這是 113 年第 63 題的答案。</p></details></dd>
+
+<dt>lamellar bone</dt>
+<dd><span class="root">lamella（薄板、薄層）</span>　板層骨。collagen 纖維平行成層，構成所有成熟骨。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>lamella 就是「薄片」，跟 laminate（層壓板）同源。像書頁一層層疊。</p></details></dd>
+
+<dt>woven bone</dt>
+<dd><span class="root">weave（編織）</span>　編織骨。纖維隨機交織，見於胎兒骨、骨折癒合早期。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>「編織」＝亂中有序但不整齊，趕工的產物，之後會被改建成 lamellar。</p></details></dd>
+
+<dt>trabecular bone</dt>
+<dd><span class="root">trabecula（小樑）</span>　骨小梁／海綿骨。不規則網狀，內含骨髓，具造血功能。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>trabecula 拉丁文是「小橫樑」。想像網狀鷹架，空隙裡塞著骨髓。</p></details></dd>
+
+<dt>hydroxyapatite</dt>
+<dd><span class="root">hydroxy-（氫氧基）+ apatite（磷灰石）</span>　Ca₁₀(PO₄)₆(OH)₂，骨的主要礦物質。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>考點只有一句：骨的礦物是氫氧磷灰石，<b>不是純鈣</b>。</p></details></dd>
+
+<dt>ARF cycle</dt>
+<dd><span class="root">Activation / Resorption / Reversal / Formation 的縮寫</span>　骨重塑循環。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>縮寫只取 A、R、F，中間的 Reversal 容易被漏掉——但選項常靠它做文章。四拍：叫醒、啃掉、交接、填回。</p></details></dd>
+
+<dt>resorption</dt>
+<dd><span class="root">re-（回）+ sorb（吸收）</span>　骨吸收。破骨細胞分解骨基質、釋出鈣質。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>不是 absorption（吸收進來）而是 resorption（把自己的組織收回去）。</p></details></dd>
+
+<dt>chondrogenesis</dt>
+<dd><span class="root">chondr-（軟骨）+ -genesis（生成）</span>　軟骨生成。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>-genesis 系列：osteogenesis 成骨、angiogenesis 血管新生、hematopoiesis 造血。</p></details></dd>
+
+<dt>hyaline cartilage</dt>
+<dd><span class="root">hyalos（希臘文：玻璃）</span>　透明軟骨。最常見，見於關節面、肋末端、生長板、氣管。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>hyalo-＝玻璃，比較 hyaluronic acid（玻尿酸）。外觀半透明如毛玻璃。</p></details></dd>
+
+<dt>fibrocartilage</dt>
+<dd><span class="root">fibro-（纖維）+ cartilage</span>　纖維軟骨。type I collagen 為主、耐壓、無軟骨膜；見於椎間盤、恥骨聯合、半月板。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>名字有 fibro 但<b>不是</b>膜內骨化的來源——112 年第 61 題就靠這個字設陷阱。</p></details></dd>
+
+<dt>elastic cartilage</dt>
+<dd><span class="root">elastic（有彈性的）</span>　彈性軟骨。富含彈性纖維，見於外耳、會厭。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>捏一下自己的耳朵——會彈回來，所以是 elastic，不是 hyaline。連兩年考。</p></details></dd>
+
+<dt>avascular</dt>
+<dd><span class="root">a-（無）+ vascular（血管的）</span>　無血管的。軟骨的核心特性。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>無血管 → 靠擴散 → 修復慢。這條因果鏈可以直接推出好幾個選項的對錯。</p></details></dd>
+
+<dt>ovariectomy</dt>
+<dd><span class="root">ovari-（卵巢）+ -ectomy（切除）</span>　去卵巢術。建立停經後骨質疏鬆動物模式的標準方法。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>-ectomy＝切除，比較 appendectomy（闌尾切除）。切掉雌激素來源＝模擬停經。</p></details></dd>
+
+<dt>glucocorticoid</dt>
+<dd><span class="root">gluco-（糖）+ cortic-（皮質）+ -oid</span>　糖皮質素。長期過量導致骨質疏鬆，也用於誘發動物模式。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>類固醇抑制成骨、促進骨吸收——臨床上的類固醇性骨鬆與實驗模型是同一個機轉。</p></details></dd>
+
+<dt>grip strength test / rota-rod test</dt>
+<dd><span class="root">grip（抓握）／rota（旋轉）+ rod（桿）</span>　抓握力測試＝肌力與神經肌肉功能；轉棒測試＝動作協調。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>rota- 就是「轉」（rotate）——會轉的那個測協調；用手抓的那個測肌力。</p></details></dd>
+</dl>
+</section>
+
+<!-- ================= FINAL ================= -->
+<section id="chapter-final" data-chapter-kind="final_questions">
+<h2>九、歷年考題總複習</h2>
+<p class="meta">依年度由新到舊、同年依原始題號排列。共 20 題。</p>
+
+<h3><span class="yearchip">113 年</span>第 54–63 題</h3>
+
+<article data-question-id="113-bm113-p67-q54" data-placement="final">
+  <span class="qhead">113 年 第 54 題</span>
+  <p class="stem">What is the purpose of the grip strength test in animal studies? (A) To assess reflex and pain response (B) To evaluate memory and learning (C) To measure motor coordination (D) To assess muscular strength and neuromuscular function</p>
+  <details data-kind="answer"><summary>答案與詳解</summary>
+    <div data-kind="zh-translation"><p><strong>中文題目：</strong>動物研究中，抓握力測試的目的是什麼？</p><p>(A) 評估反射與疼痛反應　(B) 評估記憶與學習　(C) 測量動作協調　(D) 評估肌力與神經肌肉功能</p></div>
+    <p class="ans">答案：D</p>
+    <p>抓握力測前肢肌力與神經肌肉功能；(C) 動作協調是 Rota-rod 的目的。<span class="src">BM113 第 67 頁</span></p>
+  </details>
+</article>
+
+<article data-question-id="113-bm113-p68-q55" data-placement="final" data-repeat="2" data-repeat-topic="骨組織的本質（活的、有血管、持續重塑）" class="repeat">
+  <span class="qhead">113 年 第 55 題<span class="repeat-badge">重複考點 ×2</span></span>
+  <p class="repeat-note">同考點：112 第60題 ↔ 113 第55題　—　骨組織的本質（活的、有血管、持續重塑）</p>
+  <p class="stem">Which statement best describes the general nature of bone tissue? (A) It is an inert structure made of solid calcium. (B) It is a static organ primarily for storage. (C) It is a living, dynamic, and vascular tissue. (D) It is composed solely of compact bone.</p>
+  <details data-kind="answer"><summary>答案與詳解</summary>
+    <div data-kind="zh-translation"><p><strong>中文題目：</strong>下列哪一項最能描述骨組織的一般本質？</p><p>(A) 由固體鈣構成的惰性結構　(B) 以儲存為主的靜態器官　(C) 有生命、動態、具血管的組織　(D) 僅由緻密骨構成</p></div>
+    <p class="ans">答案：C</p>
+    <p>骨礦是 hydroxyapatite 而非純鈣，持續 remodeling，且含 compact 與 spongy 兩種結構。<span class="src">BM113 第 68 頁</span></p>
+  </details>
+</article>
+
+<article data-question-id="113-bm113-p69-q56" data-placement="final">
+  <span class="qhead">113 年 第 56 題</span>
+  <p class="stem">Which type of bone consists of parallel layers of collagen fibers and is found in all mature bones? (A) Woven bone (B) Compact bone (C) Lamellar bone (D) Trabecular bone</p>
+  <details data-kind="answer"><summary>答案與詳解</summary>
+    <div data-kind="zh-translation"><p><strong>中文題目：</strong>哪一種骨由平行排列的膠原纖維層構成，且存在於所有成熟骨？</p><p>(A) 編織骨　(B) 緻密骨　(C) 板層骨　(D) 骨小梁</p></div>
+    <p class="ans">答案：C</p>
+    <p>Lamellar＝平行成層；woven 隨機交織；compact 同心環狀、trabecular 網狀，皆為巨觀結構。<span class="src">BM113 第 69 頁</span></p>
+  </details>
+</article>
+
+<article data-question-id="113-bm113-p70-q57" data-placement="final">
+  <span class="qhead">113 年 第 57 題</span>
+  <p class="stem">What is the main function of the periosteum in bone? (A) Fat storage (B) Muscle contraction (C) Bone growth and repair (D) Osteoclast anchoring</p>
+  <details data-kind="answer"><summary>答案與詳解</summary>
+    <div data-kind="zh-translation"><p><strong>中文題目：</strong>骨膜的主要功能是什麼？</p><p>(A) 儲存脂肪　(B) 肌肉收縮　(C) 骨的生長與修復　(D) 破骨細胞錨定</p></div>
+    <p class="ans">答案：C</p>
+    <p>cambium layer 含 osteoprogenitor cells，可分化為 osteoblast。<span class="src">BM113 第 70 頁</span></p>
+  </details>
+</article>
+
+<article data-question-id="113-bm113-p71-q58" data-placement="final" data-repeat="2" data-repeat-topic="膜內骨化的起始與分化鏈" class="repeat">
+  <span class="qhead">113 年 第 58 題 ｜ 來源僅答案鍵<span class="repeat-badge">重複考點 ×2</span></span>
+  <p class="repeat-note">同考點：112 第62題 ↔ 113 第58題　—　膜內骨化的起始與分化鏈</p>
+  <p class="stem">Which of the following best describes the initial step in intramembranous ossification? (A) Formation of cartilage model by chondroblasts (B) Transformation of osteocytes into osteoblasts (C) Clustering of mesenchymal cells and differentiation into osteoblasts (D) Vascular invasion of hyaline cartilage</p>
+  <details data-kind="answer"><summary>答案與詳解</summary>
+    <div data-kind="zh-translation"><p><strong>中文題目：</strong>下列何者最能描述膜內骨化的起始步驟？</p><p>(A) 軟骨母細胞形成軟骨模型　(B) 骨細胞轉變為成骨細胞　(C) 間質細胞聚集並分化為成骨細胞　(D) 血管侵入透明軟骨</p></div>
+    <p class="ans">答案：C</p>
+    <p><span class="infer">（推論）(A)(D) 屬軟骨內骨化；(B) 方向相反。</span><span class="src">BM113 第 71 頁</span></p>
+  </details>
+</article>
+
+<article data-question-id="113-bm113-p72-q59" data-placement="final" data-repeat="2" data-repeat-topic="軟骨內骨化的事件順序" class="repeat">
+  <span class="qhead">113 年 第 59 題<span class="repeat-badge">重複考點 ×2</span></span>
+  <p class="repeat-note">同考點：112 第66題 ↔ 113 第59題　—　軟骨內骨化的事件順序</p>
+  <p class="stem">What is the correct sequence of events in the primary center of endochondral ossification? (A) Periosteal bud invades → cartilage model forms → ossification center develops (B) Chondrocytes proliferate → hypertrophy → calcification → vascular invasion (C) Bone collar forms → mesenchyme condenses → chondrocyte hypertrophy → ossification (D) Osteoclast activity begins → epiphyseal plate forms → cartilage calcifies</p>
+  <details data-kind="answer"><summary>答案與詳解</summary>
+    <div data-kind="zh-translation"><p><strong>中文題目：</strong>軟骨內骨化初級骨化中心的正確事件順序？</p><p>(A) 骨膜芽侵入→軟骨模型形成→骨化中心發育　(B) 軟骨細胞增生→肥大→鈣化→血管侵入　(C) 骨領形成→間質聚集→軟骨細胞肥大→骨化　(D) 破骨細胞活性開始→生長板形成→軟骨鈣化</p></div>
+    <p class="ans">答案：B</p>
+    <p>血管一定最後才進來。其餘選項皆為順序打亂。<span class="src">BM113 第 72 頁</span></p>
+  </details>
+</article>
+
+<article data-question-id="113-bm113-p75-q60" data-placement="final" data-repeat="2" data-repeat-topic="ARF 重塑循環的順序" class="repeat">
+  <span class="qhead">113 年 第 60 題 ｜ 來源僅答案鍵<span class="repeat-badge">重複考點 ×2</span></span>
+  <p class="repeat-note">同考點：112 第64題 ↔ 113 第60題　—　ARF 重塑循環的順序</p>
+  <p class="stem">What is the correct order of the ARF cycle in bone remodeling? (A) Activation → Formation → Resorption (B) Resorption → Reversal → Activation → Formation (C) Activation → Resorption → Reversal → Formation (D) Formation → Activation → Resorption → Reversal</p>
+  <details data-kind="answer"><summary>答案與詳解</summary>
+    <div data-kind="zh-translation"><p><strong>中文題目：</strong>骨重塑中 ARF 循環的正確順序？</p><p>(A) 活化→形成→吸收　(B) 吸收→逆轉→活化→形成　(C) 活化→吸收→逆轉→形成　(D) 形成→活化→吸收→逆轉</p></div>
+    <p class="ans">答案：C</p>
+    <p><span class="infer">（推論，依 112 年第 64 題官方詳解對照）</span>永遠先拆後蓋。<span class="src">BM113 第 75 頁</span></p>
+  </details>
+</article>
+
+<article data-question-id="113-bm113-p76-q61" data-placement="final" data-repeat="2" data-repeat-topic="影響骨重塑的維生素與礦物質" class="repeat">
+  <span class="qhead">113 年 第 61 題<span class="repeat-badge">重複考點 ×2</span></span>
+  <p class="repeat-note">同考點：112 第63題 ↔ 113 第61題　—　影響骨重塑的維生素與礦物質</p>
+  <p class="stem">Which vitamin deficiency leads to decreased collagen synthesis in bone? (A) Vitamin D (B) Vitamin A (C) Vitamin C (D) Vitamin B12</p>
+  <details data-kind="answer"><summary>答案與詳解</summary>
+    <div data-kind="zh-translation"><p><strong>中文題目：</strong>缺乏哪種維生素會導致骨中膠原蛋白合成減少？</p><p>(A) 維生素 D　(B) 維生素 A　(C) 維生素 C　(D) 維生素 B12</p></div>
+    <p class="ans">答案：C</p>
+    <p>Vitamin C 催化 collagen 合成；四者皆影響骨重塑，須認機轉而非相關性。<span class="src">BM113 第 76 頁</span></p>
+  </details>
+</article>
+
+<article data-question-id="113-bm113-p77-q62" data-placement="final" data-repeat="2" data-repeat-topic="軟骨型別與分布（耳朵＝彈性軟骨）" class="repeat">
+  <span class="qhead">113 年 第 62 題<span class="repeat-badge">重複考點 ×2</span></span>
+  <p class="repeat-note">同考點：112 第68題 ↔ 113 第62題　—　軟骨型別與分布（耳朵＝彈性軟骨）</p>
+  <p class="stem">Which type of cartilage is found in the external ear and epiglottis? (A) Hyaline cartilage (B) Fibrocartilage (C) Elastic cartilage (D) Articular cartilage</p>
+  <details data-kind="answer"><summary>答案與詳解</summary>
+    <div data-kind="zh-translation"><p><strong>中文題目：</strong>外耳與會厭中所見的是哪一型軟骨？</p><p>(A) 透明軟骨　(B) 纖維軟骨　(C) 彈性軟骨　(D) 關節軟骨</p></div>
+    <p class="ans">答案：C</p>
+    <p>與 112 年第 68 題同一考點的正反問法。<span class="src">BM113 第 77 頁</span></p>
+  </details>
+</article>
+
+<article data-question-id="113-bm113-p78-q63" data-placement="final" data-repeat="2" data-repeat-topic="軟骨無血管與基本特性" class="repeat">
+  <span class="qhead">113 年 第 63 題 ｜ 來源僅答案鍵<span class="repeat-badge">重複考點 ×2</span></span>
+  <p class="repeat-note">同考點：112 第65題 ↔ 113 第63題　—　軟骨無血管與基本特性</p>
+  <p class="stem">Which of the following correctly matches the cartilage type with its main structural feature? (A) Hyaline cartilage – abundant elastic fibers (B) Elastic cartilage – type I collagen dominance (C) Fibrocartilage – absence of perichondrium (D) Articular cartilage – highly vascularized tissue</p>
+  <details data-kind="answer"><summary>答案與詳解</summary>
+    <div data-kind="zh-translation"><p><strong>中文題目：</strong>下列何者正確配對軟骨型別與其主要結構特徵？</p><p>(A) 透明軟骨—富含彈性纖維　(B) 彈性軟骨—第一型膠原為主　(C) 纖維軟骨—無軟骨膜　(D) 關節軟骨—高度血管化</p></div>
+    <p class="ans">答案：C</p>
+    <p><span class="infer">（推論）</span>三型中唯獨 fibrocartilage 無軟骨膜；(D) 違反軟骨無血管。<span class="src">BM113 第 78 頁</span></p>
+  </details>
+</article>
+
+<h3><span class="yearchip">112 年</span>第 60–69 題</h3>
+
+<article data-question-id="112-bm112-p78-q60" data-placement="final" data-repeat="2" data-repeat-topic="骨組織的本質（活的、有血管、持續重塑）" class="repeat">
+  <span class="qhead">112 年 第 60 題 ｜ 經申覆維持原答案<span class="repeat-badge">重複考點 ×2</span></span>
+  <p class="repeat-note">同考點：112 第60題 ↔ 113 第55題　—　骨組織的本質（活的、有血管、持續重塑）</p>
+  <p class="stem">Which of the following statements about “bones” is less accurate? (A) Bones are formed by calcified cells. (B) Spongy bone contains bone marrow, which has a hematopoietic function. (C) Osteoclasts differentiate from monocytes. (D) Bones have a detoxification function.</p>
+  <details data-kind="answer"><summary>答案與詳解</summary>
+    <div data-kind="zh-translation"><p><strong>中文題目：</strong>下列關於「骨」的敘述何者較不正確？</p><p>(A) 骨由鈣化的細胞形成　(B) 海綿骨含骨髓具造血功能　(C) 破骨細胞由單核球分化　(D) 骨具解毒功能</p></div>
+    <p class="ans">答案：A（申覆後維持）</p>
+    <p>細胞不鈣化，鈣化的是分泌到細胞外的 osteoid。<span class="src">BM112 第 78 頁</span></p>
+  </details>
+</article>
+
+<article data-question-id="112-bm112-p81-q61" data-placement="final">
+  <span class="qhead">112 年 第 61 題</span>
+  <p class="stem">Which of the following statements about “ossification” is less accurate? (A) Intramembranous ossification is one of the methods. (B) Intramembranous ossification is formed from fibrocartilage. (C) Endochondral ossification is one of the methods. (D) Endochondral ossification is formed from hyaline cartilage.</p>
+  <details data-kind="answer"><summary>答案與詳解</summary>
+    <div data-kind="zh-translation"><p><strong>中文題目：</strong>下列關於「骨化」的敘述何者較不正確？</p><p>(A) 膜內骨化是方式之一　(B) 膜內骨化由纖維軟骨形成　(C) 軟骨內骨化是方式之一　(D) 軟骨內骨化由透明軟骨形成</p></div>
+    <p class="ans">答案：B</p>
+    <p>膜內骨化來自纖維結締組織膜，全程不經軟骨。<span class="src">BM112 第 81 頁</span></p>
+  </details>
+</article>
+
+<article data-question-id="112-bm112-p81-q62" data-placement="final" data-repeat="2" data-repeat-topic="膜內骨化的起始與分化鏈" class="repeat">
+  <span class="qhead">112 年 第 62 題<span class="repeat-badge">重複考點 ×2</span></span>
+  <p class="repeat-note">同考點：112 第62題 ↔ 113 第58題　—　膜內骨化的起始與分化鏈</p>
+  <p class="stem">Which of the following statements about “the process of intramembranous ossification” is less accurate? (A) Mesenchymal cells differentiate into osteocytes, forming an ossification center. (B) Cells secrete osteoid. (C) The osteoid calcifies, forming woven bone. (D) Compact bone is formed.</p>
+  <details data-kind="answer"><summary>答案與詳解</summary>
+    <div data-kind="zh-translation"><p><strong>中文題目：</strong>下列關於「膜內骨化過程」的敘述何者較不正確？</p><p>(A) 間質細胞分化為骨細胞形成骨化中心　(B) 細胞分泌類骨質　(C) 類骨質鈣化形成編織骨　(D) 形成緻密骨</p></div>
+    <p class="ans">答案：A</p>
+    <p>須經 osteoprogenitor → osteoblast，不可直接到 osteocyte。<span class="src">BM112 第 81 頁</span></p>
+  </details>
+</article>
+
+<article data-question-id="112-bm112-p82-q63" data-placement="final" data-repeat="2" data-repeat-topic="影響骨重塑的維生素與礦物質" class="repeat">
+  <span class="qhead">112 年 第 63 題<span class="repeat-badge">重複考點 ×2</span></span>
+  <p class="repeat-note">同考點：112 第63題 ↔ 113 第61題　—　影響骨重塑的維生素與礦物質</p>
+  <p class="stem">Which of the following factors is less likely to influence bone remodeling? (A) Manganese deficiency (B) Vitamin A deficiency (C) Potassium deficiency (D) Excessive parathyroid hormone.</p>
+  <details data-kind="answer"><summary>答案與詳解</summary>
+    <div data-kind="zh-translation"><p><strong>中文題目：</strong>下列哪個因子較不可能影響骨重塑？</p><p>(A) 錳缺乏　(B) 維生素 A 缺乏　(C) 鉀缺乏　(D) 副甲狀腺素過多</p></div>
+    <p class="ans">答案：C</p>
+    <p>維生素 A、B12、C、D 與錳、鎂、PTH 皆有影響；鉀影響最小。<span class="src">BM112 第 82 頁</span></p>
+  </details>
+</article>
+
+<article data-question-id="112-bm112-p84-q64" data-placement="final" data-repeat="2" data-repeat-topic="ARF 重塑循環的順序" class="repeat">
+  <span class="qhead">112 年 第 64 題<span class="repeat-badge">重複考點 ×2</span></span>
+  <p class="repeat-note">同考點：112 第64題 ↔ 113 第60題　—　ARF 重塑循環的順序</p>
+  <p class="stem">The following (1)-(4) are the steps of bone remodeling. Which sequence is the more correct order of occurrence? (1) Activation of osteoblasts; (2) Osteoblasts form new bone; (3) Activation of osteoclasts; (4) Osteoclasts resorb bone. (A) 1234 (B) 2143 (C) 4321 (D) 3412</p>
+  <details data-kind="answer"><summary>答案與詳解</summary>
+    <div data-kind="zh-translation"><p><strong>中文題目：</strong>(1)-(4) 為骨重塑步驟，何者順序較正確？(1) 成骨細胞活化 (2) 成骨細胞形成新骨 (3) 破骨細胞活化 (4) 破骨細胞吸收骨質</p><p>(A) 1234　(B) 2143　(C) 4321　(D) 3412</p></div>
+    <p class="ans">答案：D</p>
+    <p>3→4→1→2 對應 Activation→Resorption→Reversal→Formation。<span class="src">BM112 第 84 頁</span></p>
+  </details>
+</article>
+
+<article data-question-id="112-bm112-p85-q65" data-placement="final" data-repeat="2" data-repeat-topic="軟骨無血管與基本特性" class="repeat">
+  <span class="qhead">112 年 第 65 題<span class="repeat-badge">重複考點 ×2</span></span>
+  <p class="repeat-note">同考點：112 第65題 ↔ 113 第63題　—　軟骨無血管與基本特性</p>
+  <p class="stem">Which of the following statements about “cartilage” is less accurate? (A) Cartilage secretes extracellular matrix. (B) Like bone cells, cartilage cells are derived from mesenchymal cells. (C) Cartilage is directly supplied with nutrients by blood vessels. (D) Cartilage can regenerate after adulthood.</p>
+  <details data-kind="answer"><summary>答案與詳解</summary>
+    <div data-kind="zh-translation"><p><strong>中文題目：</strong>下列關於「軟骨」的敘述何者較不正確？</p><p>(A) 軟骨分泌細胞外基質　(B) 與骨細胞同樣源自間質細胞　(C) 軟骨由血管直接供應養分　(D) 軟骨成年後仍可再生</p></div>
+    <p class="ans">答案：C</p>
+    <p>軟骨無血管，養分靠擴散。<span class="src">BM112 第 85 頁</span></p>
+  </details>
+</article>
+
+<article data-question-id="112-bm112-p86-q66" data-placement="final" data-repeat="2" data-repeat-topic="軟骨內骨化的事件順序" class="repeat">
+  <span class="qhead">112 年 第 66 題<span class="repeat-badge">重複考點 ×2</span></span>
+  <p class="repeat-note">同考點：112 第66題 ↔ 113 第59題　—　軟骨內骨化的事件順序</p>
+  <p class="stem">Which of the following statements about “the process of endochondral ossification” is less accurate? (A) Cartilage tissue is formed first. (B) Cartilage tissue continues to grow and begins calcifying from both ends. (C) Blood vessels form in the center of the cartilage tissue, creating the primary ossification center. (D) Blood vessels extend to the epiphysis, forming the secondary ossification center.</p>
+  <details data-kind="answer"><summary>答案與詳解</summary>
+    <div data-kind="zh-translation"><p><strong>中文題目：</strong>下列關於「軟骨內骨化過程」的敘述何者較不正確？</p><p>(A) 先形成軟骨組織　(B) 軟骨持續生長並從兩端開始鈣化　(C) 血管在軟骨中央形成產生初級骨化中心　(D) 血管延伸至骨骺形成次級骨化中心</p></div>
+    <p class="ans">答案：B</p>
+    <p>鈣化從中央開始，不是兩端。<span class="src">BM112 第 86 頁</span></p>
+  </details>
+</article>
+
+<article data-question-id="112-bm112-p86-q67" data-placement="final">
+  <span class="qhead">112 年 第 67 題</span>
+  <p class="stem">Which of the following statements about “chondrogenesis” is less accurate? (A) Chondroblasts can differentiate from mesenchymal cells. (B) Chondroblasts can also differentiate from the perichondrium. (C) Chondroblasts surrounded by extracellular matrix become chondrocytes. (D) Only chondroblasts can produce extracellular matrix.</p>
+  <details data-kind="answer"><summary>答案與詳解</summary>
+    <div data-kind="zh-translation"><p><strong>中文題目：</strong>下列關於「軟骨生成」的敘述何者較不正確？</p><p>(A) 軟骨母細胞可由間質細胞分化　(B) 也可由軟骨膜分化　(C) 被基質包圍的軟骨母細胞成為軟骨細胞　(D) 只有軟骨母細胞能產生細胞外基質</p></div>
+    <p class="ans">答案：D</p>
+    <p>錯在「Only」——chondrocyte 被包埋後仍會分泌基質。<span class="src">BM112 第 86 頁</span></p>
+  </details>
+</article>
+
+<article data-question-id="112-bm112-p87-q68" data-placement="final" data-repeat="2" data-repeat-topic="軟骨型別與分布（耳朵＝彈性軟骨）" class="repeat">
+  <span class="qhead">112 年 第 68 題<span class="repeat-badge">重複考點 ×2</span></span>
+  <p class="repeat-note">同考點：112 第68題 ↔ 113 第62題　—　軟骨型別與分布（耳朵＝彈性軟骨）</p>
+  <p class="stem">Which of the following statements about “the distribution of the three types of cartilage” is less accurate? (A) The cartilage at the ends of the ribs is hyaline cartilage. (B) The cartilages at the intervertebral discs are fibrocartilage. (C) The cartilages at the epiphyseal plates are hyaline cartilage. (D) The cartilage in the ear is hyaline cartilage.</p>
+  <details data-kind="answer"><summary>答案與詳解</summary>
+    <div data-kind="zh-translation"><p><strong>中文題目：</strong>下列關於「三型軟骨分布」的敘述何者較不正確？</p><p>(A) 肋骨末端為透明軟骨　(B) 椎間盤為纖維軟骨　(C) 生長板為透明軟骨　(D) 耳朵為透明軟骨</p></div>
+    <p class="ans">答案：D</p>
+    <p>耳朵是 elastic cartilage。<span class="src">BM112 第 87 頁</span></p>
+  </details>
+</article>
+
+<article data-question-id="112-bm112-p88-q69" data-placement="final">
+  <span class="qhead">112 年 第 69 題</span>
+  <p class="stem">Which of the following is not a method to induce an osteoporosis animal model? (A) Injecting glucocorticoids (B) Ovariectomy in female mice (C) Breaking and resetting bones (D) Genetically modifying mice.</p>
+  <details data-kind="answer"><summary>答案與詳解</summary>
+    <div data-kind="zh-translation"><p><strong>中文題目：</strong>下列何者不是誘發骨質疏鬆動物模式的方法？</p><p>(A) 注射糖皮質素　(B) 雌鼠去卵巢術　(C) 將骨頭打斷再復位　(D) 基因改造小鼠</p></div>
+    <p class="ans">答案：C</p>
+    <p>打斷骨頭屬骨折模型；詳解措辭為「講義中並未提到」。<span class="src">BM112 第 88 頁</span></p>
+  </details>
+</article>
+
+<p class="ending">拆除隊今晚照常出勤，砌牆工在後面跟著。骨城從來沒有蓋完的一天——它只是一直在換新。</p>
+</section>
+
+</div>
+</body>
+</html>
