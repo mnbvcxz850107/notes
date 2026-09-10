@@ -1,0 +1,807 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>骨質疏鬆藥物之藥物學 陳崇桓</title>
+<style>
+:root{
+  color-scheme: dark;
+  --bg:#0b0e13; --panel:#141922; --panel2:#1b2230; --line:#2a3340;
+  --ink:#e8ecf3; --dim:#a3adbd; --gold:#e5b567; --cyan:#6fd3c7;
+  --rose:#e88b8b; --violet:#a99bf0;
+}
+*{box-sizing:border-box}
+html{font-size:150%}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font-family:"Noto Sans TC","PingFang TC","Helvetica Neue",system-ui,sans-serif;
+  line-height:1.85; overflow-wrap:anywhere;}
+/* Width follows the device, not the font size: px breakpoints stay put
+   while rem-based type scales with the 150% root. */
+.container{width:100%;max-width:none;margin:0 auto;
+  padding:clamp(.85rem,2.2vw,2.2rem);}
+@media (min-width:760px){ .container{max-width:730px} }
+@media (min-width:1024px){ .container{max-width:980px} }
+@media (min-width:1440px){ .container{max-width:1300px} }
+@media (min-width:1920px){ .container{max-width:1640px} }
+img{max-width:100%;height:auto}
+svg{max-width:100%;height:auto;display:block}
+h1{font-size:1.6rem;line-height:1.35;margin:.2rem 0 .6rem}
+h2{font-size:1.24rem;margin:2.4rem 0 .7rem;padding-bottom:.4rem;
+  border-bottom:1px solid var(--line);color:var(--gold)}
+h3{font-size:1.06rem;margin:1.5rem 0 .5rem;color:var(--cyan)}
+p{margin:.7rem 0}
+header#subject-overview{background:linear-gradient(160deg,#182031,#0e1219);
+  border:1px solid var(--line);border-radius:14px;padding:1.2rem;margin:.6rem 0 1.4rem}
+.meta{color:var(--dim);font-size:.86rem;margin:.3rem 0 0}
+nav#toc{background:var(--panel);border:1px solid var(--line);
+  border-radius:12px;padding:.9rem 1.1rem;margin:1.2rem 0}
+nav#toc ol{margin:.4rem 0 0;padding-left:1.3rem}
+nav#toc a{color:var(--ink);text-decoration:none;border-bottom:1px dotted var(--line)}
+.story{background:var(--panel2);border-left:3px solid var(--violet);
+  border-radius:0 10px 10px 0;padding:.9rem 1.1rem;margin:1.1rem 0}
+.story .tag{display:block;color:var(--violet);font-size:.78rem;
+  letter-spacing:.12em;margin-bottom:.35rem}
+.reality{background:var(--panel);border-left:3px solid var(--cyan);
+  border-radius:0 10px 10px 0;padding:.9rem 1.1rem;margin:1.1rem 0}
+.reality .tag{display:block;color:var(--cyan);font-size:.78rem;
+  letter-spacing:.12em;margin-bottom:.35rem}
+.keybox{background:#12202b;border:1px solid #26485a;border-radius:10px;
+  padding:.85rem 1rem;margin:1.1rem 0}
+.keybox b{color:var(--cyan)}
+.warn{background:#2a1c1c;border:1px solid #573434;border-radius:10px;
+  padding:.85rem 1rem;margin:1.1rem 0;color:#f0cfcf}
+article{background:var(--panel);border:1px solid var(--line);
+  border-radius:12px;padding:.95rem 1.05rem;margin:1.1rem 0}
+article .qhead{display:block;color:var(--gold);font-size:.82rem;
+  letter-spacing:.06em;margin-bottom:.45rem}
+article .stem{margin:.2rem 0 .5rem}
+article ul.opts{list-style:none;margin:.3rem 0 .2rem;padding:0}
+article ul.opts li{padding:.16rem 0 .16rem .2rem;color:#dbe2ec}
+details{background:#0f141c;border:1px solid var(--line);
+  border-radius:10px;padding:.15rem .8rem;margin:.6rem 0}
+details summary{cursor:pointer;padding:.6rem 0;color:var(--gold);
+  font-weight:600;min-height:44px;display:flex;align-items:center}
+details[data-kind="answer"] .ans{font-size:1.05rem;color:var(--cyan);font-weight:700}
+div[data-kind="zh-translation"]{background:#141c26;border:1px dashed #33465c;
+  border-radius:8px;padding:.7rem .85rem;margin:.5rem 0 .8rem}
+div[data-kind="zh-translation"] p{margin:.35rem 0}
+.src{color:var(--dim);font-size:.84rem;margin-top:.6rem}
+.quote{border-left:2px solid var(--gold);padding-left:.75rem;color:#f0e2c6}
+.infer{color:#f0d9a8;font-size:.92rem}
+figure{margin:1.3rem 0;background:var(--panel2);border:1px solid var(--line);
+  border-radius:12px;padding:.9rem}
+figcaption{color:var(--dim);font-size:.85rem;margin-top:.6rem;text-align:center}
+dl.vocab{margin:0}
+dl.vocab dt{color:var(--cyan);font-weight:700;margin-top:.9rem}
+dl.vocab dd{margin:.2rem 0 0;padding-left:0}
+dl.vocab .root{color:var(--dim);font-size:.86rem}
+.cram{background:var(--panel);border:1px solid var(--line);
+  border-radius:12px;padding:.4rem 1.1rem;margin:1rem 0}
+.cram li{margin:.55rem 0}
+.yearchip{display:inline-block;background:#233046;color:#bcd0ea;
+  border-radius:999px;padding:.05rem .55rem;font-size:.76rem;margin-right:.4rem}
+article.repeat{border:2px solid #e05252;box-shadow:0 0 0 3px rgba(224,82,82,.12)}
+article.repeat .qhead{color:#f08a8a}
+.repeat-badge{display:inline-block;background:#3a1c1c;border:1px solid #7d3a3a;
+  color:#f0a8a8;border-radius:999px;padding:.1rem .6rem;font-size:.76rem;
+  margin-left:.4rem;white-space:nowrap}
+.repeat-note{color:#e6a5a5;font-size:.84rem;margin:.45rem 0 0}
+figure.boxfig{margin:1.5rem 0 .5rem;background:transparent;border:0;padding:0}
+figure.boxfig img{border-radius:12px;border:1px solid var(--line);display:block;width:100%}
+figure.boxfig figcaption{color:var(--dim);font-size:.82rem;margin-top:.5rem;
+  text-align:left;line-height:1.6}
+figure.boxfig .figtag{color:var(--violet);font-size:.76rem;letter-spacing:.1em;
+  display:block;margin-bottom:.3rem}
+.ending{color:var(--dim);font-style:italic;margin:1.6rem 0 2.4rem}
+</style></head>
+<body>
+<div class="container">
+
+<header id="subject-overview">
+  <h1>骨質疏鬆藥物之藥物學</h1>
+  <p>骨質疏鬆的藥只有兩大類：<b>把拆除隊擋下來的（抗骨吸收）</b>，和<b>把砌牆工叫來加班的（促骨生成）</b>。這一科的考題幾乎不問你藥怎麼作用，而是問你——<b>哪一個特性屬於哪一種藥。</b></p>
+  <p>四年十二題全部是「下列何者正確」，選項就是把六種藥的副作用、禁忌症、療效與藥物動力學互相調換。所以讀這一科的關鍵不是背藥理機轉，而是把每個特徵牢牢釘在它真正的主人身上。</p>
+  <p class="meta">命題老師：陳崇桓 ｜ 收錄 110、111 期末考與 112、113 期中考，四年各 3 題共 12 題</p>
+</header>
+
+<nav id="toc">
+  <b>目錄</b>
+  <ol>
+    <li><a href="#chapter-1">誰擋拆除隊：RANKL、OPG 與 SERM</a></li>
+    <li><a href="#chapter-2">要吃多久、會怎樣、誰不能吃</a></li>
+    <li><a href="#chapter-3">腎、腸、髖：三個最常被調換的數字</a></li>
+    <li><a href="#chapter-cram">考前速記</a></li>
+    <li><a href="#chapter-vocab">單字表</a></li>
+    <li><a href="#chapter-final">歷年考題總複習</a></li>
+  </ol>
+</nav>
+<!-- ================= CHAPTER 1 ================= -->
+<section id="chapter-1" data-chapter-kind="story">
+<h2>一、誰擋拆除隊：RANKL、OPG 與 SERM</h2>
+
+<figure class="boxfig" data-visual-id="rxbox-01-story" data-image-kind="story" data-explanation-verified="true">
+<span class="figtag">情境場景</span>
+<img data-visual-id="rxbox-01-story" src="img/rxbox-01-story.webp" alt="情境場景：骨城的拆除隊要出勤，得先收到一張派工單。　插圖沿用同一組角色與場景設定。" loading="lazy" decoding="async" width="1600" height="914">
+<figcaption>情境場景：骨城的拆除隊要出勤，得先收到一張派工單。　插圖沿用同一組角色與場景設定。</figcaption>
+</figure>
+<div class="story" data-prose-kind="story"><span class="tag">故事</span>
+<p>骨城的拆除隊要出勤，得先收到一張<b>派工單</b>。派工單叫 RANKL，由成骨細胞那一側發出——上面寫著「去拆」。</p>
+<p>但城裡還有一位<b>攔截員</b>，叫 OPG。它長得跟拆除隊的收件口很像，所以派工單常常被它半路攔走，拆除隊就收不到單、不會成熟，甚至因為閒置而凋亡。</p>
+<p>注意方向，這是本科第一個陷阱：<b>RANKL 是催促拆除，OPG 才是抑制拆除。</b>題目每年都把這兩個名字互換一次。</p>
+<p>另外還有一組人馬——<b>雌激素受體調節劑（SERM）</b>。它像個到處兼差的臨時工：在骨頭這邊扮演雌激素、幫忙擋住拆除；但在血管那邊也扮演雌激素，於是<b>提高血栓風險</b>；還會讓人<b>腿抽筋</b>。而且它的守備範圍有限——<b>只減少脊椎骨折，減不了髖骨折</b>。</p>
+</div>
+
+<figure class="boxfig" data-visual-id="rxbox-02-reality" data-image-kind="mechanism" data-explanation-verified="true">
+<span class="figtag">藥理圖解</span>
+<img data-visual-id="rxbox-02-reality" src="img/rxbox-02-reality.webp" alt="藥理圖解：RANKL（Receptor Activator of Nuclear factor Kappa-B Ligan。" loading="lazy" decoding="async" width="1600" height="914">
+<figcaption>藥理圖解：RANKL（Receptor Activator of Nuclear factor Kappa-B Ligan。</figcaption>
+</figure>
+<div class="reality"><span class="tag">回到現實</span>
+<p><b>RANKL</b>（Receptor Activator of Nuclear factor Kappa-B Ligand）：<b>促進</b>破骨細胞增生與成熟。</p>
+<p><b>OPG</b>（Osteoprotegerin）：作為 RANKL 的誘餌受體，<b>抑制破骨細胞增生並誘導其凋亡</b>——111 期末第 46 題與 113 第 5 題的正確答案就是這一句。</p>
+<p><b>SERM（如 Raloxifene）</b>三個必記特性：</p>
+<p>　• <b>增加靜脈血栓風險</b>（第二代 SERM Raloxifene 有 2–3 倍風險）</p>
+<p>　• <b>副作用包含腿抽筋（leg cramps）</b>——與 Teriparatide 共有</p>
+<p>　• <b>只能減少脊椎骨折，無法減少非脊椎或髖部骨折</b></p>
+<p><b>能有效減少髖骨折的是 Denosumab 與 Zoledronate</b>，不是 SERM。</p>
+<p><b>Anti-sclerostin antibody（Romosozumab）</b>屬<b>促骨生成（anabolic）</b>藥，促進骨形成多於骨吸收，<b>且無髖骨折的療效資料</b>。</p>
+</div>
+
+<figure class="boxfig" data-visual-id="rxbox-03-warn" data-image-kind="comparison" data-explanation-verified="true">
+<span class="figtag">陷阱圖解</span>
+<img data-visual-id="rxbox-03-warn" src="img/rxbox-03-warn.webp" alt="易錯點圖解：四年來只有三個特徵被反覆搬家，記住它們真正的主人。" loading="lazy" decoding="async" width="1600" height="914">
+<figcaption>易錯點圖解：四年來只有三個特徵被反覆搬家，記住它們真正的主人。</figcaption>
+</figure>
+<div class="warn"><span class="tag">易錯</span>
+<p><b>四年來只有三個特徵被反覆搬家，記住它們真正的主人：</b></p>
+<p>① <b>血栓風險 → SERM</b>（不是雙磷酸鹽。112 年就是因為把它安到雙磷酸鹽頭上，申覆後開放該選項）</p>
+<p>② <b>腿抽筋 → SERM 與 Teriparatide</b>（不是雙磷酸鹽）</p>
+<p>③ <b>減少髖骨折 → Denosumab、Zoledronate</b>（不是 SERM，也不是抗硬化蛋白抗體）</p>
+</div>
+
+<article data-question-id="113-bm113-p5-q5" data-placement="chapter">
+  <span class="qhead">113 年 第 5 題</span>
+  <p class="stem">Which of the following is right</p>
+  <ul class="opts">
+    <li>(A) Osteoprotegrin (OPG) can inhibit proliferation of osteoclast and induce the apoptosis of osteoclast</li>
+    <li>(B) Bisphosphonates may lead to the side effect of leg cramps</li>
+    <li>(C) Selective estrogen receptor modulator can reduce hip fracture rate</li>
+    <li>(D) Bisphosphonates increase the risk of throboembolism</li>
+  </ul>
+  <details data-kind="answer">
+    <summary>答案與詳解</summary>
+    <div data-kind="zh-translation">
+      <p><strong>中文題目：</strong>下列何者正確？</p>
+      <p>(A) 骨保護素（OPG）可抑制破骨細胞增生並誘導其凋亡。</p>
+      <p>(B) 雙磷酸鹽可能導致腿抽筋的副作用。</p>
+      <p>(C) 選擇性雌激素受體調節劑（SERM）可降低髖骨折率。</p>
+      <p>(D) 雙磷酸鹽增加血栓栓塞風險。</p>
+    </div>
+    <p class="ans">答案：A</p>
+    <p class="quote">詳解原文:「(A) 正確。(B) SERM and Teriparatide lead to the side effect of leg cramps。(C) Denosumab can reduce hip fracture rate。(D) SERM increase the risk of thromboembolism (venous)。」</p>
+    <p>三個錯誤選項正好把三個特徵各錯配一次：腿抽筋屬 SERM／Teriparatide、減髖骨折屬 Denosumab、血栓風險屬 SERM。<b>三個都被安到雙磷酸鹽或 SERM 頭上</b>——這正是本科的固定手法。</p>
+    <p class="src">出處：骨質疏鬆藥物之藥物學 陳崇桓 ppt p.20, 36, 41, 57, 58 ｜ BM113_Block8期中考詳解.pdf 第 5 頁</p>
+  </details>
+</article>
+
+<article data-question-id="112-bm112-p8-q5" data-placement="chapter">
+  <span class="qhead">112 年 第 5 題 ｜ 申覆後開放 (D)</span>
+  <p class="stem">Which of the following is right?</p>
+  <ul class="opts">
+    <li>(A) Receptor activator nuclear K ligand (RANKL) can inhibit proliferation of osteoclast and induce the apoptosis of osteoclast</li>
+    <li>(B) Selective estrogen receptor modulator (SERM) may lead to the side effect of leg cramps</li>
+    <li>(C) Selective estrogen receptor modulator (SERM) can reduce hip fracture rate</li>
+    <li>(D) Bisphosphonates do not increase the risk of throboembolis</li>
+  </ul>
+  <details data-kind="answer">
+    <summary>答案與詳解</summary>
+    <div data-kind="zh-translation">
+      <p><strong>中文題目：</strong>下列何者正確？</p>
+      <p>(A) RANK 配體（RANKL）可抑制破骨細胞增生並誘導其凋亡。</p>
+      <p>(B) 選擇性雌激素受體調節劑（SERM）可能導致腿抽筋的副作用。</p>
+      <p>(C) SERM 可降低髖骨折率。</p>
+      <p>(D) 雙磷酸鹽<b>不會</b>增加血栓栓塞風險。</p>
+    </div>
+    <p class="ans">答案：B、D（申覆後開放 D 選項）</p>
+    <p class="quote">詳解原文:「(A) RANKL可以增加蝕骨細胞增生並減低蝕骨細胞水解。(B) 正確。(C) 無法減少非脊椎或髖部的骨折(Raloxifene為一種SERM)。(D) 正確(見申覆,111-期末 46題(D))。」</p>
+    <p><b>本題把 (A) 的名字從 OPG 換成了 RANKL</b>——同一句話，主詞一換就從正確變成錯誤。這是全科最值得警覺的一組對照：113 與 111 期末寫 OPG（正確），112 寫 RANKL（錯誤）。</p>
+    <p>(D) 的申覆成立是因為：<b>增加血栓風險的是 SERM 不是雙磷酸鹽</b>，所以「雙磷酸鹽不增加血栓風險」這句話本身是對的。</p>
+    <p class="src">出處：陳崇桓 骨質疏鬆藥物之藥物學(ppt pg.19, 20, 34) ｜ BM112_Block 8 期中考(含申覆內容與結果).pdf 第 8 頁</p>
+  </details>
+</article>
+
+<article data-question-id="111fin-bm111-p37-q46" data-placement="chapter">
+  <span class="qhead">111 年 期末考 第 46 題</span>
+  <p class="stem">Which of the following is right?</p>
+  <ul class="opts">
+    <li>(A) Osteoprotegrin (OPG) can inhibit proliferation of osteoclast and induce the apoptosis of osteoclast</li>
+    <li>(B) Bisphosphonates may lead to the side effect of leg cramps</li>
+    <li>(C) Selective estrogen receptor modulator can reduce hip fracture rate</li>
+    <li>(D) Bisphosphonates increase the risk of thromboembolism</li>
+  </ul>
+  <details data-kind="answer">
+    <summary>答案與詳解</summary>
+    <div data-kind="zh-translation">
+      <p><strong>中文題目：</strong>下列何者正確？</p>
+      <p>(A) 骨保護素（OPG）可抑制破骨細胞增生並誘導其凋亡。</p>
+      <p>(B) 雙磷酸鹽可能導致腿抽筋的副作用。</p>
+      <p>(C) SERM 可降低髖骨折率。</p>
+      <p>(D) 雙磷酸鹽增加血栓栓塞風險。</p>
+    </div>
+    <p class="ans">答案：A</p>
+    <p class="quote">詳解原文:「(A) 正確。(B) SERM and Teriparatide lead to the side effect of leg cramps。(C) Denosumab can reduce hip fracture rate。(D) SERM increase the risk of thromboembolism (venous)。」</p>
+    <p>與 113 年第 5 題<b>逐字相同</b>，兩年答案都是 (A)。</p>
+    <p class="src">出處：陳崇桓 骨質疏鬆藥物之藥物學 ｜ BM111 BLOCK-8 期末考詳解.pdf 第 37 頁</p>
+  </details>
+</article>
+
+<article data-question-id="110fin-bm110-p96-q76" data-placement="chapter">
+  <span class="qhead">110 年 期末考 第 76 題</span>
+  <p class="stem">Which of the following is right?</p>
+  <ul class="opts">
+    <li>(A) Anti-sclerostin antibody can enhance osteoclastogenesis and decrease apoptosis of osteoclast</li>
+    <li>(B) Drug holiday can be performed in patients with Teriparatide treatment</li>
+    <li>(C) Anti-sclerostin antibody can efficiently decrease hip fracture incidence</li>
+    <li>(D) Selective estrogen receptor modulator (SERM) increases risk of thromboembolism</li>
+  </ul>
+  <details data-kind="answer">
+    <summary>答案與詳解</summary>
+    <div data-kind="zh-translation">
+      <p><strong>中文題目：</strong>下列何者正確？</p>
+      <p>(A) 抗硬化蛋白抗體可增強破骨細胞生成並減少其凋亡。</p>
+      <p>(B) 使用 Teriparatide 的患者可以有藥物假期。</p>
+      <p>(C) 抗硬化蛋白抗體可有效降低髖骨折發生率。</p>
+      <p>(D) SERM 增加血栓栓塞風險。</p>
+    </div>
+    <p class="ans">答案：D</p>
+    <p class="quote">詳解原文:「(A)(C) Anti-sclerostin 屬於 Anabolics，促進 bone formation 多過 bone resorption，且 no hip fracture data。(B) 有 drug holiday 的是雙磷酸鹽藥物。(D) 2nd generation SERM 的 Raloxifene 有 2- to 3-fold increased risk of venous thromboembolic events。」</p>
+    <p>(A) 把抗硬化蛋白抗體說成促進破骨——方向完全相反，它是<b>促骨生成</b>藥。(C) 是本科少見會考「沒有資料」的選項：<b>抗硬化蛋白抗體沒有髖骨折療效資料</b>。(B) 的藥物假期屬雙磷酸鹽，下一章會再考一次。</p>
+    <p class="src">出處：陳崇桓 骨質疏鬆藥物之藥物學(ppt pg.9, 11, 16, 20, 56) ｜ BM110 BLOCK-8 期末考詳解 (審後附上申覆).pdf 第 96 頁</p>
+  </details>
+</article>
+</section>
+
+<!-- ================= CHAPTER 2 ================= -->
+<section id="chapter-2" data-chapter-kind="story">
+<h2>二、要吃多久、會怎樣、誰不能吃</h2>
+
+<figure class="boxfig" data-visual-id="rxbox-04-story" data-image-kind="story" data-explanation-verified="true">
+<span class="figtag">情境場景</span>
+<img data-visual-id="rxbox-04-story" src="img/rxbox-04-story.webp" alt="情境場景：病人最常問三件事：要吃多久才有效、會不會有副作用、我這種狀況能不能吃。　插圖沿用同一組角色與場景設定。" loading="lazy" decoding="async" width="1600" height="914">
+<figcaption>情境場景：病人最常問三件事：要吃多久才有效、會不會有副作用、我這種狀況能不能吃。　插圖沿用同一組角色與場景設定。</figcaption>
+</figure>
+<div class="story" data-prose-kind="story"><span class="tag">故事</span>
+<p>病人最常問三件事：要吃多久才有效、會不會有副作用、我這種狀況能不能吃。這一章就是那三個答案。</p>
+<p><b>要吃多久？</b>骨密度上升得快，但骨折率下降得慢——<b>要超過一年</b>才看得到減少骨折的效果。任何寫「一個月」「三個月」的選項都是錯的。</p>
+<p><b>會怎樣？</b>雙磷酸鹽第一次靜脈注射時，會刺激免疫系統活化 T 細胞，讓人像感冒一樣發燒痠痛——這叫<b>急性期反應</b>。這是雙磷酸鹽的專屬副作用，不是 Teriparatide、也不是抗硬化蛋白抗體。</p>
+<p><b>能不能停藥？</b>雙磷酸鹽會卡在骨頭裡、半衰期極長，所以停藥後藥效還在——這是唯一能放<b>藥物假期</b>的藥。相對地，SERM、雌激素、RANKL 抗體一停就骨量快速流失，不能放假。</p>
+<p><b>誰不能吃？</b>一年內發生過<b>心肌梗塞或中風</b>的人不能用<b>抗硬化蛋白抗體（Romosozumab）</b>。這條禁忌症年年考，而且年年被安到別的藥頭上。</p>
+</div>
+
+<figure class="boxfig" data-visual-id="rxbox-05-reality" data-image-kind="mechanism" data-explanation-verified="true">
+<span class="figtag">藥理圖解</span>
+<img data-visual-id="rxbox-05-reality" src="img/rxbox-05-reality.webp" alt="藥理圖解：療效時程：抗骨質疏鬆藥物需治療超過一年才能達到減少骨折的效果。" loading="lazy" decoding="async" width="1600" height="914">
+<figcaption>藥理圖解：療效時程：抗骨質疏鬆藥物需治療超過一年才能達到減少骨折的效果。</figcaption>
+</figure>
+<div class="reality"><span class="tag">回到現實</span>
+<p><b>療效時程</b>：抗骨質疏鬆藥物需<b>治療超過一年</b>才能達到減少骨折的效果。</p>
+<p><b>急性期反應（acute phase reaction）</b>：由<b>靜脈注射型雙磷酸鹽</b>活化 T 細胞引起，表現如感冒症狀。<b>不是</b> Teriparatide、<b>不是</b>抗硬化蛋白抗體。</p>
+<p><b>藥物假期（drug holiday）</b>：<b>僅適用於雙磷酸鹽</b>（注射滿三年或口服滿五年後可考慮停藥），因其沉積於骨且半衰期極長。SERM、雌激素、RANKL 抗體停藥後骨量會快速流失，<b>沒有</b>藥物假期。</p>
+<p><b>Romosozumab（抗硬化蛋白抗體）的禁忌症</b>：<b>一年內曾發生心肌梗塞或中風</b>者不可使用。</p>
+<p><b>SERM 的其他考點</b>：副作用含<b>腿抽筋</b>；<b>只減脊椎骨折</b>，不減非脊椎與髖骨折。</p>
+<p><b>骨壞死相關</b>：曾接受骨骼放射治療者不應使用的是 <b>Teriparatide</b>，不是雙磷酸鹽。</p>
+</div>
+
+<article data-question-id="113-bm113-p5-q6" data-placement="chapter">
+  <span class="qhead">113 年 第 6 題</span>
+  <p class="stem">Which of the following is right</p>
+  <ul class="opts">
+    <li>(A) It takes more than one year to achieve the effect of fracture reduction by anti-osteoporotic medication</li>
+    <li>(B) Anti-sclerostin antibody can activate T cell lead to acute phase reaction</li>
+    <li>(C) Selective estrogen receptor modulator can have drug holiday</li>
+    <li>(D) Teriparatide cannot be use in those who have myocardial infarction or stroke</li>
+  </ul>
+  <details data-kind="answer">
+    <summary>答案與詳解</summary>
+    <div data-kind="zh-translation">
+      <p><strong>中文題目：</strong>下列何者正確？</p>
+      <p>(A) 抗骨質疏鬆藥物需治療超過一年才能達到減少骨折的效果。</p>
+      <p>(B) 抗硬化蛋白抗體會活化 T 細胞導致急性期反應。</p>
+      <p>(C) SERM 可以有藥物假期。</p>
+      <p>(D) Teriparatide 不可用於曾發生心肌梗塞或中風者。</p>
+    </div>
+    <p class="ans">答案：A</p>
+    <p class="quote">詳解原文:「(B) 急性期反應是靜脈注射型雙磷酸鹽的已知常見副作用；抗硬化素抗體 (Romosozumab) 的禁忌症是與心血管風險相關（一年內曾發生心肌梗塞或中風），並未提及它會透過活化 T 細胞導致急性期反應。(C) SERM、雌激素和 RANKL 抗體在完全停止治療後，都會有骨量快速流失的情形。藥物假期 (drug holiday) 僅被提及適用於雙磷酸鹽藥物。(D)「一年內曾發生心肌梗塞或中風」的禁忌症適用於抗硬化素抗體 (Romosozumab)。」</p>
+    <p>這則詳解把本章三個考點一次講齊，值得整段記。<b>(B)(C)(D) 三個錯誤都是「特徵沒錯，主人錯了」</b>：急性期反應是雙磷酸鹽的、藥物假期是雙磷酸鹽的、心血管禁忌是 Romosozumab 的。</p>
+    <p class="src">出處：骨質疏鬆藥物之藥物學 陳崇桓 ppt p.28, 52, 54 ｜ BM113_Block8期中考詳解.pdf 第 5 頁</p>
+  </details>
+</article>
+
+<article data-question-id="112-bm112-p9-q6" data-placement="chapter">
+  <span class="qhead">112 年 第 6 題</span>
+  <p class="stem">Which of the following is right?</p>
+  <ul class="opts">
+    <li>(A) It takes about one month to achieve the effect of fracture reduction by anti-osteoporotic medication</li>
+    <li>(B) Teriparatide can activate T cell lead to acute phase reaction</li>
+    <li>(C) Teriparatide can have drug holiday</li>
+    <li>(D) Anti-sclerostin antibody cannot be use in those who have myocardial infarction or stroke within one year</li>
+  </ul>
+  <details data-kind="answer">
+    <summary>答案與詳解</summary>
+    <div data-kind="zh-translation">
+      <p><strong>中文題目：</strong>下列何者正確？</p>
+      <p>(A) 抗骨質疏鬆藥物約需一個月即可達到減少骨折的效果。</p>
+      <p>(B) Teriparatide 會活化 T 細胞導致急性期反應。</p>
+      <p>(C) Teriparatide 可以有藥物假期。</p>
+      <p>(D) 抗硬化蛋白抗體不可用於一年內曾發生心肌梗塞或中風者。</p>
+    </div>
+    <p class="ans">答案：D</p>
+    <p class="quote">詳解原文:「(A) 治療需一年以上才可達減少骨折之效果。(B) bisphosphonates才會引起acute phase reaction。(C) bisphosphonates才能有drug holiday。」</p>
+    <p><b>與 113 年第 6 題是同一組考點的鏡像：</b>113 年把「一年以上」放在 (A) 當正解、把心血管禁忌放在 (D) 當錯誤；112 年反過來，把「一個月」放在 (A) 當錯誤、把心血管禁忌放在 (D) 當正解。<b>四個知識點沒變，只是誰被寫對而已。</b></p>
+    <p class="src">出處：陳崇桓 骨質疏鬆藥物之藥物學(ppt pg.29, 57) ｜ BM112_Block 8 期中考(含申覆內容與結果).pdf 第 9 頁</p>
+  </details>
+</article>
+
+<article data-question-id="111fin-bm111-p37-q47" data-placement="chapter">
+  <span class="qhead">111 年 期末考 第 47 題</span>
+  <p class="stem">Which of the following is right?</p>
+  <ul class="opts">
+    <li>(A) It takes more than one year to achieve the effect of fracture reduction by anti-osteoporotic medication</li>
+    <li>(B) Anti-sclerostin antibody can activate T cell lead to acute phase reaction</li>
+    <li>(C) Selective estrogen receptor modulator can have drug holiday</li>
+    <li>(D) Teriparatide cannot be use in those who have myocardial infarction or stroke</li>
+  </ul>
+  <details data-kind="answer">
+    <summary>答案與詳解</summary>
+    <div data-kind="zh-translation">
+      <p><strong>中文題目：</strong>下列何者正確？</p>
+      <p>(A) 抗骨質疏鬆藥物需治療超過一年才能達到減少骨折的效果。</p>
+      <p>(B) 抗硬化蛋白抗體會活化 T 細胞導致急性期反應。</p>
+      <p>(C) SERM 可以有藥物假期。</p>
+      <p>(D) Teriparatide 不可用於曾發生心肌梗塞或中風者。</p>
+    </div>
+    <p class="ans">答案：A</p>
+    <p class="quote">詳解原文:「(A) 正確。(B) Bisphosphonates can activate T cell lead to acute phase reaction。雙磷酸鹽藥物刺激免疫系統，會誘發感冒的症狀。(C) Bisphosphonates can have drug holiday。雙磷酸鹽藥物有用藥假期(drug holiday)，注射劑型滿三年或口服劑滿五年之後可以考慮停藥，因為雙磷酸鹽藥物卡在骨頭上，且半衰期非常長。(D) Romosozumab (Anti-sclerostin antibody) cannot be used in those who have myocardial infarction or stroke。過去一年有中風或心血管疾病病人不能用 Romosozumab。」</p>
+    <p>與 113 年第 6 題<b>逐字相同</b>。這一版的詳解把藥物假期的<b>具體年限</b>也寫出來了——注射滿三年、口服滿五年，值得補記。</p>
+    <p class="src">出處：陳崇桓 骨質疏鬆藥物之藥物學 ｜ BM111 BLOCK-8 期末考詳解.pdf 第 37 頁</p>
+  </details>
+</article>
+
+<article data-question-id="110fin-bm110-p102-q78" data-placement="chapter">
+  <span class="qhead">110 年 期末考 第 78 題</span>
+  <p class="stem">Which of following is right?</p>
+  <ul class="opts">
+    <li>(A) Side effect of selective estrogen receptor modulator (SERM) includes leg cramps</li>
+    <li>(B) Selective estrogen receptor modulator (SERM) can efficiently decrease hip fracture incidence</li>
+    <li>(C) Those who had previous radiotherapy at bone should not receive bisphosphonates</li>
+    <li>(D) Anti-sclerostin antibody can be used in patients with (myocardial infarction) or stroke within the preceding year</li>
+  </ul>
+  <details data-kind="answer">
+    <summary>答案與詳解</summary>
+    <div data-kind="zh-translation">
+      <p><strong>中文題目：</strong>下列何者正確？</p>
+      <p>(A) SERM 的副作用包含腿抽筋。</p>
+      <p>(B) SERM 可有效降低髖骨折發生率。</p>
+      <p>(C) 曾接受骨骼放射治療者不應接受雙磷酸鹽。</p>
+      <p>(D) 抗硬化蛋白抗體可用於一年內曾發生心肌梗塞或中風的患者。</p>
+    </div>
+    <p class="ans">答案：A</p>
+    <p class="quote">詳解原文:「(B) 考古，SERM 是減少 vertebrate fracture，不能減少 nonvertebrate or hip fracture。(C) bisphosphonates 應改為 teriparatide。(D) 不能。」</p>
+    <p>(C) 補上一個其他年度沒考過的細節：<b>曾接受骨骼放射治療者不應使用的是 Teriparatide</b>，不是雙磷酸鹽。(D) 則是把心血管禁忌<b>反過來寫成「可以用」</b>——主人對了，但方向錯了。</p>
+    <p class="src">出處：陳崇桓 骨質疏鬆藥物之藥物學(ppt pg.19, 20, 55) ｜ BM110 BLOCK-8 期末考詳解 (審後附上申覆).pdf 第 102 頁</p>
+  </details>
+</article>
+</section>
+<!-- ================= CHAPTER 3 ================= -->
+<section id="chapter-3" data-chapter-kind="story">
+<h2>三、腎、腸、髖：三個最常被調換的數字</h2>
+
+<figure class="boxfig" data-visual-id="rxbox-06-story" data-image-kind="story" data-explanation-verified="true">
+<span class="figtag">情境場景</span>
+<img data-visual-id="rxbox-06-story" src="img/rxbox-06-story.webp" alt="情境場景：最後一章是三個具體數字與三個具體器官，全部年年出現、全部年年被調換。　插圖沿用同一組角色與場景設定。" loading="lazy" decoding="async" width="1600" height="914">
+<figcaption>情境場景：最後一章是三個具體數字與三個具體器官，全部年年出現、全部年年被調換。　插圖沿用同一組角色與場景設定。</figcaption>
+</figure>
+<div class="story" data-prose-kind="story"><span class="tag">故事</span>
+<p>最後一章是三個具體數字與三個具體器官，全部年年出現、全部年年被調換。</p>
+<p><b>腎——誰要看腎功能？</b>雙磷酸鹽要靠腎臟排掉，所以<b>腎功能差的人不能用雙磷酸鹽</b>（肌酸酐清除率小於 30）。題目每年把這條禁忌搬到 SERM、Teriparatide 或 Denosumab 頭上。</p>
+<p><b>腸——口服吸收多少？</b>口服雙磷酸鹽的腸道吸收率<b>不到 1%</b>（實際約 0.64%），這也是為什麼要空腹配大量開水、吃完還得站著。選項寫「90%」是明顯的假答案，但它每年都出現。</p>
+<p><b>髖——誰真的能減少髖骨折？</b><b>Denosumab</b> 與 <b>Zoledronate</b>。SERM 不行、抗硬化蛋白抗體沒資料。</p>
+<p>另外還有兩個掛在特定藥上的風險：<b>長期使用 Teriparatide（PTH 類）有骨肉瘤風險</b>；而<b>增加長骨直徑的也是 Teriparatide</b>，不是 SERM。</p>
+</div>
+
+<figure class="boxfig" data-visual-id="rxbox-07-reality" data-image-kind="mechanism" data-explanation-verified="true">
+<span class="figtag">藥理圖解</span>
+<img data-visual-id="rxbox-07-reality" src="img/rxbox-07-reality.webp" alt="藥理圖解：腎功能：雙磷酸鹽需經腎臟代謝，腎功能不良者不可使用（CrCl &amp;lt; 30 ml/min）。" loading="lazy" decoding="async" width="1600" height="914">
+<figcaption>藥理圖解：腎功能：雙磷酸鹽需經腎臟代謝，腎功能不良者不可使用（CrCl &lt; 30 ml/min）。</figcaption>
+</figure>
+<div class="reality"><span class="tag">回到現實</span>
+<p><b>腎功能</b>：<b>雙磷酸鹽</b>需經腎臟代謝，<b>腎功能不良者不可使用</b>（CrCl &lt; 30 ml/min）。另外 PTH 類不可用於腎結石或高尿鈣患者。</p>
+<p><b>口服吸收率</b>：口服雙磷酸鹽腸道吸收率<b>低於 1%</b>（官方詳解給的數字是 <b>0.64%</b>）。</p>
+<p><b>髖骨折療效</b>：<b>Denosumab</b>、<b>Zoledronate（zoledronic acid）</b>可有效減少髖骨折。</p>
+<p><b>骨肉瘤風險</b>：長期使用<b>Teriparatide（PTH 類）</b>；不是 SERM、不是抗硬化蛋白抗體。</p>
+<p><b>增加長骨直徑</b>：<b>Teriparatide</b>。</p>
+<p><b>療效時程</b>：需<b>一年以上</b>，「三個月」是錯的。</p>
+</div>
+
+<figure class="boxfig" data-visual-id="rxbox-08-keybox" data-image-kind="mechanism" data-explanation-verified="true">
+<span class="figtag">重點圖解</span>
+<img data-visual-id="rxbox-08-keybox" src="img/rxbox-08-keybox.webp" alt="重點圖解：把每個特徵釘在主人身上，這一科就沒有難題： 雙磷酸鹽＝看腎功能、吸收率&amp;lt;1%、急性期反應、可放藥物假期、Z。" loading="lazy" decoding="async" width="1600" height="914">
+<figcaption>重點圖解：把每個特徵釘在主人身上，這一科就沒有難題： 雙磷酸鹽＝看腎功能、吸收率&lt;1%、急性期反應、可放藥物假期、Z。</figcaption>
+</figure>
+<div class="keybox">
+<p><b>把每個特徵釘在主人身上，這一科就沒有難題：</b></p>
+<p><b>雙磷酸鹽</b>＝看腎功能、吸收率&lt;1%、急性期反應、可放藥物假期、Zoledronate 減髖骨折</p>
+<p><b>SERM</b>＝血栓、腿抽筋、只減脊椎骨折</p>
+<p><b>Teriparatide</b>＝腿抽筋、骨肉瘤風險、增加骨徑、放療後禁用</p>
+<p><b>Romosozumab</b>＝一年內心肌梗塞／中風禁用、無髖骨折資料</p>
+<p><b>Denosumab</b>＝減髖骨折、停藥後骨量快速流失（無藥物假期）</p>
+</div>
+
+<article data-question-id="113-bm113-p7-q7" data-placement="chapter">
+  <span class="qhead">113 年 第 7 題</span>
+  <p class="stem">Which of the following is right</p>
+  <ul class="opts">
+    <li>(A) Teriparatide cannot be use in those who have poor renal function</li>
+    <li>(B) Prolong anti-sclerostin antibody will lead to the risk of osteosarcoma</li>
+    <li>(C) Oral bisphosphonates is absorbed well with a absorption rate about 90%</li>
+    <li>(D) Denosumab can efficiently reduce hip fracture</li>
+  </ul>
+  <details data-kind="answer">
+    <summary>答案與詳解</summary>
+    <div data-kind="zh-translation">
+      <p><strong>中文題目：</strong>下列何者正確？</p>
+      <p>(A) Teriparatide 不可用於腎功能不良者。</p>
+      <p>(B) 長期使用抗硬化蛋白抗體會導致骨肉瘤風險。</p>
+      <p>(C) 口服雙磷酸鹽吸收良好，吸收率約 90%。</p>
+      <p>(D) Denosumab 可有效減少髖骨折。</p>
+    </div>
+    <p class="ans">答案：D</p>
+    <p class="quote">詳解原文:「(A) Bisphosphonate (CrCl&lt;30ml/min)。(B) Teriparatide。(C) &lt;1%。」</p>
+    <p>詳解極簡但把三個錯誤的正確歸屬全點名了：腎功能禁忌屬雙磷酸鹽、骨肉瘤風險屬 Teriparatide、口服吸收率不到 1%。</p>
+    <p class="src">出處：骨質疏鬆藥物之藥物學 陳崇桓 ｜ BM113_Block8期中考詳解.pdf 第 7 頁</p>
+  </details>
+</article>
+
+<article data-question-id="112-bm112-p11-q7" data-placement="chapter">
+  <span class="qhead">112 年 第 7 題</span>
+  <p class="stem">Which of the following is right?</p>
+  <ul class="opts">
+    <li>(A) Selective estrogen receptor modulator (SERM) m cannot be use in those who have poor renal function</li>
+    <li>(B) Prolong Selective estrogen receptor modulator (SERM) m will lead to the risk of osteosarcoma</li>
+    <li>(C) Oral bisphosphonates is absorbed well with a absorption rate about 90%</li>
+    <li>(D) Zolendronate (Zolendronic acid) can efficiently reduce hip fracture</li>
+  </ul>
+  <details data-kind="answer">
+    <summary>答案與詳解</summary>
+    <div data-kind="zh-translation">
+      <p><strong>中文題目：</strong>下列何者正確？</p>
+      <p>(A) SERM 不可用於腎功能不良者。</p>
+      <p>(B) 長期使用 SERM 會導致骨肉瘤風險。</p>
+      <p>(C) 口服雙磷酸鹽吸收良好，吸收率約 90%。</p>
+      <p>(D) Zoledronate（唑來膦酸）可有效減少髖骨折。</p>
+    </div>
+    <p class="ans">答案：D</p>
+    <p class="quote">詳解原文:「(A) 是Bisphosphonates的禁忌症。(B) 是PTH類的副作用。(C) 很低，不到1%才對。(D) 正確。」</p>
+    <p>本年把 (A)(B) 的主人從 Teriparatide 換成 SERM，(D) 的答案從 Denosumab 換成 Zoledronate——<b>兩者都能有效減少髖骨折，所以換誰都對</b>。這是四年裡唯一用 Zoledronate 當正解的一次。</p>
+    <p class="src">出處：陳崇桓 骨質疏鬆藥物之藥物學(ppt pg.22, 24, 26, 48) ｜ BM112_Block 8 期中考(含申覆內容與結果).pdf 第 11 頁</p>
+  </details>
+</article>
+
+<article data-question-id="111fin-bm111-p38-q48" data-placement="chapter">
+  <span class="qhead">111 年 期末考 第 48 題</span>
+  <p class="stem">Which of the following is right?</p>
+  <ul class="opts">
+    <li>(A) Teriparatide cannot be use in those who have poor renal function</li>
+    <li>(B) Prolong anti-sclerostin antibody will lead to the risk of osteosarcoma</li>
+    <li>(C) Oral bisphosphonates is absorbed well with a absorption rate about 90%</li>
+    <li>(D) Denosumab can efficiently reduce hip fracture</li>
+  </ul>
+  <details data-kind="answer">
+    <summary>答案與詳解</summary>
+    <div data-kind="zh-translation">
+      <p><strong>中文題目：</strong>下列何者正確？</p>
+      <p>(A) Teriparatide 不可用於腎功能不良者。</p>
+      <p>(B) 長期使用抗硬化蛋白抗體會導致骨肉瘤風險。</p>
+      <p>(C) 口服雙磷酸鹽吸收良好，吸收率約 90%。</p>
+      <p>(D) Denosumab 可有效減少髖骨折。</p>
+    </div>
+    <p class="ans">答案：D</p>
+    <p class="quote">詳解原文:「(A) Teriparatide 沒特別說明此特性。跟腎有關的：雙磷酸鹽需經過腎臟代謝，所以腎功能差的人不能用，或是PTHrP不能用在腎結石或是高尿鈣患者身上。(B) anti-sclerostin antibody沒特別說明此特性。(C) Intestinal absorption is low: 0.64%。」</p>
+    <p>這一版的詳解給了<b>最精確的吸收率數字 0.64%</b>，也補上 PTH 類在腎結石與高尿鈣患者的限制。與 113 年第 7 題逐字相同。</p>
+    <p class="src">出處：陳崇桓 骨質疏鬆藥物之藥物學 ｜ BM111 BLOCK-8 期末考詳解.pdf 第 38 頁</p>
+  </details>
+</article>
+
+<article data-question-id="110fin-bm110-p101-q77" data-placement="chapter">
+  <span class="qhead">110 年 期末考 第 77 題</span>
+  <p class="stem">Which of following is right?</p>
+  <ul class="opts">
+    <li>(A) Denosumab can NOT be used in patients with poor renal function</li>
+    <li>(B) Oral bisphosphonates absorption rate is about &lt;1%</li>
+    <li>(C) Three-month treatment with anti-osteoporotic medication can efficiently decrease fracture rate</li>
+    <li>(D) Selective estrogen receptor modulator (SERM) can increase diameter of long bone</li>
+  </ul>
+  <details data-kind="answer">
+    <summary>答案與詳解</summary>
+    <div data-kind="zh-translation">
+      <p><strong>中文題目：</strong>下列何者正確？</p>
+      <p>(A) Denosumab 不可用於腎功能不良的患者。</p>
+      <p>(B) 口服雙磷酸鹽的吸收率約小於 1%。</p>
+      <p>(C) 使用抗骨質疏鬆藥物治療三個月即可有效降低骨折率。</p>
+      <p>(D) SERM 可增加長骨的直徑。</p>
+    </div>
+    <p class="ans">答案：B</p>
+    <p class="quote">詳解原文:「雙磷酸鹽口服吸收效率只有0.64%。(A) Bisphosphonates需要考慮腎功能。(C) 治療需一年以上才可達減少骨折效果。(D) Teriparatide才增加骨頭直徑。」</p>
+    <p>本年把「吸收率&lt;1%」放在正解位置，其他三年則放在錯誤選項（寫成 90%）。<b>同一個數字，四年裡兩種用法都出現過。</b>(D) 補上一個獨有考點：<b>增加長骨直徑的是 Teriparatide</b>。</p>
+    <p class="src">出處：陳崇桓 骨質疏鬆藥物之藥物學(ppt pg.23, 28, 46, 56) ｜ BM110 BLOCK-8 期末考詳解 (審後附上申覆).pdf 第 101 頁</p>
+  </details>
+</article>
+</section>
+
+<!-- ================= CRAM ================= -->
+<section id="chapter-cram" data-chapter-kind="cram">
+<h2>四、考前速記</h2>
+<div class="cram">
+<ul>
+<li><b>OPG 抑制破骨、RANKL 促進破骨。</b>把主詞換掉就是錯的（112 年就是把 OPG 換成 RANKL）。</li>
+<li><b>SERM</b>：增加<b>靜脈血栓</b>（Raloxifene 2–3 倍）、副作用<b>腿抽筋</b>、<b>只減脊椎骨折</b>不減髖骨折。</li>
+<li><b>腿抽筋 = SERM + Teriparatide</b>，不是雙磷酸鹽。</li>
+<li><b>能減髖骨折 = Denosumab、Zoledronate。</b>SERM 不行；抗硬化蛋白抗體<b>沒有髖骨折資料</b>。</li>
+<li><b>療效需一年以上</b>。看到「一個月」「三個月」直接刪。</li>
+<li><b>急性期反應 = 靜脈注射雙磷酸鹽</b>活化 T 細胞，像感冒。</li>
+<li><b>藥物假期只有雙磷酸鹽</b>（注射滿三年／口服滿五年）。SERM、雌激素、RANKL 抗體停藥後骨量快速流失。</li>
+<li><b>一年內心肌梗塞或中風禁用 = Romosozumab（抗硬化蛋白抗體）。</b></li>
+<li><b>腎功能差禁用 = 雙磷酸鹽</b>（CrCl &lt; 30）；PTH 類則避開腎結石與高尿鈣。</li>
+<li><b>口服雙磷酸鹽吸收率 &lt; 1%</b>（0.64%）。選項寫 90% 一定錯。</li>
+<li><b>骨肉瘤風險 = 長期 Teriparatide（PTH 類）</b>；<b>增加長骨直徑 = Teriparatide</b>；<b>放療後禁用 = Teriparatide</b>。</li>
+<li><b>抗硬化蛋白抗體是促骨生成藥</b>，促形成多於促吸收——寫成「增強破骨生成」就是反了。</li>
+</ul>
+</div>
+</section>
+
+<!-- ================= VOCAB ================= -->
+<section id="chapter-vocab" data-chapter-kind="vocab">
+<h2>五、單字表</h2>
+<dl class="vocab">
+<dt>RANKL</dt>
+<dd><span class="root">Receptor Activator of Nuclear factor Kappa-B Ligand</span>　由成骨細胞端釋出，<b>促進</b>破骨細胞增生與成熟。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>名字裡有 <b>Activator</b>＝活化。它是派工單，不是攔截員。</p></details></dd>
+
+<dt>osteoprotegerin (OPG)</dt>
+<dd><span class="root">osteo-（骨）+ protegere（拉丁：保護）</span>　骨保護素。作為 RANKL 的誘餌受體，<b>抑制</b>破骨細胞增生並誘導凋亡。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>protegere＝保護（比較 protect）。名字就說它是保護骨頭的那一方。</p></details></dd>
+
+<dt>bisphosphonate</dt>
+<dd><span class="root">bis-（拉丁：兩個）+ phosphonate（膦酸鹽）</span>　雙磷酸鹽。抗骨吸收主力藥。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>兩個磷讓它牢牢黏在骨的礦物質上——因此半衰期極長，也因此是唯一能放藥物假期的藥。</p></details></dd>
+
+<dt>zoledronate (zoledronic acid)</dt>
+<dd><span class="root">-dronate 為雙磷酸鹽類字尾</span>　唑來膦酸，靜脈注射型雙磷酸鹽，<b>可有效減少髖骨折</b>。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>看到 <b>-dronate</b> 就是雙磷酸鹽家族（alendronate、risedronate、zoledronate）。</p></details></dd>
+
+<dt>acute phase reaction</dt>
+<dd><span class="root">acute phase（急性期）</span>　急性期反應。靜脈注射雙磷酸鹽活化 T 細胞引起，如感冒症狀。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>第一次打針最明顯。這是<b>雙磷酸鹽專屬</b>，年年被安到別的藥頭上。</p></details></dd>
+
+<dt>drug holiday</dt>
+<dd><span class="root">drug（藥）+ holiday（假期）</span>　藥物假期。注射滿三年或口服滿五年後可考慮停藥。<details data-kind="vocab-memory"><summary>記憶提示</summary><p><b>只有雙磷酸鹽</b>放得了假——因為它卡在骨頭裡，停藥後藥效還在。</p></details></dd>
+
+<dt>SERM</dt>
+<dd><span class="root">Selective Estrogen Receptor Modulator</span>　選擇性雌激素受體調節劑，如 Raloxifene。<details data-kind="vocab-memory"><summary>記憶提示</summary><p><b>Selective</b>＝在不同組織扮演不同角色。在骨頭幫忙、在血管惹禍（血栓）。</p></details></dd>
+
+<dt>raloxifene</dt>
+<dd><span class="root">第二代 SERM</span>　有 2–3 倍靜脈血栓風險，<b>只減脊椎骨折</b>。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>考題講「SERM」時通常指的就是它。</p></details></dd>
+
+<dt>thromboembolism</dt>
+<dd><span class="root">thrombo-（血栓）+ embolism（栓塞）</span>　血栓栓塞。<b>SERM 的風險</b>，不是雙磷酸鹽的。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>雌激素本來就會提高凝血傾向——SERM 在血管扮演雌激素，所以繼承了這個副作用。</p></details></dd>
+
+<dt>teriparatide</dt>
+<dd><span class="root">teri- + parathyroid（副甲狀腺）</span>　PTH 類促骨生成藥。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>掛在它身上的四件事：腿抽筋、骨肉瘤風險、增加長骨直徑、放療後禁用。</p></details></dd>
+
+<dt>anti-sclerostin antibody (romosozumab)</dt>
+<dd><span class="root">anti-（抗）+ sclerostin（硬化蛋白）</span>　抗硬化蛋白抗體，促骨生成藥。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>兩個考點：<b>一年內心肌梗塞或中風禁用</b>、<b>無髖骨折療效資料</b>。</p></details></dd>
+
+<dt>denosumab</dt>
+<dd><span class="root">deno- + -mab（單株抗體字尾）</span>　RANKL 單株抗體，抗骨吸收藥，<b>可有效減少髖骨折</b>。<details data-kind="vocab-memory"><summary>記憶提示</summary><p><b>-mab</b>＝monoclonal antibody。停藥後骨量快速流失，所以<b>沒有</b>藥物假期。</p></details></dd>
+
+<dt>anabolic vs antiresorptive</dt>
+<dd><span class="root">anabolic（合成代謝）／anti-resorptive（抗吸收）</span>　促骨生成 vs 抗骨吸收，骨鬆用藥的兩大分類。<details data-kind="vocab-memory"><summary>記憶提示</summary><p><b>促生成</b>：Teriparatide、Romosozumab。<b>抗吸收</b>：雙磷酸鹽、Denosumab、SERM。</p></details></dd>
+
+<dt>creatinine clearance (CrCl)</dt>
+<dd><span class="root">creatinine（肌酸酐）+ clearance（清除率）</span>　腎功能指標。<b>CrCl &lt; 30 ml/min 不可使用雙磷酸鹽</b>。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>雙磷酸鹽走腎排除，腎不好就排不掉。</p></details></dd>
+
+<dt>osteosarcoma</dt>
+<dd><span class="root">osteo-（骨）+ sarcoma（肉瘤）</span>　骨肉瘤。長期使用 <b>Teriparatide（PTH 類）</b>的風險。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>促骨生成藥推得太久，理論上有讓細胞失控的疑慮——所以有療程上限。</p></details></dd>
+
+<dt>vertebral vs non-vertebral fracture</dt>
+<dd><span class="root">vertebral（脊椎的）</span>　脊椎骨折與非脊椎骨折。<details data-kind="vocab-memory"><summary>記憶提示</summary><p><b>SERM 只減脊椎</b>；髖骨折屬非脊椎，要靠 Denosumab 或 Zoledronate。</p></details></dd>
+</dl>
+</section>
+<section id="chapter-final" data-chapter-kind="final_questions">
+<h2>六、歷年考題總複習</h2>
+<p class="meta">依年度由新到舊、同年依原始題號排列。共 12 題（110／111 期末、112／113 期中各 3 題）。<b style="color:#f08a8a">紅框</b>＝同一考點在兩個以上年度重複出現。</p>
+<h3><span class="yearchip">113 年</span>第 5–7 題</h3>
+<article data-question-id="113-bm113-p5-q5" data-placement="final" class="repeat">
+  <span class="qhead">113 年 第 5 題</span><span class="repeat-badge">重複考點 ×4</span>
+  <p class="repeat-note">同考點：110 第76題、111 第46題、112 第5題　—　RANKL／OPG 機轉與 SERM 的三個特性</p>
+  <p class="stem">Which of the following is right</p>
+  <ul class="opts"><li>(A) Osteoprotegrin (OPG) can inhibit proliferation of osteoclast and induce the apoptosis of osteoclast</li><li>(B) Bisphosphonates may lead to the side effect of leg cramps</li><li>(C) Selective estrogen receptor modulator can reduce hip fracture rate</li><li>(D) Bisphosphonates increase the risk of throboembolism</li></ul>
+  <details data-kind="answer"><summary>答案與詳解</summary>
+    <div data-kind="zh-translation"><p><strong>中文題目：</strong>下列何者正確？</p>
+      <p>(A) 骨保護素（OPG）可抑制破骨細胞增生並誘導其凋亡。</p>
+      <p>(B) 雙磷酸鹽可能導致腿抽筋的副作用。</p>
+      <p>(C) 選擇性雌激素受體調節劑（SERM）可降低髖骨折率。</p>
+      <p>(D) 雙磷酸鹽增加血栓栓塞風險。</p></div>
+    <p class="ans">答案：A</p>
+    <p>OPG 抑制破骨；腿抽筋屬 SERM／Teriparatide，減髖骨折屬 Denosumab。<span class="src"> ｜ BM113_Block8期中考詳解 第 5 頁</span></p>
+  </details>
+</article>
+<article data-question-id="113-bm113-p5-q6" data-placement="final" class="repeat">
+  <span class="qhead">113 年 第 6 題</span><span class="repeat-badge">重複考點 ×4</span>
+  <p class="repeat-note">同考點：110 第78題、111 第47題、112 第6題　—　療效時程、急性期反應、藥物假期與心血管禁忌</p>
+  <p class="stem">Which of the following is right</p>
+  <ul class="opts"><li>(A) It takes more than one year to achieve the effect of fracture reduction by anti-osteoporotic medication</li><li>(B) Anti-sclerostin antibody can activate T cell lead to acute phase reaction</li><li>(C) Selective estrogen receptor modulator can have drug holiday</li><li>(D) Teriparatide cannot be use in those who have myocardial infarction or stroke</li></ul>
+  <details data-kind="answer"><summary>答案與詳解</summary>
+    <div data-kind="zh-translation"><p><strong>中文題目：</strong>下列何者正確？</p>
+      <p>(A) 抗骨質疏鬆藥物需治療超過一年才能達到減少骨折的效果。</p>
+      <p>(B) 抗硬化蛋白抗體會活化 T 細胞導致急性期反應。</p>
+      <p>(C) SERM 可以有藥物假期。</p>
+      <p>(D) Teriparatide 不可用於曾發生心肌梗塞或中風者。</p></div>
+    <p class="ans">答案：A</p>
+    <p>療效需一年以上；急性期反應與藥物假期都屬雙磷酸鹽。<span class="src"> ｜ BM113_Block8期中考詳解 第 5 頁</span></p>
+  </details>
+</article>
+<article data-question-id="113-bm113-p7-q7" data-placement="final" class="repeat">
+  <span class="qhead">113 年 第 7 題</span><span class="repeat-badge">重複考點 ×4</span>
+  <p class="repeat-note">同考點：110 第77題、111 第48題、112 第7題　—　腎功能、口服吸收率與髖骨折療效</p>
+  <p class="stem">Which of the following is right</p>
+  <ul class="opts"><li>(A) Teriparatide cannot be use in those who have poor renal function</li><li>(B) Prolong anti-sclerostin antibody will lead to the risk of osteosarcoma</li><li>(C) Oral bisphosphonates is absorbed well with a absorption rate about 90%</li><li>(D) Denosumab can efficiently reduce hip fracture</li></ul>
+  <details data-kind="answer"><summary>答案與詳解</summary>
+    <div data-kind="zh-translation"><p><strong>中文題目：</strong>下列何者正確？</p>
+      <p>(A) Teriparatide 不可用於腎功能不良者。</p>
+      <p>(B) 長期使用抗硬化蛋白抗體會導致骨肉瘤風險。</p>
+      <p>(C) 口服雙磷酸鹽吸收良好，吸收率約 90%。</p>
+      <p>(D) Denosumab 可有效減少髖骨折。</p></div>
+    <p class="ans">答案：D</p>
+    <p>Denosumab 有效減髖骨折；腎功能禁忌屬雙磷酸鹽。<span class="src"> ｜ BM113_Block8期中考詳解 第 7 頁</span></p>
+  </details>
+</article>
+<h3><span class="yearchip">112 年</span>第 5–7 題</h3>
+<article data-question-id="112-bm112-p8-q5" data-placement="final" class="repeat">
+  <span class="qhead">112 年 第 5 題</span><span class="repeat-badge">重複考點 ×4</span>
+  <p class="repeat-note">同考點：110 第76題、111 第46題、113 第5題　—　RANKL／OPG 機轉與 SERM 的三個特性</p>
+  <p class="stem">Which of the following is right?</p>
+  <ul class="opts"><li>(A) Receptor activator nuclear K ligand (RANKL) can inhibit proliferation of osteoclast and induce the apoptosis of osteoclast</li><li>(B) Selective estrogen receptor modulator (SERM) may lead to the side effect of leg cramps</li><li>(C) Selective estrogen receptor modulator (SERM) can reduce hip fracture rate</li><li>(D) Bisphosphonates do not increase the risk of throboembolis</li></ul>
+  <details data-kind="answer"><summary>答案與詳解</summary>
+    <div data-kind="zh-translation"><p><strong>中文題目：</strong>下列何者正確？</p>
+      <p>(A) RANK 配體（RANKL）可抑制破骨細胞增生並誘導其凋亡。</p>
+      <p>(B) 選擇性雌激素受體調節劑（SERM）可能導致腿抽筋的副作用。</p>
+      <p>(C) SERM 可降低髖骨折率。</p>
+      <p>(D) 雙磷酸鹽<b>不會</b>增加血栓栓塞風險。</p></div>
+    <p class="ans">答案：B、D（申覆後開放 D 選項）</p>
+    <p>主詞被換成 RANKL 就錯了；申覆後開放 (D)，血栓風險屬 SERM。<span class="src"> ｜ BM112_Block 8 期中考(含申覆內容與結果) 第 8 頁</span></p>
+  </details>
+</article>
+<article data-question-id="112-bm112-p9-q6" data-placement="final" class="repeat">
+  <span class="qhead">112 年 第 6 題</span><span class="repeat-badge">重複考點 ×4</span>
+  <p class="repeat-note">同考點：110 第78題、111 第47題、113 第6題　—　療效時程、急性期反應、藥物假期與心血管禁忌</p>
+  <p class="stem">Which of the following is right?</p>
+  <ul class="opts"><li>(A) It takes about one month to achieve the effect of fracture reduction by anti-osteoporotic medication</li><li>(B) Teriparatide can activate T cell lead to acute phase reaction</li><li>(C) Teriparatide can have drug holiday</li><li>(D) Anti-sclerostin antibody cannot be use in those who have myocardial infarction or stroke within one year</li></ul>
+  <details data-kind="answer"><summary>答案與詳解</summary>
+    <div data-kind="zh-translation"><p><strong>中文題目：</strong>下列何者正確？</p>
+      <p>(A) 抗骨質疏鬆藥物約需一個月即可達到減少骨折的效果。</p>
+      <p>(B) Teriparatide 會活化 T 細胞導致急性期反應。</p>
+      <p>(C) Teriparatide 可以有藥物假期。</p>
+      <p>(D) 抗硬化蛋白抗體不可用於一年內曾發生心肌梗塞或中風者。</p></div>
+    <p class="ans">答案：D</p>
+    <p>一年內心肌梗塞或中風禁用抗硬化蛋白抗體。<span class="src"> ｜ BM112_Block 8 期中考(含申覆內容與結果) 第 9 頁</span></p>
+  </details>
+</article>
+<article data-question-id="112-bm112-p11-q7" data-placement="final" class="repeat">
+  <span class="qhead">112 年 第 7 題</span><span class="repeat-badge">重複考點 ×4</span>
+  <p class="repeat-note">同考點：110 第77題、111 第48題、113 第7題　—　腎功能、口服吸收率與髖骨折療效</p>
+  <p class="stem">Which of the following is right?</p>
+  <ul class="opts"><li>(A) Selective estrogen receptor modulator (SERM) m cannot be use in those who have poor renal function</li><li>(B) Prolong Selective estrogen receptor modulator (SERM) m will lead to the risk of osteosarcoma</li><li>(C) Oral bisphosphonates is absorbed well with a absorption rate about 90%</li><li>(D) Zolendronate (Zolendronic acid) can efficiently reduce hip fracture</li></ul>
+  <details data-kind="answer"><summary>答案與詳解</summary>
+    <div data-kind="zh-translation"><p><strong>中文題目：</strong>下列何者正確？</p>
+      <p>(A) SERM 不可用於腎功能不良者。</p>
+      <p>(B) 長期使用 SERM 會導致骨肉瘤風險。</p>
+      <p>(C) 口服雙磷酸鹽吸收良好，吸收率約 90%。</p>
+      <p>(D) Zoledronate（唑來膦酸）可有效減少髖骨折。</p></div>
+    <p class="ans">答案：D</p>
+    <p>Zoledronate 有效減髖骨折；骨肉瘤風險屬 PTH 類。<span class="src"> ｜ BM112_Block 8 期中考(含申覆內容與結果) 第 11 頁</span></p>
+  </details>
+</article>
+<h3><span class="yearchip">111 年</span>第 46–48 題</h3>
+<article data-question-id="111fin-bm111-p37-q46" data-placement="final" class="repeat">
+  <span class="qhead">111 年 第 46 題</span><span class="repeat-badge">重複考點 ×4</span>
+  <p class="repeat-note">同考點：110 第76題、112 第5題、113 第5題　—　RANKL／OPG 機轉與 SERM 的三個特性</p>
+  <p class="stem">Which of the following is right?</p>
+  <ul class="opts"><li>(A) Osteoprotegrin (OPG) can inhibit proliferation of osteoclast and induce the apoptosis of osteoclast</li><li>(B) Bisphosphonates may lead to the side effect of leg cramps</li><li>(C) Selective estrogen receptor modulator can reduce hip fracture rate</li><li>(D) Bisphosphonates increase the risk of thromboembolism</li></ul>
+  <details data-kind="answer"><summary>答案與詳解</summary>
+    <div data-kind="zh-translation"><p><strong>中文題目：</strong>下列何者正確？</p>
+      <p>(A) 骨保護素（OPG）可抑制破骨細胞增生並誘導其凋亡。</p>
+      <p>(B) 雙磷酸鹽可能導致腿抽筋的副作用。</p>
+      <p>(C) SERM 可降低髖骨折率。</p>
+      <p>(D) 雙磷酸鹽增加血栓栓塞風險。</p></div>
+    <p class="ans">答案：A</p>
+    <p>OPG 抑制破骨並誘導凋亡，與 113 年第 5 題逐字相同。<span class="src"> ｜ BM111 BLOCK-8 期末考詳解 第 37 頁</span></p>
+  </details>
+</article>
+<article data-question-id="111fin-bm111-p37-q47" data-placement="final" class="repeat">
+  <span class="qhead">111 年 第 47 題</span><span class="repeat-badge">重複考點 ×4</span>
+  <p class="repeat-note">同考點：110 第78題、112 第6題、113 第6題　—　療效時程、急性期反應、藥物假期與心血管禁忌</p>
+  <p class="stem">Which of the following is right?</p>
+  <ul class="opts"><li>(A) It takes more than one year to achieve the effect of fracture reduction by anti-osteoporotic medication</li><li>(B) Anti-sclerostin antibody can activate T cell lead to acute phase reaction</li><li>(C) Selective estrogen receptor modulator can have drug holiday</li><li>(D) Teriparatide cannot be use in those who have myocardial infarction or stroke</li></ul>
+  <details data-kind="answer"><summary>答案與詳解</summary>
+    <div data-kind="zh-translation"><p><strong>中文題目：</strong>下列何者正確？</p>
+      <p>(A) 抗骨質疏鬆藥物需治療超過一年才能達到減少骨折的效果。</p>
+      <p>(B) 抗硬化蛋白抗體會活化 T 細胞導致急性期反應。</p>
+      <p>(C) SERM 可以有藥物假期。</p>
+      <p>(D) Teriparatide 不可用於曾發生心肌梗塞或中風者。</p></div>
+    <p class="ans">答案：A</p>
+    <p>療效需一年以上；藥物假期為注射滿三年或口服滿五年。<span class="src"> ｜ BM111 BLOCK-8 期末考詳解 第 37 頁</span></p>
+  </details>
+</article>
+<article data-question-id="111fin-bm111-p38-q48" data-placement="final" class="repeat">
+  <span class="qhead">111 年 第 48 題</span><span class="repeat-badge">重複考點 ×4</span>
+  <p class="repeat-note">同考點：110 第77題、112 第7題、113 第7題　—　腎功能、口服吸收率與髖骨折療效</p>
+  <p class="stem">Which of the following is right?</p>
+  <ul class="opts"><li>(A) Teriparatide cannot be use in those who have poor renal function</li><li>(B) Prolong anti-sclerostin antibody will lead to the risk of osteosarcoma</li><li>(C) Oral bisphosphonates is absorbed well with a absorption rate about 90%</li><li>(D) Denosumab can efficiently reduce hip fracture</li></ul>
+  <details data-kind="answer"><summary>答案與詳解</summary>
+    <div data-kind="zh-translation"><p><strong>中文題目：</strong>下列何者正確？</p>
+      <p>(A) Teriparatide 不可用於腎功能不良者。</p>
+      <p>(B) 長期使用抗硬化蛋白抗體會導致骨肉瘤風險。</p>
+      <p>(C) 口服雙磷酸鹽吸收良好，吸收率約 90%。</p>
+      <p>(D) Denosumab 可有效減少髖骨折。</p></div>
+    <p class="ans">答案：D</p>
+    <p>Denosumab 有效減髖骨折；口服吸收率 0.64%。<span class="src"> ｜ BM111 BLOCK-8 期末考詳解 第 38 頁</span></p>
+  </details>
+</article>
+<h3><span class="yearchip">110 年</span>第 76–78 題</h3>
+<article data-question-id="110fin-bm110-p96-q76" data-placement="final" class="repeat">
+  <span class="qhead">110 年 第 76 題</span><span class="repeat-badge">重複考點 ×4</span>
+  <p class="repeat-note">同考點：111 第46題、112 第5題、113 第5題　—　RANKL／OPG 機轉與 SERM 的三個特性</p>
+  <p class="stem">Which of the following is right?</p>
+  <ul class="opts"><li>(A) Anti-sclerostin antibody can enhance osteoclastogenesis and decrease apoptosis of osteoclast</li><li>(B) Drug holiday can be performed in patients with Teriparatide treatment</li><li>(C) Anti-sclerostin antibody can efficiently decrease hip fracture incidence</li><li>(D) Selective estrogen receptor modulator (SERM) increases risk of thromboembolism</li></ul>
+  <details data-kind="answer"><summary>答案與詳解</summary>
+    <div data-kind="zh-translation"><p><strong>中文題目：</strong>下列何者正確？</p>
+      <p>(A) 抗硬化蛋白抗體可增強破骨細胞生成並減少其凋亡。</p>
+      <p>(B) 使用 Teriparatide 的患者可以有藥物假期。</p>
+      <p>(C) 抗硬化蛋白抗體可有效降低髖骨折發生率。</p>
+      <p>(D) SERM 增加血栓栓塞風險。</p></div>
+    <p class="ans">答案：D</p>
+    <p>SERM 增加血栓；抗硬化蛋白抗體是促骨生成且無髖骨折資料。<span class="src"> ｜ BM110 BLOCK-8 期末考詳解 (審後附上申覆) 第 96 頁</span></p>
+  </details>
+</article>
+<article data-question-id="110fin-bm110-p101-q77" data-placement="final" class="repeat">
+  <span class="qhead">110 年 第 77 題</span><span class="repeat-badge">重複考點 ×4</span>
+  <p class="repeat-note">同考點：111 第48題、112 第7題、113 第7題　—　腎功能、口服吸收率與髖骨折療效</p>
+  <p class="stem">Which of following is right?</p>
+  <ul class="opts"><li>(A) Denosumab can NOT be used in patients with poor renal function</li><li>(B) Oral bisphosphonates absorption rate is about &lt;1%</li><li>(C) Three-month treatment with anti-osteoporotic medication can efficiently decrease fracture rate</li><li>(D) Selective estrogen receptor modulator (SERM) can increase diameter of long bone</li></ul>
+  <details data-kind="answer"><summary>答案與詳解</summary>
+    <div data-kind="zh-translation"><p><strong>中文題目：</strong>下列何者正確？</p>
+      <p>(A) Denosumab 不可用於腎功能不良的患者。</p>
+      <p>(B) 口服雙磷酸鹽的吸收率約小於 1%。</p>
+      <p>(C) 使用抗骨質疏鬆藥物治療三個月即可有效降低骨折率。</p>
+      <p>(D) SERM 可增加長骨的直徑。</p></div>
+    <p class="ans">答案：B</p>
+    <p>口服雙磷酸鹽吸收率 &lt;1%；增加長骨直徑的是 Teriparatide。<span class="src"> ｜ BM110 BLOCK-8 期末考詳解 (審後附上申覆) 第 101 頁</span></p>
+  </details>
+</article>
+<article data-question-id="110fin-bm110-p102-q78" data-placement="final" class="repeat">
+  <span class="qhead">110 年 第 78 題</span><span class="repeat-badge">重複考點 ×4</span>
+  <p class="repeat-note">同考點：111 第47題、112 第6題、113 第6題　—　療效時程、急性期反應、藥物假期與心血管禁忌</p>
+  <p class="stem">Which of following is right?</p>
+  <ul class="opts"><li>(A) Side effect of selective estrogen receptor modulator (SERM) includes leg cramps</li><li>(B) Selective estrogen receptor modulator (SERM) can efficiently decrease hip fracture incidence</li><li>(C) Those who had previous radiotherapy at bone should not receive bisphosphonates</li><li>(D) Anti-sclerostin antibody can be used in patients with (myocardial infarction) or stroke within the preceding year</li></ul>
+  <details data-kind="answer"><summary>答案與詳解</summary>
+    <div data-kind="zh-translation"><p><strong>中文題目：</strong>下列何者正確？</p>
+      <p>(A) SERM 的副作用包含腿抽筋。</p>
+      <p>(B) SERM 可有效降低髖骨折發生率。</p>
+      <p>(C) 曾接受骨骼放射治療者不應接受雙磷酸鹽。</p>
+      <p>(D) 抗硬化蛋白抗體可用於一年內曾發生心肌梗塞或中風的患者。</p></div>
+    <p class="ans">答案：A</p>
+    <p>SERM 副作用含腿抽筋；放療後禁用的是 Teriparatide。<span class="src"> ｜ BM110 BLOCK-8 期末考詳解 (審後附上申覆) 第 102 頁</span></p>
+  </details>
+</article>
+<p class="ending">七份卷宗歸檔。骨頭壞掉的方式就這幾種——認出是哪一種，剩下的就只是把細節填回去。</p>
+</section>
+</div>
+</body>
+</html>
