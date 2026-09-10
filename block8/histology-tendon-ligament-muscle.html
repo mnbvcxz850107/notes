@@ -1,0 +1,1279 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>組織學-肌腱、韌帶、肌肉 陳永佳</title>
+<style>
+:root{
+  color-scheme: dark;
+  --bg:#0b0e13; --panel:#141922; --panel2:#1b2230; --line:#2a3340;
+  --ink:#e8ecf3; --dim:#a3adbd; --gold:#e5b567; --cyan:#6fd3c7;
+  --rose:#e88b8b; --violet:#a99bf0;
+}
+*{box-sizing:border-box}
+html{font-size:150%}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font-family:"Noto Sans TC","PingFang TC","Helvetica Neue",system-ui,sans-serif;
+  line-height:1.85; overflow-wrap:anywhere;}
+/* Width follows the device, not the font size: px breakpoints stay put
+   while rem-based type scales with the 150% root. */
+.container{width:100%;max-width:none;margin:0 auto;
+  padding:clamp(.85rem,2.2vw,2.2rem);}
+@media (min-width:760px){ .container{max-width:730px} }
+@media (min-width:1024px){ .container{max-width:980px} }
+@media (min-width:1440px){ .container{max-width:1300px} }
+@media (min-width:1920px){ .container{max-width:1640px} }
+img{max-width:100%;height:auto}
+svg{max-width:100%;height:auto;display:block}
+h1{font-size:1.6rem;line-height:1.35;margin:.2rem 0 .6rem}
+h2{font-size:1.24rem;margin:2.4rem 0 .7rem;padding-bottom:.4rem;
+  border-bottom:1px solid var(--line);color:var(--gold)}
+h3{font-size:1.06rem;margin:1.5rem 0 .5rem;color:var(--cyan)}
+p{margin:.7rem 0}
+header#subject-overview{background:linear-gradient(160deg,#182031,#0e1219);
+  border:1px solid var(--line);border-radius:14px;padding:1.2rem;margin:.6rem 0 1.4rem}
+.meta{color:var(--dim);font-size:.86rem;margin:.3rem 0 0}
+nav#toc{background:var(--panel);border:1px solid var(--line);
+  border-radius:12px;padding:.9rem 1.1rem;margin:1.2rem 0}
+nav#toc ol{margin:.4rem 0 0;padding-left:1.3rem}
+nav#toc a{color:var(--ink);text-decoration:none;border-bottom:1px dotted var(--line)}
+.story{background:var(--panel2);border-left:3px solid var(--violet);
+  border-radius:0 10px 10px 0;padding:.9rem 1.1rem;margin:1.1rem 0}
+.story .tag{display:block;color:var(--violet);font-size:.78rem;
+  letter-spacing:.12em;margin-bottom:.35rem}
+.reality{background:var(--panel);border-left:3px solid var(--cyan);
+  border-radius:0 10px 10px 0;padding:.9rem 1.1rem;margin:1.1rem 0}
+.reality .tag{display:block;color:var(--cyan);font-size:.78rem;
+  letter-spacing:.12em;margin-bottom:.35rem}
+.keybox{background:#12202b;border:1px solid #26485a;border-radius:10px;
+  padding:.85rem 1rem;margin:1.1rem 0}
+.keybox b{color:var(--cyan)}
+.warn{background:#2a1c1c;border:1px solid #573434;border-radius:10px;
+  padding:.85rem 1rem;margin:1.1rem 0;color:#f0cfcf}
+article{background:var(--panel);border:1px solid var(--line);
+  border-radius:12px;padding:.95rem 1.05rem;margin:1.1rem 0}
+article .qhead{display:block;color:var(--gold);font-size:.82rem;
+  letter-spacing:.06em;margin-bottom:.45rem}
+article .stem{margin:.2rem 0 .5rem}
+article ul.opts{list-style:none;margin:.3rem 0 .2rem;padding:0}
+article ul.opts li{padding:.16rem 0 .16rem .2rem;color:#dbe2ec}
+details{background:#0f141c;border:1px solid var(--line);
+  border-radius:10px;padding:.15rem .8rem;margin:.6rem 0}
+details summary{cursor:pointer;padding:.6rem 0;color:var(--gold);
+  font-weight:600;min-height:44px;display:flex;align-items:center}
+details[data-kind="answer"] .ans{font-size:1.05rem;color:var(--cyan);font-weight:700}
+div[data-kind="zh-translation"]{background:#141c26;border:1px dashed #33465c;
+  border-radius:8px;padding:.7rem .85rem;margin:.5rem 0 .8rem}
+div[data-kind="zh-translation"] p{margin:.35rem 0}
+.src{color:var(--dim);font-size:.84rem;margin-top:.6rem}
+.quote{border-left:2px solid var(--gold);padding-left:.75rem;color:#f0e2c6}
+.infer{color:#f0d9a8;font-size:.92rem}
+figure{margin:1.3rem 0;background:var(--panel2);border:1px solid var(--line);
+  border-radius:12px;padding:.9rem}
+figcaption{color:var(--dim);font-size:.85rem;margin-top:.6rem;text-align:center}
+dl.vocab{margin:0}
+dl.vocab dt{color:var(--cyan);font-weight:700;margin-top:.9rem}
+dl.vocab dd{margin:.2rem 0 0;padding-left:0}
+dl.vocab .root{color:var(--dim);font-size:.86rem}
+.cram{background:var(--panel);border:1px solid var(--line);
+  border-radius:12px;padding:.4rem 1.1rem;margin:1rem 0}
+.cram li{margin:.55rem 0}
+.yearchip{display:inline-block;background:#233046;color:#bcd0ea;
+  border-radius:999px;padding:.05rem .55rem;font-size:.76rem;margin-right:.4rem}
+article.repeat{border:2px solid #e05252;box-shadow:0 0 0 3px rgba(224,82,82,.12)}
+article.repeat .qhead{color:#f08a8a}
+.repeat-badge{display:inline-block;background:#3a1c1c;border:1px solid #7d3a3a;
+  color:#f0a8a8;border-radius:999px;padding:.1rem .6rem;font-size:.76rem;
+  margin-left:.4rem;white-space:nowrap}
+.repeat-note{color:#e6a5a5;font-size:.84rem;margin:.45rem 0 0}
+figure.boxfig{margin:1.5rem 0 .5rem;background:transparent;border:0;padding:0}
+figure.boxfig img{border-radius:12px;border:1px solid var(--line);display:block;width:100%}
+figure.boxfig figcaption{color:var(--dim);font-size:.82rem;margin-top:.5rem;
+  text-align:left;line-height:1.6}
+figure.boxfig .figtag{color:var(--violet);font-size:.76rem;letter-spacing:.1em;
+  display:block;margin-bottom:.3rem}
+.ending{color:var(--dim);font-style:italic;margin:1.6rem 0 2.4rem}
+</style></head>
+<body>
+<div class="container">
+
+<header id="subject-overview">
+  <h1>組織學-肌腱、韌帶、肌肉</h1>
+  <p>本科二十題，<b>十七題是重複考點</b>——重複率是 Block 8 全部科目裡最高的。三年來只反覆問六件事，而且題幹句型幾乎逐字沿用，連干擾選項都在同一個池子裡輪流出現。</p>
+  <p>六個考點是：<b>三聯體</b>的組成、<b>三種肌肉的比較表</b>、<b>平滑肌</b>的特別之處、<b>纖維型別</b>與疲勞、<b>誰擋住肌凝蛋白結合位</b>、以及<b>收縮時哪些帶會變</b>。老師自己在 113 年的詳解裡說得很白：「這題是將 BM112 題目稍作調整」、「三種肌肉比較的表格需要做記憶」。<b>把那張表背起來，這一科就結束了。</b></p>
+  <p class="meta">命題老師：陳永佳 ｜ 收錄 111、112、113 期中考，共 20 題（111／112 各 6 題、113 年 8 題）</p>
+</header>
+
+<nav id="toc">
+  <b>目錄</b>
+  <ol>
+    <li><a href="#chapter-1">三層外衣：切片上怎麼認</a></li>
+    <li><a href="#chapter-2">三聯體：兩個終池夾一根管</a></li>
+    <li><a href="#chapter-3">三種肌肉的比較表</a></li>
+    <li><a href="#chapter-4">平滑肌的四個特別之處</a></li>
+    <li><a href="#chapter-5">纖維型別：耐力型與爆發型</a></li>
+    <li><a href="#chapter-6">收縮：誰擋住誰、哪一帶會變</a></li>
+    <li><a href="#chapter-cram">考前速記</a></li>
+    <li><a href="#chapter-vocab">單字表</a></li>
+    <li><a href="#chapter-final">歷年考題總複習</a></li>
+  </ol>
+</nav>
+<section id="chapter-1" data-chapter-kind="story">
+<h2>一、三層外衣：切片上怎麼認</h2>
+
+<figure class="boxfig" data-visual-id="tmbox-01-story" data-image-kind="story" data-explanation-verified="true">
+<span class="figtag">情境場景</span>
+<img data-visual-id="tmbox-01-story" src="img/tmbox-01-story.webp" alt="情境場景：一整條電纜、一束線、一根線——肌肉的三層外衣就是這樣包的。" loading="lazy" decoding="async" width="1600" height="914">
+<figcaption>情境場景：一整條電纜、一束線、一根線——肌肉的三層外衣就是這樣包的。</figcaption>
+</figure>
+<div class="story" data-prose-kind="story"><span class="tag">故事</span>
+<p>把一塊骨骼肌想成一條<b>電纜</b>。</p>
+<p>整條電纜外面有一層厚厚的<b>總外皮</b>，那是<b>肌外膜</b>（epimysium）。剝開它，裡面是好幾<b>束</b>電線，每一束外面又各自包了一層皮，那是<b>肌束膜</b>（perimysium）。再剝開一束，裡面是一<b>根一根</b>的細線，每一根外面還有一層薄得幾乎看不見的皮，那是<b>肌內膜</b>（endomysium）。</p>
+<p><b>外 → 束 → 根，三層由粗到細。</b></p>
+<p>「那切片上怎麼分？」實習醫師問。</p>
+<p>「看<b>細胞核在哪裡</b>。」</p>
+<p>「骨骼肌纖維是很多細胞融合成的，所以它的核<b>全部被擠到最邊緣</b>，貼著細胞膜排一圈。所以你在橫切片上看到一個粉紅色的圓，如果<b>核只長在圓的邊緣、中間空空的</b>——那就是<b>一根肌纖維</b>，它外面那層就是<b>肌內膜</b>。」</p>
+<p>「如果是一整束呢？」</p>
+<p>「那是好幾根肌纖維擠在一起。粉紅色區域<b>內部也會有核</b>，因為那是別根纖維的核。這時候外面那層才是<b>肌束膜</b>。」</p>
+<p>113 年就有人為了這一題申覆——說圖上沒附倍率，分不出來是一根還是一束。老師的回答就是上面這句話：<b>看核有沒有跑到中間去。</b></p>
+</div>
+
+<figure class="boxfig" data-visual-id="tmbox-02-reality" data-image-kind="comparison" data-explanation-verified="true">
+<span class="figtag">切片判讀</span>
+<img data-visual-id="tmbox-02-reality" src="img/tmbox-02-reality.webp" alt="切片判讀：三種肌肉在橫切與縱切下的樣子，以及核的位置。" loading="lazy" decoding="async" width="1600" height="914">
+<figcaption>切片判讀：三種肌肉在橫切與縱切下的樣子，以及核的位置。</figcaption>
+</figure>
+<div class="reality"><span class="tag">回到現實</span>
+<p>113 年前面兩題是<b>看圖題</b>，考的是最基本的切片辨識。三種肌肉在切片上的差別：</p>
+<p><b>骨骼肌</b>：細胞很大、呈長條圓柱狀，<b>有橫紋</b>，<b>多核且核全部在周邊</b>。橫切面是一個個多角形的粉紅色區塊，核貼在邊上。</p>
+<p><b>心肌</b>：<b>有橫紋</b>，但<b>單核（偶爾雙核）且核在中央</b>，細胞會分叉，細胞之間有<b>間盤</b>（intercalated disc）。</p>
+<p><b>平滑肌</b>：<b>沒有橫紋</b>，細胞呈<b>紡錘形</b>，<b>單核且核在中央</b>。縱切像一束交錯的梭形細胞，橫切則是大小不一的圓，只有切到細胞中段的那些才看得到核。</p>
+<p>而三層結締組織的判斷，老師講得很具體：</p>
+<p class="quote">詳解原文（113 第 15 題，申覆後維持原答案）:「如果是更小倍率的fascicle裡面含有很多muscle fiber，則粉紅色內部會有其他細胞核存在，而不會像題目附圖上這樣所有細胞核都在邊上，維持原答案(C)。」</p>
+<p class="quote">「(B) perimysium(老師附的圖) ─ 粉紅色內部 &amp; 邊緣都有細胞核　(C) endomysium ─ 只有邊緣有細胞核」</p>
+<p class="infer">所以判準只有一句：<b>核只在邊緣＝單根纖維＝肌內膜；核也出現在中間＝一整束＝肌束膜。</b></p>
+</div>
+
+<article data-question-id="113-p18-q14" data-placement="chapter">
+  <span class="qhead">113 年 期中考 第 14 題 ｜ 圖片題</span>
+  <p class="stem">Observe the histological features. What is the correct combination of tissue species and section orientation in the figure?</p>
+  <ul class="opts">
+    <li>(A) cross sectioned cardiac muscle</li>
+    <li>(B) longitudinal sectioned smooth muscle</li>
+    <li>(C) cross sectioned smooth muscle</li>
+    <li>(D) cross sectioned skeletal muscle</li>
+  </ul>
+  <details data-kind="answer">
+    <summary>答案與詳解</summary>
+    <div data-kind="zh-translation">
+      <p><strong>中文題目：</strong>觀察圖中的組織學特徵。圖中的<b>組織種類與切面方向</b>的正確組合為下列何者？</p>
+      <p>(A) 橫切的心肌</p>
+      <p>(B) 縱切的平滑肌</p>
+      <p>(C) 橫切的平滑肌</p>
+      <p>(D) 橫切的骨骼肌</p>
+    </div>
+    <p class="ans">答案：(D)</p>
+    <p>原卷<b>詳解欄留空</b>，只給了答案與出處（ppt pg.6）。判準是<b>多角形的粉紅色區塊＋核全部貼在邊緣</b>——那是骨骼肌的橫切面。心肌核在中央、平滑肌沒有橫紋且細胞小得多。</p>
+    <p class="src">出處：陳永佳-組織學-肌腱、韌帶、肌肉-ppt pg6 ｜ BM113_Block8期中考詳解.pdf 第 18 頁</p>
+  </details>
+</article>
+
+<article data-question-id="113-p19-q15" data-placement="chapter">
+  <span class="qhead">113 年 期中考 第 15 題 ｜ 圖片題 ｜ 申覆後維持原答案</span>
+  <p class="stem">What is the structure indicated by the black arrow?</p>
+  <ul class="opts">
+    <li>(A) epimysium</li>
+    <li>(B) perimysium</li>
+    <li>(C) endomysium</li>
+    <li>(D) adipocyte</li>
+  </ul>
+  <details data-kind="answer">
+    <summary>答案與詳解</summary>
+    <div data-kind="zh-translation">
+      <p><strong>中文題目：</strong>黑色箭頭所指的構造是什麼？</p>
+      <p>(A) 肌外膜</p>
+      <p>(B) 肌束膜</p>
+      <p>(C) 肌內膜</p>
+      <p>(D) 脂肪細胞</p>
+    </div>
+    <p class="ans">答案：(C)</p>
+    <p class="quote">詳解原文:「(B) perimysium(老師附的圖) ─ 粉紅色內部 &amp; 邊緣都有細胞核　(C) endomysium ─ 只有邊緣有細胞核」</p>
+    <p class="quote">申覆結果（維持原答案）:「如果是更小倍率的fascicle裡面含有很多muscle fiber，則粉紅色內部會有其他細胞核存在，而不會像題目附圖上這樣所有細胞核都在邊上，維持原答案(C)。」</p>
+    <p>申覆主張圖沒附倍率、分不出是一根還是一束。老師的判準是<b>核的分布</b>：圖上所有核都在邊緣，代表那是<b>單一條肌纖維</b>，包住它的就是肌內膜。</p>
+    <p class="src">出處：組織學-肌腱、韌帶、肌肉 陳永佳 ppt p.5,6 ｜ BM113_Block8期中考詳解.pdf 第 19 頁</p>
+  </details>
+</article>
+</section>
+<section id="chapter-2" data-chapter-kind="story">
+<h2>二、三聯體：兩個終池夾一根管</h2>
+
+<figure class="boxfig" data-visual-id="tmbox-03-story" data-image-kind="story" data-explanation-verified="true">
+<span class="figtag">情境場景</span>
+<img data-visual-id="tmbox-03-story" src="img/tmbox-03-story.webp" alt="情境場景：一條把訊號送進深處的隧道，兩側各停一個鈣的水塔。" loading="lazy" decoding="async" width="1600" height="914">
+<figcaption>情境場景：一條把訊號送進深處的隧道，兩側各停一個鈣的水塔。</figcaption>
+</figure>
+<div class="story" data-prose-kind="story"><span class="tag">故事</span>
+<p>骨骼肌纖維又粗又長。當電訊號沿著細胞膜跑過來時，<b>細胞最深處的肌絲怎麼知道要收縮？</b></p>
+<p>解法是<b>挖隧道</b>。細胞膜往內凹陷、一路鑽進細胞深處，形成一條條橫向的管子，叫 <b>T 小管</b>（T-tubule）。電訊號就順著隧道直接送進去。</p>
+<p>而收縮真正需要的是<b>鈣離子</b>。鈣被存放在細胞內一套特化的內質網裡，叫<b>肌漿網</b>（sarcoplasmic reticulum）。肌漿網在靠近 T 小管的地方會<b>膨大</b>成一個個儲水槽，那就是<b>終池</b>（terminal cisternae）。</p>
+<p>所以最後的配置是：<b>一根 T 小管，兩側各貼著一個終池</b>。這三個湊在一起，就叫<b>三聯體</b>（triad）。</p>
+<p>「為什麼是兩個？」</p>
+<p>「因為隧道有兩側，兩邊都要能放水。」</p>
+<p>這個考點三年考了三次，每次換一種問法：111 年問「終池是由什麼形成的」，112 與 113 年直接問「三聯體由什麼組成」。<b>答案永遠是同一張圖。</b></p>
+</div>
+
+<figure class="boxfig" data-visual-id="tmbox-04-reality" data-image-kind="mechanism" data-explanation-verified="true">
+<span class="figtag">三聯體圖解</span>
+<img data-visual-id="tmbox-04-reality" src="img/tmbox-04-reality.webp" alt="三聯體圖解：一根 T 小管加兩側的終池，終池由肌漿網膨大而成。" loading="lazy" decoding="async" width="1600" height="914">
+<figcaption>三聯體圖解：一根 T 小管加兩側的終池，終池由肌漿網膨大而成。</figcaption>
+</figure>
+<div class="reality"><span class="tag">回到現實</span>
+<p class="quote">詳解原文（111）:「ppt中可以看到terminal cisternae為sarcoplasmic reticulum的一部分。」</p>
+<p class="quote">詳解原文（113）:「The complex of the T tubule and the two adjacent terminal cisternae is called a “Triad.”」</p>
+<p>三句話記完：</p>
+<p>① <b>T 小管＝細胞膜向內凹陷</b>形成的橫向管道，負責把電訊號送進細胞深處。<br>
+② <b>終池＝肌漿網（一種特化的滑面內質網）膨大而成</b>的鈣離子儲存槽。<br>
+③ <b>三聯體＝兩個終池夾住一根 T 小管</b>。</p>
+<p>三年的干擾選項全部來自同一個池子：</p>
+<p>・<b>thick / thin filament（粗、細肌絲）</b>——那是收縮的機器，不是鈣的倉庫。<br>
+・<b>invagination of sarcoplasm（肌漿內陷）</b>——凹陷進去的是<b>細胞膜</b>，不是肌漿。<br>
+・<b>caveolae（小窩）</b>——那是<b>平滑肌</b>用來取代 T 小管的構造，出現在骨骼肌的選項裡就是錯的。<br>
+・<b>「一根 T 小管配一個終池」</b>——那叫 <b>diad（雙聯體）</b>，是<b>心肌</b>的配置，不是骨骼肌。</p>
+<p class="infer">補充（非詳解內容，但很好用）：<b>骨骼肌 triad（三），心肌 diad（二）。</b>113 年的 (A) 就是把心肌的配置寫進骨骼肌的題目裡。</p>
+</div>
+
+<article data-question-id="111-p19-q22" data-placement="chapter">
+  <span class="qhead">111 年 期中考 第 22 題</span>
+  <p class="stem">The structure terminal cisternae are formed by?</p>
+  <ul class="opts">
+    <li>(A) thick filaments</li>
+    <li>(B) thin filament</li>
+    <li>(C) enlarged sarcoplasmic reticulum</li>
+    <li>(D) invagination of sarcoplasm</li>
+  </ul>
+  <details data-kind="answer">
+    <summary>答案與詳解</summary>
+    <div data-kind="zh-translation">
+      <p><strong>中文題目：</strong>終池這個構造是由什麼形成的？</p>
+      <p>(A) 粗肌絲</p>
+      <p>(B) 細肌絲</p>
+      <p>(C) 膨大的肌漿網</p>
+      <p>(D) 肌漿的內陷</p>
+    </div>
+    <p class="ans">答案：(C) enlarged sarcoplasmic reticulum</p>
+    <p class="quote">詳解原文:「ppt中可以看到terminal cisternae為sarcoplasmic reticulum的一部分。」</p>
+    <p>(D) 是最像的陷阱：<b>內陷形成的是 T 小管，而且內陷的是「細胞膜」不是「肌漿」</b>。終池是肌漿網自己膨大出來的。</p>
+    <p class="src">出處：陳永佳 組織學-肌腱、韌帶、肌肉(ppt pg.33) ｜ BM111 BLOCK-8 期中考詳解.pdf 第 19 頁</p>
+  </details>
+</article>
+
+<article data-question-id="112-p34-q22" data-placement="chapter">
+  <span class="qhead">112 年 期中考 第 22 題</span>
+  <p class="stem">The structure triad is formed by?</p>
+  <ul class="opts">
+    <li>(A) thin filament</li>
+    <li>(B) thick filaments</li>
+    <li>(C) two enlarged sarcoplasmic reticulum and one T-tubule</li>
+    <li>(D) two caveolae and endoplasmic reticulum (ER)</li>
+  </ul>
+  <details data-kind="answer">
+    <summary>答案與詳解</summary>
+    <div data-kind="zh-translation">
+      <p><strong>中文題目：</strong>三聯體這個構造由什麼組成？</p>
+      <p>(A) 細肌絲</p>
+      <p>(B) 粗肌絲</p>
+      <p>(C) 兩個膨大的肌漿網加一根 T 小管</p>
+      <p>(D) 兩個小窩加內質網</p>
+    </div>
+    <p class="ans">答案：C</p>
+    <p>原卷<b>詳解欄留空</b>。<b>二比一：兩個終池、一根 T 小管。</b>(D) 的 caveolae 是平滑肌的構造。</p>
+    <p class="src">出處：陳永佳 肌腱、韌帶、肌肉組織學（ppt pg.18） ｜ BM112_Block 8 期中考(含申覆內容與結果).pdf 第 34 頁</p>
+  </details>
+</article>
+
+<article data-question-id="113-p36-q25" data-placement="chapter">
+  <span class="qhead">113 年 期中考 第 25 題</span>
+  <p class="stem">In skeletal muscle, what components form a triad?</p>
+  <ul class="opts">
+    <li>(A) One T-tubule and one terminal cisterna of sarcoplasmic reticulum</li>
+    <li>(B) One T-tubule and two thick filaments</li>
+    <li>(C) Two terminal cisternae of sarcoplasmic reticulum flanking one T-tubule</li>
+    <li>(D) Two caveolae and one smooth endoplasmic reticulum</li>
+  </ul>
+  <details data-kind="answer">
+    <summary>答案與詳解</summary>
+    <div data-kind="zh-translation">
+      <p><strong>中文題目：</strong>在骨骼肌中，三聯體由哪些成分組成？</p>
+      <p>(A) 一根 T 小管與一個肌漿網終池</p>
+      <p>(B) 一根 T 小管與兩條粗肌絲</p>
+      <p>(C) 兩個肌漿網終池夾著一根 T 小管</p>
+      <p>(D) 兩個小窩與一個滑面內質網</p>
+    </div>
+    <p class="ans">答案：(C)</p>
+    <p class="quote">詳解原文:「The complex of the T tubule and the two adjacent terminal cisternae is called a “Triad.”」</p>
+    <p>與 112 年第 22 題同一件事，選項寫得更精確。<b>(A) 「一管一池」是心肌的雙聯體（diad）</b>，這裡是最主要的陷阱。</p>
+    <p class="src">出處：組織學-肌腱、韌帶、肌肉 陳永佳 page15 ｜ BM113_Block8期中考詳解.pdf 第 36 頁</p>
+  </details>
+</article>
+</section>
+<section id="chapter-3" data-chapter-kind="story">
+<h2>三、三種肌肉的比較表</h2>
+
+<figure class="boxfig" data-visual-id="tmbox-05-story" data-image-kind="story" data-explanation-verified="true">
+<span class="figtag">情境場景</span>
+<img data-visual-id="tmbox-05-story" src="img/tmbox-05-story.webp" alt="情境場景：老師直接說了——這張表要背起來。" loading="lazy" decoding="async" width="1600" height="914">
+<figcaption>情境場景：老師直接說了——這張表要背起來。</figcaption>
+</figure>
+<div class="story" data-prose-kind="story"><span class="tag">故事</span>
+<p>這一題三年考了三次，而且 113 年的詳解直接把底牌掀了：</p>
+<p class="quote">詳解原文（113）:「這題是將BM112題目稍作調整　同時老師上課有特別提示三種肌肉比較的表格需要做記憶」</p>
+<p>所以這一章沒有故事可講，只有一張表。但那張表裡<b>真正被拿去出題的只有四格</b>，其餘都是陪襯。</p>
+<p><b>第一格：間隙連接。</b>心肌有（靠間盤上的間隙連接同步收縮）、平滑肌有（整片一起蠕動）、<b>骨骼肌沒有</b>。骨骼肌每一條纖維都由自己的神經末梢單獨指揮，不需要跟鄰居通訊。<b>這一格三年被考了三次，全部是答案。</b></p>
+<p><b>第二格：肌節。</b>骨骼肌有、心肌有（所以兩者都有橫紋）、<b>平滑肌沒有</b>。平滑肌的肌絲是斜著拉在緻密體之間的，不排成整齊的肌節，所以看不到橫紋。</p>
+<p><b>第三格：再生能力。</b><b>平滑肌最好</b>（可以自由再生）；骨骼肌靠衛星細胞、受傷時有限度地再生；<b>心肌最差</b>。</p>
+<p><b>第四格：收縮的鈣接在誰身上。</b>骨骼肌與心肌都是<b>鈣結合到旋轉素 C（troponin C）</b>；平滑肌沒有旋轉素，走的是<b>攜鈣素（calmodulin）</b>那條路。</p>
+</div>
+
+<figure class="boxfig" data-visual-id="tmbox-06-reality" data-image-kind="comparison" data-explanation-verified="true">
+<span class="figtag">三肌對照表</span>
+<img data-visual-id="tmbox-06-reality" src="img/tmbox-06-reality.webp" alt="三肌對照表：橫紋、核的位置與數目、間隙連接、肌節、再生能力。" loading="lazy" decoding="async" width="1600" height="914">
+<figcaption>三肌對照表：橫紋、核的位置與數目、間隙連接、肌節、再生能力。</figcaption>
+</figure>
+<div class="reality"><span class="tag">回到現實</span>
+<p>三年的正確答案都是同一句：<b>骨骼肌沒有間隙連接。</b></p>
+<p class="quote">詳解原文（111）:「骨骼肌並沒有cell to cell junctions」</p>
+<p class="quote">詳解原文（112）:「(B) skeletal muscle cells absent the gap junctions」</p>
+<p>三年的句子被改寫成三種說法，但骨骼肌永遠在裡面：</p>
+<p>・111 年：<b>All of the three types</b> of muscle present gap junctions → 錯<br>
+・112 年：<b>skeletal</b> and smooth muscle cells present the gap junctions → 錯<br>
+・113 年：<b>skeletal</b> muscle cells can communicate via gap junctions → 錯</p>
+<p>而每一年陪襯的三個「正確敘述」也值得記下來，因為它們會輪流變成別題的選項：</p>
+<p>・<b>平滑肌沒有肌節</b>（111、112 都出現，皆為正確敘述）<br>
+・<b>鈣結合到 troponin C 啟動骨骼肌與心肌的收縮</b>（112、113 都出現，皆為正確敘述）<br>
+・<b>心肌有橫紋且不隨意</b>（113 年，正確）<br>
+・<b>平滑肌具再生能力</b>（113 年，正確）</p>
+</div>
+
+<figure class="boxfig" data-visual-id="tmbox-07-warn" data-image-kind="comparison" data-explanation-verified="true">
+<span class="figtag">申覆重點</span>
+<img data-visual-id="tmbox-07-warn" src="img/tmbox-07-warn.webp" alt="申覆重點：心肌到底能不能再生，老師的立場是「有證據支持」。" loading="lazy" decoding="async" width="1600" height="914">
+<figcaption>申覆重點：心肌到底能不能再生，老師的立場是「有證據支持」。</figcaption>
+</figure>
+<div class="warn"><span class="tag">這個申覆值得看</span>
+<p>111 年有人針對 (A)「受傷時骨骼肌與心肌可以再生」提出申覆，理由是老師自己的講義 pg.45 把心肌的再生欄寫成 <b>NONE</b>，而且成人心肌再生目前學界尚無定論。</p>
+<p><b>申覆結果：維持原答案。</b>老師的回覆是——</p>
+<p class="quote">申覆結果（老師回覆）:「因A選項雖如同學所說目前未有定論，但仍有不少證據支持cardiac regeneration的發現。」（並引用 Bergmann 等 2009 Science、Senyo 等 2013 Nature、Mollova 等 2013 PNAS 三篇）</p>
+<p class="infer">所以在這位老師的考卷上：<b>「心肌完全不能再生」不要當成絕對真理</b>，但<b>「骨骼肌沒有間隙連接」永遠是那個要選的錯項</b>。遇到這種題型，先找間隙連接那一句，找到就交卷，不要跟再生能力糾纏。</p>
+</div>
+
+<article data-question-id="111-p20-q23" data-placement="chapter">
+  <span class="qhead">111 年 期中考 第 23 題 ｜ 申覆後維持原答案</span>
+  <p class="stem">Which of the following description is false?</p>
+  <ul class="opts">
+    <li>(A) When injury, the skeletal muscle fibers and cardiomyocytes can undergo regeneration</li>
+    <li>(B) All of the three types of muscle present gap junctions</li>
+    <li>(C) Smooth muscle fibers do not present sarcomere</li>
+    <li>(D) In normal conditions, only the smooth muscle fibers could undergo regeneration freely.</li>
+  </ul>
+  <details data-kind="answer">
+    <summary>答案與詳解</summary>
+    <div data-kind="zh-translation">
+      <p><strong>中文題目：</strong>下列敘述何者<b>錯誤</b>？</p>
+      <p>(A) 受傷時，骨骼肌纖維與心肌細胞可以進行再生。</p>
+      <p>(B) 三種肌肉都具有間隙連接。</p>
+      <p>(C) 平滑肌纖維沒有肌節。</p>
+      <p>(D) 正常情況下，只有平滑肌纖維能自由地進行再生。</p>
+    </div>
+    <p class="ans">答案：(B) All of the three types of muscle present gap junctions</p>
+    <p class="quote">詳解原文:「骨骼肌並沒有cell to cell junctions」</p>
+    <p class="quote">申覆結果（維持原答案）:「因A選項雖如同學所說目前未有定論，但仍有不少證據支持cardiac regeneration的發現。」</p>
+    <p><b>骨骼肌沒有間隙連接</b>，所以「三種都有」是錯的。(C)(D) 兩句都正確。</p>
+    <p class="src">出處：陳永佳 組織學-肌腱、韌帶、肌肉(ppt pg.42) ｜ BM111 BLOCK-8 期中考詳解.pdf 第 20 頁</p>
+  </details>
+</article>
+
+<article data-question-id="112-p35-q23" data-placement="chapter">
+  <span class="qhead">112 年 期中考 第 23 題</span>
+  <p class="stem">Which of the following description is FALSE?</p>
+  <ul class="opts">
+    <li>(A) Only when injury, the skeletal muscle fibers and cardiomyocytes can undergo regeneration</li>
+    <li>(B) skeletal and smooth muscle cells present the gap junctions</li>
+    <li>(C) smooth muscle fibers do not present sarcomere</li>
+    <li>(D) By binding of calcium to troponin C, skeletal muscle and cardiac muscle start to contract.</li>
+  </ul>
+  <details data-kind="answer">
+    <summary>答案與詳解</summary>
+    <div data-kind="zh-translation">
+      <p><strong>中文題目：</strong>下列敘述何者<b>錯誤</b>？</p>
+      <p>(A) 只有在受傷時，骨骼肌纖維與心肌細胞才會進行再生。</p>
+      <p>(B) 骨骼肌與平滑肌細胞具有間隙連接。</p>
+      <p>(C) 平滑肌纖維沒有肌節。</p>
+      <p>(D) 鈣結合到旋轉素 C 後，骨骼肌與心肌開始收縮。</p>
+    </div>
+    <p class="ans">答案：B</p>
+    <p class="quote">詳解原文:「(B) skeletal muscle cells absent the gap junctions」</p>
+    <p>這年把「三種都有」縮小成「骨骼肌與平滑肌都有」，<b>只要句子裡出現骨骼肌＋間隙連接，就是錯的</b>。</p>
+    <p class="src">出處：陳永佳 肌腱、韌帶、肌肉組織學（ppt pg.43） ｜ BM112_Block 8 期中考(含申覆內容與結果).pdf 第 35 頁</p>
+  </details>
+</article>
+
+<article data-question-id="113-p36-q26" data-placement="chapter">
+  <span class="qhead">113 年 期中考 第 26 題</span>
+  <p class="stem">Which of the following statements about different muscle types is FALSE?</p>
+  <ul class="opts">
+    <li>(A) smooth muscle fibers have regeneration ability</li>
+    <li>(B) skeletal muscle cells can communicate via gap junctions</li>
+    <li>(C) skeletal muscle contraction is initiated by calcium binding to troponin C</li>
+    <li>(D) cardiac muscle fibers are striated and involuntary</li>
+  </ul>
+  <details data-kind="answer">
+    <summary>答案與詳解</summary>
+    <div data-kind="zh-translation">
+      <p><strong>中文題目：</strong>下列關於不同肌肉類型的敘述，何者<b>錯誤</b>？</p>
+      <p>(A) 平滑肌纖維具有再生能力。</p>
+      <p>(B) 骨骼肌細胞可以透過間隙連接互相溝通。</p>
+      <p>(C) 骨骼肌的收縮由鈣結合到旋轉素 C 啟動。</p>
+      <p>(D) 心肌纖維有橫紋且屬不隨意肌。</p>
+    </div>
+    <p class="ans">答案：(B)</p>
+    <p class="quote">詳解原文:「這題是將BM112題目稍作調整　同時老師上課有特別提示三種肌肉比較的表格需要做記憶」</p>
+    <p>第三年、第三種寫法，答案還是同一句。<b>老師自己在詳解裡說了這是 112 年的改編題。</b></p>
+    <p class="src">出處：組織學-肌腱、韌帶、肌肉 陳永佳 ｜ BM113_Block8期中考詳解.pdf 第 36 頁</p>
+  </details>
+</article>
+</section>
+<section id="chapter-4" data-chapter-kind="story">
+<h2>四、平滑肌的四個特別之處</h2>
+
+<figure class="boxfig" data-visual-id="tmbox-08-story" data-image-kind="story" data-explanation-verified="true">
+<span class="figtag">情境場景</span>
+<img data-visual-id="tmbox-08-story" src="img/tmbox-08-story.webp" alt="情境場景：沒有整齊的隊伍，卻能把整條管子擠成一團。" loading="lazy" decoding="async" width="1600" height="914">
+<figcaption>情境場景：沒有整齊的隊伍，卻能把整條管子擠成一團。</figcaption>
+</figure>
+<div class="story" data-prose-kind="story"><span class="tag">故事</span>
+<p>平滑肌是三兄弟裡最不像肌肉的那一個。它沒有橫紋、沒有肌節、細胞小得多，卻能把整條腸子或整條血管擠得變形。</p>
+<p>它的做法完全不同。骨骼肌是把肌絲排成整齊的隊伍（肌節），一節一節同時縮短；平滑肌則是把<b>肌絲斜拉成一張網</b>，兩端固定在細胞裡外散布的<b>錨點</b>上。那些錨點叫<b>緻密體</b>（dense body），功能相當於骨骼肌的 Z 線。</p>
+<p>肌絲一收，整顆細胞就<b>扭成麻花</b>——這就是為什麼平滑肌收縮時細胞會皺縮、而不是整齊地縮短。</p>
+<p>另外三件事也很好記，因為每一件都跟骨骼肌相反：</p>
+<p>・<b>細胞形狀是紡錘形</b>（fusiform），中間胖兩頭尖。<br>
+・<b>單核，而且核在細胞正中央</b>（骨骼肌是多核、核在邊緣）。<br>
+・細胞之間靠<b>間隙連接</b>溝通，所以能整片一起蠕動。</p>
+<p>還有兩個細節每年都拿來出題：平滑肌的<b>滑面內質網很發達</b>（因為它要自己管鈣），而它的粗肌絲排列是<b>側極性</b>（side-polar）——兩側的肌凝蛋白頭朝相反方向排，不像骨骼肌那樣中央有一段無頭的裸區。也因為這樣，<b>它沒有橫紋</b>。</p>
+</div>
+
+<figure class="boxfig" data-visual-id="tmbox-09-reality" data-image-kind="comparison" data-explanation-verified="true">
+<span class="figtag">平滑肌要點</span>
+<img data-visual-id="tmbox-09-reality" src="img/tmbox-09-reality.webp" alt="平滑肌要點：紡錘形、核在中央、緻密體、間隙連接、側極性粗肌絲。" loading="lazy" decoding="async" width="1600" height="914">
+<figcaption>平滑肌要點：紡錘形、核在中央、緻密體、間隙連接、側極性粗肌絲。</figcaption>
+</figure>
+<div class="reality"><span class="tag">回到現實</span>
+<p>113 年的詳解把整組事實列成四條，直接抄下來：</p>
+<p class="quote">詳解原文（113）:「下表請熟記　(A)只有平滑肌有Dense body這項Special feature　(B)骨骼肌心肌才有Sacromere　(C)平滑肌細胞的核在Central　(D)平滑肌的粗肌絲排列為Side-polar沒有Striated」</p>
+<p>再加上 111 年補的兩條：</p>
+<p class="quote">詳解原文（111）:「(A) by an gap junction　(C) present well-developed smooth ER　(D) The connective tissue of smooth fibers also contains endomysium, sheaths and bundles.」</p>
+<p>整理成平滑肌的<b>六個特徵</b>：</p>
+<p>① <b>紡錘形</b>細胞，細胞間靠<b>間隙連接</b>溝通（不是黏著連接、不是胞橋小體）。<br>
+② 細胞質<b>嗜伊紅</b>（eosinophilic，粉紅色），<b>核在中央</b>、<b>單核</b>。<br>
+③ 有<b>緻密體</b>——這是<b>只有平滑肌才有</b>的特徵。<br>
+④ <b>滑面內質網發達</b>。<br>
+⑤ <b>沒有肌節</b>、<b>沒有橫紋</b>。<br>
+⑥ 粗肌絲呈<b>側極性</b>排列。</p>
+<p class="infer">結締組織那一條要小心：平滑肌<b>有肌內膜</b>（endomysium），但沒有骨骼肌那種 <b>perimysium／epimysium</b> 的三層命名；111 年的 (D) 就是把骨骼肌的名詞硬套上去而變錯。</p>
+</div>
+
+<article data-question-id="111-p21-q24" data-placement="chapter">
+  <span class="qhead">111 年 期中考 第 24 題</span>
+  <p class="stem">Which of the following statements concerning smooth muscle is true?</p>
+  <ul class="opts">
+    <li>(A) Cells are fusiform shaped and communicate with each other by an adherent junction.</li>
+    <li>(B) The cytoplasm of smooth muscle is eosinophilic and its nuclei are localized in the central of the cell.</li>
+    <li>(C) The fibers have dense bodies but do not present well-developed smooth ER.</li>
+    <li>(D) The connective tissue of smooth fibers also contains endomysium and perimysium.</li>
+  </ul>
+  <details data-kind="answer">
+    <summary>答案與詳解</summary>
+    <div data-kind="zh-translation">
+      <p><strong>中文題目：</strong>關於平滑肌的敘述，何者<b>正確</b>？</p>
+      <p>(A) 細胞呈紡錘形，彼此以黏著連接溝通。</p>
+      <p>(B) 平滑肌的細胞質嗜伊紅，細胞核位於細胞中央。</p>
+      <p>(C) 纖維具有緻密體，但沒有發達的滑面內質網。</p>
+      <p>(D) 平滑肌纖維的結締組織也包含肌內膜與肌束膜。</p>
+    </div>
+    <p class="ans">答案：(B)</p>
+    <p class="quote">詳解原文:「(A) by an gap junction　(C) present well-developed smooth ER　(D) The connective tissue of smooth fibers also contains endomysium, sheaths and bundles.」</p>
+    <p>三個錯項各改一處：<b>是間隙連接不是黏著連接</b>、<b>滑面內質網是發達的</b>、<b>結締組織的命名不是 perimysium</b>。</p>
+    <p class="src">出處：陳永佳 組織學-肌腱、韌帶、肌肉(ppt pg.44) ｜ BM111 BLOCK-8 期中考詳解.pdf 第 21 頁</p>
+  </details>
+</article>
+
+<article data-question-id="112-p36-q24" data-placement="chapter">
+  <span class="qhead">112 年 期中考 第 24 題 ｜ 申覆後開放 (B)</span>
+  <p class="stem">Which of the following statements concerning smooth muscle is TRUE?</p>
+  <ul class="opts">
+    <li>(A) cells are fusiform shaped and communicate with each other by the desmosomes</li>
+    <li>(B) The fibers have dense bodies and well-developed smooth ER</li>
+    <li>(C) The cytoplasm of smooth muscle is basophilic and the nucleus is localized in the central of the cell</li>
+    <li>(D) the side-polar thick filament are present in smooth muscle</li>
+  </ul>
+  <details data-kind="answer">
+    <summary>答案與詳解</summary>
+    <div data-kind="zh-translation">
+      <p><strong>中文題目：</strong>關於平滑肌的敘述，何者<b>正確</b>？</p>
+      <p>(A) 細胞呈紡錘形，彼此以胞橋小體溝通。</p>
+      <p>(B) 纖維具有緻密體與發達的滑面內質網。</p>
+      <p>(C) 平滑肌的細胞質嗜鹼，細胞核位於細胞中央。</p>
+      <p>(D) 平滑肌具有側極性的粗肌絲。</p>
+    </div>
+    <p class="ans">答案：D（申覆後 B 亦開放給分）</p>
+    <p class="quote">詳解原文:「(A)cells are fusiform shaped and communicate with each other by the gap junctions　(B)The fibers have dense bodies and well-developed smooth ER　此選項應該也可給分　(C)The cytoplasm of smooth muscle is eosinophilic and the nucleus is localized in the central of the cell」</p>
+    <p>(A) 該是<b>間隙連接</b>不是胞橋小體；(C) 該是<b>嗜伊紅</b>不是嗜鹼。而 (B) 其實也完全正確，所以老師開放給分——<b>這是一題「有兩個正確答案」的題目</b>。</p>
+    <p class="src">出處：陳永佳 肌腱、韌帶、肌肉組織學（ppt pg.37） ｜ BM112_Block 8 期中考(含申覆內容與結果).pdf 第 36 頁</p>
+  </details>
+</article>
+
+<article data-question-id="113-p37-q27" data-placement="chapter">
+  <span class="qhead">113 年 期中考 第 27 題</span>
+  <p class="stem">Which of the following statements concerning smooth muscle is TRUE?</p>
+  <ul class="opts">
+    <li>(A) The fibers have dense bodies and well-developed smooth ER</li>
+    <li>(B) Smooth muscle fibers contain sarcomeres arranged like skeletal muscle</li>
+    <li>(C) Nuclei are located at the periphery of the cell</li>
+    <li>(D) Thick filaments are bipolar and cross-striated</li>
+  </ul>
+  <details data-kind="answer">
+    <summary>答案與詳解</summary>
+    <div data-kind="zh-translation">
+      <p><strong>中文題目：</strong>關於平滑肌的敘述，何者<b>正確</b>？</p>
+      <p>(A) 纖維具有緻密體與發達的滑面內質網。</p>
+      <p>(B) 平滑肌纖維含有像骨骼肌那樣排列的肌節。</p>
+      <p>(C) 細胞核位於細胞周邊。</p>
+      <p>(D) 粗肌絲呈雙極性且具橫紋。</p>
+    </div>
+    <p class="ans">答案：(A)</p>
+    <p class="quote">詳解原文:「下表請熟記 (A)只有平滑肌有Dense body這項Special feature (B)骨骼肌心肌才有Sacromere (C)平滑肌細胞的核在Central (D)平滑肌的粗肌絲排列為Side-polar沒有Striated」</p>
+    <p>(A) 這一句就是 112 年被開放給分的那一句，這年直接變成標準答案。三個錯項分別把<b>肌節</b>、<b>核的位置</b>、<b>粗肌絲的排列</b>換成骨骼肌的版本。</p>
+    <p class="src">出處：組織學-肌腱、韌帶、肌肉 陳永佳 ｜ BM113_Block8期中考詳解.pdf 第 37 頁</p>
+  </details>
+</article>
+</section>
+<section id="chapter-5" data-chapter-kind="story">
+<h2>五、纖維型別：耐力型與爆發型</h2>
+
+<figure class="boxfig" data-visual-id="tmbox-10-story" data-image-kind="story" data-explanation-verified="true">
+<span class="figtag">情境場景</span>
+<img data-visual-id="tmbox-10-story" src="img/tmbox-10-story.webp" alt="情境場景：馬拉松選手與短跑選手，一個細而持久、一個粗而爆發。" loading="lazy" decoding="async" width="1600" height="914">
+<figcaption>情境場景：馬拉松選手與短跑選手，一個細而持久、一個粗而爆發。</figcaption>
+</figure>
+<div class="story" data-prose-kind="story"><span class="tag">故事</span>
+<p>骨骼肌纖維分兩個極端，中間再放一個過渡型。</p>
+<p><b>慢氧化型</b>（slow oxidative，第 I 型）是<b>馬拉松選手</b>：<b>纖維最細</b>、粒線體多、肌紅蛋白多所以顏色偏紅、微血管密、靠<b>有氧代謝</b>。收縮慢，但<b>最耐疲勞</b>。</p>
+<p><b>快無氧型</b>（fast anaerobic / fast glycolytic，第 IIb 型）是<b>短跑選手</b>：<b>纖維最粗</b>、粒線體少、肌紅蛋白少所以顏色偏白、靠<b>糖解</b>。收縮快、力量大，但<b>最容易疲勞</b>。</p>
+<p><b>中間型</b>（intermediate / fast oxidative，第 IIa 型）介於兩者之間。</p>
+<p>所以整組的規律非常乾淨：<b>越細越耐操，越粗越快壞。</b></p>
+<p>三年考三次，兩次問「最粗、最易疲勞」（答案是快無氧型），一次問「最細、最耐疲勞」（答案是慢氧化型）。<b>只要記住這條軸，兩端都能答。</b></p>
+<p>順帶一提，111 年那題原本答案<b>誤植成 (C)</b>，有同學拿 BRS 的表格申覆，老師直接更正為 (D)。這是本科唯一一次<b>答案被改掉</b>的題目。</p>
+</div>
+
+<figure class="boxfig" data-visual-id="tmbox-11-reality" data-image-kind="comparison" data-explanation-verified="true">
+<span class="figtag">纖維型別對照</span>
+<img data-visual-id="tmbox-11-reality" src="img/tmbox-11-reality.webp" alt="纖維型別對照：慢氧化型最細最耐疲勞，快無氧型最粗最易疲勞。" loading="lazy" decoding="async" width="1600" height="914">
+<figcaption>纖維型別對照：慢氧化型最細最耐疲勞，快無氧型最粗最易疲勞。</figcaption>
+</figure>
+<div class="reality"><span class="tag">回到現實</span>
+<p class="quote">詳解原文（111）:「由圖可知 fast anaerobic fiber 對 fatigue risistance 最低」</p>
+<p class="quote">申覆結果（111，C → D）:「原答案誤植為C，修正為D」</p>
+<p>三個型別的固定屬性：</p>
+<p><b>慢氧化型（slow oxidative，I 型）</b>：直徑<b>最小</b>、<b>最耐疲勞</b>、有氧代謝、粒線體與肌紅蛋白多、紅肌。</p>
+<p><b>中間型（intermediate / fast oxidative，IIa 型）</b>：各項都在中間。</p>
+<p><b>快無氧型（fast anaerobic / fast glycolytic，IIb 型）</b>：直徑<b>最大</b>、<b>最易疲勞</b>、糖解代謝、粒線體與肌紅蛋白少、白肌。</p>
+<p class="infer">解題時只要圈出題幹裡的兩個形容詞——<b>「粗細」與「耐不耐疲勞」永遠同向配對</b>：最細配最耐、最粗配最易。三年三題全部套得進去。</p>
+</div>
+
+<article data-question-id="111-p22-q25" data-placement="chapter">
+  <span class="qhead">111 年 期中考 第 25 題 ｜ 申覆後 C → D</span>
+  <p class="stem">Which of the following skeletal muscle fibers tend to fatigue?</p>
+  <ul class="opts">
+    <li>(A) slow oxidative</li>
+    <li>(B) intermediate</li>
+    <li>(C) fast aerobic fibers</li>
+    <li>(D) fast anaerobic fibers</li>
+  </ul>
+  <details data-kind="answer">
+    <summary>答案與詳解</summary>
+    <div data-kind="zh-translation">
+      <p><strong>中文題目：</strong>下列哪一種骨骼肌纖維<b>容易疲勞</b>？</p>
+      <p>(A) 慢氧化型</p>
+      <p>(B) 中間型</p>
+      <p>(C) 快有氧型</p>
+      <p>(D) 快無氧型</p>
+    </div>
+    <p class="ans">答案：(D) fast anaerobic fibers（申覆後由 C 更正為 D）</p>
+    <p class="quote">詳解原文:「由圖可知 fast anaerobic fiber 對 fatigue risistance 最低」</p>
+    <p class="quote">申覆結果（C → D，老師回覆）:「原答案誤植為C，修正為D」</p>
+    <p>「無氧」就是靠糖解，乳酸一堆積就撐不住——<b>最快疲勞的一定是無氧那一型</b>。</p>
+    <p class="src">出處：陳永佳 組織學-肌腱、韌帶、肌肉(ppt pg.42) ｜ BM111 BLOCK-8 期中考詳解.pdf 第 22 頁</p>
+  </details>
+</article>
+
+<article data-question-id="112-p37-q25" data-placement="chapter">
+  <span class="qhead">112 年 期中考 第 25 題</span>
+  <p class="stem">Which of the following skeletal muscle fibers exhibit the smallest fiber diameter and are resistant to fatigue?</p>
+  <ul class="opts">
+    <li>(A) slow oxidative</li>
+    <li>(B) fast aerobic fibers</li>
+    <li>(C) intermediate</li>
+    <li>(D) fast anaerobic fibers</li>
+  </ul>
+  <details data-kind="answer">
+    <summary>答案與詳解</summary>
+    <div data-kind="zh-translation">
+      <p><strong>中文題目：</strong>下列哪一種骨骼肌纖維<b>直徑最小</b>且<b>耐疲勞</b>？</p>
+      <p>(A) 慢氧化型</p>
+      <p>(B) 快有氧型</p>
+      <p>(C) 中間型</p>
+      <p>(D) 快無氧型</p>
+    </div>
+    <p class="ans">答案：A</p>
+    <p>原卷<b>詳解欄留空</b>。這年問的是軸的另一端：<b>最細＋最耐疲勞＝慢氧化型</b>。</p>
+    <p class="src">出處：陳永佳 肌腱、韌帶、肌肉組織學（ppt pg.16） ｜ BM112_Block 8 期中考(含申覆內容與結果).pdf 第 37 頁</p>
+  </details>
+</article>
+
+<article data-question-id="113-p38-q28" data-placement="chapter">
+  <span class="qhead">113 年 期中考 第 28 題</span>
+  <p class="stem">Which type of skeletal muscle fibers have the largest diameter and fatigue most easily?</p>
+  <ul class="opts">
+    <li>(A) Slow oxidative fibers</li>
+    <li>(B) Fast oxidative fibers</li>
+    <li>(C) Intermediate fibers</li>
+    <li>(D) Fast glycolytic (anaerobic) fibers</li>
+  </ul>
+  <details data-kind="answer">
+    <summary>答案與詳解</summary>
+    <div data-kind="zh-translation">
+      <p><strong>中文題目：</strong>哪一種骨骼肌纖維<b>直徑最大</b>且<b>最容易疲勞</b>？</p>
+      <p>(A) 慢氧化型</p>
+      <p>(B) 快氧化型</p>
+      <p>(C) 中間型</p>
+      <p>(D) 快糖解（無氧）型</p>
+    </div>
+    <p class="ans">答案：(D)</p>
+    <p class="quote">詳解原文:「螢光筆處」</p>
+    <p>與 112 年第 25 題的兩個形容詞<b>同時反轉</b>：最粗＋最易疲勞＝快糖解（無氧）型。這年直接把 glycolytic 與 anaerobic 並列寫出，等於把答案講一半了。</p>
+    <p class="src">出處：組織學-肌腱、韌帶、肌肉 陳永佳 ppt p17 ｜ BM113_Block8期中考詳解.pdf 第 38 頁</p>
+  </details>
+</article>
+</section>
+<section id="chapter-6" data-chapter-kind="story">
+<h2>六、收縮：誰擋住誰、哪一帶會變</h2>
+
+<figure class="boxfig" data-visual-id="tmbox-12-story" data-image-kind="story" data-explanation-verified="true">
+<span class="figtag">情境場景</span>
+<img data-visual-id="tmbox-12-story" src="img/tmbox-12-story.webp" alt="情境場景：門把上蓋著一條膠帶，鈣一來就把膠帶拉開。" loading="lazy" decoding="async" width="1600" height="914">
+<figcaption>情境場景：門把上蓋著一條膠帶，鈣一來就把膠帶拉開。</figcaption>
+</figure>
+<div class="story" data-prose-kind="story"><span class="tag">故事</span>
+<p>細肌絲（actin）上有一排<b>把手</b>——那是給肌凝蛋白頭抓的結合位。肌肉放鬆的時候，這排把手上<b>蓋著一條長長的膠帶</b>，叫<b>原肌凝蛋白</b>（tropomyosin）。抓不到把手，就拉不動。</p>
+<p>膠帶上每隔一段釘著一個扣環，叫<b>旋轉素</b>（troponin）。當鈣離子從終池衝出來、結合到<b>旋轉素 C</b> 上，扣環一轉，整條膠帶就<b>滑開</b>，把手露出來。</p>
+<p>接下來就是<b>橫橋循環</b>，四個動作固定順序：</p>
+<p><b>① 附著</b>（attachment）：肌凝蛋白頭抓上剛露出來的把手。<br>
+<b>② 脫離</b>（release）：ATP 接上肌凝蛋白頭，頭放手。<br>
+<b>③ 上膛</b>（bending）：ATP 被水解，頭重新扳回高能位置。<br>
+<b>④ 出力</b>（force generation）：頭旋轉、把細肌絲往肌節中央拉——這一下就是<b>動力衝程</b>。</p>
+<p>113 年問「哪一件事<b>先</b>發生」，答案就是<b>①附著</b>。</p>
+<p>而肌絲滑動的結果，反映在顯微鏡下的條帶上。這裡只要記一句話：<b>會變的是「不重疊的那些區域」，不會變的是「肌絲本身的長度」。</b></p>
+<p>・<b>A 帶</b>＝粗肌絲的全長 → <b>不變</b>（粗肌絲沒有變短）<br>
+・<b>M 線</b>＝粗肌絲中央互相連結的線 → <b>不變</b><br>
+・<b>H 區</b>＝粗肌絲中央<b>沒有</b>被細肌絲蓋到的段落 → 收縮時<b>變窄</b><br>
+・<b>I 帶</b>＝細肌絲<b>沒有</b>被粗肌絲蓋到的段落 → 收縮時<b>變窄</b><br>
+・<b>Z 線</b>＝肌節的兩端 → 兩條 Z 線<b>互相靠近</b>，但線本身<b>始終看得見</b></p>
+</div>
+
+<figure class="boxfig" data-visual-id="tmbox-13-reality" data-image-kind="sequence" data-explanation-verified="true">
+<span class="figtag">肌節變化</span>
+<img data-visual-id="tmbox-13-reality" src="img/tmbox-13-reality.webp" alt="肌節變化：收縮時 H 區與 I 帶變窄，A 帶與 M 線不變。" loading="lazy" decoding="async" width="1600" height="914">
+<figcaption>肌節變化：收縮時 H 區與 I 帶變窄，A 帶與 M 線不變。</figcaption>
+</figure>
+<div class="reality"><span class="tag">回到現實</span>
+<p>111 年的詳解把四條列得最完整：</p>
+<p class="quote">詳解原文（111）:「骨骼肌收縮時: (A) M line是最中間的線-->不變。(B) H Zone是放鬆時粗肌絲未與細肌絲重疊的部分-->收縮時變窄。(C) A Band是粗肌絲的區域，即暗帶-->收縮時不變。(D) I Band是細肌絲未與粗肌絲重疊的區域，即亮帶-->收縮時變短。」</p>
+<p>113 年把同一件事<b>反過來問「放鬆時」</b>：</p>
+<p class="quote">詳解原文（113）:「(A) Z line 不論收縮、放鬆皆可見　(B) A band 不論收縮、放鬆皆等長　(C) 正確　(D) 放鬆時並不重疊」</p>
+<p>所以整組只要記住這張對照：</p>
+<p><b>收縮時：</b>H 區<b>變窄</b>、I 帶<b>變窄</b>、A 帶<b>不變</b>、M 線<b>不變</b>、Z 線<b>互相靠近</b>。<br>
+<b>放鬆到極致時：</b>H 區與 I 帶<b>最寬</b>、A 帶仍<b>不變</b>、Z 線仍<b>看得見</b>、粗細肌絲<b>不會完全重疊</b>。</p>
+<p class="infer">三年三題全部在同一張圖上打轉，只換了兩件事：<b>問收縮還是放鬆</b>、<b>把正確答案挪到哪個代號</b>。作答時先在題幹圈出「contraction／relaxation」，再去找 H 區或 I 帶那一句。</p>
+</div>
+
+<article data-question-id="111-p22-q26" data-placement="chapter">
+  <span class="qhead">111 年 期中考 第 26 題</span>
+  <p class="stem">In resting muscle, which of the following proteins masks the myosin-binding site on the actin molecule?</p>
+  <ul class="opts">
+    <li>(A) myosin head</li>
+    <li>(B) nebulin</li>
+    <li>(C) tropomodulin</li>
+    <li>(D) tropomyosin</li>
+  </ul>
+  <details data-kind="answer">
+    <summary>答案與詳解</summary>
+    <div data-kind="zh-translation">
+      <p><strong>中文題目：</strong>在靜止的肌肉中，下列哪一種蛋白質遮住了肌動蛋白分子上的肌凝蛋白結合位？</p>
+      <p>(A) 肌凝蛋白頭</p>
+      <p>(B) 伴肌動蛋白</p>
+      <p>(C) 原肌球調節蛋白</p>
+      <p>(D) 原肌凝蛋白</p>
+    </div>
+    <p class="ans">答案：(D) tropomyosin</p>
+    <p class="quote">詳解原文:「由此可知在resting state， tropomyosin蓋住actin上面的myosin-binding site。」</p>
+    <p>兩個干擾選項都是細肌絲上的其他配角：<b>nebulin</b> 沿著細肌絲決定它的長度，<b>tropomodulin</b> 封住細肌絲的負端。<b>只有 tropomyosin 是那條蓋住把手的膠帶。</b></p>
+    <p class="src">出處：陳永佳 組織學-肌腱、韌帶、肌肉(ppt pg.20) ｜ BM111 BLOCK-8 期中考詳解.pdf 第 22 頁</p>
+  </details>
+</article>
+
+<article data-question-id="112-p38-q26" data-placement="chapter">
+  <span class="qhead">112 年 期中考 第 26 題</span>
+  <p class="stem">In resting muscle, which of the following proteins masks the myosin-binding site on the actin molecule?</p>
+  <ul class="opts">
+    <li>(A) myosin head</li>
+    <li>(B) troponin</li>
+    <li>(C) tropomodulin</li>
+    <li>(D) tropomyosin</li>
+  </ul>
+  <details data-kind="answer">
+    <summary>答案與詳解</summary>
+    <div data-kind="zh-translation">
+      <p><strong>中文題目：</strong>在靜止的肌肉中，下列哪一種蛋白質遮住了肌動蛋白分子上的肌凝蛋白結合位？</p>
+      <p>(A) 肌凝蛋白頭</p>
+      <p>(B) 旋轉素</p>
+      <p>(C) 原肌球調節蛋白</p>
+      <p>(D) 原肌凝蛋白</p>
+    </div>
+    <p class="ans">答案：D</p>
+    <p>原卷<b>詳解欄留空</b>。與 111 年第 26 題<b>題幹逐字相同</b>，只把 (B) 從 nebulin 換成 troponin。<b>旋轉素是那個「扣環」，負責接鈣、拉動膠帶；真正蓋住把手的還是原肌凝蛋白。</b></p>
+    <p class="src">出處：陳永佳 肌腱、韌帶、肌肉組織學（ppt pg.9） ｜ BM112_Block 8 期中考(含申覆內容與結果).pdf 第 38 頁</p>
+  </details>
+</article>
+
+<article data-question-id="113-p39-q29" data-placement="chapter">
+  <span class="qhead">113 年 期中考 第 29 題</span>
+  <p class="stem">According to the sliding filament theory, which event occurs first during cross-bridge cycling in skeletal muscle contraction?</p>
+  <ul class="opts">
+    <li>(A) Hydrolysis of ATP re-cocks the myosin head to its high-energy state</li>
+    <li>(B) Myosin head pivots, pulling the actin filament toward the center of the sarcomere (power stroke)</li>
+    <li>(C) ATP binds to the myosin head, causing detachment from actin</li>
+    <li>(D) Myosin head binds to the exposed active site on actin after tropomyosin moves away</li>
+  </ul>
+  <details data-kind="answer">
+    <summary>答案與詳解</summary>
+    <div data-kind="zh-translation">
+      <p><strong>中文題目：</strong>依據肌絲滑動學說，骨骼肌收縮的橫橋循環中，哪一個事件<b>最先</b>發生？</p>
+      <p>(A) ATP 水解使肌凝蛋白頭重新扳回高能狀態。</p>
+      <p>(B) 肌凝蛋白頭旋轉，把肌動蛋白絲拉向肌節中央（動力衝程）。</p>
+      <p>(C) ATP 結合到肌凝蛋白頭，使其脫離肌動蛋白。</p>
+      <p>(D) 原肌凝蛋白移開後，肌凝蛋白頭結合到肌動蛋白上暴露的活性位。</p>
+    </div>
+    <p class="ans">答案：(D)</p>
+    <p class="quote">詳解原文:「(A) 3. Bending　(B) 4. Force generation　(C) 2. Release　(D) 1. Attachment」</p>
+    <p>四個選項就是循環的四個步驟被打亂：<b>附著 → 脫離 → 上膛 → 出力</b>。題目問「最先」，答案是<b>附著</b>。</p>
+    <p class="src">出處：組織學-肌腱、韌帶、肌肉 陳永佳 ppt 21 ｜ BM113_Block8期中考詳解.pdf 第 39 頁</p>
+  </details>
+</article>
+
+<article data-question-id="111-p23-q27" data-placement="chapter">
+  <span class="qhead">111 年 期中考 第 27 題</span>
+  <p class="stem">Which of the following statements is true when skeletal muscle contraction?</p>
+  <ul class="opts">
+    <li>(A) M line becomes shorter</li>
+    <li>(B) H zone becomes narrower</li>
+    <li>(C) A band becomes wider</li>
+    <li>(D) I band becomes wider</li>
+  </ul>
+  <details data-kind="answer">
+    <summary>答案與詳解</summary>
+    <div data-kind="zh-translation">
+      <p><strong>中文題目：</strong>骨骼肌收縮時，下列敘述何者<b>正確</b>？</p>
+      <p>(A) M 線變短。</p>
+      <p>(B) H 區變窄。</p>
+      <p>(C) A 帶變寬。</p>
+      <p>(D) I 帶變寬。</p>
+    </div>
+    <p class="ans">答案：(B) H zone becomes narrower</p>
+    <p class="quote">詳解原文:「(A) M line是最中間的線-->不變。(B) H Zone是放鬆時粗肌絲未與細肌絲重疊的部分-->收縮時變窄。(C) A Band是粗肌絲的區域，即暗帶-->收縮時不變。(D) I Band是細肌絲未與粗肌絲重疊的區域，即亮帶-->收縮時變短。」</p>
+    <p>(D) 的方向反了——<b>I 帶收縮時是變窄不是變寬</b>。</p>
+    <p class="src">出處：陳永佳 組織學-肌腱、韌帶、肌肉(ppt pg.28) ｜ BM111 BLOCK-8 期中考詳解.pdf 第 23 頁</p>
+  </details>
+</article>
+
+<article data-question-id="112-p38-q27" data-placement="chapter">
+  <span class="qhead">112 年 期中考 第 27 題</span>
+  <p class="stem">Which of the following statements is TRUE when skeletal muscle contraction?</p>
+  <ul class="opts">
+    <li>(A) M line becomes shorter</li>
+    <li>(B) I band becomes wider</li>
+    <li>(C) H zone becomes narrower</li>
+    <li>(D) A band becomes wider</li>
+  </ul>
+  <details data-kind="answer">
+    <summary>答案與詳解</summary>
+    <div data-kind="zh-translation">
+      <p><strong>中文題目：</strong>骨骼肌收縮時，下列敘述何者<b>正確</b>？</p>
+      <p>(A) M 線變短。</p>
+      <p>(B) I 帶變寬。</p>
+      <p>(C) H 區變窄。</p>
+      <p>(D) A 帶變寬。</p>
+    </div>
+    <p class="ans">答案：C</p>
+    <p class="quote">詳解原文:「(A)M line 粗肌絲中間互相連結的構造，不會變　(B)I band 肌節中顏色較淺（細肌絲未與粗肌絲重疊）的地方，會變窄　(C)正確　(D)A band細肌絲與粗肌絲重疊的地方，不會變」</p>
+    <p>與 111 年第 27 題<b>四個選項完全相同</b>，只把 (B)(C) 對調，於是答案從 (B) 變成 (C)。<b>不要背字母。</b></p>
+    <p class="src">出處：陳永佳 肌腱、韌帶、肌肉組織學 (ppt pg.27) ｜ BM112_Block 8 期中考(含申覆內容與結果).pdf 第 38 頁</p>
+  </details>
+</article>
+
+<article data-question-id="113-p40-q30" data-placement="chapter">
+  <span class="qhead">113 年 期中考 第 30 題</span>
+  <p class="stem">In a skeletal muscle fiber at maximal relaxation, which of the following is TRUE about the sarcomere structure?</p>
+  <ul class="opts">
+    <li>(A) Z lines are no longer visible under the microscope</li>
+    <li>(B) The A band becomes longer than in contraction</li>
+    <li>(C) The H zone and I band are at their widest extent</li>
+    <li>(D) Thick and thin filaments completely overlap</li>
+  </ul>
+  <details data-kind="answer">
+    <summary>答案與詳解</summary>
+    <div data-kind="zh-translation">
+      <p><strong>中文題目：</strong>骨骼肌纖維在<b>最大放鬆</b>狀態時，關於肌節結構的敘述何者<b>正確</b>？</p>
+      <p>(A) 顯微鏡下已看不到 Z 線。</p>
+      <p>(B) A 帶比收縮時更長。</p>
+      <p>(C) H 區與 I 帶處於最寬的狀態。</p>
+      <p>(D) 粗肌絲與細肌絲完全重疊。</p>
+    </div>
+    <p class="ans">答案：(C)</p>
+    <p class="quote">詳解原文:「(A) Z line 不論收縮、放鬆皆可見　(B) A band 不論收縮、放鬆皆等長　(C) 正確　(D) 放鬆時並不重疊」</p>
+    <p>同一張圖<b>反過來問</b>：收縮時 H 區與 I 帶變窄，那麼放鬆到極致時它們就是<b>最寬</b>。(B) 再次確認 <b>A 帶永遠不變</b>。</p>
+    <p class="src">出處：組織學-肌腱、韌帶、肌肉 陳永佳 ppt pg. 24 ｜ BM113_Block8期中考詳解.pdf 第 40 頁</p>
+  </details>
+</article>
+</section>
+<section id="chapter-cram" data-chapter-kind="cram">
+<h2>七、考前速記</h2>
+<div class="cram">
+<ul>
+<li><b>三層外衣由粗到細：肌外膜 → 肌束膜 → 肌內膜。</b></li>
+<li><b>核只在邊緣＝單根肌纖維＝肌內膜；核也出現在中間＝一整束＝肌束膜。</b></li>
+<li><b>骨骼肌：有橫紋、多核、核在邊緣。</b>橫切面是核貼邊的多角形區塊。</li>
+<li><b>心肌：有橫紋、單核、核在中央</b>，細胞分叉、有間盤。</li>
+<li><b>平滑肌：沒有橫紋、紡錘形、單核、核在中央。</b></li>
+<li><b>T 小管＝細胞膜向內凹陷</b>（不是肌漿）；<b>終池＝肌漿網膨大</b>。</li>
+<li><b>三聯體＝兩個終池夾一根 T 小管。</b>骨骼肌 triad（三）、心肌 diad（二）。</li>
+<li><b>caveolae（小窩）是平滑肌的東西</b>，出現在骨骼肌選項裡就是錯的。</li>
+<li><b>骨骼肌沒有間隙連接。</b>三年三題的答案都是這一句。</li>
+<li><b>平滑肌沒有肌節</b>；<b>骨骼肌與心肌的收縮由鈣結合 troponin C 啟動</b>。</li>
+<li><b>再生能力：平滑肌最好、心肌最差。</b>111 年申覆過，老師仍認為心肌有再生的證據。</li>
+<li><b>平滑肌六特徵</b>：紡錘形、間隙連接、嗜伊紅、核在中央、<b>緻密體</b>、滑面內質網發達。</li>
+<li><b>緻密體是只有平滑肌才有的特徵</b>，功能相當於骨骼肌的 Z 線。</li>
+<li><b>平滑肌的粗肌絲是側極性（side-polar）</b>，所以沒有橫紋。</li>
+<li><b>平滑肌有 endomysium，但沒有 perimysium／epimysium 那套命名。</b></li>
+<li><b>越細越耐操、越粗越快壞。</b>慢氧化型最細最耐疲勞，快無氧（糖解）型最粗最易疲勞。</li>
+<li>111 年那題原答案<b>誤植</b>，申覆後由 (C) 改為 (D)。</li>
+<li><b>靜止時蓋住肌凝蛋白結合位的是 tropomyosin</b>；troponin 是接鈣的扣環。</li>
+<li><b>nebulin 管細肌絲長度、tropomodulin 封細肌絲負端</b>，兩個都是干擾選項。</li>
+<li><b>橫橋循環順序：附著 → 脫離 → 上膛 → 出力。</b>問「最先」就是附著。</li>
+<li><b>收縮時：H 區變窄、I 帶變窄；A 帶不變、M 線不變、Z 線互相靠近但看得見。</b></li>
+<li><b>放鬆到極致：H 區與 I 帶最寬</b>，A 帶依然不變，粗細肌絲<b>不會完全重疊</b>。</li>
+<li><b>二十題裡十七題是重複考點</b>——老師自己在詳解裡寫「這題是將 BM112 題目稍作調整」。</li>
+</ul>
+</div>
+</section>
+
+<!-- ================= VOCAB ================= -->
+<section id="chapter-vocab" data-chapter-kind="vocab">
+<h2>八、單字表</h2>
+<dl class="vocab">
+<dt>epimysium</dt>
+<dd><span class="root">epi-（在上、外）+ mys（希臘：肌肉）</span>　肌外膜。包住整塊肌肉的最外層緻密結締組織。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>epi-＝最外面。<b>三層由外到內：epi → peri → endo。</b></p></details></dd>
+
+<dt>perimysium</dt>
+<dd><span class="root">peri-（周圍）+ mys（肌肉）</span>　肌束膜。包住一束（fascicle）肌纖維的結締組織。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>peri-＝圍著一圈。<b>它包的是「一束」，所以粉紅區內部也會有核。</b></p></details></dd>
+
+<dt>endomysium</dt>
+<dd><span class="root">endo-（內）+ mys（肌肉）</span>　肌內膜。包住<b>單一條</b>肌纖維的薄層網狀結締組織。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>endo-＝最裡面。<b>它包的是「一根」，所以核全部貼在邊緣。</b></p></details></dd>
+
+<dt>fascicle</dt>
+<dd><span class="root">拉丁 fasciculus＝小束</span>　肌束。由多條肌纖維集結而成，外覆肌束膜。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>把肌肉想成電纜，fascicle 就是其中<b>一束線</b>。</p></details></dd>
+
+<dt>T-tubule (transverse tubule)</dt>
+<dd><span class="root">transverse＝橫向的</span>　T 小管。細胞膜向內凹陷形成的橫向管道，把電訊號送進細胞深處。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>凹陷進去的是<b>細胞膜</b>，不是肌漿——111 年的錯項就在這裡。</p></details></dd>
+
+<dt>sarcoplasmic reticulum</dt>
+<dd><span class="root">sarco-（肉）+ plasma（漿）；reticulum＝網</span>　肌漿網。肌細胞特化的滑面內質網，儲存鈣離子。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>它就是肌肉版的滑面內質網。<b>鈣的倉庫。</b></p></details></dd>
+
+<dt>terminal cisterna</dt>
+<dd><span class="root">terminal＝末端；拉丁 cisterna＝蓄水池</span>　終池。肌漿網在 T 小管兩側膨大形成的鈣儲存槽。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>cisterna＝蓄水池。<b>它是肌漿網「膨大」出來的，不是內陷形成的。</b></p></details></dd>
+
+<dt>triad / diad</dt>
+<dd><span class="root">tri-（三）／di-（二）</span>　三聯體＝兩終池＋一 T 小管（骨骼肌）；雙聯體＝一終池＋一 T 小管（心肌）。<details data-kind="vocab-memory"><summary>記憶提示</summary><p><b>骨骼肌三、心肌二。</b>選項寫「一管一池」就是把心肌的答案搬過來。</p></details></dd>
+
+<dt>caveolae</dt>
+<dd><span class="root">拉丁 caveola＝小洞穴</span>　小窩。平滑肌細胞膜上的小凹陷，功能類似骨骼肌的 T 小管。<details data-kind="vocab-memory"><summary>記憶提示</summary><p><b>它屬於平滑肌。</b>出現在骨骼肌的三聯體選項裡就是誘餌。</p></details></dd>
+
+<dt>gap junction</dt>
+<dd><span class="root">gap＝縫隙</span>　間隙連接。細胞間可直接通訊的通道。<b>心肌與平滑肌有，骨骼肌沒有。</b><details data-kind="vocab-memory"><summary>記憶提示</summary><p>本科最穩定的考點：<b>看到「骨骼肌＋間隙連接」就是錯的。</b></p></details></dd>
+
+<dt>sarcomere</dt>
+<dd><span class="root">sarco-（肉）+ meros（部分）</span>　肌節。兩條 Z 線之間的收縮單位，<b>只有骨骼肌與心肌有</b>。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>有肌節才有橫紋。<b>平滑肌兩者都沒有。</b></p></details></dd>
+
+<dt>dense body</dt>
+<dd><span class="root">dense＝緻密</span>　緻密體。平滑肌中肌絲的錨定點，相當於骨骼肌的 Z 線。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>詳解原話：<b>「只有平滑肌有 Dense body 這項 Special feature」</b>。</p></details></dd>
+
+<dt>side-polar thick filament</dt>
+<dd><span class="root">side＝側；polar＝極性</span>　側極性粗肌絲。平滑肌粗肌絲的排列方式，兩側肌凝蛋白頭朝相反方向。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>沒有中央裸區 → 沒有規則的重疊帶 → <b>沒有橫紋</b>。</p></details></dd>
+
+<dt>fusiform</dt>
+<dd><span class="root">拉丁 fusus＝紡錘</span>　紡錘形。平滑肌細胞的外形，中間粗兩端尖。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>核在最粗的中段，所以<b>核在中央</b>。</p></details></dd>
+
+<dt>eosinophilic / basophilic</dt>
+<dd><span class="root">eosin（伊紅染劑）／base（鹼）+ -philic（親和）</span>　嗜伊紅（粉紅）與嗜鹼（藍紫）。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>肌肉細胞質富含蛋白質 → <b>嗜伊紅、粉紅色</b>。112 年把它寫成嗜鹼而成為錯項。</p></details></dd>
+
+<dt>slow oxidative fiber (type I)</dt>
+<dd><span class="root">oxidative＝氧化的</span>　慢氧化型纖維。直徑最小、粒線體與肌紅蛋白多、<b>最耐疲勞</b>。<details data-kind="vocab-memory"><summary>記憶提示</summary><p><b>馬拉松型。</b>最細＝最耐操。</p></details></dd>
+
+<dt>fast glycolytic (anaerobic) fiber (type IIb)</dt>
+<dd><span class="root">glycolytic＝糖解的；an-（無）+ aerobic（有氧）</span>　快糖解／快無氧型纖維。直徑最大、<b>最易疲勞</b>。<details data-kind="vocab-memory"><summary>記憶提示</summary><p><b>短跑型。</b>最粗＝最快壞。</p></details></dd>
+
+<dt>actin / myosin</dt>
+<dd><span class="root">actin＝細肌絲的主成分；myosin＝粗肌絲的主成分</span>　肌動蛋白與肌凝蛋白。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>細肌絲上有「把手」，粗肌絲的「頭」去抓它。</p></details></dd>
+
+<dt>tropomyosin</dt>
+<dd><span class="root">tropo-（轉、變）+ myosin</span>　原肌凝蛋白。靜止時<b>蓋住</b>肌動蛋白上的肌凝蛋白結合位。<details data-kind="vocab-memory"><summary>記憶提示</summary><p><b>那條膠帶。</b>兩年考同一題，答案都是它。</p></details></dd>
+
+<dt>troponin (troponin C)</dt>
+<dd><span class="root">tropo-（轉）+ -nin</span>　旋轉素。釘在原肌凝蛋白上的複合體，<b>troponin C 接鈣</b>後使膠帶滑開。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>它是<b>扣環</b>不是膠帶。112 年把它放進選項當誘餌。</p></details></dd>
+
+<dt>nebulin / tropomodulin</dt>
+<dd><span class="root">nebula＝雲霧；modulin＝調節者</span>　伴肌動蛋白（決定細肌絲長度）與原肌球調節蛋白（封住細肌絲負端）。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>兩個都在細肌絲上，但<b>都不遮結合位</b>——111 年的干擾選項。</p></details></dd>
+
+<dt>cross-bridge cycle</dt>
+<dd><span class="root">cross-bridge＝橫橋</span>　橫橋循環：附著 → 脫離 → 上膛 → 出力。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>問「最先」＝<b>附著（attachment）</b>。ATP 是用來「放手」與「上膛」的。</p></details></dd>
+
+<dt>A band / I band</dt>
+<dd><span class="root">A＝anisotropic（異向性，暗帶）；I＝isotropic（等向性，亮帶）</span>　A 帶是粗肌絲全長，I 帶是細肌絲未重疊處。<details data-kind="vocab-memory"><summary>記憶提示</summary><p><b>A 帶＝粗肌絲長度＝永遠不變。I 帶收縮時變窄。</b></p></details></dd>
+
+<dt>H zone / M line / Z line</dt>
+<dd><span class="root">德文 hell＝亮；Mittel＝中間；Zwischen＝之間</span>　H 區是粗肌絲未被覆蓋處、M 線在肌節正中、Z 線是肌節兩端。<details data-kind="vocab-memory"><summary>記憶提示</summary><p><b>H 區收縮時變窄；M 線不變；Z 線互相靠近但始終看得見。</b></p></details></dd>
+
+<dt>intercalated disc</dt>
+<dd><span class="root">intercalate＝插入其間</span>　間盤。心肌細胞之間的特化連接，含間隙連接與胞橋小體。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>心肌能同步收縮就靠它。<b>骨骼肌沒有這種東西。</b></p></details></dd>
+</dl>
+</section>
+<section id="chapter-final" data-chapter-kind="final_questions">
+<h2>九、歷年考題總複習</h2>
+<p class="meta">依年度由新到舊、同年依原始題號排列。共 20 題（111／112 期中考各 6 題、113 期中考 8 題）。<b style="color:#f08a8a">紅框</b>＝同一考點在兩個以上年度重複出現。</p>
+<h3><span class="yearchip">113 年</span>期中考 第 14 題</h3>
+<article data-question-id="113-p18-q14" data-placement="final">
+  <span class="qhead">113 年 期中考 第 14 題 ｜ 來源答案欄</span>
+  
+  <p class="stem">Observe the histological features. What is the correct combination of tissue species and section orientation in the figure?</p>
+  <ul class="opts"><li>(A) cross sectioned cardiac muscle</li><li>(B) longitudinal sectioned smooth muscle</li><li>(C) cross sectioned smooth muscle</li><li>(D) cross sectioned skeletal muscle</li></ul>
+  <details data-kind="answer"><summary>答案與詳解</summary>
+    <div data-kind="zh-translation"><p><strong>中文題目：</strong>觀察圖中的組織學特徵。圖中的<b>組織種類與切面方向</b>的正確組合為下列何者？</p>
+      <p>(A) 橫切的心肌</p>
+      <p>(B) 縱切的平滑肌</p>
+      <p>(C) 橫切的平滑肌</p>
+      <p>(D) 橫切的骨骼肌</p></div>
+    <p class="ans">答案：(D)</p>
+    <p>多角形粉紅區塊加上核全部貼邊，就是骨骼肌的橫切面。<span class="src"> ｜ BM113_Block8期中考詳解 第 18 頁</span></p>
+  </details>
+</article>
+<article data-question-id="113-p19-q15" data-placement="final">
+  <span class="qhead">113 年 期中考 第 15 題</span>
+  
+  <p class="stem">What is the structure indicated by the black arrow?</p>
+  <ul class="opts"><li>(A) epimysium</li><li>(B) perimysium</li><li>(C) endomysium</li><li>(D) adipocyte</li></ul>
+  <details data-kind="answer"><summary>答案與詳解</summary>
+    <div data-kind="zh-translation"><p><strong>中文題目：</strong>黑色箭頭所指的構造是什麼？</p>
+      <p>(A) 肌外膜</p>
+      <p>(B) 肌束膜</p>
+      <p>(C) 肌內膜</p>
+      <p>(D) 脂肪細胞</p></div>
+    <p class="ans">答案：(C)</p>
+    <p>核只在邊緣代表那是單一條肌纖維，包住它的是肌內膜；申覆維持原答案。<span class="src"> ｜ BM113_Block8期中考詳解 第 19 頁</span></p>
+  </details>
+</article>
+<article data-question-id="113-p36-q25" data-placement="final" class="repeat">
+  <span class="qhead">113 年 期中考 第 25 題</span><span class="repeat-badge">重複考點 ×3</span>
+  <p class="repeat-note">同考點：111 第22題、112 第22題　—　三聯體與終池：兩個終池夾一根 T 小管，終池是肌漿網膨大而成</p>
+  <p class="stem">In skeletal muscle, what components form a triad?</p>
+  <ul class="opts"><li>(A) One T-tubule and one terminal cisterna of sarcoplasmic reticulum</li><li>(B) One T-tubule and two thick filaments</li><li>(C) Two terminal cisternae of sarcoplasmic reticulum flanking one T-tubule</li><li>(D) Two caveolae and one smooth endoplasmic reticulum</li></ul>
+  <details data-kind="answer"><summary>答案與詳解</summary>
+    <div data-kind="zh-translation"><p><strong>中文題目：</strong>在骨骼肌中，三聯體由哪些成分組成？</p>
+      <p>(A) 一根 T 小管與一個肌漿網終池</p>
+      <p>(B) 一根 T 小管與兩條粗肌絲</p>
+      <p>(C) 兩個肌漿網終池夾著一根 T 小管</p>
+      <p>(D) 兩個小窩與一個滑面內質網</p></div>
+    <p class="ans">答案：(C)</p>
+    <p>兩個終池夾一根 T 小管；(A) 的一管一池是心肌的雙聯體。<span class="src"> ｜ BM113_Block8期中考詳解 第 36 頁</span></p>
+  </details>
+</article>
+<article data-question-id="113-p36-q26" data-placement="final" class="repeat">
+  <span class="qhead">113 年 期中考 第 26 題</span><span class="repeat-badge">重複考點 ×3</span>
+  <p class="repeat-note">同考點：111 第23題、112 第23題　—　三種肌肉的比較表，哪一句錯——骨骼肌沒有間隙連接</p>
+  <p class="stem">Which of the following statements about different muscle types is FALSE?</p>
+  <ul class="opts"><li>(A) smooth muscle fibers have regeneration ability</li><li>(B) skeletal muscle cells can communicate via gap junctions</li><li>(C) skeletal muscle contraction is initiated by calcium binding to troponin C</li><li>(D) cardiac muscle fibers are striated and involuntary</li></ul>
+  <details data-kind="answer"><summary>答案與詳解</summary>
+    <div data-kind="zh-translation"><p><strong>中文題目：</strong>下列關於不同肌肉類型的敘述，何者<b>錯誤</b>？</p>
+      <p>(A) 平滑肌纖維具有再生能力。</p>
+      <p>(B) 骨骼肌細胞可以透過間隙連接互相溝通。</p>
+      <p>(C) 骨骼肌的收縮由鈣結合到旋轉素 C 啟動。</p>
+      <p>(D) 心肌纖維有橫紋且屬不隨意肌。</p></div>
+    <p class="ans">答案：(B)</p>
+    <p>第三年第三種寫法，答案還是骨骼肌沒有間隙連接。<span class="src"> ｜ BM113_Block8期中考詳解 第 36 頁</span></p>
+  </details>
+</article>
+<article data-question-id="113-p37-q27" data-placement="final" class="repeat">
+  <span class="qhead">113 年 期中考 第 27 題</span><span class="repeat-badge">重複考點 ×3</span>
+  <p class="repeat-note">同考點：111 第24題、112 第24題　—　平滑肌的敘述何者正確：緻密體、發達的平滑內質網、核在中央、側極性粗肌絲</p>
+  <p class="stem">Which of the following statements concerning smooth muscle is TRUE?</p>
+  <ul class="opts"><li>(A) The fibers have dense bodies and well-developed smooth ER</li><li>(B) Smooth muscle fibers contain sarcomeres arranged like skeletal muscle</li><li>(C) Nuclei are located at the periphery of the cell</li><li>(D) Thick filaments are bipolar and cross-striated</li></ul>
+  <details data-kind="answer"><summary>答案與詳解</summary>
+    <div data-kind="zh-translation"><p><strong>中文題目：</strong>關於平滑肌的敘述，何者<b>正確</b>？</p>
+      <p>(A) 纖維具有緻密體與發達的滑面內質網。</p>
+      <p>(B) 平滑肌纖維含有像骨骼肌那樣排列的肌節。</p>
+      <p>(C) 細胞核位於細胞周邊。</p>
+      <p>(D) 粗肌絲呈雙極性且具橫紋。</p></div>
+    <p class="ans">答案：(A)</p>
+    <p>緻密體加發達的滑面內質網——就是 112 年被開放給分的那一句。<span class="src"> ｜ BM113_Block8期中考詳解 第 37 頁</span></p>
+  </details>
+</article>
+<article data-question-id="113-p38-q28" data-placement="final" class="repeat">
+  <span class="qhead">113 年 期中考 第 28 題</span><span class="repeat-badge">重複考點 ×3</span>
+  <p class="repeat-note">同考點：111 第25題、112 第25題　—　骨骼肌纖維型別：慢氧化型最細最耐疲勞、快無氧型最粗最易疲勞</p>
+  <p class="stem">Which type of skeletal muscle fibers have the largest diameter and fatigue most easily?</p>
+  <ul class="opts"><li>(A) Slow oxidative fibers</li><li>(B) Fast oxidative fibers</li><li>(C) Intermediate fibers</li><li>(D) Fast glycolytic (anaerobic) fibers</li></ul>
+  <details data-kind="answer"><summary>答案與詳解</summary>
+    <div data-kind="zh-translation"><p><strong>中文題目：</strong>哪一種骨骼肌纖維<b>直徑最大</b>且<b>最容易疲勞</b>？</p>
+      <p>(A) 慢氧化型</p>
+      <p>(B) 快氧化型</p>
+      <p>(C) 中間型</p>
+      <p>(D) 快糖解（無氧）型</p></div>
+    <p class="ans">答案：(D)</p>
+    <p>兩個形容詞同時反轉：最粗加最易疲勞就是快糖解（無氧）型。<span class="src"> ｜ BM113_Block8期中考詳解 第 38 頁</span></p>
+  </details>
+</article>
+<article data-question-id="113-p39-q29" data-placement="final">
+  <span class="qhead">113 年 期中考 第 29 題</span>
+  
+  <p class="stem">According to the sliding filament theory, which event occurs first during cross-bridge cycling in skeletal muscle contraction?</p>
+  <ul class="opts"><li>(A) Hydrolysis of ATP re-cocks the myosin head to its high-energy state</li><li>(B) Myosin head pivots, pulling the actin filament toward the center of the sarcomere (power stroke)</li><li>(C) ATP binds to the myosin head, causing detachment from actin</li><li>(D) Myosin head binds to the exposed active site on actin after tropomyosin moves away</li></ul>
+  <details data-kind="answer"><summary>答案與詳解</summary>
+    <div data-kind="zh-translation"><p><strong>中文題目：</strong>依據肌絲滑動學說，骨骼肌收縮的橫橋循環中，哪一個事件<b>最先</b>發生？</p>
+      <p>(A) ATP 水解使肌凝蛋白頭重新扳回高能狀態。</p>
+      <p>(B) 肌凝蛋白頭旋轉，把肌動蛋白絲拉向肌節中央（動力衝程）。</p>
+      <p>(C) ATP 結合到肌凝蛋白頭，使其脫離肌動蛋白。</p>
+      <p>(D) 原肌凝蛋白移開後，肌凝蛋白頭結合到肌動蛋白上暴露的活性位。</p></div>
+    <p class="ans">答案：(D)</p>
+    <p>橫橋循環的順序是附著、脫離、上膛、出力；問最先就是附著。<span class="src"> ｜ BM113_Block8期中考詳解 第 39 頁</span></p>
+  </details>
+</article>
+<article data-question-id="113-p40-q30" data-placement="final" class="repeat">
+  <span class="qhead">113 年 期中考 第 30 題</span><span class="repeat-badge">重複考點 ×3</span>
+  <p class="repeat-note">同考點：111 第27題、112 第27題　—　收縮與放鬆時肌節各帶的變化：H 區與 I 帶會變、A 帶與 M 線不變</p>
+  <p class="stem">In a skeletal muscle fiber at maximal relaxation, which of the following is TRUE about the sarcomere structure?</p>
+  <ul class="opts"><li>(A) Z lines are no longer visible under the microscope</li><li>(B) The A band becomes longer than in contraction</li><li>(C) The H zone and I band are at their widest extent</li><li>(D) Thick and thin filaments completely overlap</li></ul>
+  <details data-kind="answer"><summary>答案與詳解</summary>
+    <div data-kind="zh-translation"><p><strong>中文題目：</strong>骨骼肌纖維在<b>最大放鬆</b>狀態時，關於肌節結構的敘述何者<b>正確</b>？</p>
+      <p>(A) 顯微鏡下已看不到 Z 線。</p>
+      <p>(B) A 帶比收縮時更長。</p>
+      <p>(C) H 區與 I 帶處於最寬的狀態。</p>
+      <p>(D) 粗肌絲與細肌絲完全重疊。</p></div>
+    <p class="ans">答案：(C)</p>
+    <p>收縮時變窄的，放鬆到極致就最寬；A 帶永遠不變、Z 線始終可見。<span class="src"> ｜ BM113_Block8期中考詳解 第 40 頁</span></p>
+  </details>
+</article>
+<h3><span class="yearchip">112 年</span>期中考 第 22 題</h3>
+<article data-question-id="112-p34-q22" data-placement="final" class="repeat">
+  <span class="qhead">112 年 期中考 第 22 題 ｜ 來源答案欄</span><span class="repeat-badge">重複考點 ×3</span>
+  <p class="repeat-note">同考點：111 第22題、113 第25題　—　三聯體與終池：兩個終池夾一根 T 小管，終池是肌漿網膨大而成</p>
+  <p class="stem">The structure triad is formed by?</p>
+  <ul class="opts"><li>(A) thin filament</li><li>(B) thick filaments</li><li>(C) two enlarged sarcoplasmic reticulum and one T-tubule</li><li>(D) two caveolae and endoplasmic reticulum (ER)</li></ul>
+  <details data-kind="answer"><summary>答案與詳解</summary>
+    <div data-kind="zh-translation"><p><strong>中文題目：</strong>三聯體這個構造由什麼組成？</p>
+      <p>(A) 細肌絲</p>
+      <p>(B) 粗肌絲</p>
+      <p>(C) 兩個膨大的肌漿網加一根 T 小管</p>
+      <p>(D) 兩個小窩加內質網</p></div>
+    <p class="ans">答案：C</p>
+    <p>二比一：兩個終池夾一根 T 小管。caveolae 是平滑肌的東西。<span class="src"> ｜ BM112_Block 8 期中考(含申覆內容與結果) 第 34 頁</span></p>
+  </details>
+</article>
+<article data-question-id="112-p35-q23" data-placement="final" class="repeat">
+  <span class="qhead">112 年 期中考 第 23 題</span><span class="repeat-badge">重複考點 ×3</span>
+  <p class="repeat-note">同考點：111 第23題、113 第26題　—　三種肌肉的比較表，哪一句錯——骨骼肌沒有間隙連接</p>
+  <p class="stem">Which of the following description is FALSE?</p>
+  <ul class="opts"><li>(A) Only when injury, the skeletal muscle fibers and cardiomyocytes can undergo regeneration</li><li>(B) skeletal and smooth muscle cells present the gap junctions</li><li>(C) smooth muscle fibers do not present sarcomere</li><li>(D) By binding of calcium to troponin C, skeletal muscle and cardiac muscle start to contract.</li></ul>
+  <details data-kind="answer"><summary>答案與詳解</summary>
+    <div data-kind="zh-translation"><p><strong>中文題目：</strong>下列敘述何者<b>錯誤</b>？</p>
+      <p>(A) 只有在受傷時，骨骼肌纖維與心肌細胞才會進行再生。</p>
+      <p>(B) 骨骼肌與平滑肌細胞具有間隙連接。</p>
+      <p>(C) 平滑肌纖維沒有肌節。</p>
+      <p>(D) 鈣結合到旋轉素 C 後，骨骼肌與心肌開始收縮。</p></div>
+    <p class="ans">答案：B</p>
+    <p>把「三種都有」縮成「骨骼肌與平滑肌都有」，只要出現骨骼肌就是錯的。<span class="src"> ｜ BM112_Block 8 期中考(含申覆內容與結果) 第 35 頁</span></p>
+  </details>
+</article>
+<article data-question-id="112-p36-q24" data-placement="final" class="repeat">
+  <span class="qhead">112 年 期中考 第 24 題</span><span class="repeat-badge">重複考點 ×3</span>
+  <p class="repeat-note">同考點：111 第24題、113 第27題　—　平滑肌的敘述何者正確：緻密體、發達的平滑內質網、核在中央、側極性粗肌絲</p>
+  <p class="stem">Which of the following statements concerning smooth muscle is TRUE?</p>
+  <ul class="opts"><li>(A) cells are fusiform shaped and communicate with each other by the desmosomes</li><li>(B) The fibers have dense bodies and well-developed smooth ER</li><li>(C) The cytoplasm of smooth muscle is basophilic and the nucleus is localized in the central of the cell</li><li>(D) the side-polar thick filament are present in smooth muscle</li></ul>
+  <details data-kind="answer"><summary>答案與詳解</summary>
+    <div data-kind="zh-translation"><p><strong>中文題目：</strong>關於平滑肌的敘述，何者<b>正確</b>？</p>
+      <p>(A) 細胞呈紡錘形，彼此以胞橋小體溝通。</p>
+      <p>(B) 纖維具有緻密體與發達的滑面內質網。</p>
+      <p>(C) 平滑肌的細胞質嗜鹼，細胞核位於細胞中央。</p>
+      <p>(D) 平滑肌具有側極性的粗肌絲。</p></div>
+    <p class="ans">答案：D（申覆後 B 亦開放給分）</p>
+    <p>(A) 該是間隙連接、(C) 該是嗜伊紅；(B) 其實也對，申覆後開放給分。<span class="src"> ｜ BM112_Block 8 期中考(含申覆內容與結果) 第 36 頁</span></p>
+  </details>
+</article>
+<article data-question-id="112-p37-q25" data-placement="final" class="repeat">
+  <span class="qhead">112 年 期中考 第 25 題 ｜ 來源答案欄</span><span class="repeat-badge">重複考點 ×3</span>
+  <p class="repeat-note">同考點：111 第25題、113 第28題　—　骨骼肌纖維型別：慢氧化型最細最耐疲勞、快無氧型最粗最易疲勞</p>
+  <p class="stem">Which of the following skeletal muscle fibers exhibit the smallest fiber diameter and are resistant to fatigue?</p>
+  <ul class="opts"><li>(A) slow oxidative</li><li>(B) fast aerobic fibers</li><li>(C) intermediate</li><li>(D) fast anaerobic fibers</li></ul>
+  <details data-kind="answer"><summary>答案與詳解</summary>
+    <div data-kind="zh-translation"><p><strong>中文題目：</strong>下列哪一種骨骼肌纖維<b>直徑最小</b>且<b>耐疲勞</b>？</p>
+      <p>(A) 慢氧化型</p>
+      <p>(B) 快有氧型</p>
+      <p>(C) 中間型</p>
+      <p>(D) 快無氧型</p></div>
+    <p class="ans">答案：A</p>
+    <p>問軸的另一端：最細加最耐疲勞就是慢氧化型。<span class="src"> ｜ BM112_Block 8 期中考(含申覆內容與結果) 第 37 頁</span></p>
+  </details>
+</article>
+<article data-question-id="112-p38-q26" data-placement="final" class="repeat">
+  <span class="qhead">112 年 期中考 第 26 題 ｜ 來源答案欄</span><span class="repeat-badge">重複考點 ×2</span>
+  <p class="repeat-note">同考點：111 第26題　—　靜止時遮住肌動蛋白上肌凝蛋白結合位的是原肌凝蛋白</p>
+  <p class="stem">In resting muscle, which of the following proteins masks the myosin-binding site on the actin molecule?</p>
+  <ul class="opts"><li>(A) myosin head</li><li>(B) troponin</li><li>(C) tropomodulin</li><li>(D) tropomyosin</li></ul>
+  <details data-kind="answer"><summary>答案與詳解</summary>
+    <div data-kind="zh-translation"><p><strong>中文題目：</strong>在靜止的肌肉中，下列哪一種蛋白質遮住了肌動蛋白分子上的肌凝蛋白結合位？</p>
+      <p>(A) 肌凝蛋白頭</p>
+      <p>(B) 旋轉素</p>
+      <p>(C) 原肌球調節蛋白</p>
+      <p>(D) 原肌凝蛋白</p></div>
+    <p class="ans">答案：D</p>
+    <p>與 111 第 26 題題幹逐字相同，只把 nebulin 換成 troponin，答案不變。<span class="src"> ｜ BM112_Block 8 期中考(含申覆內容與結果) 第 38 頁</span></p>
+  </details>
+</article>
+<article data-question-id="112-p38-q27" data-placement="final" class="repeat">
+  <span class="qhead">112 年 期中考 第 27 題</span><span class="repeat-badge">重複考點 ×3</span>
+  <p class="repeat-note">同考點：111 第27題、113 第30題　—　收縮與放鬆時肌節各帶的變化：H 區與 I 帶會變、A 帶與 M 線不變</p>
+  <p class="stem">Which of the following statements is TRUE when skeletal muscle contraction?</p>
+  <ul class="opts"><li>(A) M line becomes shorter</li><li>(B) I band becomes wider</li><li>(C) H zone becomes narrower</li><li>(D) A band becomes wider</li></ul>
+  <details data-kind="answer"><summary>答案與詳解</summary>
+    <div data-kind="zh-translation"><p><strong>中文題目：</strong>骨骼肌收縮時，下列敘述何者<b>正確</b>？</p>
+      <p>(A) M 線變短。</p>
+      <p>(B) I 帶變寬。</p>
+      <p>(C) H 區變窄。</p>
+      <p>(D) A 帶變寬。</p></div>
+    <p class="ans">答案：C</p>
+    <p>四個選項與 111 第 27 題相同，只把 (B)(C) 對調，答案就從 B 變 C。<span class="src"> ｜ BM112_Block 8 期中考(含申覆內容與結果) 第 38 頁</span></p>
+  </details>
+</article>
+<h3><span class="yearchip">111 年</span>期中考 第 22 題</h3>
+<article data-question-id="111-p19-q22" data-placement="final" class="repeat">
+  <span class="qhead">111 年 期中考 第 22 題</span><span class="repeat-badge">重複考點 ×3</span>
+  <p class="repeat-note">同考點：112 第22題、113 第25題　—　三聯體與終池：兩個終池夾一根 T 小管，終池是肌漿網膨大而成</p>
+  <p class="stem">The structure terminal cisternae are formed by?</p>
+  <ul class="opts"><li>(A) thick filaments</li><li>(B) thin filament</li><li>(C) enlarged sarcoplasmic reticulum</li><li>(D) invagination of sarcoplasm</li></ul>
+  <details data-kind="answer"><summary>答案與詳解</summary>
+    <div data-kind="zh-translation"><p><strong>中文題目：</strong>終池這個構造是由什麼形成的？</p>
+      <p>(A) 粗肌絲</p>
+      <p>(B) 細肌絲</p>
+      <p>(C) 膨大的肌漿網</p>
+      <p>(D) 肌漿的內陷</p></div>
+    <p class="ans">答案：(C) enlarged sarcoplasmic reticulum</p>
+    <p>終池是肌漿網膨大而成；內陷形成的是 T 小管，而且內陷的是細胞膜。<span class="src"> ｜ BM111 BLOCK-8 期中考詳解 第 19 頁</span></p>
+  </details>
+</article>
+<article data-question-id="111-p20-q23" data-placement="final" class="repeat">
+  <span class="qhead">111 年 期中考 第 23 題</span><span class="repeat-badge">重複考點 ×3</span>
+  <p class="repeat-note">同考點：112 第23題、113 第26題　—　三種肌肉的比較表，哪一句錯——骨骼肌沒有間隙連接</p>
+  <p class="stem">Which of the following description is false?</p>
+  <ul class="opts"><li>(A) When injury, the skeletal muscle fibers and cardiomyocytes can undergo regeneration</li><li>(B) All of the three types of muscle present gap junctions</li><li>(C) Smooth muscle fibers do not present sarcomere</li><li>(D) In normal conditions, only the smooth muscle fibers could undergo regeneration freely.</li></ul>
+  <details data-kind="answer"><summary>答案與詳解</summary>
+    <div data-kind="zh-translation"><p><strong>中文題目：</strong>下列敘述何者<b>錯誤</b>？</p>
+      <p>(A) 受傷時，骨骼肌纖維與心肌細胞可以進行再生。</p>
+      <p>(B) 三種肌肉都具有間隙連接。</p>
+      <p>(C) 平滑肌纖維沒有肌節。</p>
+      <p>(D) 正常情況下，只有平滑肌纖維能自由地進行再生。</p></div>
+    <p class="ans">答案：(B) All of the three types of muscle present gap junctions</p>
+    <p>骨骼肌沒有間隙連接；心肌再生的申覆被駁回，老師認為有證據支持。<span class="src"> ｜ BM111 BLOCK-8 期中考詳解 第 20 頁</span></p>
+  </details>
+</article>
+<article data-question-id="111-p21-q24" data-placement="final" class="repeat">
+  <span class="qhead">111 年 期中考 第 24 題</span><span class="repeat-badge">重複考點 ×3</span>
+  <p class="repeat-note">同考點：112 第24題、113 第27題　—　平滑肌的敘述何者正確：緻密體、發達的平滑內質網、核在中央、側極性粗肌絲</p>
+  <p class="stem">Which of the following statements concerning smooth muscle is true?</p>
+  <ul class="opts"><li>(A) Cells are fusiform shaped and communicate with each other by an adherent junction.</li><li>(B) The cytoplasm of smooth muscle is eosinophilic and its nuclei are localized in the central of the cell.</li><li>(C) The fibers have dense bodies but do not present well-developed smooth ER.</li><li>(D) The connective tissue of smooth fibers also contains endomysium and perimysium.</li></ul>
+  <details data-kind="answer"><summary>答案與詳解</summary>
+    <div data-kind="zh-translation"><p><strong>中文題目：</strong>關於平滑肌的敘述，何者<b>正確</b>？</p>
+      <p>(A) 細胞呈紡錘形，彼此以黏著連接溝通。</p>
+      <p>(B) 平滑肌的細胞質嗜伊紅，細胞核位於細胞中央。</p>
+      <p>(C) 纖維具有緻密體，但沒有發達的滑面內質網。</p>
+      <p>(D) 平滑肌纖維的結締組織也包含肌內膜與肌束膜。</p></div>
+    <p class="ans">答案：(B) The cytoplasm of smooth muscle is eosinophilic and its nuclei are localized in the central of the cell.</p>
+    <p>平滑肌靠間隙連接、滑面內質網發達、結締組織沒有 perimysium 那套命名。<span class="src"> ｜ BM111 BLOCK-8 期中考詳解 第 21 頁</span></p>
+  </details>
+</article>
+<article data-question-id="111-p22-q25" data-placement="final" class="repeat">
+  <span class="qhead">111 年 期中考 第 25 題</span><span class="repeat-badge">重複考點 ×3</span>
+  <p class="repeat-note">同考點：112 第25題、113 第28題　—　骨骼肌纖維型別：慢氧化型最細最耐疲勞、快無氧型最粗最易疲勞</p>
+  <p class="stem">Which of the following skeletal muscle fibers tend to fatigue?</p>
+  <ul class="opts"><li>(A) slow oxidative</li><li>(B) intermediate</li><li>(C) fast aerobic fibers</li><li>(D) fast anaerobic fibers</li></ul>
+  <details data-kind="answer"><summary>答案與詳解</summary>
+    <div data-kind="zh-translation"><p><strong>中文題目：</strong>下列哪一種骨骼肌纖維<b>容易疲勞</b>？</p>
+      <p>(A) 慢氧化型</p>
+      <p>(B) 中間型</p>
+      <p>(C) 快有氧型</p>
+      <p>(D) 快無氧型</p></div>
+    <p class="ans">答案：(D) fast anaerobic fibers（申覆後由 C 更正為 D）</p>
+    <p>最易疲勞的是快無氧型；原答案誤植為 C，申覆後更正為 D。<span class="src"> ｜ BM111 BLOCK-8 期中考詳解 第 22 頁</span></p>
+  </details>
+</article>
+<article data-question-id="111-p22-q26" data-placement="final" class="repeat">
+  <span class="qhead">111 年 期中考 第 26 題</span><span class="repeat-badge">重複考點 ×2</span>
+  <p class="repeat-note">同考點：112 第26題　—　靜止時遮住肌動蛋白上肌凝蛋白結合位的是原肌凝蛋白</p>
+  <p class="stem">In resting muscle, which of the following proteins masks the myosin-binding site on the actin molecule?</p>
+  <ul class="opts"><li>(A) myosin head</li><li>(B) nebulin</li><li>(C) tropomodulin</li><li>(D) tropomyosin</li></ul>
+  <details data-kind="answer"><summary>答案與詳解</summary>
+    <div data-kind="zh-translation"><p><strong>中文題目：</strong>在靜止的肌肉中，下列哪一種蛋白質遮住了肌動蛋白分子上的肌凝蛋白結合位？</p>
+      <p>(A) 肌凝蛋白頭</p>
+      <p>(B) 伴肌動蛋白</p>
+      <p>(C) 原肌球調節蛋白</p>
+      <p>(D) 原肌凝蛋白</p></div>
+    <p class="ans">答案：(D) tropomyosin</p>
+    <p>遮住結合位的是原肌凝蛋白；nebulin 與 tropomodulin 是細肌絲的其他配角。<span class="src"> ｜ BM111 BLOCK-8 期中考詳解 第 22 頁</span></p>
+  </details>
+</article>
+<article data-question-id="111-p23-q27" data-placement="final" class="repeat">
+  <span class="qhead">111 年 期中考 第 27 題</span><span class="repeat-badge">重複考點 ×3</span>
+  <p class="repeat-note">同考點：112 第27題、113 第30題　—　收縮與放鬆時肌節各帶的變化：H 區與 I 帶會變、A 帶與 M 線不變</p>
+  <p class="stem">Which of the following statements is true when skeletal muscle contraction?</p>
+  <ul class="opts"><li>(A) M line becomes shorter</li><li>(B) H zone becomes narrower</li><li>(C) A band becomes wider</li><li>(D) I band becomes wider</li></ul>
+  <details data-kind="answer"><summary>答案與詳解</summary>
+    <div data-kind="zh-translation"><p><strong>中文題目：</strong>骨骼肌收縮時，下列敘述何者<b>正確</b>？</p>
+      <p>(A) M 線變短。</p>
+      <p>(B) H 區變窄。</p>
+      <p>(C) A 帶變寬。</p>
+      <p>(D) I 帶變寬。</p></div>
+    <p class="ans">答案：(B) H zone becomes narrower</p>
+    <p>收縮時 H 區變窄；I 帶是變窄不是變寬，A 帶與 M 線都不變。<span class="src"> ｜ BM111 BLOCK-8 期中考詳解 第 23 頁</span></p>
+  </details>
+</article>
+<p class="ending">二十題、六個考點、十七題重複。骨骼肌沒有間隙連接、兩個終池夾一根管、越細越耐操、膠帶叫原肌凝蛋白、會變的只有 H 區與 I 帶。</p>
+</section>
+</div>
+</body>
+</html>
