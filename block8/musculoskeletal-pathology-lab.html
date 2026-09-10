@@ -1,0 +1,782 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>肌肉骨骼系統病理學實驗 賴薇安</title>
+<style>
+:root{
+  color-scheme: dark;
+  --bg:#0b0e13; --panel:#141922; --panel2:#1b2230; --line:#2a3340;
+  --ink:#e8ecf3; --dim:#a3adbd; --gold:#e5b567; --cyan:#6fd3c7;
+  --rose:#e88b8b; --violet:#a99bf0;
+}
+*{box-sizing:border-box}
+html{font-size:150%}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font-family:"Noto Sans TC","PingFang TC","Helvetica Neue",system-ui,sans-serif;
+  line-height:1.85; overflow-wrap:anywhere;}
+/* Width follows the device, not the font size: px breakpoints stay put
+   while rem-based type scales with the 150% root. */
+.container{width:100%;max-width:none;margin:0 auto;
+  padding:clamp(.85rem,2.2vw,2.2rem);}
+@media (min-width:760px){ .container{max-width:730px} }
+@media (min-width:1024px){ .container{max-width:980px} }
+@media (min-width:1440px){ .container{max-width:1300px} }
+@media (min-width:1920px){ .container{max-width:1640px} }
+img{max-width:100%;height:auto}
+svg{max-width:100%;height:auto;display:block}
+h1{font-size:1.6rem;line-height:1.35;margin:.2rem 0 .6rem}
+h2{font-size:1.24rem;margin:2.4rem 0 .7rem;padding-bottom:.4rem;
+  border-bottom:1px solid var(--line);color:var(--gold)}
+h3{font-size:1.06rem;margin:1.5rem 0 .5rem;color:var(--cyan)}
+p{margin:.7rem 0}
+header#subject-overview{background:linear-gradient(160deg,#182031,#0e1219);
+  border:1px solid var(--line);border-radius:14px;padding:1.2rem;margin:.6rem 0 1.4rem}
+.meta{color:var(--dim);font-size:.86rem;margin:.3rem 0 0}
+nav#toc{background:var(--panel);border:1px solid var(--line);
+  border-radius:12px;padding:.9rem 1.1rem;margin:1.2rem 0}
+nav#toc ol{margin:.4rem 0 0;padding-left:1.3rem}
+nav#toc a{color:var(--ink);text-decoration:none;border-bottom:1px dotted var(--line)}
+.story{background:var(--panel2);border-left:3px solid var(--violet);
+  border-radius:0 10px 10px 0;padding:.9rem 1.1rem;margin:1.1rem 0}
+.story .tag{display:block;color:var(--violet);font-size:.78rem;
+  letter-spacing:.12em;margin-bottom:.35rem}
+.reality{background:var(--panel);border-left:3px solid var(--cyan);
+  border-radius:0 10px 10px 0;padding:.9rem 1.1rem;margin:1.1rem 0}
+.reality .tag{display:block;color:var(--cyan);font-size:.78rem;
+  letter-spacing:.12em;margin-bottom:.35rem}
+.keybox{background:#12202b;border:1px solid #26485a;border-radius:10px;
+  padding:.85rem 1rem;margin:1.1rem 0}
+.keybox b{color:var(--cyan)}
+.warn{background:#2a1c1c;border:1px solid #573434;border-radius:10px;
+  padding:.85rem 1rem;margin:1.1rem 0;color:#f0cfcf}
+article{background:var(--panel);border:1px solid var(--line);
+  border-radius:12px;padding:.95rem 1.05rem;margin:1.1rem 0}
+article .qhead{display:block;color:var(--gold);font-size:.82rem;
+  letter-spacing:.06em;margin-bottom:.45rem}
+article .stem{margin:.2rem 0 .5rem}
+article ul.opts{list-style:none;margin:.3rem 0 .2rem;padding:0}
+article ul.opts li{padding:.16rem 0 .16rem .2rem;color:#dbe2ec}
+details{background:#0f141c;border:1px solid var(--line);
+  border-radius:10px;padding:.15rem .8rem;margin:.6rem 0}
+details summary{cursor:pointer;padding:.6rem 0;color:var(--gold);
+  font-weight:600;min-height:44px;display:flex;align-items:center}
+details[data-kind="answer"] .ans{font-size:1.05rem;color:var(--cyan);font-weight:700}
+div[data-kind="zh-translation"]{background:#141c26;border:1px dashed #33465c;
+  border-radius:8px;padding:.7rem .85rem;margin:.5rem 0 .8rem}
+div[data-kind="zh-translation"] p{margin:.35rem 0}
+.src{color:var(--dim);font-size:.84rem;margin-top:.6rem}
+.quote{border-left:2px solid var(--gold);padding-left:.75rem;color:#f0e2c6}
+.infer{color:#f0d9a8;font-size:.92rem}
+figure{margin:1.3rem 0;background:var(--panel2);border:1px solid var(--line);
+  border-radius:12px;padding:.9rem}
+figcaption{color:var(--dim);font-size:.85rem;margin-top:.6rem;text-align:center}
+dl.vocab{margin:0}
+dl.vocab dt{color:var(--cyan);font-weight:700;margin-top:.9rem}
+dl.vocab dd{margin:.2rem 0 0;padding-left:0}
+dl.vocab .root{color:var(--dim);font-size:.86rem}
+.cram{background:var(--panel);border:1px solid var(--line);
+  border-radius:12px;padding:.4rem 1.1rem;margin:1rem 0}
+.cram li{margin:.55rem 0}
+.yearchip{display:inline-block;background:#233046;color:#bcd0ea;
+  border-radius:999px;padding:.05rem .55rem;font-size:.76rem;margin-right:.4rem}
+article.repeat{border:2px solid #e05252;box-shadow:0 0 0 3px rgba(224,82,82,.12)}
+article.repeat .qhead{color:#f08a8a}
+.repeat-badge{display:inline-block;background:#3a1c1c;border:1px solid #7d3a3a;
+  color:#f0a8a8;border-radius:999px;padding:.1rem .6rem;font-size:.76rem;
+  margin-left:.4rem;white-space:nowrap}
+.repeat-note{color:#e6a5a5;font-size:.84rem;margin:.45rem 0 0}
+figure.boxfig{margin:1.5rem 0 .5rem;background:transparent;border:0;padding:0}
+figure.boxfig img{border-radius:12px;border:1px solid var(--line);display:block;width:100%}
+figure.boxfig figcaption{color:var(--dim);font-size:.82rem;margin-top:.5rem;
+  text-align:left;line-height:1.6}
+figure.boxfig .figtag{color:var(--violet);font-size:.76rem;letter-spacing:.1em;
+  display:block;margin-bottom:.3rem}
+.ending{color:var(--dim);font-style:italic;margin:1.6rem 0 2.4rem}
+</style></head>
+<body>
+<div class="container">
+
+<header id="subject-overview">
+  <h1>肌肉骨骼系統病理學實驗</h1>
+  <p>這是一門<b>看圖說話</b>的課。九題裡有六題附圖，題幹永遠是同一個結構：<b>年齡＋部位＋一張圖＋一段顯微鏡下的描述</b>，然後問你這是什麼、或哪一句話錯。所以真正在考的不是背誦，是<b>你能不能從三、四個線索收斂到一個診斷</b>。</p>
+  <p>而三年下來只反覆出現四個病灶：膝蓋旁長香菇的<b>骨軟骨瘤</b>、它惡性轉化後的<b>軟骨肉瘤</b>、股骨頭上那塊楔形塌陷的<b>缺血性壞死</b>，以及大腳趾關節裡的<b>痛風石</b>。第四個病灶<b>橫紋肌肉瘤</b>只在 113 年出現一次。把這四張圖與各自的三個關鍵數字記住，這一科就結束了。</p>
+  <p class="meta">命題老師：賴薇安 ｜ 收錄 111 期末考與 112、113 期中考，各 3 題共 9 題</p>
+</header>
+
+<nav id="toc">
+  <b>目錄</b>
+  <ol>
+    <li><a href="#chapter-1">膝蓋旁的香菇：骨軟骨瘤</a></li>
+    <li><a href="#chapter-2">越過那條線：軟骨肉瘤</a></li>
+    <li><a href="#chapter-3">同一顆股骨頭，兩種故事</a></li>
+    <li><a href="#chapter-4">一串葡萄：橫紋肌肉瘤</a></li>
+    <li><a href="#chapter-cram">考前速記</a></li>
+    <li><a href="#chapter-vocab">單字表</a></li>
+    <li><a href="#chapter-final">歷年考題總複習</a></li>
+  </ol>
+</nav>
+<section id="chapter-1" data-chapter-kind="story">
+<h2>一、膝蓋旁的香菇：骨軟骨瘤</h2>
+
+<figure class="boxfig" data-visual-id="plbox-01-story" data-image-kind="story" data-explanation-verified="true">
+<span class="figtag">情境場景</span>
+<img data-visual-id="plbox-01-story" src="img/plbox-01-story.webp" alt="情境場景：十六歲、膝蓋、一朵從骨頭上長出來的香菇。" loading="lazy" decoding="async" width="1600" height="914">
+<figcaption>情境場景：十六歲、膝蓋、一朵從骨頭上長出來的香菇。</figcaption>
+</figure>
+<div class="story" data-prose-kind="story"><span class="tag">故事</span>
+<p><b>病理科醫師</b>把一張玻片推到雙頭顯微鏡的另一邊，讓<b>實習醫師</b>先看。桌上還攤著那張 X 光片。</p>
+<p>「十六歲男生，膝蓋痛了一陣子。你先講片子。」</p>
+<p>實習醫師看了兩秒：「骨頭旁邊長了一個……<b>香菇</b>。有柄，頭是圓的。」</p>
+<p>「很好。你已經講完一半了。」病理科醫師說，「這個形狀幾乎只有一個答案：<b>骨軟骨瘤</b>（osteochondroma）。而且它不是黏在骨頭上，它<b>就是骨頭本身長出去的</b>——裡面的骨髓腔跟母骨是連通的。」</p>
+<p>「那顯微鏡下呢？」</p>
+<p>「你會看到三層，由外往內：最外面一層<b>軟骨膜</b>，往內一層<b>透明軟骨</b>——那是香菇的傘，叫<b>軟骨帽</b>；再往內就是<b>正在進行軟骨內骨化、逐漸成熟的骨</b>。」</p>
+<p>「所以它其實是……一塊<b>迷路的生長板</b>？」</p>
+<p>「就是這個意思。生長板本來該把骨頭往長軸推，這一塊卻朝旁邊長。也因為這樣，它<b>長在幹骺端</b>——生長板旁邊那一段，<b>不是骨骺</b>。這一點考題每年都要騙你一次。」</p>
+<p>病理科醫師拿筆敲了敲軟骨帽那一層：「而這裡有一個數字，你一定要記住。<b>正常的軟骨帽大約一公分。</b>」</p>
+<p>「超過會怎樣？」</p>
+<p>「超過就開始擔心。這朵香菇的傘要是變厚、細胞變密、細胞核長得不規矩——它就<b>不再是良性的</b>了。」</p>
+</div>
+
+<figure class="boxfig" data-visual-id="plbox-02-reality" data-image-kind="mechanism" data-explanation-verified="true">
+<span class="figtag">構造圖解</span>
+<img data-visual-id="plbox-02-reality" src="img/plbox-02-reality.webp" alt="構造圖解：骨軟骨瘤由外到內的三層，以及一公分的軟骨帽門檻。" loading="lazy" decoding="async" width="1600" height="914">
+<figcaption>構造圖解：骨軟骨瘤由外到內的三層，以及一公分的軟骨帽門檻。</figcaption>
+</figure>
+<div class="reality"><span class="tag">回到現實</span>
+<p>三年三題都在同一組事實上打轉。113 年的詳解一次講完，直接抄下來記：</p>
+<p class="quote">詳解原文（113）:「Osteochondroma 是最常見的良性骨腫瘤，好發於四肢骨的 metaphysis，特別容易發生在膝蓋附近，但是 cap of cartilage 厚度通常為 1cm，超過則很可能發展成 chondrosarcoma。Osteochondroma 的透明軟骨層最外圍會被軟骨膜包覆，細胞密度低（no increase in cellularity），而良性的 osteochondroma 可以分化成惡性的 chondrosarcoma，特徵是軟骨層厚度 &gt; 1cm。」</p>
+<p>拆成六條可以直接判對錯的句子：</p>
+<p>① <b>最常見的良性骨腫瘤之一。</b><br>
+② <b>好發於幹骺端（metaphysis），特別是膝蓋附近</b>——<b>不是骨骺（epiphysis）</b>。<br>
+③ <b>好發於青少年與年輕成人。</b><br>
+④ <b>邊界清楚、不侵犯鄰近軟組織。</b><br>
+⑤ 顯微鏡下：<b>軟骨膜包覆 → 透明軟骨帽 → 軟骨內骨化與成熟骨</b>。<br>
+⑥ <b>軟骨帽正常約 1 公分；細胞密度低、無核異型。</b></p>
+<p>111 年的詳解則把「這題怎麼答」講得更直白：</p>
+<p class="quote">詳解原文（111）:「16 year-old, knee, covered perichondrium, a layer of cartilage 5mm, and mushroom shaped →all clues lead to the diagnosis of osteochondroma.」</p>
+<p>注意 111 年題幹給的軟骨帽是 <b>5mm</b>——<b>小於 1 公分</b>，所以是良性；113 年給的是 <b>超過 2 公分</b>，加上細胞密度增加與核異型，就是要你判「已經惡性轉化」。<b>同一個數字，兩年往兩個方向用。</b></p>
+</div>
+
+<figure class="boxfig" data-visual-id="plbox-03-warn" data-image-kind="comparison" data-explanation-verified="true">
+<span class="figtag">陷阱圖解</span>
+<img data-visual-id="plbox-03-warn" src="img/plbox-03-warn.webp" alt="陷阱圖解：幹骺端不是骨骺，以及遺傳性多發性外生骨疣是體染色體顯性。" loading="lazy" decoding="async" width="1600" height="914">
+<figcaption>陷阱圖解：幹骺端不是骨骺，以及遺傳性多發性外生骨疣是體染色體顯性。</figcaption>
+</figure>
+<div class="warn"><span class="tag">別踩這個坑</span>
+<p><b>陷阱一：epiphysis 還是 metaphysis？</b>112 年的錯項就是 <b>(D) It tends to occur in epiphysis</b>，113 年的錯項之一也是 <b>(C) arise from epiphysis</b>。<b>兩年都用同一招。</b>正解永遠是<b>幹骺端</b>。</p>
+<p class="quote">詳解原文（112）:「看到香菇狀的樣子就要想到是Osteochondroma。(D) It tends to occur in metaphysis.」</p>
+<p><b>陷阱二：遺傳模式。</b>113 年題幹提到 <b>multiple hereditary exostosis syndrome（遺傳性多發性外生骨疣）</b>，選項 (A) 說它是<b>體染色體隱性</b>——錯，它是<b>體染色體顯性</b>。</p>
+<p><b>陷阱三：基因。</b>選項 (B) 說與 <b>FGF1 / FGF2</b> 功能喪失有關——錯。這個症候群的相關基因是 <b>EXT1 / EXT2</b>。</p>
+<p class="infer">補充（非詳解內容）：把它和另一個「FGFR3 活化突變」的軟骨發育不全（achondroplasia）分開記——那是病理學(1) 陳建亨的考點，這裡不是。<b>看到 FGF 家族出現在骨軟骨瘤的選項裡，先當它是錯的。</b></p>
+</div>
+
+<article data-question-id="111fin-bm111-p5-q4" data-placement="chapter">
+  <span class="qhead">111 年 期末考 第 4 題</span>
+  <p class="stem">A 16-year-old man presented with knee pain. A plain film was taken, and the lesion is surgically resected. Microscopically the lesion is covered by perichondrium and a layer of cartilage 5mm in thickness. Bone formation and maturation are noted. Which of the following is the diagnosis of this lesion?</p>
+  <ul class="opts">
+    <li>(A) Chondrosarcoma</li>
+    <li>(B) Giant cell tumor of bone</li>
+    <li>(C) Osteoid osteoma</li>
+    <li>(D) Osteochondroma</li>
+  </ul>
+  <details data-kind="answer">
+    <summary>答案與詳解</summary>
+    <div data-kind="zh-translation">
+      <p><strong>中文題目：</strong>一位 16 歲男性因膝痛就診，照了 X 光後將病灶手術切除。顯微鏡下病灶外覆軟骨膜與一層厚 5mm 的軟骨，可見骨質形成與成熟。此病灶的診斷為下列何者？</p>
+      <p>(A) 軟骨肉瘤</p>
+      <p>(B) 骨巨細胞瘤</p>
+      <p>(C) 骨樣骨瘤</p>
+      <p>(D) 骨軟骨瘤</p>
+    </div>
+    <p class="ans">答案：(D) Osteochondroma</p>
+    <p class="quote">詳解原文:「16 year-old, knee, covered perichondrium, a layer of cartilage 5mm, and mushroom shaped →all clues lead to the diagnosis of osteochondroma.」</p>
+    <p>四個線索收斂到同一個診斷：<b>青少年、膝蓋、軟骨膜包覆、軟骨帽 5mm（未達 1 公分）</b>。(A) 軟骨肉瘤細胞密度高且無這種分層結構；(B) 骨巨細胞瘤好發於<b>骨骺</b>且無軟骨帽；(C) 骨樣骨瘤是皮質骨內的小病灶，也不長香菇。</p>
+    <p class="src">出處：賴薇安 肌肉骨骼系統病理學實驗(ppt pg.20-23) ｜ BM111 BLOCK-8 期末考詳解.pdf 第 5 頁</p>
+  </details>
+</article>
+
+<article data-question-id="112-bm112-p21-q16" data-placement="chapter">
+  <span class="qhead">112 年 期中考 第 16 題</span>
+  <p class="stem">A 16-year-old man presented with increasing pain in the left knee for one year. Plain film is shown below (left). The patient received surgical removal for the tumor.Microscopically, the tumor is covered by a layer of perichondrium. Endochondral ossification with mature bone formation is observed (right). Which of the following descriptions about this tumor is incorrect?</p>
+  <ul class="opts">
+    <li>(A) The tumor is usually well-circumscribed and does not invade adjacent soft tissue.</li>
+    <li>(B) The tumor tends to occur in adolescents and young adults.</li>
+    <li>(C) It is one of the most common benign bone tumors.</li>
+    <li>(D) It tends to occur in epiphysis.</li>
+  </ul>
+  <details data-kind="answer">
+    <summary>答案與詳解</summary>
+    <div data-kind="zh-translation">
+      <p><strong>中文題目：</strong>一位 16 歲男性左膝疼痛加劇一年。下方左圖為 X 光片。腫瘤手術切除後，顯微鏡下可見腫瘤外覆一層軟骨膜，並觀察到軟骨內骨化與成熟骨形成（右圖）。關於此腫瘤的敘述，何者<b>錯誤</b>？</p>
+      <p>(A) 此腫瘤通常邊界清楚，不侵犯鄰近軟組織。</p>
+      <p>(B) 此腫瘤好發於青少年與年輕成人。</p>
+      <p>(C) 它是最常見的良性骨腫瘤之一。</p>
+      <p>(D) 它好發於骨骺。</p>
+    </div>
+    <p class="ans">答案：D</p>
+    <p class="quote">詳解原文:「看到香菇狀的樣子就要想到是Osteochondroma。(D) It tends to occur in metaphysis.」</p>
+    <p>與 111 年是同一個病灶、同一組線索，只是把「請診斷」改成「哪一句錯」。<b>(A)(B)(C) 三句都是骨軟骨瘤的標準敘述</b>，唯一被動手腳的是部位。</p>
+    <p class="src">出處：賴薇安 肌肉骨骼系統病理學實驗 (ppt pg.19-28) ｜ BM112_Block 8 期中考(含申覆內容與結果).pdf 第 21 頁</p>
+  </details>
+</article>
+
+<article data-question-id="113-bm113-p22-q16" data-placement="chapter">
+  <span class="qhead">113 年 期中考 第 16 題</span>
+  <p class="stem">A 20-year-old man with known history of multiple hereditary exostosis syndrome presented with increasing pain in the knee. The patient received surgical removal for the tumor. The tumor had a cartilage cap over 2 cm in thickness. Microscopically, the tumor is partially covered by a layer of perichondrium. However, increased cellularity of the cartilagenous component with nuclear atypia is noted. Which of the following descriptions about this tumor is correct?</p>
+  <ul class="opts">
+    <li>(A) This tumor-associated syndrome is inherited in an autosomal recessive manner.</li>
+    <li>(B) It is associated with loss of function of FGF1 or FGF2 gene.</li>
+    <li>(C) The tumor tends to arise from epiphysis of long bone.</li>
+    <li>(D) The tumor may have undergone malignant transformation to chondrosarcoma.</li>
+  </ul>
+  <details data-kind="answer">
+    <summary>答案與詳解</summary>
+    <div data-kind="zh-translation">
+      <p><strong>中文題目：</strong>一位 20 歲男性，已知患有遺傳性多發性外生骨疣症候群，因膝痛加劇就診並手術切除腫瘤。腫瘤的軟骨帽厚度<b>超過 2 公分</b>，顯微鏡下腫瘤<b>部分</b>被一層軟骨膜覆蓋，但可見軟骨成分<b>細胞密度增加並伴有細胞核異型</b>。關於此腫瘤的敘述，何者<b>正確</b>？</p>
+      <p>(A) 此腫瘤相關的症候群為體染色體隱性遺傳。</p>
+      <p>(B) 它與 FGF1 或 FGF2 基因功能喪失有關。</p>
+      <p>(C) 此腫瘤好發於長骨的骨骺。</p>
+      <p>(D) 此腫瘤可能已發生惡性轉化為軟骨肉瘤。</p>
+    </div>
+    <p class="ans">答案：(D)</p>
+    <p class="quote">詳解原文:「Osteochondroma 是最常見的良性骨腫瘤，好發於四肢骨的 metaphysis，特別容易發生在膝蓋附近，但是 cap of cartilage 厚度通常為 1cm，超過則很可能發展成 chondrosarcoma。Osteochondroma 的透明軟骨層最外圍會被軟骨膜包覆，細胞密度低（no increase in cellularity），而良性的 osteochondroma 可以分化成惡性的 chondrosarcoma，特徵是軟骨層厚度 &gt; 1cm。」</p>
+    <p>題幹把三個危險訊號一次給滿：<b>軟骨帽 &gt; 2 公分、只有部分被軟骨膜覆蓋、細胞密度增加且核異型</b>。(C) 仍是那個老陷阱（該是幹骺端）；(A) 該是<b>體染色體顯性</b>；(B) 相關基因是 <b>EXT1／EXT2</b>，不是 FGF1／FGF2。</p>
+    <p class="src">出處：肌肉骨骼系統病理學實驗 賴薇安 ppt p. 20-21, 23, 29-30 ｜ BM113_Block8期中考詳解.pdf 第 22 頁</p>
+  </details>
+</article>
+</section>
+<section id="chapter-2" data-chapter-kind="story">
+<h2>二、越過那條線：軟骨肉瘤</h2>
+
+<figure class="boxfig" data-visual-id="plbox-04-story" data-image-kind="story" data-explanation-verified="true">
+<span class="figtag">情境場景</span>
+<img data-visual-id="plbox-04-story" src="img/plbox-04-story.webp" alt="情境場景：良性可以往惡性走，惡性不會走回良性——箭頭只有一個方向。" loading="lazy" decoding="async" width="1600" height="914">
+<figcaption>情境場景：良性可以往惡性走，惡性不會走回良性——箭頭只有一個方向。</figcaption>
+</figure>
+<div class="story" data-prose-kind="story"><span class="tag">故事</span>
+<p>「同一個病人，十年後又來了。」病理科醫師換了一張玻片，「這次的軟骨帽，三公分。」</p>
+<p>實習醫師看了看：「細胞變得好多……而且核大小不一。」</p>
+<p>「對。它<b>越線了</b>。這叫<b>軟骨肉瘤</b>（chondrosarcoma）。」</p>
+<p>「所以骨軟骨瘤會變成軟骨肉瘤。」</p>
+<p>「會。<b>但反過來不會。</b>」病理科醫師特地停了一下，「這是這一章唯一的重點。良性可以往惡性走，<b>惡性不會走回良性</b>。111 年那題的錯項就是把箭頭畫反了——它說軟骨肉瘤會去分化成骨軟骨瘤。這在腫瘤學裡是不存在的事。」</p>
+<p>「可是『去分化』這個詞本身是對的吧？」</p>
+<p>「對，<b>去分化本身確實會發生</b>。但它的意思是<b>往更壞的方向掉</b>：低惡性度的軟骨肉瘤裡冒出一塊高惡性度的成分。112 年就把這句話原封不動放進選項裡，那年它是<b>對的</b>。」</p>
+<p>「所以同一個詞，兩年一對一錯。」</p>
+<p>「差別只在<b>後面接的那個名詞</b>。接『高惡性度』就對，接『骨軟骨瘤』就錯。」</p>
+<p>他又指了指視野：「還有一件事很反直覺。你剛剛說『細胞變得好多』——那是<b>跟骨軟骨瘤比</b>。可是<b>跟其他惡性腫瘤比，軟骨肉瘤的細胞密度其實算低的</b>。這一句也被拿去出過題。」</p>
+</div>
+
+<figure class="boxfig" data-visual-id="plbox-05-reality" data-image-kind="comparison" data-explanation-verified="true">
+<span class="figtag">要點對照</span>
+<img data-visual-id="plbox-05-reality" src="img/plbox-05-reality.webp" alt="要點對照：軟骨肉瘤的年齡、部位、細胞密度與去分化方向。" loading="lazy" decoding="async" width="1600" height="914">
+<figcaption>要點對照：軟骨肉瘤的年齡、部位、細胞密度與去分化方向。</figcaption>
+</figure>
+<div class="reality"><span class="tag">回到現實</span>
+<p>兩年考的是同一組四句話，只是哪一句被動手腳不一樣。整理成四條：</p>
+<p>① <b>年齡：小孩罕見。</b>軟骨肉瘤是<b>成人／中老年</b>的腫瘤——112 年的錯項就是把它說成「commonly occurs in children」。</p>
+<p>② <b>部位：好發於長骨與扁平骨。</b>兩年都以正確敘述出現。</p>
+<p>③ <b>細胞密度：相較於多數惡性腫瘤，軟骨肉瘤的細胞密度偏低。</b>112 年的 (B) 是正確敘述。<b>注意比較對象</b>——比其他癌低，但比骨軟骨瘤的軟骨帽高。</p>
+<p>④ <b>去分化（dedifferentiation）確實會發生</b>，但方向是<b>往更惡性走</b>。111 年的 (D)「軟骨肉瘤去分化成骨軟骨瘤」把方向寫反了，是錯的。</p>
+<p class="quote">詳解原文（111）:「是osteochondroma才有可能變成轉變分化成chondrosarcoma。」</p>
+<p>另外 111 年的 (B) 提到軟骨肉瘤可分為 <b>conventional、peripheral、periosteal</b> 三型，該年被當作正確敘述，未被列為答案。</p>
+<p class="infer">補充（非詳解內容，用來把兩章串起來）：骨軟骨瘤與軟骨肉瘤在顯微鏡下的分界，就是<b>軟骨帽厚度、細胞密度、核異型</b>這三項。113 年第 16 題三項全中，所以答案是「已惡性轉化」；111 年第 4 題三項全不中（5mm、有完整軟骨膜、無核異型），所以是良性。</p>
+</div>
+
+<article data-question-id="111fin-bm111-p7-q6" data-placement="chapter">
+  <span class="qhead">111 年 期末考 第 6 題</span>
+  <p class="stem">Chondrosarcoma is a malignant bone tumor. Which of the following descriptions is incorrect?</p>
+  <ul class="opts">
+    <li>(A) Occurrence in children is rare.</li>
+    <li>(B) There are three subtypes, including conventional, peripheral, and periosteal types.</li>
+    <li>(C) It preferentially occurs in long bones and flat bones.</li>
+    <li>(D) It may de-differentiate and transform into osteochondroma.</li>
+  </ul>
+  <details data-kind="answer">
+    <summary>答案與詳解</summary>
+    <div data-kind="zh-translation">
+      <p><strong>中文題目：</strong>軟骨肉瘤是一種惡性骨腫瘤。下列敘述何者<b>錯誤</b>？</p>
+      <p>(A) 發生於兒童者罕見。</p>
+      <p>(B) 有三種亞型，包括傳統型、周邊型與骨膜型。</p>
+      <p>(C) 好發於長骨與扁平骨。</p>
+      <p>(D) 它可能去分化並轉變為骨軟骨瘤。</p>
+    </div>
+    <p class="ans">答案：(D) It may de-differentiate and transform into osteochondroma.</p>
+    <p class="quote">詳解原文:「是osteochondroma才有可能變成轉變分化成chondrosarcoma。」</p>
+    <p><b>箭頭方向反了</b>：是良性的骨軟骨瘤可能轉化成惡性的軟骨肉瘤，不是反過來。惡性腫瘤不會退回良性。</p>
+    <p class="src">出處：賴薇安 肌肉骨骼系統病理學實驗(ppt pg.30) ｜ BM111 BLOCK-8 期末考詳解.pdf 第 7 頁</p>
+  </details>
+</article>
+
+<article data-question-id="112-bm112-p26-q18" data-placement="chapter">
+  <span class="qhead">112 年 期中考 第 18 題</span>
+  <p class="stem">Which of the following descriptions about chondrosarcoma is incorrect?</p>
+  <ul class="opts">
+    <li>(A) Commonly occurs in children.</li>
+    <li>(B)It has lower cellularity as compared to most malignant tumors.</li>
+    <li>(C) It tends to occur in long bones and flat bones.</li>
+    <li>(D) Dedifferentiation may occur in chondrosarcoma.</li>
+  </ul>
+  <details data-kind="answer">
+    <summary>答案與詳解</summary>
+    <div data-kind="zh-translation">
+      <p><strong>中文題目：</strong>關於軟骨肉瘤的敘述，何者<b>錯誤</b>？</p>
+      <p>(A) 常發生於兒童。</p>
+      <p>(B) 相較於多數惡性腫瘤，它的細胞密度較低。</p>
+      <p>(C) 它好發於長骨與扁平骨。</p>
+      <p>(D) 軟骨肉瘤可能發生去分化。</p>
+    </div>
+    <p class="ans">答案：A</p>
+    <p>原卷<b>詳解欄留空</b>，只給了答案與出處。與 111 年第 6 題是同一組敘述：<b>「小孩罕見」被改成「常見於小孩」</b>而成為錯項。注意 (D) 這年寫的是「軟骨肉瘤可能發生去分化」——<b>沒有接錯的名詞，所以是對的</b>。</p>
+    <p class="src">出處：M110共筆 賴薇安 病理實驗共筆V1 M-S System (pg.15) ｜ BM112_Block 8 期中考(含申覆內容與結果).pdf 第 26 頁</p>
+  </details>
+</article>
+</section>
+<section id="chapter-3" data-chapter-kind="story">
+<h2>三、同一顆股骨頭，兩種故事</h2>
+
+<figure class="boxfig" data-visual-id="plbox-06-story" data-image-kind="story" data-explanation-verified="true">
+<span class="figtag">情境場景</span>
+<img data-visual-id="plbox-06-story" src="img/plbox-06-story.webp" alt="情境場景：一顆換下來的股骨頭，切面上有一塊楔形的死區。" loading="lazy" decoding="async" width="1600" height="914">
+<figcaption>情境場景：一顆換下來的股骨頭，切面上有一塊楔形的死區。</figcaption>
+</figure>
+<div class="story" data-prose-kind="story"><span class="tag">故事</span>
+<p>檯面上放著一顆剛換下來的<b>股骨頭</b>。五十五歲女性，右髖痛到走不動，做了全髖關節置換。</p>
+<p>病理科醫師把它對半剖開：「你看到什麼？」</p>
+<p>實習醫師湊近：「靠近關節面的地方……有一塊<b>三角形的、顏色不一樣的區域</b>。而且上面那層軟骨好像有點<b>塌下去</b>。」</p>
+<p>「那是<b>梗塞</b>。」病理科醫師說，「這塊骨頭<b>斷了血</b>。缺血性壞死的形狀就是這樣——尖端朝內、底邊貼著關節面的<b>楔形</b>，因為它是沿著一條血管的供應範圍死掉的。上面那層塌陷，是因為底下的骨小樑失去支撐。」</p>
+<p>「那病因怎麼查？」</p>
+<p>「問三件事：<b>有沒有用類固醇、有沒有喝酒、有沒有東西塞住血管。</b>這三個是最常被考的。」</p>
+<p>實習醫師想了想：「那如果是癌症轉移過來呢？也會把血管吃掉吧？」</p>
+<p>病理科醫師搖頭：「反過來想。<b>癌細胞比正常細胞更需要血。</b>轉移灶到哪裡都會拚命誘導新生血管，不會把自己餓死。所以<b>骨轉移不是缺血性壞死的成因</b>——111 年那題問『最不可能的原因』，答案就是它。」</p>
+<p>他把股骨頭推到一旁，換上另一張玻片：「同一個部位的痛，也可能是完全不同的東西。這次是四十八歲男性，<b>右腳大拇趾的第一蹠趾關節</b>，腫痛好幾個月，藥都壓不下來。」</p>
+<p>螢幕上是兩張圖：左邊 H&amp;E，一團<b>淡淡的、沒有形狀的東西</b>，外圍圍了一圈細胞；右邊偏光鏡下，一大把<b>針狀的結晶</b>閃著光。</p>
+<p>「這個不是壞死。」病理科醫師說，「<b>這是痛風石。</b>」</p>
+</div>
+
+<figure class="boxfig" data-visual-id="plbox-07-reality" data-image-kind="comparison" data-explanation-verified="true">
+<span class="figtag">病因對照</span>
+<img data-visual-id="plbox-07-reality" src="img/plbox-07-reality.webp" alt="病因對照：缺血性壞死的三個成因，以及骨轉移為何不在其中。" loading="lazy" decoding="async" width="1600" height="914">
+<figcaption>病因對照：缺血性壞死的三個成因，以及骨轉移為何不在其中。</figcaption>
+</figure>
+<div class="reality"><span class="tag">回到現實 ①　股骨頭缺血性壞死</span>
+<p><b>會造成的：</b></p>
+<p>・<b>血管栓塞</b>（vascular thrombosis）——血路直接被塞住<br>
+・<b>類固醇使用</b>（steroid use）<br>
+・<b>酗酒</b>（alcohol ingestion / alcoholism）</p>
+<p><b>不會造成的：</b><b>惡性腫瘤的骨轉移</b>。</p>
+<p class="quote">詳解原文（111）:「找缺血性壞死的etiology　(D) 不可能，癌細胞會更需要blood supply」</p>
+<p>112 年把同一顆股骨頭換成「哪一句<b>對</b>」，正確答案就是 <b>(C) 酗酒參與致病機轉</b>。而那年的另外三個干擾選項，全部來自<b>別的疾病</b>：</p>
+<p>・(A) 與<b>高尿酸血症</b>有關 → 那是<b>痛風</b><br>
+・(B) 偏光顯微鏡下可見<b>針狀結晶</b> → 那也是<b>痛風</b><br>
+・(D) 由<b>軟骨帽</b>的慢性磨損造成 → 「軟骨帽」是<b>骨軟骨瘤</b>的詞</p>
+<p class="infer">所以 112 年那一題其實是把本科前兩章的關鍵詞全部拿來當誘餌。<b>認得出每個詞真正的主人，這題不必看圖也能作答。</b></p>
+</div>
+
+<figure class="boxfig" data-visual-id="plbox-08-keybox" data-image-kind="comparison" data-explanation-verified="true">
+<span class="figtag">結晶對照</span>
+<img data-visual-id="plbox-08-keybox" src="img/plbox-08-keybox.webp" alt="結晶對照：痛風是針狀尿酸鹽，假性痛風是菱形焦磷酸鈣。" loading="lazy" decoding="async" width="1600" height="914">
+<figcaption>結晶對照：痛風是針狀尿酸鹽，假性痛風是菱形焦磷酸鈣。</figcaption>
+</figure>
+<div class="keybox"><span class="tag">回到現實 ②　痛風石</span>
+<p>113 年的詳解把三個線索串成一條推理鏈：</p>
+<p class="quote">詳解原文:「1st MTP,顯微鏡下淡染、沒有特殊形狀、偏光鏡下看到針狀結晶，可判斷為痛風　痛風成分是Sodium urate monohydrate單鈉鹽尿酸結晶　故選C」</p>
+<p><b>線索一：部位。</b>第一蹠趾關節（1st MTP）——痛風的經典位置。<br>
+<b>線索二：H&amp;E。</b><b>痛風石</b>（tophus）是一團<b>淡染、無定形</b>的物質，外圍<b>被組織球圍成一圈</b>。<br>
+<b>線索三：偏光鏡。</b><b>針狀</b>結晶。<br>
+<b>線索四：機轉。</b><b>高尿酸血症</b>參與致病。</p>
+<p>四條線索全部指向<b>痛風</b>，成分是<b>單鈉尿酸鹽（monosodium urate monohydrate）</b>。所以說它是<b>焦磷酸鈣沉積症（CPPD）</b>的那一句就是錯的。</p>
+<p class="infer">補充（非詳解內容，用來把兩者釘死）：<b>痛風＝針狀（needle-shaped）</b>、<b>CPPD／假性痛風＝菱形或短棒狀（rhomboid）</b>。看到「needle」就是痛風。CPPD 好發於膝與腕，不是大腳趾。</p>
+</div>
+
+<article data-question-id="111fin-bm111-p6-q5" data-placement="chapter">
+  <span class="qhead">111 年 期末考 第 5 題</span>
+  <p class="stem">A 55-year old woman presented with right hip pain. She received total hip replacement. The gross picture of the resected right femoral head is presented below. Which of the following is the least likely cause of this lesion?</p>
+  <ul class="opts">
+    <li>(A) Vascular thrombosis</li>
+    <li>(B) Steroid uses</li>
+    <li>(C) Alcohol ingestion</li>
+    <li>(D) Bone metastasis of a malignant tumor</li>
+  </ul>
+  <details data-kind="answer">
+    <summary>答案與詳解</summary>
+    <div data-kind="zh-translation">
+      <p><strong>中文題目：</strong>一位 55 歲女性因右髖疼痛就診，接受全髖關節置換。下圖為切除的右側股骨頭大體照。下列何者<b>最不可能</b>是此病灶的成因？</p>
+      <p>(A) 血管栓塞</p>
+      <p>(B) 類固醇使用</p>
+      <p>(C) 飲酒</p>
+      <p>(D) 惡性腫瘤的骨轉移</p>
+    </div>
+    <p class="ans">答案：(D) Bone metastasis of a malignant tumor</p>
+    <p class="quote">詳解原文:「找缺血性壞死的etiology　(D) 不可能，癌細胞會更需要blood supply」</p>
+    <p>大體照上的<b>楔形梗塞與軟骨下塌陷</b>指向<b>股骨頭缺血性壞死</b>。(A)(B)(C) 是三個標準成因；(D) 的邏輯相反——腫瘤會誘導新生血管，不會造成缺血。</p>
+    <p class="src">出處：賴薇安 肌肉骨骼系統病理學實驗(ppt pg.5) ｜ BM111 BLOCK-8 期末考詳解.pdf 第 6 頁</p>
+  </details>
+</article>
+
+<article data-question-id="112-bm112-p23-q17" data-placement="chapter">
+  <span class="qhead">112 年 期中考 第 17 題</span>
+  <p class="stem">A 55-year-old woman received hip joint replacement surgery for right hip pain. The gross picture of the femoral head lesion is shown below. Which of the following descriptions about the lesion is correct?</p>
+  <ul class="opts">
+    <li>(A) It is associated with hyperuricemia.</li>
+    <li>(B) Needle-shpaed crystals may be seen through birefringent microscopy.</li>
+    <li>(C) Alcolholism plays a role in pathogenesis.</li>
+    <li>(D) It is caused by chronic abrasion of the cartilage cap.</li>
+  </ul>
+  <details data-kind="answer">
+    <summary>答案與詳解</summary>
+    <div data-kind="zh-translation">
+      <p><strong>中文題目：</strong>一位 55 歲女性因右髖疼痛接受髖關節置換手術。下圖為股骨頭病灶的大體照。關於此病灶的敘述，何者<b>正確</b>？</p>
+      <p>(A) 它與高尿酸血症有關。</p>
+      <p>(B) 在偏光顯微鏡下可見針狀結晶。</p>
+      <p>(C) 酗酒參與其致病機轉。</p>
+      <p>(D) 它由軟骨帽的慢性磨損造成。</p>
+    </div>
+    <p class="ans">答案：C</p>
+    <p>原卷<b>詳解欄留空</b>，只給了答案與出處。與 111 年第 5 題是同一顆股骨頭、同一個診斷（缺血性壞死），只是改問「哪一句對」。三個干擾選項各借自別的疾病：(A)(B) 是<b>痛風</b>的特徵，(D) 的「軟骨帽」是<b>骨軟骨瘤</b>的詞。</p>
+    <p class="src">出處：賴薇安 肌肉骨骼系統病理學實驗 (ppt pg.5; 共筆 pg.5-6) ｜ BM112_Block 8 期中考(含申覆內容與結果).pdf 第 23 頁</p>
+  </details>
+</article>
+
+<article data-question-id="113-bm113-p24-q17" data-placement="chapter">
+  <span class="qhead">113 年 期中考 第 17 題</span>
+  <p class="stem">A 48 year-old man presented with chronic pain and swelling of the right 1st meta-tarsophalangeal joint not responding to medical treatment. Surgery is performed to relieve his symptom. Which of the following description is incorrect? (Left: H&amp;E, light microscopy; Right: polarized ligh microscopy)</p>
+  <ul class="opts">
+    <li>(A) The H&amp;E slide shows tophi composed of pale-staining amorphous material rimmed by histiocytes.</li>
+    <li>(B) Needle-shaped crystals are seen through polarized light.</li>
+    <li>(C) The microscopic findings suggest calcium pyrophosphate crystal deposition disease.</li>
+    <li>(D) Hyperuricemia plays a role in pathogenesis of the disease.</li>
+  </ul>
+  <details data-kind="answer">
+    <summary>答案與詳解</summary>
+    <div data-kind="zh-translation">
+      <p><strong>中文題目：</strong>一位 48 歲男性右側第一蹠趾關節慢性疼痛腫脹，藥物治療無效，接受手術緩解症狀。下列敘述何者<b>錯誤</b>？（左：H&amp;E 光學顯微鏡；右：偏光顯微鏡）</p>
+      <p>(A) H&amp;E 切片顯示痛風石，由淡染的無定形物質構成，外圍由組織球圍繞。</p>
+      <p>(B) 偏光鏡下可見針狀結晶。</p>
+      <p>(C) 顯微鏡下的發現提示焦磷酸鈣結晶沉積症。</p>
+      <p>(D) 高尿酸血症參與此疾病的致病機轉。</p>
+    </div>
+    <p class="ans">答案：(C)</p>
+    <p class="quote">詳解原文:「1st MTP,顯微鏡下淡染、沒有特殊形狀、偏光鏡下看到針狀結晶，可判斷為痛風　痛風成分是Sodium urate monohydrate單鈉鹽尿酸結晶　故選C」</p>
+    <p>(A)(B)(D) 三句都是<b>痛風</b>的正確描述，正好構成完整的推理鏈。(C) 把診斷換成 <b>CPPD</b>——結晶形狀與部位都對不上。</p>
+    <p class="src">出處：肌肉骨骼系統病理學實驗 賴薇安 ｜ BM113_Block8期中考詳解.pdf 第 24 頁</p>
+  </details>
+</article>
+</section>
+<section id="chapter-4" data-chapter-kind="story">
+<h2>四、一串葡萄：橫紋肌肉瘤</h2>
+
+<figure class="boxfig" data-visual-id="plbox-09-story" data-image-kind="story" data-explanation-verified="true">
+<span class="figtag">情境場景</span>
+<img data-visual-id="plbox-09-story" src="img/plbox-09-story.webp" alt="情境場景：黏膜下的腫瘤往腔室裡鼓出來，像一串葡萄。" loading="lazy" decoding="async" width="1600" height="914">
+<figcaption>情境場景：黏膜下的腫瘤往腔室裡鼓出來，像一串葡萄。</figcaption>
+</figure>
+<div class="story" data-prose-kind="story"><span class="tag">故事</span>
+<p>最後一張玻片。「這一個跟前面三個都不一樣。」病理科醫師說，「前面那些長在骨頭上，這一個長在<b>肌肉</b>裡——而且是<b>小孩</b>身上最常見的軟組織惡性腫瘤。」</p>
+<p>「<b>橫紋肌肉瘤</b>（rhabdomyosarcoma）。」</p>
+<p>「對。名字是『橫紋肌』，但你不要以為它一定長在四肢的大塊肌肉上。它最愛去三個地方：<b>頭頸部、四肢、泌尿生殖系統</b>。」</p>
+<p>「泌尿生殖？肌肉肉瘤怎麼會長在膀胱？」</p>
+<p>「因為它來自<b>能往橫紋肌分化的原始間葉細胞</b>，那種細胞哪裡都有。而長在膀胱或陰道這種<b>黏膜腔室</b>裡的時候，它會往腔內鼓出來，一顆一顆——<b>像一串葡萄</b>。這個型有專門的名字，叫 <b>sarcoma botryoides</b>（葡萄狀肉瘤）。」</p>
+<p>「那怎麼分型？」</p>
+<p>「先看<b>形態</b>。四型：<b>胚胎型、腺泡型、多形型、梭形細胞／硬化型</b>。」</p>
+<p>「不是看基因嗎？我記得有 PAX-FOXO1。」</p>
+<p>「這就是那年考的陷阱。<b>PAX3-FOXO1 與 PAX7-FOXO1 只在腺泡型（alveolar）出現</b>，其他三型沒有。所以說『一定要驗到這兩個融合基因才能診斷』——<b>那是錯的</b>。基因是拿來<b>確認腺泡型</b>的，不是整個橫紋肌肉瘤的入場券。」</p>
+</div>
+
+<figure class="boxfig" data-visual-id="plbox-10-reality" data-image-kind="comparison" data-explanation-verified="true">
+<span class="figtag">分型圖解</span>
+<img data-visual-id="plbox-10-reality" src="img/plbox-10-reality.webp" alt="分型圖解：四種形態分型，融合基因只屬於腺泡型。" loading="lazy" decoding="async" width="1600" height="914">
+<figcaption>分型圖解：四種形態分型，融合基因只屬於腺泡型。</figcaption>
+</figure>
+<div class="reality"><span class="tag">回到現實</span>
+<p>113 年第 18 題的詳解把四個選項逐一交代：</p>
+<p class="quote">詳解原文:「(A)正確，如下圖embryonal type　(B)(C)正確，如下圖的sarcoma botryoides和subtypes介紹　(D)錯誤，PAX3-FOXO1和PAX7-FOXO1 gene variations僅適用於alveolar type，其他type則無此表現」</p>
+<p>整理成四條：</p>
+<p>① <b>好發部位：頭頸部、四肢、泌尿生殖系統。</b></p>
+<p>② <b>依形態分四型</b>：胚胎型（embryonal）、腺泡型（alveolar）、多形型（pleomorphic）、梭形細胞／硬化型（spindle cell / sclerotic）。</p>
+<p>③ <b>Sarcoma botryoides</b>：長在膀胱、陰道等黏膜構造附近，往腔內呈<b>葡萄串狀</b>突出。</p>
+<p>④ <b>PAX3-FOXO1 與 PAX7-FOXO1 只見於腺泡型</b>；<b>不是</b>診斷橫紋肌肉瘤的必要條件。</p>
+<p class="infer">題幹問的是「哪一句<b>比較不精確</b>（less accurate）」而不是「哪一句錯」。這種問法通常代表那一句<b>部分為真</b>——融合基因確實有診斷價值，錯的是「<b>only</b>（唯有）」這個字。<b>看到 only、all、must 這種絕對字眼，先當它可疑。</b></p>
+</div>
+
+<article data-question-id="113-bm113-p25-q18" data-placement="chapter">
+  <span class="qhead">113 年 期中考 第 18 題</span>
+  <p class="stem">Regarding rhabdomyosarcoma, which of the following statements is less accurate?</p>
+  <ul class="opts">
+    <li>(A) The tumor commonly occurs in the head and neck, limbs, and genitourinary system.</li>
+    <li>(B) Based on its morphology, it can be further classified into embryonal rhabdomyosarcoma, alveolar rhabdomyosarcoma, pleomorphic rhabdomyosarcoma, and spindle cell/sclerotic rhabdomyosarcoma.</li>
+    <li>(C) Rhabdomyosarcoma may grow near mucosal structures (such as the bladder or vagina) and protrude outward in a grape-like fashion, known as sarcoma botryoides.</li>
+    <li>(D) Pathologically, the diagnosis of rhabdomyosarcoma can only be made by detecting PAX3-FOXO1 and PAX7-FOXO1 gene variations.</li>
+  </ul>
+  <details data-kind="answer">
+    <summary>答案與詳解</summary>
+    <div data-kind="zh-translation">
+      <p><strong>中文題目：</strong>關於橫紋肌肉瘤，下列敘述何者<b>較不精確</b>？</p>
+      <p>(A) 此腫瘤常發生於頭頸部、四肢與泌尿生殖系統。</p>
+      <p>(B) 依形態可進一步分為胚胎型、腺泡型、多形型與梭形細胞／硬化型橫紋肌肉瘤。</p>
+      <p>(C) 橫紋肌肉瘤可能生長於黏膜構造附近（如膀胱或陰道），並呈葡萄串狀向外突出，稱為葡萄狀肉瘤。</p>
+      <p>(D) 病理上，橫紋肌肉瘤的診斷<b>唯有</b>透過偵測 PAX3-FOXO1 與 PAX7-FOXO1 基因變異才能成立。</p>
+    </div>
+    <p class="ans">答案：(D)</p>
+    <p class="quote">詳解原文:「(A)正確，如下圖embryonal type (B)(C)正確，如下圖的sarcoma botryoides和subtypes介紹 (D)錯誤，PAX3-FOXO1和PAX7-FOXO1 gene variations僅適用於alveolar type，其他type則無此表現」</p>
+    <p>這兩個融合基因是<b>腺泡型</b>的標記，其餘三型不會有。分型的第一步是<b>形態</b>，基因是用來確認腺泡型的。</p>
+    <p class="src">出處：肌肉骨骼系統病理學實驗 賴薇安 ppt pg.48,49 ｜ BM113_Block8期中考詳解.pdf 第 25 頁</p>
+  </details>
+</article>
+</section>
+<section id="chapter-cram" data-chapter-kind="cram">
+<h2>五、考前速記</h2>
+<div class="cram">
+<ul>
+<li><b>看到香菇狀 → 骨軟骨瘤（osteochondroma）。</b>它是最常見的良性骨腫瘤之一。</li>
+<li><b>骨軟骨瘤好發於幹骺端（metaphysis），尤其膝蓋附近</b>——<b>不是骨骺</b>。兩年都用這一招設陷阱。</li>
+<li><b>好發年齡：青少年與年輕成人</b>；<b>邊界清楚、不侵犯軟組織</b>。</li>
+<li>顯微鏡下三層：<b>軟骨膜 → 透明軟骨帽 → 軟骨內骨化與成熟骨</b>。</li>
+<li><b>軟骨帽 1 公分是那條線。</b>111 年給 5mm（良性）、113 年給 &gt; 2cm（已惡性轉化）。</li>
+<li><b>惡性轉化的三個訊號：軟骨帽變厚、細胞密度增加、核異型。</b>113 年三個一次給滿。</li>
+<li><b>遺傳性多發性外生骨疣：體染色體顯性</b>，相關基因 <b>EXT1／EXT2</b>——<b>不是</b> FGF1／FGF2、<b>不是</b>隱性。</li>
+<li><b>箭頭只有一個方向：骨軟骨瘤 → 軟骨肉瘤。</b>反過來寫就是錯的（111 年的錯項）。</li>
+<li><b>軟骨肉瘤：小孩罕見</b>，是成人的腫瘤。寫成「常見於兒童」就是錯的（112 年的錯項）。</li>
+<li><b>軟骨肉瘤好發於長骨與扁平骨</b>；111 年提到三亞型 conventional、peripheral、periosteal。</li>
+<li><b>軟骨肉瘤的細胞密度「比其他惡性腫瘤低」</b>——這句是對的。注意比較對象。</li>
+<li><b>去分化本身會發生，但方向是往更惡性走</b>，不會變回良性。</li>
+<li><b>股骨頭缺血性壞死三大成因：血管栓塞、類固醇、酗酒。</b></li>
+<li><b>骨轉移不是缺血性壞死的成因</b>——癌細胞更需要血流，不會把自己餓死。</li>
+<li><b>大體上是楔形梗塞＋軟骨下塌陷。</b></li>
+<li><b>高尿酸血症、針狀結晶 → 痛風</b>，不是股骨頭壞死。112 年拿它們當誘餌。</li>
+<li><b>「軟骨帽」這個詞只屬於骨軟骨瘤</b>，出現在股骨頭病灶的選項裡就是錯的。</li>
+<li><b>痛風：第一蹠趾關節、痛風石淡染無定形外圍組織球、針狀結晶、單鈉尿酸鹽。</b></li>
+<li><b>痛風＝針狀；CPPD／假性痛風＝菱形短棒。</b>看到 needle 就是痛風。</li>
+<li><b>橫紋肌肉瘤好發：頭頸部、四肢、泌尿生殖系統。</b></li>
+<li><b>四型：胚胎型、腺泡型、多形型、梭形細胞／硬化型</b>，依<b>形態</b>分。</li>
+<li><b>Sarcoma botryoides＝葡萄串狀</b>，長在膀胱、陰道等黏膜腔室。</li>
+<li><b>PAX3-FOXO1／PAX7-FOXO1 只屬於腺泡型</b>，不是診斷的必要條件。</li>
+<li>題幹出現 <b>only、all、must</b> 之類的絕對字眼，先當它可疑。</li>
+</ul>
+</div>
+</section>
+
+<!-- ================= VOCAB ================= -->
+<section id="chapter-vocab" data-chapter-kind="vocab">
+<h2>六、單字表</h2>
+<dl class="vocab">
+<dt>osteochondroma</dt>
+<dd><span class="root">osteo-（骨）+ chondro-（軟骨）+ -oma（瘤）</span>　骨軟骨瘤。骨表面外生、帶軟骨帽的良性腫瘤。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>名字就是「骨＋軟骨」——因為它同時有骨柄與軟骨傘。<b>香菇。</b></p></details></dd>
+
+<dt>exostosis</dt>
+<dd><span class="root">ex-（向外）+ ost-（骨）+ -osis</span>　外生骨疣。骨表面向外生長的骨性突起。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>ex-＝往外長。多發性者即 multiple hereditary exostosis，<b>體染色體顯性</b>。</p></details></dd>
+
+<dt>cartilage cap</dt>
+<dd><span class="root">cap＝帽</span>　軟骨帽。骨軟骨瘤最外層的透明軟骨，正常約 1 公分。<details data-kind="vocab-memory"><summary>記憶提示</summary><p><b>1 公分是那條線。</b>超過就懷疑惡性轉化——這個數字每年都考。</p></details></dd>
+
+<dt>perichondrium</dt>
+<dd><span class="root">peri-（周圍）+ chondro-（軟骨）</span>　軟骨膜。包在軟骨帽最外面的緻密結締組織。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>peri-＝在外圍（比較 periosteum 骨膜）。<b>「完整覆蓋」偏良性，「只有部分覆蓋」是壞消息。</b></p></details></dd>
+
+<dt>metaphysis</dt>
+<dd><span class="root">meta-（在……之後）+ physis（生長）</span>　幹骺端。生長板與骨幹之間的區段。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>physis＝生長板。<b>meta-physis 就是「生長板旁邊」</b>——骨軟骨瘤長在這裡。</p></details></dd>
+
+<dt>epiphysis</dt>
+<dd><span class="root">epi-（在上）+ physis（生長）</span>　骨骺。長骨兩端、生長板以外的部分。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>兩年的錯項都把骨軟骨瘤安在這裡。<b>骨骺是骨巨細胞瘤的地盤。</b></p></details></dd>
+
+<dt>chondrosarcoma</dt>
+<dd><span class="root">chondro-（軟骨）+ sarco-（肉）+ -oma</span>　軟骨肉瘤。產生軟骨基質的惡性骨腫瘤。<details data-kind="vocab-memory"><summary>記憶提示</summary><p><b>-sarcoma＝間葉來源的惡性腫瘤。</b>好發成人，小孩罕見。</p></details></dd>
+
+<dt>dedifferentiation</dt>
+<dd><span class="root">de-（去除）+ differentiation（分化）</span>　去分化。腫瘤失去原有分化特徵、轉為更高惡性度。<details data-kind="vocab-memory"><summary>記憶提示</summary><p><b>方向永遠是往壞的走。</b>「去分化成骨軟骨瘤」是不存在的事。</p></details></dd>
+
+<dt>cellularity</dt>
+<dd><span class="root">cellular（細胞的）+ -ity</span>　細胞密度。單位面積內的細胞數量。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>軟骨肉瘤<b>比其他惡性腫瘤低</b>、但<b>比骨軟骨瘤高</b>。<b>比較對象決定答案。</b></p></details></dd>
+
+<dt>nuclear atypia</dt>
+<dd><span class="root">a-（無）+ typia（typical，典型）</span>　核異型。細胞核大小形狀不規則，是惡性的形態證據。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>與「軟骨帽變厚」「細胞密度增加」並列，是惡性轉化的三個訊號之一。</p></details></dd>
+
+<dt>osteonecrosis (avascular necrosis)</dt>
+<dd><span class="root">osteo-（骨）+ necrosis（壞死）；a-（無）+ vascular（血管）</span>　骨壞死／缺血性壞死。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>a-vascular＝<b>沒有血</b>。三大成因：栓塞、類固醇、酒。</p></details></dd>
+
+<dt>vascular thrombosis</dt>
+<dd><span class="root">thrombos（希臘：血塊）</span>　血管栓塞。血管內血栓形成造成阻塞。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>最直接的「斷血」機轉。與類固醇、酒精並列為缺血性壞死三大成因。</p></details></dd>
+
+<dt>bone metastasis</dt>
+<dd><span class="root">meta-（改變）+ stasis（位置）</span>　骨轉移。惡性腫瘤擴散至骨。<details data-kind="vocab-memory"><summary>記憶提示</summary><p><b>它不是缺血性壞死的成因。</b>癌細胞會誘導新生血管，方向相反。</p></details></dd>
+
+<dt>tophus (tophi)</dt>
+<dd><span class="root">拉丁 tophus＝多孔的石頭</span>　痛風石。尿酸鹽沉積形成的結節，外圍由組織球圍繞。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>H&amp;E 下是<b>淡染、無定形</b>的一團，外面圍一圈細胞。<b>「石頭」這個字根就對了。</b></p></details></dd>
+
+<dt>hyperuricemia</dt>
+<dd><span class="root">hyper-（過高）+ uric（尿酸）+ -emia（血症）</span>　高尿酸血症，痛風的致病基礎。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>它只屬於<b>痛風</b>。出現在股骨頭壞死的選項裡就是誘餌。</p></details></dd>
+
+<dt>monosodium urate</dt>
+<dd><span class="root">mono-（單）+ sodium（鈉）+ urate（尿酸鹽）</span>　單鈉尿酸鹽，痛風結晶的成分，呈針狀。<details data-kind="vocab-memory"><summary>記憶提示</summary><p><b>針狀（needle-shaped）＝痛風。</b>這是最快的判準。</p></details></dd>
+
+<dt>calcium pyrophosphate deposition (CPPD)</dt>
+<dd><span class="root">pyro-（火、熱）+ phosphate（磷酸鹽）</span>　焦磷酸鈣沉積症，又稱假性痛風，結晶呈菱形短棒。<details data-kind="vocab-memory"><summary>記憶提示</summary><p><b>菱形</b>，好發於膝與腕。113 年就是把它安到大腳趾上而成為錯項。</p></details></dd>
+
+<dt>birefringence / polarized light</dt>
+<dd><span class="root">bi-（雙）+ refringere（折射）</span>　雙折射／偏光。用偏光顯微鏡辨識結晶形狀與光學性質。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>結晶題一定會出現這個字。<b>看形狀就先分掉一半：針狀 vs 菱形。</b></p></details></dd>
+
+<dt>1st metatarsophalangeal (MTP) joint</dt>
+<dd><span class="root">meta-（之後）+ tarsal（跗骨）+ phalangeal（趾骨）</span>　第一蹠趾關節，大腳趾根部。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>痛風的經典位置。<b>題幹一寫 1st MTP，先想痛風。</b></p></details></dd>
+
+<dt>rhabdomyosarcoma</dt>
+<dd><span class="root">rhabdo-（希臘：棒狀）+ myo-（肌）+ sarcoma</span>　橫紋肌肉瘤。往橫紋肌分化的惡性軟組織腫瘤。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>rhabdo-＝棒狀，指骨骼肌纖維。<b>兒童最常見的軟組織肉瘤。</b></p></details></dd>
+
+<dt>sarcoma botryoides</dt>
+<dd><span class="root">希臘 botrys＝葡萄串</span>　葡萄狀肉瘤。橫紋肌肉瘤長在黏膜下、向腔內呈葡萄串狀突出。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>botrys＝葡萄。<b>膀胱、陰道</b>是經典位置。</p></details></dd>
+
+<dt>embryonal / alveolar type</dt>
+<dd><span class="root">alveolus＝肺泡、小囊</span>　胚胎型與腺泡型，橫紋肌肉瘤最常見的兩型。<details data-kind="vocab-memory"><summary>記憶提示</summary><p><b>只有腺泡型</b>帶 PAX-FOXO1 融合基因。記住這個「只有」。</p></details></dd>
+
+<dt>PAX3-FOXO1 / PAX7-FOXO1</dt>
+<dd><span class="root">融合基因（fusion gene）</span>　腺泡型橫紋肌肉瘤的特徵性染色體易位產物。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>它<b>確認腺泡型</b>，但不是診斷橫紋肌肉瘤的必要條件——113 年的陷阱就在這裡。</p></details></dd>
+
+<dt>histiocyte</dt>
+<dd><span class="root">histio-（組織）+ -cyte（細胞）</span>　組織球，組織中的巨噬細胞。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>痛風石外圍圍的就是它——身體派來清理結晶的那一群。</p></details></dd>
+</dl>
+</section>
+<section id="chapter-final" data-chapter-kind="final_questions">
+<h2>七、歷年考題總複習</h2>
+<p class="meta">依年度由新到舊、同年依原始題號排列。共 9 題（111 期末考與 112、113 期中考各 3 題）。<b style="color:#f08a8a">紅框</b>＝同一考點在兩個以上年度重複出現。</p>
+<h3><span class="yearchip">113 年</span>期中考 第 16 題</h3>
+<article data-question-id="113-bm113-p22-q16" data-placement="final" class="repeat">
+  <span class="qhead">113 年 期中考 第 16 題</span><span class="repeat-badge">重複考點 ×3</span>
+  <p class="repeat-note">同考點：111 第4題、112 第16題　—　骨軟骨瘤：香菇狀、軟骨膜包覆、好發於幹骺端、軟骨帽超過 1 公分要懷疑惡性轉化</p>
+  <p class="stem">A 20-year-old man with known history of multiple hereditary exostosis syndrome presented with increasing pain in the knee. The patient received surgical removal for the tumor. The tumor had a cartilage cap over 2 cm in thickness. Microscopically, the tumor is partially covered by a layer of perichondrium. However, increased cellularity of the cartilagenous component with nuclear atypia is noted. Which of the following descriptions about this tumor is correct?</p>
+  <ul class="opts"><li>(A) This tumor-associated syndrome is inherited in an autosomal recessive manner.</li><li>(B) It is associated with loss of function of FGF1 or FGF2 gene.</li><li>(C) The tumor tends to arise from epiphysis of long bone.</li><li>(D) The tumor may have undergone malignant transformation to chondrosarcoma.</li></ul>
+  <details data-kind="answer"><summary>答案與詳解</summary>
+    <div data-kind="zh-translation"><p><strong>中文題目：</strong>一位 20 歲男性，已知患有遺傳性多發性外生骨疣症候群，因膝痛加劇就診並手術切除腫瘤。腫瘤的軟骨帽厚度<b>超過 2 公分</b>，顯微鏡下腫瘤<b>部分</b>被一層軟骨膜覆蓋，但可見軟骨成分<b>細胞密度增加並伴有細胞核異型</b>。關於此腫瘤的敘述，何者<b>正確</b>？</p>
+      <p>(A) 此腫瘤相關的症候群為體染色體隱性遺傳。</p>
+      <p>(B) 它與 FGF1 或 FGF2 基因功能喪失有關。</p>
+      <p>(C) 此腫瘤好發於長骨的骨骺。</p>
+      <p>(D) 此腫瘤可能已發生惡性轉化為軟骨肉瘤。</p></div>
+    <p class="ans">答案：(D)</p>
+    <p>軟骨帽 2cm 以上、軟骨膜只部分覆蓋、細胞密度增加加核異型——已惡性轉化。<span class="src"> ｜ BM113_Block8期中考詳解 第 22 頁</span></p>
+  </details>
+</article>
+<article data-question-id="113-bm113-p24-q17" data-placement="final">
+  <span class="qhead">113 年 期中考 第 17 題</span>
+  
+  <p class="stem">A 48 year-old man presented with chronic pain and swelling of the right 1st meta-tarsophalangeal joint not responding to medical treatment. Surgery is performed to relieve his symptom. Which of the following description is incorrect? (Left: H&amp;E, light microscopy; Right: polarized ligh microscopy)</p>
+  <ul class="opts"><li>(A) The H&amp;E slide shows tophi composed of pale-staining amorphous material rimmed by histiocytes.</li><li>(B) Needle-shaped crystals are seen through polarized light.</li><li>(C) The microscopic findings suggest calcium pyrophosphate crystal deposition disease.</li><li>(D) Hyperuricemia plays a role in pathogenesis of the disease.</li></ul>
+  <details data-kind="answer"><summary>答案與詳解</summary>
+    <div data-kind="zh-translation"><p><strong>中文題目：</strong>一位 48 歲男性右側第一蹠趾關節慢性疼痛腫脹，藥物治療無效，接受手術緩解症狀。下列敘述何者<b>錯誤</b>？（左：H&amp;E 光學顯微鏡；右：偏光顯微鏡）</p>
+      <p>(A) H&amp;E 切片顯示痛風石，由淡染的無定形物質構成，外圍由組織球圍繞。</p>
+      <p>(B) 偏光鏡下可見針狀結晶。</p>
+      <p>(C) 顯微鏡下的發現提示焦磷酸鈣結晶沉積症。</p>
+      <p>(D) 高尿酸血症參與此疾病的致病機轉。</p></div>
+    <p class="ans">答案：(C)</p>
+    <p>第一蹠趾關節加針狀結晶加高尿酸就是痛風，不是焦磷酸鈣沉積症。<span class="src"> ｜ BM113_Block8期中考詳解 第 24 頁</span></p>
+  </details>
+</article>
+<article data-question-id="113-bm113-p25-q18" data-placement="final">
+  <span class="qhead">113 年 期中考 第 18 題</span>
+  
+  <p class="stem">Regarding rhabdomyosarcoma, which of the following statements is less accurate?</p>
+  <ul class="opts"><li>(A) The tumor commonly occurs in the head and neck, limbs, and genitourinary system.</li><li>(B) Based on its morphology, it can be further classified into embryonal rhabdomyosarcoma, alveolar rhabdomyosarcoma, pleomorphic rhabdomyosarcoma, and spindle cell/sclerotic rhabdomyosarcoma.</li><li>(C) Rhabdomyosarcoma may grow near mucosal structures (such as the bladder or vagina) and protrude outward in a grape-like fashion, known as sarcoma botryoides.</li><li>(D) Pathologically, the diagnosis of rhabdomyosarcoma can only be made by detecting PAX3-FOXO1 and PAX7-FOXO1 gene variations.</li></ul>
+  <details data-kind="answer"><summary>答案與詳解</summary>
+    <div data-kind="zh-translation"><p><strong>中文題目：</strong>關於橫紋肌肉瘤，下列敘述何者<b>較不精確</b>？</p>
+      <p>(A) 此腫瘤常發生於頭頸部、四肢與泌尿生殖系統。</p>
+      <p>(B) 依形態可進一步分為胚胎型、腺泡型、多形型與梭形細胞／硬化型橫紋肌肉瘤。</p>
+      <p>(C) 橫紋肌肉瘤可能生長於黏膜構造附近（如膀胱或陰道），並呈葡萄串狀向外突出，稱為葡萄狀肉瘤。</p>
+      <p>(D) 病理上，橫紋肌肉瘤的診斷<b>唯有</b>透過偵測 PAX3-FOXO1 與 PAX7-FOXO1 基因變異才能成立。</p></div>
+    <p class="ans">答案：(D)</p>
+    <p>PAX3-FOXO1 與 PAX7-FOXO1 只屬於腺泡型，錯在「唯有」這兩個字。<span class="src"> ｜ BM113_Block8期中考詳解 第 25 頁</span></p>
+  </details>
+</article>
+<h3><span class="yearchip">112 年</span>期中考 第 16 題</h3>
+<article data-question-id="112-bm112-p21-q16" data-placement="final" class="repeat">
+  <span class="qhead">112 年 期中考 第 16 題</span><span class="repeat-badge">重複考點 ×3</span>
+  <p class="repeat-note">同考點：111 第4題、113 第16題　—　骨軟骨瘤：香菇狀、軟骨膜包覆、好發於幹骺端、軟骨帽超過 1 公分要懷疑惡性轉化</p>
+  <p class="stem">A 16-year-old man presented with increasing pain in the left knee for one year. Plain film is shown below (left). The patient received surgical removal for the tumor.Microscopically, the tumor is covered by a layer of perichondrium. Endochondral ossification with mature bone formation is observed (right). Which of the following descriptions about this tumor is incorrect?</p>
+  <ul class="opts"><li>(A) The tumor is usually well-circumscribed and does not invade adjacent soft tissue.</li><li>(B) The tumor tends to occur in adolescents and young adults.</li><li>(C) It is one of the most common benign bone tumors.</li><li>(D) It tends to occur in epiphysis.</li></ul>
+  <details data-kind="answer"><summary>答案與詳解</summary>
+    <div data-kind="zh-translation"><p><strong>中文題目：</strong>一位 16 歲男性左膝疼痛加劇一年。下方左圖為 X 光片。腫瘤手術切除後，顯微鏡下可見腫瘤外覆一層軟骨膜，並觀察到軟骨內骨化與成熟骨形成（右圖）。關於此腫瘤的敘述，何者<b>錯誤</b>？</p>
+      <p>(A) 此腫瘤通常邊界清楚，不侵犯鄰近軟組織。</p>
+      <p>(B) 此腫瘤好發於青少年與年輕成人。</p>
+      <p>(C) 它是最常見的良性骨腫瘤之一。</p>
+      <p>(D) 它好發於骨骺。</p></div>
+    <p class="ans">答案：D</p>
+    <p>同一朵香菇改問「哪句錯」，被動手腳的是部位——該是幹骺端不是骨骺。<span class="src"> ｜ BM112_Block 8 期中考(含申覆內容與結果) 第 21 頁</span></p>
+  </details>
+</article>
+<article data-question-id="112-bm112-p23-q17" data-placement="final" class="repeat">
+  <span class="qhead">112 年 期中考 第 17 題 ｜ 來源答案欄</span><span class="repeat-badge">重複考點 ×2</span>
+  <p class="repeat-note">同考點：111 第5題　—　股骨頭病灶：缺血性壞死的成因，以及與痛風的鑑別</p>
+  <p class="stem">A 55-year-old woman received hip joint replacement surgery for right hip pain. The gross picture of the femoral head lesion is shown below. Which of the following descriptions about the lesion is correct?</p>
+  <ul class="opts"><li>(A) It is associated with hyperuricemia.</li><li>(B) Needle-shpaed crystals may be seen through birefringent microscopy.</li><li>(C) Alcolholism plays a role in pathogenesis.</li><li>(D) It is caused by chronic abrasion of the cartilage cap.</li></ul>
+  <details data-kind="answer"><summary>答案與詳解</summary>
+    <div data-kind="zh-translation"><p><strong>中文題目：</strong>一位 55 歲女性因右髖疼痛接受髖關節置換手術。下圖為股骨頭病灶的大體照。關於此病灶的敘述，何者<b>正確</b>？</p>
+      <p>(A) 它與高尿酸血症有關。</p>
+      <p>(B) 在偏光顯微鏡下可見針狀結晶。</p>
+      <p>(C) 酗酒參與其致病機轉。</p>
+      <p>(D) 它由軟骨帽的慢性磨損造成。</p></div>
+    <p class="ans">答案：C</p>
+    <p>還是缺血性壞死，答案是酗酒；高尿酸與針狀結晶是痛風、軟骨帽是骨軟骨瘤。<span class="src"> ｜ BM112_Block 8 期中考(含申覆內容與結果) 第 23 頁</span></p>
+  </details>
+</article>
+<article data-question-id="112-bm112-p26-q18" data-placement="final" class="repeat">
+  <span class="qhead">112 年 期中考 第 18 題 ｜ 來源答案欄</span><span class="repeat-badge">重複考點 ×2</span>
+  <p class="repeat-note">同考點：111 第6題　—　軟骨肉瘤的敘述判錯：小孩罕見、好發長骨與扁平骨、去分化的方向</p>
+  <p class="stem">Which of the following descriptions about chondrosarcoma is incorrect?</p>
+  <ul class="opts"><li>(A) Commonly occurs in children.</li><li>(B)It has lower cellularity as compared to most malignant tumors.</li><li>(C) It tends to occur in long bones and flat bones.</li><li>(D) Dedifferentiation may occur in chondrosarcoma.</li></ul>
+  <details data-kind="answer"><summary>答案與詳解</summary>
+    <div data-kind="zh-translation"><p><strong>中文題目：</strong>關於軟骨肉瘤的敘述，何者<b>錯誤</b>？</p>
+      <p>(A) 常發生於兒童。</p>
+      <p>(B) 相較於多數惡性腫瘤，它的細胞密度較低。</p>
+      <p>(C) 它好發於長骨與扁平骨。</p>
+      <p>(D) 軟骨肉瘤可能發生去分化。</p></div>
+    <p class="ans">答案：A</p>
+    <p>把「小孩罕見」改成「常見於兒童」而成為錯項；去分化那句這年是對的。<span class="src"> ｜ BM112_Block 8 期中考(含申覆內容與結果) 第 26 頁</span></p>
+  </details>
+</article>
+<h3><span class="yearchip">111 年</span>期末考 第 4 題</h3>
+<article data-question-id="111fin-bm111-p5-q4" data-placement="final" class="repeat">
+  <span class="qhead">111 年 期末考 第 4 題</span><span class="repeat-badge">重複考點 ×3</span>
+  <p class="repeat-note">同考點：112 第16題、113 第16題　—　骨軟骨瘤：香菇狀、軟骨膜包覆、好發於幹骺端、軟骨帽超過 1 公分要懷疑惡性轉化</p>
+  <p class="stem">A 16-year-old man presented with knee pain. A plain film was taken, and the lesion is surgically resected. Microscopically the lesion is covered by perichondrium and a layer of cartilage 5mm in thickness. Bone formation and maturation are noted. Which of the following is the diagnosis of this lesion?</p>
+  <ul class="opts"><li>(A) Chondrosarcoma</li><li>(B) Giant cell tumor of bone</li><li>(C) Osteoid osteoma</li><li>(D) Osteochondroma</li></ul>
+  <details data-kind="answer"><summary>答案與詳解</summary>
+    <div data-kind="zh-translation"><p><strong>中文題目：</strong>一位 16 歲男性因膝痛就診，照了 X 光後將病灶手術切除。顯微鏡下病灶外覆軟骨膜與一層厚 5mm 的軟骨，可見骨質形成與成熟。此病灶的診斷為下列何者？</p>
+      <p>(A) 軟骨肉瘤</p>
+      <p>(B) 骨巨細胞瘤</p>
+      <p>(C) 骨樣骨瘤</p>
+      <p>(D) 骨軟骨瘤</p></div>
+    <p class="ans">答案：(D) Osteochondroma</p>
+    <p>青少年、膝蓋、軟骨膜包覆、軟骨帽 5mm——四個線索都指向骨軟骨瘤。<span class="src"> ｜ BM111 BLOCK-8 期末考詳解 第 5 頁</span></p>
+  </details>
+</article>
+<article data-question-id="111fin-bm111-p6-q5" data-placement="final" class="repeat">
+  <span class="qhead">111 年 期末考 第 5 題</span><span class="repeat-badge">重複考點 ×2</span>
+  <p class="repeat-note">同考點：112 第17題　—　股骨頭病灶：缺血性壞死的成因，以及與痛風的鑑別</p>
+  <p class="stem">A 55-year old woman presented with right hip pain. She received total hip replacement. The gross picture of the resected right femoral head is presented below. Which of the following is the least likely cause of this lesion?</p>
+  <ul class="opts"><li>(A) Vascular thrombosis</li><li>(B) Steroid uses</li><li>(C) Alcohol ingestion</li><li>(D) Bone metastasis of a malignant tumor</li></ul>
+  <details data-kind="answer"><summary>答案與詳解</summary>
+    <div data-kind="zh-translation"><p><strong>中文題目：</strong>一位 55 歲女性因右髖疼痛就診，接受全髖關節置換。下圖為切除的右側股骨頭大體照。下列何者<b>最不可能</b>是此病灶的成因？</p>
+      <p>(A) 血管栓塞</p>
+      <p>(B) 類固醇使用</p>
+      <p>(C) 飲酒</p>
+      <p>(D) 惡性腫瘤的骨轉移</p></div>
+    <p class="ans">答案：(D) Bone metastasis of a malignant tumor</p>
+    <p>楔形梗塞是缺血性壞死；骨轉移不會造成缺血，癌細胞反而更需要血流。<span class="src"> ｜ BM111 BLOCK-8 期末考詳解 第 6 頁</span></p>
+  </details>
+</article>
+<article data-question-id="111fin-bm111-p7-q6" data-placement="final" class="repeat">
+  <span class="qhead">111 年 期末考 第 6 題</span><span class="repeat-badge">重複考點 ×2</span>
+  <p class="repeat-note">同考點：112 第18題　—　軟骨肉瘤的敘述判錯：小孩罕見、好發長骨與扁平骨、去分化的方向</p>
+  <p class="stem">Chondrosarcoma is a malignant bone tumor. Which of the following descriptions is incorrect?</p>
+  <ul class="opts"><li>(A) Occurrence in children is rare.</li><li>(B) There are three subtypes, including conventional, peripheral, and periosteal types.</li><li>(C) It preferentially occurs in long bones and flat bones.</li><li>(D) It may de-differentiate and transform into osteochondroma.</li></ul>
+  <details data-kind="answer"><summary>答案與詳解</summary>
+    <div data-kind="zh-translation"><p><strong>中文題目：</strong>軟骨肉瘤是一種惡性骨腫瘤。下列敘述何者<b>錯誤</b>？</p>
+      <p>(A) 發生於兒童者罕見。</p>
+      <p>(B) 有三種亞型，包括傳統型、周邊型與骨膜型。</p>
+      <p>(C) 好發於長骨與扁平骨。</p>
+      <p>(D) 它可能去分化並轉變為骨軟骨瘤。</p></div>
+    <p class="ans">答案：(D) It may de-differentiate and transform into osteochondroma.</p>
+    <p>箭頭反了：是骨軟骨瘤轉化成軟骨肉瘤，惡性不會退回良性。<span class="src"> ｜ BM111 BLOCK-8 期末考詳解 第 7 頁</span></p>
+  </details>
+</article>
+<p class="ending">四張圖、四個數字。看到香菇想幹骺端、看到楔形想斷血、看到針狀想痛風、看到葡萄想膀胱。</p>
+</section>
+</div>
+</body>
+</html>
