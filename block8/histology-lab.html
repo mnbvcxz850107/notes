@@ -1,0 +1,733 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>組織學實驗 骨骼與軟骨／肌肉肌腱韌帶</title>
+<style>
+:root{
+  color-scheme: dark;
+  --bg:#0b0e13; --panel:#141922; --panel2:#1b2230; --line:#2a3340;
+  --ink:#e8ecf3; --dim:#a3adbd; --gold:#e5b567; --cyan:#6fd3c7;
+  --rose:#e88b8b; --violet:#a99bf0;
+}
+*{box-sizing:border-box}
+html{font-size:150%}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font-family:"Noto Sans TC","PingFang TC","Helvetica Neue",system-ui,sans-serif;
+  line-height:1.85; overflow-wrap:anywhere;}
+/* Width follows the device, not the font size: px breakpoints stay put
+   while rem-based type scales with the 150% root. */
+.container{width:100%;max-width:none;margin:0 auto;
+  padding:clamp(.85rem,2.2vw,2.2rem);}
+@media (min-width:760px){ .container{max-width:730px} }
+@media (min-width:1024px){ .container{max-width:980px} }
+@media (min-width:1440px){ .container{max-width:1300px} }
+@media (min-width:1920px){ .container{max-width:1640px} }
+img{max-width:100%;height:auto}
+svg{max-width:100%;height:auto;display:block}
+h1{font-size:1.6rem;line-height:1.35;margin:.2rem 0 .6rem}
+h2{font-size:1.24rem;margin:2.4rem 0 .7rem;padding-bottom:.4rem;
+  border-bottom:1px solid var(--line);color:var(--gold)}
+h3{font-size:1.06rem;margin:1.5rem 0 .5rem;color:var(--cyan)}
+p{margin:.7rem 0}
+header#subject-overview{background:linear-gradient(160deg,#182031,#0e1219);
+  border:1px solid var(--line);border-radius:14px;padding:1.2rem;margin:.6rem 0 1.4rem}
+.meta{color:var(--dim);font-size:.86rem;margin:.3rem 0 0}
+nav#toc{background:var(--panel);border:1px solid var(--line);
+  border-radius:12px;padding:.9rem 1.1rem;margin:1.2rem 0}
+nav#toc ol{margin:.4rem 0 0;padding-left:1.3rem}
+nav#toc a{color:var(--ink);text-decoration:none;border-bottom:1px dotted var(--line)}
+.story{background:var(--panel2);border-left:3px solid var(--violet);
+  border-radius:0 10px 10px 0;padding:.9rem 1.1rem;margin:1.1rem 0}
+.story .tag{display:block;color:var(--violet);font-size:.78rem;
+  letter-spacing:.12em;margin-bottom:.35rem}
+.reality{background:var(--panel);border-left:3px solid var(--cyan);
+  border-radius:0 10px 10px 0;padding:.9rem 1.1rem;margin:1.1rem 0}
+.reality .tag{display:block;color:var(--cyan);font-size:.78rem;
+  letter-spacing:.12em;margin-bottom:.35rem}
+.keybox{background:#12202b;border:1px solid #26485a;border-radius:10px;
+  padding:.85rem 1rem;margin:1.1rem 0}
+.keybox b{color:var(--cyan)}
+.warn{background:#2a1c1c;border:1px solid #573434;border-radius:10px;
+  padding:.85rem 1rem;margin:1.1rem 0;color:#f0cfcf}
+article{background:var(--panel);border:1px solid var(--line);
+  border-radius:12px;padding:.95rem 1.05rem;margin:1.1rem 0}
+article .qhead{display:block;color:var(--gold);font-size:.82rem;
+  letter-spacing:.06em;margin-bottom:.45rem}
+article .stem{margin:.2rem 0 .5rem}
+article ul.opts{list-style:none;margin:.3rem 0 .2rem;padding:0}
+article ul.opts li{padding:.16rem 0 .16rem .2rem;color:#dbe2ec}
+details{background:#0f141c;border:1px solid var(--line);
+  border-radius:10px;padding:.15rem .8rem;margin:.6rem 0}
+details summary{cursor:pointer;padding:.6rem 0;color:var(--gold);
+  font-weight:600;min-height:44px;display:flex;align-items:center}
+details[data-kind="answer"] .ans{font-size:1.05rem;color:var(--cyan);font-weight:700}
+div[data-kind="zh-translation"]{background:#141c26;border:1px dashed #33465c;
+  border-radius:8px;padding:.7rem .85rem;margin:.5rem 0 .8rem}
+div[data-kind="zh-translation"] p{margin:.35rem 0}
+.src{color:var(--dim);font-size:.84rem;margin-top:.6rem}
+.quote{border-left:2px solid var(--gold);padding-left:.75rem;color:#f0e2c6}
+.infer{color:#f0d9a8;font-size:.92rem}
+figure{margin:1.3rem 0;background:var(--panel2);border:1px solid var(--line);
+  border-radius:12px;padding:.9rem}
+figcaption{color:var(--dim);font-size:.85rem;margin-top:.6rem;text-align:center}
+dl.vocab{margin:0}
+dl.vocab dt{color:var(--cyan);font-weight:700;margin-top:.9rem}
+dl.vocab dd{margin:.2rem 0 0;padding-left:0}
+dl.vocab .root{color:var(--dim);font-size:.86rem}
+.cram{background:var(--panel);border:1px solid var(--line);
+  border-radius:12px;padding:.4rem 1.1rem;margin:1rem 0}
+.cram li{margin:.55rem 0}
+.yearchip{display:inline-block;background:#233046;color:#bcd0ea;
+  border-radius:999px;padding:.05rem .55rem;font-size:.76rem;margin-right:.4rem}
+article.repeat{border:2px solid #e05252;box-shadow:0 0 0 3px rgba(224,82,82,.12)}
+article.repeat .qhead{color:#f08a8a}
+.repeat-badge{display:inline-block;background:#3a1c1c;border:1px solid #7d3a3a;
+  color:#f0a8a8;border-radius:999px;padding:.1rem .6rem;font-size:.76rem;
+  margin-left:.4rem;white-space:nowrap}
+.repeat-note{color:#e6a5a5;font-size:.84rem;margin:.45rem 0 0}
+figure.boxfig{margin:1.5rem 0 .5rem;background:transparent;border:0;padding:0}
+figure.boxfig img{border-radius:12px;border:1px solid var(--line);display:block;width:100%}
+figure.boxfig figcaption{color:var(--dim);font-size:.82rem;margin-top:.5rem;
+  text-align:left;line-height:1.6}
+figure.boxfig .figtag{color:var(--violet);font-size:.76rem;letter-spacing:.1em;
+  display:block;margin-bottom:.3rem}
+.ending{color:var(--dim);font-style:italic;margin:1.6rem 0 2.4rem}
+</style></head>
+<body>
+<div class="container">
+
+<header id="subject-overview">
+  <h1>組織學實驗－骨骼與軟骨／肌肉、肌腱、韌帶</h1>
+  <p>兩門實驗課合併成一篇。它們的考法完全一樣，而且<b>十題全部是看圖辨識</b>——沒有一題是純文字。題幹只有四種句型：<b>「這是什麼組織？」</b>、<b>「組織種類加切面方向的組合是？」</b>、<b>「箭頭指的細胞是什麼？」</b>、<b>「箭頭／紅線指的構造是什麼？」</b></p>
+  <p>而且出題位置固定得誇張：<b>肌肉實驗永遠是第 14、15 題，骨軟骨實驗永遠是第 43、44 題</b>（113 年移到 52、53 題），每年每門各 2 題。</p>
+  <p><b>最重要的一件事：同一個題幹，不同年份答案不一樣。</b>因為換的是圖，不是字。111 年第 15 題答 (D) 骨骼肌，112 年一模一樣的題幹答 (B) 平滑肌。<b>這一科不能背字母，只能練眼睛。</b></p>
+  <p class="meta">命題老師：施耀翔、吳敏瑜（骨軟骨；111 年為張瀛双）／陳永佳、劉俊馳（肌肉肌腱韌帶；111 年為劉俊馳）｜ 收錄 111、112、113 期中考共 10 題</p>
+</header>
+
+<nav id="toc">
+  <b>目錄</b>
+  <ol>
+    <li><a href="#chapter-1">認肌肉：三種肌肉在切片上的長相</a></li>
+    <li><a href="#chapter-2">認軟骨：三種軟骨與外面那層膜</a></li>
+    <li><a href="#chapter-3">認骨頭：三種骨細胞與兩種管道</a></li>
+    <li><a href="#chapter-cram">考前速記</a></li>
+    <li><a href="#chapter-vocab">單字表</a></li>
+    <li><a href="#chapter-final">歷年考題總複習</a></li>
+  </ol>
+</nav>
+<section id="chapter-1" data-chapter-kind="story">
+<h2>一、認肌肉：三種肌肉在切片上的長相</h2>
+
+<figure class="boxfig" data-visual-id="hlbox-01-story" data-image-kind="story" data-explanation-verified="true">
+<span class="figtag">情境場景</span>
+<img data-visual-id="hlbox-01-story" src="img/hlbox-01-story.webp" alt="情境場景：同一個題幹，換一張圖，答案就變了。" loading="lazy" decoding="async" width="1600" height="914">
+<figcaption>情境場景：同一個題幹，換一張圖，答案就變了。</figcaption>
+</figure>
+<div class="story" data-prose-kind="story"><span class="tag">故事</span>
+<p>實驗課的考題有一個特性，和其他科完全不同：<b>題幹是印好的，圖才是題目。</b></p>
+<p>111 年第 15 題和 112 年第 15 題，四個選項一字不差：cross sectioned cardiac muscle、longitudinal sectioned smooth muscle、cross sectioned smooth muscle、cross sectioned skeletal muscle。</p>
+<p>111 年答 <b>(D) 橫切的骨骼肌</b>。112 年答 <b>(B) 縱切的平滑肌</b>。</p>
+<p>「所以背答案完全沒用。」</p>
+<p>「對。你要背的是<b>三張臉</b>。」</p>
+<p>先問<b>切面方向</b>：畫面上的細胞是<b>一片一片的圓／多角形</b>（橫切），還是<b>一條一條的長帶</b>（縱切）？這一步就能刷掉一半選項。</p>
+<p>再問<b>是誰</b>，三個特徵依序看：</p>
+<p><b>骨骼肌</b>：橫切是<b>邊緣清楚的多角形</b>，<b>細胞核全部貼在邊上</b>，一格裡常有好幾個核；縱切有<b>明顯的橫紋</b>，核也在邊緣排一列。</p>
+<p><b>心肌</b>：縱切會<b>分支、互相接成網</b>，而且交界處有一條深色橫線——<b>間盤</b>（intercalated disc）。看到間盤就結案。橫切則是<b>核在正中央</b>，而且<b>核的周圍常有一圈被洗掉的空腔</b>（肝醣被處理掉留下的），這是官方詳解特別點出的辨識點。</p>
+<p><b>平滑肌</b>：<b>沒有橫紋</b>。縱切是一束交錯的<b>紡錘形</b>細胞，核在最粗的中段；橫切則是<b>大小不一的圓</b>——因為紡錘形被攔腰切在不同位置，只有切到中段的那些才看得到核。</p>
+</div>
+
+<figure class="boxfig" data-visual-id="hlbox-02-reality" data-image-kind="comparison" data-explanation-verified="true">
+<span class="figtag">辨識流程</span>
+<img data-visual-id="hlbox-02-reality" src="img/hlbox-02-reality.webp" alt="辨識流程：先判切面方向，再依橫紋、分支、核的位置決定是哪一種肌肉。" loading="lazy" decoding="async" width="1600" height="914">
+<figcaption>辨識流程：先判切面方向，再依橫紋、分支、核的位置決定是哪一種肌肉。</figcaption>
+</figure>
+<div class="reality"><span class="tag">回到現實</span>
+<p>兩年的詳解合起來就是一張判讀流程：</p>
+<p class="quote">詳解原文（111 第 14 題）:「看到 intercalated disc -&gt; 心肌很重，所以是心肌」</p>
+<p class="quote">詳解原文（112 第 14 題）:「心肌細胞的組織學特性：branched、anastomosing network、intercalated disc」</p>
+<p class="quote">詳解原文（111 第 15 題）:「從切片可以知道是cross/transverse section，先排除B　心肌細胞的細胞核旁邊會有一些被洗掉的空腔　平滑肌細胞細胞核位於中央　因此，從細胞型態可以知道是骨骼肌。」</p>
+<p><b>照這個順序走：</b></p>
+<p><b>第一步：切面方向。</b>一片一片的閉合形狀＝橫切；長條的帶狀＝縱切。<b>111 年的詳解就是靠這一步先刷掉唯一的「縱切」選項。</b></p>
+<p><b>第二步：有沒有橫紋。</b>有＝骨骼肌或心肌；沒有＝平滑肌。</p>
+<p><b>第三步：核在哪裡。</b>核貼邊＋多核＝骨骼肌；核在中央＝心肌或平滑肌。</p>
+<p><b>第四步：分不分支。</b>會分支、有間盤＝心肌。</p>
+<p class="infer">補充（把兩年的線索併起來）：橫切時心肌與平滑肌的核都在中央，最好用的區別是<b>心肌核周圍那圈空腔</b>與<b>心肌細胞比較粗、大小較一致</b>；平滑肌橫切則是<b>大小差很多的圓</b>，多數還看不到核。</p>
+</div>
+
+<article data-question-id="111-p13-q14" data-placement="chapter">
+  <span class="qhead">111 年 期中考 第 14 題 ｜ 圖片題</span>
+  <p class="stem">Observe the histological features. What is the tissue in this figure?</p>
+  <ul class="opts">
+    <li>(A) Cardiac muscle</li>
+    <li>(B) Tendon</li>
+    <li>(C) Smooth muscle</li>
+    <li>(D) Skeletal muscle</li>
+  </ul>
+  <details data-kind="answer">
+    <summary>答案與詳解</summary>
+    <div data-kind="zh-translation">
+      <p><strong>中文題目：</strong>觀察圖中的組織學特徵。圖中的組織是什麼？</p>
+      <p>(A) 心肌</p>
+      <p>(B) 肌腱</p>
+      <p>(C) 平滑肌</p>
+      <p>(D) 骨骼肌</p>
+    </div>
+    <p class="ans">答案：(A) Cardiac muscle</p>
+    <p class="quote">詳解原文:「看到 intercalated disc -&gt; 心肌很重，所以是心肌」</p>
+    <p><b>間盤是心肌獨有的。</b>另外三個都沒有：骨骼肌纖維彼此不相連、平滑肌沒有橫紋也沒有間盤、肌腱則根本不是肌肉（是排列整齊的膠原纖維束，細胞很少）。</p>
+    <p class="src">出處：劉俊馳 組織學與實驗-肌肉、肌腱、韌帶 ｜ BM111 BLOCK-8 期中考詳解.pdf 第 13 頁</p>
+  </details>
+</article>
+
+<article data-question-id="112-p17-q14" data-placement="chapter">
+  <span class="qhead">112 年 期中考 第 14 題 ｜ 圖片題</span>
+  <p class="stem">Observe the histological features. What is the tissue in this figure?</p>
+  <ul class="opts">
+    <li>(A) Cardiac muscle</li>
+    <li>(B) Tendon</li>
+    <li>(C) Smooth muscle</li>
+    <li>(D) Skeletal muscle</li>
+  </ul>
+  <details data-kind="answer">
+    <summary>答案與詳解</summary>
+    <div data-kind="zh-translation">
+      <p><strong>中文題目：</strong>觀察圖中的組織學特徵。圖中的組織是什麼？</p>
+      <p>(A) 心肌</p>
+      <p>(B) 肌腱</p>
+      <p>(C) 平滑肌</p>
+      <p>(D) 骨骼肌</p>
+    </div>
+    <p class="ans">答案：A</p>
+    <p class="quote">詳解原文:「心肌細胞的組織學特性：branched、anastomosing network、intercalated disc」</p>
+    <p>與 111 年第 14 題<b>題幹與選項完全相同，答案也相同</b>。這一年的詳解把心肌的三個辨識點列全了：<b>分支、互相接成網、有間盤</b>。</p>
+    <p class="src">出處：陳永佳,劉俊馳 肌肉、肌腱、韌帶組織學實驗（ppt pg.13,17） ｜ BM112_Block 8 期中考(含申覆內容與結果).pdf 第 17 頁</p>
+  </details>
+</article>
+
+<article data-question-id="111-p14-q15" data-placement="chapter">
+  <span class="qhead">111 年 期中考 第 15 題 ｜ 圖片題</span>
+  <p class="stem">What is the correct combination of tissue species and section orientation in the figure?</p>
+  <ul class="opts">
+    <li>(A) cross sectioned cardiac muscle</li>
+    <li>(B) longitudinal sectioned smooth muscle</li>
+    <li>(C) cross sectioned smooth muscle</li>
+    <li>(D) cross sectioned skeletal muscle</li>
+  </ul>
+  <details data-kind="answer">
+    <summary>答案與詳解</summary>
+    <div data-kind="zh-translation">
+      <p><strong>中文題目：</strong>圖中的<b>組織種類與切面方向</b>的正確組合為下列何者？</p>
+      <p>(A) 橫切的心肌</p>
+      <p>(B) 縱切的平滑肌</p>
+      <p>(C) 橫切的平滑肌</p>
+      <p>(D) 橫切的骨骼肌</p>
+    </div>
+    <p class="ans">答案：(D) cross sectioned skeletal muscle</p>
+    <p class="quote">詳解原文:「從切片可以知道是cross/transverse section，先排除B　心肌細胞的細胞核旁邊會有一些被洗掉的空腔，如下圖。　平滑肌細胞細胞核位於中央，也旁邊會不會有空腔，如下圖。　因此，從細胞型態可以知道是骨骼肌。」</p>
+    <p>詳解示範了標準流程：<b>先判切面（橫切 → 刪掉唯一的縱切選項 B）</b>，再用細胞型態把心肌與平滑肌排除。</p>
+    <p class="src">出處：劉俊馳 組織學與實驗-肌肉、肌腱、韌帶 ｜ BM111 BLOCK-8 期中考詳解.pdf 第 14 頁</p>
+  </details>
+</article>
+
+<article data-question-id="112-p19-q15" data-placement="chapter">
+  <span class="qhead">112 年 期中考 第 15 題 ｜ 圖片題 ｜ 與 111 年同題幹但答案不同</span>
+  <p class="stem">What is the correct combination of tissue species and section orientation in the figure?</p>
+  <ul class="opts">
+    <li>(A) cross sectioned cardiac muscle</li>
+    <li>(B) longitudinal sectioned smooth muscle</li>
+    <li>(C) cross sectioned smooth muscle</li>
+    <li>(D) cross sectioned skeletal muscle</li>
+  </ul>
+  <details data-kind="answer">
+    <summary>答案與詳解</summary>
+    <div data-kind="zh-translation">
+      <p><strong>中文題目：</strong>圖中的<b>組織種類與切面方向</b>的正確組合為下列何者？</p>
+      <p>(A) 橫切的心肌</p>
+      <p>(B) 縱切的平滑肌</p>
+      <p>(C) 橫切的平滑肌</p>
+      <p>(D) 橫切的骨骼肌</p>
+    </div>
+    <p class="ans">答案：B</p>
+    <p>原卷<b>詳解欄留空</b>，只給了答案與出處。<b>與 111 年第 15 題題幹和選項一字不差，答案卻從 (D) 變成 (B)</b>——因為換的是圖。這一年給的是<b>縱切的平滑肌</b>：一束交錯的紡錘形細胞、沒有橫紋、核在最粗的中段。</p>
+    <p class="infer">同一個題幹在 113 年又出現一次（第 14 題，答案 (D) 橫切的骨骼肌），但那年被歸到陳永佳的「組織學-肌腱、韌帶、肌肉」，收錄在該科筆記裡。<b>三年三張圖、三個答案，只有兩次相同。</b></p>
+    <p class="src">出處：陳永佳,劉俊馳 肌肉、肌腱、韌帶組織學實驗（ppt pg.15,17） ｜ BM112_Block 8 期中考(含申覆內容與結果).pdf 第 19 頁</p>
+  </details>
+</article>
+</section>
+<section id="chapter-2" data-chapter-kind="story">
+<h2>二、認軟骨：三種軟骨與外面那層膜</h2>
+
+<figure class="boxfig" data-visual-id="hlbox-03-story" data-image-kind="story" data-explanation-verified="true">
+<span class="figtag">情境場景</span>
+<img data-visual-id="hlbox-03-story" src="img/hlbox-03-story.webp" alt="情境場景：先看基質裡有沒有東西，再看外面有沒有包一層膜。" loading="lazy" decoding="async" width="1600" height="914">
+<figcaption>情境場景：先看基質裡有沒有東西，再看外面有沒有包一層膜。</figcaption>
+</figure>
+<div class="story" data-prose-kind="story"><span class="tag">故事</span>
+<p>軟骨題的判讀只有兩步：<b>看基質，再看外圍。</b></p>
+<p><b>第一步：基質裡看得到纖維嗎？</b></p>
+<p>・<b>什麼都看不到、均勻得像毛玻璃</b> → <b>透明軟骨</b>。軟骨細胞窩在陷窩裡，常常兩三個擠成一小群（同源細胞群）。<br>
+・<b>密密麻麻交錯的深色細絲</b> → <b>彈性軟骨</b>。那些是彈性纖維，在特殊染色下更明顯。<br>
+・<b>粗大、平行、一束一束的纖維</b>，軟骨細胞被擠成一列一列 → <b>纖維軟骨</b>。</p>
+<p><b>第二步：外面有沒有包一層膜？</b></p>
+<p>透明軟骨與彈性軟骨外面有<b>軟骨膜</b>（perichondrium）——一層緻密結締組織，在切片上是貼著軟骨邊緣、細胞核比較扁長的一條帶。<b>纖維軟骨沒有軟骨膜</b>，它直接和周圍的緻密結締組織連成一片。</p>
+<p>113 年考的就是這層膜。題目給的是<b>氣管的橫切</b>——氣管前方是 C 型的透明軟骨環，後方那個扁掉的管子是食道。紅色虛線圈住的，就是包在軟骨外面的那一圈。</p>
+<p>「那怎麼跟骨膜分？」</p>
+<p>「看它包的是什麼。<b>包軟骨的叫 peri-chondrium（chondro-＝軟骨），包骨頭的叫 peri-osteum（osteo-＝骨）</b>，而<b>endo-steum</b> 是襯在骨髓腔<b>內側</b>的那一層。字根就是答案。」</p>
+</div>
+
+<figure class="boxfig" data-visual-id="hlbox-04-reality" data-image-kind="comparison" data-explanation-verified="true">
+<span class="figtag">軟骨判讀</span>
+<img data-visual-id="hlbox-04-reality" src="img/hlbox-04-reality.webp" alt="軟骨判讀：三種軟骨的基質特徵，以及軟骨膜、骨膜、骨內膜的差別。" loading="lazy" decoding="async" width="1600" height="914">
+<figcaption>軟骨判讀：三種軟骨的基質特徵，以及軟骨膜、骨膜、骨內膜的差別。</figcaption>
+</figure>
+<div class="reality"><span class="tag">回到現實</span>
+<p class="quote">詳解原文（113 第 53 題）:「前方構造為氣管（後方扁掉的是食道），含有由hyaline cartilage構成的C型軟骨；而紅線圈起來的部分為包圍cartilage的構造：perichondrium。」</p>
+<p class="quote">詳解原文（112 第 43 題）:「根據講義為hyaline cartilage」</p>
+<p><b>三種軟骨的切片特徵：</b></p>
+<p>・<b>透明軟骨（hyaline）</b>：基質均勻無纖維、細胞成小群、<b>有軟骨膜</b>。氣管、關節面、肋軟骨、生長板。<br>
+・<b>彈性軟骨（elastic）</b>：基質中有交錯的彈性纖維、<b>有軟骨膜</b>。外耳、外耳道、耳咽管、會厭。<br>
+・<b>纖維軟骨（fibrocartilage）</b>：粗大平行的膠原纖維束、細胞排成列、<b>沒有軟骨膜</b>。椎間盤、半月板、恥骨聯合。</p>
+<p><b>三層膜不要混：</b></p>
+<p>・<b>Peri­chondrium 軟骨膜</b>：包在<b>軟骨</b>外面。<br>
+・<b>Peri­osteum 骨膜</b>：包在<b>骨</b>外面。<br>
+・<b>Endo­steum 骨內膜</b>：襯在<b>骨髓腔內側</b>。<br>
+・<b>Territorial matrix 領域基質</b>：緊貼軟骨陷窩周圍、染色較深的那一小圈基質——它在<b>軟骨裡面</b>，不是外層被膜。這是 113 年的干擾選項。</p>
+<p class="infer">解 113 年那題只要抓住一件事：<b>紅線圈在軟骨的外緣</b>。在外緣就只可能是 peri- 開頭的兩個，而裡面是軟骨不是骨，所以選 perichondrium。</p>
+</div>
+
+<article data-question-id="111-p36-q43" data-placement="chapter">
+  <span class="qhead">111 年 期中考 第 43 題 ｜ 圖片題</span>
+  <p class="stem">What kind of tissue is it?</p>
+  <ul class="opts">
+    <li>(A) Hyaline cartilage</li>
+    <li>(B) Elastic cartilage</li>
+    <li>(C) Fibrocartilage</li>
+    <li>(D) Bone</li>
+  </ul>
+  <details data-kind="answer">
+    <summary>答案與詳解</summary>
+    <div data-kind="zh-translation">
+      <p><strong>中文題目：</strong>這是哪一種組織？</p>
+      <p>(A) 透明軟骨</p>
+      <p>(B) 彈性軟骨</p>
+      <p>(C) 纖維軟骨</p>
+      <p>(D) 骨</p>
+    </div>
+    <p class="ans">答案：(B) Elastic cartilage</p>
+    <p>原卷<b>詳解欄留空</b>，只給了答案與出處。辨識點是<b>基質中密布交錯的深色彈性纖維</b>——透明軟骨的基質是均勻無纖維的，纖維軟骨則是粗大平行的膠原束，骨則有骨板與陷窩中的骨細胞。</p>
+    <p class="src">出處：張瀛双 組織學與實驗-骨骼與軟骨 ｜ BM111 BLOCK-8 期中考詳解.pdf 第 36 頁</p>
+  </details>
+</article>
+
+<article data-question-id="112-p59-q43" data-placement="chapter">
+  <span class="qhead">112 年 期中考 第 43 題 ｜ 圖片題 ｜ 與 111 年同題幹但答案不同</span>
+  <p class="stem">What kind of tissue is it?</p>
+  <ul class="opts">
+    <li>(A) Fibrocartilage</li>
+    <li>(B) Elastic cartilage</li>
+    <li>(C) bone</li>
+    <li>(D) Hyaline cartilage</li>
+  </ul>
+  <details data-kind="answer">
+    <summary>答案與詳解</summary>
+    <div data-kind="zh-translation">
+      <p><strong>中文題目：</strong>這是哪一種組織？</p>
+      <p>(A) 纖維軟骨</p>
+      <p>(B) 彈性軟骨</p>
+      <p>(C) 骨</p>
+      <p>(D) 透明軟骨</p>
+    </div>
+    <p class="ans">答案：D</p>
+    <p class="quote">詳解原文:「根據講義為hyaline cartilage」</p>
+    <p>與 111 年第 43 題<b>題幹相同、四個選項也是同一組（只換了排列順序）</b>，但圖換了，答案就從彈性軟骨變成透明軟骨。<b>基質看不到任何纖維＝透明軟骨。</b></p>
+    <p class="src">出處：施耀翔、吳敏瑜 組織學實驗 骨骼與軟骨 (ppt pg. 4) ｜ BM112_Block 8 期中考(含申覆內容與結果).pdf 第 59 頁</p>
+  </details>
+</article>
+
+<article data-question-id="113-p66-q53" data-placement="chapter">
+  <span class="qhead">113 年 期中考 第 53 題 ｜ 圖片題</span>
+  <p class="stem">What structure is indicated by the red dashed line?</p>
+  <ul class="opts">
+    <li>(A) Endosteum</li>
+    <li>(B) Periosteum</li>
+    <li>(C) Perichondrium</li>
+    <li>(D) Territorial matrix</li>
+  </ul>
+  <details data-kind="answer">
+    <summary>答案與詳解</summary>
+    <div data-kind="zh-translation">
+      <p><strong>中文題目：</strong>紅色虛線所指的構造是什麼？</p>
+      <p>(A) 骨內膜</p>
+      <p>(B) 骨膜</p>
+      <p>(C) 軟骨膜</p>
+      <p>(D) 領域基質</p>
+    </div>
+    <p class="ans">答案：(C)</p>
+    <p class="quote">詳解原文:「前方構造為氣管（後方扁掉的是食道），含有由hyaline cartilage構成的C型軟骨；而紅線圈起來的部分為包圍cartilage的構造：perichondrium。」</p>
+    <p>兩步定案：<b>裡面是軟骨</b>（氣管的 C 型透明軟骨環）→ 排除骨膜與骨內膜；<b>紅線在軟骨的外緣</b> → 排除位於軟骨內部的領域基質。</p>
+    <p class="src">出處：組織學與實驗-骨骼與軟骨 施耀翔.吳敏瑜 ppt p.7 ｜ BM113_Block8期中考詳解.pdf 第 66 頁</p>
+  </details>
+</article>
+</section>
+<section id="chapter-3" data-chapter-kind="story">
+<h2>三、認骨頭：三種骨細胞與兩種管道</h2>
+
+<figure class="boxfig" data-visual-id="hlbox-05-story" data-image-kind="story" data-explanation-verified="true">
+<span class="figtag">情境場景</span>
+<img data-visual-id="hlbox-05-story" src="img/hlbox-05-story.webp" alt="情境場景：三種骨細胞的位置不一樣，看它站在哪裡就知道它是誰。" loading="lazy" decoding="async" width="1600" height="914">
+<figcaption>情境場景：三種骨細胞的位置不一樣，看它站在哪裡就知道它是誰。</figcaption>
+</figure>
+<div class="story" data-prose-kind="story"><span class="tag">故事</span>
+<p>三種骨細胞在切片上很好分，<b>因為它們站的位置不一樣</b>。</p>
+<p><b>成骨細胞（osteoblast）</b>：<b>站在骨的表面</b>，排成整齊的一列，像一排立方形的工人貼著牆面。箭頭如果指向「骨頭邊緣上那一排規則的細胞」，就是它。</p>
+<p><b>骨細胞（osteocyte）</b>：<b>被埋在骨裡面</b>，一個一個關在小小的陷窩中，形狀扁扁的。它在骨基質<b>裡</b>，不在表面。</p>
+<p><b>破骨細胞（osteoclast）</b>：<b>又大又醜、有好幾個核</b>，蹲在骨表面被它自己啃出來的<b>淺凹坑</b>裡。那個坑叫 <b>Howship's lacuna</b>。H&amp;E 染色下它<b>偏粉紅（嗜酸性）</b>，因為胞質裡有大量粒線體與溶酶體。</p>
+<p>「所以三個都在骨頭上，差別是……」</p>
+<p>「<b>表面排排站＝成骨細胞；埋在裡面＝骨細胞；表面上又大又多核、還坐在坑裡＝破骨細胞。</b>」</p>
+<p>另外還有兩種管道會被拿來出題，兩者的差別只有<b>方向</b>：</p>
+<p><b>哈氏管（Haversian canal）</b>：<b>順著骨的長軸走</b>，是骨元的中心，周圍圍著一圈一圈同心圓骨板。</p>
+<p><b>福克曼管（Volkmann canal）</b>：<b>橫著走</b>，把相鄰的哈氏管彼此串起來、也連通到骨膜。它<b>不被同心圓骨板包圍</b>——這就是切片上最快的判準。</p>
+</div>
+
+<figure class="boxfig" data-visual-id="hlbox-06-reality" data-image-kind="comparison" data-explanation-verified="true">
+<span class="figtag">骨細胞與管道</span>
+<img data-visual-id="hlbox-06-reality" src="img/hlbox-06-reality.webp" alt="骨細胞與管道：成骨細胞在表面、骨細胞在陷窩內、破骨細胞在凹坑；哈氏管縱走、福克曼管橫走。" loading="lazy" decoding="async" width="1600" height="914">
+<figcaption>骨細胞與管道：成骨細胞在表面、骨細胞在陷窩內、破骨細胞在凹坑；哈氏管縱走、福克曼管橫走。</figcaption>
+</figure>
+<div class="reality"><span class="tag">回到現實</span>
+<p class="quote">詳解原文（113 第 52 題）:「大且多核，H&amp;E stain呈現嗜酸性染色，位於骨表面凹陷處(Howship's lacunae)」</p>
+<p>這句話就是破骨細胞的<b>四個辨識點</b>：<b>大</b>、<b>多核</b>、<b>嗜酸性（偏粉紅）</b>、<b>坐在 Howship's lacuna 裡</b>。四個同時出現就不會認錯。</p>
+<p><b>三種骨細胞的位置對照：</b></p>
+<p>・<b>Osteoblast 成骨細胞</b>：骨表面，<b>單核</b>、立方形、<b>排成一列</b>。<br>
+・<b>Osteocyte 骨細胞</b>：<b>骨基質內部</b>的陷窩中，扁平、有細長突起。<br>
+・<b>Osteoclast 破骨細胞</b>：骨表面的<b>凹坑</b>中，<b>巨大多核</b>。<br>
+・<b>Fibroblast 纖維母細胞</b>：在結締組織裡，細長梭形——出現在骨切片題的選項裡通常是誘餌。</p>
+<p><b>兩種管道的對照：</b></p>
+<p>・<b>Haversian canal 哈氏管</b>：<b>縱向</b>，位於骨元中心，<b>被同心圓骨板包圍</b>。<br>
+・<b>Volkmann canal 福克曼管</b>：<b>橫向</b>，連通哈氏管與骨膜，<b>沒有同心圓骨板包圍</b>。</p>
+<p class="infer">112 年第 44 題的另外兩個干擾選項也很好刷：<b>骨髓</b>是一大團細胞而不是管道；<b>骨膜</b>是包在骨最外面的一層膜，不會出現在骨的內部。<b>只要箭頭指的是「骨質內部的一條通道」，答案就在哈氏管與福克曼管之間二選一，再看有沒有同心圓。</b></p>
+</div>
+
+<article data-question-id="111-p37-q44" data-placement="chapter">
+  <span class="qhead">111 年 期中考 第 44 題 ｜ 圖片題</span>
+  <p class="stem">What are the cell labeled by the arrows?</p>
+  <ul class="opts">
+    <li>(A) Osteoblasts</li>
+    <li>(B) Osteocytes</li>
+    <li>(C) Osteoclasts</li>
+    <li>(D) Chondrocytes</li>
+  </ul>
+  <details data-kind="answer">
+    <summary>答案與詳解</summary>
+    <div data-kind="zh-translation">
+      <p><strong>中文題目：</strong>箭頭所標示的細胞是什麼？</p>
+      <p>(A) 成骨細胞</p>
+      <p>(B) 骨細胞</p>
+      <p>(C) 破骨細胞</p>
+      <p>(D) 軟骨細胞</p>
+    </div>
+    <p class="ans">答案：(A) Osteoblasts</p>
+    <p>原卷<b>詳解欄留空</b>，只給了答案與出處。辨識點是<b>貼在骨表面、排成整齊一列的立方形單核細胞</b>。骨細胞埋在基質裡的陷窩中、破骨細胞巨大多核且坐在凹坑裡、軟骨細胞則在軟骨的陷窩中。</p>
+    <p class="src">出處：張瀛双 組織學與實驗-骨骼與軟骨 ｜ BM111 BLOCK-8 期中考詳解.pdf 第 37 頁</p>
+  </details>
+</article>
+
+<article data-question-id="113-p65-q52" data-placement="chapter">
+  <span class="qhead">113 年 期中考 第 52 題 ｜ 圖片題</span>
+  <p class="stem">What type of cell is indicated by the arrow?</p>
+  <ul class="opts">
+    <li>(A) Osteocyte</li>
+    <li>(B) Osteoblast</li>
+    <li>(C) Osteoclast</li>
+    <li>(D) Fibroblast</li>
+  </ul>
+  <details data-kind="answer">
+    <summary>答案與詳解</summary>
+    <div data-kind="zh-translation">
+      <p><strong>中文題目：</strong>箭頭所指的是哪一種細胞？</p>
+      <p>(A) 骨細胞</p>
+      <p>(B) 成骨細胞</p>
+      <p>(C) 破骨細胞</p>
+      <p>(D) 纖維母細胞</p>
+    </div>
+    <p class="ans">答案：(C)</p>
+    <p class="quote">詳解原文:「大且多核，H&amp;E stain呈現嗜酸性染色，位於骨表面凹陷處(Howship's lacunae)」</p>
+    <p>與 111 年第 44 題是同一個考點（箭頭指的骨細胞是誰），只是答案換成破骨細胞。<b>四個辨識點：大、多核、嗜酸性、坐在自己啃出的凹坑裡。</b></p>
+    <p class="src">出處：組織學與實驗-骨骼與軟骨 施耀翔.吳敏瑜 ppt p.20 ｜ BM113_Block8期中考詳解.pdf 第 65 頁</p>
+  </details>
+</article>
+
+<article data-question-id="112-p60-q44" data-placement="chapter">
+  <span class="qhead">112 年 期中考 第 44 題 ｜ 圖片題</span>
+  <p class="stem">What is the structure labeled by the arrows?</p>
+  <ul class="opts">
+    <li>(A) Haversian canal</li>
+    <li>(B) Volkmann canal</li>
+    <li>(C) Bone marrow</li>
+    <li>(D) Periosteum</li>
+  </ul>
+  <details data-kind="answer">
+    <summary>答案與詳解</summary>
+    <div data-kind="zh-translation">
+      <p><strong>中文題目：</strong>箭頭所標示的構造是什麼？</p>
+      <p>(A) 哈氏管</p>
+      <p>(B) 福克曼管</p>
+      <p>(C) 骨髓</p>
+      <p>(D) 骨膜</p>
+    </div>
+    <p class="ans">答案：B</p>
+    <p>原卷<b>詳解欄留空</b>，只給了答案與出處（ppt pg.15）。判準是<b>方向與有無同心圓</b>：<b>哈氏管縱走、位於骨元中心、被同心圓骨板包圍</b>；<b>福克曼管橫走、穿過骨板把哈氏管彼此串起來、沒有自己的同心圓</b>。(C) 骨髓不是管道，(D) 骨膜在骨的最外層。</p>
+    <p class="src">出處：施耀翔、吳敏瑜 組織學實驗 骨骼與軟骨 (ppt pg. 15) ｜ BM112_Block 8 期中考(含申覆內容與結果).pdf 第 60 頁</p>
+  </details>
+</article>
+</section>
+<section id="chapter-cram" data-chapter-kind="cram">
+<h2>四、考前速記</h2>
+<div class="cram">
+<ul>
+<li><b>這一科十題全部是看圖題，而且題幹是印好的、圖才是題目。</b>不要背字母。</li>
+<li><b>出題位置固定：肌肉實驗第 14、15 題；骨軟骨實驗第 43、44 題（113 年移到 52、53 題）</b>，每門每年各 2 題。</li>
+<li><b>肌肉題流程：① 橫切還是縱切 → ② 有沒有橫紋 → ③ 核在哪裡 → ④ 分不分支。</b></li>
+<li><b>看到 intercalated disc（間盤）就是心肌</b>，不必再看別的。</li>
+<li><b>心肌三特徵：分支、互相接成網、有間盤。</b></li>
+<li><b>橫切時心肌核在中央、核旁常有被洗掉的空腔</b>；骨骼肌核貼邊且一格多核。</li>
+<li><b>平滑肌橫切是大小不一的圓</b>，多數看不到核（紡錘形被切在不同位置）。</li>
+<li><b>肌腱不是肌肉</b>：平行膠原纖維束、細胞很少，出現在肌肉題選項裡是誘餌。</li>
+<li><b>軟骨題流程：先看基質有沒有纖維，再看外面有沒有膜。</b></li>
+<li><b>基質均勻無纖維＝透明軟骨；交錯深色細絲＝彈性軟骨；粗大平行束＝纖維軟骨。</b></li>
+<li><b>只有纖維軟骨沒有軟骨膜。</b></li>
+<li><b>perichondrium 包軟骨、periosteum 包骨、endosteum 襯骨髓腔內側。</b>看字根 chondro／osteo、peri／endo。</li>
+<li><b>territorial matrix 在軟骨內部</b>（陷窩周圍深染的一圈），不是外層被膜——113 年的干擾選項。</li>
+<li><b>氣管切片：前方 C 型透明軟骨環，後方扁掉的是食道。</b></li>
+<li><b>成骨細胞：骨表面、單核、立方形、排成一列。</b></li>
+<li><b>骨細胞：埋在骨基質內部的陷窩中，扁平。</b></li>
+<li><b>破骨細胞：大、多核、嗜酸性（偏粉紅）、坐在 Howship's lacuna 凹坑裡。</b>四點齊全。</li>
+<li><b>哈氏管縱走、在骨元中心、有同心圓骨板包圍。</b></li>
+<li><b>福克曼管橫走、串連哈氏管與骨膜、沒有同心圓包圍。</b></li>
+<li><b>同一題幹不同年答案不同的實例：</b>111 第 15 題 (D) 骨骼肌 vs 112 第 15 題 (B) 平滑肌；111 第 43 題彈性軟骨 vs 112 第 43 題透明軟骨。</li>
+</ul>
+</div>
+</section>
+
+<!-- ================= VOCAB ================= -->
+<section id="chapter-vocab" data-chapter-kind="vocab">
+<h2>五、單字表</h2>
+<dl class="vocab">
+<dt>cross section / longitudinal section</dt>
+<dd><span class="root">cross＝橫越；longitudinal＝縱向</span>　橫切與縱切。判讀切片的第一步。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>一片一片的閉合形狀＝橫切；一條一條的長帶＝縱切。<b>先判這個就能刷掉一半選項。</b></p></details></dd>
+
+<dt>intercalated disc</dt>
+<dd><span class="root">intercalate＝插入其間</span>　間盤。心肌細胞末端相接處的特化連接，切片上是一條深色橫線。<details data-kind="vocab-memory"><summary>記憶提示</summary><p><b>心肌獨有。</b>看到它就結案，兩年的第 14 題都靠這一點。</p></details></dd>
+
+<dt>anastomosing network</dt>
+<dd><span class="root">希臘 anastomosis＝開口相通</span>　吻合成網。心肌細胞分支後彼此相接形成的網狀結構。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>骨骼肌是一根一根平行的，<b>不會互相接起來</b>。</p></details></dd>
+
+<dt>tendon</dt>
+<dd><span class="root">拉丁 tendere＝拉緊</span>　肌腱。平行緻密的膠原纖維束，細胞（腱細胞）少而扁。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>它<b>不是肌肉</b>。切片上看不到橫紋也看不到肌纖維，只有一整片平行的粉紅纖維。</p></details></dd>
+
+<dt>hyaline cartilage</dt>
+<dd><span class="root">希臘 hyalos＝玻璃</span>　透明軟骨。基質均勻無可見纖維，細胞成小群，外有軟骨膜。<details data-kind="vocab-memory"><summary>記憶提示</summary><p><b>什麼都看不到就是它。</b>氣管的 C 型環、關節面、肋軟骨、生長板。</p></details></dd>
+
+<dt>elastic cartilage</dt>
+<dd><span class="root">elastic＝有彈性的</span>　彈性軟骨。基質中密布交錯的彈性纖維，外有軟骨膜。<details data-kind="vocab-memory"><summary>記憶提示</summary><p><b>基質裡看得到一團亂線</b>就是它。外耳、外耳道、耳咽管、會厭。</p></details></dd>
+
+<dt>fibrocartilage</dt>
+<dd><span class="root">fibro-＝纖維</span>　纖維軟骨。粗大平行的膠原纖維束，細胞排成列，<b>無軟骨膜</b>。<details data-kind="vocab-memory"><summary>記憶提示</summary><p><b>三種軟骨裡唯一沒有軟骨膜的。</b>椎間盤、半月板、恥骨聯合。</p></details></dd>
+
+<dt>perichondrium</dt>
+<dd><span class="root">peri-（周圍）+ chondro-（軟骨）</span>　軟骨膜。包在透明軟骨與彈性軟骨外的緻密結締組織。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>字根就是答案：<b>chondro-＝軟骨</b>。113 年紅線圈的就是它。</p></details></dd>
+
+<dt>periosteum / endosteum</dt>
+<dd><span class="root">peri-（外）／endo-（內）+ osteo-（骨）</span>　骨膜（包在骨外）與骨內膜（襯在骨髓腔內側）。<details data-kind="vocab-memory"><summary>記憶提示</summary><p><b>osteo-＝骨</b>，所以裡面是軟骨時兩個都不對。peri 在外、endo 在內。</p></details></dd>
+
+<dt>territorial matrix</dt>
+<dd><span class="root">territory＝領域</span>　領域基質。緊貼軟骨陷窩周圍、染色較深的一小圈基質。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>它在<b>軟骨內部</b>，不是外層被膜。113 年拿它當誘餌。</p></details></dd>
+
+<dt>osteoblast</dt>
+<dd><span class="root">osteo-（骨）+ blast（芽、生成者）</span>　成骨細胞。骨表面排成一列的立方形單核細胞。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>-blast＝製造者。<b>它在表面排排站。</b></p></details></dd>
+
+<dt>osteocyte</dt>
+<dd><span class="root">osteo-（骨）+ -cyte（細胞）</span>　骨細胞。被埋在骨基質陷窩中的扁平細胞。<details data-kind="vocab-memory"><summary>記憶提示</summary><p><b>它在裡面，不在表面。</b>被自己蓋的牆封起來的成骨細胞。</p></details></dd>
+
+<dt>osteoclast</dt>
+<dd><span class="root">osteo-（骨）+ clast（打碎者）</span>　破骨細胞。巨大多核、嗜酸性，位於骨表面的凹坑中。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>四個辨識點：<b>大、多核、偏粉紅、坐在坑裡。</b></p></details></dd>
+
+<dt>Howship's lacuna</dt>
+<dd><span class="root">以解剖學家 Howship 命名；lacuna＝小窪</span>　豪希普陷窩，破骨細胞吸收骨質後留下的凹坑。<details data-kind="vocab-memory"><summary>記憶提示</summary><p><b>坑是它自己啃的，它就坐在坑裡。</b>切片上認破骨細胞就找這個坑。</p></details></dd>
+
+<dt>Haversian canal</dt>
+<dd><span class="root">以解剖學家 Havers 命名</span>　哈氏管。骨元中央的<b>縱向</b>管道，周圍有同心圓骨板。<details data-kind="vocab-memory"><summary>記憶提示</summary><p><b>有同心圓包著的那一根</b>就是它。</p></details></dd>
+
+<dt>Volkmann canal</dt>
+<dd><span class="root">以解剖學家 Volkmann 命名</span>　福克曼管。<b>橫向</b>穿過骨板、連通哈氏管與骨膜的管道。<details data-kind="vocab-memory"><summary>記憶提示</summary><p><b>沒有自己的同心圓</b>——這是切片上最快的判準。</p></details></dd>
+
+<dt>fibroblast</dt>
+<dd><span class="root">fibro-（纖維）+ blast</span>　纖維母細胞。結締組織中細長梭形的細胞。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>出現在骨切片題的選項裡通常是誘餌——<b>它不在骨表面也不在陷窩裡。</b></p></details></dd>
+
+<dt>bone marrow</dt>
+<dd><span class="root">marrow＝髓</span>　骨髓。填在骨髓腔與骨小樑之間的造血與脂肪組織。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>它是<b>一大團細胞</b>，不是管道。管道題出現它就是湊數的。</p></details></dd>
+</dl>
+</section>
+<section id="chapter-final" data-chapter-kind="final_questions">
+<h2>六、歷年考題總複習</h2>
+<p class="meta">依年度由新到舊、同年依原始題號排列。共 10 題（111／112 期中考各 4 題、113 期中考 2 題）。<b style="color:#f08a8a">紅框</b>＝同一考點在兩個以上年度重複出現。</p>
+<h3><span class="yearchip">113 年</span>期中考 第 52 題</h3>
+<article data-question-id="113-p65-q52" data-placement="final" class="repeat">
+  <span class="qhead">113 年 期中考 第 52 題</span><span class="repeat-badge">重複考點 ×2</span>
+  <p class="repeat-note">同考點：111 第44題　—　箭頭指的是哪一種骨細胞</p>
+  <p class="stem">What type of cell is indicated by the arrow?</p>
+  <ul class="opts"><li>(A) Osteocyte</li><li>(B) Osteoblast</li><li>(C) Osteoclast</li><li>(D) Fibroblast</li></ul>
+  <details data-kind="answer"><summary>答案與詳解</summary>
+    <div data-kind="zh-translation"><p><strong>中文題目：</strong>箭頭所指的是哪一種細胞？</p>
+      <p>(A) 骨細胞</p>
+      <p>(B) 成骨細胞</p>
+      <p>(C) 破骨細胞</p>
+      <p>(D) 纖維母細胞</p></div>
+    <p class="ans">答案：(C)</p>
+    <p>大、多核、嗜酸性、坐在自己啃出的凹坑裡——破骨細胞。<span class="src"> ｜ BM113_Block8期中考詳解 第 65 頁</span></p>
+  </details>
+</article>
+<article data-question-id="113-p66-q53" data-placement="final" class="repeat">
+  <span class="qhead">113 年 期中考 第 53 題</span><span class="repeat-badge">重複考點 ×2</span>
+  <p class="repeat-note">同考點：112 第44題　—　箭頭或紅線指的是哪一個構造——骨內管道與外層被膜</p>
+  <p class="stem">What structure is indicated by the red dashed line?</p>
+  <ul class="opts"><li>(A) Endosteum</li><li>(B) Periosteum</li><li>(C) Perichondrium</li><li>(D) Territorial matrix</li></ul>
+  <details data-kind="answer"><summary>答案與詳解</summary>
+    <div data-kind="zh-translation"><p><strong>中文題目：</strong>紅色虛線所指的構造是什麼？</p>
+      <p>(A) 骨內膜</p>
+      <p>(B) 骨膜</p>
+      <p>(C) 軟骨膜</p>
+      <p>(D) 領域基質</p></div>
+    <p class="ans">答案：(C)</p>
+    <p>裡面是軟骨就排除骨膜與骨內膜，紅線在外緣就排除領域基質。<span class="src"> ｜ BM113_Block8期中考詳解 第 66 頁</span></p>
+  </details>
+</article>
+<h3><span class="yearchip">112 年</span>期中考 第 14 題</h3>
+<article data-question-id="112-p17-q14" data-placement="final" class="repeat">
+  <span class="qhead">112 年 期中考 第 14 題</span><span class="repeat-badge">重複考點 ×2</span>
+  <p class="repeat-note">同考點：111 第14題　—　看圖判斷是哪一種肌肉組織——心肌靠分支與間盤</p>
+  <p class="stem">Observe the histological features. What is the tissue in this figure?</p>
+  <ul class="opts"><li>(A) Cardiac muscle</li><li>(B) Tendon</li><li>(C) Smooth muscle</li><li>(D) Skeletal muscle</li></ul>
+  <details data-kind="answer"><summary>答案與詳解</summary>
+    <div data-kind="zh-translation"><p><strong>中文題目：</strong>觀察圖中的組織學特徵。圖中的組織是什麼？</p>
+      <p>(A) 心肌</p>
+      <p>(B) 肌腱</p>
+      <p>(C) 平滑肌</p>
+      <p>(D) 骨骼肌</p></div>
+    <p class="ans">答案：A</p>
+    <p>與 111 第 14 題完全相同；心肌三特徵是分支、接成網、有間盤。<span class="src"> ｜ BM112_Block 8 期中考(含申覆內容與結果) 第 17 頁</span></p>
+  </details>
+</article>
+<article data-question-id="112-p19-q15" data-placement="final" class="repeat">
+  <span class="qhead">112 年 期中考 第 15 題 ｜ 來源答案欄</span><span class="repeat-badge">重複考點 ×2</span>
+  <p class="repeat-note">同考點：111 第15題　—　看圖同時判斷組織種類與切面方向，同一題幹三年答案都不同</p>
+  <p class="stem">What is the correct combination of tissue species and section orientation in the figure?</p>
+  <ul class="opts"><li>(A) cross sectioned cardiac muscle</li><li>(B) longitudinal sectioned smooth muscle</li><li>(C) cross sectioned smooth muscle</li><li>(D) cross sectioned skeletal muscle</li></ul>
+  <details data-kind="answer"><summary>答案與詳解</summary>
+    <div data-kind="zh-translation"><p><strong>中文題目：</strong>圖中的<b>組織種類與切面方向</b>的正確組合為下列何者？</p>
+      <p>(A) 橫切的心肌</p>
+      <p>(B) 縱切的平滑肌</p>
+      <p>(C) 橫切的平滑肌</p>
+      <p>(D) 橫切的骨骼肌</p></div>
+    <p class="ans">答案：B</p>
+    <p>題幹與 111 第 15 題一字不差，圖換了答案就從骨骼肌變成平滑肌。<span class="src"> ｜ BM112_Block 8 期中考(含申覆內容與結果) 第 19 頁</span></p>
+  </details>
+</article>
+<article data-question-id="112-p59-q43" data-placement="final" class="repeat">
+  <span class="qhead">112 年 期中考 第 43 題</span><span class="repeat-badge">重複考點 ×2</span>
+  <p class="repeat-note">同考點：111 第43題　—　看圖判斷是哪一種軟骨或骨組織</p>
+  <p class="stem">What kind of tissue is it?</p>
+  <ul class="opts"><li>(A) Fibrocartilage</li><li>(B) Elastic cartilage</li><li>(C) bone</li><li>(D) Hyaline cartilage</li></ul>
+  <details data-kind="answer"><summary>答案與詳解</summary>
+    <div data-kind="zh-translation"><p><strong>中文題目：</strong>這是哪一種組織？</p>
+      <p>(A) 纖維軟骨</p>
+      <p>(B) 彈性軟骨</p>
+      <p>(C) 骨</p>
+      <p>(D) 透明軟骨</p></div>
+    <p class="ans">答案：D</p>
+    <p>同一組選項換個順序，圖換成基質均勻無纖維的透明軟骨。<span class="src"> ｜ BM112_Block 8 期中考(含申覆內容與結果) 第 59 頁</span></p>
+  </details>
+</article>
+<article data-question-id="112-p60-q44" data-placement="final" class="repeat">
+  <span class="qhead">112 年 期中考 第 44 題 ｜ 來源答案欄</span><span class="repeat-badge">重複考點 ×2</span>
+  <p class="repeat-note">同考點：113 第53題　—　箭頭或紅線指的是哪一個構造——骨內管道與外層被膜</p>
+  <p class="stem">What is the structure labeled by the arrows?</p>
+  <ul class="opts"><li>(A) Haversian canal</li><li>(B) Volkmann canal</li><li>(C) Bone marrow</li><li>(D) Periosteum</li></ul>
+  <details data-kind="answer"><summary>答案與詳解</summary>
+    <div data-kind="zh-translation"><p><strong>中文題目：</strong>箭頭所標示的構造是什麼？</p>
+      <p>(A) 哈氏管</p>
+      <p>(B) 福克曼管</p>
+      <p>(C) 骨髓</p>
+      <p>(D) 骨膜</p></div>
+    <p class="ans">答案：B</p>
+    <p>橫走、沒有同心圓骨板包圍的那一條是福克曼管。<span class="src"> ｜ BM112_Block 8 期中考(含申覆內容與結果) 第 60 頁</span></p>
+  </details>
+</article>
+<h3><span class="yearchip">111 年</span>期中考 第 14 題</h3>
+<article data-question-id="111-p13-q14" data-placement="final" class="repeat">
+  <span class="qhead">111 年 期中考 第 14 題</span><span class="repeat-badge">重複考點 ×2</span>
+  <p class="repeat-note">同考點：112 第14題　—　看圖判斷是哪一種肌肉組織——心肌靠分支與間盤</p>
+  <p class="stem">Observe the histological features. What is the tissue in this figure?</p>
+  <ul class="opts"><li>(A) Cardiac muscle</li><li>(B) Tendon</li><li>(C) Smooth muscle</li><li>(D) Skeletal muscle</li></ul>
+  <details data-kind="answer"><summary>答案與詳解</summary>
+    <div data-kind="zh-translation"><p><strong>中文題目：</strong>觀察圖中的組織學特徵。圖中的組織是什麼？</p>
+      <p>(A) 心肌</p>
+      <p>(B) 肌腱</p>
+      <p>(C) 平滑肌</p>
+      <p>(D) 骨骼肌</p></div>
+    <p class="ans">答案：(A) Cardiac muscle</p>
+    <p>看到間盤就是心肌，不必再看別的。<span class="src"> ｜ BM111 BLOCK-8 期中考詳解 第 13 頁</span></p>
+  </details>
+</article>
+<article data-question-id="111-p14-q15" data-placement="final" class="repeat">
+  <span class="qhead">111 年 期中考 第 15 題</span><span class="repeat-badge">重複考點 ×2</span>
+  <p class="repeat-note">同考點：112 第15題　—　看圖同時判斷組織種類與切面方向，同一題幹三年答案都不同</p>
+  <p class="stem">What is the correct combination of tissue species and section orientation in the figure?</p>
+  <ul class="opts"><li>(A) cross sectioned cardiac muscle</li><li>(B) longitudinal sectioned smooth muscle</li><li>(C) cross sectioned smooth muscle</li><li>(D) cross sectioned skeletal muscle</li></ul>
+  <details data-kind="answer"><summary>答案與詳解</summary>
+    <div data-kind="zh-translation"><p><strong>中文題目：</strong>圖中的<b>組織種類與切面方向</b>的正確組合為下列何者？</p>
+      <p>(A) 橫切的心肌</p>
+      <p>(B) 縱切的平滑肌</p>
+      <p>(C) 橫切的平滑肌</p>
+      <p>(D) 橫切的骨骼肌</p></div>
+    <p class="ans">答案：(D) cross sectioned skeletal muscle</p>
+    <p>先判橫切刷掉唯一的縱切選項，再用細胞型態排除心肌與平滑肌。<span class="src"> ｜ BM111 BLOCK-8 期中考詳解 第 14 頁</span></p>
+  </details>
+</article>
+<article data-question-id="111-p36-q43" data-placement="final" class="repeat">
+  <span class="qhead">111 年 期中考 第 43 題 ｜ 來源答案欄</span><span class="repeat-badge">重複考點 ×2</span>
+  <p class="repeat-note">同考點：112 第43題　—　看圖判斷是哪一種軟骨或骨組織</p>
+  <p class="stem">What kind of tissue is it?</p>
+  <ul class="opts"><li>(A) Hyaline cartilage</li><li>(B) Elastic cartilage</li><li>(C) Fibrocartilage</li><li>(D) Bone</li></ul>
+  <details data-kind="answer"><summary>答案與詳解</summary>
+    <div data-kind="zh-translation"><p><strong>中文題目：</strong>這是哪一種組織？</p>
+      <p>(A) 透明軟骨</p>
+      <p>(B) 彈性軟骨</p>
+      <p>(C) 纖維軟骨</p>
+      <p>(D) 骨</p></div>
+    <p class="ans">答案：(B) Elastic cartilage</p>
+    <p>基質中密布交錯的深色彈性纖維——彈性軟骨。<span class="src"> ｜ BM111 BLOCK-8 期中考詳解 第 36 頁</span></p>
+  </details>
+</article>
+<article data-question-id="111-p37-q44" data-placement="final" class="repeat">
+  <span class="qhead">111 年 期中考 第 44 題 ｜ 來源答案欄</span><span class="repeat-badge">重複考點 ×2</span>
+  <p class="repeat-note">同考點：113 第52題　—　箭頭指的是哪一種骨細胞</p>
+  <p class="stem">What are the cell labeled by the arrows?</p>
+  <ul class="opts"><li>(A) Osteoblasts</li><li>(B) Osteocytes</li><li>(C) Osteoclasts</li><li>(D) Chondrocytes</li></ul>
+  <details data-kind="answer"><summary>答案與詳解</summary>
+    <div data-kind="zh-translation"><p><strong>中文題目：</strong>箭頭所標示的細胞是什麼？</p>
+      <p>(A) 成骨細胞</p>
+      <p>(B) 骨細胞</p>
+      <p>(C) 破骨細胞</p>
+      <p>(D) 軟骨細胞</p></div>
+    <p class="ans">答案：(A) Osteoblasts</p>
+    <p>貼在骨表面、排成整齊一列的立方形單核細胞就是成骨細胞。<span class="src"> ｜ BM111 BLOCK-8 期中考詳解 第 37 頁</span></p>
+  </details>
+</article>
+<p class="ending">十題全部是看圖題。題幹每年一樣、圖每年不一樣——所以這一科唯一有用的複習，是把三張肌肉的臉、三種軟骨的基質、三種骨細胞的位置各看熟一次。</p>
+</section>
+</div>
+</body>
+</html>
