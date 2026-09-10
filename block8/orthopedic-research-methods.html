@@ -1,0 +1,449 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>骨科學研究的細胞生理與動物模式實驗 鄭琮霖</title>
+<style>
+:root{
+  color-scheme: dark;
+  --bg:#0b0e13; --panel:#141922; --panel2:#1b2230; --line:#2a3340;
+  --ink:#e8ecf3; --dim:#a3adbd; --gold:#e5b567; --cyan:#6fd3c7;
+  --rose:#e88b8b; --violet:#a99bf0;
+}
+*{box-sizing:border-box}
+html{font-size:150%}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font-family:"Noto Sans TC","PingFang TC","Helvetica Neue",system-ui,sans-serif;
+  line-height:1.85; overflow-wrap:anywhere;}
+/* Width follows the device, not the font size: px breakpoints stay put
+   while rem-based type scales with the 150% root. */
+.container{width:100%;max-width:none;margin:0 auto;
+  padding:clamp(.85rem,2.2vw,2.2rem);}
+@media (min-width:760px){ .container{max-width:730px} }
+@media (min-width:1024px){ .container{max-width:980px} }
+@media (min-width:1440px){ .container{max-width:1300px} }
+@media (min-width:1920px){ .container{max-width:1640px} }
+img{max-width:100%;height:auto}
+svg{max-width:100%;height:auto;display:block}
+h1{font-size:1.6rem;line-height:1.35;margin:.2rem 0 .6rem}
+h2{font-size:1.24rem;margin:2.4rem 0 .7rem;padding-bottom:.4rem;
+  border-bottom:1px solid var(--line);color:var(--gold)}
+h3{font-size:1.06rem;margin:1.5rem 0 .5rem;color:var(--cyan)}
+p{margin:.7rem 0}
+header#subject-overview{background:linear-gradient(160deg,#182031,#0e1219);
+  border:1px solid var(--line);border-radius:14px;padding:1.2rem;margin:.6rem 0 1.4rem}
+.meta{color:var(--dim);font-size:.86rem;margin:.3rem 0 0}
+nav#toc{background:var(--panel);border:1px solid var(--line);
+  border-radius:12px;padding:.9rem 1.1rem;margin:1.2rem 0}
+nav#toc ol{margin:.4rem 0 0;padding-left:1.3rem}
+nav#toc a{color:var(--ink);text-decoration:none;border-bottom:1px dotted var(--line)}
+.story{background:var(--panel2);border-left:3px solid var(--violet);
+  border-radius:0 10px 10px 0;padding:.9rem 1.1rem;margin:1.1rem 0}
+.story .tag{display:block;color:var(--violet);font-size:.78rem;
+  letter-spacing:.12em;margin-bottom:.35rem}
+.reality{background:var(--panel);border-left:3px solid var(--cyan);
+  border-radius:0 10px 10px 0;padding:.9rem 1.1rem;margin:1.1rem 0}
+.reality .tag{display:block;color:var(--cyan);font-size:.78rem;
+  letter-spacing:.12em;margin-bottom:.35rem}
+.keybox{background:#12202b;border:1px solid #26485a;border-radius:10px;
+  padding:.85rem 1rem;margin:1.1rem 0}
+.keybox b{color:var(--cyan)}
+.warn{background:#2a1c1c;border:1px solid #573434;border-radius:10px;
+  padding:.85rem 1rem;margin:1.1rem 0;color:#f0cfcf}
+article{background:var(--panel);border:1px solid var(--line);
+  border-radius:12px;padding:.95rem 1.05rem;margin:1.1rem 0}
+article .qhead{display:block;color:var(--gold);font-size:.82rem;
+  letter-spacing:.06em;margin-bottom:.45rem}
+article .stem{margin:.2rem 0 .5rem}
+article ul.opts{list-style:none;margin:.3rem 0 .2rem;padding:0}
+article ul.opts li{padding:.16rem 0 .16rem .2rem;color:#dbe2ec}
+details{background:#0f141c;border:1px solid var(--line);
+  border-radius:10px;padding:.15rem .8rem;margin:.6rem 0}
+details summary{cursor:pointer;padding:.6rem 0;color:var(--gold);
+  font-weight:600;min-height:44px;display:flex;align-items:center}
+details[data-kind="answer"] .ans{font-size:1.05rem;color:var(--cyan);font-weight:700}
+div[data-kind="zh-translation"]{background:#141c26;border:1px dashed #33465c;
+  border-radius:8px;padding:.7rem .85rem;margin:.5rem 0 .8rem}
+div[data-kind="zh-translation"] p{margin:.35rem 0}
+.src{color:var(--dim);font-size:.84rem;margin-top:.6rem}
+.quote{border-left:2px solid var(--gold);padding-left:.75rem;color:#f0e2c6}
+.infer{color:#f0d9a8;font-size:.92rem}
+figure{margin:1.3rem 0;background:var(--panel2);border:1px solid var(--line);
+  border-radius:12px;padding:.9rem}
+figcaption{color:var(--dim);font-size:.85rem;margin-top:.6rem;text-align:center}
+dl.vocab{margin:0}
+dl.vocab dt{color:var(--cyan);font-weight:700;margin-top:.9rem}
+dl.vocab dd{margin:.2rem 0 0;padding-left:0}
+dl.vocab .root{color:var(--dim);font-size:.86rem}
+.cram{background:var(--panel);border:1px solid var(--line);
+  border-radius:12px;padding:.4rem 1.1rem;margin:1rem 0}
+.cram li{margin:.55rem 0}
+.yearchip{display:inline-block;background:#233046;color:#bcd0ea;
+  border-radius:999px;padding:.05rem .55rem;font-size:.76rem;margin-right:.4rem}
+article.repeat{border:2px solid #e05252;box-shadow:0 0 0 3px rgba(224,82,82,.12)}
+article.repeat .qhead{color:#f08a8a}
+.repeat-badge{display:inline-block;background:#3a1c1c;border:1px solid #7d3a3a;
+  color:#f0a8a8;border-radius:999px;padding:.1rem .6rem;font-size:.76rem;
+  margin-left:.4rem;white-space:nowrap}
+.repeat-note{color:#e6a5a5;font-size:.84rem;margin:.45rem 0 0}
+figure.boxfig{margin:1.5rem 0 .5rem;background:transparent;border:0;padding:0}
+figure.boxfig img{border-radius:12px;border:1px solid var(--line);display:block;width:100%}
+figure.boxfig figcaption{color:var(--dim);font-size:.82rem;margin-top:.5rem;
+  text-align:left;line-height:1.6}
+figure.boxfig .figtag{color:var(--violet);font-size:.76rem;letter-spacing:.1em;
+  display:block;margin-bottom:.3rem}
+.ending{color:var(--dim);font-style:italic;margin:1.6rem 0 2.4rem}
+</style></head>
+<body>
+<div class="container">
+
+<header id="subject-overview">
+  <h1>骨科學研究的細胞生理與動物模式實驗</h1>
+  <p>這一科不教骨頭，教的是<b>「怎麼看骨頭」</b>。同一群細胞擺在你面前，你想知道的事情不一樣，能用的工具就完全不一樣——想知道它<b>會不會造骨</b>、想知道它<b>會不會走路</b>、還是想知道它<b>邊走邊拆了多少</b>，是三台不同的攝影機。</p>
+  <p>三年三題，每一題都是同一個句型：「Which method is best/more suitable for observing ______?」。空格換掉，選項換掉，考的東西一模一樣——<b>先看清楚題目要觀察的是什麼，再去對工具</b>。這篇筆記就是把那張對照表刻進腦子裡。</p>
+  <p class="meta">命題老師：鄭琮霖 ｜ 收錄 111、112、113 期中考，各 1 題共 3 題（皆為第 1 題）</p>
+</header>
+
+<nav id="toc">
+  <b>目錄</b>
+  <ol>
+    <li><a href="#chapter-1">牆有沒有真的砌起來：礦化能力怎麼看</a></li>
+    <li><a href="#chapter-2">單一嫌犯會不會走路：族群 vs 個體</a></li>
+    <li><a href="#chapter-3">邊走邊拆：一次看兩件事，與動物模式</a></li>
+    <li><a href="#chapter-cram">考前速記</a></li>
+    <li><a href="#chapter-vocab">單字表</a></li>
+    <li><a href="#chapter-final">歷年考題總複習</a></li>
+  </ol>
+</nav>
+<section id="chapter-1" data-chapter-kind="story">
+<h2>一、牆有沒有真的砌起來：礦化能力怎麼看</h2>
+
+<figure class="boxfig" data-visual-id="labbox-01-story" data-image-kind="story" data-explanation-verified="true">
+<span class="figtag">情境場景</span>
+<img data-visual-id="labbox-01-story" src="img/labbox-01-story.webp" alt="情境場景：阿霖第一天進實驗室，教授只問他一句話——你要看的到底是什麼？" loading="lazy" decoding="async" width="1600" height="914">
+<figcaption>情境場景：阿霖第一天進實驗室，教授只問他一句話——你要看的到底是什麼？</figcaption>
+</figure>
+<div class="story" data-prose-kind="story"><span class="tag">故事</span>
+<p>阿霖第一天進骨科研究室，教授把他帶到一整面監控牆前。牆上四台螢幕，四種畫面：一張靜止的紅色照片、一格一格跳動的縮時影片、一張灰白的立體骨頭、一張被染成褐色的切片。</p>
+<p>「這一批是<b>砌牆工</b>（成骨細胞）。」教授指著培養皿，「幫我確認一件事：<b>它們到底有沒有在造骨？</b>」</p>
+<p>阿霖把培養皿放到顯微鏡下，看見一群立方形的細胞排得整整齊齊，很有幹勁的樣子。他回報：「有，看起來很健康。」</p>
+<p>教授搖頭：「你看到的是<b>它們長得像不像砌牆工</b>。我問的是<b>它們有沒有真的砌出牆來</b>。工人穿著工作服站在工地上，跟工地上真的多了一道牆，是兩件事。」</p>
+<p>「那要怎麼證明有牆？」</p>
+<p>「去找<b>水泥</b>。」教授說，「牆是石灰質的。你只要有一種試劑，只跟鈣結合、而且結合完會變色——把它倒下去，哪裡變色，哪裡就是這群工人真的砌出來的東西。」</p>
+<p>那個試劑，叫做 <b>Alizarin Red S</b>（茜素紅）。倒下去之後，培養皿上浮現一顆一顆橘紅色的斑點——那不是細胞，那是細胞<b>做出來的東西</b>。</p>
+<p>阿霖後來把這句話寫在筆記本第一頁：<b>看形態是看身分，看產物才是看功能。</b></p>
+</div>
+
+<figure class="boxfig" data-visual-id="labbox-02-reality" data-image-kind="mechanism" data-explanation-verified="true">
+<span class="figtag">方法圖解</span>
+<img data-visual-id="labbox-02-reality" src="img/labbox-02-reality.webp" alt="方法圖解：成骨細胞從增生、分化到礦化，每一階段有各自的偵測方法。" loading="lazy" decoding="async" width="1600" height="914">
+<figcaption>方法圖解：成骨細胞從增生、分化到礦化，每一階段有各自的偵測方法。</figcaption>
+</figure>
+<div class="reality"><span class="tag">回到現實</span>
+<p>成骨細胞在培養皿裡不是一步到位，而是走一條時間軸：<b>增生 →分化 →基質分泌 →礦化</b>。每一段有它自己的證據，考題問的是<b>哪一段</b>，你就得挑對應那一段的方法。</p>
+<p><b>Alizarin Red S staining（茜素紅染色）</b>：染料會與<b>鈣離子</b>形成橘紅色的螯合物。培養皿上被染紅的，是已經礦化的<b>礦化結節</b>（mineralized nodule）。這是<b>礦化能力</b>最直接的讀數——也就是 111 年那一題問的東西。</p>
+<p><b>ALP staining／activity（鹼性磷酸酶）</b>：成骨細胞<b>分化早期</b>的標記，在礦化真正發生之前就已經衝高。它告訴你「工人已經換上工作服」，不告訴你「牆砌好了」。</p>
+<p><b>von Kossa staining</b>：以銀鹽反應顯示<b>磷酸鹽</b>沉積，呈黑褐色。同樣是礦化的指標，但染的是磷酸根那一側，和茜素紅染鈣互為對照。</p>
+<p class="infer">補充（非詳解內容，屬一般實驗常規）：茜素紅除了拍照算面積，也常以 cetylpyridinium chloride 把染料溶回溶液、以吸光值定量，讓「礦化能力」變成一個可以比較的數字。</p>
+</div>
+
+<figure class="boxfig" data-visual-id="labbox-03-warn" data-image-kind="comparison" data-explanation-verified="true">
+<span class="figtag">陷阱圖解</span>
+<img data-visual-id="labbox-03-warn" src="img/labbox-03-warn.webp" alt="陷阱圖解：111 年那題的三個干擾選項是不存在的染色法，但別把這當成解題習慣。" loading="lazy" decoding="async" width="1600" height="914">
+<figcaption>陷阱圖解：111 年那題的三個干擾選項是不存在的染色法，但別把這當成解題習慣。</figcaption>
+</figure>
+<div class="warn"><span class="tag">別踩這個坑</span>
+<p>111 年那一題的三個干擾選項——Jennifer-Yellowing、Turkiye-blue、Hermès-Green——<b>都不是真的染色法</b>，是老師編出來的名字。所以那年只要認得 Alizarin Red 就能拿分。</p>
+<p>但<b>不要把「刷掉沒聽過的名字」養成習慣</b>：112、113 兩年的干擾選項<b>全部都是真的方法</b>（Transwell、IHC、MicroCT、bone resorption assay），一個都刷不掉。真正能一路用到底的判準只有一個——<b>先把題目要觀察的對象與行為看清楚，再去對工具</b>。</p>
+</div>
+
+<article data-question-id="111-bm111-p3-q1" data-placement="chapter">
+  <span class="qhead">111 年 期中考 第 1 題</span>
+  <p class="stem">Which of the following methods is more suitable for observing the mineralization ability of osteoblasts?</p>
+  <ul class="opts">
+    <li>(A) Alizarin-Red staining</li>
+    <li>(B) Jennifer-Yellowing staining</li>
+    <li>(C) Turkiye-blue staining</li>
+    <li>(D) Hermès-Green staining</li>
+  </ul>
+  <details data-kind="answer">
+    <summary>答案與詳解</summary>
+    <div data-kind="zh-translation">
+      <p><strong>中文題目：</strong>下列哪一種方法較適合用來觀察成骨細胞的礦化能力？</p>
+      <p>(A) 茜素紅染色（Alizarin-Red staining）</p>
+      <p>(B)「Jennifer 黃」染色</p>
+      <p>(C)「Turkiye 藍」染色</p>
+      <p>(D)「Hermès 綠」染色</p>
+    </div>
+    <p class="ans">答案：(A) Alizarin-Red staining</p>
+    <p>原卷<b>詳解欄留空</b>，只給了答案與出處。要點是：礦化＝鈣鹽沉積，而茜素紅正是與鈣結合成色的染劑，被染紅的區域就是成骨細胞造出來的礦化結節。(B)(C)(D) 三個名稱並不存在於組織染色技術中。</p>
+    <p class="src">出處：鄭琮霖 骨科學研究的細胞生理與動物模式(實驗) ｜ BM111 BLOCK-8 期中考詳解.pdf 第 3 頁</p>
+  </details>
+</article>
+</section>
+<section id="chapter-2" data-chapter-kind="story">
+<h2>二、單一嫌犯會不會走路：族群 vs 個體</h2>
+
+<figure class="boxfig" data-visual-id="labbox-04-story" data-image-kind="story" data-explanation-verified="true">
+<span class="figtag">情境場景</span>
+<img data-visual-id="labbox-04-story" src="img/labbox-04-story.webp" alt="情境場景：一百個人通過閘門的數字，回答不了「第七號那個人走了什麼路線」。" loading="lazy" decoding="async" width="1600" height="914">
+<figcaption>情境場景：一百個人通過閘門的數字，回答不了「第七號那個人走了什麼路線」。</figcaption>
+</figure>
+<div class="story" data-prose-kind="story"><span class="tag">故事</span>
+<p>第二週，教授換了一批細胞：<b>拆除隊</b>（破骨細胞）。這次的問題是：「<b>它們會不會移動？</b>」</p>
+<p>阿霖這次學乖了，直接去找現成的方法。他找到一個叫 <b>Transwell</b> 的小杯子：杯底是一張佈滿小孔的膜，細胞放上層，下層放誘引物。等幾個小時，把膜翻過來染色，數數看有幾個細胞鑽到了另一面。</p>
+<p>「很好。」教授說，「你數到幾個？」</p>
+<p>「一百三十七個。」</p>
+<p>「那，其中<b>第七號</b>那一隻，走的是直線還是繞圈？走多快？中途有沒有停下來？」</p>
+<p>阿霖愣住了。膜上那一百三十七個細胞，是<b>結局</b>——只有「有沒有過去」這一個位元的資訊。至於誰走了什麼路，全都在他把膜翻過來的那一刻永遠消失了。</p>
+<p>「這叫<b>終點量測</b>。」教授說，「它回答的是『這一群，總共有多少比例過得去』。你要問的卻是<b>一隻</b>——那是<b>軌跡</b>的問題，不是<b>數量</b>的問題。」</p>
+<p>「軌跡怎麼看？」</p>
+<p>「別把細胞殺掉。讓它活著，把顯微鏡架在那裡，<b>每隔幾分鐘拍一張，一直拍下去</b>。把幾百張照片接起來播，你就會看見那一隻怎麼走的。」</p>
+<p>那就是 <b>time-lapse recording</b>（縮時錄影）。監控牆上那台一格一格跳動的螢幕，終於有人打開了。</p>
+</div>
+
+<figure class="boxfig" data-visual-id="labbox-05-reality" data-image-kind="comparison" data-explanation-verified="true">
+<span class="figtag">方法對照</span>
+<img data-visual-id="labbox-05-reality" src="img/labbox-05-reality.webp" alt="方法對照：Transwell 數的是族群終點，縮時錄影看的是個體軌跡。" loading="lazy" decoding="async" width="1600" height="914">
+<figcaption>方法對照：Transwell 數的是族群終點，縮時錄影看的是個體軌跡。</figcaption>
+</figure>
+<div class="reality"><span class="tag">回到現實</span>
+<p>四個選項對應四種完全不同的資訊維度，把它們排在一起就清楚了：</p>
+<p><b>(A) Transwell migration assay</b>：細胞在多孔膜上，被下層的誘引物吸引而穿膜；固定時間後把穿過去的細胞染色、計數。給你的是<b>一群細胞的穿膜數量</b>——單一個位元的終點資料，<b>沒有時間軸、沒有路徑</b>。</p>
+<p><b>(B) Time-lapse recording</b>：細胞維持存活，同一個視野每隔一段時間拍一張，串起來成為影片。可以逐格追蹤<b>同一顆細胞</b>，算出它的移動軌跡、速度與方向性。<b>要看「single cell」的移動，就只有這一條路。</b></p>
+<p><b>(C) Calvarium defect healing assay</b>：在動物頭蓋骨上做出固定大小的缺損，觀察一段時間後長回多少骨。層級在<b>活體、組織</b>，量的是<b>再生</b>，不是單一細胞的移動。</p>
+<p><b>(D) Immunohistochemistry (IHC)</b>：切片固定後用抗體標定特定蛋白的位置。是<b>靜態快照</b>，告訴你「什麼分子在哪裡」，不會有任何動態資訊。</p>
+</div>
+
+<figure class="boxfig" data-visual-id="labbox-06-keybox" data-image-kind="comparison" data-explanation-verified="true">
+<span class="figtag">判準圖解</span>
+<img data-visual-id="labbox-06-keybox" src="img/labbox-06-keybox.webp" alt="判準圖解：先問三件事——看什麼細胞、看什麼行為、看的是一群還是一隻。" loading="lazy" decoding="async" width="1600" height="914">
+<figcaption>判準圖解：先問三件事——看什麼細胞、看什麼行為、看的是一群還是一隻。</figcaption>
+</figure>
+<div class="keybox"><span class="tag">解題判準</span>
+<p>三年三題都可以用同一組問題破解。看到題目，依序問自己：</p>
+<p>① <b>要看的是什麼細胞？</b>（成骨細胞／破骨細胞）</p>
+<p>② <b>要看的是什麼行為？</b>（礦化／移動／骨吸收／再生）</p>
+<p>③ <b>要看的是一群，還是「一隻」？</b>（single、individual 這兩個字一出現，答案就一定落在<b>能持續追蹤同一顆細胞</b>的方法上）</p>
+<p>④ <b>要同時看幾件事？</b>（題目說 simultaneous、both……and，就要找<b>唯一能一次錄到兩種訊息</b>的方法）</p>
+<p class="infer">第 ③ 與第 ④ 個問題，正好就是 112 與 113 兩年的分水嶺——同一位老師、同一頁講義，只是把限定詞從「single」換成「both…simultaneously」，答案就從縮時錄影升級成雙光子縮時錄影。</p>
+</div>
+
+<article data-question-id="112-bm112-p3-q1" data-placement="chapter">
+  <span class="qhead">112 年 期中考 第 1 題</span>
+  <p class="stem">Which method is best for observing the migration of single osteoclasts?</p>
+  <ul class="opts">
+    <li>(A) Transwell migration assay</li>
+    <li>(B) Time-lapse recording</li>
+    <li>(C) Calvarium defect healing assay</li>
+    <li>(D) Immunohistochemistry staining (IHC)</li>
+  </ul>
+  <details data-kind="answer">
+    <summary>答案與詳解</summary>
+    <div data-kind="zh-translation">
+      <p><strong>中文題目：</strong>觀察<b>單一</b>破骨細胞的移動，哪一種方法最適合？</p>
+      <p>(A) Transwell 穿膜移行分析</p>
+      <p>(B) 縮時錄影</p>
+      <p>(C) 頭蓋骨缺損癒合分析</p>
+      <p>(D) 免疫組織化學染色（IHC）</p>
+    </div>
+    <p class="ans">答案：B</p>
+    <p>原卷<b>詳解欄留空</b>，只給了答案與出處（ppt pg.15）。關鍵字是 <b>single</b>：Transwell 只給得出「一群細胞裡有幾個穿過去」，(C) 的層級在活體組織，(D) 是固定切片的靜態染色——只有縮時錄影能在<b>不殺死細胞</b>的前提下，把<b>同一顆</b>細胞的移動一格一格記錄下來。</p>
+    <p class="src">出處：骨科學研究的細胞生理與動物模式(實驗) 鄭琮霖 (ppt pg.15) ｜ BM112_Block 8 期中考(含申覆內容與結果).pdf 第 3 頁</p>
+  </details>
+</article>
+</section>
+<section id="chapter-3" data-chapter-kind="story">
+<h2>三、邊走邊拆：一次看兩件事，與動物模式</h2>
+
+<figure class="boxfig" data-visual-id="labbox-07-story" data-image-kind="story" data-explanation-verified="true">
+<span class="figtag">情境場景</span>
+<img data-visual-id="labbox-07-story" src="img/labbox-07-story.webp" alt="情境場景：綠色的拆除隊走過去，身後留下一條黑色的路——那條路就是它拆掉的骨頭。" loading="lazy" decoding="async" width="1600" height="914">
+<figcaption>情境場景：綠色的拆除隊走過去，身後留下一條黑色的路——那條路就是它拆掉的骨頭。</figcaption>
+</figure>
+<div class="story" data-prose-kind="story"><span class="tag">故事</span>
+<p>第三週，教授把問題加了一個字：「這一次，我要<b>同時</b>知道它走去哪裡，<b>而且</b>吃掉了多少骨頭。」</p>
+<p>阿霖想了一下：「那我做兩次。先用縮時錄影看路線，再用骨吸收分析算面積。」</p>
+<p>「兩次做的是<b>兩批細胞</b>。」教授說，「你算出來的面積，配不回你錄到的那一隻身上。我要的是同一隻，同一段時間，兩件事一起。」</p>
+<p>教授打開監控牆最左邊那台從來沒亮過的螢幕。畫面裡是一塊活著的骨頭，深處有一顆<b>發著綠光</b>的拆除隊，正緩慢地爬行。而在它身後——留下了一條<b>黑色的痕跡</b>。</p>
+<p>「看到那條黑色的路嗎？」教授說，「那不是影子。那是<b>它剛剛吃掉的骨頭</b>。」</p>
+<p>阿霖突然懂了。拆除隊不是先走路、再拆牆，它是<b>靠拆牆前進的</b>。它走過的路，就是它拆掉的量。所以只要有一種顯微鏡能<b>看進活組織深處</b>、又能<b>持續錄下去</b>，一段影片就同時回答了兩個問題。</p>
+<p>那台機器，叫<b>雙光子顯微鏡</b>。加上縮時，就是 <b>Two-Photon Time-Lapse recording</b>。</p>
+<p>「路徑就是證據。」教授關掉螢幕，「這句話，就是整堂課。」</p>
+</div>
+
+<figure class="boxfig" data-visual-id="labbox-08-reality" data-image-kind="mechanism" data-explanation-verified="true">
+<span class="figtag">機轉圖解</span>
+<img data-visual-id="labbox-08-reality" src="img/labbox-08-reality.webp" alt="機轉圖解：移動與骨吸收是同一件事的兩面，所以一段影片能同時記錄兩者。" loading="lazy" decoding="async" width="1600" height="914">
+<figcaption>機轉圖解：移動與骨吸收是同一件事的兩面，所以一段影片能同時記錄兩者。</figcaption>
+</figure>
+<div class="reality"><span class="tag">回到現實</span>
+<p>113 年的詳解把道理講得很白，值得逐句拆開看：</p>
+<p class="quote">詳解原文:「（Ｃ）選項如老師講義所述，可以觀察蝕骨細胞的移動能力(migration)，在時間的移進之下，綠色細胞就是蝕骨細胞，後面黑色的路徑就是它走的路，同時因為它的移動能力就是來自分解骨質的活動度(bone resorption activity)，故為正確選項。」</p>
+<p>拆成三句：<b>①</b> 綠色的是被螢光標記的破骨細胞；<b>②</b> 它身後的黑色路徑，就是它移動的軌跡；<b>③</b> 而它之所以能移動，靠的就是分解骨質——所以<b>同一條路徑既是 migration 的證據，也是 bone resorption 的證據</b>。一段錄影，兩個答案。</p>
+<p>再看被刷掉的三個選項，每一個都少了某一個維度：</p>
+<p><b>(A) MicroCT</b>：高解析度 X 光斷層掃描，重建礦化組織的三維結構。層級在<b>整塊骨頭</b>，看得到小樑結構與骨量，看不到<b>單一細胞</b>。</p>
+<p><b>(B) Bone resorption assay</b>：把破骨細胞養在骨片、象牙片或鈣磷塗層盤上，事後看它挖出的<b>吸收凹坑</b>（pit）。有「吃了多少」，<b>沒有</b>「怎麼走的」——而且是終點量測。</p>
+<p><b>(D) IHC</b>：固定切片＋抗體染色，靜態、單一時間點，兩個維度都不具備。</p>
+<p class="infer">補充（非詳解內容）：雙光子之所以是這裡的關鍵字，在於它用長波長、雙光子同時激發的方式，能穿進活體組織較深處而不傷害周圍細胞——也因此才做得到「活著、深部、長時間」這三個同時成立的條件。</p>
+</div>
+
+<figure class="boxfig" data-visual-id="labbox-09-keybox" data-image-kind="comparison" data-explanation-verified="true">
+<span class="figtag">工具總表</span>
+<img data-visual-id="labbox-09-keybox" src="img/labbox-09-keybox.webp" alt="工具總表：把本科出現過的方法依照「觀察對象」與「層級」排成一張表。" loading="lazy" decoding="async" width="1600" height="914">
+<figcaption>工具總表：把本科出現過的方法依照「觀察對象」與「層級」排成一張表。</figcaption>
+</figure>
+<div class="keybox"><span class="tag">全套工具對照</span>
+<p><b>成骨細胞（造骨那一側）</b></p>
+<p>・ALP staining → 分化早期<br>・<b>Alizarin Red S → 礦化（鈣）</b><br>・von Kossa → 礦化（磷酸鹽）</p>
+<p><b>破骨細胞（拆骨那一側）</b></p>
+<p>・TRAP staining → 辨識破骨細胞、數多核細胞<br>・Transwell → 一<b>群</b>細胞的穿膜移行（終點）<br>・<b>Time-lapse → 一「隻」細胞的移動軌跡</b><br>・Bone resorption assay → 吸收凹坑面積（終點）<br>・<b>Two-Photon Time-Lapse → 移動＋骨吸收，同時、活體、單細胞</b></p>
+<p><b>組織／個體層級</b></p>
+<p>・IHC → 切片上分子的位置（靜態）<br>・MicroCT → 整塊骨頭的三維結構與骨量<br>・Calvarium defect healing assay → 活體骨再生能力</p>
+<p class="infer">記憶法：<b>把方法沿著「解析度」排隊</b>——分子（IHC）→ 單一細胞（time-lapse／two-photon）→ 培養皿群體（Transwell、Alizarin Red、pit assay）→ 整塊骨（MicroCT）→ 活體傷口（calvarial defect）。題目問哪一層，就往那一格拿。</p>
+</div>
+
+<article data-question-id="113-bm113-p2-q1" data-placement="chapter">
+  <span class="qhead">113 年 期中考 第 1 題</span>
+  <p class="stem">Which of the following experimental methods would allow simultaneous observation of both migration and bone resorption activity in individual osteoclasts?</p>
+  <ul class="opts">
+    <li>(A) MicroCT</li>
+    <li>(B) Bone resorption assay</li>
+    <li>(C) Two Photone Time-Lapse recoding</li>
+    <li>(D) Immunohistochemistry staining (IHC)</li>
+  </ul>
+  <details data-kind="answer">
+    <summary>答案與詳解</summary>
+    <div data-kind="zh-translation">
+      <p><strong>中文題目：</strong>下列哪一種實驗方法能<b>同時</b>觀察<b>單一</b>破骨細胞的<b>移動</b>與<b>骨吸收活性</b>？</p>
+      <p>(A) 微電腦斷層（MicroCT）</p>
+      <p>(B) 骨吸收分析（bone resorption assay）</p>
+      <p>(C) 雙光子縮時錄影（Two-Photon Time-Lapse recording）</p>
+      <p>(D) 免疫組織化學染色（IHC）</p>
+    </div>
+    <p class="ans">答案：(C)</p>
+    <p class="quote">詳解原文:「（Ｃ）選項如老師講義所述，可以觀察蝕骨細胞的移動能力(migration)，在時間的移進之下，綠色細胞就是蝕骨細胞，後面黑色的路徑就是它走的路，同時因為它的移動能力就是來自分解骨質的活動度(bone resorption activity)，故為正確選項。」</p>
+    <p>與 112 年是同一頁講義的延伸：112 只要求看到「single 的移動」，答案是縮時錄影；113 多要求「<b>同時</b>看到骨吸收」，就必須升級成能看進活組織的雙光子縮時。原卷選項中的 Two Photone / recoding 為<b>原卷拼字</b>，正確拼法是 Two-Photon Time-Lapse recording。</p>
+    <p class="src">出處：骨科學研究的細胞生理與動物模式(實驗) 鄭琮霖 ppt. 15 ｜ BM113_Block8期中考詳解.pdf 第 2 頁</p>
+  </details>
+</article>
+</section>
+<section id="chapter-cram" data-chapter-kind="cram">
+<h2>四、考前速記</h2>
+<div class="cram">
+<ul>
+<li><b>整科只有一個問法：「要觀察 X，用什麼方法？」</b>先圈出 X，再對表。</li>
+<li><b>礦化能力（mineralization）→ Alizarin Red S</b>。染的是<b>鈣</b>，被染紅的是礦化結節。</li>
+<li><b>ALP 是分化早期</b>，不是礦化；<b>von Kossa 染磷酸鹽</b>，是礦化的另一面。</li>
+<li><b>看到 single / individual → 縮時錄影（time-lapse）。</b>只有它能追蹤同一顆細胞。</li>
+<li><b>Transwell 是「一群人的終點統計」</b>：只數穿膜細胞數，沒有時間軸、沒有路徑。</li>
+<li><b>看到 simultaneous / both…and → 雙光子縮時（Two-Photon Time-Lapse）。</b>唯一能同時給移動＋骨吸收的方法。</li>
+<li><b>破骨細胞的移動＝靠拆骨前進</b>，所以身後那條黑色軌跡同時是路徑也是吸收量。這句話就是 113 詳解的全部。</li>
+<li><b>Bone resorption assay（pit assay）只給面積</b>，是終點量測，沒有路徑。</li>
+<li><b>IHC = 固定切片的靜態快照</b>，任何有「動態」「時間」的題目一律先刪。</li>
+<li><b>MicroCT 看的是整塊骨頭</b>的三維結構與骨量，解析度到不了單一細胞。</li>
+<li><b>Calvarium defect healing assay 是活體再生實驗</b>，層級在組織，不是細胞。</li>
+<li><b>TRAP 染色是用來「認出」破骨細胞</b>（多核、抗酒石酸酸性磷酸酶陽性），不是拿來看它會不會走。</li>
+<li>三年三題答案分別是 <b>(A) Alizarin-Red、(B) Time-lapse、(C) Two-Photon Time-Lapse</b>——但別背字母，字母每年都會換位置。</li>
+</ul>
+</div>
+</section>
+
+<!-- ================= VOCAB ================= -->
+<section id="chapter-vocab" data-chapter-kind="vocab">
+<h2>五、單字表</h2>
+<dl class="vocab">
+<dt>mineralization</dt>
+<dd><span class="root">mineral（礦物）+ -ization（……化）</span>　礦化。成骨細胞分泌的類骨質沉積鈣磷、變硬成骨的過程。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>題目問 mineralization <b>ability</b>——問的是「有沒有做出成品」，所以要去找<b>產物</b>，不是找細胞長相。</p></details></dd>
+
+<dt>Alizarin Red S</dt>
+<dd><span class="root">alizarin 源自茜草（madder root）的紅色染料</span>　茜素紅。與<b>鈣離子</b>螯合呈橘紅色，用來顯示礦化結節。<details data-kind="vocab-memory"><summary>記憶提示</summary><p><b>紅色＝鈣</b>。記一組對子：茜素紅染鈣、von Kossa 染磷。</p></details></dd>
+
+<dt>von Kossa staining</dt>
+<dd><span class="root">以發明者 von Kossa 命名</span>　以銀鹽反應顯示<b>磷酸鹽</b>沉積，呈黑褐色。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>Kossa 的 K 想成「黑（Kuro）」——黑色的那個染磷。</p></details></dd>
+
+<dt>alkaline phosphatase (ALP)</dt>
+<dd><span class="root">alkaline（鹼性）+ phosphatase（磷酸酶）</span>　鹼性磷酸酶，成骨細胞<b>分化早期</b>的標記。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>ALP 高＝工人<b>換上工作服</b>；茜素紅紅＝<b>牆真的砌起來了</b>。兩件事差好幾天。</p></details></dd>
+
+<dt>TRAP staining</dt>
+<dd><span class="root">Tartrate-Resistant Acid Phosphatase（抗酒石酸酸性磷酸酶）</span>　破骨細胞的辨識標記，陽性且多核者即為破骨細胞。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>TRAP 是<b>認人</b>用的，不是<b>看行為</b>用的。</p></details></dd>
+
+<dt>Transwell migration assay</dt>
+<dd><span class="root">trans-（穿越）+ well（培養孔）</span>　穿膜移行分析。細胞由上層穿過多孔膜移向下層誘引物，事後計數。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>trans-＝穿過去。它只回答「<b>過去了幾個</b>」，不回答「怎麼過去的」。</p></details></dd>
+
+<dt>time-lapse recording</dt>
+<dd><span class="root">time（時間）+ lapse（流逝）</span>　縮時錄影。同一視野定時連續拍攝，串成影片以追蹤單一細胞。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>lapse＝時間流過。<b>有時間軸的方法，才追得到個體。</b></p></details></dd>
+
+<dt>two-photon microscopy</dt>
+<dd><span class="root">two（二）+ photon（光子）</span>　雙光子顯微鏡。以兩個長波長光子同時激發螢光，可深入活體組織成像。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>兩個光子＝波長加倍＝<b>穿得更深</b>。要看「活著的骨頭裡面」，就得靠它。</p></details></dd>
+
+<dt>bone resorption assay</dt>
+<dd><span class="root">re-（回）+ sorbere（拉丁：吸）</span>　骨吸收分析。破骨細胞養在骨片或鈣磷塗層上，量它挖出的吸收凹坑（pit）。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>resorption＝把骨頭「吸回去」。這個分析只留下<b>坑</b>，不留下<b>路</b>。</p></details></dd>
+
+<dt>immunohistochemistry (IHC)</dt>
+<dd><span class="root">immuno-（免疫）+ histo-（組織）+ chemistry（化學）</span>　免疫組織化學染色。以抗體標定切片中特定蛋白的位置。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>切片＝細胞已經被固定住了。<b>凡是題目在問「動」，IHC 一律出局。</b></p></details></dd>
+
+<dt>micro-computed tomography (MicroCT)</dt>
+<dd><span class="root">tomos（希臘：切片）+ graphein（寫）</span>　微電腦斷層。高解析 X 光重建礦化組織的三維結構與骨量。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>它的單位是<b>一整塊骨頭</b>。細胞層級的問題不會是它。</p></details></dd>
+
+<dt>calvarium (calvarial defect)</dt>
+<dd><span class="root">拉丁 calvaria＝顱頂</span>　頭蓋骨。於顱頂造出固定大小缺損，觀察骨再生能力的活體模式。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>層級在<b>活體、組織、再生</b>——三個關鍵字都不是「單一細胞的移動」。</p></details></dd>
+</dl>
+</section>
+<section id="chapter-final" data-chapter-kind="final_questions">
+<h2>六、歷年考題總複習</h2>
+<p class="meta">依年度由新到舊排列。共 3 題（111／112／113 期中考各 1 題，皆為第 1 題）。<b style="color:#f08a8a">紅框</b>＝同一考點在兩個以上年度重複出現。</p>
+<h3><span class="yearchip">113 年</span>期中考 第 1 題</h3>
+<article data-question-id="113-bm113-p2-q1" data-placement="final" class="repeat">
+  <span class="qhead">113 年 期中考 第 1 題</span><span class="repeat-badge">重複考點 ×3</span>
+  <p class="repeat-note">同考點：111 第1題、112 第1題　—　依「要觀察什麼」挑出唯一做得到的實驗方法</p>
+  <p class="stem">Which of the following experimental methods would allow simultaneous observation of both migration and bone resorption activity in individual osteoclasts?</p>
+  <ul class="opts"><li>(A) MicroCT</li><li>(B) Bone resorption assay</li><li>(C) Two Photone Time-Lapse recoding</li><li>(D) Immunohistochemistry staining (IHC)</li></ul>
+  <details data-kind="answer"><summary>答案與詳解</summary>
+    <div data-kind="zh-translation"><p><strong>中文題目：</strong>下列哪一種實驗方法能<b>同時</b>觀察<b>單一</b>破骨細胞的<b>移動</b>與<b>骨吸收活性</b>？</p>
+      <p>(A) 微電腦斷層（MicroCT）</p>
+      <p>(B) 骨吸收分析（bone resorption assay）</p>
+      <p>(C) 雙光子縮時錄影（Two-Photon Time-Lapse recording）</p>
+      <p>(D) 免疫組織化學染色（IHC）</p></div>
+    <p class="ans">答案：(C)</p>
+    <p>關鍵字 simultaneous：破骨細胞靠拆骨前進，身後黑色軌跡同時是路徑也是吸收量，只有雙光子縮時錄得到。<span class="src"> ｜ BM113_Block8期中考詳解 第 2 頁</span></p>
+  </details>
+</article>
+<h3><span class="yearchip">112 年</span>期中考 第 1 題</h3>
+<article data-question-id="112-bm112-p3-q1" data-placement="final" class="repeat">
+  <span class="qhead">112 年 期中考 第 1 題 ｜ 來源答案欄</span><span class="repeat-badge">重複考點 ×3</span>
+  <p class="repeat-note">同考點：111 第1題、113 第1題　—　依「要觀察什麼」挑出唯一做得到的實驗方法</p>
+  <p class="stem">Which method is best for observing the migration of single osteoclasts?</p>
+  <ul class="opts"><li>(A) Transwell migration assay</li><li>(B) Time-lapse recording</li><li>(C) Calvarium defect healing assay</li><li>(D) Immunohistochemistry staining (IHC)</li></ul>
+  <details data-kind="answer"><summary>答案與詳解</summary>
+    <div data-kind="zh-translation"><p><strong>中文題目：</strong>觀察<b>單一</b>破骨細胞的移動，哪一種方法最適合？</p>
+      <p>(A) Transwell 穿膜移行分析</p>
+      <p>(B) 縮時錄影</p>
+      <p>(C) 頭蓋骨缺損癒合分析</p>
+      <p>(D) 免疫組織化學染色（IHC）</p></div>
+    <p class="ans">答案：B</p>
+    <p>關鍵字 single：只有縮時錄影能不殺死細胞、逐格追蹤同一顆細胞的軌跡。Transwell 只給穿膜數量。<span class="src"> ｜ BM112_Block 8 期中考(含申覆內容與結果) 第 3 頁</span></p>
+  </details>
+</article>
+<h3><span class="yearchip">111 年</span>期中考 第 1 題</h3>
+<article data-question-id="111-bm111-p3-q1" data-placement="final" class="repeat">
+  <span class="qhead">111 年 期中考 第 1 題 ｜ 來源答案欄</span><span class="repeat-badge">重複考點 ×3</span>
+  <p class="repeat-note">同考點：112 第1題、113 第1題　—　依「要觀察什麼」挑出唯一做得到的實驗方法</p>
+  <p class="stem">Which of the following methods is more suitable for observing the mineralization ability of osteoblasts?</p>
+  <ul class="opts"><li>(A) Alizarin-Red staining</li><li>(B) Jennifer-Yellowing staining</li><li>(C) Turkiye-blue staining</li><li>(D) Hermès-Green staining</li></ul>
+  <details data-kind="answer"><summary>答案與詳解</summary>
+    <div data-kind="zh-translation"><p><strong>中文題目：</strong>下列哪一種方法較適合用來觀察成骨細胞的礦化能力？</p>
+      <p>(A) 茜素紅染色（Alizarin-Red staining）</p>
+      <p>(B)「Jennifer 黃」染色</p>
+      <p>(C)「Turkiye 藍」染色</p>
+      <p>(D)「Hermès 綠」染色</p></div>
+    <p class="ans">答案：(A) Alizarin-Red staining</p>
+    <p>礦化＝鈣沉積，茜素紅與鈣結合成色，所以它量的正是礦化結節。另外三個染色法根本不存在。<span class="src"> ｜ BM111 BLOCK-8 期中考詳解 第 3 頁</span></p>
+  </details>
+</article>
+<p class="ending">三年三題，同一頁講義。這一科要背的不是知識，是一張對照表——先看清楚題目要你觀察什麼，工具自己會浮出來。</p>
+</section>
+</div>
+</body>
+</html>
