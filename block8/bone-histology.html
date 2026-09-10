@@ -1,0 +1,1175 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>骨骼組織學 施耀翔</title>
+<style>
+:root{
+  color-scheme: dark;
+  --bg:#0b0e13; --panel:#141922; --panel2:#1b2230; --line:#2a3340;
+  --ink:#e8ecf3; --dim:#a3adbd; --gold:#e5b567; --cyan:#6fd3c7;
+  --rose:#e88b8b; --violet:#a99bf0;
+}
+*{box-sizing:border-box}
+html{font-size:150%}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font-family:"Noto Sans TC","PingFang TC","Helvetica Neue",system-ui,sans-serif;
+  line-height:1.85; overflow-wrap:anywhere;}
+/* Width follows the device, not the font size: px breakpoints stay put
+   while rem-based type scales with the 150% root. */
+.container{width:100%;max-width:none;margin:0 auto;
+  padding:clamp(.85rem,2.2vw,2.2rem);}
+@media (min-width:760px){ .container{max-width:730px} }
+@media (min-width:1024px){ .container{max-width:980px} }
+@media (min-width:1440px){ .container{max-width:1300px} }
+@media (min-width:1920px){ .container{max-width:1640px} }
+img{max-width:100%;height:auto}
+svg{max-width:100%;height:auto;display:block}
+h1{font-size:1.6rem;line-height:1.35;margin:.2rem 0 .6rem}
+h2{font-size:1.24rem;margin:2.4rem 0 .7rem;padding-bottom:.4rem;
+  border-bottom:1px solid var(--line);color:var(--gold)}
+h3{font-size:1.06rem;margin:1.5rem 0 .5rem;color:var(--cyan)}
+p{margin:.7rem 0}
+header#subject-overview{background:linear-gradient(160deg,#182031,#0e1219);
+  border:1px solid var(--line);border-radius:14px;padding:1.2rem;margin:.6rem 0 1.4rem}
+.meta{color:var(--dim);font-size:.86rem;margin:.3rem 0 0}
+nav#toc{background:var(--panel);border:1px solid var(--line);
+  border-radius:12px;padding:.9rem 1.1rem;margin:1.2rem 0}
+nav#toc ol{margin:.4rem 0 0;padding-left:1.3rem}
+nav#toc a{color:var(--ink);text-decoration:none;border-bottom:1px dotted var(--line)}
+.story{background:var(--panel2);border-left:3px solid var(--violet);
+  border-radius:0 10px 10px 0;padding:.9rem 1.1rem;margin:1.1rem 0}
+.story .tag{display:block;color:var(--violet);font-size:.78rem;
+  letter-spacing:.12em;margin-bottom:.35rem}
+.reality{background:var(--panel);border-left:3px solid var(--cyan);
+  border-radius:0 10px 10px 0;padding:.9rem 1.1rem;margin:1.1rem 0}
+.reality .tag{display:block;color:var(--cyan);font-size:.78rem;
+  letter-spacing:.12em;margin-bottom:.35rem}
+.keybox{background:#12202b;border:1px solid #26485a;border-radius:10px;
+  padding:.85rem 1rem;margin:1.1rem 0}
+.keybox b{color:var(--cyan)}
+.warn{background:#2a1c1c;border:1px solid #573434;border-radius:10px;
+  padding:.85rem 1rem;margin:1.1rem 0;color:#f0cfcf}
+article{background:var(--panel);border:1px solid var(--line);
+  border-radius:12px;padding:.95rem 1.05rem;margin:1.1rem 0}
+article .qhead{display:block;color:var(--gold);font-size:.82rem;
+  letter-spacing:.06em;margin-bottom:.45rem}
+article .stem{margin:.2rem 0 .5rem}
+article ul.opts{list-style:none;margin:.3rem 0 .2rem;padding:0}
+article ul.opts li{padding:.16rem 0 .16rem .2rem;color:#dbe2ec}
+details{background:#0f141c;border:1px solid var(--line);
+  border-radius:10px;padding:.15rem .8rem;margin:.6rem 0}
+details summary{cursor:pointer;padding:.6rem 0;color:var(--gold);
+  font-weight:600;min-height:44px;display:flex;align-items:center}
+details[data-kind="answer"] .ans{font-size:1.05rem;color:var(--cyan);font-weight:700}
+div[data-kind="zh-translation"]{background:#141c26;border:1px dashed #33465c;
+  border-radius:8px;padding:.7rem .85rem;margin:.5rem 0 .8rem}
+div[data-kind="zh-translation"] p{margin:.35rem 0}
+.src{color:var(--dim);font-size:.84rem;margin-top:.6rem}
+.quote{border-left:2px solid var(--gold);padding-left:.75rem;color:#f0e2c6}
+.infer{color:#f0d9a8;font-size:.92rem}
+figure{margin:1.3rem 0;background:var(--panel2);border:1px solid var(--line);
+  border-radius:12px;padding:.9rem}
+figcaption{color:var(--dim);font-size:.85rem;margin-top:.6rem;text-align:center}
+dl.vocab{margin:0}
+dl.vocab dt{color:var(--cyan);font-weight:700;margin-top:.9rem}
+dl.vocab dd{margin:.2rem 0 0;padding-left:0}
+dl.vocab .root{color:var(--dim);font-size:.86rem}
+.cram{background:var(--panel);border:1px solid var(--line);
+  border-radius:12px;padding:.4rem 1.1rem;margin:1rem 0}
+.cram li{margin:.55rem 0}
+.yearchip{display:inline-block;background:#233046;color:#bcd0ea;
+  border-radius:999px;padding:.05rem .55rem;font-size:.76rem;margin-right:.4rem}
+article.repeat{border:2px solid #e05252;box-shadow:0 0 0 3px rgba(224,82,82,.12)}
+article.repeat .qhead{color:#f08a8a}
+.repeat-badge{display:inline-block;background:#3a1c1c;border:1px solid #7d3a3a;
+  color:#f0a8a8;border-radius:999px;padding:.1rem .6rem;font-size:.76rem;
+  margin-left:.4rem;white-space:nowrap}
+.repeat-note{color:#e6a5a5;font-size:.84rem;margin:.45rem 0 0}
+figure.boxfig{margin:1.5rem 0 .5rem;background:transparent;border:0;padding:0}
+figure.boxfig img{border-radius:12px;border:1px solid var(--line);display:block;width:100%}
+figure.boxfig figcaption{color:var(--dim);font-size:.82rem;margin-top:.5rem;
+  text-align:left;line-height:1.6}
+figure.boxfig .figtag{color:var(--violet);font-size:.76rem;letter-spacing:.1em;
+  display:block;margin-bottom:.3rem}
+.ending{color:var(--dim);font-style:italic;margin:1.6rem 0 2.4rem}
+</style></head>
+<body>
+<div class="container">
+
+<header id="subject-overview">
+  <h1>骨骼組織學</h1>
+  <p>三年十八題，是 Block 8 題數最多的一科。但別被數字嚇到——<b>十八題只落在六個考點上</b>，其中十五題是重複考點。真正要記的東西，一張表就寫得完。</p>
+  <p>整科的骨架是<b>三個對照</b>：<b>骨的三種成熟度</b>（編織骨／板層骨／海綿骨，誰有哈氏管）、<b>長骨的兩個骨化中心</b>（初級在骨幹、次級在骨骺）、以及<b>軟骨與硬骨的分界</b>（第二型 vs 第一型膠原、有無血管、有無骨元）。再加上生長板的分區、破骨細胞的家世與住所、骨折癒合的兩種骨痂，就結束了。</p>
+  <p class="meta">命題老師：施耀翔 ｜ 收錄 111、112、113 期中考，各 6 題共 18 題</p>
+</header>
+
+<nav id="toc">
+  <b>目錄</b>
+  <ol>
+    <li><a href="#chapter-1">三種骨與一根管子</a></li>
+    <li><a href="#chapter-2">破骨細胞：從哪來、住哪裡、在哪工作</a></li>
+    <li><a href="#chapter-3">長骨怎麼長：兩個骨化中心</a></li>
+    <li><a href="#chapter-4">骨折怎麼癒合：兩種骨痂</a></li>
+    <li><a href="#chapter-5">軟骨三兄弟與那條膠原分界線</a></li>
+    <li><a href="#chapter-cram">考前速記</a></li>
+    <li><a href="#chapter-vocab">單字表</a></li>
+    <li><a href="#chapter-final">歷年考題總複習</a></li>
+  </ol>
+</nav>
+<section id="chapter-1" data-chapter-kind="story">
+<h2>一、三種骨與一根管子</h2>
+
+<figure class="boxfig" data-visual-id="bhbox-01-story" data-image-kind="story" data-explanation-verified="true">
+<span class="figtag">情境場景</span>
+<img data-visual-id="bhbox-01-story" src="img/bhbox-01-story.webp" alt="情境場景：趕工蓋的臨時工寮，和後來慢慢重砌的正式建築。" loading="lazy" decoding="async" width="1600" height="914">
+<figcaption>情境場景：趕工蓋的臨時工寮，和後來慢慢重砌的正式建築。</figcaption>
+</figure>
+<div class="story" data-prose-kind="story"><span class="tag">故事</span>
+<p>骨頭在顯微鏡下只有兩種長相，差別在<b>蓋的時候有沒有時間</b>。</p>
+<p><b>趕工的版本叫編織骨</b>（woven bone）。膠原纖維隨便交錯、方向亂七八糟，細胞塞得又多又密。它出現在<b>胚胎時期</b>、<b>骨折後的第一時間</b>——總之是「先把洞補起來再說」的場合。</p>
+<p><b>慢工的版本叫板層骨</b>（lamellar bone）。膠原纖維一層一層平行排好，細胞規規矩矩住在自己的小房間裡。成人身上的骨頭幾乎都是這一種。</p>
+<p>所以考題只要問<b>「最雜亂、細胞密度最高」</b>，答案永遠是編織骨；問<b>「成熟」</b>，答案就是板層骨。</p>
+<p>但這裡有個容易搞混的地方。板層骨還分兩種住法：</p>
+<p>・<b>緻密骨</b>（compact bone）——把骨板捲成一圈一圈的同心圓，中間留一根管子走血管，這一整套叫<b>骨元</b>（osteon），中間那根管子就是<b>哈氏管</b>（Haversian canal）。<br>
+・<b>海綿骨</b>（cancellous / trabecular bone）——排成一根根骨小樑，中間是骨髓，<b>不捲同心圓，也就沒有哈氏管</b>。</p>
+<p>「所以海綿骨也是成熟骨，但沒有哈氏管。」這句話就是 113 年那題的全部。</p>
+<p>最後，住在骨頭裡的<b>骨細胞</b>被水泥封在小室裡，那它怎麼跟外面交換東西？答案是<b>半通道</b>（hemichannel）——連接蛋白只做半套，一端開向細胞外的骨基質，物質就從那裡進出。<b>不要跟 gap junction 搞混</b>：gap junction 是兩個半通道對接、連通<b>兩個細胞</b>；hemichannel 通的是<b>細胞與外面的基質</b>。</p>
+</div>
+
+<figure class="boxfig" data-visual-id="bhbox-02-reality" data-image-kind="comparison" data-explanation-verified="true">
+<span class="figtag">骨型對照</span>
+<img data-visual-id="bhbox-02-reality" src="img/bhbox-02-reality.webp" alt="骨型對照：編織骨最雜亂、板層骨成熟，只有緻密骨的骨元有哈氏管。" loading="lazy" decoding="async" width="1600" height="914">
+<figcaption>骨型對照：編織骨最雜亂、板層骨成熟，只有緻密骨的骨元有哈氏管。</figcaption>
+</figure>
+<div class="reality"><span class="tag">回到現實</span>
+<p>兩年的詳解剛好一句補一句：</p>
+<p class="quote">詳解原文（112）:「這題是老師上課講義中給的考題的變形題，要選the most disorganized、has the highest cell density就要找最不成熟的骨骼型態，所以選(A) Woven bone。」</p>
+<p class="quote">詳解原文（113）:「Haversian system只在成熟的Laminar bone中可見，Spongy/Trabecular/Cancellous bone也是成熟骨，但是並沒有 Haversian system。」</p>
+<p>整理成一張表：</p>
+<p><b>編織骨（woven bone）</b>：纖維排列<b>最雜亂</b>、細胞密度<b>最高</b>、<b>最不成熟</b>。見於胚胎與骨折早期。</p>
+<p><b>板層骨（lamellar / laminar bone）</b>：成熟骨。<b>只有這一類才有哈氏系統</b>。</p>
+<p><b>海綿骨（cancellous / spongy / trabecular bone）</b>：<b>也是成熟骨</b>，但排成骨小樑，<b>沒有哈氏管</b>。</p>
+<p><b>骨元（osteon）＝哈氏系統</b>：同心圓骨板＋中央的哈氏管，是<b>緻密骨</b>的基本單位。</p>
+<p class="infer">113 年的選項 (C) soft callus（軟骨痂）是骨折癒合早期的纖維軟骨，連骨都還不是，更不會有哈氏管——這一個選項同時把第四章的內容也考進來了。</p>
+</div>
+
+<figure class="boxfig" data-visual-id="bhbox-03-keybox" data-image-kind="mechanism" data-explanation-verified="true">
+<span class="figtag">通道圖解</span>
+<img data-visual-id="bhbox-03-keybox" src="img/bhbox-03-keybox.webp" alt="通道圖解：半通道通向基質，間隙連接通向另一個細胞。" loading="lazy" decoding="async" width="1600" height="914">
+<figcaption>通道圖解：半通道通向基質，間隙連接通向另一個細胞。</figcaption>
+</figure>
+<div class="keybox"><span class="tag">半通道 vs 間隙連接</span>
+<p>骨細胞被封在<b>骨陷窩</b>（lacuna）裡，靠細長的突起穿過<b>骨小管</b>（canaliculi）向外伸展。這些突起上有兩種東西，作用完全不同：</p>
+<p><b>Hemichannel（半通道）</b>：由六個連接蛋白圍成的<b>半套</b>通道，一端開口直接面向<b>細胞外基質</b>。<b>骨細胞與基質之間的物質交換走這條路</b>——111 年第 76 題的答案。</p>
+<p><b>Gap junction（間隙連接）</b>：兩個半通道<b>頭對頭接起來</b>，連通的是<b>相鄰的兩個骨細胞</b>。它讓整個骨細胞網路可以互相通訊，但不是「與基質交換」。</p>
+<p>另外兩個選項是連接類型的誘餌：<b>tight junction（緊密連接）</b>負責封住細胞間隙、<b>adhering junction（黏著連接）</b>負責固定，兩者都<b>不通物質</b>。</p>
+</div>
+
+<article data-question-id="111-p63-q76" data-placement="chapter">
+  <span class="qhead">111 年 期中考 第 76 題</span>
+  <p class="stem">Which structure can make osteocytes exchange material with the extracellular matrix?</p>
+  <ul class="opts">
+    <li>(A) tight junction</li>
+    <li>(B) adhering junction</li>
+    <li>(C) hemichannel</li>
+    <li>(D) gap junction</li>
+  </ul>
+  <details data-kind="answer">
+    <summary>答案與詳解</summary>
+    <div data-kind="zh-translation">
+      <p><strong>中文題目：</strong>哪一種構造能讓骨細胞與細胞外基質進行物質交換？</p>
+      <p>(A) 緊密連接</p>
+      <p>(B) 黏著連接</p>
+      <p>(C) 半通道</p>
+      <p>(D) 間隙連接</p>
+    </div>
+    <p class="ans">答案：(C) hemichannel</p>
+    <p class="quote">詳解原文:「如左圖所示」</p>
+    <p>關鍵字是 <b>extracellular matrix</b>：要與<b>基質</b>交換就是半通道；<b>gap junction 連的是另一個細胞</b>，不是基質。(A)(B) 兩種連接不負責物質通過。</p>
+    <p class="src">出處：施耀翔 骨骼組織學(ptt pg.42) ｜ BM111 BLOCK-8 期中考詳解.pdf 第 63 頁</p>
+  </details>
+</article>
+
+<article data-question-id="112-p97-q76" data-placement="chapter">
+  <span class="qhead">112 年 期中考 第 76 題</span>
+  <p class="stem">From a microscopic perspective of bone tissue, which type of cell arrangement is the most disorganized and has the highest cell density?</p>
+  <ul class="opts">
+    <li>(A) Woven bone</li>
+    <li>(B) Cancellous bone</li>
+    <li>(C) Osteon</li>
+    <li>(D) Laminar bone</li>
+  </ul>
+  <details data-kind="answer">
+    <summary>答案與詳解</summary>
+    <div data-kind="zh-translation">
+      <p><strong>中文題目：</strong>從骨組織的顯微觀點來看，哪一種細胞排列<b>最雜亂</b>且<b>細胞密度最高</b>？</p>
+      <p>(A) 編織骨</p>
+      <p>(B) 海綿骨</p>
+      <p>(C) 骨元</p>
+      <p>(D) 板層骨</p>
+    </div>
+    <p class="ans">答案：A</p>
+    <p class="quote">詳解原文:「這題是老師上課講義中給的考題的變形題，要選the most disorganized、has the highest cell density就要找最不成熟的骨骼型態，所以選(A) Woven bone。」</p>
+    <p><b>「最雜亂＋細胞最多」＝最不成熟＝編織骨。</b>(B)(C)(D) 三個都屬成熟骨的範疇。</p>
+    <p class="src">出處：施耀翔 骨骼組織學 (ppt pg.31-34) ｜ BM112_Block 8 期中考(含申覆內容與結果).pdf 第 97 頁</p>
+  </details>
+</article>
+
+<article data-question-id="113-p44-q34" data-placement="chapter">
+  <span class="qhead">113 年 期中考 第 34 題</span>
+  <p class="stem">From a microscopic perspective of bone structure, which of the following contains Haversian canals?</p>
+  <ul class="opts">
+    <li>(A) Woven bone</li>
+    <li>(B) Cancellous bone</li>
+    <li>(C) Soft callus</li>
+    <li>(D) Laminar bone</li>
+  </ul>
+  <details data-kind="answer">
+    <summary>答案與詳解</summary>
+    <div data-kind="zh-translation">
+      <p><strong>中文題目：</strong>從骨構造的顯微觀點來看，下列何者含有哈氏管？</p>
+      <p>(A) 編織骨</p>
+      <p>(B) 海綿骨</p>
+      <p>(C) 軟骨痂</p>
+      <p>(D) 板層骨</p>
+    </div>
+    <p class="ans">答案：(D)</p>
+    <p class="quote">詳解原文:「Haversian system只在成熟的Laminar bone中可見，Spongy/Trabecular/Cancellous bone也是成熟骨，但是並沒有 Haversian system。」</p>
+    <p>與 112 年第 76 題同一組選項、相反的問法：那年問「最不成熟」選編織骨，這年問「有哈氏管」選板層骨。<b>(B) 海綿骨是這題的主要陷阱——它成熟，但沒有哈氏管。</b></p>
+    <p class="src">出處：施耀翔 骨骼組織學 ppt pg. 18 &amp; 27 ｜ BM113_Block8期中考詳解.pdf 第 44 頁</p>
+  </details>
+</article>
+</section>
+<section id="chapter-2" data-chapter-kind="story">
+<h2>二、破骨細胞：從哪來、住哪裡、在哪工作</h2>
+
+<figure class="boxfig" data-visual-id="bhbox-04-story" data-image-kind="story" data-explanation-verified="true">
+<span class="figtag">情境場景</span>
+<img data-visual-id="bhbox-04-story" src="img/bhbox-04-story.webp" alt="情境場景：拆除隊挖出自己的坑，而且要等混凝土硬了才進場。" loading="lazy" decoding="async" width="1600" height="914">
+<figcaption>情境場景：拆除隊挖出自己的坑，而且要等混凝土硬了才進場。</figcaption>
+</figure>
+<div class="story" data-prose-kind="story"><span class="tag">故事</span>
+<p>骨頭上的<b>拆除隊</b>（破骨細胞）有三件事年年被考，全部都很好記，因為它們都跟「常識反著來」。</p>
+<p><b>第一件：它的家世。</b>骨頭上其他細胞——成骨細胞、骨細胞、軟骨細胞——全都是<b>間葉幹細胞</b>的後代。只有破骨細胞是外來的：它來自<b>血液系統</b>，是<b>單核造血前驅細胞</b>融合而成。所以它才會有很多個核。<b>看到「來自間葉幹細胞」就是錯的。</b></p>
+<p><b>第二件：它的住所。</b>破骨細胞工作時會把自己底下的骨頭啃掉，於是在骨表面留下一個淺淺的凹坑，剛好把自己嵌在裡面。那個坑有名字，叫 <b>Howship's lacuna</b>（豪希普陷窩）。<b>要在切片上認出破骨細胞，就找那個坑。</b></p>
+<p><b>第三件：它在生長板的哪一區。</b>這一題連考兩年，還被申覆過一次，值得仔細看。</p>
+<p>生長板由骨骺往骨幹依序分成幾區：<b>靜止區 → 增生區 → 肥大區 → 鈣化區 → 骨化（吸收）區</b>。同學的直覺是「要先把軟骨拆掉，細胞才長得起來，所以破骨細胞應該在肥大鈣化區」。</p>
+<p>老師的回答很精準：<b>那一區的定義本身就不包含破骨細胞。</b>肥大區只有腫大的軟骨細胞和肝醣；鈣化區指的是軟骨細胞的<b>基質</b>開始鈣化。<b>要等到破骨細胞出現，那一區才被叫做「吸收區／骨化區」</b>——換句話說，破骨細胞的出現<b>就是</b>那一區的定義。</p>
+</div>
+
+<figure class="boxfig" data-visual-id="bhbox-05-reality" data-image-kind="sequence" data-explanation-verified="true">
+<span class="figtag">生長板分區</span>
+<img data-visual-id="bhbox-05-reality" src="img/bhbox-05-reality.webp" alt="生長板分區：破骨細胞出現在最下方的骨化區，那也是該區的定義。" loading="lazy" decoding="async" width="1600" height="914">
+<figcaption>生長板分區：破骨細胞出現在最下方的骨化區，那也是該區的定義。</figcaption>
+</figure>
+<div class="reality"><span class="tag">回到現實</span>
+<p>兩年的詳解與申覆回覆合起來，把整個推理講完了：</p>
+<p class="quote">詳解原文（112）:「(D) 由圖所示Osteocalst於Zone of calcified cartilage後始出現，本題亦為97-1醫師一階國考38題。」</p>
+<p class="quote">申覆結果（112，維持原答案）:「在講義66頁有提到，Zone of hypertrophy僅有大量腫大的軟骨細胞及醣元(glycogen)；Zone of calcified則是指軟骨細胞的胞外基質開始鈣化的區域，跟Zone of resorption(或zone of osteogenic)定義有點不一樣，這區的定義是出現osteoclast才稱作resorption或osteogenic zone」</p>
+<p class="quote">詳解原文（113）:「此題為國考題。在 osteogenic zone，小血管與骨前驅細胞會侵入已被鈣化的軟骨基質。Osteoclasts 會負責移除鈣化軟骨與初生骨組織，為新的骨形成鋪路。」</p>
+<p>所以答案固定是 <b>osteogenic zone（骨化區，又稱 zone of resorption 吸收區）</b>，理由有兩層：</p>
+<p>① <b>時序上</b>：破骨細胞是在鈣化<b>之後</b>才進場的，跟著侵入的血管一起來。<br>
+② <b>定義上</b>：有破骨細胞出現，那一區才叫吸收區／骨化區。所以這是一個<b>循環為真</b>的答案。</p>
+<p>另外三個選項——靜止區、增生區、肥大鈣化區——都在破骨細胞抵達之前，那裡只有軟骨細胞。</p>
+</div>
+
+<article data-question-id="111-p63-q77" data-placement="chapter">
+  <span class="qhead">111 年 期中考 第 77 題</span>
+  <p class="stem">Which statement is correct about osteoclasts?</p>
+  <ul class="opts">
+    <li>(A) Can be found in Howship's lacunae</li>
+    <li>(B) Single nucleus</li>
+    <li>(C) Flatten shape of the nucleus</li>
+    <li>(D) Developing from mesenchymal stem cells</li>
+  </ul>
+  <details data-kind="answer">
+    <summary>答案與詳解</summary>
+    <div data-kind="zh-translation">
+      <p><strong>中文題目：</strong>關於破骨細胞的敘述，何者<b>正確</b>？</p>
+      <p>(A) 可在豪希普陷窩中發現。</p>
+      <p>(B) 單核。</p>
+      <p>(C) 細胞核呈扁平狀。</p>
+      <p>(D) 由間葉幹細胞發育而來。</p>
+    </div>
+    <p class="ans">答案：(A) Can be found in Howship's lacunae</p>
+    <p class="quote">詳解原文:「(B) 錯，是多核　(C) 錯，不是flatten　(D) 錯，是mononuclear hemopoietic progenitor cells」</p>
+    <p>三個錯項各打破一個特徵：<b>破骨細胞是多核的</b>、核<b>不扁平</b>、來源是<b>單核造血前驅細胞</b>而非間葉幹細胞。而它工作時自己挖出的凹坑，就是豪希普陷窩。</p>
+    <p class="src">出處：施耀翔 骨骼組織學 ｜ BM111 BLOCK-8 期中考詳解.pdf 第 63 頁</p>
+  </details>
+</article>
+
+<article data-question-id="112-p99-q78" data-placement="chapter">
+  <span class="qhead">112 年 期中考 第 78 題 ｜ 申覆後維持原答案</span>
+  <p class="stem">Osteoclasts are most commonly found in which region?</p>
+  <ul class="opts">
+    <li>(A) Zone of cell proliferation in the epiphyseal plate</li>
+    <li>(B) Zone of hypertrophy and calcification in the epiphyseal plate</li>
+    <li>(C) Zone of reserve cartilage in the epiphyseal plate</li>
+    <li>(D) Osteogenic zone in the epiphyseal plate</li>
+  </ul>
+  <details data-kind="answer">
+    <summary>答案與詳解</summary>
+    <div data-kind="zh-translation">
+      <p><strong>中文題目：</strong>破骨細胞最常在哪一區被發現？</p>
+      <p>(A) 生長板的細胞增生區</p>
+      <p>(B) 生長板的肥大與鈣化區</p>
+      <p>(C) 生長板的靜止軟骨區</p>
+      <p>(D) 生長板的骨化區</p>
+    </div>
+    <p class="ans">答案：D（申覆後維持原答案）</p>
+    <p class="quote">詳解原文:「(D) 由圖所示Osteocalst於Zone of calcified cartilage後始出現，本題亦為97-1醫師一階國考38題。」</p>
+    <p class="quote">申覆結果（維持原答案）:「這區的定義是出現osteoclast才稱作resorption或osteogenic zone，可以參考97年醫師國考的釋疑。」</p>
+    <p>申覆主張「要先蝕骨才能增生鈣化，所以破骨細胞在肥大鈣化區」。老師的反駁是<b>定義層次</b>的：肥大區只有腫大的軟骨細胞與肝醣，鈣化區指的是<b>基質</b>鈣化；<b>破骨細胞一出現，那一區就改叫吸收區／骨化區了</b>。</p>
+    <p class="src">出處：施耀翔 組織學 骨與軟骨 (ppt pg.66 .67) ｜ BM112_Block 8 期中考(含申覆內容與結果).pdf 第 99 頁</p>
+  </details>
+</article>
+
+<article data-question-id="113-p46-q36" data-placement="chapter">
+  <span class="qhead">113 年 期中考 第 36 題</span>
+  <p class="stem">Osteoclasts are most commonly found in which region?</p>
+  <ul class="opts">
+    <li>(A) Zone of cell proliferation in the epiphyseal plate</li>
+    <li>(B) Zone of hypertrophy and calcification in the epiphyseal plate</li>
+    <li>(C) Zone of reserve cartilage in the epiphyseal plate</li>
+    <li>(D) Osteogenic zone in the epiphyseal plate</li>
+  </ul>
+  <details data-kind="answer">
+    <summary>答案與詳解</summary>
+    <div data-kind="zh-translation">
+      <p><strong>中文題目：</strong>破骨細胞最常在哪一區被發現？</p>
+      <p>(A) 生長板的細胞增生區</p>
+      <p>(B) 生長板的肥大與鈣化區</p>
+      <p>(C) 生長板的靜止軟骨區</p>
+      <p>(D) 生長板的骨化區</p>
+    </div>
+    <p class="ans">答案：(D)</p>
+    <p class="quote">詳解原文:「此題為國考題。在 osteogenic zone，小血管與骨前驅細胞會侵入已被鈣化的軟骨基質。Osteoclasts 會負責移除鈣化軟骨與初生骨組織，為新的骨形成鋪路。」</p>
+    <p>與 112 年第 78 題<b>四個選項一字不差</b>，連答案代號都一樣。這一題兩年都出現，是本科最穩定的送分題。</p>
+    <p class="src">出處：施耀翔 骨骼組織學 ppt pg.66-67 ｜ BM113_Block8期中考詳解.pdf 第 46 頁</p>
+  </details>
+</article>
+</section>
+<section id="chapter-3" data-chapter-kind="story">
+<h2>三、長骨怎麼長：兩個骨化中心</h2>
+
+<figure class="boxfig" data-visual-id="bhbox-06-story" data-image-kind="story" data-explanation-verified="true">
+<span class="figtag">情境場景</span>
+<img data-visual-id="bhbox-06-story" src="img/bhbox-06-story.webp" alt="情境場景：先從中間開工，之後才在兩端各開一個分基地。" loading="lazy" decoding="async" width="1600" height="914">
+<figcaption>情境場景：先從中間開工，之後才在兩端各開一個分基地。</figcaption>
+</figure>
+<div class="story" data-prose-kind="story"><span class="tag">故事</span>
+<p>這是本科考最多次的一題——<b>三年考了四次</b>，而且四次的選項一模一樣：diaphysis、epiphysis、metaphysis、endosteum。</p>
+<p>它問的其實只有一件事：<b>長骨的施工是從哪裡開始的？</b></p>
+<p>把長骨想成一條要蓋的高架橋。整條橋一開始是一根<b>軟骨模型</b>。工程隊來的時候，<b>先在正中央開工</b>——那裡是<b>骨幹</b>（diaphysis），血管從骨膜長進去，形成<b>初級骨化中心</b>（primary ossification center）。骨化從中央往兩端推。</p>
+<p>過了一段時間（多半是<b>出生後</b>），兩端的<b>骨骺</b>（epiphysis）也各自被血管找上，於是各開一個<b>次級骨化中心</b>（secondary ossification center）。</p>
+<p>兩邊往中間夾，最後只在中間留下一層軟骨——那就是<b>生長板</b>，你能長高全靠它。</p>
+<p><b>記法只有一句：中間先開工、兩端後開工。</b></p>
+<p>「那 metaphysis 跟 endosteum 呢？」<b>兩個都不是骨化中心。</b>幹骺端是生長板旁邊那一段、骨內膜是骨髓腔的內襯，兩者都只是<b>位置名稱</b>，題目拿它們來湊數。</p>
+</div>
+
+<figure class="boxfig" data-visual-id="bhbox-07-reality" data-image-kind="sequence" data-explanation-verified="true">
+<span class="figtag">骨化順序</span>
+<img data-visual-id="bhbox-07-reality" src="img/bhbox-07-reality.webp" alt="骨化順序：初級中心在骨幹、次級中心在骨骺，中間留下生長板。" loading="lazy" decoding="async" width="1600" height="914">
+<figcaption>骨化順序：初級中心在骨幹、次級中心在骨骺，中間留下生長板。</figcaption>
+</figure>
+<div class="reality"><span class="tag">回到現實</span>
+<p><b>初級骨化中心（primary）→ 骨幹（diaphysis）</b></p>
+<p class="quote">詳解原文（113 第 39 題）:「依照Endochondral ossification圖示所示，primary ossification center 位於diaphysis」</p>
+<p><b>次級骨化中心（secondary）→ 骨骺（epiphysis）</b>　111、112、113 三年都考同一句，答案都是 <b>epiphysis</b>。111 與 112 的原卷<b>詳解欄留空</b>，只給答案與出處，可見這在老師眼裡是純記憶題。</p>
+<p>另外兩個干擾選項：</p>
+<p>・<b>Metaphysis（幹骺端）</b>：生長板與骨幹之間那一段。它是<b>骨軟骨瘤</b>與很多病灶的好發處，但<b>不是骨化中心</b>。<br>
+・<b>Endosteum（骨內膜）</b>：襯在骨髓腔內側的一層薄膜，含有骨前驅細胞，但同樣<b>不是骨化中心</b>。</p>
+<p class="infer">跨科提醒：113 年第 39 題（初級）與第 35 題（次級）<b>出現在同一份考卷</b>，兩題只差一個字。作答時<b>先圈出 primary／secondary 再選</b>，這是最容易因為手快而丟分的地方。</p>
+</div>
+
+<article data-question-id="111-p64-q78" data-placement="chapter">
+  <span class="qhead">111 年 期中考 第 78 題</span>
+  <p class="stem">The secondary ossification center of long bone is localized in________.</p>
+  <ul class="opts">
+    <li>(A) diaphysis</li>
+    <li>(B) epiphysis</li>
+    <li>(C) metaphysis</li>
+    <li>(D) endosteum</li>
+  </ul>
+  <details data-kind="answer">
+    <summary>答案與詳解</summary>
+    <div data-kind="zh-translation">
+      <p><strong>中文題目：</strong>長骨的<b>次級</b>骨化中心位於＿＿＿＿。</p>
+      <p>(A) 骨幹</p>
+      <p>(B) 骨骺</p>
+      <p>(C) 幹骺端</p>
+      <p>(D) 骨內膜</p>
+    </div>
+    <p class="ans">答案：(B) epiphysis</p>
+    <p>原卷<b>詳解欄留空</b>，只給了答案與出處（ppt pg.64）。次級骨化中心在<b>兩端的骨骺</b>，多在出生後才出現。</p>
+    <p class="src">出處：施耀翔 骨骼組織學(ppt pg.64) ｜ BM111 BLOCK-8 期中考詳解.pdf 第 64 頁</p>
+  </details>
+</article>
+
+<article data-question-id="112-p98-q77" data-placement="chapter">
+  <span class="qhead">112 年 期中考 第 77 題</span>
+  <p class="stem">In the process of endochondral ossification of long bones, where is the secondary ossification center located?</p>
+  <ul class="opts">
+    <li>(A) Diaphysis</li>
+    <li>(B) Epiphysis</li>
+    <li>(C) Metaphysis</li>
+    <li>(D) Endosteum</li>
+  </ul>
+  <details data-kind="answer">
+    <summary>答案與詳解</summary>
+    <div data-kind="zh-translation">
+      <p><strong>中文題目：</strong>在長骨的軟骨內骨化過程中，<b>次級</b>骨化中心位於何處？</p>
+      <p>(A) 骨幹</p>
+      <p>(B) 骨骺</p>
+      <p>(C) 幹骺端</p>
+      <p>(D) 骨內膜</p>
+    </div>
+    <p class="ans">答案：B</p>
+    <p>原卷<b>詳解欄留空</b>。與 111 年第 78 題是同一題，只把句型從填空改成問句。</p>
+    <p class="src">出處：施耀翔 骨骼組織學 (ppt pg.64) ｜ BM112_Block 8 期中考(含申覆內容與結果).pdf 第 98 頁</p>
+  </details>
+</article>
+
+<article data-question-id="113-p45-q35" data-placement="chapter">
+  <span class="qhead">113 年 期中考 第 35 題</span>
+  <p class="stem">In the process of endochondral ossification of long bones, where is the secondary ossification center located?</p>
+  <ul class="opts">
+    <li>(A) Diaphysis</li>
+    <li>(B) Epiphysis</li>
+    <li>(C) Metaphysis</li>
+    <li>(D) Endosteum</li>
+  </ul>
+  <details data-kind="answer">
+    <summary>答案與詳解</summary>
+    <div data-kind="zh-translation">
+      <p><strong>中文題目：</strong>在長骨的軟骨內骨化過程中，<b>次級</b>骨化中心位於何處？</p>
+      <p>(A) 骨幹</p>
+      <p>(B) 骨骺</p>
+      <p>(C) 幹骺端</p>
+      <p>(D) 骨內膜</p>
+    </div>
+    <p class="ans">答案：(B)</p>
+    <p>原卷<b>詳解欄留空</b>，只給了答案與出處（ppt pg.63）。與 112 年第 77 題<b>逐字相同</b>。</p>
+    <p class="src">出處：施耀翔 骨骼組織學 ppt pg.63 ｜ BM113_Block8期中考詳解.pdf 第 45 頁</p>
+  </details>
+</article>
+
+<article data-question-id="113-p49-q39" data-placement="chapter">
+  <span class="qhead">113 年 期中考 第 39 題</span>
+  <p class="stem">Where is the primary ossification center located during endochondral ossification of a long bone?</p>
+  <ul class="opts">
+    <li>(A) Diaphysis</li>
+    <li>(B) Epiphysis</li>
+    <li>(C) Metaphysis</li>
+    <li>(D) Endosteum</li>
+  </ul>
+  <details data-kind="answer">
+    <summary>答案與詳解</summary>
+    <div data-kind="zh-translation">
+      <p><strong>中文題目：</strong>長骨的軟骨內骨化過程中，<b>初級</b>骨化中心位於何處？</p>
+      <p>(A) 骨幹</p>
+      <p>(B) 骨骺</p>
+      <p>(C) 幹骺端</p>
+      <p>(D) 骨內膜</p>
+    </div>
+    <p class="ans">答案：(A)</p>
+    <p class="quote">詳解原文:「依照Endochondral ossification圖示所示，primary ossification center 位於diaphysis」</p>
+    <p><b>與同一份考卷的第 35 題只差 primary／secondary 一個字，答案卻相反。</b>這是全科最容易看漏的一組。</p>
+    <p class="src">出處：施耀翔 骨骼組織學 ppt pg 64 ｜ BM113_Block8期中考詳解.pdf 第 49 頁</p>
+  </details>
+</article>
+</section>
+<section id="chapter-4" data-chapter-kind="story">
+<h2>四、骨折怎麼癒合：兩種骨痂</h2>
+
+<figure class="boxfig" data-visual-id="bhbox-08-story" data-image-kind="story" data-explanation-verified="true">
+<span class="figtag">情境場景</span>
+<img data-visual-id="bhbox-08-story" src="img/bhbox-08-story.webp" alt="情境場景：先綁一層軟的臨時繃帶，再換成硬的水泥。" loading="lazy" decoding="async" width="1600" height="914">
+<figcaption>情境場景：先綁一層軟的臨時繃帶，再換成硬的水泥。</figcaption>
+</figure>
+<div class="story" data-prose-kind="story"><span class="tag">故事</span>
+<p>骨頭斷了以後怎麼接回去，有兩條路。</p>
+<p><b>直接癒合</b>（direct / primary bone healing）：兩個斷端被鋼板螺絲壓得死死的、完全沒有縫隙。這時候骨元可以直接跨過斷面重新鑽通，<b>不需要經過任何軟骨階段</b>。這條路在自然狀況下幾乎不會發生，通常是手術做出來的。</p>
+<p><b>間接癒合</b>（indirect / secondary bone healing）：兩個斷端有一點微動、有縫。身體的做法是先在外面<b>綁一層臨時繃帶</b>——由<b>纖維軟骨</b>構成的<b>軟骨痂</b>（soft callus），把斷端先穩住；接著這層軟骨走<b>軟骨內骨化</b>，被換成<b>骨性骨痂</b>（bony callus / hard callus）；最後再慢慢重塑成正常形狀。</p>
+<p>「所以骨折癒合會用到軟骨。」</p>
+<p>「<b>只有間接癒合會。</b>」這就是 113 年那題的答案：四個選項裡，膜內骨化不經軟骨、骨元發育不經軟骨、直接癒合不經軟骨，<b>只有間接癒合會經過纖維軟骨</b>。</p>
+<p>而 112 年考的是同一條路的另一端：X 光片上看到<b>骨性骨痂</b>，代表這個人<b>最近骨折過</b>，而且正在間接癒合的路上。</p>
+</div>
+
+<figure class="boxfig" data-visual-id="bhbox-09-reality" data-image-kind="sequence" data-explanation-verified="true">
+<span class="figtag">癒合流程</span>
+<img data-visual-id="bhbox-09-reality" src="img/bhbox-09-reality.webp" alt="癒合流程：血腫、軟骨痂、骨痂、重塑，只有間接癒合經過軟骨。" loading="lazy" decoding="async" width="1600" height="914">
+<figcaption>癒合流程：血腫、軟骨痂、骨痂、重塑，只有間接癒合經過軟骨。</figcaption>
+</figure>
+<div class="reality"><span class="tag">回到現實</span>
+<p class="quote">詳解原文（112）:「骨折後進行次級癒合(secondary bony healing)時，過程中涉及到在斷面處形成骨性骨痂(Bony callus)，藉此銜接後續的軟骨內骨化(endochondral ossification)。」</p>
+<p class="quote">詳解原文（113）:「這題是國考題　(A) Intramembranous ossification和cartilage無關，Endochondral ossification才有　(B) (C) 也和cartilage無關　(D) 形成soft callus時就是fibrocartilage」</p>
+<p><b>間接癒合的順序</b>：血腫 → <b>軟骨痂（soft callus，纖維軟骨）</b> → <b>骨性骨痂（bony callus）</b> → 重塑。</p>
+<p><b>四個選項為什麼只有一個對：</b></p>
+<p>・(A) <b>膜內骨化</b>：直接在膜上成骨，<b>整個過程沒有軟骨</b>。<br>
+・(B) <b>骨元的發育</b>：緻密骨內部的重塑，發生在既有的骨組織上，<b>不經軟骨</b>。<br>
+・(C) <b>直接癒合</b>：斷端無縫、骨元直接跨越，<b>不經軟骨</b>。<br>
+・(D) <b>間接癒合</b>：<b>軟骨痂就是纖維軟骨</b>——正確。</p>
+<p class="infer">跨章提醒：第一章 113 年第 34 題的干擾選項 <b>soft callus</b> 就是這裡的軟骨痂。它連骨都不是，當然沒有哈氏管。<b>同一份考卷用同一個詞，在兩題裡當兩種角色。</b></p>
+</div>
+
+<article data-question-id="112-p101-q79" data-placement="chapter">
+  <span class="qhead">112 年 期中考 第 79 題</span>
+  <p class="stem">In an X-ray examination of an emergency patient, what structure would indicate that the patient might have suffered multiple fractures recently?</p>
+  <ul class="opts">
+    <li>(A) Bony collar</li>
+    <li>(B) Growth plate fusion</li>
+    <li>(C) Bony callus</li>
+    <li>(D) Thinning of compact bone</li>
+  </ul>
+  <details data-kind="answer">
+    <summary>答案與詳解</summary>
+    <div data-kind="zh-translation">
+      <p><strong>中文題目：</strong>在一位急診病人的 X 光檢查中，哪一種構造會提示這位病人<b>最近可能發生過多處骨折</b>？</p>
+      <p>(A) 骨領</p>
+      <p>(B) 生長板癒合</p>
+      <p>(C) 骨性骨痂</p>
+      <p>(D) 緻密骨變薄</p>
+    </div>
+    <p class="ans">答案：C</p>
+    <p class="quote">詳解原文:「骨折後進行次級癒合(secondary bony healing)時，過程中涉及到在斷面處形成骨性骨痂(Bony callus)，藉此銜接後續的軟骨內骨化(endochondral ossification)。」</p>
+    <p>另外三個都是別的東西：<b>骨領</b>是胚胎時期骨幹周圍最早形成的那圈骨；<b>生長板癒合</b>代表已經停止長高；<b>緻密骨變薄</b>是骨質疏鬆的表現。<b>只有骨痂代表「最近斷過」。</b></p>
+    <p class="src">出處：施耀翔 骨骼組織學(ppt pg.87) ｜ BM112_Block 8 期中考(含申覆內容與結果).pdf 第 101 頁</p>
+  </details>
+</article>
+
+<article data-question-id="113-p47-q37" data-placement="chapter">
+  <span class="qhead">113 年 期中考 第 37 題</span>
+  <p class="stem">Which of the following involves the participation of cartilage?</p>
+  <ul class="opts">
+    <li>(A) Intramembranous ossification</li>
+    <li>(B) Development of osteons</li>
+    <li>(C) Direct bone healing</li>
+    <li>(D) Indirect bone healing</li>
+  </ul>
+  <details data-kind="answer">
+    <summary>答案與詳解</summary>
+    <div data-kind="zh-translation">
+      <p><strong>中文題目：</strong>下列何者的過程中<b>有軟骨參與</b>？</p>
+      <p>(A) 膜內骨化</p>
+      <p>(B) 骨元的發育</p>
+      <p>(C) 直接骨癒合</p>
+      <p>(D) 間接骨癒合</p>
+    </div>
+    <p class="ans">答案：(D)</p>
+    <p class="quote">詳解原文:「這題是國考題 (A) Intramembranous ossification和cartilage無關，Endochondral ossification才有 (B) (C) 也和cartilage無關 (D) 形成soft callus時就是fibrocartilage」</p>
+    <p>判準只有一個：<b>過程中有沒有出現「先做軟骨、再換成骨」這一步</b>。只有間接癒合會先做出纖維軟骨性的軟骨痂。</p>
+    <p class="src">出處：施耀翔 骨骼組織學 ppt pg 58, 64, 74, 86, 87 ｜ BM113_Block8期中考詳解.pdf 第 47 頁</p>
+  </details>
+</article>
+</section>
+<section id="chapter-5" data-chapter-kind="story">
+<h2>五、軟骨三兄弟與那條膠原分界線</h2>
+
+<figure class="boxfig" data-visual-id="bhbox-10-story" data-image-kind="story" data-explanation-verified="true">
+<span class="figtag">情境場景</span>
+<img data-visual-id="bhbox-10-story" src="img/bhbox-10-story.webp" alt="情境場景：三種軟骨用不同的纖維、走不同的路。" loading="lazy" decoding="async" width="1600" height="914">
+<figcaption>情境場景：三種軟骨用不同的纖維、走不同的路。</figcaption>
+</figure>
+<div class="story" data-prose-kind="story"><span class="tag">故事</span>
+<p>軟骨有三兄弟，各自用不同的材料。</p>
+<p><b>老大：透明軟骨</b>（hyaline cartilage）。基質均勻得像毛玻璃，膠原纖維是<b>第二型</b>，而且細得看不見。關節面、肋軟骨、氣管、生長板，還有<b>喉部的甲狀軟骨、環狀軟骨、杓狀軟骨</b>都是它。</p>
+<p><b>老二：彈性軟骨</b>（elastic cartilage）。在第二型膠原之外，額外塞了一大把<b>彈性纖維</b>，所以可以折彎再彈回來。它待在<b>外耳、外耳道壁、耳咽管、會厭</b>——全部是「要能折又要回彈」的地方。</p>
+<p><b>老三：纖維軟骨</b>（fibrocartilage）。它的膠原是<b>第一型</b>，粗大成束、抗拉。椎間盤、半月板、恥骨聯合，還有<b>骨折癒合時的軟骨痂</b>，都是它。</p>
+<p>而<b>硬骨</b>用的也是<b>第一型</b>。所以整組膠原題只要記兩條：</p>
+<p><b>軟骨（透明、彈性）＝第二型；纖維軟骨與硬骨＝第一型。</b></p>
+<p>還有兩件常被考的事。第一，<b>軟骨沒有血管</b>——它靠基質擴散取得養分，這也是軟骨受傷難癒合的原因。第二，<b>軟骨基質裡佔比最高的其實是水</b>，不是膠原；讓它留住水的是蛋白聚糖，例如<b>硫酸軟骨素</b>與<b>聚集蛋白聚糖</b>。</p>
+</div>
+
+<figure class="boxfig" data-visual-id="bhbox-11-reality" data-image-kind="comparison" data-explanation-verified="true">
+<span class="figtag">軟骨對照</span>
+<img data-visual-id="bhbox-11-reality" src="img/bhbox-11-reality.webp" alt="軟骨對照：三種軟骨的纖維、位置與膠原型別。" loading="lazy" decoding="async" width="1600" height="914">
+<figcaption>軟骨對照：三種軟骨的纖維、位置與膠原型別。</figcaption>
+</figure>
+<div class="reality"><span class="tag">回到現實</span>
+<p>111 年第 79 題的詳解一次把四個選項的事實交代完，是本章最值錢的一段：</p>
+<p class="quote">詳解原文:「(A) 彈性軟骨(elastic cartilage)，有彈性纖維(elastic fiber) 和蛋白聚糖(aggrecan) protein　(B) 透明軟骨(hyaline cartilage)中的膠原纖維，主要為第二型　(C) 纖維軟骨(fibrocartilage)中的膠原纖維，主要為第一型　(D) 三種軟骨的胞外間質(extracellular matrix)的組成中，皆以水分所占比例為最高」</p>
+<p>四條可以直接拿去判對錯：</p>
+<p>① <b>彈性軟骨「有」aggrecan</b>——說它沒有就是錯的。<br>
+② <b>透明軟骨的膠原＝第二型。</b><br>
+③ <b>纖維軟骨的膠原＝第一型</b>（不是第二型）。<br>
+④ <b>三種軟骨的基質裡，佔比最高的是「水」</b>，不是膠原纖維。</p>
+<p>而 112 年第 80 題與 113 年第 38 題把同一組事實拆成兩題單獨問：</p>
+<p>・<b>軟骨組織的細胞外基質中最多的膠原＝第二型</b>（112 年，答案 B）<br>
+・<b>硬骨組織的細胞外基質中最多的膠原＝第一型</b>（113 年，答案 A）</p>
+<p class="infer">兩題排在一起看就很好記：<b>軟的用二、硬的用一。</b>而纖維軟骨雖然名字裡有「軟骨」，膠原卻跟硬骨同一型——因為它的工作是<b>抗拉</b>，不是抗壓。</p>
+</div>
+
+<figure class="boxfig" data-visual-id="bhbox-12-keybox" data-image-kind="comparison" data-explanation-verified="true">
+<span class="figtag">軟硬分界</span>
+<img data-visual-id="bhbox-12-keybox" src="img/bhbox-12-keybox.webp" alt="軟硬分界：軟骨無血管無骨元無鈣鹽，硬骨三者皆有。" loading="lazy" decoding="async" width="1600" height="914">
+<figcaption>軟硬分界：軟骨無血管無骨元無鈣鹽，硬骨三者皆有。</figcaption>
+</figure>
+<div class="keybox"><span class="tag">透明軟骨的四個判準</span>
+<p>「透明軟骨的特徵是什麼」這一題連考兩年，兩年的正確答案不同，但錯項的手法完全一樣——<b>把硬骨的特徵拿來冒充軟骨</b>。</p>
+<p class="quote">詳解原文（112）:「( B )cartilage is a avascular tissue.　( C )Haversian system 就是骨元，是骨頭才有的特徵　( D )該敘述為骨頭的特徵，軟骨有的是chondrotin sulfate」</p>
+<p><b>軟骨有的：</b>硫酸軟骨素（chondroitin sulfate）等蛋白聚糖、大量的水、第二型膠原、軟骨細胞住在<b>陷窩</b>裡。</p>
+<p><b>軟骨沒有的：</b><b>血管</b>（avascular）、<b>同心圓骨板／哈氏系統</b>（那是緻密骨）、<b>鈣鹽沉積</b>（那是骨）。</p>
+<p>111 年的 (A) 則是位置陷阱：<b>耳朵那一帶是彈性軟骨</b>，不是透明軟骨。</p>
+<p class="quote">詳解原文（111）:「(A) Elastic cartilage(彈性軟骨)比較會出現在耳朵附近的構造，例如external ear/ walls of the external acoustic meatus (外耳/外耳道壁)、auditory (Eustachian) tube(耳咽管)、epiglottis (會厭軟骨) of the larynx」</p>
+<p class="infer">關於 111 年的 (D)「Developed from mesenchymal stem cell」：原詳解的理由是「軟骨細胞來自神經脊細胞」。<b>這個說法只適用於顱顏面的軟骨</b>——依同一份考卷胚胎學題目的官方詳解，<b>脊索以前（頭部）由神經脊發育，以後（軀幹與四肢）來自旁軸中胚層</b>。所以四肢與軀幹的透明軟骨仍是間葉來源。這題的正解是 (B)，不受影響，但 (D) 的理由請當作「老師課堂上的說法」看待。</p>
+</div>
+
+<figure class="boxfig" data-visual-id="bhbox-13-warn" data-image-kind="comparison" data-explanation-verified="true">
+<span class="figtag">喉部軟骨</span>
+<img data-visual-id="bhbox-13-warn" src="img/bhbox-13-warn.webp" alt="喉部軟骨：甲狀、環狀、杓狀是透明軟骨，會厭是彈性軟骨。" loading="lazy" decoding="async" width="1600" height="914">
+<figcaption>喉部軟骨：甲狀、環狀、杓狀是透明軟骨，會厭是彈性軟骨。</figcaption>
+</figure>
+<div class="warn"><span class="tag">這題申覆改答案了</span>
+<p>111 年第 80 題問「哪一個喉部軟骨<b>不具</b>彈性軟骨的結構」，原答案只有 <b>(A) Cricoid</b>，<b>申覆後改為 (A)(B)(D) 都給分</b>。</p>
+<p class="quote">申覆結果（老師回覆）:「本題確實為97年度牙醫國考題更改，根據醫學系國考用書 Histology : A text and atlas, by Michael H. Ross, and Wojciech Pawlina. Lippincott / Williams &amp; Wilkins. 答案應為ABD無誤。」</p>
+<p>正確的分類是：</p>
+<p><b>透明軟骨：</b>甲狀軟骨（thyroid）、環狀軟骨（cricoid）、杓狀軟骨（arytenoid）<br>
+<b>彈性軟骨：</b>會厭軟骨（epiglottic）、小角軟骨（corniculate）、楔狀軟骨（cuneiform）</p>
+<p>所以「不具彈性軟骨結構」的有三個，只有<b>會厭</b>是彈性的。<b>這一題直接背這兩行就好。</b></p>
+</div>
+
+<article data-question-id="111-p65-q79" data-placement="chapter">
+  <span class="qhead">111 年 期中考 第 79 題</span>
+  <p class="stem">Which statement about cartilage is correct?</p>
+  <ul class="opts">
+    <li>(A) Elastic cartilage containing elastic fiber without any aggrecan protein.</li>
+    <li>(B) The major type of collagen fiber is type II in hyaline cartilage.</li>
+    <li>(C) The major type of collagen fiber is type II in fibrocartilage.</li>
+    <li>(D) The major component of the extracellular matrix in all types of cartilage is collagen fiber.</li>
+  </ul>
+  <details data-kind="answer">
+    <summary>答案與詳解</summary>
+    <div data-kind="zh-translation">
+      <p><strong>中文題目：</strong>關於軟骨的敘述，何者<b>正確</b>？</p>
+      <p>(A) 彈性軟骨含有彈性纖維，但不含任何聚集蛋白聚糖。</p>
+      <p>(B) 透明軟骨中主要的膠原纖維是第二型。</p>
+      <p>(C) 纖維軟骨中主要的膠原纖維是第二型。</p>
+      <p>(D) 所有類型軟骨的細胞外基質中，主要成分都是膠原纖維。</p>
+    </div>
+    <p class="ans">答案：(B) The major type of collagen fiber is type II in hyaline cartilage.</p>
+    <p class="quote">詳解原文:「(A) 彈性軟骨(elastic cartilage)，有彈性纖維(elastic fiber) 和蛋白聚糖(aggrecan) protein (B) 透明軟骨(hyaline cartilage)中的膠原纖維，主要為第二型 (C) 纖維軟骨(fibrocartilage)中的膠原纖維，主要為第一型 (D) 三種軟骨的胞外間質(extracellular matrix)的組成中，皆以水分所占比例為最高」</p>
+    <p>三個錯項各改一處：<b>彈性軟骨其實有 aggrecan</b>、<b>纖維軟骨是第一型</b>、<b>基質裡最多的是水不是膠原</b>。</p>
+    <p class="src">出處：施耀翔 骨骼組織學(ppt pg.101,103) ｜ BM111 BLOCK-8 期中考詳解.pdf 第 65 頁</p>
+  </details>
+</article>
+
+<article data-question-id="111-p66-q80" data-placement="chapter">
+  <span class="qhead">111 年 期中考 第 80 題 ｜ 申覆後 A → ABD</span>
+  <p class="stem">Which of the following laryngeal cartilages does not have the structure of elastic cartilage?</p>
+  <ul class="opts">
+    <li>(A) Cricoid cartilage</li>
+    <li>(B) Thyroid cartilage</li>
+    <li>(C) Epiglottic cartilage</li>
+    <li>(D) Arytenoid cartilage</li>
+  </ul>
+  <details data-kind="answer">
+    <summary>答案與詳解</summary>
+    <div data-kind="zh-translation">
+      <p><strong>中文題目：</strong>下列哪一個喉部軟骨<b>不具有</b>彈性軟骨的結構？</p>
+      <p>(A) 環狀軟骨</p>
+      <p>(B) 甲狀軟骨</p>
+      <p>(C) 會厭軟骨</p>
+      <p>(D) 杓狀軟骨</p>
+    </div>
+    <p class="ans">答案：申覆後 (A)(B)(D) 皆給分（原答案 (A)）</p>
+    <p class="quote">詳解原文:「Cricoid cartilage does not contain elastic cartilage. It is made up of hyaline cartilage. Furthermore, it's a complete and signet ring-shaped cartilage which is situated below the thyroid cartilage.」</p>
+    <p class="quote">申覆結果（A → ABD，老師回覆）:「本題確實為97年度牙醫國考題更改，根據醫學系國考用書 Histology : A text and atlas, by Michael H. Ross, and Wojciech Pawlina. 答案應為ABD無誤。」</p>
+    <p>甲狀、環狀、杓狀三個都是<b>透明軟骨</b>；喉部只有<b>會厭</b>（以及小角、楔狀）是彈性軟骨。</p>
+    <p class="src">出處：施耀翔 骨骼組織學 ｜ BM111 BLOCK-8 期中考詳解.pdf 第 66 頁</p>
+  </details>
+</article>
+
+<article data-question-id="111-p67-q81" data-placement="chapter">
+  <span class="qhead">111 年 期中考 第 81 題</span>
+  <p class="stem">Which of the following is a characteristic of hyaline cartilage?</p>
+  <ul class="opts">
+    <li>(A) Can be found in the ear</li>
+    <li>(B) Avascular</li>
+    <li>(C) Concentric lamellae</li>
+    <li>(D) Developed from mesenchymal stem cell</li>
+  </ul>
+  <details data-kind="answer">
+    <summary>答案與詳解</summary>
+    <div data-kind="zh-translation">
+      <p><strong>中文題目：</strong>下列何者是透明軟骨的特徵？</p>
+      <p>(A) 可在耳朵找到。</p>
+      <p>(B) 無血管。</p>
+      <p>(C) 同心圓骨板。</p>
+      <p>(D) 由間葉幹細胞發育而來。</p>
+    </div>
+    <p class="ans">答案：(B) Avascular</p>
+    <p class="quote">詳解原文:「(A) Elastic cartilage(彈性軟骨)比較會出現在耳朵附近的構造…(B) 軟骨是一種無血管組織…→選項正確 (C) Concentric lamellae 出現在cortical bone非hyaline cartilage (D) Hyaline cartilage主要由Chondrocyte組成，而Chondrocyte來自於neural crest cells(神經脊細胞)」</p>
+    <p>(A) 耳朵是<b>彈性軟骨</b>；(C) 同心圓骨板是<b>緻密骨</b>的骨元。至於 (D)，原詳解以「軟骨細胞來自神經脊」為由判錯——<b>該說法適用於顱顏面軟骨，軀幹與四肢的軟骨仍是旁軸中胚層來源</b>，作答時記住正解是 (B) 即可。</p>
+    <p class="src">出處：施耀翔 骨骼組織學(ptt pg.101,103) ｜ BM111 BLOCK-8 期中考詳解.pdf 第 67 頁</p>
+  </details>
+</article>
+
+<article data-question-id="112-p101-q80" data-placement="chapter">
+  <span class="qhead">112 年 期中考 第 80 題</span>
+  <p class="stem">Which type of collagen fiber is most abundant in the extracellular matrix of cartilage tissue?</p>
+  <ul class="opts">
+    <li>(A) Type I</li>
+    <li>(B) Type II</li>
+    <li>(C) Type III</li>
+    <li>(D) Type IV</li>
+  </ul>
+  <details data-kind="answer">
+    <summary>答案與詳解</summary>
+    <div data-kind="zh-translation">
+      <p><strong>中文題目：</strong>軟骨組織的細胞外基質中，含量最多的是哪一型膠原纖維？</p>
+      <p>(A) 第一型</p>
+      <p>(B) 第二型</p>
+      <p>(C) 第三型</p>
+      <p>(D) 第四型</p>
+    </div>
+    <p class="ans">答案：B</p>
+    <p>原卷<b>詳解欄留空</b>。<b>軟骨＝第二型</b>。與 113 年第 38 題（硬骨＝第一型）配成一組記。</p>
+    <p class="src">出處：施耀翔 骨骼組織學(ppt pg.100) ｜ BM112_Block 8 期中考(含申覆內容與結果).pdf 第 101 頁</p>
+  </details>
+</article>
+
+<article data-question-id="112-p102-q81" data-placement="chapter">
+  <span class="qhead">112 年 期中考 第 81 題</span>
+  <p class="stem">Which of the following is a characteristic of hyaline cartilage?</p>
+  <ul class="opts">
+    <li>(A) It has a large amount of chondroitin sulfate.</li>
+    <li>(B) It contains a rich supply of microvessels.</li>
+    <li>(C) Cells form concentric circles in the Haversian system.</li>
+    <li>(D) The intercellular matrix contains calcium salt deposits.</li>
+  </ul>
+  <details data-kind="answer">
+    <summary>答案與詳解</summary>
+    <div data-kind="zh-translation">
+      <p><strong>中文題目：</strong>下列何者是透明軟骨的特徵？</p>
+      <p>(A) 含有大量硫酸軟骨素。</p>
+      <p>(B) 含有豐富的微血管。</p>
+      <p>(C) 細胞在哈氏系統中排成同心圓。</p>
+      <p>(D) 細胞間基質含有鈣鹽沉積。</p>
+    </div>
+    <p class="ans">答案：A</p>
+    <p class="quote">詳解原文:「( B )cartilage is a avascular tissue. ( C )Haversian system 就是骨元，是骨頭才有的特徵 ( D )該敘述為骨頭的特徵，軟骨有的是chondrotin sulfate」</p>
+    <p>與 111 年第 81 題同一個問法，這年三個錯項<b>全部都是硬骨的特徵</b>：有血管、有哈氏系統、有鈣鹽。</p>
+    <p class="src">出處：施耀翔 骨骼組織學(ppt pg.18,93,100,) ｜ BM112_Block 8 期中考(含申覆內容與結果).pdf 第 102 頁</p>
+  </details>
+</article>
+
+<article data-question-id="113-p49-q38" data-placement="chapter">
+  <span class="qhead">113 年 期中考 第 38 題</span>
+  <p class="stem">Which type of collagen fiber is most abundant in the extracellular matrix of hard bone tissue?</p>
+  <ul class="opts">
+    <li>(A) Type I</li>
+    <li>(B) Type II</li>
+    <li>(C) Type III</li>
+    <li>(D) Type IV</li>
+  </ul>
+  <details data-kind="answer">
+    <summary>答案與詳解</summary>
+    <div data-kind="zh-translation">
+      <p><strong>中文題目：</strong>硬骨組織的細胞外基質中，含量最多的是哪一型膠原纖維？</p>
+      <p>(A) 第一型</p>
+      <p>(B) 第二型</p>
+      <p>(C) 第三型</p>
+      <p>(D) 第四型</p>
+    </div>
+    <p class="ans">答案：(A)</p>
+    <p>原卷<b>詳解欄留空</b>，只給了答案與出處（ppt pg 8）。與 112 年第 80 題是同一組選項、相反的問法：<b>硬骨第一型、軟骨第二型。</b></p>
+    <p class="src">出處：施耀翔 骨骼組織學 ppt pg 8 ｜ BM113_Block8期中考詳解.pdf 第 49 頁</p>
+  </details>
+</article>
+</section>
+<section id="chapter-cram" data-chapter-kind="cram">
+<h2>六、考前速記</h2>
+<div class="cram">
+<ul>
+<li><b>編織骨＝最雜亂、細胞密度最高、最不成熟。</b>見於胚胎與骨折早期。</li>
+<li><b>板層骨＝成熟骨，也只有它有哈氏系統。</b></li>
+<li><b>海綿骨也是成熟骨，但沒有哈氏管。</b>這是 113 年的主要陷阱。</li>
+<li><b>骨元（osteon）＝哈氏系統</b>＝同心圓骨板＋中央哈氏管，屬<b>緻密骨</b>。</li>
+<li><b>骨細胞與「基質」交換物質 → hemichannel（半通道）。</b></li>
+<li><b>gap junction 連的是「另一個細胞」</b>，不是基質。緊密連接與黏著連接不通物質。</li>
+<li><b>破骨細胞來自單核造血前驅細胞</b>，<b>不是</b>間葉幹細胞；<b>多核</b>、核<b>不扁平</b>。</li>
+<li><b>破骨細胞住在 Howship's lacuna（豪希普陷窩）</b>——它自己啃出來的坑。</li>
+<li><b>破骨細胞最常見於生長板的 osteogenic zone（骨化區／吸收區）。</b>連考兩年，答案都是 (D)。</li>
+<li>理由是<b>定義</b>：有破骨細胞出現，那一區才叫吸收區。肥大區只有腫大軟骨細胞與肝醣。</li>
+<li><b>初級骨化中心 → 骨幹（diaphysis）；次級骨化中心 → 骨骺（epiphysis）。</b></li>
+<li><b>中間先開工、兩端後開工</b>，中間留下的那層軟骨就是生長板。</li>
+<li><b>幹骺端與骨內膜都不是骨化中心</b>，只是湊數的位置名稱。</li>
+<li><b>113 年同一份卷子同時考 primary 與 secondary</b>——先圈關鍵字再選。</li>
+<li><b>間接（次級）癒合：血腫 → 軟骨痂（纖維軟骨）→ 骨性骨痂 → 重塑。</b></li>
+<li><b>只有間接癒合會經過軟骨</b>；膜內骨化、骨元發育、直接癒合都不會。</li>
+<li><b>X 光看到骨痂＝最近骨折過。</b>骨領是胚胎期、生長板癒合代表停止長高、緻密骨變薄是骨鬆。</li>
+<li><b>軟骨＝第二型膠原；硬骨與纖維軟骨＝第一型。</b>軟的用二、硬的用一。</li>
+<li><b>三種軟骨的基質裡佔比最高的是水</b>，不是膠原纖維。</li>
+<li><b>彈性軟骨「有」aggrecan</b>，只是額外多了彈性纖維。</li>
+<li><b>軟骨無血管、無哈氏系統、無鈣鹽沉積</b>；有的是硫酸軟骨素與大量的水。</li>
+<li><b>耳朵那一帶（外耳、外耳道、耳咽管、會厭）是彈性軟骨</b>，不是透明軟骨。</li>
+<li><b>喉部：甲狀、環狀、杓狀＝透明軟骨；會厭、小角、楔狀＝彈性軟骨。</b>111 年申覆後 A→ABD。</li>
+<li>十八題只落在六個考點上，其中<b>十五題是重複考點</b>——這一科的 CP 值最高。</li>
+</ul>
+</div>
+</section>
+
+<!-- ================= VOCAB ================= -->
+<section id="chapter-vocab" data-chapter-kind="vocab">
+<h2>七、單字表</h2>
+<dl class="vocab">
+<dt>woven bone</dt>
+<dd><span class="root">woven＝編織的</span>　編織骨。膠原纖維隨機交錯、細胞密度高的未成熟骨。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>「亂織的布」。<b>最雜亂＋細胞最多＝它。</b></p></details></dd>
+
+<dt>lamellar (laminar) bone</dt>
+<dd><span class="root">lamella＝薄板</span>　板層骨。膠原纖維平行成層排列的成熟骨。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>lamella＝一層一層。<b>只有它有哈氏系統。</b></p></details></dd>
+
+<dt>cancellous (trabecular / spongy) bone</dt>
+<dd><span class="root">trabecula＝小樑</span>　海綿骨。由骨小樑構成，內含骨髓。<details data-kind="vocab-memory"><summary>記憶提示</summary><p><b>成熟，但沒有哈氏管。</b>這句話就是 113 年的陷阱本體。</p></details></dd>
+
+<dt>osteon (Haversian system)</dt>
+<dd><span class="root">以解剖學家 Havers 命名</span>　骨元。同心圓骨板圍繞中央的哈氏管，是緻密骨的基本單位。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>「一圈一圈＋中間一根管子」。軟骨與海綿骨都沒有。</p></details></dd>
+
+<dt>Haversian canal</dt>
+<dd><span class="root">canal＝管道</span>　哈氏管。骨元中央走血管與神經的縱向管道。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>骨頭太厚，細胞靠擴散活不了，所以要挖管子送血。</p></details></dd>
+
+<dt>osteocyte</dt>
+<dd><span class="root">osteo-（骨）+ -cyte（細胞）</span>　骨細胞。被埋在礦化基質陷窩中的成熟骨細胞。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>它是<b>被自己蓋的牆封起來</b>的成骨細胞。靠突起與半通道對外聯絡。</p></details></dd>
+
+<dt>hemichannel</dt>
+<dd><span class="root">hemi-（半）+ channel（通道）</span>　半通道。連接蛋白構成的半套通道，開口面向細胞外基質。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>hemi-＝一半。<b>一半＝只通到外面；兩半接起來才是 gap junction。</b></p></details></dd>
+
+<dt>gap junction</dt>
+<dd><span class="root">gap＝縫隙</span>　間隙連接。兩個半通道對接，連通<b>相鄰兩個細胞</b>的細胞質。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>題目問「與 extracellular matrix 交換」時它就是錯的。</p></details></dd>
+
+<dt>lacuna / canaliculi</dt>
+<dd><span class="root">拉丁 lacuna＝小窪；canaliculus＝小管</span>　骨陷窩與骨小管。骨細胞的居所與它的通道網。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>lacuna 是房間、canaliculi 是走廊。軟骨細胞也住 lacuna。</p></details></dd>
+
+<dt>osteoclast</dt>
+<dd><span class="root">osteo-（骨）+ clast（打碎者）</span>　破骨細胞。多核的骨吸收細胞。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>-clast＝打碎。<b>來自血液系統，不是間葉。</b></p></details></dd>
+
+<dt>Howship's lacuna</dt>
+<dd><span class="root">以解剖學家 Howship 命名</span>　豪希普陷窩。破骨細胞吸收骨質後留下的淺凹坑。<details data-kind="vocab-memory"><summary>記憶提示</summary><p><b>坑是它自己挖的，它就坐在坑裡。</b>切片上認破骨細胞就找這個坑。</p></details></dd>
+
+<dt>hemopoietic progenitor cell</dt>
+<dd><span class="root">hemo-（血）+ poiesis（生成）</span>　造血前驅細胞。破骨細胞的來源，單核細胞融合而成。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>「多核」就是<b>多個單核細胞融合</b>留下的證據。</p></details></dd>
+
+<dt>epiphyseal plate (growth plate)</dt>
+<dd><span class="root">epi-（上）+ physis（生長）</span>　生長板。骨骺與幹骺端之間的軟骨層，長骨變長的來源。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>它由靜止、增生、肥大、鈣化、骨化五區組成，破骨細胞只在最後一區。</p></details></dd>
+
+<dt>osteogenic zone (zone of resorption)</dt>
+<dd><span class="root">osteo-（骨）+ genic（生成）；resorption＝吸收</span>　骨化區／吸收區，生長板最靠骨幹的一區。<details data-kind="vocab-memory"><summary>記憶提示</summary><p><b>破骨細胞出現，這一區才有這個名字</b>——答案是定義出來的。</p></details></dd>
+
+<dt>diaphysis</dt>
+<dd><span class="root">dia-（貫穿）+ physis（生長）</span>　骨幹。長骨中段，<b>初級</b>骨化中心所在。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>dia-＝穿過中間。<b>中間先開工。</b></p></details></dd>
+
+<dt>epiphysis</dt>
+<dd><span class="root">epi-（在上）+ physis</span>　骨骺。長骨兩端，<b>次級</b>骨化中心所在。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>epi-＝在上／在端。<b>兩端後開工。</b></p></details></dd>
+
+<dt>endosteum</dt>
+<dd><span class="root">endo-（內）+ osteum（骨）</span>　骨內膜。襯在骨髓腔內側的薄層，含骨前驅細胞。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>它是<b>膜</b>，不是骨化中心。骨化中心題出現它就是湊數的。</p></details></dd>
+
+<dt>soft callus / bony callus</dt>
+<dd><span class="root">拉丁 callus＝硬皮、繭</span>　軟骨痂與骨性骨痂，骨折間接癒合的兩個階段。<details data-kind="vocab-memory"><summary>記憶提示</summary><p><b>先軟後硬</b>：軟骨痂是纖維軟骨，之後才換成骨。</p></details></dd>
+
+<dt>direct / indirect bone healing</dt>
+<dd><span class="root">direct＝直接（一級）；indirect＝間接（次級）</span>　骨折癒合的兩種路徑。<details data-kind="vocab-memory"><summary>記憶提示</summary><p><b>只有間接會經過軟骨。</b>直接癒合需要斷端被壓得完全無縫。</p></details></dd>
+
+<dt>bony collar</dt>
+<dd><span class="root">collar＝衣領、頸圈</span>　骨領。軟骨內骨化早期在骨幹周圍先形成的一圈骨。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>它是<b>胚胎期</b>的東西，不是骨折的證據——112 年拿它當誘餌。</p></details></dd>
+
+<dt>hyaline cartilage</dt>
+<dd><span class="root">希臘 hyalos＝玻璃</span>　透明軟骨。第二型膠原、基質均勻，見於關節面、氣管與生長板。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>hyalos＝玻璃，因為基質看起來像毛玻璃。<b>喉部的甲狀、環狀、杓狀都是它。</b></p></details></dd>
+
+<dt>elastic cartilage</dt>
+<dd><span class="root">elastic＝有彈性的</span>　彈性軟骨。第二型膠原加上大量彈性纖維，見於外耳、耳咽管、會厭。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>「要能折又要彈回來」的地方。<b>它也有 aggrecan。</b></p></details></dd>
+
+<dt>fibrocartilage</dt>
+<dd><span class="root">fibro-（纖維）</span>　纖維軟骨。<b>第一型</b>膠原成粗束，見於椎間盤、半月板與軟骨痂。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>名字有「軟骨」，膠原卻跟<b>硬骨同型</b>——因為它的工作是抗拉。</p></details></dd>
+
+<dt>chondroitin sulfate / aggrecan</dt>
+<dd><span class="root">chondro-（軟骨）+ -itin；aggregate＝聚集</span>　硫酸軟骨素與聚集蛋白聚糖，軟骨基質留住水分的成分。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>它們吸水，所以<b>軟骨基質裡最多的其實是水</b>。</p></details></dd>
+
+<dt>avascular</dt>
+<dd><span class="root">a-（無）+ vascular（血管）</span>　無血管。軟骨的關鍵特徵，養分靠擴散。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>沒有血管＝修復慢。凡是選項寫「rich supply of microvessels」就是錯的。</p></details></dd>
+</dl>
+</section>
+<section id="chapter-final" data-chapter-kind="final_questions">
+<h2>八、歷年考題總複習</h2>
+<p class="meta">依年度由新到舊、同年依原始題號排列。共 18 題（111／112／113 期中考各 6 題）。<b style="color:#f08a8a">紅框</b>＝同一考點在兩個以上年度重複出現。</p>
+<h3><span class="yearchip">113 年</span>期中考 第 34 題</h3>
+<article data-question-id="113-p44-q34" data-placement="final" class="repeat">
+  <span class="qhead">113 年 期中考 第 34 題</span><span class="repeat-badge">重複考點 ×2</span>
+  <p class="repeat-note">同考點：112 第76題　—　骨的成熟度分類：編織骨最雜亂、只有板層骨有哈氏管</p>
+  <p class="stem">From a microscopic perspective of bone structure, which of the following contains Haversian canals?</p>
+  <ul class="opts"><li>(A) Woven bone</li><li>(B) Cancellous bone</li><li>(C) Soft callus</li><li>(D) Laminar bone</li></ul>
+  <details data-kind="answer"><summary>答案與詳解</summary>
+    <div data-kind="zh-translation"><p><strong>中文題目：</strong>從骨構造的顯微觀點來看，下列何者含有哈氏管？</p>
+      <p>(A) 編織骨</p>
+      <p>(B) 海綿骨</p>
+      <p>(C) 軟骨痂</p>
+      <p>(D) 板層骨</p></div>
+    <p class="ans">答案：(D)</p>
+    <p>只有板層骨有哈氏系統；海綿骨雖成熟但沒有。<span class="src"> ｜ BM113_Block8期中考詳解 第 44 頁</span></p>
+  </details>
+</article>
+<article data-question-id="113-p45-q35" data-placement="final" class="repeat">
+  <span class="qhead">113 年 期中考 第 35 題 ｜ 來源答案欄</span><span class="repeat-badge">重複考點 ×4</span>
+  <p class="repeat-note">同考點：111 第78題、112 第77題、113 第39題　—　初級與次級骨化中心的位置：次級在骨骺、初級在骨幹</p>
+  <p class="stem">In the process of endochondral ossification of long bones, where is the secondary ossification center located?</p>
+  <ul class="opts"><li>(A) Diaphysis</li><li>(B) Epiphysis</li><li>(C) Metaphysis</li><li>(D) Endosteum</li></ul>
+  <details data-kind="answer"><summary>答案與詳解</summary>
+    <div data-kind="zh-translation"><p><strong>中文題目：</strong>在長骨的軟骨內骨化過程中，<b>次級</b>骨化中心位於何處？</p>
+      <p>(A) 骨幹</p>
+      <p>(B) 骨骺</p>
+      <p>(C) 幹骺端</p>
+      <p>(D) 骨內膜</p></div>
+    <p class="ans">答案：(B)</p>
+    <p>與 112 第 77 題逐字相同，次級骨化中心在骨骺。<span class="src"> ｜ BM113_Block8期中考詳解 第 45 頁</span></p>
+  </details>
+</article>
+<article data-question-id="113-p46-q36" data-placement="final" class="repeat">
+  <span class="qhead">113 年 期中考 第 36 題</span><span class="repeat-badge">重複考點 ×2</span>
+  <p class="repeat-note">同考點：112 第78題　—　破骨細胞最常出現在生長板的哪一區</p>
+  <p class="stem">Osteoclasts are most commonly found in which region?</p>
+  <ul class="opts"><li>(A) Zone of cell proliferation in the epiphyseal plate</li><li>(B) Zone of hypertrophy and calcification in the epiphyseal plate</li><li>(C) Zone of reserve cartilage in the epiphyseal plate</li><li>(D) Osteogenic zone in the epiphyseal plate</li></ul>
+  <details data-kind="answer"><summary>答案與詳解</summary>
+    <div data-kind="zh-translation"><p><strong>中文題目：</strong>破骨細胞最常在哪一區被發現？</p>
+      <p>(A) 生長板的細胞增生區</p>
+      <p>(B) 生長板的肥大與鈣化區</p>
+      <p>(C) 生長板的靜止軟骨區</p>
+      <p>(D) 生長板的骨化區</p></div>
+    <p class="ans">答案：(D)</p>
+    <p>與 112 第 78 題四個選項一字不差，答案同樣是骨化區。<span class="src"> ｜ BM113_Block8期中考詳解 第 46 頁</span></p>
+  </details>
+</article>
+<article data-question-id="113-p47-q37" data-placement="final" class="repeat">
+  <span class="qhead">113 年 期中考 第 37 題</span><span class="repeat-badge">重複考點 ×2</span>
+  <p class="repeat-note">同考點：112 第79題　—　骨折癒合：間接癒合先形成纖維軟骨性軟骨痂再變骨痂</p>
+  <p class="stem">Which of the following involves the participation of cartilage?</p>
+  <ul class="opts"><li>(A) Intramembranous ossification</li><li>(B) Development of osteons</li><li>(C) Direct bone healing</li><li>(D) Indirect bone healing</li></ul>
+  <details data-kind="answer"><summary>答案與詳解</summary>
+    <div data-kind="zh-translation"><p><strong>中文題目：</strong>下列何者的過程中<b>有軟骨參與</b>？</p>
+      <p>(A) 膜內骨化</p>
+      <p>(B) 骨元的發育</p>
+      <p>(C) 直接骨癒合</p>
+      <p>(D) 間接骨癒合</p></div>
+    <p class="ans">答案：(D)</p>
+    <p>只有間接癒合會經過軟骨——軟骨痂就是纖維軟骨。<span class="src"> ｜ BM113_Block8期中考詳解 第 47 頁</span></p>
+  </details>
+</article>
+<article data-question-id="113-p49-q38" data-placement="final" class="repeat">
+  <span class="qhead">113 年 期中考 第 38 題 ｜ 來源答案欄</span><span class="repeat-badge">重複考點 ×3</span>
+  <p class="repeat-note">同考點：111 第79題、112 第80題　—　膠原蛋白型別：軟骨第二型、硬骨第一型、纖維軟骨第一型</p>
+  <p class="stem">Which type of collagen fiber is most abundant in the extracellular matrix of hard bone tissue?</p>
+  <ul class="opts"><li>(A) Type I</li><li>(B) Type II</li><li>(C) Type III</li><li>(D) Type IV</li></ul>
+  <details data-kind="answer"><summary>答案與詳解</summary>
+    <div data-kind="zh-translation"><p><strong>中文題目：</strong>硬骨組織的細胞外基質中，含量最多的是哪一型膠原纖維？</p>
+      <p>(A) 第一型</p>
+      <p>(B) 第二型</p>
+      <p>(C) 第三型</p>
+      <p>(D) 第四型</p></div>
+    <p class="ans">答案：(A)</p>
+    <p>硬骨的細胞外基質以第一型膠原最多，與軟骨的第二型配成一組。<span class="src"> ｜ BM113_Block8期中考詳解 第 49 頁</span></p>
+  </details>
+</article>
+<article data-question-id="113-p49-q39" data-placement="final" class="repeat">
+  <span class="qhead">113 年 期中考 第 39 題</span><span class="repeat-badge">重複考點 ×4</span>
+  <p class="repeat-note">同考點：111 第78題、112 第77題、113 第35題　—　初級與次級骨化中心的位置：次級在骨骺、初級在骨幹</p>
+  <p class="stem">Where is the primary ossification center located during endochondral ossification of a long bone?</p>
+  <ul class="opts"><li>(A) Diaphysis</li><li>(B) Epiphysis</li><li>(C) Metaphysis</li><li>(D) Endosteum</li></ul>
+  <details data-kind="answer"><summary>答案與詳解</summary>
+    <div data-kind="zh-translation"><p><strong>中文題目：</strong>長骨的軟骨內骨化過程中，<b>初級</b>骨化中心位於何處？</p>
+      <p>(A) 骨幹</p>
+      <p>(B) 骨骺</p>
+      <p>(C) 幹骺端</p>
+      <p>(D) 骨內膜</p></div>
+    <p class="ans">答案：(A)</p>
+    <p>初級骨化中心在骨幹；與同卷第 35 題只差一個字，答案卻相反。<span class="src"> ｜ BM113_Block8期中考詳解 第 49 頁</span></p>
+  </details>
+</article>
+<h3><span class="yearchip">112 年</span>期中考 第 76 題</h3>
+<article data-question-id="112-p97-q76" data-placement="final" class="repeat">
+  <span class="qhead">112 年 期中考 第 76 題</span><span class="repeat-badge">重複考點 ×2</span>
+  <p class="repeat-note">同考點：113 第34題　—　骨的成熟度分類：編織骨最雜亂、只有板層骨有哈氏管</p>
+  <p class="stem">From a microscopic perspective of bone tissue, which type of cell arrangement is the most disorganized and has the highest cell density?</p>
+  <ul class="opts"><li>(A) Woven bone</li><li>(B) Cancellous bone</li><li>(C) Osteon</li><li>(D) Laminar bone</li></ul>
+  <details data-kind="answer"><summary>答案與詳解</summary>
+    <div data-kind="zh-translation"><p><strong>中文題目：</strong>從骨組織的顯微觀點來看，哪一種細胞排列<b>最雜亂</b>且<b>細胞密度最高</b>？</p>
+      <p>(A) 編織骨</p>
+      <p>(B) 海綿骨</p>
+      <p>(C) 骨元</p>
+      <p>(D) 板層骨</p></div>
+    <p class="ans">答案：A</p>
+    <p>最雜亂加細胞最多就是最不成熟，答案是編織骨。<span class="src"> ｜ BM112_Block 8 期中考(含申覆內容與結果) 第 97 頁</span></p>
+  </details>
+</article>
+<article data-question-id="112-p98-q77" data-placement="final" class="repeat">
+  <span class="qhead">112 年 期中考 第 77 題 ｜ 來源答案欄</span><span class="repeat-badge">重複考點 ×4</span>
+  <p class="repeat-note">同考點：111 第78題、113 第35題、113 第39題　—　初級與次級骨化中心的位置：次級在骨骺、初級在骨幹</p>
+  <p class="stem">In the process of endochondral ossification of long bones, where is the secondary ossification center located?</p>
+  <ul class="opts"><li>(A) Diaphysis</li><li>(B) Epiphysis</li><li>(C) Metaphysis</li><li>(D) Endosteum</li></ul>
+  <details data-kind="answer"><summary>答案與詳解</summary>
+    <div data-kind="zh-translation"><p><strong>中文題目：</strong>在長骨的軟骨內骨化過程中，<b>次級</b>骨化中心位於何處？</p>
+      <p>(A) 骨幹</p>
+      <p>(B) 骨骺</p>
+      <p>(C) 幹骺端</p>
+      <p>(D) 骨內膜</p></div>
+    <p class="ans">答案：B</p>
+    <p>與 111 第 78 題同一題，只把填空改成問句，答案仍是骨骺。<span class="src"> ｜ BM112_Block 8 期中考(含申覆內容與結果) 第 98 頁</span></p>
+  </details>
+</article>
+<article data-question-id="112-p99-q78" data-placement="final" class="repeat">
+  <span class="qhead">112 年 期中考 第 78 題</span><span class="repeat-badge">重複考點 ×2</span>
+  <p class="repeat-note">同考點：113 第36題　—　破骨細胞最常出現在生長板的哪一區</p>
+  <p class="stem">Osteoclasts are most commonly found in which region?</p>
+  <ul class="opts"><li>(A) Zone of cell proliferation in the epiphyseal plate</li><li>(B) Zone of hypertrophy and calcification in the epiphyseal plate</li><li>(C) Zone of reserve cartilage in the epiphyseal plate</li><li>(D) Osteogenic zone in the epiphyseal plate</li></ul>
+  <details data-kind="answer"><summary>答案與詳解</summary>
+    <div data-kind="zh-translation"><p><strong>中文題目：</strong>破骨細胞最常在哪一區被發現？</p>
+      <p>(A) 生長板的細胞增生區</p>
+      <p>(B) 生長板的肥大與鈣化區</p>
+      <p>(C) 生長板的靜止軟骨區</p>
+      <p>(D) 生長板的骨化區</p></div>
+    <p class="ans">答案：D（申覆後維持原答案）</p>
+    <p>有破骨細胞出現，那一區才叫吸收區；申覆維持原答案。<span class="src"> ｜ BM112_Block 8 期中考(含申覆內容與結果) 第 99 頁</span></p>
+  </details>
+</article>
+<article data-question-id="112-p101-q79" data-placement="final" class="repeat">
+  <span class="qhead">112 年 期中考 第 79 題</span><span class="repeat-badge">重複考點 ×2</span>
+  <p class="repeat-note">同考點：113 第37題　—　骨折癒合：間接癒合先形成纖維軟骨性軟骨痂再變骨痂</p>
+  <p class="stem">In an X-ray examination of an emergency patient, what structure would indicate that the patient might have suffered multiple fractures recently?</p>
+  <ul class="opts"><li>(A) Bony collar</li><li>(B) Growth plate fusion</li><li>(C) Bony callus</li><li>(D) Thinning of compact bone</li></ul>
+  <details data-kind="answer"><summary>答案與詳解</summary>
+    <div data-kind="zh-translation"><p><strong>中文題目：</strong>在一位急診病人的 X 光檢查中，哪一種構造會提示這位病人<b>最近可能發生過多處骨折</b>？</p>
+      <p>(A) 骨領</p>
+      <p>(B) 生長板癒合</p>
+      <p>(C) 骨性骨痂</p>
+      <p>(D) 緻密骨變薄</p></div>
+    <p class="ans">答案：C</p>
+    <p>X 光上的骨痂代表最近骨折過；骨領是胚胎期、緻密骨變薄是骨鬆。<span class="src"> ｜ BM112_Block 8 期中考(含申覆內容與結果) 第 101 頁</span></p>
+  </details>
+</article>
+<article data-question-id="112-p101-q80" data-placement="final" class="repeat">
+  <span class="qhead">112 年 期中考 第 80 題 ｜ 來源答案欄</span><span class="repeat-badge">重複考點 ×3</span>
+  <p class="repeat-note">同考點：111 第79題、113 第38題　—　膠原蛋白型別：軟骨第二型、硬骨第一型、纖維軟骨第一型</p>
+  <p class="stem">Which type of collagen fiber is most abundant in the extracellular matrix of cartilage tissue?</p>
+  <ul class="opts"><li>(A) Type I</li><li>(B) Type II</li><li>(C) Type III</li><li>(D) Type IV</li></ul>
+  <details data-kind="answer"><summary>答案與詳解</summary>
+    <div data-kind="zh-translation"><p><strong>中文題目：</strong>軟骨組織的細胞外基質中，含量最多的是哪一型膠原纖維？</p>
+      <p>(A) 第一型</p>
+      <p>(B) 第二型</p>
+      <p>(C) 第三型</p>
+      <p>(D) 第四型</p></div>
+    <p class="ans">答案：B</p>
+    <p>軟骨的細胞外基質以第二型膠原最多。<span class="src"> ｜ BM112_Block 8 期中考(含申覆內容與結果) 第 101 頁</span></p>
+  </details>
+</article>
+<article data-question-id="112-p102-q81" data-placement="final" class="repeat">
+  <span class="qhead">112 年 期中考 第 81 題</span><span class="repeat-badge">重複考點 ×2</span>
+  <p class="repeat-note">同考點：111 第81題　—　透明軟骨的特徵：無血管、含硫酸軟骨素、沒有骨元構造</p>
+  <p class="stem">Which of the following is a characteristic of hyaline cartilage?</p>
+  <ul class="opts"><li>(A) It has a large amount of chondroitin sulfate.</li><li>(B) It contains a rich supply of microvessels.</li><li>(C) Cells form concentric circles in the Haversian system.</li><li>(D) The intercellular matrix contains calcium salt deposits.</li></ul>
+  <details data-kind="answer"><summary>答案與詳解</summary>
+    <div data-kind="zh-translation"><p><strong>中文題目：</strong>下列何者是透明軟骨的特徵？</p>
+      <p>(A) 含有大量硫酸軟骨素。</p>
+      <p>(B) 含有豐富的微血管。</p>
+      <p>(C) 細胞在哈氏系統中排成同心圓。</p>
+      <p>(D) 細胞間基質含有鈣鹽沉積。</p></div>
+    <p class="ans">答案：A</p>
+    <p>三個錯項全是硬骨的特徵：有血管、有哈氏系統、有鈣鹽。<span class="src"> ｜ BM112_Block 8 期中考(含申覆內容與結果) 第 102 頁</span></p>
+  </details>
+</article>
+<h3><span class="yearchip">111 年</span>期中考 第 76 題</h3>
+<article data-question-id="111-p63-q76" data-placement="final">
+  <span class="qhead">111 年 期中考 第 76 題</span>
+  
+  <p class="stem">Which structure can make osteocytes exchange material with the extracellular matrix?</p>
+  <ul class="opts"><li>(A) tight junction</li><li>(B) adhering junction</li><li>(C) hemichannel</li><li>(D) gap junction</li></ul>
+  <details data-kind="answer"><summary>答案與詳解</summary>
+    <div data-kind="zh-translation"><p><strong>中文題目：</strong>哪一種構造能讓骨細胞與細胞外基質進行物質交換？</p>
+      <p>(A) 緊密連接</p>
+      <p>(B) 黏著連接</p>
+      <p>(C) 半通道</p>
+      <p>(D) 間隙連接</p></div>
+    <p class="ans">答案：(C) hemichannel</p>
+    <p>要與「基質」交換就是半通道；gap junction 連的是另一個細胞。<span class="src"> ｜ BM111 BLOCK-8 期中考詳解 第 63 頁</span></p>
+  </details>
+</article>
+<article data-question-id="111-p63-q77" data-placement="final">
+  <span class="qhead">111 年 期中考 第 77 題</span>
+  
+  <p class="stem">Which statement is correct about osteoclasts?</p>
+  <ul class="opts"><li>(A) Can be found in Howship&#x27;s lacunae</li><li>(B) Single nucleus</li><li>(C) Flatten shape of the nucleus</li><li>(D) Developing from mesenchymal stem cells</li></ul>
+  <details data-kind="answer"><summary>答案與詳解</summary>
+    <div data-kind="zh-translation"><p><strong>中文題目：</strong>關於破骨細胞的敘述，何者<b>正確</b>？</p>
+      <p>(A) 可在豪希普陷窩中發現。</p>
+      <p>(B) 單核。</p>
+      <p>(C) 細胞核呈扁平狀。</p>
+      <p>(D) 由間葉幹細胞發育而來。</p></div>
+    <p class="ans">答案：(A) Can be found in Howship's lacunae</p>
+    <p>破骨細胞多核、核不扁平、來自造血前驅細胞，住在自己啃出的豪希普陷窩。<span class="src"> ｜ BM111 BLOCK-8 期中考詳解 第 63 頁</span></p>
+  </details>
+</article>
+<article data-question-id="111-p64-q78" data-placement="final" class="repeat">
+  <span class="qhead">111 年 期中考 第 78 題 ｜ 來源答案欄</span><span class="repeat-badge">重複考點 ×4</span>
+  <p class="repeat-note">同考點：112 第77題、113 第35題、113 第39題　—　初級與次級骨化中心的位置：次級在骨骺、初級在骨幹</p>
+  <p class="stem">The secondary ossification center of long bone is localized in________.</p>
+  <ul class="opts"><li>(A) diaphysis</li><li>(B) epiphysis</li><li>(C) metaphysis</li><li>(D) endosteum</li></ul>
+  <details data-kind="answer"><summary>答案與詳解</summary>
+    <div data-kind="zh-translation"><p><strong>中文題目：</strong>長骨的<b>次級</b>骨化中心位於＿＿＿＿。</p>
+      <p>(A) 骨幹</p>
+      <p>(B) 骨骺</p>
+      <p>(C) 幹骺端</p>
+      <p>(D) 骨內膜</p></div>
+    <p class="ans">答案：(B) epiphysis</p>
+    <p>次級骨化中心在骨骺；幹骺端與骨內膜都不是骨化中心。<span class="src"> ｜ BM111 BLOCK-8 期中考詳解 第 64 頁</span></p>
+  </details>
+</article>
+<article data-question-id="111-p65-q79" data-placement="final" class="repeat">
+  <span class="qhead">111 年 期中考 第 79 題</span><span class="repeat-badge">重複考點 ×3</span>
+  <p class="repeat-note">同考點：112 第80題、113 第38題　—　膠原蛋白型別：軟骨第二型、硬骨第一型、纖維軟骨第一型</p>
+  <p class="stem">Which statement about cartilage is correct?</p>
+  <ul class="opts"><li>(A) Elastic cartilage containing elastic fiber without any aggrecan protein.</li><li>(B) The major type of collagen fiber is type II in hyaline cartilage.</li><li>(C) The major type of collagen fiber is type II in fibrocartilage.</li><li>(D) The major component of the extracellular matrix in all types of cartilage is collagen fiber.</li></ul>
+  <details data-kind="answer"><summary>答案與詳解</summary>
+    <div data-kind="zh-translation"><p><strong>中文題目：</strong>關於軟骨的敘述，何者<b>正確</b>？</p>
+      <p>(A) 彈性軟骨含有彈性纖維，但不含任何聚集蛋白聚糖。</p>
+      <p>(B) 透明軟骨中主要的膠原纖維是第二型。</p>
+      <p>(C) 纖維軟骨中主要的膠原纖維是第二型。</p>
+      <p>(D) 所有類型軟骨的細胞外基質中，主要成分都是膠原纖維。</p></div>
+    <p class="ans">答案：(B) The major type of collagen fiber is type II in hyaline cartilage.</p>
+    <p>彈性軟骨有 aggrecan、纖維軟骨是第一型、基質裡最多的是水。<span class="src"> ｜ BM111 BLOCK-8 期中考詳解 第 65 頁</span></p>
+  </details>
+</article>
+<article data-question-id="111-p66-q80" data-placement="final">
+  <span class="qhead">111 年 期中考 第 80 題</span>
+  
+  <p class="stem">Which of the following laryngeal cartilages does not have the structure of elastic cartilage?</p>
+  <ul class="opts"><li>(A) Cricoid cartilage</li><li>(B) Thyroid cartilage</li><li>(C) Epiglottic cartilage</li><li>(D) Arytenoid cartilage</li></ul>
+  <details data-kind="answer"><summary>答案與詳解</summary>
+    <div data-kind="zh-translation"><p><strong>中文題目：</strong>下列哪一個喉部軟骨<b>不具有</b>彈性軟骨的結構？</p>
+      <p>(A) 環狀軟骨</p>
+      <p>(B) 甲狀軟骨</p>
+      <p>(C) 會厭軟骨</p>
+      <p>(D) 杓狀軟骨</p></div>
+    <p class="ans">答案：申覆後 (A)(B)(D) 皆給分（原答案 (A)）</p>
+    <p>甲狀、環狀、杓狀都是透明軟骨，喉部只有會厭是彈性；申覆後 A 改為 ABD。<span class="src"> ｜ BM111 BLOCK-8 期中考詳解 第 66 頁</span></p>
+  </details>
+</article>
+<article data-question-id="111-p67-q81" data-placement="final" class="repeat">
+  <span class="qhead">111 年 期中考 第 81 題</span><span class="repeat-badge">重複考點 ×2</span>
+  <p class="repeat-note">同考點：112 第81題　—　透明軟骨的特徵：無血管、含硫酸軟骨素、沒有骨元構造</p>
+  <p class="stem">Which of the following is a characteristic of hyaline cartilage?</p>
+  <ul class="opts"><li>(A) Can be found in the ear</li><li>(B) Avascular</li><li>(C) Concentric lamellae</li><li>(D) Developed from mesenchymal stem cell</li></ul>
+  <details data-kind="answer"><summary>答案與詳解</summary>
+    <div data-kind="zh-translation"><p><strong>中文題目：</strong>下列何者是透明軟骨的特徵？</p>
+      <p>(A) 可在耳朵找到。</p>
+      <p>(B) 無血管。</p>
+      <p>(C) 同心圓骨板。</p>
+      <p>(D) 由間葉幹細胞發育而來。</p></div>
+    <p class="ans">答案：(B) Avascular</p>
+    <p>軟骨無血管；耳朵是彈性軟骨，同心圓骨板是緻密骨。<span class="src"> ｜ BM111 BLOCK-8 期中考詳解 第 67 頁</span></p>
+  </details>
+</article>
+<p class="ending">十八題、六個考點。最雜亂的是編織骨、有管子的是板層骨、中間先開工、只有間接癒合經過軟骨、軟的用二硬的用一。</p>
+</section>
+</div>
+</body>
+</html>
