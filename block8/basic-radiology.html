@@ -1,0 +1,758 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>基礎影像學原理 蔡蕙怡</title>
+<style>
+:root{
+  color-scheme: dark;
+  --bg:#0b0e13; --panel:#141922; --panel2:#1b2230; --line:#2a3340;
+  --ink:#e8ecf3; --dim:#a3adbd; --gold:#e5b567; --cyan:#6fd3c7;
+  --rose:#e88b8b; --violet:#a99bf0;
+}
+*{box-sizing:border-box}
+html{font-size:150%}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font-family:"Noto Sans TC","PingFang TC","Helvetica Neue",system-ui,sans-serif;
+  line-height:1.85; overflow-wrap:anywhere;}
+/* Width follows the device, not the font size: px breakpoints stay put
+   while rem-based type scales with the 150% root. */
+.container{width:100%;max-width:none;margin:0 auto;
+  padding:clamp(.85rem,2.2vw,2.2rem);}
+@media (min-width:760px){ .container{max-width:730px} }
+@media (min-width:1024px){ .container{max-width:980px} }
+@media (min-width:1440px){ .container{max-width:1300px} }
+@media (min-width:1920px){ .container{max-width:1640px} }
+img{max-width:100%;height:auto}
+svg{max-width:100%;height:auto;display:block}
+h1{font-size:1.6rem;line-height:1.35;margin:.2rem 0 .6rem}
+h2{font-size:1.24rem;margin:2.4rem 0 .7rem;padding-bottom:.4rem;
+  border-bottom:1px solid var(--line);color:var(--gold)}
+h3{font-size:1.06rem;margin:1.5rem 0 .5rem;color:var(--cyan)}
+p{margin:.7rem 0}
+header#subject-overview{background:linear-gradient(160deg,#182031,#0e1219);
+  border:1px solid var(--line);border-radius:14px;padding:1.2rem;margin:.6rem 0 1.4rem}
+.meta{color:var(--dim);font-size:.86rem;margin:.3rem 0 0}
+nav#toc{background:var(--panel);border:1px solid var(--line);
+  border-radius:12px;padding:.9rem 1.1rem;margin:1.2rem 0}
+nav#toc ol{margin:.4rem 0 0;padding-left:1.3rem}
+nav#toc a{color:var(--ink);text-decoration:none;border-bottom:1px dotted var(--line)}
+.story{background:var(--panel2);border-left:3px solid var(--violet);
+  border-radius:0 10px 10px 0;padding:.9rem 1.1rem;margin:1.1rem 0}
+.story .tag{display:block;color:var(--violet);font-size:.78rem;
+  letter-spacing:.12em;margin-bottom:.35rem}
+.reality{background:var(--panel);border-left:3px solid var(--cyan);
+  border-radius:0 10px 10px 0;padding:.9rem 1.1rem;margin:1.1rem 0}
+.reality .tag{display:block;color:var(--cyan);font-size:.78rem;
+  letter-spacing:.12em;margin-bottom:.35rem}
+.keybox{background:#12202b;border:1px solid #26485a;border-radius:10px;
+  padding:.85rem 1rem;margin:1.1rem 0}
+.keybox b{color:var(--cyan)}
+.warn{background:#2a1c1c;border:1px solid #573434;border-radius:10px;
+  padding:.85rem 1rem;margin:1.1rem 0;color:#f0cfcf}
+article{background:var(--panel);border:1px solid var(--line);
+  border-radius:12px;padding:.95rem 1.05rem;margin:1.1rem 0}
+article .qhead{display:block;color:var(--gold);font-size:.82rem;
+  letter-spacing:.06em;margin-bottom:.45rem}
+article .stem{margin:.2rem 0 .5rem}
+article ul.opts{list-style:none;margin:.3rem 0 .2rem;padding:0}
+article ul.opts li{padding:.16rem 0 .16rem .2rem;color:#dbe2ec}
+details{background:#0f141c;border:1px solid var(--line);
+  border-radius:10px;padding:.15rem .8rem;margin:.6rem 0}
+details summary{cursor:pointer;padding:.6rem 0;color:var(--gold);
+  font-weight:600;min-height:44px;display:flex;align-items:center}
+details[data-kind="answer"] .ans{font-size:1.05rem;color:var(--cyan);font-weight:700}
+div[data-kind="zh-translation"]{background:#141c26;border:1px dashed #33465c;
+  border-radius:8px;padding:.7rem .85rem;margin:.5rem 0 .8rem}
+div[data-kind="zh-translation"] p{margin:.35rem 0}
+.src{color:var(--dim);font-size:.84rem;margin-top:.6rem}
+.quote{border-left:2px solid var(--gold);padding-left:.75rem;color:#f0e2c6}
+.infer{color:#f0d9a8;font-size:.92rem}
+figure{margin:1.3rem 0;background:var(--panel2);border:1px solid var(--line);
+  border-radius:12px;padding:.9rem}
+figcaption{color:var(--dim);font-size:.85rem;margin-top:.6rem;text-align:center}
+dl.vocab{margin:0}
+dl.vocab dt{color:var(--cyan);font-weight:700;margin-top:.9rem}
+dl.vocab dd{margin:.2rem 0 0;padding-left:0}
+dl.vocab .root{color:var(--dim);font-size:.86rem}
+.cram{background:var(--panel);border:1px solid var(--line);
+  border-radius:12px;padding:.4rem 1.1rem;margin:1rem 0}
+.cram li{margin:.55rem 0}
+.yearchip{display:inline-block;background:#233046;color:#bcd0ea;
+  border-radius:999px;padding:.05rem .55rem;font-size:.76rem;margin-right:.4rem}
+article.repeat{border:2px solid #e05252;box-shadow:0 0 0 3px rgba(224,82,82,.12)}
+article.repeat .qhead{color:#f08a8a}
+.repeat-badge{display:inline-block;background:#3a1c1c;border:1px solid #7d3a3a;
+  color:#f0a8a8;border-radius:999px;padding:.1rem .6rem;font-size:.76rem;
+  margin-left:.4rem;white-space:nowrap}
+.repeat-note{color:#e6a5a5;font-size:.84rem;margin:.45rem 0 0}
+figure.boxfig{margin:1.5rem 0 .5rem;background:transparent;border:0;padding:0}
+figure.boxfig img{border-radius:12px;border:1px solid var(--line);display:block;width:100%}
+figure.boxfig figcaption{color:var(--dim);font-size:.82rem;margin-top:.5rem;
+  text-align:left;line-height:1.6}
+figure.boxfig .figtag{color:var(--violet);font-size:.76rem;letter-spacing:.1em;
+  display:block;margin-bottom:.3rem}
+.ending{color:var(--dim);font-style:italic;margin:1.6rem 0 2.4rem}
+</style></head>
+<body>
+<div class="container">
+
+<header id="subject-overview">
+  <h1>基礎影像學原理</h1>
+  <p>這一科要回答的其實只有兩個問題：<b>你眼前這張圖，灰階是怎麼來的？</b>以及<b>這個病人，你該開哪一種檢查？</b>前者是物理，後者是臨床決策——九題全部落在這兩格裡。</p>
+  <p>而且題目自己會告訴你答案落在哪一格。凡是出現 HU、window、STIR 這種<b>參數</b>，考的是灰階怎麼算；凡是出現「病人外傷後」「摸不到足背動脈」這種<b>情境</b>，考的是先做哪一項。兩題 ABCS 三年考了兩次、兩題「哪一段敘述是錯的」也考了兩次，選項只是把順序打散——認得出來就是送分。</p>
+  <p class="meta">命題老師：蔡蕙怡 ｜ 收錄 111、112、113 期中考，各 3 題共 9 題（111 年卷面老師姓名誤植為「蔡佽學」）</p>
+</header>
+
+<nav id="toc">
+  <b>目錄</b>
+  <ol>
+    <li><a href="#chapter-1">灰階是算出來的：HU 與窗寬窗位</a></li>
+    <li><a href="#chapter-2">MRI 的序列在關掉什麼</a></li>
+    <li><a href="#chapter-3">讀 X 光的四個關卡：ABCS</a></li>
+    <li><a href="#chapter-4">哪一種問題，配哪一種檢查</a></li>
+    <li><a href="#chapter-cram">考前速記</a></li>
+    <li><a href="#chapter-vocab">單字表</a></li>
+    <li><a href="#chapter-final">歷年考題總複習</a></li>
+  </ol>
+</nav>
+<section id="chapter-1" data-chapter-kind="story">
+<h2>一、灰階是算出來的：HU 與窗寬窗位</h2>
+
+<figure class="boxfig" data-visual-id="rdbox-01-story" data-image-kind="story" data-explanation-verified="true">
+<span class="figtag">情境場景</span>
+<img data-visual-id="rdbox-01-story" src="img/rdbox-01-story.webp" alt="情境場景：同一張 CT，轉一下旋鈕，整張圖的黑白就完全變了。" loading="lazy" decoding="async" width="1600" height="914">
+<figcaption>情境場景：同一張 CT，轉一下旋鈕，整張圖的黑白就完全變了。</figcaption>
+</figure>
+<div class="story" data-prose-kind="story"><span class="tag">故事</span>
+<p>深夜的判讀室，燈箱前坐著<b>放射科醫師</b>。實習醫師端著一杯咖啡走進來，指著螢幕上的 CT：「這張為什麼看起來一片白？我在急診看到的明明不長這樣。」</p>
+<p>放射科醫師沒回答，只是伸手轉了一下面板上的兩個旋鈕。同一張影像，瞬間從一片慘白變成層次分明的灰。</p>
+<p>「這張圖<b>本身沒有黑白</b>。」他說，「每一個像素裡面存的是一個<b>數字</b>——這塊組織擋掉多少 X 光。黑白是我們<b>後來才決定的</b>。」</p>
+<p>「那數字怎麼定？」</p>
+<p>「訂兩個錨點就好：<b>水是 0，空氣是 −1000</b>。剩下的東西照著這把尺排。骨頭擋得多，正好幾百；脂肪擋得比水還少，所以是<b>負的</b>——大約 −100。」</p>
+<p>「那旋鈕呢？」</p>
+<p>「那是在告訴螢幕：<b>我只想看這一段</b>。第一個旋鈕叫<b>窗位</b>（window level），決定這一段的<b>中心</b>；第二個叫<b>窗寬</b>（window width），決定這一段<b>多寬</b>。窗位 0、窗寬 100，就是說我只看 −50 到 +50 這一段：超過 +50 的一律畫成純白，低於 −50 的一律畫成純黑，中間才有灰階。」</p>
+<p>實習醫師想了一下：「所以水是 0，剛好在正中間——」</p>
+<p>「——所以水是<b>灰色</b>。」放射科醫師點頭，「不是白也不是黑。這一題每年都有人選白色，因為他們覺得水應該很亮。但亮不亮不是水決定的，是<b>你把窗開在哪裡</b>決定的。」</p>
+</div>
+
+<figure class="boxfig" data-visual-id="rdbox-02-reality" data-image-kind="mechanism" data-explanation-verified="true">
+<span class="figtag">數值圖解</span>
+<img data-visual-id="rdbox-02-reality" src="img/rdbox-02-reality.webp" alt="數值圖解：以水 0、空氣 −1000 為錨點的 Hounsfield 尺，以及窗寬窗位如何切出灰階。" loading="lazy" decoding="async" width="1600" height="914">
+<figcaption>數值圖解：以水 0、空氣 −1000 為錨點的 Hounsfield 尺，以及窗寬窗位如何切出灰階。</figcaption>
+</figure>
+<div class="reality"><span class="tag">回到現實</span>
+<p><b>Hounsfield unit（HU）</b>是 CT 的密度刻度，兩個定義點是<b>水＝0</b>、<b>空氣＝−1000</b>。由低到高大致排成：</p>
+<p>空氣 −1000 ／ <b>脂肪約 −100</b> ／ 水 0 ／ 軟組織約 +40～+80 ／ 骨質數百至上千。</p>
+<p>111 年第 37 題問「哪一個數值最接近脂肪」，選項給了 800、80、0、−100——<b>只有脂肪是負的</b>，這一點就足以定案。800 是骨、80 是軟組織、0 是水。</p>
+<p><b>窗位（window level, WL）</b>＝顯示範圍的中心；<b>窗寬（window width, WW）</b>＝顯示範圍的總寬度。顯示範圍就是</p>
+<p class="quote">WL − WW/2　到　WL + WW/2</p>
+<p>WW=100、WL=0 時，範圍是 <b>−50 到 +50</b>。高於 +50 全白（飽和）、低於 −50 全黑，範圍內才依比例分配灰階。水的 HU 是 0，正好落在中央，因此顯示為<b>灰色</b>。</p>
+<p class="infer">補充（非詳解內容，屬臨床常規）：窗寬越窄、對比越強但可分辨的範圍越小，所以看軟組織用窄窗、看骨頭用寬窗——這也是為什麼同一次掃描要輸出好幾組不同窗設定的影像。</p>
+</div>
+
+<article data-question-id="111-bm111-p30-q37" data-placement="chapter">
+  <span class="qhead">111 年 期中考 第 37 題</span>
+  <p class="stem">In the computed tomography image, which of the following values is closest to the density of fat?</p>
+  <ul class="opts">
+    <li>(A) 800 HU</li>
+    <li>(B) 80 HU</li>
+    <li>(C) 0 HU</li>
+    <li>(D) -100 HU</li>
+  </ul>
+  <details data-kind="answer">
+    <summary>答案與詳解</summary>
+    <div data-kind="zh-translation">
+      <p><strong>中文題目：</strong>在電腦斷層影像中，下列哪一個數值最接近脂肪的密度？</p>
+      <p>(A) 800 HU</p>
+      <p>(B) 80 HU</p>
+      <p>(C) 0 HU</p>
+      <p>(D) −100 HU</p>
+    </div>
+    <p class="ans">答案：(D) -100 HU</p>
+    <p class="quote">詳解原文:「右邊的圖表中可以知道 fat 就是 -100HU。」</p>
+    <p>解這題不必記精確值，只要記得<b>脂肪比水鬆，所以 HU 是負的</b>——四個選項裡唯一的負值就是答案。另外三個各是骨（800）、軟組織（80）、水（0）。</p>
+    <p class="src">出處：蔡佽學 基礎影像學原理(ppt pg.13) ｜ BM111 BLOCK-8 期中考詳解.pdf 第 30 頁</p>
+  </details>
+</article>
+
+<article data-question-id="111-bm111-p31-q39" data-placement="chapter">
+  <span class="qhead">111 年 期中考 第 39 題</span>
+  <p class="stem">In the image settings of computed tomography, if the window width is 100 and the window level is 0, what color does the water appear on the grayscale image?</p>
+  <ul class="opts">
+    <li>(A) white</li>
+    <li>(B) gray</li>
+    <li>(C) black</li>
+    <li>(D) red</li>
+  </ul>
+  <details data-kind="answer">
+    <summary>答案與詳解</summary>
+    <div data-kind="zh-translation">
+      <p><strong>中文題目：</strong>在電腦斷層的影像設定中，若窗寬為 100、窗位為 0，水在灰階影像上會呈現什麼顏色？</p>
+      <p>(A) 白色</p>
+      <p>(B) 灰色</p>
+      <p>(C) 黑色</p>
+      <p>(D) 紅色</p>
+    </div>
+    <p class="ans">答案：(B) gray</p>
+    <p class="quote">詳解原文:「題目設定以 0 為基準線，寬度 100 表示上下各 50 單位，所以 +50 以上全白、-50 以下全黑，水的 HU 值為 0 介於兩者之間，呈現灰色。」</p>
+    <p>先算範圍：<b>0 ± 50</b>。再把水的 HU（0）放進去——落在正中央，所以是中階灰。順帶一提 (D) 紅色是純粹的湊數選項，灰階影像不會有顏色。</p>
+    <p class="src">出處：蔡佽學 基礎影像學原理(ppt pg.14) ｜ BM111 BLOCK-8 期中考詳解.pdf 第 31 頁</p>
+  </details>
+</article>
+</section>
+<section id="chapter-2" data-chapter-kind="story">
+<h2>二、MRI 的序列在關掉什麼</h2>
+
+<figure class="boxfig" data-visual-id="rdbox-03-story" data-image-kind="story" data-explanation-verified="true">
+<span class="figtag">情境場景</span>
+<img data-visual-id="rdbox-03-story" src="img/rdbox-03-story.webp" alt="情境場景：脂肪太亮會蓋掉水腫，所以要先把脂肪那盞燈關掉。" loading="lazy" decoding="async" width="1600" height="914">
+<figcaption>情境場景：脂肪太亮會蓋掉水腫，所以要先把脂肪那盞燈關掉。</figcaption>
+</figure>
+<div class="story" data-prose-kind="story"><span class="tag">故事</span>
+<p>換到 MRI 的螢幕。實習醫師看著一連串英文縮寫傻眼：「T1、T2、STIR、FLAIR……這些到底差在哪？」</p>
+<p>「想成<b>一個房間裡有兩盞很亮的燈</b>。」放射科醫師說，「一盞是<b>脂肪</b>，一盞是<b>水</b>。你要找的東西——<b>水腫</b>——本身也會亮，但它比不上那兩盞。」</p>
+<p>「所以看不出來？」</p>
+<p>「在 T2 加權裡，水亮、水腫亮，<b>脂肪也亮</b>。骨髓裡本來就全是脂肪，一整片亮成一團，你怎麼看得出裡面多了一小塊水腫？」</p>
+<p>「那就……把脂肪那盞燈關掉？」</p>
+<p>「對，那就是 <b>STIR</b>。<b>T2 加權，再加上脂肪抑制</b>。脂肪一暗下來，水腫就跳出來了。」</p>
+<p>「那 FLAIR？」</p>
+<p>「同樣是 T2 加權，但關掉的是<b>水</b>那一盞。腦部影像常用——腦室裡的腦脊髓液一暗，緊貼在旁邊的病灶才看得見。」他頓了一下，「注意這裡的分工：<b>兩個都是 T2 打底</b>，差別只在關掉哪一盞。而且不管關哪一盞，<b>水腫都還是亮的</b>——因為它從來不是被關掉的那一個。」</p>
+</div>
+
+<figure class="boxfig" data-visual-id="rdbox-04-reality" data-image-kind="comparison" data-explanation-verified="true">
+<span class="figtag">序列對照</span>
+<img data-visual-id="rdbox-04-reality" src="img/rdbox-04-reality.webp" alt="序列對照：STIR 關脂肪、FLAIR 關水，兩者都以 T2 加權為底，水腫一律是亮的。" loading="lazy" decoding="async" width="1600" height="914">
+<figcaption>序列對照：STIR 關脂肪、FLAIR 關水，兩者都以 T2 加權為底，水腫一律是亮的。</figcaption>
+</figure>
+<div class="reality"><span class="tag">回到現實</span>
+<p>111 年第 38 題只考一句話，但這句話值得整組記下來。詳解原文給的是這兩行：</p>
+<p class="quote">詳解原文:「FLAIR ≈ T2WI + water suppression，Water- hypointensity，Edema- hyperintensity<br>STIR ≈ T2WI + fat suppression (FS)，Water- hyperintensity，Edema- hyperintensity」</p>
+<p>拆開來看，三件事必須分清楚：</p>
+<p>① <b>兩者都是 T2WI 打底</b>——所以選項只要寫 T1WI，直接刪。111 年那題的 (A)(B) 就是這樣被刷掉的。</p>
+<p>② <b>差別在抑制誰</b>：STIR 抑制<b>脂肪</b>；FLAIR 抑制<b>水</b>。</p>
+<p>③ <b>水腫（edema）在兩者都是高訊號</b>。被抑制的是背景，不是病灶。而「水」的訊號則跟著抑制對象走：STIR 裡水仍是亮的，FLAIR 裡水被壓暗。</p>
+<p class="infer">補充（非詳解內容）：STIR 的全名是 short tau inversion recovery，靠的是「脂肪的縱向弛緩最快」這個特性，在脂肪訊號剛好歸零的瞬間取像——所以它抑制脂肪的效果特別均勻，在肌肉骨骼影像找骨髓水腫時是常用序列。</p>
+</div>
+
+<article data-question-id="111-bm111-p31-q38" data-placement="chapter">
+  <span class="qhead">111 年 期中考 第 38 題</span>
+  <p class="stem">Which of the following sequence images are similar to the STIR sequence images in MRI examination?</p>
+  <ul class="opts">
+    <li>(A) T1WI + water suppression</li>
+    <li>(B) T1WI + fat suppression</li>
+    <li>(C) T2WI + water suppression</li>
+    <li>(D) T2WI + fat suppression</li>
+  </ul>
+  <details data-kind="answer">
+    <summary>答案與詳解</summary>
+    <div data-kind="zh-translation">
+      <p><strong>中文題目：</strong>在 MRI 檢查中，下列哪一種序列影像與 STIR 序列影像最相似？</p>
+      <p>(A) T1 加權＋水抑制</p>
+      <p>(B) T1 加權＋脂肪抑制</p>
+      <p>(C) T2 加權＋水抑制</p>
+      <p>(D) T2 加權＋脂肪抑制</p>
+    </div>
+    <p class="ans">答案：(D) T2WI + fat suppression</p>
+    <p class="quote">詳解原文:「FLAIR ≈ T2WI + water suppression，Water- hypointensity，Edema- hyperintensity STIR ≈ T2WI + fat suppression (FS)，Water- hyperintensity，Edema- hyperintensity」</p>
+    <p>兩步就能定案：<b>先刪掉 T1WI</b>（(A)(B) 出局），再判斷抑制對象——STIR 抑制<b>脂肪</b>，關掉水的那個是 FLAIR，所以 (C) 也出局。選項設計正好是 2×2，把 T1／T2 與水／脂肪兩兩交叉。</p>
+    <p class="src">出處：蔡佽學 基礎影像學原理(ppt pg.21) ｜ BM111 BLOCK-8 期中考詳解.pdf 第 31 頁</p>
+  </details>
+</article>
+</section>
+<section id="chapter-3" data-chapter-kind="story">
+<h2>三、讀 X 光的四個關卡：ABCS</h2>
+
+<figure class="boxfig" data-visual-id="rdbox-05-story" data-image-kind="story" data-explanation-verified="true">
+<span class="figtag">情境場景</span>
+<img data-visual-id="rdbox-05-story" src="img/rdbox-05-story.webp" alt="情境場景：讀片要照順序走四個關卡，跳過任何一關都會漏掉東西。" loading="lazy" decoding="async" width="1600" height="914">
+<figcaption>情境場景：讀片要照順序走四個關卡，跳過任何一關都會漏掉東西。</figcaption>
+</figure>
+<div class="story" data-prose-kind="story"><span class="tag">故事</span>
+<p>燈箱上換了一張腕部 X 光。實習醫師盯著看了三十秒，說：「沒有骨折。」</p>
+<p>「你剛剛在看哪裡？」</p>
+<p>「……骨頭啊。」</p>
+<p>「所以你只走了一關。」放射科醫師用筆在片子邊緣點了四下，「每一張骨骼 X 光，我都走同一條路，四個關卡，順序固定，一關都不跳。<b>A、B、C、S</b>。」</p>
+<p>「<b>A 是排列</b>（alignment）。先退後三步看整體：骨頭有沒有排在該在的位置上？有沒有半脫位、脫臼？很多傷根本沒斷骨，只是<b>位置跑掉</b>——你貼著看骨頭是永遠看不出來的。」</p>
+<p>「<b>B 是骨質紋理</b>（bone texture）。骨頭裡面的紋路是不是均勻？有沒有一塊特別黑、特別白？溶骨、硬化、囊腫，都在這一關。」</p>
+<p>「<b>C 是皮質</b>（cortex）。沿著骨頭最外面那一條白線，用眼睛<b>描一圈</b>。它應該是連續的。斷點、皺褶、凸起——這一關抓的是最典型的骨折線。」</p>
+<p>「<b>S 是軟組織與關節腔</b>（soft tissue and joint space）。最後才看骨頭以外的地方：軟組織有沒有腫脹、有沒有氣體、關節腔有沒有變窄或積液。」</p>
+<p>「那……為什麼是這個順序？」</p>
+<p>「因為它是<b>由遠到近</b>。先看整體排列，再看骨頭裡面，再看骨頭邊緣，最後看骨頭外面。你一開始就把鼻子貼在骨頭上，第一關就已經跳掉了。」</p>
+</div>
+
+<figure class="boxfig" data-visual-id="rdbox-06-reality" data-image-kind="sequence" data-explanation-verified="true">
+<span class="figtag">流程圖解</span>
+<img data-visual-id="rdbox-06-reality" src="img/rdbox-06-reality.webp" alt="流程圖解：ABCS 四關依序為排列、骨質紋理、皮質、軟組織與關節腔。" loading="lazy" decoding="async" width="1600" height="914">
+<figcaption>流程圖解：ABCS 四關依序為排列、骨質紋理、皮質、軟組織與關節腔。</figcaption>
+</figure>
+<div class="reality"><span class="tag">回到現實</span>
+<p>112 年詳解把四個字母一字一句列了出來，這就是標準答案的本體：</p>
+<p class="quote">詳解原文:「A: alignment，須觀察是否有骨骼排列上的異常(ex.subluxation, dislocation)　B: bone texture　C:Cortex，觀察 cortical bone 是否邊緣完整　S: Soft tissue and joint space, 須觀察軟組織、關節是否有異常(ex.腫脹)」</p>
+<p>所以正確組合固定是：<b>alignment → bone texture → cortex → soft tissue and joint space</b>。</p>
+<p><b>這一題唯一的難度是選項排版。</b>兩年的正確選項寫的是同一串字，只是被放在不同代號底下：</p>
+<p>・112 年正解在 <b>(C)</b>：Bone texture, cortical bone, soft tissue and joint space, skeletal alignment<br>
+・113 年正解在 <b>(A)</b>：同一串字，一字不差</p>
+<p class="infer">注意這串字本身<b>不是按 A→B→C→S 的順序寫的</b>，而是 B、C、S、A。所以不能用「看哪個選項照字母順序排」來選——真正的判準是<b>四個成員對不對</b>：必須同時出現 alignment、bone texture、cortex（cortical bone）、soft tissue and joint space 四項，一項不多一項不少。</p>
+</div>
+
+<figure class="boxfig" data-visual-id="rdbox-07-warn" data-image-kind="comparison" data-explanation-verified="true">
+<span class="figtag">陷阱圖解</span>
+<img data-visual-id="rdbox-07-warn" src="img/rdbox-07-warn.webp" alt="陷阱圖解：錯誤選項的手法是把 cortex 換掉，或塞進一個不在名單上的成員。" loading="lazy" decoding="async" width="1600" height="914">
+<figcaption>陷阱圖解：錯誤選項的手法是把 cortex 換掉，或塞進一個不在名單上的成員。</figcaption>
+</figure>
+<div class="warn"><span class="tag">別踩這個坑</span>
+<p>兩年的干擾選項只有兩種做法，認出來就不會被騙：</p>
+<p><b>做法一：把 C（cortex）整個拿掉</b>，只留 alignment、soft tissue、joint space、bone texture。看起來四項都有，但 <b>C 沒有對應到任何字</b>——這是兩年都出現過的選項。</p>
+<p><b>做法二：塞進一個名單外的東西</b>，例如 <b>intraskeletal vessels</b>（骨內血管）。ABCS 裡沒有任何一個字母對應到血管。</p>
+<p>還要注意：<b>soft tissue 與 joint space 合起來算「S」一項</b>，不是兩項。把它們拆成兩個並列項的選項，就湊不出 C 了。</p>
+</div>
+
+<article data-question-id="112-bm112-p48-q37" data-placement="chapter">
+  <span class="qhead">112 年 期中考 第 37 題</span>
+  <p class="stem">While reading skeletal x-ray films, we need to check A, B, C, S, which are:</p>
+  <ul class="opts">
+    <li>(A) Skeletal alignment, soft tissue, joint space, bone texture</li>
+    <li>(B) Soft tissue, joint space, bone texture, cortical bone</li>
+    <li>(C) Bone texture, cortical bone, soft tissue and joint space, skeletal alignment</li>
+    <li>(D) soft tissue and joint space, intraskeletal vessels, skeletal alignment, bone texture</li>
+  </ul>
+  <details data-kind="answer">
+    <summary>答案與詳解</summary>
+    <div data-kind="zh-translation">
+      <p><strong>中文題目：</strong>判讀骨骼 X 光片時，我們需要檢查 A、B、C、S，它們分別是：</p>
+      <p>(A) 骨骼排列、軟組織、關節腔、骨質紋理</p>
+      <p>(B) 軟組織、關節腔、骨質紋理、皮質骨</p>
+      <p>(C) 骨質紋理、皮質骨、軟組織與關節腔、骨骼排列</p>
+      <p>(D) 軟組織與關節腔、骨內血管、骨骼排列、骨質紋理</p>
+    </div>
+    <p class="ans">答案：C</p>
+    <p class="quote">詳解原文:「A: alignment，須觀察是否有骨骼排列上的異常(ex.subluxation, dislocation) B: bone texture C:Cortex，觀察 cortical bone 是否邊緣完整 S: Soft tissue and joint space, 須觀察軟組織、關節是否有異常(ex.腫脹）」</p>
+    <p>(A) 缺 cortex；(B) 缺 alignment；(D) 多出 intraskeletal vessels。只有 (C) 四項齊全。</p>
+    <p class="src">出處：蔡蕙怡 基礎影像學原理(ppt pg.4) ｜ BM112_Block 8 期中考(含申覆內容與結果).pdf 第 48 頁</p>
+  </details>
+</article>
+
+<article data-question-id="113-bm113-p60-q47" data-placement="chapter">
+  <span class="qhead">113 年 期中考 第 47 題</span>
+  <p class="stem">While reading skeletal x-ray films, we need to check A, B, C, S, which are:</p>
+  <ul class="opts">
+    <li>(A) Bone texture, cortical bone, soft tissue and joint space, skeletal alignment</li>
+    <li>(B) Skeletal alignment, soft tissue, joint space, bone texture</li>
+    <li>(C) Soft tissue, joint space, bone texture, cortical bone</li>
+    <li>(D) soft tissue and joint space, intraskeletal vessels, skeletal alignment, bone texture</li>
+  </ul>
+  <details data-kind="answer">
+    <summary>答案與詳解</summary>
+    <div data-kind="zh-translation">
+      <p><strong>中文題目：</strong>判讀骨骼 X 光片時，我們需要檢查 A、B、C、S，它們分別是：</p>
+      <p>(A) 骨質紋理、皮質骨、軟組織與關節腔、骨骼排列</p>
+      <p>(B) 骨骼排列、軟組織、關節腔、骨質紋理</p>
+      <p>(C) 軟組織、關節腔、骨質紋理、皮質骨</p>
+      <p>(D) 軟組織與關節腔、骨內血管、骨骼排列、骨質紋理</p>
+    </div>
+    <p class="ans">答案：(A)</p>
+    <p>原卷<b>詳解欄留空</b>，只給了答案與出處（p.4）。與 112 年第 37 題<b>逐字相同</b>，四個選項的文字一字不差，只是把正解從 (C) 搬到 (A)、其餘往後挪。<b>不要背字母，要背那四個成員。</b></p>
+    <p class="src">出處：基礎影像學原理 蔡蕙怡 p.4 ｜ BM113_Block8期中考詳解.pdf 第 60 頁</p>
+  </details>
+</article>
+</section>
+<section id="chapter-4" data-chapter-kind="story">
+<h2>四、哪一種問題，配哪一種檢查</h2>
+
+<figure class="boxfig" data-visual-id="rdbox-08-story" data-image-kind="story" data-explanation-verified="true">
+<span class="figtag">情境場景</span>
+<img data-visual-id="rdbox-08-story" src="img/rdbox-08-story.webp" alt="情境場景：急診推來一位多發性外傷病人，這時候最貴的檢查不是最好的檢查。" loading="lazy" decoding="async" width="1600" height="914">
+<figcaption>情境場景：急診推來一位多發性外傷病人，這時候最貴的檢查不是最好的檢查。</figcaption>
+</figure>
+<div class="story" data-prose-kind="story"><span class="tag">故事</span>
+<p>凌晨兩點，急診推來一位車禍病人。肋骨骨折，血壓在掉，意識時好時壞。<b>臨床醫師</b>抓著電話問：「要不要直接排 MRI？MRI 的軟組織對比最好，可以一次看清楚肺挫傷跟腹腔臟器。」</p>
+<p>放射科醫師只回了一句：「<b>他躺得住三十分鐘嗎？</b>」</p>
+<p>電話那頭沉默了兩秒。</p>
+<p>「軟組織對比最好——這句話是對的。」放射科醫師說，「但它<b>不是唯一要考慮的事</b>。MRI 慢，一個序列就好幾分鐘，整套下來半小時起跳；而且病人躺進去之後，你摸不到他、看不到他。一個血壓在掉的人躺進磁鐵裡，可能<b>躺著躺著就沒呼吸了</b>。」</p>
+<p>「所以急性外傷——」</p>
+<p>「——先 CT。快，而且一次掃完全身。<b>MRI 是給你有時間慢慢想的時候用的。</b>」</p>
+<p>後來這位病人下肢也有骨折，而且<b>摸不到足背動脈</b>。這一次臨床醫師沒有再問要不要 MRI，直接排了 <b>CT 血管攝影</b>。</p>
+<p>再後來，另一床病人主訴大腿突然一陣撕裂痛。放射科醫師拿起探頭，在床邊直接照了超音波——螢幕上，股四頭肌的肌纖維一束一束、黑白相間地排開，其中一段亂掉了。</p>
+<p>「這個不用進機器。」他說，「<b>肌肉本來就是超音波最擅長的東西。</b>」</p>
+</div>
+
+<figure class="boxfig" data-visual-id="rdbox-09-reality" data-image-kind="comparison" data-explanation-verified="true">
+<span class="figtag">決策圖解</span>
+<img data-visual-id="rdbox-09-reality" src="img/rdbox-09-reality.webp" alt="決策圖解：急性外傷先 CT、懷疑動脈損傷排 CTA、肌肉撕裂用超音波與 MRI。" loading="lazy" decoding="async" width="1600" height="914">
+<figcaption>決策圖解：急性外傷先 CT、懷疑動脈損傷排 CTA、肌肉撕裂用超音波與 MRI。</figcaption>
+</figure>
+<div class="reality"><span class="tag">回到現實</span>
+<p>112 年第 39 題與 113 年第 46 題是<b>同一題</b>，四個敘述完全相同，只是把順序打亂。其中三句是對的，一句是錯的：</p>
+<p><b>錯的那一句</b>：「MRI 軟組織對比較好，所以外傷後發現肋骨骨折時，用 MRI 來偵測肺部或上腹部臟器挫傷與撕裂傷比較好。」——前半句對，<b>後半句錯</b>。</p>
+<p class="quote">詳解原文（113）:「MRI 較長的檢查時間，因此病人狀態差、意識不佳、緊急入院時，首選處置絕對不會是 MRI，可能躺著躺著就沒呼吸了」</p>
+<p><b>對的三句</b>，順便一起記起來：</p>
+<p>① <b>摸不到足背動脈 → 懷疑動脈損傷 → 下一步排 CT 血管攝影（CTA）。</b></p>
+<p>② <b>Arthrogram（關節攝影）</b>是把顯影劑打進關節腔後做的影像檢查，<b>X 光、CT、MRI 都可以做</b>。</p>
+<p>③ <b>關節 X 光通常照兩個方向</b>：正面（AP）與側面（lateral）；針對特定部位另有特殊角度。</p>
+<p><b>肌肉撕裂傷（skeletal muscle tear）</b>能用的是<b>超音波、CT、MRI</b>——<b>X 光不行</b>。X 光看的是密度差異，肌肉與周圍軟組織的密度差太小。而超音波不但能看，還很擅長：肌纖維在超音波下呈現一束一束、黑白相間的紋理，這正是 113 年第 48 題那張圖的辨識點。</p>
+</div>
+
+<figure class="boxfig" data-visual-id="rdbox-10-keybox" data-image-kind="comparison" data-explanation-verified="true">
+<span class="figtag">申覆重點</span>
+<img data-visual-id="rdbox-10-keybox" src="img/rdbox-10-keybox.webp" alt="申覆重點：肌肉撕裂傷是肌纖維的傷，旋轉肌袖撕裂是肌腱的傷，兩者不同。" loading="lazy" decoding="async" width="1600" height="914">
+<figcaption>申覆重點：肌肉撕裂傷是肌纖維的傷，旋轉肌袖撕裂是肌腱的傷，兩者不同。</figcaption>
+</figure>
+<div class="keybox"><span class="tag">這個申覆值得看</span>
+<p>112 年第 38 題有人申覆，主張 X 光也該給分——理由是旋轉肌袖撕裂（rotator cuff tear）晚期，X 光上可以看到肱骨頭往上跑、與肩峰產生磨損。</p>
+<p><b>老師維持原答案</b>，理由拆成兩層：</p>
+<p>① <b>題目問的是 skeletal muscle tear，指的是肌纖維的撕裂傷</b>；rotator cuff tear 是<b>肌腱</b>損傷，兩者不是同一件事。</p>
+<p>② 就算是旋轉肌袖撕裂，<b>也不會用 X 光來診斷肌腱損傷</b>；X 光上看到的肱骨頭上移是<b>晚期的間接後果</b>，不是撕裂本身。</p>
+<p class="infer">這個申覆的價值在於它示範了一種常見的失分方式：<b>把「這個檢查偶爾看得到一點蛛絲馬跡」誤當成「這個檢查可以用來診斷」。</b>能不能診斷，看的是它是否直接顯示病灶。</p>
+</div>
+
+<article data-question-id="112-bm112-p49-q38" data-placement="chapter">
+  <span class="qhead">112 年 期中考 第 38 題 ｜ 申覆後維持原答案</span>
+  <p class="stem">Which image modalities can be used to diagnose skeletal muscle tear? a：X-ray ; b：ultrasound ; c：CT ; d：MRI</p>
+  <ul class="opts">
+    <li>(A) a.b.c.d</li>
+    <li>(B) b.c.d</li>
+    <li>(C) c.d</li>
+    <li>(D) d</li>
+  </ul>
+  <details data-kind="answer">
+    <summary>答案與詳解</summary>
+    <div data-kind="zh-translation">
+      <p><strong>中文題目：</strong>哪些影像工具可以用來診斷骨骼肌撕裂傷？a：X 光；b：超音波；c：電腦斷層；d：磁振造影</p>
+      <p>(A) a、b、c、d</p>
+      <p>(B) b、c、d</p>
+      <p>(C) c、d</p>
+      <p>(D) d</p>
+    </div>
+    <p class="ans">答案：B（申覆後維持原答案）</p>
+    <p>可用的是<b>超音波、CT、MRI</b>；<b>X 光不能</b>——肌肉與周邊軟組織的密度差不足以在 X 光上分辨。</p>
+    <p class="quote">申覆結果（老師回覆，維持原答案）:「題目 skeletal muscle tear 在上課另一段講到，是指肌纖維的撕裂傷，和 rotator cuff tear 不同。rotator cuff tear 是肌腱損傷，我們也不會用 X 光來診斷肌腱損傷。」</p>
+    <p class="src">出處：蔡蕙怡 基礎影像學原理(ppt pg.20, 25, 35) ｜ BM112_Block 8 期中考(含申覆內容與結果).pdf 第 49 頁</p>
+  </details>
+</article>
+
+<article data-question-id="112-bm112-p51-q39" data-placement="chapter">
+  <span class="qhead">112 年 期中考 第 39 題</span>
+  <p class="stem">Which description is wrong?</p>
+  <ul class="opts">
+    <li>(A) MRI has better tissue contrast. It is better to use MRI to detect pulmonary or upper abdominal visceral contusion or laceration when rib fracture is noted after trauma.</li>
+    <li>(B) If we can't detect the dorsal foot pulse in a patient with traumatic lower extremity fracture, arterial injury is suspected. The next step is to arrange CT angiography for further evaluation.</li>
+    <li>(C) Arthrogram is an image study of joint after injection of contrast agent into a joint. It can be used in X-ray, CT, and MRI.</li>
+    <li>(D) Joint x-ray study usually has two views, including AP and lateral projections. There are also special views for evaluation of a specific portion.</li>
+  </ul>
+  <details data-kind="answer">
+    <summary>答案與詳解</summary>
+    <div data-kind="zh-translation">
+      <p><strong>中文題目：</strong>下列哪一段敘述是<b>錯</b>的？</p>
+      <p>(A) MRI 的組織對比較好。外傷後發現肋骨骨折時，用 MRI 來偵測肺部或上腹部臟器挫傷或撕裂傷比較好。</p>
+      <p>(B) 下肢外傷骨折的病人若摸不到足背動脈，應懷疑動脈損傷，下一步安排 CT 血管攝影進一步評估。</p>
+      <p>(C) 關節攝影是把顯影劑注入關節腔後進行的影像檢查，可用於 X 光、CT 與 MRI。</p>
+      <p>(D) 關節 X 光檢查通常有兩個方向，包含正面（AP）與側面投影；針對特定部位另有特殊角度。</p>
+    </div>
+    <p class="ans">答案：A</p>
+    <p class="quote">詳解原文:「MRI 所需的時間較長，所以不是很適合用在急性的狀況」</p>
+    <p>(A) 的前半句（MRI 組織對比較好）是對的，<b>錯在後半句的臨床決策</b>——急性外傷、生命徵象不穩時不會選耗時的 MRI。這種「前半對、後半錯」的寫法是本科最常見的陷阱句型。</p>
+    <p class="src">出處：蔡蕙怡 基礎影像學原理(ppt pg.35) ｜ BM112_Block 8 期中考(含申覆內容與結果).pdf 第 51 頁</p>
+  </details>
+</article>
+
+<article data-question-id="113-bm113-p60-q46" data-placement="chapter">
+  <span class="qhead">113 年 期中考 第 46 題</span>
+  <p class="stem">Which description is wrong?</p>
+  <ul class="opts">
+    <li>(A) Joint x-ray study usually has two views, including AP and lateral projections. There are also special views for evaluation of a specific portion.</li>
+    <li>(B) MRI has better tissue contrast. It is better to use MRI to detect pulmonary or upper abdominal visceral contusion or laceration when rib fracture is noted after trauma.</li>
+    <li>(C) If we can't detect the dorsal foot pulse in a patient with traumatic lower extremity fracture, arterial injury is suspected. The next step is to arrange CT angiography for further evaluation.</li>
+    <li>(D) Arthrogram is an image study of joints after injection of contrast agent into a joint. It can be used in X-ray, CT, and MRI.</li>
+  </ul>
+  <details data-kind="answer">
+    <summary>答案與詳解</summary>
+    <div data-kind="zh-translation">
+      <p><strong>中文題目：</strong>下列哪一段敘述是<b>錯</b>的？</p>
+      <p>(A) 關節 X 光檢查通常有兩個方向，包含正面（AP）與側面投影；針對特定部位另有特殊角度。</p>
+      <p>(B) MRI 的組織對比較好。外傷後發現肋骨骨折時，用 MRI 來偵測肺部或上腹部臟器挫傷或撕裂傷比較好。</p>
+      <p>(C) 下肢外傷骨折的病人若摸不到足背動脈，應懷疑動脈損傷，下一步安排 CT 血管攝影進一步評估。</p>
+      <p>(D) 關節攝影是把顯影劑注入關節腔後進行的影像檢查，可用於 X 光、CT 與 MRI。</p>
+    </div>
+    <p class="ans">答案：(B)</p>
+    <p class="quote">詳解原文:「MRI 較長的檢查時間，因此病人狀態差、意識不佳、緊急入院時，首選處置絕對不會是 MRI，可能躺著躺著就沒呼吸了」</p>
+    <p>與 112 年第 39 題<b>四個敘述完全相同</b>，只是把 (A) 移到最後、其餘往前推，於是答案從 (A) 變成 (B)。</p>
+    <p class="src">出處：基礎影像學原理 蔡蕙怡 p.38 ｜ BM113_Block8期中考詳解.pdf 第 60 頁</p>
+  </details>
+</article>
+
+<article data-question-id="113-bm113-p60-q48" data-placement="chapter">
+  <span class="qhead">113 年 期中考 第 48 題 ｜ 送分題</span>
+  <p class="stem">The following image demonstrates an examination of the quadriceps muscle. Which imaging modality is being used?</p>
+  <ul class="opts">
+    <li>(A) X-ray</li>
+    <li>(B) CT</li>
+    <li>(C) MRI</li>
+    <li>(D) Ultrasound</li>
+  </ul>
+  <details data-kind="answer">
+    <summary>答案與詳解</summary>
+    <div data-kind="zh-translation">
+      <p><strong>中文題目：</strong>下圖是股四頭肌的檢查影像，使用的是哪一種影像工具？</p>
+      <p>(A) X 光</p>
+      <p>(B) 電腦斷層</p>
+      <p>(C) 磁振造影</p>
+      <p>(D) 超音波</p>
+    </div>
+    <p class="ans">答案：(D)</p>
+    <p class="quote">詳解原文:「送分題，圖片是超音波影像，透過聲波反射將肌纖維一束束成像出來。雖然 MR 也可以呈現肌纖維走向，但比較不會像超音波這樣黑白相間。左圖是 rotator cuff T2W 的影像；右圖是 rotator cuff 超音波影像」</p>
+    <p>辨識點是<b>「一束一束、黑白相間」的肌纖維紋理</b>——那是超音波特有的樣子。MRI 也看得到肌纖維走向，但不會呈現這種高頻交替的條紋。此題原卷註明<b>送分</b>。</p>
+    <p class="src">出處：基礎影像學原理 蔡蕙怡 p.47, 50 ｜ BM113_Block8期中考詳解.pdf 第 60 頁</p>
+  </details>
+</article>
+</section>
+<section id="chapter-cram" data-chapter-kind="cram">
+<h2>五、考前速記</h2>
+<div class="cram">
+<ul>
+<li><b>HU 兩個錨點：水 = 0、空氣 = −1000。</b>其他都照這把尺排。</li>
+<li><b>脂肪 ≈ −100 HU（唯一的負值）</b>；軟組織 ≈ +40～+80；骨 ≈ 數百至上千。</li>
+<li><b>顯示範圍 = 窗位 ± 窗寬/2。</b>WW 100、WL 0 → −50 到 +50。</li>
+<li><b>水在 WW 100 / WL 0 是灰色</b>，不是白色——因為 0 落在範圍正中央。</li>
+<li><b>STIR ＝ T2WI ＋ 脂肪抑制</b>；<b>FLAIR ＝ T2WI ＋ 水抑制</b>。兩個都是 T2 打底。</li>
+<li><b>水腫在 STIR 與 FLAIR 都是高訊號</b>；水則在 STIR 亮、在 FLAIR 暗。</li>
+<li><b>ABCS ＝ Alignment、Bone texture、Cortex、Soft tissue and joint space。</b></li>
+<li><b>soft tissue 與 joint space 合計算「S」一項。</b>拆成兩項的選項就湊不出 C。</li>
+<li><b>ABCS 選項不照字母順序排。</b>判準是四個成員齊不齊，不是排列順序。</li>
+<li>ABCS 干擾選項只有兩招：<b>把 cortex 拿掉</b>，或<b>塞進 intraskeletal vessels</b>。</li>
+<li><b>急性外傷、生命徵象不穩，不選 MRI</b>——太慢，而且病人在機器裡你摸不到。</li>
+<li><b>摸不到足背動脈 → 懷疑動脈損傷 → 下一步 CTA。</b></li>
+<li><b>Arthrogram 可用於 X 光、CT、MRI 三種。</b></li>
+<li><b>關節 X 光標準兩個方向：AP ＋ lateral</b>，另有特殊角度。</li>
+<li><b>肌肉撕裂傷：超音波、CT、MRI 可以；X 光不行。</b></li>
+<li><b>肌肉撕裂傷 ≠ 旋轉肌袖撕裂</b>——前者是肌纖維，後者是肌腱。112 年申覆就是敗在這一點。</li>
+<li><b>超音波下的肌肉：一束一束、黑白相間。</b>看到這種紋理就是超音波，不是 MRI。</li>
+<li>「MRI 組織對比最好」<b>這句永遠是對的</b>，錯的都在它後面接的那個臨床決策。</li>
+</ul>
+</div>
+</section>
+
+<!-- ================= VOCAB ================= -->
+<section id="chapter-vocab" data-chapter-kind="vocab">
+<h2>六、單字表</h2>
+<dl class="vocab">
+<dt>Hounsfield unit (HU)</dt>
+<dd><span class="root">紀念 CT 發明人 Godfrey Hounsfield</span>　CT 的密度刻度，水定為 0、空氣定為 −1000。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>它是<b>相對刻度</b>，不是物理密度。所以會有負數——比水鬆的東西一律往負的走。</p></details></dd>
+
+<dt>window width (WW)</dt>
+<dd><span class="root">window（窗）+ width（寬度）</span>　窗寬。灰階所涵蓋的 HU 範圍總寬度。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>窗越<b>窄</b>，對比越<b>強</b>——因為同樣的灰階被擠進更小的範圍裡。</p></details></dd>
+
+<dt>window level (WL)</dt>
+<dd><span class="root">window（窗）+ level（水平位置）</span>　窗位。灰階範圍的中心 HU 值。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>WL 是<b>窗開在哪裡</b>，WW 是<b>窗開多大</b>。兩個一起才算得出範圍。</p></details></dd>
+
+<dt>T1-weighted image (T1WI)</dt>
+<dd><span class="root">weighted＝加權</span>　T1 加權影像，脂肪呈高訊號、水呈低訊號，解剖結構清楚。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>考題只要在 STIR／FLAIR 的選項裡寫 T1WI，一律先刪——那兩個都是 T2 打底。</p></details></dd>
+
+<dt>T2-weighted image (T2WI)</dt>
+<dd><span class="root">同上</span>　T2 加權影像，水與水腫呈高訊號，是找病灶的主力。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>「有水的地方會亮」＝T2。STIR 與 FLAIR 都是在這個基礎上再關掉一盞燈。</p></details></dd>
+
+<dt>STIR</dt>
+<dd><span class="root">Short Tau Inversion Recovery</span>　T2 加權＋<b>脂肪</b>抑制。水與水腫皆為高訊號。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>骨髓裡全是脂肪，把脂肪壓暗，骨髓水腫才跳得出來——這就是它在肌肉骨骼影像的用途。</p></details></dd>
+
+<dt>FLAIR</dt>
+<dd><span class="root">FLuid-Attenuated Inversion Recovery</span>　T2 加權＋<b>水</b>抑制。水呈低訊號，水腫仍為高訊號。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>名字裡就有 <b>Fluid-Attenuated</b>（液體被衰減）——關掉的是水。</p></details></dd>
+
+<dt>fat suppression (FS)</dt>
+<dd><span class="root">suppress（壓抑）</span>　脂肪抑制。把脂肪訊號壓低，讓被脂肪蓋住的病灶顯現。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>抑制的是<b>背景</b>，不是病灶。所以水腫在抑制後依然是亮的。</p></details></dd>
+
+<dt>alignment</dt>
+<dd><span class="root">a-（朝向）+ line（線）</span>　排列。ABCS 的 A，檢查有無半脫位、脫臼等排列異常。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>這一關要<b>退後三步看</b>。貼著骨頭看反而看不到排列跑掉。</p></details></dd>
+
+<dt>bone texture</dt>
+<dd><span class="root">texture＝紋理</span>　骨質紋理。ABCS 的 B，看骨內紋路是否均勻，有無溶骨或硬化。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>A 看外面的位置，B 看裡面的質地。</p></details></dd>
+
+<dt>cortex (cortical bone)</dt>
+<dd><span class="root">拉丁 cortex＝樹皮、外殼</span>　皮質骨。ABCS 的 C，沿著骨外緣那條白線檢查是否連續。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>cortex＝<b>外殼</b>。骨折線最常在這一關被抓到，也是干擾選項最愛拿掉的一項。</p></details></dd>
+
+<dt>soft tissue and joint space</dt>
+<dd><span class="root">joint space＝關節腔（間隙）</span>　軟組織與關節腔。ABCS 的 S，看腫脹、積液、關節間隙變化。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>兩個名詞<b>合起來算一項</b>。拆成兩項的選項就是錯的。</p></details></dd>
+
+<dt>subluxation</dt>
+<dd><span class="root">sub-（部分、不完全）+ luxation（脫臼）</span>　半脫位。關節面部分失去對位但未完全脫離。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>sub-＝不到位。完全脫開才叫 dislocation。兩者都屬 ABCS 的 A。</p></details></dd>
+
+<dt>arthrogram</dt>
+<dd><span class="root">arthro-（關節）+ -gram（描記、圖）</span>　關節攝影。將顯影劑注入關節腔後成像，X 光、CT、MRI 皆可。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>arthro-＝關節（比較 arthritis 關節炎）。重點是<b>三種機器都能做</b>。</p></details></dd>
+
+<dt>CT angiography (CTA)</dt>
+<dd><span class="root">angio-（血管）+ -graphy（記錄）</span>　CT 血管攝影。懷疑動脈損傷時的下一步檢查。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>摸不到遠端脈搏＝血流出事＝<b>去看血管</b>。angio- 就是血管。</p></details></dd>
+
+<dt>AP / lateral projection</dt>
+<dd><span class="root">anteroposterior＝由前向後</span>　正面與側面投影，關節 X 光的標準兩個方向。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>只照一個方向會漏掉前後方向的位移——所以標準是<b>兩個</b>，另有特殊角度加照。</p></details></dd>
+
+<dt>contusion / laceration</dt>
+<dd><span class="root">contusion＝挫傷（未破皮）；laceration＝撕裂傷</span>　外傷的兩種組織損傷型態。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>挫傷是被撞、撕裂是被扯開。題目用這兩個字時，講的是<b>臟器</b>的傷。</p></details></dd>
+
+<dt>ultrasound (echogenicity)</dt>
+<dd><span class="root">ultra-（超越）+ sound（聲音）</span>　超音波。以聲波反射成像，肌纖維呈一束束黑白相間的紋理。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>床邊就能做、沒有輻射、看肌肉與肌腱特別強——但穿不透骨頭與空氣。</p></details></dd>
+
+<dt>skeletal muscle tear</dt>
+<dd><span class="root">tear＝撕裂</span>　骨骼肌撕裂傷，指<b>肌纖維</b>的撕裂。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>和 <b>rotator cuff tear（肌腱）</b>是兩回事——112 年申覆就是栽在這個區別上。</p></details></dd>
+
+<dt>rotator cuff</dt>
+<dd><span class="root">rotator（旋轉肌）+ cuff（袖口）</span>　旋轉肌袖，包覆肩關節的四條肌腱。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>cuff＝袖口，像袖子一樣包住肱骨頭。它的傷是<b>肌腱</b>傷，不用 X 光診斷。</p></details></dd>
+
+<dt>tissue contrast</dt>
+<dd><span class="root">contrast＝對比</span>　組織對比。不同軟組織之間在影像上的可分辨程度，MRI 最佳。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>「MRI 組織對比最好」這句<b>永遠是對的</b>。錯的都在它後面接的臨床選擇。</p></details></dd>
+
+<dt>modality</dt>
+<dd><span class="root">mode（方式）+ -ality</span>　影像工具／檢查方式，如 X 光、超音波、CT、MRI。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>看到 which modality，就是在問<b>你要開哪一張單</b>。</p></details></dd>
+
+<dt>hyperintensity / hypointensity</dt>
+<dd><span class="root">hyper-（過高）／hypo-（過低）+ intensity（訊號強度）</span>　MRI 的高訊號（亮）與低訊號（暗）。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>hyper＝亮、hypo＝暗。詳解那兩行就是在描述誰亮誰暗。</p></details></dd>
+
+<dt>osteonecrosis crescent sign</dt>
+<dd><span class="root">crescent＝新月</span>　新月徵象，軟骨下骨塌陷形成的弧形透亮線，屬骨壞死而非退化性關節炎。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>本科不直接考它，但同一份考卷的鄰題常拿它來對照 OA 的四個典型徵象。</p></details></dd>
+</dl>
+</section>
+<section id="chapter-final" data-chapter-kind="final_questions">
+<h2>七、歷年考題總複習</h2>
+<p class="meta">依年度由新到舊、同年依原始題號排列。共 9 題（111／112／113 期中考各 3 題）。<b style="color:#f08a8a">紅框</b>＝同一考點在兩個以上年度重複出現。</p>
+<h3><span class="yearchip">113 年</span>期中考 第 46 題</h3>
+<article data-question-id="113-bm113-p60-q46" data-placement="final" class="repeat">
+  <span class="qhead">113 年 期中考 第 46 題</span><span class="repeat-badge">重複考點 ×2</span>
+  <p class="repeat-note">同考點：112 第39題　—　急性外傷不該首選 MRI；CTA、arthrogram、AP＋lateral 三個敘述是對的</p>
+  <p class="stem">Which description is wrong?</p>
+  <ul class="opts"><li>(A) Joint x-ray study usually has two views, including AP and lateral projections. There are also special views for evaluation of a specific portion.</li><li>(B) MRI has better tissue contrast. It is better to use MRI to detect pulmonary or upper abdominal visceral contusion or laceration when rib fracture is noted after trauma.</li><li>(C) If we can&#x27;t detect the dorsal foot pulse in a patient with traumatic lower extremity fracture, arterial injury is suspected. The next step is to arrange CT angiography for further evaluation.</li><li>(D) Arthrogram is an image study of joints after injection of contrast agent into a joint. It can be used in X-ray, CT, and MRI.</li></ul>
+  <details data-kind="answer"><summary>答案與詳解</summary>
+    <div data-kind="zh-translation"><p><strong>中文題目：</strong>下列哪一段敘述是<b>錯</b>的？</p>
+      <p>(A) 關節 X 光檢查通常有兩個方向，包含正面（AP）與側面投影；針對特定部位另有特殊角度。</p>
+      <p>(B) MRI 的組織對比較好。外傷後發現肋骨骨折時，用 MRI 來偵測肺部或上腹部臟器挫傷或撕裂傷比較好。</p>
+      <p>(C) 下肢外傷骨折的病人若摸不到足背動脈，應懷疑動脈損傷，下一步安排 CT 血管攝影進一步評估。</p>
+      <p>(D) 關節攝影是把顯影劑注入關節腔後進行的影像檢查，可用於 X 光、CT 與 MRI。</p></div>
+    <p class="ans">答案：(B)</p>
+    <p>與 112 第 39 題四個敘述完全相同，只把 (A) 移到最後，答案就變 (B)。<span class="src"> ｜ BM113_Block8期中考詳解 第 60 頁</span></p>
+  </details>
+</article>
+<article data-question-id="113-bm113-p60-q47" data-placement="final" class="repeat">
+  <span class="qhead">113 年 期中考 第 47 題</span><span class="repeat-badge">重複考點 ×2</span>
+  <p class="repeat-note">同考點：112 第37題　—　讀骨骼 X 光的 ABCS 四步驟，選項只是把四個名詞換順序</p>
+  <p class="stem">While reading skeletal x-ray films, we need to check A, B, C, S, which are:</p>
+  <ul class="opts"><li>(A) Bone texture, cortical bone, soft tissue and joint space, skeletal alignment</li><li>(B) Skeletal alignment, soft tissue, joint space, bone texture</li><li>(C) Soft tissue, joint space, bone texture, cortical bone</li><li>(D) soft tissue and joint space, intraskeletal vessels, skeletal alignment, bone texture</li></ul>
+  <details data-kind="answer"><summary>答案與詳解</summary>
+    <div data-kind="zh-translation"><p><strong>中文題目：</strong>判讀骨骼 X 光片時，我們需要檢查 A、B、C、S，它們分別是：</p>
+      <p>(A) 骨質紋理、皮質骨、軟組織與關節腔、骨骼排列</p>
+      <p>(B) 骨骼排列、軟組織、關節腔、骨質紋理</p>
+      <p>(C) 軟組織、關節腔、骨質紋理、皮質骨</p>
+      <p>(D) 軟組織與關節腔、骨內血管、骨骼排列、骨質紋理</p></div>
+    <p class="ans">答案：(A)</p>
+    <p>與 112 第 37 題逐字相同，正解從 (C) 搬到 (A)。背成員，不要背字母。<span class="src"> ｜ BM113_Block8期中考詳解 第 60 頁</span></p>
+  </details>
+</article>
+<article data-question-id="113-bm113-p60-q48" data-placement="final">
+  <span class="qhead">113 年 期中考 第 48 題</span>
+  
+  <p class="stem">The following image demonstrates an examination of the quadriceps muscle. Which imaging modality is being used?</p>
+  <ul class="opts"><li>(A) X-ray</li><li>(B) CT</li><li>(C) MRI</li><li>(D) Ultrasound</li></ul>
+  <details data-kind="answer"><summary>答案與詳解</summary>
+    <div data-kind="zh-translation"><p><strong>中文題目：</strong>下圖是股四頭肌的檢查影像，使用的是哪一種影像工具？</p>
+      <p>(A) X 光</p>
+      <p>(B) 電腦斷層</p>
+      <p>(C) 磁振造影</p>
+      <p>(D) 超音波</p></div>
+    <p class="ans">答案：(D)</p>
+    <p>一束一束、黑白相間的肌纖維紋理是超音波的特徵；原卷註明送分。<span class="src"> ｜ BM113_Block8期中考詳解 第 60 頁</span></p>
+  </details>
+</article>
+<h3><span class="yearchip">112 年</span>期中考 第 37 題</h3>
+<article data-question-id="112-bm112-p48-q37" data-placement="final" class="repeat">
+  <span class="qhead">112 年 期中考 第 37 題</span><span class="repeat-badge">重複考點 ×2</span>
+  <p class="repeat-note">同考點：113 第47題　—　讀骨骼 X 光的 ABCS 四步驟，選項只是把四個名詞換順序</p>
+  <p class="stem">While reading skeletal x-ray films, we need to check A, B, C, S, which are:</p>
+  <ul class="opts"><li>(A) Skeletal alignment, soft tissue, joint space, bone texture</li><li>(B) Soft tissue, joint space, bone texture, cortical bone</li><li>(C) Bone texture, cortical bone, soft tissue and joint space, skeletal alignment</li><li>(D) soft tissue and joint space, intraskeletal vessels, skeletal alignment, bone texture</li></ul>
+  <details data-kind="answer"><summary>答案與詳解</summary>
+    <div data-kind="zh-translation"><p><strong>中文題目：</strong>判讀骨骼 X 光片時，我們需要檢查 A、B、C、S，它們分別是：</p>
+      <p>(A) 骨骼排列、軟組織、關節腔、骨質紋理</p>
+      <p>(B) 軟組織、關節腔、骨質紋理、皮質骨</p>
+      <p>(C) 骨質紋理、皮質骨、軟組織與關節腔、骨骼排列</p>
+      <p>(D) 軟組織與關節腔、骨內血管、骨骼排列、骨質紋理</p></div>
+    <p class="ans">答案：C</p>
+    <p>四個成員必須是 alignment、bone texture、cortex、soft tissue and joint space。<span class="src"> ｜ BM112_Block 8 期中考(含申覆內容與結果) 第 48 頁</span></p>
+  </details>
+</article>
+<article data-question-id="112-bm112-p49-q38" data-placement="final">
+  <span class="qhead">112 年 期中考 第 38 題</span>
+  
+  <p class="stem">Which image modalities can be used to diagnose skeletal muscle tear? a：X-ray ; b：ultrasound ; c：CT ; d：MRI</p>
+  <ul class="opts"><li>(A) a.b.c.d</li><li>(B) b.c.d</li><li>(C) c.d</li><li>(D) d</li></ul>
+  <details data-kind="answer"><summary>答案與詳解</summary>
+    <div data-kind="zh-translation"><p><strong>中文題目：</strong>哪些影像工具可以用來診斷骨骼肌撕裂傷？a：X 光；b：超音波；c：電腦斷層；d：磁振造影</p>
+      <p>(A) a、b、c、d</p>
+      <p>(B) b、c、d</p>
+      <p>(C) c、d</p>
+      <p>(D) d</p></div>
+    <p class="ans">答案：B（申覆後維持原答案）</p>
+    <p>超音波、CT、MRI 可以，X 光不行；申覆主張的 rotator cuff 是肌腱不是肌纖維。<span class="src"> ｜ BM112_Block 8 期中考(含申覆內容與結果) 第 49 頁</span></p>
+  </details>
+</article>
+<article data-question-id="112-bm112-p51-q39" data-placement="final" class="repeat">
+  <span class="qhead">112 年 期中考 第 39 題</span><span class="repeat-badge">重複考點 ×2</span>
+  <p class="repeat-note">同考點：113 第46題　—　急性外傷不該首選 MRI；CTA、arthrogram、AP＋lateral 三個敘述是對的</p>
+  <p class="stem">Which description is wrong?</p>
+  <ul class="opts"><li>(A) MRI has better tissue contrast. It is better to use MRI to detect pulmonary or upper abdominal visceral contusion or laceration when rib fracture is noted after trauma.</li><li>(B) If we can&#x27;t detect the dorsal foot pulse in a patient with traumatic lower extremity fracture, arterial injury is suspected. The next step is to arrange CT angiography for further evaluation.</li><li>(C) Arthrogram is an image study of joint after injection of contrast agent into a joint. It can be used in X-ray, CT, and MRI.</li><li>(D) Joint x-ray study usually has two views, including AP and lateral projections. There are also special views for evaluation of a specific portion.</li></ul>
+  <details data-kind="answer"><summary>答案與詳解</summary>
+    <div data-kind="zh-translation"><p><strong>中文題目：</strong>下列哪一段敘述是<b>錯</b>的？</p>
+      <p>(A) MRI 的組織對比較好。外傷後發現肋骨骨折時，用 MRI 來偵測肺部或上腹部臟器挫傷或撕裂傷比較好。</p>
+      <p>(B) 下肢外傷骨折的病人若摸不到足背動脈，應懷疑動脈損傷，下一步安排 CT 血管攝影進一步評估。</p>
+      <p>(C) 關節攝影是把顯影劑注入關節腔後進行的影像檢查，可用於 X 光、CT 與 MRI。</p>
+      <p>(D) 關節 X 光檢查通常有兩個方向，包含正面（AP）與側面投影；針對特定部位另有特殊角度。</p></div>
+    <p class="ans">答案：A</p>
+    <p>MRI 組織對比好是對的，但急性外傷生命徵象不穩時不會首選耗時的 MRI。<span class="src"> ｜ BM112_Block 8 期中考(含申覆內容與結果) 第 51 頁</span></p>
+  </details>
+</article>
+<h3><span class="yearchip">111 年</span>期中考 第 37 題</h3>
+<article data-question-id="111-bm111-p30-q37" data-placement="final">
+  <span class="qhead">111 年 期中考 第 37 題</span>
+  
+  <p class="stem">In the computed tomography image, which of the following values is closest to the density of fat?</p>
+  <ul class="opts"><li>(A) 800 HU</li><li>(B) 80 HU</li><li>(C) 0 HU</li><li>(D) -100 HU</li></ul>
+  <details data-kind="answer"><summary>答案與詳解</summary>
+    <div data-kind="zh-translation"><p><strong>中文題目：</strong>在電腦斷層影像中，下列哪一個數值最接近脂肪的密度？</p>
+      <p>(A) 800 HU</p>
+      <p>(B) 80 HU</p>
+      <p>(C) 0 HU</p>
+      <p>(D) −100 HU</p></div>
+    <p class="ans">答案：(D) -100 HU</p>
+    <p>四個選項只有 −100 是負值，而脂肪比水鬆，HU 必為負。<span class="src"> ｜ BM111 BLOCK-8 期中考詳解 第 30 頁</span></p>
+  </details>
+</article>
+<article data-question-id="111-bm111-p31-q38" data-placement="final">
+  <span class="qhead">111 年 期中考 第 38 題</span>
+  
+  <p class="stem">Which of the following sequence images are similar to the STIR sequence images in MRI examination?</p>
+  <ul class="opts"><li>(A) T1WI + water suppression</li><li>(B) T1WI + fat suppression</li><li>(C) T2WI + water suppression</li><li>(D) T2WI + fat suppression</li></ul>
+  <details data-kind="answer"><summary>答案與詳解</summary>
+    <div data-kind="zh-translation"><p><strong>中文題目：</strong>在 MRI 檢查中，下列哪一種序列影像與 STIR 序列影像最相似？</p>
+      <p>(A) T1 加權＋水抑制</p>
+      <p>(B) T1 加權＋脂肪抑制</p>
+      <p>(C) T2 加權＋水抑制</p>
+      <p>(D) T2 加權＋脂肪抑制</p></div>
+    <p class="ans">答案：(D) T2WI + fat suppression</p>
+    <p>先刪 T1WI，再認抑制對象：STIR 關脂肪、FLAIR 關水，兩者都是 T2 打底。<span class="src"> ｜ BM111 BLOCK-8 期中考詳解 第 31 頁</span></p>
+  </details>
+</article>
+<article data-question-id="111-bm111-p31-q39" data-placement="final">
+  <span class="qhead">111 年 期中考 第 39 題</span>
+  
+  <p class="stem">In the image settings of computed tomography, if the window width is 100 and the window level is 0, what color does the water appear on the grayscale image?</p>
+  <ul class="opts"><li>(A) white</li><li>(B) gray</li><li>(C) black</li><li>(D) red</li></ul>
+  <details data-kind="answer"><summary>答案與詳解</summary>
+    <div data-kind="zh-translation"><p><strong>中文題目：</strong>在電腦斷層的影像設定中，若窗寬為 100、窗位為 0，水在灰階影像上會呈現什麼顏色？</p>
+      <p>(A) 白色</p>
+      <p>(B) 灰色</p>
+      <p>(C) 黑色</p>
+      <p>(D) 紅色</p></div>
+    <p class="ans">答案：(B) gray</p>
+    <p>範圍是 0±50，水的 HU 是 0，落在正中央所以是灰色。<span class="src"> ｜ BM111 BLOCK-8 期中考詳解 第 31 頁</span></p>
+  </details>
+</article>
+<p class="ending">灰階是算出來的，檢查是選出來的。把這兩句話拆開來記，九題就只剩下兩個題型。</p>
+</section>
+</div>
+</body>
+</html>
