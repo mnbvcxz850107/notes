@@ -1,0 +1,784 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>肌肉骨骼胚胎學 施耀翔</title>
+<style>
+:root{
+  color-scheme: dark;
+  --bg:#0b0e13; --panel:#141922; --panel2:#1b2230; --line:#2a3340;
+  --ink:#e8ecf3; --dim:#a3adbd; --gold:#e5b567; --cyan:#6fd3c7;
+  --rose:#e88b8b; --violet:#a99bf0;
+}
+*{box-sizing:border-box}
+html{font-size:150%}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font-family:"Noto Sans TC","PingFang TC","Helvetica Neue",system-ui,sans-serif;
+  line-height:1.85; overflow-wrap:anywhere;}
+/* Width follows the device, not the font size: px breakpoints stay put
+   while rem-based type scales with the 150% root. */
+.container{width:100%;max-width:none;margin:0 auto;
+  padding:clamp(.85rem,2.2vw,2.2rem);}
+@media (min-width:760px){ .container{max-width:730px} }
+@media (min-width:1024px){ .container{max-width:980px} }
+@media (min-width:1440px){ .container{max-width:1300px} }
+@media (min-width:1920px){ .container{max-width:1640px} }
+img{max-width:100%;height:auto}
+svg{max-width:100%;height:auto;display:block}
+h1{font-size:1.6rem;line-height:1.35;margin:.2rem 0 .6rem}
+h2{font-size:1.24rem;margin:2.4rem 0 .7rem;padding-bottom:.4rem;
+  border-bottom:1px solid var(--line);color:var(--gold)}
+h3{font-size:1.06rem;margin:1.5rem 0 .5rem;color:var(--cyan)}
+p{margin:.7rem 0}
+header#subject-overview{background:linear-gradient(160deg,#182031,#0e1219);
+  border:1px solid var(--line);border-radius:14px;padding:1.2rem;margin:.6rem 0 1.4rem}
+.meta{color:var(--dim);font-size:.86rem;margin:.3rem 0 0}
+nav#toc{background:var(--panel);border:1px solid var(--line);
+  border-radius:12px;padding:.9rem 1.1rem;margin:1.2rem 0}
+nav#toc ol{margin:.4rem 0 0;padding-left:1.3rem}
+nav#toc a{color:var(--ink);text-decoration:none;border-bottom:1px dotted var(--line)}
+.story{background:var(--panel2);border-left:3px solid var(--violet);
+  border-radius:0 10px 10px 0;padding:.9rem 1.1rem;margin:1.1rem 0}
+.story .tag{display:block;color:var(--violet);font-size:.78rem;
+  letter-spacing:.12em;margin-bottom:.35rem}
+.reality{background:var(--panel);border-left:3px solid var(--cyan);
+  border-radius:0 10px 10px 0;padding:.9rem 1.1rem;margin:1.1rem 0}
+.reality .tag{display:block;color:var(--cyan);font-size:.78rem;
+  letter-spacing:.12em;margin-bottom:.35rem}
+.keybox{background:#12202b;border:1px solid #26485a;border-radius:10px;
+  padding:.85rem 1rem;margin:1.1rem 0}
+.keybox b{color:var(--cyan)}
+.warn{background:#2a1c1c;border:1px solid #573434;border-radius:10px;
+  padding:.85rem 1rem;margin:1.1rem 0;color:#f0cfcf}
+article{background:var(--panel);border:1px solid var(--line);
+  border-radius:12px;padding:.95rem 1.05rem;margin:1.1rem 0}
+article .qhead{display:block;color:var(--gold);font-size:.82rem;
+  letter-spacing:.06em;margin-bottom:.45rem}
+article .stem{margin:.2rem 0 .5rem}
+article ul.opts{list-style:none;margin:.3rem 0 .2rem;padding:0}
+article ul.opts li{padding:.16rem 0 .16rem .2rem;color:#dbe2ec}
+details{background:#0f141c;border:1px solid var(--line);
+  border-radius:10px;padding:.15rem .8rem;margin:.6rem 0}
+details summary{cursor:pointer;padding:.6rem 0;color:var(--gold);
+  font-weight:600;min-height:44px;display:flex;align-items:center}
+details[data-kind="answer"] .ans{font-size:1.05rem;color:var(--cyan);font-weight:700}
+div[data-kind="zh-translation"]{background:#141c26;border:1px dashed #33465c;
+  border-radius:8px;padding:.7rem .85rem;margin:.5rem 0 .8rem}
+div[data-kind="zh-translation"] p{margin:.35rem 0}
+.src{color:var(--dim);font-size:.84rem;margin-top:.6rem}
+.quote{border-left:2px solid var(--gold);padding-left:.75rem;color:#f0e2c6}
+.infer{color:#f0d9a8;font-size:.92rem}
+figure{margin:1.3rem 0;background:var(--panel2);border:1px solid var(--line);
+  border-radius:12px;padding:.9rem}
+figcaption{color:var(--dim);font-size:.85rem;margin-top:.6rem;text-align:center}
+dl.vocab{margin:0}
+dl.vocab dt{color:var(--cyan);font-weight:700;margin-top:.9rem}
+dl.vocab dd{margin:.2rem 0 0;padding-left:0}
+dl.vocab .root{color:var(--dim);font-size:.86rem}
+.cram{background:var(--panel);border:1px solid var(--line);
+  border-radius:12px;padding:.4rem 1.1rem;margin:1rem 0}
+.cram li{margin:.55rem 0}
+.yearchip{display:inline-block;background:#233046;color:#bcd0ea;
+  border-radius:999px;padding:.05rem .55rem;font-size:.76rem;margin-right:.4rem}
+article.repeat{border:2px solid #e05252;box-shadow:0 0 0 3px rgba(224,82,82,.12)}
+article.repeat .qhead{color:#f08a8a}
+.repeat-badge{display:inline-block;background:#3a1c1c;border:1px solid #7d3a3a;
+  color:#f0a8a8;border-radius:999px;padding:.1rem .6rem;font-size:.76rem;
+  margin-left:.4rem;white-space:nowrap}
+.repeat-note{color:#e6a5a5;font-size:.84rem;margin:.45rem 0 0}
+figure.boxfig{margin:1.5rem 0 .5rem;background:transparent;border:0;padding:0}
+figure.boxfig img{border-radius:12px;border:1px solid var(--line);display:block;width:100%}
+figure.boxfig figcaption{color:var(--dim);font-size:.82rem;margin-top:.5rem;
+  text-align:left;line-height:1.6}
+figure.boxfig .figtag{color:var(--violet);font-size:.76rem;letter-spacing:.1em;
+  display:block;margin-bottom:.3rem}
+.ending{color:var(--dim);font-style:italic;margin:1.6rem 0 2.4rem}
+</style></head>
+<body>
+<div class="container">
+
+<header id="subject-overview">
+  <h1>肌肉骨骼胚胎學</h1>
+  <p>骨頭只有<b>兩種蓋法</b>：直接在膜上砌起來的<b>膜內骨化</b>，和先做一個軟骨模型再換成骨的<b>軟骨內骨化</b>。頭以上的材料由<b>神經脊</b>供應，頭以下由<b>中胚層</b>供應，分界線是脊索。而臉上那些零件，全部從四對<b>編號好的咽弓</b>出貨。</p>
+  <p>九題全部繞著這三張表打轉：<b>哪一塊骨走哪一種骨化</b>、<b>哪一區是誰的材料</b>、<b>哪個構造來自第幾對咽弓</b>。三年之間有六題是同一考點換個問法——顱骨發育考了兩次、舌骨的角考了兩次（一次小角一次大角）、骨化方式考了兩次（一次問「不是」一次問「是」）。</p>
+  <p class="meta">命題老師：112／113 施耀翔、111 何宛怡 ｜ 收錄 111、112、113 期中考，各 3 題共 9 題</p>
+</header>
+
+<nav id="toc">
+  <b>目錄</b>
+  <ol>
+    <li><a href="#chapter-1">兩種蓋法：膜內骨化與軟骨內骨化</a></li>
+    <li><a href="#chapter-2">頭是誰做的：神經脊與中胚層的分界</a></li>
+    <li><a href="#chapter-3">咽弓的編號就是答案</a></li>
+    <li><a href="#chapter-4">軀幹與四肢：肌節與肢芽</a></li>
+    <li><a href="#chapter-cram">考前速記</a></li>
+    <li><a href="#chapter-vocab">單字表</a></li>
+    <li><a href="#chapter-final">歷年考題總複習</a></li>
+  </ol>
+</nav>
+<section id="chapter-1" data-chapter-kind="story">
+<h2>一、兩種蓋法：膜內骨化與軟骨內骨化</h2>
+
+<figure class="boxfig" data-visual-id="embox-01-story" data-image-kind="story" data-explanation-verified="true">
+<span class="figtag">情境場景</span>
+<img data-visual-id="embox-01-story" src="img/embox-01-story.webp" alt="情境場景：胚胎工地上兩種工法並行——直接砌起來，或先搭木模再換掉。" loading="lazy" decoding="async" width="1600" height="914">
+<figcaption>情境場景：胚胎工地上兩種工法並行——直接砌起來，或先搭木模再換掉。</figcaption>
+</figure>
+<div class="story" data-prose-kind="story"><span class="tag">故事</span>
+<p>把一個胚胎想成一座<b>工地</b>。工地上要蓋出兩百多塊骨頭，而工法只有兩種。</p>
+<p><b>第一種是「直接砌」。</b>在一張既有的膜上，工班就地把材料堆起來，一層一層變硬，最後成為骨。快、簡單、不需要模型。頭頂那幾片扁平的骨頭——額骨、頂骨、顳骨的鱗部——都是這樣蓋出來的。這叫<b>膜內骨化</b>（intramembranous ossification）。</p>
+<p><b>第二種是「先做模再換掉」。</b>工班先用軟骨照著最終形狀做一個<b>一比一的模型</b>，模型立在那裡，血管才進來，破骨細胞把軟骨拆掉、成骨細胞跟進填上真正的骨。這叫<b>軟骨內骨化</b>（endochondral ossification）。所有<b>長骨</b>、<b>脊椎</b>、<b>骨盆</b>、<b>顱底</b>都是這樣蓋的。</p>
+<p>「為什麼要多一道工？」</p>
+<p>因為<b>軟骨會長</b>。模型可以在被換掉的同時繼續往兩端延伸——這就是生長板。要蓋一根隨著你長高而變長的股骨，就非得先有一個會長的模型不可。頭頂骨不需要長長，所以直接砌就好。</p>
+<p>工地上唯一麻煩的，是那些<b>兩種工法都用到</b>的骨頭。<b>鎖骨</b>就是最有名的一個：它先用膜內骨化起頭，後來又在兩端長出軟骨、走軟骨內骨化。這根骨頭後來害一整屆學生吵了一次申覆。</p>
+</div>
+
+<figure class="boxfig" data-visual-id="embox-02-reality" data-image-kind="comparison" data-explanation-verified="true">
+<span class="figtag">工法對照</span>
+<img data-visual-id="embox-02-reality" src="img/embox-02-reality.webp" alt="工法對照：膜內骨化與軟骨內骨化各自產出哪些骨。" loading="lazy" decoding="async" width="1600" height="914">
+<figcaption>工法對照：膜內骨化與軟骨內骨化各自產出哪些骨。</figcaption>
+</figure>
+<div class="reality"><span class="tag">回到現實</span>
+<p><b>軟骨內骨化（endochondral）</b>——先有透明軟骨模型，再被骨取代：</p>
+<p>・<b>顱底</b>（skull base）　・<b>脊椎</b>　・<b>骨盆</b>　・<b>長骨</b>（如股骨）<br>・顳骨的<b>岩部與乳突部</b>（petrous / mastoid part）<br>・<b>鐙骨</b>（stapes，來自第二咽弓軟骨）</p>
+<p><b>膜內骨化（intramembranous）</b>——直接在間葉膜上成骨：</p>
+<p>・<b>額骨</b>　・頂骨　・<b>顳骨的鱗部</b>（squamous part）<br>・<b>下頜骨</b>（mandible）<br>・<b>鎖骨的起頭</b>（初級骨化中心）</p>
+<p>111 年第 28 題問「軟骨內骨化<b>不</b>發生在哪裡」，答案是<b>顳骨的鱗部</b>。詳解一句話點破：</p>
+<p class="quote">詳解原文:「(c)petrous and mastoid part of temporal bone 才是」</p>
+<p>也就是說——同一塊<b>顳骨</b>，<b>鱗部走膜內、岩部與乳突部走軟骨內</b>。題目就是靠這個「同一塊骨、不同部位、不同工法」設陷阱。</p>
+<p class="infer">補充（非詳解內容）：選項 (D) 蝶骨大翼在多數教科書中被描述為內側部分軟骨性、外側部分膜性，屬於混合來源；但本題只要求選出「不發生軟骨內骨化」的那一個，鱗部是唯一完全走膜內的選項。</p>
+</div>
+
+<figure class="boxfig" data-visual-id="embox-03-warn" data-image-kind="mechanism" data-explanation-verified="true">
+<span class="figtag">申覆圖解</span>
+<img data-visual-id="embox-03-warn" src="img/embox-03-warn.webp" alt="申覆圖解：鎖骨先膜內骨化起頭，兩端才形成軟骨走軟骨內骨化。" loading="lazy" decoding="async" width="1600" height="914">
+<figcaption>申覆圖解：鎖骨先膜內骨化起頭，兩端才形成軟骨走軟骨內骨化。</figcaption>
+</figure>
+<div class="warn"><span class="tag">這個申覆一定要看</span>
+<p>113 年第 32 題問「哪一個<b>來自</b>軟骨內骨化」，原答案 <b>(D) Skull base</b>，申覆後<b>(C) Clavicle 也給分</b>。老師的說明把整件事講得很清楚：</p>
+<p class="quote">申覆結果（老師回覆）:「講義第 14 頁的確提到鎖骨屬於軟骨內骨化,但同時也有下列這句話: Initially intramembranous ossification, then forms cartilages at both ends……由於英文題幹命名不精確,derived from 一詞的確不具有時間性,因此答案 CD 都給分。」</p>
+<p>但老師同時把話說死了：</p>
+<p class="quote">「如果要選純然的軟骨內骨化,則應該是選擇答案(D)Skull base (顱底)較無爭議」</p>
+<p><b>所以考試時的策略很明確：看到鎖骨，先記住它是「膜內起頭、兩端補軟骨」的混血；如果同一題還有顱底、脊椎、骨盆、長骨可選，選那些，不要選鎖骨。</b></p>
+<p class="infer">另外注意這題的另外兩個選項：<b>額骨</b>與<b>下頜骨</b>都是純膜內骨化，任何時候都不會是「軟骨內」的答案。</p>
+</div>
+
+<article data-question-id="111-bm111-p24-q28" data-placement="chapter">
+  <span class="qhead">111 年 期中考 第 28 題 ｜ 何宛怡</span>
+  <p class="stem">Endochondral bone formation does NOT occur in the</p>
+  <ul class="opts">
+    <li>(A) femur</li>
+    <li>(B) stapes</li>
+    <li>(C) squamous part of temporal bone</li>
+    <li>(D) greater wing of sphenoid bone</li>
+  </ul>
+  <details data-kind="answer">
+    <summary>答案與詳解</summary>
+    <div data-kind="zh-translation">
+      <p><strong>中文題目：</strong>軟骨內骨化<b>不</b>發生於下列何者？</p>
+      <p>(A) 股骨</p>
+      <p>(B) 鐙骨</p>
+      <p>(C) 顳骨鱗部</p>
+      <p>(D) 蝶骨大翼</p>
+    </div>
+    <p class="ans">答案：(C) squamous part of temporal bone</p>
+    <p class="quote">詳解原文:「(c)petrous and mastoid part of temporal bone 才是」</p>
+    <p>顳骨要拆成兩半看：<b>鱗部走膜內骨化</b>，<b>岩部與乳突部走軟骨內骨化</b>。(A) 股骨是長骨、(B) 鐙骨源自第二咽弓軟骨，兩者都是軟骨內。</p>
+    <p class="src">出處：何宛怡 肌肉骨骼胚胎學(ppt pg.16) ｜ BM111 BLOCK-8 期中考詳解.pdf 第 24 頁</p>
+  </details>
+</article>
+
+<article data-question-id="113-bm113-p42-q32" data-placement="chapter">
+  <span class="qhead">113 年 期中考 第 32 題 ｜ 施耀翔 ｜ 申覆後開放 (C)</span>
+  <p class="stem">Which of the following is derived from endochondral ossification?</p>
+  <ul class="opts">
+    <li>(A)Frontal bone</li>
+    <li>(B)Mandibular bone</li>
+    <li>(C) Clavicle</li>
+    <li>(D) Skull base</li>
+  </ul>
+  <details data-kind="answer">
+    <summary>答案與詳解</summary>
+    <div data-kind="zh-translation">
+      <p><strong>中文題目：</strong>下列何者是由軟骨內骨化發育而來？</p>
+      <p>(A) 額骨</p>
+      <p>(B) 下頜骨</p>
+      <p>(C) 鎖骨</p>
+      <p>(D) 顱底</p>
+    </div>
+    <p class="ans">答案：(D) 申覆後 (C)(D) 皆給分</p>
+    <p class="quote">詳解原文:「如圖所示，經由軟骨內骨化發育而來的有顱底、脊椎、骨盆及長骨，但鎖骨也有部分（兩端）是經由軟骨內骨化而來，故經申覆後也為正確答案。」</p>
+    <p>(A) 額骨與 (B) 下頜骨都是<b>純膜內骨化</b>，任何情況下都不是答案。爭議只在鎖骨——它<b>初級骨化中心是膜內</b>、<b>兩端後來才形成軟骨</b>。老師的結論是：要選「純然的軟骨內骨化」，<b>顱底最沒有爭議</b>。</p>
+    <p class="src">出處：施耀翔 肌肉骨骼胚胎學 ppt pg.12 ｜ BM113_Block8期中考詳解.pdf 第 42 頁</p>
+  </details>
+</article>
+</section>
+<section id="chapter-2" data-chapter-kind="story">
+<h2>二、頭是誰做的：神經脊與中胚層的分界</h2>
+
+<figure class="boxfig" data-visual-id="embox-04-story" data-image-kind="story" data-explanation-verified="true">
+<span class="figtag">情境場景</span>
+<img data-visual-id="embox-04-story" src="img/embox-04-story.webp" alt="情境場景：脊索是一條分界線，線的前後由不同的工班供料。" loading="lazy" decoding="async" width="1600" height="914">
+<figcaption>情境場景：脊索是一條分界線，線的前後由不同的工班供料。</figcaption>
+</figure>
+<div class="story" data-prose-kind="story"><span class="tag">故事</span>
+<p>工地上有一條<b>沿著身體中軸拉出來的基準線</b>，叫做<b>脊索</b>（notochord）。它不是骨頭，但它決定了誰負責供料。</p>
+<p><b>基準線以後（軀幹那一側）</b>，材料由<b>旁軸中胚層</b>供應——脊椎、肋骨、四肢，都是中胚層的工班蓋的。這是「本地工班」。</p>
+<p><b>基準線以前（頭那一側）</b>，情況不一樣。這一段的工班是<b>外聘的</b>：一群原本長在神經管背側、後來整批遷徙出去的細胞，叫做<b>神經脊</b>（neural crest）。它們來自<b>外胚層</b>，卻跑去做原本該由中胚層做的事——蓋骨頭、蓋軟骨、蓋臉。</p>
+<p>「所以顱骨大部分是外胚層來的？」</p>
+<p>「對。<b>顱顏面構造主要來自神經脊。</b>」</p>
+<p>而頭這一區的成品又分兩套：</p>
+<p><b>神經顱</b>（neurocranium）——包住腦的那個殼，職責是<b>保護腦</b>。它自己又分兩塊：上半的頂蓋是膜內骨化直接砌的，下半的顱底是好幾片軟骨<b>癒合</b>而成、再走軟骨內骨化。</p>
+<p><b>臟顱</b>（viscerocranium）——臉、鼻腔、口腔那一套。其中<b>軟骨性的部分，主要出自第一與第二對咽弓</b>。</p>
+<p>把這三句話記牢，這一章的兩題就結束了。</p>
+</div>
+
+<figure class="boxfig" data-visual-id="embox-05-reality" data-image-kind="mechanism" data-explanation-verified="true">
+<span class="figtag">來源圖解</span>
+<img data-visual-id="embox-05-reality" src="img/embox-05-reality.webp" alt="來源圖解：以脊索為界，前為神經脊、後為旁軸中胚層。" loading="lazy" decoding="async" width="1600" height="914">
+<figcaption>來源圖解：以脊索為界，前為神經脊、後為旁軸中胚層。</figcaption>
+</figure>
+<div class="reality"><span class="tag">回到現實</span>
+<p>112 與 113 兩年考的是同一張圖，詳解也互相補足。先看 112 的：</p>
+<p class="quote">詳解原文（112）:「神經顱的軟骨內骨化之軟骨來源，以脊索(notochord)為界線，脊索之前來自於神經脊(Neural crest)，神經脊(Neural crest)屬於外胚層。」</p>
+<p>再看 113 的四句逐項說明：</p>
+<p class="quote">詳解原文（113）:「(A)正確。軟骨條的胚層來源 notochord 為界，notochord 以上(頭)由 neural crest 發育，以下來自 paraxial mesoderm。(B)是，以蝶骨為例：hypophyseal cartilage 形成 body，optic capsule 則形成 wings。(C)neurocranium 保護腦，viscerocranium 形成臉、鼻腔、口腔。(D)cartilaginous viscerocranium 主要發育自第一、二對咽弓」</p>
+<p>整理成四條可以直接用來判對錯的句子：</p>
+<p>① <b>顱骨大部分來自神經脊（外胚層），不是中胚層。</b>——112 年的 (A) 就是把主詞換成 mesoderm 而變錯的。</p>
+<p>② <b>神經顱有一部分由多片軟骨癒合而成</b>（如蝶骨：hypophyseal cartilage 形成體部、optic capsule 形成翼部）。這句<b>永遠是對的</b>。</p>
+<p>③ <b>神經顱保護腦；臟顱形成臉、鼻腔、口腔。</b>這句<b>永遠是對的</b>。</p>
+<p>④ <b>軟骨性臟顱主要來自第一、二對咽弓。</b>——113 年的 (D) 就是把「一、二」改成「三、四」而變錯的。</p>
+<p>而 112 年第 29 題只是把 ① 拿出來單獨問一次：四個選項裡只有 <b>Cranium</b> 是神經脊的地盤，脊椎、髓核、附肢骨骼都不是。</p>
+</div>
+
+<figure class="boxfig" data-visual-id="embox-06-keybox" data-image-kind="comparison" data-explanation-verified="true">
+<span class="figtag">陷阱圖解</span>
+<img data-visual-id="embox-06-keybox" src="img/embox-06-keybox.webp" alt="陷阱圖解：兩年只動了兩個地方——把神經脊換成中胚層，把一二對咽弓換成三四對。" loading="lazy" decoding="async" width="1600" height="914">
+<figcaption>陷阱圖解：兩年只動了兩個地方——把神經脊換成中胚層，把一二對咽弓換成三四對。</figcaption>
+</figure>
+<div class="keybox"><span class="tag">兩年只動了兩個字</span>
+<p>把 112 與 113 兩題並排，四個敘述的骨架完全一樣，被動手腳的只有兩處：</p>
+<p><b>112 年 (A)</b>「Most originate from <b>mesenchymal cells in the mesoderm</b>」→ <b>錯</b>（該是 neural crest）<br>
+<b>113 年 (A)</b>「Most parts originate from <b>the neural crest</b>」→ <b>對</b></p>
+<p><b>112 年 (D)</b>「<b>first and second</b> pairs of pharyngeal arches」→ <b>對</b><br>
+<b>113 年 (D)</b>「<b>third and fourth</b> pharyngeal arches」→ <b>錯</b></p>
+<p>(B) 與 (C) 兩句兩年都原封不動，也<b>兩年都是對的</b>。</p>
+<p class="infer">所以這一題型的解法只有一步：<b>看 (A) 的主詞是不是神經脊、看 (D) 的咽弓編號是不是一、二</b>。哪一句被動過，哪一句就是答案。</p>
+</div>
+
+<article data-question-id="112-bm112-p39-q28" data-placement="chapter">
+  <span class="qhead">112 年 期中考 第 28 題 ｜ 施耀翔</span>
+  <p class="stem">Which of the following statements about cranium development is incorrect?</p>
+  <ul class="opts">
+    <li>(A) Most originate from mesenchymal cells in the mesoderm.</li>
+    <li>(B) Parts of the neurocranium are formed by the fusion of multiple cartilage pieces.</li>
+    <li>(C) The neurocranium is the primary protective structure of the brain.</li>
+    <li>(D) The first and second pairs of pharyngeal arches participate in the formation of the cartilaginous viscerocranium.</li>
+  </ul>
+  <details data-kind="answer">
+    <summary>答案與詳解</summary>
+    <div data-kind="zh-translation">
+      <p><strong>中文題目：</strong>下列關於顱骨發育的敘述，何者<b>錯誤</b>？</p>
+      <p>(A) 大部分源自中胚層的間葉細胞。</p>
+      <p>(B) 神經顱有部分是由多片軟骨癒合而成。</p>
+      <p>(C) 神經顱是腦部主要的保護構造。</p>
+      <p>(D) 第一與第二對咽弓參與軟骨性臟顱的形成。</p>
+    </div>
+    <p class="ans">答案：A</p>
+    <p class="quote">詳解原文:「神經顱的軟骨內骨化之軟骨來源，以脊索(notochord)為界線，脊索之前來自於神經脊(Neural crest)，神經脊(Neural crest)屬於外胚層。」</p>
+    <p>(A) 錯在<b>胚層來源</b>：顱骨大部分來自<b>神經脊（外胚層）</b>，不是中胚層的間葉細胞。其餘三句都正確。</p>
+    <p class="src">出處：施耀翔 肌肉骨骼胚胎學(ppt pg. 34) ｜ BM112_Block 8 期中考(含申覆內容與結果).pdf 第 39 頁</p>
+  </details>
+</article>
+
+<article data-question-id="113-bm113-p41-q31" data-placement="chapter">
+  <span class="qhead">113 年 期中考 第 31 題 ｜ 施耀翔</span>
+  <p class="stem">Which of the following statements about cranium development is incorrect?</p>
+  <ul class="opts">
+    <li>(A)Most parts originate from the neural crest</li>
+    <li>(B)Parts of the neurocranium are formed by the fusion of multiple cartilages</li>
+    <li>(C)The neurocranium is the main protective structure for the brain</li>
+    <li>(D)The third and fourth pharyngeal arches contribute to the formation of the cartilaginous viscerocranium</li>
+  </ul>
+  <details data-kind="answer">
+    <summary>答案與詳解</summary>
+    <div data-kind="zh-translation">
+      <p><strong>中文題目：</strong>下列關於顱骨發育的敘述，何者<b>錯誤</b>？</p>
+      <p>(A) 大部分源自神經脊。</p>
+      <p>(B) 神經顱有部分是由多片軟骨癒合而成。</p>
+      <p>(C) 神經顱是腦部主要的保護構造。</p>
+      <p>(D) 第三與第四對咽弓參與軟骨性臟顱的形成。</p>
+    </div>
+    <p class="ans">答案：(D)</p>
+    <p class="quote">詳解原文:「(A)正確。軟骨條的胚層來源notochord為界，notochord以上(頭)由neural crest發育，以下來自paraxial mesoderm。(B)是，以蝶骨為例：hypophyseal cartilage形成body，optic capsule則形成wings。(C)neurocranium保護腦，viscerocranium形成臉、鼻腔、口腔。(D)cartilaginous viscerocranium主要發育自第一、二對咽弓」</p>
+    <p>與 112 年第 28 題是同一組敘述：112 年把 (A) 的主詞改成中胚層而成為錯項，113 年把 (A) 改回正確、改動 (D) 的<b>咽弓編號</b>（一、二 → 三、四）當作錯項。</p>
+    <p class="src">出處：施耀翔 肌肉骨骼胚胎學 ppt pg.34, 35 ｜ BM113_Block8期中考詳解.pdf 第 41 頁</p>
+  </details>
+</article>
+
+<article data-question-id="112-bm112-p40-q29" data-placement="chapter">
+  <span class="qhead">112 年 期中考 第 29 題 ｜ 施耀翔</span>
+  <p class="stem">Which of the following majorly originates from the neural crest during development?</p>
+  <ul class="opts">
+    <li>(A) Vertebra</li>
+    <li>(B) Nucleus pulposus</li>
+    <li>(C) Cranium</li>
+    <li>(D) Appendicular skeleton</li>
+  </ul>
+  <details data-kind="answer">
+    <summary>答案與詳解</summary>
+    <div data-kind="zh-translation">
+      <p><strong>中文題目：</strong>下列何者在發育過程中<b>主要</b>源自神經脊？</p>
+      <p>(A) 脊椎</p>
+      <p>(B) 髓核</p>
+      <p>(C) 顱骨</p>
+      <p>(D) 附肢骨骼</p>
+    </div>
+    <p class="ans">答案：C</p>
+    <p class="quote">詳解原文:「Neural crest 主要發育為craniofacial structures，因此選C」</p>
+    <p>記一條線就好：<b>脊索以前（頭）＝神經脊，脊索以後（軀幹、四肢）＝旁軸中胚層</b>。(A) 脊椎與 (D) 附肢骨骼都在線的後面；(B) 髓核則是<b>脊索本身</b>的殘餘。</p>
+    <p class="src">出處：施耀翔 肌肉骨骼胚胎學(ppt pg. 6) ｜ BM112_Block 8 期中考(含申覆內容與結果).pdf 第 40 頁</p>
+  </details>
+</article>
+</section>
+<section id="chapter-3" data-chapter-kind="story">
+<h2>三、咽弓的編號就是答案</h2>
+
+<figure class="boxfig" data-visual-id="embox-07-story" data-image-kind="story" data-explanation-verified="true">
+<span class="figtag">情境場景</span>
+<img data-visual-id="embox-07-story" src="img/embox-07-story.webp" alt="情境場景：四組編號好的預鑄構件，每一組出產固定的零件。" loading="lazy" decoding="async" width="1600" height="914">
+<figcaption>情境場景：四組編號好的預鑄構件，每一組出產固定的零件。</figcaption>
+</figure>
+<div class="story" data-prose-kind="story"><span class="tag">故事</span>
+<p>工地的頸部區有一排<b>編號好的預鑄構件</b>，由上往下依序是第一、二、三、四對<b>咽弓</b>。每一組出產固定的零件，出貨單早就印好了。</p>
+<p>「第一組出下頜跟中耳的兩塊小骨；第二組出鐙骨，還有<b>舌骨的小角</b>；第三組出<b>舌骨的大角</b>跟身體的下半；第四、六組出喉部的軟骨。」</p>
+<p>實習醫師抄了半天：「這個真的只能背嗎？」</p>
+<p>「這個真的只能背。但你只要背<b>舌骨那兩個角</b>就好——因為老師只考它。」</p>
+<p>「兩個角有什麼好記的？」</p>
+<p>「<b>小角小、編號小，第二；大角大、編號大，第三。</b>」</p>
+<p>「就這樣？」</p>
+<p>「就這樣。112 年考小角，答案第二咽弓；113 年考大角，答案第三咽弓。連題幹句型都一模一樣，只換了一個字。」</p>
+</div>
+
+<figure class="boxfig" data-visual-id="embox-08-reality" data-image-kind="comparison" data-explanation-verified="true">
+<span class="figtag">咽弓出貨表</span>
+<img data-visual-id="embox-08-reality" src="img/embox-08-reality.webp" alt="咽弓出貨表：小角來自第二咽弓、大角來自第三咽弓。" loading="lazy" decoding="async" width="1600" height="914">
+<figcaption>咽弓出貨表：小角來自第二咽弓、大角來自第三咽弓。</figcaption>
+</figure>
+<div class="reality"><span class="tag">回到現實</span>
+<p>兩年的詳解都只有一句話，都是「看圖」：</p>
+<p class="quote">詳解原文（112）:「如下圖，可見lesser cornu of the hyoid bone(深綠色框)來自Second pharyngeal arch(深綠色框)。」</p>
+<p class="quote">詳解原文（113）:「如下圖所示，舌骨大角由第三咽弓發育而來。」</p>
+<p>所以整個考點就是一張對應表的兩格：</p>
+<p>・<b>舌骨小角（lesser cornu）→ 第二咽弓</b><br>・<b>舌骨大角（greater cornu）→ 第三咽弓</b></p>
+<p><b>記法：cornu 是「角」，lesser／greater 就是小角／大角。小配二、大配三。</b></p>
+<p class="infer">補充（非詳解內容，供辨識干擾選項用）：第二咽弓的軟骨（Reichert's cartilage）除了舌骨小角，也產出<b>鐙骨</b>——這正好和第一章 111 年第 28 題的 (B) stapes 對得上。第一咽弓（Meckel's cartilage）則對應下頜與槌骨、砧骨。</p>
+</div>
+
+<article data-question-id="112-bm112-p40-q30" data-placement="chapter">
+  <span class="qhead">112 年 期中考 第 30 題 ｜ 施耀翔</span>
+  <p class="stem">The lesser cornu of the hyoid bone develops from which pharyngeal arch?</p>
+  <ul class="opts">
+    <li>(A) First pharyngeal arch</li>
+    <li>(B) Second pharyngeal arch</li>
+    <li>(C) Third pharyngeal arch</li>
+    <li>(D) Fourth pharyngeal arch</li>
+  </ul>
+  <details data-kind="answer">
+    <summary>答案與詳解</summary>
+    <div data-kind="zh-translation">
+      <p><strong>中文題目：</strong>舌骨的<b>小角</b>由第幾對咽弓發育而來？</p>
+      <p>(A) 第一咽弓</p>
+      <p>(B) 第二咽弓</p>
+      <p>(C) 第三咽弓</p>
+      <p>(D) 第四咽弓</p>
+    </div>
+    <p class="ans">答案：B</p>
+    <p class="quote">詳解原文:「如下圖，可見lesser cornu of the hyoid bone(深綠色框)來自Second pharyngeal arch(深綠色框)。」</p>
+    <p><b>小角配第二。</b>同一對咽弓也產出鐙骨。</p>
+    <p class="src">出處：施耀翔 肌肉骨骼胚胎學(ppt pg.42) ｜ BM112_Block 8 期中考(含申覆內容與結果).pdf 第 40 頁</p>
+  </details>
+</article>
+
+<article data-question-id="113-bm113-p43-q33" data-placement="chapter">
+  <span class="qhead">113 年 期中考 第 33 題 ｜ 施耀翔</span>
+  <p class="stem">The greater cornu of the hyoid bone develops from which pharyngeal arch?</p>
+  <ul class="opts">
+    <li>(A) First pharyngeal arch</li>
+    <li>(B) Second pharyngeal arch</li>
+    <li>(C) Third pharyngeal arch</li>
+    <li>(D) Fourth pharyngeal arch</li>
+  </ul>
+  <details data-kind="answer">
+    <summary>答案與詳解</summary>
+    <div data-kind="zh-translation">
+      <p><strong>中文題目：</strong>舌骨的<b>大角</b>由第幾對咽弓發育而來？</p>
+      <p>(A) 第一咽弓</p>
+      <p>(B) 第二咽弓</p>
+      <p>(C) 第三咽弓</p>
+      <p>(D) 第四咽弓</p>
+    </div>
+    <p class="ans">答案：(C)</p>
+    <p class="quote">詳解原文:「如下圖所示，舌骨大角由第三咽弓發育而來。」</p>
+    <p>與 112 年第 30 題除了 lesser／greater 一個字之外<b>完全相同</b>。<b>大角配第三。</b></p>
+    <p class="src">出處：施耀翔 肌肉骨骼胚胎學 ppt pg.43 ｜ BM113_Block8期中考詳解.pdf 第 43 頁</p>
+  </details>
+</article>
+</section>
+<section id="chapter-4" data-chapter-kind="story">
+<h2>四、軀幹與四肢：肌節與肢芽</h2>
+
+<figure class="boxfig" data-visual-id="embox-09-story" data-image-kind="story" data-explanation-verified="true">
+<span class="figtag">情境場景</span>
+<img data-visual-id="embox-09-story" src="img/embox-09-story.webp" alt="情境場景：軀幹的工班分成背側與腹側兩班，四肢則是另外開的工地。" loading="lazy" decoding="async" width="1600" height="914">
+<figcaption>情境場景：軀幹的工班分成背側與腹側兩班，四肢則是另外開的工地。</figcaption>
+</figure>
+<div class="story" data-prose-kind="story"><span class="tag">故事</span>
+<p>軀幹上一節一節的<b>體節</b>，各自派出一個<b>肌節</b>（myotome）負責當地的肌肉。而每一個肌節上工的第一件事，就是<b>分成兩班</b>。</p>
+<p><b>背側那一班叫「軸上班」（epaxial）</b>，人數少、守備範圍窄：就是沿著脊柱背面那一整條深層的伸肌。<b>頸部與脊柱相關的深肌，都是這一班的。</b></p>
+<p><b>腹側那一班叫「軸下班」（hypaxial）</b>，人數多、範圍大：從頸前、肋間、腹壁一路管到骨盆底。<b>幾乎所有其他的肌肉都是這一班的。</b></p>
+<p>「所以考題怎麼考？」</p>
+<p>「給你四條肌肉，三條是軸下班的，一條是軸上班的，問你哪一條<b>不是</b>軸下。<b>認出那條背肌就好。</b>」</p>
+<p>而<b>四肢</b>則是另外開的工地。工地的地基不是體節，而是<b>體壁中胚層</b>堆出來的一團間葉，外面蓋著一層<b>表面外胚層</b>——就這兩層，中間沒有別的東西。</p>
+<p>「那肌肉呢？肌肉不是也要從肌節過來？」</p>
+<p>「細胞會遷徙過去沒錯。但<b>肢芽這個構造本身</b>，就是<b>中間一團體壁中胚層、外面一層表面外胚層</b>。這一點在 111 年被人拿去申覆，老師的回答是：<b>皮肌節只出現在軀幹</b>，肢芽的外胚層與中胚層之間不會夾一層皮肌節。」</p>
+</div>
+
+<figure class="boxfig" data-visual-id="embox-10-reality" data-image-kind="comparison" data-explanation-verified="true">
+<span class="figtag">肌節分班表</span>
+<img data-visual-id="embox-10-reality" src="img/embox-10-reality.webp" alt="肌節分班表：軸上是背側深層伸肌，軸下涵蓋其餘幾乎所有肌肉。" loading="lazy" decoding="async" width="1600" height="914">
+<figcaption>肌節分班表：軸上是背側深層伸肌，軸下涵蓋其餘幾乎所有肌肉。</figcaption>
+</figure>
+<div class="reality"><span class="tag">回到現實</span>
+<p>111 年第 30 題的詳解只寫了兩句，但那兩句就是判準：</p>
+<p class="quote">詳解原文:「軸下肌群可分為四個部分，詳細如下圖所示。而longissimus capitis屬於軸上肌群，軸上肌群主要是頸部與脊柱相關的深肌。」</p>
+<p>對照四個選項：</p>
+<p>・<b>(A) longissimus capitis（頭最長肌）</b>——豎脊肌群的一員，沿著脊柱背側走，屬<b>軸上</b>。<b>這就是答案。</b><br>
+・(B) geniohyoid（頦舌骨肌）——頸前，軸下<br>
+・(C) rectus abdominis（腹直肌）——腹壁，軸下<br>
+・(D) levator ani（提肛肌）——骨盆底，軸下</p>
+<p class="infer">補充（非詳解內容）：軸上與軸下也可以用<b>神經</b>來分——軸上肌由脊神經的<b>背側枝</b>支配，軸下肌由<b>腹側枝</b>支配。選項裡凡是背部深層的伸肌，一律歸軸上。</p>
+</div>
+
+<figure class="boxfig" data-visual-id="embox-11-keybox" data-image-kind="mechanism" data-explanation-verified="true">
+<span class="figtag">肢芽圖解</span>
+<img data-visual-id="embox-11-keybox" src="img/embox-11-keybox.webp" alt="肢芽圖解：AER 管近遠軸、ZPA 管前後軸，肢芽只有兩層。" loading="lazy" decoding="async" width="1600" height="914">
+<figcaption>肢芽圖解：AER 管近遠軸、ZPA 管前後軸，肢芽只有兩層。</figcaption>
+</figure>
+<div class="keybox"><span class="tag">肢體發育四個必記點</span>
+<p>111 年第 29 題的四個選項，正好各測一件事：</p>
+<p>① <b>訊號中心不要記反。</b><b>AER（頂端外胚層脊）管近端—遠端軸</b>；<b>ZPA（極化活性區）管前—後軸</b>。題目把 ZPA 說成建立近遠軸，錯。</p>
+<p class="quote">詳解原文:「(A) AER activity establishes the proximal-distal axis of the bud」</p>
+<p>② <b>旋轉方向不要記反。</b><b>上肢向外側（laterally）旋轉</b>，下肢向內側旋轉。題目說上肢向內側，錯。</p>
+<p class="quote">詳解原文:「(B) the upper limbs rotate laterally on their longitudinal axes during limb development」</p>
+<p>③ <b>「全部」這種字要小心。</b>次級骨化中心<b>大多</b>在出生後出現，但<b>股骨遠端與脛骨近端是最早的，出生時就已經存在</b>。所以「all … after birth」錯。</p>
+<p class="quote">詳解原文:「(C) …(femur distal end/ tibial proximal end are the first to appear, present at birth)」</p>
+<p>④ <b>肢芽只有兩層。</b>中間一團<b>體壁中胚層</b>的間葉，外面一層<b>表面外胚層</b>。這句是對的，也是答案。</p>
+</div>
+
+<article data-question-id="111-bm111-p25-q30" data-placement="chapter">
+  <span class="qhead">111 年 期中考 第 30 題 ｜ 何宛怡</span>
+  <p class="stem">Which of the following structures is NOT derived from the hypaxial divisions of myotomes?</p>
+  <ul class="opts">
+    <li>(A) longissimus capitis</li>
+    <li>(B) geniohyoid</li>
+    <li>(C) rectus abdominis</li>
+    <li>(D) levator ani</li>
+  </ul>
+  <details data-kind="answer">
+    <summary>答案與詳解</summary>
+    <div data-kind="zh-translation">
+      <p><strong>中文題目：</strong>下列哪一個構造<b>不是</b>由肌節的軸下部分發育而來？</p>
+      <p>(A) 頭最長肌</p>
+      <p>(B) 頦舌骨肌</p>
+      <p>(C) 腹直肌</p>
+      <p>(D) 提肛肌</p>
+    </div>
+    <p class="ans">答案：(A) longissimus capitis</p>
+    <p class="quote">詳解原文:「軸下肌群可分為四個部分，詳細如下圖所示。而longissimus capitis屬於軸上肌群，軸上肌群主要是頸部與脊柱相關的深肌。」</p>
+    <p>頭最長肌屬豎脊肌群，是<b>背側深層的伸肌</b>，歸<b>軸上</b>。其餘三條分別位於頸前、腹壁、骨盆底，都是軸下。</p>
+    <p class="src">出處：何宛怡 肌肉骨骼胚胎學(ppt pg.33.34) ｜ BM111 BLOCK-8 期中考詳解.pdf 第 25 頁</p>
+  </details>
+</article>
+
+<article data-question-id="111-bm111-p25-q29" data-placement="chapter">
+  <span class="qhead">111 年 期中考 第 29 題 ｜ 何宛怡 ｜ 申覆後維持原答案</span>
+  <p class="stem">Which of the following statement is TRUE concerning the development of the limb?</p>
+  <ul class="opts">
+    <li>(A) the zone of polarizing activity establishes the proximal-distal axis of the bud</li>
+    <li>(B) the upper limbs rotate medially on their longitudinal axes during limb development</li>
+    <li>(C) all of the secondary ossification centers appear in the limb after birth</li>
+    <li>(D) each limb bud consists of a mesenchymal core of somatic mesoderm covered by surface ectoderm</li>
+  </ul>
+  <details data-kind="answer">
+    <summary>答案與詳解</summary>
+    <div data-kind="zh-translation">
+      <p><strong>中文題目：</strong>關於肢體發育，下列敘述何者<b>正確</b>？</p>
+      <p>(A) 極化活性區（ZPA）建立肢芽的近端—遠端軸。</p>
+      <p>(B) 上肢在發育過程中沿其長軸向<b>內側</b>旋轉。</p>
+      <p>(C) 肢體所有的次級骨化中心都在出生後才出現。</p>
+      <p>(D) 每一個肢芽由體壁中胚層的間葉核心構成，外覆表面外胚層。</p>
+    </div>
+    <p class="ans">答案：(D)</p>
+    <p class="quote">詳解原文:「(A) AER activity establishes the proximal-distal axis of the bud (B) the upper limbs rotate laterally on their longitudinal axes during limb development (C) all of the secondary ossification centers appear in the limb after birth (femur distal end/ tibial proximal end are the first to appear, present at birth)」</p>
+    <p class="quote">申覆結果（維持原答案）:「因為dermomyotome只會出現在軀幹，而這一題是問limb bud，所以在ectoderm跟somatic mesoderm間不會有dermomyotome。答案不變。」</p>
+    <p>三個錯項各改一處：<b>訊號中心搞反</b>（近遠軸是 AER 不是 ZPA）、<b>旋轉方向搞反</b>（上肢向外側）、<b>用了「all」</b>（股骨遠端與脛骨近端出生時已存在）。</p>
+    <p class="src">出處：何宛怡 肌肉骨骼胚胎學(ppt pg.27) ｜ BM111 BLOCK-8 期中考詳解.pdf 第 25 頁</p>
+  </details>
+</article>
+</section>
+<section id="chapter-cram" data-chapter-kind="cram">
+<h2>五、考前速記</h2>
+<div class="cram">
+<ul>
+<li><b>軟骨內骨化 = 顱底、脊椎、骨盆、長骨</b>（＋顳骨岩部與乳突部、鐙骨）。</li>
+<li><b>膜內骨化 = 額骨、頂骨、顳骨鱗部、下頜骨</b>（＋鎖骨的初級骨化中心）。</li>
+<li><b>顳骨要拆兩半：鱗部膜內、岩部與乳突部軟骨內。</b>111 年就靠這個設陷阱。</li>
+<li><b>鎖骨是混血</b>：膜內起頭，兩端才形成軟骨。要選「純軟骨內」時<b>選顱底</b>，不要選鎖骨。</li>
+<li><b>額骨、下頜骨永遠不是軟骨內骨化的答案。</b></li>
+<li><b>脊索是分界線：以前（頭）＝神經脊，以後（軀幹四肢）＝旁軸中胚層。</b></li>
+<li><b>神經脊屬外胚層</b>，卻負責顱顏面的骨與軟骨。看到「顱骨來自中胚層」就是錯的。</li>
+<li><b>髓核來自脊索本身</b>，不是神經脊、也不是中胚層節。</li>
+<li><b>神經顱保護腦；臟顱形成臉、鼻腔、口腔。</b>這句永遠對。</li>
+<li><b>神經顱有部分由多片軟骨癒合</b>（蝶骨：hypophyseal cartilage 成體部、optic capsule 成翼部）。這句也永遠對。</li>
+<li><b>軟骨性臟顱主要來自第一、二對咽弓。</b>寫成三、四就是錯的。</li>
+<li><b>舌骨小角 → 第二咽弓；舌骨大角 → 第三咽弓。</b>小配二、大配三。</li>
+<li><b>第二咽弓也產出鐙骨</b>；第一咽弓對應下頜與槌骨、砧骨。</li>
+<li><b>AER 管近端—遠端軸；ZPA 管前—後軸。</b>兩個訊號中心不要互換。</li>
+<li><b>上肢向外側旋轉，下肢向內側旋轉。</b></li>
+<li><b>次級骨化中心大多在出生後</b>，但<b>股骨遠端與脛骨近端出生時已存在</b>——看到「all…after birth」就是錯的。</li>
+<li><b>肢芽只有兩層：體壁中胚層的間葉核心＋表面外胚層。</b>中間不夾皮肌節（皮肌節只在軀幹）。</li>
+<li><b>軸上肌 = 背側深層伸肌</b>（豎脊肌群，如 longissimus capitis），由脊神經<b>背側枝</b>支配。</li>
+<li><b>軸下肌 = 其餘幾乎全部</b>（頸前、肋間、腹壁、骨盆底），由<b>腹側枝</b>支配。</li>
+<li>本科三個重複考點：<b>顱骨敘述判錯、舌骨的角、骨化方式</b>——各考兩年，共六題。</li>
+</ul>
+</div>
+</section>
+
+<!-- ================= VOCAB ================= -->
+<section id="chapter-vocab" data-chapter-kind="vocab">
+<h2>六、單字表</h2>
+<dl class="vocab">
+<dt>intramembranous ossification</dt>
+<dd><span class="root">intra-（在……之內）+ membrane（膜）</span>　膜內骨化。間葉細胞直接在膜內分化為成骨細胞成骨。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>「在膜裡面直接蓋」。不需要模型，所以蓋出來的骨不會靠生長板長長。</p></details></dd>
+
+<dt>endochondral ossification</dt>
+<dd><span class="root">endo-（在內）+ chondro-（軟骨）</span>　軟骨內骨化。先形成透明軟骨模型，再由骨取代。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>chondro-＝軟骨。「在軟骨裡面換掉」。<b>會長長的骨都走這條路。</b></p></details></dd>
+
+<dt>notochord</dt>
+<dd><span class="root">noto-（背）+ chord（索）</span>　脊索。中軸的暫時性結構，是頭與軀幹胚層來源的分界線。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>它是<b>那條線</b>：線以前歸神經脊，線以後歸旁軸中胚層。殘餘物就是髓核。</p></details></dd>
+
+<dt>neural crest</dt>
+<dd><span class="root">crest＝脊、冠</span>　神經脊。源自外胚層，遷徙後形成顱顏面的骨與軟骨等構造。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>它屬<b>外胚層</b>卻做中胚層的工作——這個違反直覺的點就是考點本身。</p></details></dd>
+
+<dt>paraxial mesoderm</dt>
+<dd><span class="root">para-（旁）+ axial（軸）</span>　旁軸中胚層。分節成體節，供應軀幹與四肢的骨骼肌肉。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>「軸的兩旁」。脊索<b>以後</b>的材料都出自這裡。</p></details></dd>
+
+<dt>somatic mesoderm</dt>
+<dd><span class="root">soma（希臘：身體）</span>　體壁中胚層（側板中胚層的體壁層），構成肢芽的間葉核心。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>肢芽的<b>裡層</b>就是它，外面只蓋一層表面外胚層——中間沒有第三層。</p></details></dd>
+
+<dt>neurocranium</dt>
+<dd><span class="root">neuro-（神經、腦）+ cranium（顱）</span>　神經顱。包覆並保護腦的顱骨部分。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>名字裡有 neuro＝<b>裝腦的那個殼</b>。頂蓋走膜內、顱底走軟骨內。</p></details></dd>
+
+<dt>viscerocranium</dt>
+<dd><span class="root">viscero-（內臟）+ cranium（顱）</span>　臟顱。形成臉、鼻腔與口腔的部分。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>「內臟那一面」——呼吸道與消化道的入口都在這裡，所以是臉。</p></details></dd>
+
+<dt>pharyngeal arch</dt>
+<dd><span class="root">pharynx（咽）+ arch（弓）</span>　咽弓。頸部一系列成對的胚胎構造，各自產出固定的骨與軟骨。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>把它當成<b>編號好的預鑄構件</b>：出貨單固定，只能背。</p></details></dd>
+
+<dt>cornu (lesser / greater cornu)</dt>
+<dd><span class="root">拉丁 cornu＝角（比較 unicorn）</span>　舌骨的小角與大角。<details data-kind="vocab-memory"><summary>記憶提示</summary><p><b>小角配第二、大角配第三。</b>兩年就考這兩格。</p></details></dd>
+
+<dt>hyoid bone</dt>
+<dd><span class="root">希臘字母 upsilon 的形狀</span>　舌骨。頸前唯一不與其他骨形成關節的骨。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>它的身體、小角、大角來自不同咽弓——所以才會被拿來出題。</p></details></dd>
+
+<dt>Meckel's cartilage</dt>
+<dd><span class="root">以解剖學家 Meckel 命名</span>　第一咽弓的軟骨，與下頜及槌骨、砧骨的形成有關。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>第一弓＝「下巴那一組」。</p></details></dd>
+
+<dt>Reichert's cartilage</dt>
+<dd><span class="root">以解剖學家 Reichert 命名</span>　第二咽弓的軟骨，形成鐙骨與舌骨小角等構造。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>第二弓＝「鐙骨＋小角」。這兩個一起記，剛好對應到兩年的兩題。</p></details></dd>
+
+<dt>stapes</dt>
+<dd><span class="root">拉丁 stapes＝馬鐙</span>　鐙骨，中耳三小骨中最內側者，源自第二咽弓軟骨。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>來自<b>軟骨</b>，所以它走<b>軟骨內骨化</b>——111 年的 (B) 就是靠這點成為錯項。</p></details></dd>
+
+<dt>squamous part of temporal bone</dt>
+<dd><span class="root">squama（拉丁：鱗片）</span>　顳骨鱗部，扁平如鱗，走膜內骨化。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>squama＝鱗片＝<b>扁平</b>＝直接砌起來的那種。扁平骨幾乎都是膜內。</p></details></dd>
+
+<dt>petrous / mastoid part</dt>
+<dd><span class="root">petra（希臘：岩石）；mastos（乳房）</span>　顳骨的岩部與乳突部，走軟骨內骨化。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>petra＝岩石，全身最硬的骨。跟鱗部同屬一塊顳骨，工法卻不同。</p></details></dd>
+
+<dt>clavicle</dt>
+<dd><span class="root">拉丁 clavicula＝小鑰匙</span>　鎖骨。初級骨化中心為膜內骨化，兩端後來形成軟骨。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>全身最早開始骨化的骨，也是唯一的「混血」——113 年申覆的主角。</p></details></dd>
+
+<dt>limb bud</dt>
+<dd><span class="root">bud＝芽</span>　肢芽。體壁中胚層的間葉核心外覆表面外胚層。<details data-kind="vocab-memory"><summary>記憶提示</summary><p><b>兩層，就兩層。</b>中間不夾皮肌節。</p></details></dd>
+
+<dt>apical ectodermal ridge (AER)</dt>
+<dd><span class="root">apical（頂端）+ ridge（脊）</span>　頂端外胚層脊，建立<b>近端—遠端</b>軸。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>它長在肢芽的<b>尖端</b>，所以管的是「往外長多遠」——近遠軸。</p></details></dd>
+
+<dt>zone of polarizing activity (ZPA)</dt>
+<dd><span class="root">polarize＝極化</span>　極化活性區，位於肢芽後緣，建立<b>前—後</b>軸。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>它長在<b>後緣</b>，所以管前後。<b>AER 尖端管遠近、ZPA 後緣管前後。</b></p></details></dd>
+
+<dt>myotome</dt>
+<dd><span class="root">myo-（肌）+ -tome（節、切片）</span>　肌節。體節中發育為骨骼肌的部分。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>每個肌節一上工就<b>分成兩班</b>：軸上與軸下。</p></details></dd>
+
+<dt>epaxial division</dt>
+<dd><span class="root">ep-（在上）+ axial（軸）</span>　軸上部，形成脊柱背側的深層伸肌，由脊神經背側枝支配。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>ep-＝上面／背面。範圍很窄，<b>只有背部深層那一條</b>。</p></details></dd>
+
+<dt>hypaxial division</dt>
+<dd><span class="root">hypo-（在下）+ axial（軸）</span>　軸下部，形成頸前、肋間、腹壁與骨盆底肌，由腹側枝支配。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>hypo-＝下面／腹面。範圍很大，<b>其餘幾乎都是它</b>。</p></details></dd>
+
+<dt>dermomyotome</dt>
+<dd><span class="root">dermo-（皮）+ myotome（肌節）</span>　皮肌節，體節中日後形成真皮與骨骼肌的部分。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>老師在申覆裡強調：<b>皮肌節只出現在軀幹</b>，肢芽的兩層之間不會有它。</p></details></dd>
+
+<dt>secondary ossification center</dt>
+<dd><span class="root">secondary＝次級</span>　次級骨化中心，位於長骨兩端骨骺。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>大多出生後才出現——但<b>股骨遠端與脛骨近端是例外</b>，出生時就在。看到「all」先懷疑。</p></details></dd>
+</dl>
+</section>
+<section id="chapter-final" data-chapter-kind="final_questions">
+<h2>七、歷年考題總複習</h2>
+<p class="meta">依年度由新到舊、同年依原始題號排列。共 9 題（111／112／113 期中考各 3 題）。<b style="color:#f08a8a">紅框</b>＝同一考點在兩個以上年度重複出現。</p>
+<h3><span class="yearchip">113 年</span>期中考 第 31 題</h3>
+<article data-question-id="113-bm113-p41-q31" data-placement="final" class="repeat">
+  <span class="qhead">113 年 期中考 第 31 題 ｜ 施耀翔</span><span class="repeat-badge">重複考點 ×2</span>
+  <p class="repeat-note">同考點：112 第28題　—　顱骨發育四敘述判錯：神經脊／中胚層的分界，以及軟骨性臟顱來自第幾對咽弓</p>
+  <p class="stem">Which of the following statements about cranium development is incorrect?</p>
+  <ul class="opts"><li>(A)Most parts originate from the neural crest</li><li>(B)Parts of the neurocranium are formed by the fusion of multiple cartilages</li><li>(C)The neurocranium is the main protective structure for the brain</li><li>(D)The third and fourth pharyngeal arches contribute to the formation of the cartilaginous viscerocranium</li></ul>
+  <details data-kind="answer"><summary>答案與詳解</summary>
+    <div data-kind="zh-translation"><p><strong>中文題目：</strong>下列關於顱骨發育的敘述，何者<b>錯誤</b>？</p>
+      <p>(A) 大部分源自神經脊。</p>
+      <p>(B) 神經顱有部分是由多片軟骨癒合而成。</p>
+      <p>(C) 神經顱是腦部主要的保護構造。</p>
+      <p>(D) 第三與第四對咽弓參與軟骨性臟顱的形成。</p></div>
+    <p class="ans">答案：(D)</p>
+    <p>與 112 第 28 題同一組敘述，這年改動的是 (D) 的咽弓編號：應為第一、二對。<span class="src"> ｜ BM113_Block8期中考詳解 第 41 頁</span></p>
+  </details>
+</article>
+<article data-question-id="113-bm113-p42-q32" data-placement="final" class="repeat">
+  <span class="qhead">113 年 期中考 第 32 題 ｜ 施耀翔</span><span class="repeat-badge">重複考點 ×2</span>
+  <p class="repeat-note">同考點：111 第28題　—　哪些骨走軟骨內骨化、哪些走膜內骨化</p>
+  <p class="stem">Which of the following is derived from endochondral ossification?</p>
+  <ul class="opts"><li>(A)Frontal bone</li><li>(B)Mandibular bone</li><li>(C) Clavicle</li><li>(D) Skull base</li></ul>
+  <details data-kind="answer"><summary>答案與詳解</summary>
+    <div data-kind="zh-translation"><p><strong>中文題目：</strong>下列何者是由軟骨內骨化發育而來？</p>
+      <p>(A) 額骨</p>
+      <p>(B) 下頜骨</p>
+      <p>(C) 鎖骨</p>
+      <p>(D) 顱底</p></div>
+    <p class="ans">答案：(D) 申覆後(C)(D)</p>
+    <p>額骨與下頜骨純膜內；鎖骨是膜內起頭、兩端補軟骨的混血，純軟骨內選顱底。<span class="src"> ｜ BM113_Block8期中考詳解 第 42 頁</span></p>
+  </details>
+</article>
+<article data-question-id="113-bm113-p43-q33" data-placement="final" class="repeat">
+  <span class="qhead">113 年 期中考 第 33 題 ｜ 施耀翔</span><span class="repeat-badge">重複考點 ×2</span>
+  <p class="repeat-note">同考點：112 第30題　—　舌骨的角來自第幾對咽弓——小角第二、大角第三</p>
+  <p class="stem">The greater cornu of the hyoid bone develops from which pharyngeal arch?</p>
+  <ul class="opts"><li>(A) First pharyngeal arch</li><li>(B) Second pharyngeal arch</li><li>(C) Third pharyngeal arch</li><li>(D) Fourth pharyngeal arch</li></ul>
+  <details data-kind="answer"><summary>答案與詳解</summary>
+    <div data-kind="zh-translation"><p><strong>中文題目：</strong>舌骨的<b>大角</b>由第幾對咽弓發育而來？</p>
+      <p>(A) 第一咽弓</p>
+      <p>(B) 第二咽弓</p>
+      <p>(C) 第三咽弓</p>
+      <p>(D) 第四咽弓</p></div>
+    <p class="ans">答案：(C)</p>
+    <p>大角配第三咽弓。與 112 第 30 題只差 lesser／greater 一個字。<span class="src"> ｜ BM113_Block8期中考詳解 第 43 頁</span></p>
+  </details>
+</article>
+<h3><span class="yearchip">112 年</span>期中考 第 28 題</h3>
+<article data-question-id="112-bm112-p39-q28" data-placement="final" class="repeat">
+  <span class="qhead">112 年 期中考 第 28 題 ｜ 施耀翔</span><span class="repeat-badge">重複考點 ×2</span>
+  <p class="repeat-note">同考點：113 第31題　—　顱骨發育四敘述判錯：神經脊／中胚層的分界，以及軟骨性臟顱來自第幾對咽弓</p>
+  <p class="stem">Which of the following statements about cranium development is incorrect?</p>
+  <ul class="opts"><li>(A) Most originate from mesenchymal cells in the mesoderm.</li><li>(B) Parts of the neurocranium are formed by the fusion of multiple cartilage pieces.</li><li>(C) The neurocranium is the primary protective structure of the brain.</li><li>(D) The first and second pairs of pharyngeal arches participate in the formation of the cartilaginous viscerocranium.</li></ul>
+  <details data-kind="answer"><summary>答案與詳解</summary>
+    <div data-kind="zh-translation"><p><strong>中文題目：</strong>下列關於顱骨發育的敘述，何者<b>錯誤</b>？</p>
+      <p>(A) 大部分源自中胚層的間葉細胞。</p>
+      <p>(B) 神經顱有部分是由多片軟骨癒合而成。</p>
+      <p>(C) 神經顱是腦部主要的保護構造。</p>
+      <p>(D) 第一與第二對咽弓參與軟骨性臟顱的形成。</p></div>
+    <p class="ans">答案：A</p>
+    <p>(A) 把來源寫成中胚層就錯了——顱骨大部分來自神經脊，而神經脊屬外胚層。<span class="src"> ｜ BM112_Block 8 期中考(含申覆內容與結果) 第 39 頁</span></p>
+  </details>
+</article>
+<article data-question-id="112-bm112-p40-q29" data-placement="final">
+  <span class="qhead">112 年 期中考 第 29 題 ｜ 施耀翔</span>
+  
+  <p class="stem">Which of the following majorly originates from the neural crest during development?</p>
+  <ul class="opts"><li>(A) Vertebra</li><li>(B) Nucleus pulposus</li><li>(C) Cranium</li><li>(D) Appendicular skeleton</li></ul>
+  <details data-kind="answer"><summary>答案與詳解</summary>
+    <div data-kind="zh-translation"><p><strong>中文題目：</strong>下列何者在發育過程中<b>主要</b>源自神經脊？</p>
+      <p>(A) 脊椎</p>
+      <p>(B) 髓核</p>
+      <p>(C) 顱骨</p>
+      <p>(D) 附肢骨骼</p></div>
+    <p class="ans">答案：C</p>
+    <p>脊索以前歸神經脊，以後歸旁軸中胚層；髓核則是脊索本身的殘餘。<span class="src"> ｜ BM112_Block 8 期中考(含申覆內容與結果) 第 40 頁</span></p>
+  </details>
+</article>
+<article data-question-id="112-bm112-p40-q30" data-placement="final" class="repeat">
+  <span class="qhead">112 年 期中考 第 30 題 ｜ 施耀翔</span><span class="repeat-badge">重複考點 ×2</span>
+  <p class="repeat-note">同考點：113 第33題　—　舌骨的角來自第幾對咽弓——小角第二、大角第三</p>
+  <p class="stem">The lesser cornu of the hyoid bone develops from which pharyngeal arch?</p>
+  <ul class="opts"><li>(A) First pharyngeal arch</li><li>(B) Second pharyngeal arch</li><li>(C) Third pharyngeal arch</li><li>(D) Fourth pharyngeal arch</li></ul>
+  <details data-kind="answer"><summary>答案與詳解</summary>
+    <div data-kind="zh-translation"><p><strong>中文題目：</strong>舌骨的<b>小角</b>由第幾對咽弓發育而來？</p>
+      <p>(A) 第一咽弓</p>
+      <p>(B) 第二咽弓</p>
+      <p>(C) 第三咽弓</p>
+      <p>(D) 第四咽弓</p></div>
+    <p class="ans">答案：B</p>
+    <p>小角配第二咽弓。同一對咽弓也產出鐙骨。<span class="src"> ｜ BM112_Block 8 期中考(含申覆內容與結果) 第 40 頁</span></p>
+  </details>
+</article>
+<h3><span class="yearchip">111 年</span>期中考 第 28 題</h3>
+<article data-question-id="111-bm111-p24-q28" data-placement="final" class="repeat">
+  <span class="qhead">111 年 期中考 第 28 題 ｜ 何宛怡</span><span class="repeat-badge">重複考點 ×2</span>
+  <p class="repeat-note">同考點：113 第32題　—　哪些骨走軟骨內骨化、哪些走膜內骨化</p>
+  <p class="stem">Endochondral bone formation does NOT occur in the</p>
+  <ul class="opts"><li>(A) femur</li><li>(B) stapes</li><li>(C) squamous part of temporal bone</li><li>(D) greater wing of sphenoid bone</li></ul>
+  <details data-kind="answer"><summary>答案與詳解</summary>
+    <div data-kind="zh-translation"><p><strong>中文題目：</strong>軟骨內骨化<b>不</b>發生於下列何者？</p>
+      <p>(A) 股骨</p>
+      <p>(B) 鐙骨</p>
+      <p>(C) 顳骨鱗部</p>
+      <p>(D) 蝶骨大翼</p></div>
+    <p class="ans">答案：(C) squamous part of temporal bone</p>
+    <p>顳骨要拆兩半：鱗部走膜內、岩部與乳突部走軟骨內。股骨與鐙骨都是軟骨內。<span class="src"> ｜ BM111 BLOCK-8 期中考詳解 第 24 頁</span></p>
+  </details>
+</article>
+<article data-question-id="111-bm111-p25-q29" data-placement="final">
+  <span class="qhead">111 年 期中考 第 29 題 ｜ 何宛怡</span>
+  
+  <p class="stem">Which of the following statement is TRUE concerning the development of the limb?</p>
+  <ul class="opts"><li>(A) the zone of polarizing activity establishes the proximal-distal axis of the bud</li><li>(B) the upper limbs rotate medially on their longitudinal axes during limb development</li><li>(C) all of the secondary ossification centers appear in the limb after birth</li><li>(D) each limb bud consists of a mesenchymal core of somatic mesoderm covered by surface ectoderm</li></ul>
+  <details data-kind="answer"><summary>答案與詳解</summary>
+    <div data-kind="zh-translation"><p><strong>中文題目：</strong>關於肢體發育，下列敘述何者<b>正確</b>？</p>
+      <p>(A) 極化活性區（ZPA）建立肢芽的近端—遠端軸。</p>
+      <p>(B) 上肢在發育過程中沿其長軸向<b>內側</b>旋轉。</p>
+      <p>(C) 肢體所有的次級骨化中心都在出生後才出現。</p>
+      <p>(D) 每一個肢芽由體壁中胚層的間葉核心構成，外覆表面外胚層。</p></div>
+    <p class="ans">答案：(D) each limb bud consists of a mesenchymal core of somatic mesoderm covered by surface ectoderm</p>
+    <p>近遠軸是 AER 不是 ZPA、上肢向外側旋轉、股骨遠端與脛骨近端出生時已有骨化中心。<span class="src"> ｜ BM111 BLOCK-8 期中考詳解 第 25 頁</span></p>
+  </details>
+</article>
+<article data-question-id="111-bm111-p25-q30" data-placement="final">
+  <span class="qhead">111 年 期中考 第 30 題 ｜ 何宛怡</span>
+  
+  <p class="stem">Which of the following structures is NOT derived from the hypaxial divisions of myotomes?</p>
+  <ul class="opts"><li>(A) longissimus capitis</li><li>(B) geniohyoid</li><li>(C) rectus abdominis</li><li>(D) levator ani</li></ul>
+  <details data-kind="answer"><summary>答案與詳解</summary>
+    <div data-kind="zh-translation"><p><strong>中文題目：</strong>下列哪一個構造<b>不是</b>由肌節的軸下部分發育而來？</p>
+      <p>(A) 頭最長肌</p>
+      <p>(B) 頦舌骨肌</p>
+      <p>(C) 腹直肌</p>
+      <p>(D) 提肛肌</p></div>
+    <p class="ans">答案：(A) longissimus capitis</p>
+    <p>頭最長肌是背側深層伸肌，屬軸上；其餘三條位於頸前、腹壁、骨盆底，都是軸下。<span class="src"> ｜ BM111 BLOCK-8 期中考詳解 第 25 頁</span></p>
+  </details>
+</article>
+<p class="ending">兩種蓋法、一條分界線、四組編號好的咽弓。這一科背的不是過程，是三張表。</p>
+</section>
+</div>
+</body>
+</html>
