@@ -1,0 +1,741 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>肌肉骨骼免疫學 李英瑞</title>
+<style>
+:root{
+  color-scheme: dark;
+  --bg:#0b0e13; --panel:#141922; --panel2:#1b2230; --line:#2a3340;
+  --ink:#e8ecf3; --dim:#a3adbd; --gold:#e5b567; --cyan:#6fd3c7;
+  --rose:#e88b8b; --violet:#a99bf0;
+}
+*{box-sizing:border-box}
+html{font-size:150%}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font-family:"Noto Sans TC","PingFang TC","Helvetica Neue",system-ui,sans-serif;
+  line-height:1.85; overflow-wrap:anywhere;}
+/* Width follows the device, not the font size: px breakpoints stay put
+   while rem-based type scales with the 150% root. */
+.container{width:100%;max-width:none;margin:0 auto;
+  padding:clamp(.85rem,2.2vw,2.2rem);}
+@media (min-width:760px){ .container{max-width:730px} }
+@media (min-width:1024px){ .container{max-width:980px} }
+@media (min-width:1440px){ .container{max-width:1300px} }
+@media (min-width:1920px){ .container{max-width:1640px} }
+img{max-width:100%;height:auto}
+svg{max-width:100%;height:auto;display:block}
+h1{font-size:1.6rem;line-height:1.35;margin:.2rem 0 .6rem}
+h2{font-size:1.24rem;margin:2.4rem 0 .7rem;padding-bottom:.4rem;
+  border-bottom:1px solid var(--line);color:var(--gold)}
+h3{font-size:1.06rem;margin:1.5rem 0 .5rem;color:var(--cyan)}
+p{margin:.7rem 0}
+header#subject-overview{background:linear-gradient(160deg,#182031,#0e1219);
+  border:1px solid var(--line);border-radius:14px;padding:1.2rem;margin:.6rem 0 1.4rem}
+.meta{color:var(--dim);font-size:.86rem;margin:.3rem 0 0}
+nav#toc{background:var(--panel);border:1px solid var(--line);
+  border-radius:12px;padding:.9rem 1.1rem;margin:1.2rem 0}
+nav#toc ol{margin:.4rem 0 0;padding-left:1.3rem}
+nav#toc a{color:var(--ink);text-decoration:none;border-bottom:1px dotted var(--line)}
+.story{background:var(--panel2);border-left:3px solid var(--violet);
+  border-radius:0 10px 10px 0;padding:.9rem 1.1rem;margin:1.1rem 0}
+.story .tag{display:block;color:var(--violet);font-size:.78rem;
+  letter-spacing:.12em;margin-bottom:.35rem}
+.reality{background:var(--panel);border-left:3px solid var(--cyan);
+  border-radius:0 10px 10px 0;padding:.9rem 1.1rem;margin:1.1rem 0}
+.reality .tag{display:block;color:var(--cyan);font-size:.78rem;
+  letter-spacing:.12em;margin-bottom:.35rem}
+.keybox{background:#12202b;border:1px solid #26485a;border-radius:10px;
+  padding:.85rem 1rem;margin:1.1rem 0}
+.keybox b{color:var(--cyan)}
+.warn{background:#2a1c1c;border:1px solid #573434;border-radius:10px;
+  padding:.85rem 1rem;margin:1.1rem 0;color:#f0cfcf}
+article{background:var(--panel);border:1px solid var(--line);
+  border-radius:12px;padding:.95rem 1.05rem;margin:1.1rem 0}
+article .qhead{display:block;color:var(--gold);font-size:.82rem;
+  letter-spacing:.06em;margin-bottom:.45rem}
+article .stem{margin:.2rem 0 .5rem}
+article ul.opts{list-style:none;margin:.3rem 0 .2rem;padding:0}
+article ul.opts li{padding:.16rem 0 .16rem .2rem;color:#dbe2ec}
+details{background:#0f141c;border:1px solid var(--line);
+  border-radius:10px;padding:.15rem .8rem;margin:.6rem 0}
+details summary{cursor:pointer;padding:.6rem 0;color:var(--gold);
+  font-weight:600;min-height:44px;display:flex;align-items:center}
+details[data-kind="answer"] .ans{font-size:1.05rem;color:var(--cyan);font-weight:700}
+div[data-kind="zh-translation"]{background:#141c26;border:1px dashed #33465c;
+  border-radius:8px;padding:.7rem .85rem;margin:.5rem 0 .8rem}
+div[data-kind="zh-translation"] p{margin:.35rem 0}
+.src{color:var(--dim);font-size:.84rem;margin-top:.6rem}
+.quote{border-left:2px solid var(--gold);padding-left:.75rem;color:#f0e2c6}
+.infer{color:#f0d9a8;font-size:.92rem}
+figure{margin:1.3rem 0;background:var(--panel2);border:1px solid var(--line);
+  border-radius:12px;padding:.9rem}
+figcaption{color:var(--dim);font-size:.85rem;margin-top:.6rem;text-align:center}
+dl.vocab{margin:0}
+dl.vocab dt{color:var(--cyan);font-weight:700;margin-top:.9rem}
+dl.vocab dd{margin:.2rem 0 0;padding-left:0}
+dl.vocab .root{color:var(--dim);font-size:.86rem}
+.cram{background:var(--panel);border:1px solid var(--line);
+  border-radius:12px;padding:.4rem 1.1rem;margin:1rem 0}
+.cram li{margin:.55rem 0}
+.yearchip{display:inline-block;background:#233046;color:#bcd0ea;
+  border-radius:999px;padding:.05rem .55rem;font-size:.76rem;margin-right:.4rem}
+article.repeat{border:2px solid #e05252;box-shadow:0 0 0 3px rgba(224,82,82,.12)}
+article.repeat .qhead{color:#f08a8a}
+.repeat-badge{display:inline-block;background:#3a1c1c;border:1px solid #7d3a3a;
+  color:#f0a8a8;border-radius:999px;padding:.1rem .6rem;font-size:.76rem;
+  margin-left:.4rem;white-space:nowrap}
+.repeat-note{color:#e6a5a5;font-size:.84rem;margin:.45rem 0 0}
+figure.boxfig{margin:1.5rem 0 .5rem;background:transparent;border:0;padding:0}
+figure.boxfig img{border-radius:12px;border:1px solid var(--line);display:block;width:100%}
+figure.boxfig figcaption{color:var(--dim);font-size:.82rem;margin-top:.5rem;
+  text-align:left;line-height:1.6}
+figure.boxfig .figtag{color:var(--violet);font-size:.76rem;letter-spacing:.1em;
+  display:block;margin-bottom:.3rem}
+.ending{color:var(--dim);font-style:italic;margin:1.6rem 0 2.4rem}
+</style></head>
+<body>
+<div class="container">
+
+<header id="subject-overview">
+  <h1>肌肉骨骼免疫學</h1>
+  <p>三年九題，固定占第 2、3、4 題，對應三個主題：<b>傷口癒合裡的巨噬細胞</b>、<b>肌少症的免疫失調</b>、<b>類風濕性關節炎</b>。三個主題共用一條主線——<b>發炎是必要的，但必須「會收」</b>。巨噬細胞既點火也滅火；老人的免疫收不了火，變成低度慢性發炎，肌肉就慢慢消失；RA 則是火燒錯地方，Th17 與 TNF 把軟骨和骨頭一起燒掉。</p>
+  <p>考題的錯項手法也只有一種：<b>把「解決發炎」改成「持續發炎」、把 M1 寫成 M2、把 anti-TNF 換成 anti-IL-1</b>。認得這三個反轉，九題就結束了。</p>
+  <p class="meta">命題老師：李英瑞 ｜ 收錄 111、112、113 期中考，各 3 題共 9 題</p>
+</header>
+
+<nav id="toc">
+  <b>目錄</b>
+  <ol>
+    <li><a href="#chapter-1">傷口的四期，與巨噬細胞的兩張臉</a></li>
+    <li><a href="#chapter-2">肌少症：收不了火的老年免疫</a></li>
+    <li><a href="#chapter-3">類風濕性關節炎：燒錯地方的火</a></li>
+    <li><a href="#chapter-cram">考前速記</a></li>
+    <li><a href="#chapter-vocab">單字表</a></li>
+    <li><a href="#chapter-final">歷年考題總複習</a></li>
+  <li><a href="#comments" data-nb-toc="1">留言板</a></li>
+</ol>
+</nav>
+<section id="chapter-1" data-chapter-kind="story">
+<h2>一、傷口的四期，與巨噬細胞的兩張臉</h2>
+
+<figure class="boxfig" data-visual-id="imbox-01-story" data-image-kind="story" data-explanation-verified="true">
+<span class="figtag">情境場景</span>
+<img data-visual-id="imbox-01-story" src="img/imbox-01-story.webp" alt="情境場景：火災後的重建，同一支隊伍先放火再滅火，然後叫水電進場。" loading="lazy" decoding="async" width="1600" height="914">
+<figcaption>情境場景：火災後的重建，同一支隊伍先放火再滅火，然後叫水電進場。</figcaption>
+</figure>
+<div class="story" data-prose-kind="story"><span class="tag">故事</span>
+<p>把一道肌肉傷口想成<b>一場火災之後的重建工地</b>。重建分四期，順序固定：</p>
+<p><b>① 止血期</b>（hemostasis）：先把水管關掉——血小板堵住破口。<br>
+<b>② 發炎期</b>（inflammation）：清潔隊進場——白血球衝進來殺菌、清瓦礫。<br>
+<b>③ 增生期</b>（proliferation）：水電與泥作進場——新血管長出來、新細胞填進去。<br>
+<b>④ 成熟期</b>（maturation）：整理收尾——膠原重排、疤痕收縮。</p>
+<p>113 年就直接考這個順序：<b>止血 → 發炎 → 增生 → 成熟</b>。</p>
+<p>而這個工地裡最重要的角色是<b>巨噬細胞</b>。它有兩張臉。</p>
+<p><b>第一張臉是放火的。</b>受傷初期它在傷口附近<b>加強防禦、防止感染</b>，同時<b>吞掉死細胞和壞組織</b>，並釋放訊號把發炎反應推起來。</p>
+<p><b>第二張臉是滅火的。</b>清完之後它<b>主動把發炎收掉</b>（resolve inflammation），轉而<b>釋放血管新生的訊號</b>，讓工地進入增生期。</p>
+<p>三年三題全部在考這件事：<b>巨噬細胞既促進也解決發炎</b>。所以任何寫成「它持續維持發炎來促進增生」或「它提供對抗血管新生的因子」的選項，都是錯的。<b>火不收，工地就變成慢性傷口。</b></p>
+</div>
+
+<figure class="boxfig" data-visual-id="imbox-02-reality" data-image-kind="sequence" data-explanation-verified="true">
+<span class="figtag">癒合四期</span>
+<img data-visual-id="imbox-02-reality" src="img/imbox-02-reality.webp" alt="癒合四期：止血、發炎、增生、成熟；巨噬細胞在發炎期點火、在增生期滅火並促血管新生。" loading="lazy" decoding="async" width="1600" height="914">
+<figcaption>癒合四期：止血、發炎、增生、成熟；巨噬細胞在發炎期點火、在增生期滅火並促血管新生。</figcaption>
+</figure>
+<div class="reality"><span class="tag">回到現實</span>
+<p class="quote">詳解原文（113）:「(D)選項錯誤。因為在正常的癒合過程中，macrophages 會在初期促進發炎，但之後需「resolve inflammation」來進入修復階段，若持續維持發炎反而會導致 chronic wound。」</p>
+<p class="quote">詳解原文（111）:「(D) 由表格中得知，在Proliferation Phase，Macrophage會產生信號以進行angiogenesis.」</p>
+<p><b>巨噬細胞的四個正確功能（三年都以正確敘述出現）：</b></p>
+<p>① 早期在傷口附近<b>強化防禦、防止感染</b>。<br>
+② <b>清除死細胞與壞死組織</b>。<br>
+③ <b>既促進也解決發炎</b>（promote and resolve）。<br>
+④ 提供癒合所需的訊號，包括<b>促進血管新生</b>的訊號。</p>
+<p><b>兩個錯項：</b>「持續維持發炎以促進增生」（112、113）、「提供對抗血管新生的因子」（111）。</p>
+<p><b>癒合四期順序：</b>止血 → 發炎 → 增生 → 成熟。113 年的選項用 ①②③④ 編號打亂，正解是 ②④①③。</p>
+</div>
+
+<article data-question-id="111-p3-q2" data-placement="chapter">
+  <span class="qhead">111 年 期中考 第 2 題</span>
+  <p class="stem">What is incorrect regarding the functions of Macrophage in wound healing and fracture healing?</p>
+  <ul class="opts">
+    <li>(A) It can promote and resolve inflammation of the healing process.</li>
+    <li>(B) It can remove death cells.</li>
+    <li>(C) It can provide signal molecules for healing process.</li>
+    <li>(D) It can provide factors to against angiogenesis.</li>
+  </ul>
+  <details data-kind="answer">
+    <summary>答案與詳解</summary>
+    <div data-kind="zh-translation">
+      <p><strong>中文題目：</strong>關於巨噬細胞在傷口癒合與骨折癒合中的功能，下列何者<b>錯誤</b>？</p>
+      <p>(A) 它能促進並解決癒合過程中的發炎。</p>
+      <p>(B) 它能清除死細胞。</p>
+      <p>(C) 它能為癒合過程提供訊號分子。</p>
+      <p>(D) 它能提供對抗血管新生的因子。</p>
+    </div>
+    <p class="ans">答案：(D) It can provide factors to against angiogenesis.</p>
+    <p class="quote">詳解原文:「(D) 由表格中得知，在Proliferation Phase，Macrophage會產生信號以進行angiogenesis.」</p>
+    <p>巨噬細胞在增生期是<b>促進</b>血管新生，不是對抗。</p>
+    <p class="src">出處：李英瑞 肌肉骨骼免疫學 ｜ BM111 BLOCK-8 期中考詳解.pdf 第 3 頁</p>
+  </details>
+</article>
+
+<article data-question-id="112-p3-q2" data-placement="chapter">
+  <span class="qhead">112 年 期中考 第 2 題</span>
+  <p class="stem">In the process of muscle wound healing, the role of macrophages does NOT include which of the following?</p>
+  <ul class="opts">
+    <li>(A) Acting as a defense role near the wound during the early stages of wound formation and healing to prevent infection.</li>
+    <li>(B) Playing a role in clearing dead cells and tissues near the wound.</li>
+    <li>(C) Sustaining inflammation throughout the healing process to promote cell proliferation.</li>
+    <li>(D) Promoting angiogenesis signals to enhance the ability of blood vessel formation near the wound.</li>
+  </ul>
+  <details data-kind="answer">
+    <summary>答案與詳解</summary>
+    <div data-kind="zh-translation">
+      <p><strong>中文題目：</strong>在肌肉傷口癒合過程中，巨噬細胞的角色<b>不包括</b>下列何者？</p>
+      <p>(A) 在傷口形成與癒合早期於傷口附近扮演防禦角色以防止感染。</p>
+      <p>(B) 清除傷口附近的死細胞與組織。</p>
+      <p>(C) 在整個癒合過程中持續維持發炎以促進細胞增生。</p>
+      <p>(D) 促進血管新生訊號以強化傷口附近的血管形成能力。</p>
+    </div>
+    <p class="ans">答案：C</p>
+    <p class="quote">詳解原文:「(C) 巨噬細胞既促進也解決發炎,而不是持續維持發炎狀態」</p>
+    <p>發炎要<b>收</b>。「持續維持」就是錯的。</p>
+    <p class="src">出處：肌肉骨骼免疫學 李英瑞 ｜ BM112_Block 8 期中考(含申覆內容與結果).pdf 第 3 頁</p>
+  </details>
+</article>
+
+<article data-question-id="113-p2-q2" data-placement="chapter">
+  <span class="qhead">113 年 期中考 第 2 題</span>
+  <p class="stem">Which of the following statements about the role of macrophages in the muscle wound healing process is incorrect?</p>
+  <ul class="opts">
+    <li>(A) In the early stage of healing, they strengthen the local defense around the wound to prevent infection.</li>
+    <li>(B) They clear dead cells and tissues near the wound to control inflammation.</li>
+    <li>(C) They produce angiogenic signals to enhance neovascularization near the wound.</li>
+    <li>(D) They continuously maintain wound inflammation during healing to promote cell proliferation.</li>
+  </ul>
+  <details data-kind="answer">
+    <summary>答案與詳解</summary>
+    <div data-kind="zh-translation">
+      <p><strong>中文題目：</strong>關於巨噬細胞在肌肉傷口癒合過程中的角色，下列何者<b>錯誤</b>？</p>
+      <p>(A) 癒合早期，它們強化傷口周圍的局部防禦以防止感染。</p>
+      <p>(B) 它們清除傷口附近的死細胞與組織以控制發炎。</p>
+      <p>(C) 它們產生血管新生訊號以強化傷口附近的新生血管。</p>
+      <p>(D) 它們在癒合期間持續維持傷口發炎以促進細胞增生。</p>
+    </div>
+    <p class="ans">答案：(D)</p>
+    <p class="quote">詳解原文:「(D)選項錯誤。因為在正常的癒合過程中，macrophages 會在初期促進發炎，但之後需「resolve inflammation」來進入修復階段，若持續維持發炎反而會導致 chronic wound。」</p>
+    <p>與 112 年同一句錯項，只是換了位置。</p>
+    <p class="src">出處：肌肉骨骼免疫學 李英瑞 ppt. p11 ｜ BM113_Block8期中考詳解.pdf 第 2 頁</p>
+  </details>
+</article>
+
+<article data-question-id="113-p3-q3" data-placement="chapter">
+  <span class="qhead">113 年 期中考 第 3 題</span>
+  <p class="stem">Regarding the correct sequence of the four major stages of wound healing: ① Proliferation phase ② Hemostasis phase ③ Maturation phase ④ Inflammation phase, which is correct?</p>
+  <ul class="opts">
+    <li>(A) ①②③④</li>
+    <li>(B) ②①④③</li>
+    <li>(C) ②④①③</li>
+    <li>(D) ④②①③</li>
+  </ul>
+  <details data-kind="answer">
+    <summary>答案與詳解</summary>
+    <div data-kind="zh-translation">
+      <p><strong>中文題目：</strong>關於傷口癒合四大階段的正確順序：① 增生期 ② 止血期 ③ 成熟期 ④ 發炎期，下列何者正確？</p>
+      <p>(A) ①②③④</p>
+      <p>(B) ②①④③</p>
+      <p>(C) ②④①③</p>
+      <p>(D) ④②①③</p>
+    </div>
+    <p class="ans">答案：(C)</p>
+    <p>原卷<b>詳解欄留空</b>。<b>止血（②）→ 發炎（④）→ 增生（①）→ 成熟（③）</b>。先關水管、再清瓦礫、再蓋房子、最後收尾。</p>
+    <p class="src">出處：肌肉骨骼免疫學 李英瑞 ppt. p10 ｜ BM113_Block8期中考詳解.pdf 第 3 頁</p>
+  </details>
+</article>
+</section>
+<section id="chapter-2" data-chapter-kind="story">
+<h2>二、肌少症：收不了火的老年免疫</h2>
+
+<figure class="boxfig" data-visual-id="imbox-03-story" data-image-kind="story" data-explanation-verified="true">
+<span class="figtag">情境場景</span>
+<img data-visual-id="imbox-03-story" src="img/imbox-03-story.webp" alt="情境場景：老化的清潔隊撲不熄小火，悶燒多年，肌肉一點一點被燒掉。" loading="lazy" decoding="async" width="1600" height="914">
+<figcaption>情境場景：老化的清潔隊撲不熄小火，悶燒多年，肌肉一點一點被燒掉。</figcaption>
+</figure>
+<div class="story" data-prose-kind="story"><span class="tag">故事</span>
+<p>第一章說巨噬細胞會點火也會滅火。<b>那如果它老了、滅火滅不乾淨呢？</b></p>
+<p>老年人的免疫系統<b>不是變強，是變弱</b>。弱到什麼程度？清不掉小感染、關不掉小發炎。於是身體一直處在<b>低度慢性發炎</b>的狀態，像一堆悶燒的餘燼——這就是所謂的「發炎性老化」。</p>
+<p>餘燼一直燒，燒的是<b>肌肉</b>。血液裡 <b>IL-6、IL-1β、TNF-α、CRP</b> 都偏高；傷口附近的巨噬細胞偏向<b>M1 型</b>（點火型）而不是 M2 型（滅火修復型）。肌肉合成趕不上分解，慢慢就少了——<b>肌少症</b>。</p>
+<p>111 年的四個選項就是四個要點的正反面：</p>
+<p>・老人免疫是<b>低下</b>不是「比年輕人高」。<br>
+・IL-6 過量是<b>促進發炎</b>，不是「降低免疫」。<br>
+・增加的是 <b>M1</b>，「提高 M1 能減少慢性發炎」是反的。<br>
+・<b>運動能減少慢性發炎、延緩進程</b>——這句是對的，也是答案。</p>
+<p>112 年再加一個：<b>微生物感染（例如 COVID）會增加肌少症風險</b>——因為感染是另一堆餘燼。</p>
+</div>
+
+<figure class="boxfig" data-visual-id="imbox-04-reality" data-image-kind="mechanism" data-explanation-verified="true">
+<span class="figtag">機轉圖解</span>
+<img data-visual-id="imbox-04-reality" src="img/imbox-04-reality.webp" alt="機轉圖解：免疫老化、低度慢性發炎、M1 與發炎因子升高、肌肉流失；運動是煞車。" loading="lazy" decoding="async" width="1600" height="914">
+<figcaption>機轉圖解：免疫老化、低度慢性發炎、M1 與發炎因子升高、肌肉流失；運動是煞車。</figcaption>
+</figure>
+<div class="reality"><span class="tag">回到現實</span>
+<p class="quote">詳解原文（112）:「(A)錯誤。肌少症的病人是M1增加。(B)正確。IL-1B, IL6, TNF-a, CRP濃度會上升。(C)正確。運動能減少體內的慢性發炎。(D)正確。感染會增加肌少症的風險。」</p>
+<p class="quote">詳解原文（111）:「A選項應該是因為老人免疫會低下，造成身體處於低度發炎反應隨時間累積而造成肌少症。Ｄ選項應該改為M2增加。」</p>
+<p><b>肌少症的免疫五條：</b></p>
+<p>① 老人免疫<b>低下</b> → 慢性感染與<b>低度慢性發炎</b>累積。<br>
+② <b>M1 巨噬細胞增加</b>（促發炎型）。<br>
+③ <b>IL-6、IL-1β、TNF-α、CRP 升高</b>。<br>
+④ <b>運動</b>（含有氧）能減少慢性發炎、延緩進程。<br>
+⑤ <b>感染</b>（如 SARS-CoV-2）增加風險。</p>
+<p class="infer">兩年詳解在 M1／M2 的說法上看似相反（111 寫「D 選項應該改為 M2 增加」、112 寫「肌少症的病人是 M1 增加」）。兩者其實在說同一件事：111 年的 (D) 原句是「提高 M1 能減少慢性發炎、幫助肌肉再生」——<b>能做到這件事的是 M2</b>，所以詳解說該改成 M2；而<b>病人體內實際增加的是 M1</b>。記法：<b>M1 點火、M2 滅火；肌少症是 M1 多。</b></p>
+</div>
+
+<article data-question-id="111-p4-q3" data-placement="chapter">
+  <span class="qhead">111 年 期中考 第 3 題</span>
+  <p class="stem">Immunity dysregulation is an important issue for sarcopenia.what is correct in the following?</p>
+  <ul class="opts">
+    <li>(A) The immunity in the old persons is high comparing young person,which will elevate chronical infections to induce a chronical inflammation to enhance the risk of sarcopenia</li>
+    <li>(B) The overexpression IL-6 can be found in the patients with sarcopenia to reduce immunity.</li>
+    <li>(C) Exercise can provide benefit for patients with sarcopenia to reduce chronic inflammation and slow the progression.</li>
+    <li>(D) Elevating M1 macrophage can reduce chronic inflammation and help muscle regeneration.</li>
+  </ul>
+  <details data-kind="answer">
+    <summary>答案與詳解</summary>
+    <div data-kind="zh-translation">
+      <p><strong>中文題目：</strong>免疫失調是肌少症的重要議題。下列何者<b>正確</b>？</p>
+      <p>(A) 老年人的免疫力比年輕人高，這會增加慢性感染、誘發慢性發炎，進而提高肌少症風險。</p>
+      <p>(B) 肌少症病人可見 IL-6 過度表現以降低免疫。</p>
+      <p>(C) 運動能讓肌少症病人受益，減少慢性發炎並延緩進程。</p>
+      <p>(D) 提高 M1 巨噬細胞能減少慢性發炎並幫助肌肉再生。</p>
+    </div>
+    <p class="ans">答案：(C) Exercise can provide benefit for patients with sarcopenia to reduce chronic inflammation and slow the progression.</p>
+    <p class="quote">詳解原文:「A選項應該是因為老人免疫會低下，造成身體處於低度發炎反應隨時間累積而造成肌少症。Ｄ選項應該改為M2增加。Ｃ選項應該是induce inflammatory」</p>
+    <p>(A) 老人免疫是<b>低下</b>；(B) IL-6 過量是<b>促發炎</b>而非降低免疫；(D) 能滅火、助再生的是 <b>M2</b>。詳解最後一句寫的「Ｃ選項應該是 induce inflammatory」應是指 (B) 的 IL-6，(C) 本身即為正解。</p>
+    <p class="src">出處：李英瑞 肌肉骨骼免疫學(共筆pg.25,26) ｜ BM111 BLOCK-8 期中考詳解.pdf 第 4 頁</p>
+  </details>
+</article>
+
+<article data-question-id="112-p4-q3" data-placement="chapter">
+  <span class="qhead">112 年 期中考 第 3 題</span>
+  <p class="stem">Which of the following statements about sarcopenia is incorrect?</p>
+  <ul class="opts">
+    <li>(A) An increase in M2 macrophage activation is often observed in patients, resulting in long-term chronic inflammation.</li>
+    <li>(B) Patients exhibit high levels of IL-6 and IL-1β.</li>
+    <li>(C) Aerobic exercise can reduce chronic inflammation in the body.</li>
+    <li>(D) Microbial infections (such as SARS-COVID-2) may increase the risk of the disease.</li>
+  </ul>
+  <details data-kind="answer">
+    <summary>答案與詳解</summary>
+    <div data-kind="zh-translation">
+      <p><strong>中文題目：</strong>關於肌少症的敘述，下列何者<b>錯誤</b>？</p>
+      <p>(A) 病人常見 M2 巨噬細胞活化增加，導致長期慢性發炎。</p>
+      <p>(B) 病人的 IL-6 與 IL-1β 濃度偏高。</p>
+      <p>(C) 有氧運動能減少體內的慢性發炎。</p>
+      <p>(D) 微生物感染（如 SARS-CoV-2）可能增加此病風險。</p>
+    </div>
+    <p class="ans">答案：A</p>
+    <p class="quote">詳解原文:「(A)錯誤。肌少症的病人是M1增加。(B)正確。IL-1B, IL6, TNF-a, CRP濃度會上升。(C)正確。運動能減少體內的慢性發炎。(D)正確。感染會增加肌少症的風險。」</p>
+    <p>造成慢性發炎的是 <b>M1</b>，寫成 M2 就錯了。</p>
+    <p class="src">出處：肌肉骨骼免疫學 李英瑞 ｜ BM112_Block 8 期中考(含申覆內容與結果).pdf 第 4 頁</p>
+  </details>
+</article>
+</section>
+<section id="chapter-3" data-chapter-kind="story">
+<h2>三、類風濕性關節炎：燒錯地方的火</h2>
+
+<figure class="boxfig" data-visual-id="imbox-05-story" data-image-kind="story" data-explanation-verified="true">
+<span class="figtag">情境場景</span>
+<img data-visual-id="imbox-05-story" src="img/imbox-05-story.webp" alt="情境場景：免疫系統把自己的關節當成敵人，Th17 下令、TNF 執行。" loading="lazy" decoding="async" width="1600" height="914">
+<figcaption>情境場景：免疫系統把自己的關節當成敵人，Th17 下令、TNF 執行。</figcaption>
+</figure>
+<div class="story" data-prose-kind="story"><span class="tag">故事</span>
+<p>類風濕性關節炎（RA）是<b>自體免疫疾病</b>——免疫系統把自己的關節認成敵人。111 年第 4 題的 (A) 說「自體免疫不是 RA 的問題」，這是三年裡最直白的錯項。</p>
+<p>火是怎麼燒起來的？先要有<b>火種</b>：帶有易感基因的人，遇上環境因子（加上性荷爾蒙的影響），免疫系統開始產生<b>自體抗體</b>。</p>
+<p>然後是<b>下令的人</b>：<b>Th17 細胞</b>異常活化，釋放 <b>IL-17</b>（與 IL-1）。這些訊號讓關節裡的<b>軟骨細胞叛變</b>——從「合成基質」的模式切換成「<b>分解基質</b>」的模式，軟骨開始自己拆自己。</p>
+<p>再來是<b>執行的人</b>：<b>TNF-α</b>（連同 IL-1、IL-17）把<b>破骨細胞</b>叫出來、促進它們分化，把關節旁邊的骨頭也啃掉。M1 巨噬細胞與 Th17 是這場火的兩個主角。</p>
+<p>那要怎麼滅？<b>把執行的人擋下來。</b>臨床上最常用、也最有效的生物製劑是 <b>anti-TNF-α</b>（例如 certolizumab）。IL-1 受體拮抗劑（anakinra）雖然理論上也行，但<b>臨床效果不佳、台灣也沒引進</b>。112 年說「IL-1β 阻斷劑是常用治療」錯；113 年直接問「最常用的是哪一種」，答 anti-TNF-α。</p>
+</div>
+
+<figure class="boxfig" data-visual-id="imbox-06-reality" data-image-kind="mechanism" data-explanation-verified="true">
+<span class="figtag">RA 機轉與治療</span>
+<img data-visual-id="imbox-06-reality" src="img/imbox-06-reality.webp" alt="RA 機轉與治療：基因加環境、自體抗體、Th17 與 IL-17 使軟骨分解、TNF 促破骨；anti-TNF 是首選。" loading="lazy" decoding="async" width="1600" height="914">
+<figcaption>RA 機轉與治療：基因加環境、自體抗體、Th17 與 IL-17 使軟骨分解、TNF 促破骨；anti-TNF 是首選。</figcaption>
+</figure>
+<div class="reality"><span class="tag">回到現實</span>
+<p class="quote">詳解原文（111）:「(A) RA為自體免疫疾病 (D) 促成RA發生的危險因子包含環境及基因因素 (B) Th17所分泌的IL-1及IL-17會誘導軟骨細胞由合成基質轉為分解基質的型態 (C) IL-1、TNF、IL-17、IL-7在osteoclast的分化上扮演重要角色」</p>
+<p class="quote">詳解原文（112）:「(D) 選項並不適合，能用在RA的應該是IL-1受體拮抗劑(IL-1 RA)，但這支藥臨床上治療效果並不佳，且台灣並未引進；較常用且有效的生物製劑為TNF-α blockers。」</p>
+<p><b>RA 六條：</b></p>
+<p>① <b>自體免疫疾病</b>，病人體內有<b>自體抗體</b>。<br>
+② 病因＝<b>環境因子＋基因</b>（＋性荷爾蒙）。<br>
+③ <b>Th17 異常活化</b>，釋放 <b>IL-1 與 IL-17</b>。<br>
+④ IL-17 使<b>軟骨細胞由合成基質轉為分解基質</b>。<br>
+⑤ <b>TNF、IL-1、IL-17、IL-7 促進破骨細胞分化</b>。<br>
+⑥ 治療：<b>anti-TNF-α 最常用且有效</b>；anti-IL-6 也有；<b>IL-1 受體拮抗劑效果差、台灣未引進</b>。</p>
+<p class="infer">113 年的四個選項各是一種「anti-X」：anti-IL-17（secukinumab，用在乾癬與僵直性脊椎炎）、<b>anti-TNF-α（certolizumab）</b>、anti-IL-1β（anakinra 其實是 IL-1 受體拮抗劑）、anti-IFN（anifrolumab 用在紅斑性狼瘡）。<b>RA 選 TNF。</b></p>
+</div>
+
+<article data-question-id="111-p6-q4" data-placement="chapter">
+  <span class="qhead">111 年 期中考 第 4 題</span>
+  <p class="stem">Immune-regulation is one of the factors of rheumatoid arthritis. What is incorrect in the following?</p>
+  <ul class="opts">
+    <li>(A) Autoimmunity isn't the issue for rheumatoid arthritis.</li>
+    <li>(B) TH17 cells will release IL-1 and IL-17 and promote chondrocytes from matrix synthesis to be matrix degradation type, and elevating rheumatoid arthritis.</li>
+    <li>(C) Tumor-necrosis factor (TNF) will promote osteoclast differentiation and contributing on rheumatoid arthritis.</li>
+    <li>(D) Numbers of environmental and genetic factors are associated with immune - regulation and disease incidence.</li>
+  </ul>
+  <details data-kind="answer">
+    <summary>答案與詳解</summary>
+    <div data-kind="zh-translation">
+      <p><strong>中文題目：</strong>免疫調節是類風濕性關節炎的因素之一。下列何者<b>錯誤</b>？</p>
+      <p>(A) 自體免疫不是類風濕性關節炎的問題。</p>
+      <p>(B) Th17 細胞會釋放 IL-1 與 IL-17，促使軟骨細胞由合成基質型轉為分解基質型，加重類風濕性關節炎。</p>
+      <p>(C) 腫瘤壞死因子（TNF）會促進破骨細胞分化，促成類風濕性關節炎。</p>
+      <p>(D) 許多環境與基因因素與免疫調節及疾病發生率相關。</p>
+    </div>
+    <p class="ans">答案：(A) Autoimmunity isn't the issue for rheumatoid arthritis.</p>
+    <p class="quote">詳解原文:「(A) RA為自體免疫疾病 (D) 促成RA發生的危險因子包含環境及基因因素 (B) Th17所分泌的IL-1及IL-17會誘導軟骨細胞由合成基質轉為分解基質的型態 (C) IL-1、TNF、IL-17、IL-7在osteoclast的分化上扮演重要角色」</p>
+    <p>RA <b>就是</b>自體免疫疾病。(B)(C)(D) 三句是機轉的標準敘述，之後兩年會反覆出現。</p>
+    <p class="src">出處：李英瑞 肌肉骨骼免疫學 ｜ BM111 BLOCK-8 期中考詳解.pdf 第 6 頁</p>
+  </details>
+</article>
+
+<article data-question-id="112-p6-q4" data-placement="chapter">
+  <span class="qhead">112 年 期中考 第 4 題</span>
+  <p class="stem">Which of the following statements about rheumatoid arthritis is incorrect?</p>
+  <ul class="opts">
+    <li>(A) Abnormal activation of Th17 cells is often observed in patients.</li>
+    <li>(B) Autoantibodies are present in patients.</li>
+    <li>(C) The cause is due to a combination of various environmental factors and genetic inheritance.</li>
+    <li>(D) IL-1β-blocking agents are commonly used for treatment.</li>
+  </ul>
+  <details data-kind="answer">
+    <summary>答案與詳解</summary>
+    <div data-kind="zh-translation">
+      <p><strong>中文題目：</strong>關於類風濕性關節炎的敘述，下列何者<b>錯誤</b>？</p>
+      <p>(A) 病人常見 Th17 細胞異常活化。</p>
+      <p>(B) 病人體內存在自體抗體。</p>
+      <p>(C) 病因是多種環境因子與遺傳的組合。</p>
+      <p>(D) IL-1β 阻斷劑是常用的治療。</p>
+    </div>
+    <p class="ans">答案：D</p>
+    <p class="quote">詳解原文:「(D) 選項並不適合，能用在RA的應該是IL-1受體拮抗劑(IL-1 RA)，但這支藥臨床上治療效果並不佳，且台灣並未引進；較常用且有效的生物製劑為TNF-α blockers。」</p>
+    <p>常用的是 <b>anti-TNF-α</b>。IL-1 那條路效果差、台灣沒引進。</p>
+    <p class="src">出處：肌肉骨骼免疫學 李英瑞(ppt pg.36) ｜ BM112_Block 8 期中考(含申覆內容與結果).pdf 第 6 頁</p>
+  </details>
+</article>
+
+<article data-question-id="113-p4-q4" data-placement="chapter">
+  <span class="qhead">113 年 期中考 第 4 題</span>
+  <p class="stem">Rheumatoid arthritis (RA) is a disease driven by multiple inflammatory factors (cytokines). In current clinical practice, what is the most commonly used therapeutic approach?</p>
+  <ul class="opts">
+    <li>(A) Anti-IL-17 therapy, drugs such as Secukinumab</li>
+    <li>(B) Anti-TNF-α therapy, drugs such as Certolizumab</li>
+    <li>(C) Anti-IL-1β therapy, drugs such as Anakinra</li>
+    <li>(D) Anti-IFN-β therapy, drugs such as Anifrolumab</li>
+  </ul>
+  <details data-kind="answer">
+    <summary>答案與詳解</summary>
+    <div data-kind="zh-translation">
+      <p><strong>中文題目：</strong>類風濕性關節炎是由多種發炎因子（細胞激素）驅動的疾病。目前臨床上<b>最常用</b>的治療方式為何？</p>
+      <p>(A) 抗 IL-17 療法，如 Secukinumab</p>
+      <p>(B) 抗 TNF-α 療法，如 Certolizumab</p>
+      <p>(C) 抗 IL-1β 療法，如 Anakinra</p>
+      <p>(D) 抗 IFN-β 療法，如 Anifrolumab</p>
+    </div>
+    <p class="ans">答案：(B)</p>
+    <p class="quote">詳解原文:「較常用且有效治療RA的生物製劑是TNF-alpha blocker（老師上課有說不是IL-1 receptor antagonist因為臨床是治療效果不佳）」</p>
+    <p>把 112 年的錯項反過來問。<b>RA 選 anti-TNF-α。</b></p>
+    <p class="src">出處：肌肉骨骼免疫學 李英瑞 ppt p34 ｜ BM113_Block8期中考詳解.pdf 第 4 頁</p>
+  </details>
+</article>
+</section>
+<section id="chapter-cram" data-chapter-kind="cram">
+<h2>四、考前速記</h2>
+<div class="cram">
+<ul>
+<li><b>三個題位三個主題：巨噬細胞、肌少症、RA。</b>整科主線：發炎要會收。</li>
+<li><b>癒合四期：止血 → 發炎 → 增生 → 成熟。</b>113 年編號題正解 ②④①③。</li>
+<li><b>巨噬細胞四功能：早期防禦防感染、清除死細胞、既促進也解決發炎、提供訊號（含血管新生）。</b></li>
+<li><b>「持續維持發炎」與「對抗血管新生」是三年的錯項。</b>火不收就變慢性傷口。</li>
+<li><b>老人免疫是低下</b>，清不掉小感染 → 低度慢性發炎累積 → 肌少症。</li>
+<li><b>肌少症：M1 增加</b>（不是 M2）；<b>IL-6、IL-1β、TNF-α、CRP 升高</b>。</li>
+<li><b>M1 點火、M2 滅火。</b>能減少發炎助再生的是 M2；病人體內多的是 M1。</li>
+<li><b>運動（含有氧）減少慢性發炎、延緩進程</b>；<b>感染（COVID）增加風險</b>。</li>
+<li><b>RA 是自體免疫疾病</b>，有自體抗體；病因＝環境＋基因。</li>
+<li><b>Th17 活化 → IL-1、IL-17 → 軟骨細胞由合成轉為分解基質。</b></li>
+<li><b>TNF（＋IL-1、IL-17、IL-7）促進破骨細胞分化。</b></li>
+<li><b>RA 最常用生物製劑 = anti-TNF-α（certolizumab）。</b></li>
+<li><b>IL-1 受體拮抗劑（anakinra）效果差、台灣未引進</b>——寫成「常用」就是錯的。</li>
+<li>Secukinumab 是 anti-IL-17、anifrolumab 是 anti-IFN——都不是 RA 的首選。</li>
+</ul>
+</div>
+</section>
+
+<!-- ================= VOCAB ================= -->
+<section id="chapter-vocab" data-chapter-kind="vocab">
+<h2>五、單字表</h2>
+<dl class="vocab">
+<dt>macrophage</dt>
+<dd><span class="root">macro-（大）+ phage（吞噬者）</span>　巨噬細胞。吞噬、清除、調節發炎、釋放訊號。<details data-kind="vocab-memory"><summary>記憶提示</summary><p><b>兩張臉：點火也滅火。</b>三年都考它「會收」這件事。</p></details></dd>
+
+<dt>resolve inflammation</dt>
+<dd><span class="root">resolve＝解決、消退</span>　解決發炎。巨噬細胞在清除完畢後主動終止發炎、進入修復。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>「promote and resolve」——<b>不是 sustain</b>。</p></details></dd>
+
+<dt>angiogenesis</dt>
+<dd><span class="root">angio-（血管）+ genesis（生成）</span>　血管新生。增生期由巨噬細胞訊號啟動。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>巨噬細胞是<b>促進</b>它，111 年寫「對抗」就是錯的。</p></details></dd>
+
+<dt>hemostasis</dt>
+<dd><span class="root">hemo-（血）+ stasis（停止）</span>　止血期，癒合的第一階段。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>先關水管。<b>止血 → 發炎 → 增生 → 成熟。</b></p></details></dd>
+
+<dt>proliferation phase</dt>
+<dd><span class="root">proliferate＝增生</span>　增生期。新血管、新細胞填入傷口。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>水電進場的階段——血管新生在這裡。</p></details></dd>
+
+<dt>maturation (remodeling) phase</dt>
+<dd><span class="root">mature＝成熟</span>　成熟期。膠原重排、疤痕收縮。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>最後收尾。編號題裡是 ③。</p></details></dd>
+
+<dt>sarcopenia</dt>
+<dd><span class="root">sarco-（肉）+ -penia（缺乏）</span>　肌少症。老化相關的肌肉量與肌力流失。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>-penia＝缺少（比較 leukopenia）。餘燼悶燒把肉燒掉。</p></details></dd>
+
+<dt>chronic low-grade inflammation (inflammaging)</dt>
+<dd><span class="root">inflammation + aging</span>　低度慢性發炎／發炎性老化。老年免疫低下累積出的持續發炎。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>老人免疫是<b>低下</b>才會這樣——111 年 (A) 寫「比年輕人高」就錯。</p></details></dd>
+
+<dt>M1 / M2 macrophage</dt>
+<dd><span class="root">M＝macrophage</span>　M1 促發炎型、M2 抗發炎修復型。<details data-kind="vocab-memory"><summary>記憶提示</summary><p><b>M1 點火、M2 滅火。肌少症是 M1 多。</b></p></details></dd>
+
+<dt>IL-6 / IL-1β / TNF-α / CRP</dt>
+<dd><span class="root">interleukin、tumor necrosis factor、C-reactive protein</span>　促發炎細胞激素與發炎指標，肌少症病人偏高。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>IL-6 過量是<b>促發炎</b>，不是「降低免疫」。</p></details></dd>
+
+<dt>rheumatoid arthritis (RA)</dt>
+<dd><span class="root">rheuma（希臘：流動）+ -oid</span>　類風濕性關節炎，自體免疫疾病。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>「自體免疫不是 RA 的問題」——三年最直白的錯項。</p></details></dd>
+
+<dt>autoantibody</dt>
+<dd><span class="root">auto-（自己）+ antibody</span>　自體抗體。RA 病人體內存在，與促發炎激素一起活化 M1 與 Th17。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>火種。112 年以正確敘述出現。</p></details></dd>
+
+<dt>Th17 cell</dt>
+<dd><span class="root">T helper 17</span>　第 17 型輔助 T 細胞，釋放 IL-17（與 IL-1），RA 的關鍵驅動者。<details data-kind="vocab-memory"><summary>記憶提示</summary><p><b>下令的人。</b>它讓軟骨細胞叛變。</p></details></dd>
+
+<dt>IL-17</dt>
+<dd><span class="root">interleukin-17</span>　Th17 釋放的激素，誘導軟骨細胞由合成基質轉為分解基質。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>軟骨自己拆自己。</p></details></dd>
+
+<dt>matrix degradation</dt>
+<dd><span class="root">matrix（基質）+ degradation（分解）</span>　基質分解。RA 中軟骨細胞被切換到的模式。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>「從合成型變分解型」——111 與 112 年都出現這句。</p></details></dd>
+
+<dt>TNF-α</dt>
+<dd><span class="root">tumor necrosis factor alpha</span>　腫瘤壞死因子，促進破骨細胞分化、驅動 RA 發炎。<details data-kind="vocab-memory"><summary>記憶提示</summary><p><b>執行的人</b>，也是治療的<b>首要標靶</b>。</p></details></dd>
+
+<dt>osteoclast differentiation</dt>
+<dd><span class="root">osteoclast（破骨細胞）</span>　破骨細胞分化。IL-1、TNF、IL-17、IL-7 皆參與。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>RA 把骨頭啃掉就是靠這條路。</p></details></dd>
+
+<dt>anti-TNF-α (certolizumab)</dt>
+<dd><span class="root">-mab＝monoclonal antibody</span>　抗 TNF-α 生物製劑，RA 最常用且有效的治療。<details data-kind="vocab-memory"><summary>記憶提示</summary><p><b>RA 選 TNF。</b>113 年直接問「最常用」。</p></details></dd>
+
+<dt>IL-1 receptor antagonist (anakinra)</dt>
+<dd><span class="root">antagonist＝拮抗劑</span>　IL-1 受體拮抗劑。RA 治療效果不佳，台灣未引進。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>寫成「常用治療」就是錯的（112 年）。</p></details></dd>
+
+<dt>secukinumab / anifrolumab</dt>
+<dd><span class="root">-mab</span>　抗 IL-17 與抗 IFN 的單株抗體，分別用於乾癬／僵直性脊椎炎與紅斑性狼瘡。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>113 年的干擾選項——都不是 RA 的首選。</p></details></dd>
+</dl>
+</section>
+<section id="chapter-final" data-chapter-kind="final_questions">
+<h2>六、歷年考題總複習</h2>
+<p class="meta">依年度由新到舊、同年依原始題號排列。共 9 題（111／112／113 期中考各 3 題）。<b style="color:#f08a8a">紅框</b>＝同一考點在兩個以上年度重複出現。</p>
+<h3><span class="yearchip">113 年</span>期中考 第 2 題</h3>
+<article data-question-id="113-p2-q2" data-placement="final" class="repeat">
+  <span class="qhead">113 年 期中考 第 2 題</span><span class="repeat-badge">重複考點 ×4</span>
+  <p class="repeat-note">同考點：111 第2題、112 第2題、113 第3題　—　巨噬細胞在傷口癒合的角色：早期防禦、清除死細胞、既促進也解決發炎、提供血管新生訊號；持續維持發炎是錯的</p>
+  <p class="stem">Which of the following statements about the role of macrophages in the muscle wound healing process is incorrect?</p>
+  <ul class="opts"><li>(A) In the early stage of healing, they strengthen the local defense around the wound to prevent infection.</li><li>(B) They clear dead cells and tissues near the wound to control inflammation.</li><li>(C) They produce angiogenic signals to enhance neovascularization near the wound.</li><li>(D) They continuously maintain wound inflammation during healing to promote cell proliferation.</li></ul>
+  <details data-kind="answer"><summary>答案與詳解</summary>
+    <div data-kind="zh-translation"><p><strong>中文題目：</strong>關於巨噬細胞在肌肉傷口癒合過程中的角色，下列何者<b>錯誤</b>？</p>
+      <p>(A) 癒合早期，它們強化傷口周圍的局部防禦以防止感染。</p>
+      <p>(B) 它們清除傷口附近的死細胞與組織以控制發炎。</p>
+      <p>(C) 它們產生血管新生訊號以強化傷口附近的新生血管。</p>
+      <p>(D) 它們在癒合期間持續維持傷口發炎以促進細胞增生。</p></div>
+    <p class="ans">答案：(D)</p>
+    <p>與 112 年同一句錯項：持續維持發炎會變慢性傷口。<span class="src"> ｜ BM113_Block8期中考詳解 第 2 頁</span></p>
+  </details>
+</article>
+<article data-question-id="113-p3-q3" data-placement="final" class="repeat">
+  <span class="qhead">113 年 期中考 第 3 題 ｜ 來源答案欄</span><span class="repeat-badge">重複考點 ×4</span>
+  <p class="repeat-note">同考點：111 第2題、112 第2題、113 第2題　—　巨噬細胞在傷口癒合的角色：早期防禦、清除死細胞、既促進也解決發炎、提供血管新生訊號；持續維持發炎是錯的</p>
+  <p class="stem">Regarding the correct sequence of the four major stages of wound healing: ① Proliferation phase ② Hemostasis phase ③ Maturation phase ④ Inflammation phase, which is correct?</p>
+  <ul class="opts"><li>(A) ①②③④</li><li>(B) ②①④③</li><li>(C) ②④①③</li><li>(D) ④②①③</li></ul>
+  <details data-kind="answer"><summary>答案與詳解</summary>
+    <div data-kind="zh-translation"><p><strong>中文題目：</strong>關於傷口癒合四大階段的正確順序：① 增生期 ② 止血期 ③ 成熟期 ④ 發炎期，下列何者正確？</p>
+      <p>(A) ①②③④</p>
+      <p>(B) ②①④③</p>
+      <p>(C) ②④①③</p>
+      <p>(D) ④②①③</p></div>
+    <p class="ans">答案：(C)</p>
+    <p>止血、發炎、增生、成熟——②④①③。<span class="src"> ｜ BM113_Block8期中考詳解 第 3 頁</span></p>
+  </details>
+</article>
+<article data-question-id="113-p4-q4" data-placement="final" class="repeat">
+  <span class="qhead">113 年 期中考 第 4 題</span><span class="repeat-badge">重複考點 ×3</span>
+  <p class="repeat-note">同考點：111 第4題、112 第4題　—　類風濕性關節炎：自體免疫、Th17 釋放 IL-17 使軟骨轉為分解基質、TNF 促破骨分化、治療首選 anti-TNF-α 而非 IL-1 阻斷</p>
+  <p class="stem">Rheumatoid arthritis (RA) is a disease driven by multiple inflammatory factors (cytokines). In current clinical practice, what is the most commonly used therapeutic approach?</p>
+  <ul class="opts"><li>(A) Anti-IL-17 therapy, drugs such as Secukinumab</li><li>(B) Anti-TNF-α therapy, drugs such as Certolizumab</li><li>(C) Anti-IL-1β therapy, drugs such as Anakinra</li><li>(D) Anti-IFN-β therapy, drugs such as Anifrolumab</li></ul>
+  <details data-kind="answer"><summary>答案與詳解</summary>
+    <div data-kind="zh-translation"><p><strong>中文題目：</strong>類風濕性關節炎是由多種發炎因子（細胞激素）驅動的疾病。目前臨床上<b>最常用</b>的治療方式為何？</p>
+      <p>(A) 抗 IL-17 療法，如 Secukinumab</p>
+      <p>(B) 抗 TNF-α 療法，如 Certolizumab</p>
+      <p>(C) 抗 IL-1β 療法，如 Anakinra</p>
+      <p>(D) 抗 IFN-β 療法，如 Anifrolumab</p></div>
+    <p class="ans">答案：(B)</p>
+    <p>RA 最常用的生物製劑是 anti-TNF-α，如 certolizumab。<span class="src"> ｜ BM113_Block8期中考詳解 第 4 頁</span></p>
+  </details>
+</article>
+<h3><span class="yearchip">112 年</span>期中考 第 2 題</h3>
+<article data-question-id="112-p3-q2" data-placement="final" class="repeat">
+  <span class="qhead">112 年 期中考 第 2 題</span><span class="repeat-badge">重複考點 ×4</span>
+  <p class="repeat-note">同考點：111 第2題、113 第2題、113 第3題　—　巨噬細胞在傷口癒合的角色：早期防禦、清除死細胞、既促進也解決發炎、提供血管新生訊號；持續維持發炎是錯的</p>
+  <p class="stem">In the process of muscle wound healing, the role of macrophages does NOT include which of the following?</p>
+  <ul class="opts"><li>(A) Acting as a defense role near the wound during the early stages of wound formation and healing to prevent infection.</li><li>(B) Playing a role in clearing dead cells and tissues near the wound.</li><li>(C) Sustaining inflammation throughout the healing process to promote cell proliferation.</li><li>(D) Promoting angiogenesis signals to enhance the ability of blood vessel formation near the wound.</li></ul>
+  <details data-kind="answer"><summary>答案與詳解</summary>
+    <div data-kind="zh-translation"><p><strong>中文題目：</strong>在肌肉傷口癒合過程中，巨噬細胞的角色<b>不包括</b>下列何者？</p>
+      <p>(A) 在傷口形成與癒合早期於傷口附近扮演防禦角色以防止感染。</p>
+      <p>(B) 清除傷口附近的死細胞與組織。</p>
+      <p>(C) 在整個癒合過程中持續維持發炎以促進細胞增生。</p>
+      <p>(D) 促進血管新生訊號以強化傷口附近的血管形成能力。</p></div>
+    <p class="ans">答案：C</p>
+    <p>巨噬細胞既促進也解決發炎，不是持續維持。<span class="src"> ｜ BM112_Block 8 期中考(含申覆內容與結果) 第 3 頁</span></p>
+  </details>
+</article>
+<article data-question-id="112-p4-q3" data-placement="final" class="repeat">
+  <span class="qhead">112 年 期中考 第 3 題</span><span class="repeat-badge">重複考點 ×2</span>
+  <p class="repeat-note">同考點：111 第3題　—　肌少症的免疫失調：老化免疫低下→低度慢性發炎、M1 增加、IL-6／IL-1β 升高、運動可減輕、感染增加風險</p>
+  <p class="stem">Which of the following statements about sarcopenia is incorrect?</p>
+  <ul class="opts"><li>(A) An increase in M2 macrophage activation is often observed in patients, resulting in long-term chronic inflammation.</li><li>(B) Patients exhibit high levels of IL-6 and IL-1β.</li><li>(C) Aerobic exercise can reduce chronic inflammation in the body.</li><li>(D) Microbial infections (such as SARS-COVID-2) may increase the risk of the disease.</li></ul>
+  <details data-kind="answer"><summary>答案與詳解</summary>
+    <div data-kind="zh-translation"><p><strong>中文題目：</strong>關於肌少症的敘述，下列何者<b>錯誤</b>？</p>
+      <p>(A) 病人常見 M2 巨噬細胞活化增加，導致長期慢性發炎。</p>
+      <p>(B) 病人的 IL-6 與 IL-1β 濃度偏高。</p>
+      <p>(C) 有氧運動能減少體內的慢性發炎。</p>
+      <p>(D) 微生物感染（如 SARS-CoV-2）可能增加此病風險。</p></div>
+    <p class="ans">答案：A</p>
+    <p>肌少症病人體內增加的是 M1，寫成 M2 就錯。<span class="src"> ｜ BM112_Block 8 期中考(含申覆內容與結果) 第 4 頁</span></p>
+  </details>
+</article>
+<article data-question-id="112-p6-q4" data-placement="final" class="repeat">
+  <span class="qhead">112 年 期中考 第 4 題</span><span class="repeat-badge">重複考點 ×3</span>
+  <p class="repeat-note">同考點：111 第4題、113 第4題　—　類風濕性關節炎：自體免疫、Th17 釋放 IL-17 使軟骨轉為分解基質、TNF 促破骨分化、治療首選 anti-TNF-α 而非 IL-1 阻斷</p>
+  <p class="stem">Which of the following statements about rheumatoid arthritis is incorrect?</p>
+  <ul class="opts"><li>(A) Abnormal activation of Th17 cells is often observed in patients.</li><li>(B) Autoantibodies are present in patients.</li><li>(C) The cause is due to a combination of various environmental factors and genetic inheritance.</li><li>(D) IL-1β-blocking agents are commonly used for treatment.</li></ul>
+  <details data-kind="answer"><summary>答案與詳解</summary>
+    <div data-kind="zh-translation"><p><strong>中文題目：</strong>關於類風濕性關節炎的敘述，下列何者<b>錯誤</b>？</p>
+      <p>(A) 病人常見 Th17 細胞異常活化。</p>
+      <p>(B) 病人體內存在自體抗體。</p>
+      <p>(C) 病因是多種環境因子與遺傳的組合。</p>
+      <p>(D) IL-1β 阻斷劑是常用的治療。</p></div>
+    <p class="ans">答案：D</p>
+    <p>常用的是 anti-TNF-α；IL-1 受體拮抗劑效果差、台灣未引進。<span class="src"> ｜ BM112_Block 8 期中考(含申覆內容與結果) 第 6 頁</span></p>
+  </details>
+</article>
+<h3><span class="yearchip">111 年</span>期中考 第 2 題</h3>
+<article data-question-id="111-p3-q2" data-placement="final" class="repeat">
+  <span class="qhead">111 年 期中考 第 2 題</span><span class="repeat-badge">重複考點 ×4</span>
+  <p class="repeat-note">同考點：112 第2題、113 第2題、113 第3題　—　巨噬細胞在傷口癒合的角色：早期防禦、清除死細胞、既促進也解決發炎、提供血管新生訊號；持續維持發炎是錯的</p>
+  <p class="stem">What is incorrect regarding the functions of Macrophage in wound healing and fracture healing?</p>
+  <ul class="opts"><li>(A) It can promote and resolve inflammation of the healing process.</li><li>(B) It can remove death cells.</li><li>(C) It can provide signal molecules for healing process.</li><li>(D) It can provide factors to against angiogenesis.</li></ul>
+  <details data-kind="answer"><summary>答案與詳解</summary>
+    <div data-kind="zh-translation"><p><strong>中文題目：</strong>關於巨噬細胞在傷口癒合與骨折癒合中的功能，下列何者<b>錯誤</b>？</p>
+      <p>(A) 它能促進並解決癒合過程中的發炎。</p>
+      <p>(B) 它能清除死細胞。</p>
+      <p>(C) 它能為癒合過程提供訊號分子。</p>
+      <p>(D) 它能提供對抗血管新生的因子。</p></div>
+    <p class="ans">答案：(D) It can provide factors to against angiogenesis.</p>
+    <p>巨噬細胞在增生期是促進血管新生，不是對抗。<span class="src"> ｜ BM111 BLOCK-8 期中考詳解 第 3 頁</span></p>
+  </details>
+</article>
+<article data-question-id="111-p4-q3" data-placement="final" class="repeat">
+  <span class="qhead">111 年 期中考 第 3 題</span><span class="repeat-badge">重複考點 ×2</span>
+  <p class="repeat-note">同考點：112 第3題　—　肌少症的免疫失調：老化免疫低下→低度慢性發炎、M1 增加、IL-6／IL-1β 升高、運動可減輕、感染增加風險</p>
+  <p class="stem">Immunity dysregulation is an important issue for sarcopenia.what is correct in the following?</p>
+  <ul class="opts"><li>(A) The immunity in the old persons is high comparing young person,which will elevate chronical infections to induce a chronical inflammation to enhance the risk of sarcopenia</li><li>(B) The overexpression IL-6 can be found in the patients with sarcopenia to reduce immunity.</li><li>(C) Exercise can provide benefit for patients with sarcopenia to reduce chronic inflammation and slow the progression.</li><li>(D) Elevating M1 macrophage can reduce chronic inflammation and help muscle regeneration.</li></ul>
+  <details data-kind="answer"><summary>答案與詳解</summary>
+    <div data-kind="zh-translation"><p><strong>中文題目：</strong>免疫失調是肌少症的重要議題。下列何者<b>正確</b>？</p>
+      <p>(A) 老年人的免疫力比年輕人高，這會增加慢性感染、誘發慢性發炎，進而提高肌少症風險。</p>
+      <p>(B) 肌少症病人可見 IL-6 過度表現以降低免疫。</p>
+      <p>(C) 運動能讓肌少症病人受益，減少慢性發炎並延緩進程。</p>
+      <p>(D) 提高 M1 巨噬細胞能減少慢性發炎並幫助肌肉再生。</p></div>
+    <p class="ans">答案：(C) Exercise can provide benefit for patients with sarcopenia to reduce chronic inflammation and slow the progression.</p>
+    <p>老人免疫低下、IL-6 是促發炎、能滅火的是 M2；運動減少慢性發炎是對的。<span class="src"> ｜ BM111 BLOCK-8 期中考詳解 第 4 頁</span></p>
+  </details>
+</article>
+<article data-question-id="111-p6-q4" data-placement="final" class="repeat">
+  <span class="qhead">111 年 期中考 第 4 題</span><span class="repeat-badge">重複考點 ×3</span>
+  <p class="repeat-note">同考點：112 第4題、113 第4題　—　類風濕性關節炎：自體免疫、Th17 釋放 IL-17 使軟骨轉為分解基質、TNF 促破骨分化、治療首選 anti-TNF-α 而非 IL-1 阻斷</p>
+  <p class="stem">Immune-regulation is one of the factors of rheumatoid arthritis. What is incorrect in the following?</p>
+  <ul class="opts"><li>(A) Autoimmunity isn&#x27;t the issue for rheumatoid arthritis.</li><li>(B) TH17 cells will release IL-1 and IL-17 and promote chondrocytes from matrix synthesis to be matrix degradation type, and elevating rheumatoid arthritis.</li><li>(C) Tumor-necrosis factor (TNF) will promote osteoclast differentiation and contributing on rheumatoid arthritis.</li><li>(D) Numbers of environmental and genetic factors are associated with immune - regulation and disease incidence.</li></ul>
+  <details data-kind="answer"><summary>答案與詳解</summary>
+    <div data-kind="zh-translation"><p><strong>中文題目：</strong>免疫調節是類風濕性關節炎的因素之一。下列何者<b>錯誤</b>？</p>
+      <p>(A) 自體免疫不是類風濕性關節炎的問題。</p>
+      <p>(B) Th17 細胞會釋放 IL-1 與 IL-17，促使軟骨細胞由合成基質型轉為分解基質型，加重類風濕性關節炎。</p>
+      <p>(C) 腫瘤壞死因子（TNF）會促進破骨細胞分化，促成類風濕性關節炎。</p>
+      <p>(D) 許多環境與基因因素與免疫調節及疾病發生率相關。</p></div>
+    <p class="ans">答案：(A) Autoimmunity isn't the issue for rheumatoid arthritis.</p>
+    <p>RA 就是自體免疫疾病；Th17、TNF、環境加基因三句都是標準敘述。<span class="src"> ｜ BM111 BLOCK-8 期中考詳解 第 6 頁</span></p>
+  </details>
+</article>
+<p class="ending">發炎要會收。巨噬細胞點火也滅火、老人的火收不掉、RA 的火燒錯地方——三個主題一條線。</p>
+</section>
+</div>
+<!-- nb-comments:start -->
+<link rel="stylesheet" href="https://unpkg.com/@waline/client@v3/dist/waline.css">
+<style>
+  .nb-comments{margin:72px 0 48px;padding-top:32px;border-top:1px solid var(--line,#2a3340)}
+  .nb-comments h2{margin:0 0 6px;font-size:22px;font-weight:700;color:var(--ink,var(--text,#e8ecf3))}
+  .nb-comments p.nb-hint{margin:0 0 20px;font-size:14px;color:var(--dim,var(--text-2,#a3adbd))}
+  .nb-comments #waline{
+    --waline-theme-color:var(--cyan,var(--teal,#6fd3c7));
+    --waline-active-color:var(--gold,#e5b567);
+    --waline-font-size:15px;
+    --waline-bgcolor:var(--panel,var(--bg-2,#141922));
+    --waline-bgcolor-light:var(--panel2,var(--bg-3,#1b2230));
+    --waline-border-color:var(--line,#2a3340);
+    --waline-color:var(--ink,var(--text,#e8ecf3));
+    --waline-light-grey:var(--dim,var(--text-2,#a3adbd));
+    --waline-dark-grey:var(--dim,var(--text-2,#a3adbd));
+    --waline-white:var(--panel,var(--bg-2,#141922));
+    --waline-disable-bgcolor:var(--panel2,var(--bg-3,#1b2230));
+    --waline-disable-color:var(--dim,var(--text-3,#7a968d));
+    --waline-info-bgcolor:var(--panel2,var(--bg-3,#1b2230));
+    --waline-info-color:var(--dim,var(--text-2,#a3adbd));
+    --waline-border:1px solid var(--line,#2a3340);
+    --waline-code-bgcolor:var(--panel2,var(--bg-3,#1b2230));
+    --waline-badge-color:var(--gold,#e5b567);
+    --waline-bq-color:var(--dim,#a3adbd);
+  }
+  .nb-comments .wl-panel{background:var(--panel,var(--bg-2,#141922))}
+  .nb-comments .wl-editor,.nb-comments .wl-input{background:var(--bg,#0b0e13)}
+</style>
+<section class="nb-comments" id="comments">
+  <div class="container">
+    <h2>留言板</h2>
+    <p class="nb-hint">看不懂、想補充、發現錯誤都歡迎留言；填個暱稱就能發。</p>
+    <div id="waline"></div>
+  </div>
+</section>
+<script type="module">
+  import { init } from 'https://unpkg.com/@waline/client@v3/dist/waline.js';
+  init({
+    el: '#waline',
+    serverURL: 'https://notes-comments.vercel.app',
+    path: location.pathname,
+    lang: 'zh-TW',
+    dark: true,
+    meta: ['nick'],
+    requiredMeta: ['nick'],
+    login: 'disable',
+    reaction: false,
+    pageview: false,
+    search: false,
+    imageUploader: false,
+    copyright: false,
+    locale: { placeholder: '寫下你的想法或問題⋯⋯（支援 Markdown）' }
+  });
+</script>
+<!-- nb-comments:end -->
+</body>
+</html>
