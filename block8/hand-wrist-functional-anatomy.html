@@ -1,0 +1,738 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>手部、腕部骨科功能解剖學 劉文智</title>
+<style>
+:root{
+  color-scheme: dark;
+  --bg:#0b0e13; --panel:#141922; --panel2:#1b2230; --line:#2a3340;
+  --ink:#e8ecf3; --dim:#a3adbd; --gold:#e5b567; --cyan:#6fd3c7;
+  --rose:#e88b8b; --violet:#a99bf0;
+}
+*{box-sizing:border-box}
+html{font-size:150%}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font-family:"Noto Sans TC","PingFang TC","Helvetica Neue",system-ui,sans-serif;
+  line-height:1.85; overflow-wrap:anywhere;}
+/* Width follows the device, not the font size: px breakpoints stay put
+   while rem-based type scales with the 150% root. */
+.container{width:100%;max-width:none;margin:0 auto;
+  padding:clamp(.85rem,2.2vw,2.2rem);}
+@media (min-width:760px){ .container{max-width:730px} }
+@media (min-width:1024px){ .container{max-width:980px} }
+@media (min-width:1440px){ .container{max-width:1300px} }
+@media (min-width:1920px){ .container{max-width:1640px} }
+img{max-width:100%;height:auto}
+svg{max-width:100%;height:auto;display:block}
+h1{font-size:1.6rem;line-height:1.35;margin:.2rem 0 .6rem}
+h2{font-size:1.24rem;margin:2.4rem 0 .7rem;padding-bottom:.4rem;
+  border-bottom:1px solid var(--line);color:var(--gold)}
+h3{font-size:1.06rem;margin:1.5rem 0 .5rem;color:var(--cyan)}
+p{margin:.7rem 0}
+header#subject-overview{background:linear-gradient(160deg,#182031,#0e1219);
+  border:1px solid var(--line);border-radius:14px;padding:1.2rem;margin:.6rem 0 1.4rem}
+.meta{color:var(--dim);font-size:.86rem;margin:.3rem 0 0}
+nav#toc{background:var(--panel);border:1px solid var(--line);
+  border-radius:12px;padding:.9rem 1.1rem;margin:1.2rem 0}
+nav#toc ol{margin:.4rem 0 0;padding-left:1.3rem}
+nav#toc a{color:var(--ink);text-decoration:none;border-bottom:1px dotted var(--line)}
+.story{background:var(--panel2);border-left:3px solid var(--violet);
+  border-radius:0 10px 10px 0;padding:.9rem 1.1rem;margin:1.1rem 0}
+.story .tag{display:block;color:var(--violet);font-size:.78rem;
+  letter-spacing:.12em;margin-bottom:.35rem}
+.reality{background:var(--panel);border-left:3px solid var(--cyan);
+  border-radius:0 10px 10px 0;padding:.9rem 1.1rem;margin:1.1rem 0}
+.reality .tag{display:block;color:var(--cyan);font-size:.78rem;
+  letter-spacing:.12em;margin-bottom:.35rem}
+.keybox{background:#12202b;border:1px solid #26485a;border-radius:10px;
+  padding:.85rem 1rem;margin:1.1rem 0}
+.keybox b{color:var(--cyan)}
+.warn{background:#2a1c1c;border:1px solid #573434;border-radius:10px;
+  padding:.85rem 1rem;margin:1.1rem 0;color:#f0cfcf}
+article{background:var(--panel);border:1px solid var(--line);
+  border-radius:12px;padding:.95rem 1.05rem;margin:1.1rem 0}
+article .qhead{display:block;color:var(--gold);font-size:.82rem;
+  letter-spacing:.06em;margin-bottom:.45rem}
+article .stem{margin:.2rem 0 .5rem}
+article ul.opts{list-style:none;margin:.3rem 0 .2rem;padding:0}
+article ul.opts li{padding:.16rem 0 .16rem .2rem;color:#dbe2ec}
+details{background:#0f141c;border:1px solid var(--line);
+  border-radius:10px;padding:.15rem .8rem;margin:.6rem 0}
+details summary{cursor:pointer;padding:.6rem 0;color:var(--gold);
+  font-weight:600;min-height:44px;display:flex;align-items:center}
+details[data-kind="answer"] .ans{font-size:1.05rem;color:var(--cyan);font-weight:700}
+div[data-kind="zh-translation"]{background:#141c26;border:1px dashed #33465c;
+  border-radius:8px;padding:.7rem .85rem;margin:.5rem 0 .8rem}
+div[data-kind="zh-translation"] p{margin:.35rem 0}
+.src{color:var(--dim);font-size:.84rem;margin-top:.6rem}
+.quote{border-left:2px solid var(--gold);padding-left:.75rem;color:#f0e2c6}
+.infer{color:#f0d9a8;font-size:.92rem}
+figure{margin:1.3rem 0;background:var(--panel2);border:1px solid var(--line);
+  border-radius:12px;padding:.9rem}
+figcaption{color:var(--dim);font-size:.85rem;margin-top:.6rem;text-align:center}
+dl.vocab{margin:0}
+dl.vocab dt{color:var(--cyan);font-weight:700;margin-top:.9rem}
+dl.vocab dd{margin:.2rem 0 0;padding-left:0}
+dl.vocab .root{color:var(--dim);font-size:.86rem}
+.cram{background:var(--panel);border:1px solid var(--line);
+  border-radius:12px;padding:.4rem 1.1rem;margin:1rem 0}
+.cram li{margin:.55rem 0}
+.yearchip{display:inline-block;background:#233046;color:#bcd0ea;
+  border-radius:999px;padding:.05rem .55rem;font-size:.76rem;margin-right:.4rem}
+article.repeat{border:2px solid #e05252;box-shadow:0 0 0 3px rgba(224,82,82,.12)}
+article.repeat .qhead{color:#f08a8a}
+.repeat-badge{display:inline-block;background:#3a1c1c;border:1px solid #7d3a3a;
+  color:#f0a8a8;border-radius:999px;padding:.1rem .6rem;font-size:.76rem;
+  margin-left:.4rem;white-space:nowrap}
+.repeat-note{color:#e6a5a5;font-size:.84rem;margin:.45rem 0 0}
+figure.boxfig{margin:1.5rem 0 .5rem;background:transparent;border:0;padding:0}
+figure.boxfig img{border-radius:12px;border:1px solid var(--line);display:block;width:100%}
+figure.boxfig figcaption{color:var(--dim);font-size:.82rem;margin-top:.5rem;
+  text-align:left;line-height:1.6}
+figure.boxfig .figtag{color:var(--violet);font-size:.76rem;letter-spacing:.1em;
+  display:block;margin-bottom:.3rem}
+.ending{color:var(--dim);font-style:italic;margin:1.6rem 0 2.4rem}
+</style></head>
+<body>
+<div class="container">
+
+<header id="subject-overview">
+  <h1>手部、腕部骨科功能解剖學</h1>
+  <p>三年九題，三個題位三個主題：<b>手指的伸肌裝置</b>（誰伸哪一節、誰把側帶固定住）、<b>腕部的外在韌帶</b>（名字裡有 radio- 的才算）、<b>TFCC 與遠端橈尺關節</b>（淺層接莖突、深層接 fovea，誰是次要穩定者）。113 年多了一題拇指外展肌的神經支配，因為題幹沒寫清楚是長肌還是短肌，申覆後兩個答案都給。</p>
+  <p>這一科的錯項手法很固定：<b>把「掌側／背側」互換、把「淺層／深層」互換、把「外展／內收」互換、把「內在／外在」互換</b>。每一題都是在考你能不能分清楚一對相反詞。</p>
+  <p class="meta">命題老師：劉文智（111 年為邱兆澤）｜ 收錄 111 期中、112 期末、113 期中，各 3 題共 9 題</p>
+</header>
+
+<nav id="toc">
+  <b>目錄</b>
+  <ol>
+    <li><a href="#chapter-1">手指的伸肌裝置：誰伸哪一節</a></li>
+    <li><a href="#chapter-2">腕部韌帶：名字有 radio- 的才是外在</a></li>
+    <li><a href="#chapter-3">TFCC 與 DRUJ：淺層接莖突、深層接 fovea</a></li>
+    <li><a href="#chapter-4">拇指外展肌：長肌橈神經、短肌正中神經</a></li>
+    <li><a href="#chapter-cram">考前速記</a></li>
+    <li><a href="#chapter-vocab">單字表</a></li>
+    <li><a href="#chapter-final">歷年考題總複習</a></li>
+  <li><a href="#comments" data-nb-toc="1">留言板</a></li>
+</ol>
+</nav>
+<section id="chapter-1" data-chapter-kind="story">
+<h2>一、手指的伸肌裝置：誰伸哪一節</h2>
+
+<figure class="boxfig" data-visual-id="hwbox-01-story" data-image-kind="story" data-explanation-verified="true">
+<span class="figtag">情境場景</span>
+<img data-visual-id="hwbox-01-story" src="img/hwbox-01-story.webp" alt="情境場景：手指背面像一條三段式的吊橋，每一段有自己的纜繩。" loading="lazy" decoding="async" width="1600" height="914">
+<figcaption>情境場景：手指背面像一條三段式的吊橋，每一段有自己的纜繩。</figcaption>
+</figure>
+<div class="story" data-prose-kind="story"><span class="tag">故事</span>
+<p>手指有三節：近節（P1）、中節（P2）、遠節（P3）。把手指背面想成一條<b>三段式的吊橋</b>，伸肌腱從前臂拉過來以後，在手背分成幾條纜繩，<b>每一條負責伸直一節</b>：</p>
+<p><b>Sagittal band（矢狀帶）</b>：在掌指關節（MCPJ）處把伸肌腱固定在正中央，它<b>接到掌側板</b>，負責<b>伸 P1</b>。而且有個限制：<b>當 MCPJ 過度伸直時，外在伸肌就沒辦法再伸 P2</b>。<br>
+<b>Central slip（中央束）</b>：<b>伸 P2</b>。它斷了，PIP 就伸不直、彎在那裡——<b>鈕扣孔變形</b>（boutonnière）。<br>
+<b>Terminal tendon（終腱）</b>：<b>伸 DIP</b>。它斷了，指尖垂下來——槌狀指。</p>
+<p>吊橋兩側還有兩條<b>側帶</b>（lateral band），它們在 PIP 彎曲時很容易滑到掌側去。有兩條小韌帶專門防這件事：<b>triangular ligament（三角韌帶）防側帶往掌側脫位</b>、transverse retinacular ligament 防側帶往背側跑。111、112 年的正解都是這一句。</p>
+<p>最後兩個常被互換的小知識：手指的<b>固有指動脈在神經的背側</b>（神經在掌側）；<b>背側骨間肌負責外展</b>（DAB：Dorsal ABduct），掌側骨間肌負責內收（PAD）。</p>
+</div>
+
+<figure class="boxfig" data-visual-id="hwbox-02-reality" data-image-kind="mechanism" data-explanation-verified="true">
+<span class="figtag">伸肌裝置圖解</span>
+<img data-visual-id="hwbox-02-reality" src="img/hwbox-02-reality.webp" alt="伸肌裝置圖解：矢狀帶伸 P1、中央束伸 P2、終腱伸 DIP；三角韌帶防側帶掌側脫位。" loading="lazy" decoding="async" width="1600" height="914">
+<figcaption>伸肌裝置圖解：矢狀帶伸 P1、中央束伸 P2、終腱伸 DIP；三角韌帶防側帶掌側脫位。</figcaption>
+</figure>
+<div class="reality"><span class="tag">回到現實</span>
+<p class="quote">詳解原文（113）:「Sagittal bands: attaches to the volar plate / extend the P1 / the extrinsic extensors can't extend the P2 while MCPJ is hyperextended　Also: Central slip extends the middle phalanx / Triangular & Transverse reticular ligament stabilize the lateral band / Terminal tendon allows DIP extension」</p>
+<p class="quote">詳解原文（111）:「(A) volar 改成 dorsal (C) adduction 改成 abduction (D) terminal tendon 改成 triangular tendon (central band/ slip)」</p>
+<p><b>誰伸哪一節：</b>Sagittal band → <b>P1</b>；Central slip → <b>P2（中節）</b>；Terminal tendon → <b>DIP</b>。</p>
+<p><b>誰固定側帶：</b>Triangular ligament（防掌側脫位，PIP 屈曲時）、Transverse retinacular ligament。</p>
+<p><b>誰接在哪：</b>Sagittal band 接<b>掌側板</b>，不是背側罩。</p>
+<p><b>三對相反詞：</b>動脈在神經的<b>背側</b>；背側骨間肌<b>外展</b>；鈕扣孔變形是<b>中央束</b>斷裂（不是終腱）。</p>
+<p class="infer">112 年的 (D)「矢狀帶讓 PIPJ 過度伸直時 P2 能伸直」與 113 年的 (D)「MCPJ 過度伸直時允許 DIP 伸直」都是同一個陷阱的變形——<b>矢狀帶管的是 P1，而且 MCPJ 過度伸直時外在伸肌反而伸不了 P2</b>。</p>
+</div>
+
+<article data-question-id="111-p29-q34" data-placement="chapter">
+  <span class="qhead">111 年 期中考 第 34 題 ｜ 邱兆澤</span>
+  <p class="stem">Which is correct about finger structure?</p>
+  <ul class="opts">
+    <li>(A) Proper digital artery is lying below (volar to) its corresponding digital nerve.</li>
+    <li>(B) Triangular ligament prevents volar subluxation of the conjoint lateral bands with PIP joint flexion.</li>
+    <li>(C) The function of Dorsal interossei is index and ring finger adduction.</li>
+    <li>(D) Boutonniere deformity is caused by terminal tendon rupture.</li>
+  </ul>
+  <details data-kind="answer">
+    <summary>答案與詳解</summary>
+    <div data-kind="zh-translation">
+      <p><strong>中文題目：</strong>關於手指構造，下列何者<b>正確</b>？</p>
+      <p>(A) 固有指動脈位於相對應指神經的掌側（下方）。</p>
+      <p>(B) 三角韌帶在 PIP 關節屈曲時防止聯合側帶向掌側脫位。</p>
+      <p>(C) 背側骨間肌的功能是食指與無名指內收。</p>
+      <p>(D) 鈕扣孔變形由終腱斷裂造成。</p>
+    </div>
+    <p class="ans">答案：(B) Triangular ligament prevents volar subluxation of the conjoint lateral bands with PIP joint flexion.</p>
+    <p class="quote">詳解原文:「(A) volar 改成 dorsal (C) adduction 改成 abduction (D) terminal tendon 改成 triangular tendon (central band/ slip)」</p>
+    <p>三個錯項各換一對相反詞：動脈在<b>背側</b>、背側骨間肌<b>外展</b>、鈕扣孔是<b>中央束</b>斷裂。</p>
+    <p class="src">出處：邱兆澤 手部、腕部骨科功能解剖學(ppt pg.16) ｜ BM111 BLOCK-8 期中考詳解.pdf 第 29 頁</p>
+  </details>
+</article>
+
+<article data-question-id="112fin-p21-q22" data-placement="chapter">
+  <span class="qhead">112 年 期末考 第 22 題 ｜ 劉文智</span>
+  <p class="stem">Which of the following statements about finger anatomy is correct?</p>
+  <ul class="opts">
+    <li>(A) Compared to the proper digital nerve, the proper digital artery is located on the palmar side of the finger.</li>
+    <li>(B) The triangular ligament prevents volar subluxation of the lateral band during proximal interphalangeal joint (PIPJ) flexion.</li>
+    <li>(C) The dorsal interossei muscles are responsible for abducting the index and ring fingers.</li>
+    <li>(D) The sagittal band facilitates P2 extension while the PIPJ is hyperextended.</li>
+  </ul>
+  <details data-kind="answer">
+    <summary>答案與詳解</summary>
+    <div data-kind="zh-translation">
+      <p><strong>中文題目：</strong>關於手指解剖，下列何者<b>正確</b>？</p>
+      <p>(A) 相較於固有指神經，固有指動脈位於手指的掌側。</p>
+      <p>(B) 三角韌帶在 PIPJ 屈曲時防止側帶向掌側脫位。</p>
+      <p>(C) 背側骨間肌負責食指與無名指的外展。</p>
+      <p>(D) 矢狀帶在 PIPJ 過度伸直時協助 P2 伸直。</p>
+    </div>
+    <p class="ans">答案：B</p>
+    <p>原卷<b>詳解欄留空</b>。(B) 與 111 年同一句。注意 (C) 這年寫成「外展」看起來對，但原卷答案只有 (B)——判斷上以三角韌帶那句最無爭議；(D) 矢狀帶管的是 P1 不是 P2。</p>
+    <p class="src">出處：劉文智 手部、腕部骨科功能解剖學 M110共筆 p.22 ｜ BM112_Block 8 期末考.pdf 第 21 頁</p>
+  </details>
+</article>
+
+<article data-question-id="113-p103-q91" data-placement="chapter">
+  <span class="qhead">113 年 期中考 第 91 題 ｜ 劉文智</span>
+  <p class="stem">Which of the following statements about the sagittal band is correct?</p>
+  <ul class="opts">
+    <li>(A) It extends the middle phalanx during metacarpophalangeal joint (MCPJ) extension.</li>
+    <li>(B) It attaches to the dorsal hood and stabilizes the lateral band.</li>
+    <li>(C) It assists in proximal phalanx extension and stabilizes the extensor tendon at the MCPJ.</li>
+    <li>(D) It allows distal interphalangeal joint extension when MCPJ is hyperextended.</li>
+  </ul>
+  <details data-kind="answer">
+    <summary>答案與詳解</summary>
+    <div data-kind="zh-translation">
+      <p><strong>中文題目：</strong>關於矢狀帶的敘述，下列何者<b>正確</b>？</p>
+      <p>(A) 它在 MCPJ 伸直時伸中節指骨。</p>
+      <p>(B) 它附著於背側罩並穩定側帶。</p>
+      <p>(C) 它協助近節指骨伸直並在 MCPJ 處穩定伸肌腱。</p>
+      <p>(D) 它在 MCPJ 過度伸直時允許 DIP 伸直。</p>
+    </div>
+    <p class="ans">答案：(C)</p>
+    <p class="quote">詳解原文:「Sagittal bands: attaches to the volar plate / extend the P1 / the extrinsic extensors can't extend the P2 while MCPJ is hyperextended　Also: Central slip extends the middle phalanx / Triangular & Transverse reticular ligament stabilize the lateral band / Terminal tendon allows DIP extension」</p>
+    <p>矢狀帶：<b>伸 P1、固定 MCPJ 處的伸肌腱、接掌側板</b>。伸中節的是中央束、穩定側帶的是三角韌帶、伸 DIP 的是終腱。</p>
+    <p class="src">出處：手部、腕部骨骼功能解剖學 劉文智 ppt. p21 ｜ BM113_Block8期中考詳解.pdf 第 103 頁</p>
+  </details>
+</article>
+</section>
+<section id="chapter-2" data-chapter-kind="story">
+<h2>二、腕部韌帶：名字有 radio- 的才是外在</h2>
+
+<figure class="boxfig" data-visual-id="hwbox-03-story" data-image-kind="story" data-explanation-verified="true">
+<span class="figtag">情境場景</span>
+<img data-visual-id="hwbox-03-story" src="img/hwbox-03-story.webp" alt="情境場景：從前臂拉到腕骨的是外在纜繩，腕骨之間互拉的是內在纜繩。" loading="lazy" decoding="async" width="1600" height="914">
+<figcaption>情境場景：從前臂拉到腕骨的是外在纜繩，腕骨之間互拉的是內在纜繩。</figcaption>
+</figure>
+<div class="story" data-prose-kind="story"><span class="tag">故事</span>
+<p>腕關節裡有八塊小骨頭，靠一大堆韌帶綁在一起。這些韌帶分成兩種：</p>
+<p><b>外在韌帶</b>（extrinsic）：一端在<b>前臂骨</b>（橈骨或尺骨），另一端在腕骨——像從岸上拉到船上的纜繩。<br>
+<b>內在韌帶</b>（intrinsic）：兩端都在<b>腕骨</b>上——船與船之間互相綁的繩子。</p>
+<p>111 年的詳解給了一個超好用的判法：<b>看名字有沒有 radio-（橈）或 ulno-（尺）</b>。Short <b>radio</b>lunate、<b>Radio</b>scaphocapitate、Dorsal <b>radio</b>carpal——全部有 radio-，全部是外在。<b>Deltoid ligament</b>（三角韌帶，又叫弓狀韌帶）名字裡沒有前臂骨，它是頭狀骨為中心的 V 形內在韌帶，所以它是「不是外在韌帶」的那一個。</p>
+<p>112 年再問一層：<b>哪條外在韌帶防止腕骨往掌側脫位？</b>答案是 <b>short radiolunate ligament（SRL）</b>——它把月狀骨牢牢綁在橈骨上，抵抗掌側位移。</p>
+</div>
+
+<figure class="boxfig" data-visual-id="hwbox-04-reality" data-image-kind="comparison" data-explanation-verified="true">
+<span class="figtag">韌帶分類</span>
+<img data-visual-id="hwbox-04-reality" src="img/hwbox-04-reality.webp" alt="韌帶分類：外在韌帶連前臂骨與腕骨，內在韌帶在腕骨之間；SRL 防掌側脫位。" loading="lazy" decoding="async" width="1600" height="914">
+<figcaption>韌帶分類：外在韌帶連前臂骨與腕骨，內在韌帶在腕骨之間；SRL 防掌側脫位。</figcaption>
+</figure>
+<div class="reality"><span class="tag">回到現實</span>
+<p class="quote">詳解原文（111）:「所謂的extrinsic的意思是要連接到radial bone或ulna bone，ACD都有看到中間有radio的字根，因此都不對，正確答案因此為B」</p>
+<p class="quote">詳解原文（112）:「SRL resist collar translation」</p>
+<p><b>外在韌帶</b>（連前臂骨 ↔ 腕骨）：short radiolunate（SRL）、radioscaphocapitate（RSC）、dorsal radiocarpal（DRC）等——<b>名字有 radio-</b>。</p>
+<p><b>內在韌帶</b>（腕骨 ↔ 腕骨）：<b>deltoid（arcuate）ligament</b>、scapholunate、lunotriquetral 等。</p>
+<p><b>SRL 的功能：抵抗腕骨的掌側位移</b>（112 年詳解的「collar」應為 volar 之誤）。</p>
+<p class="infer">兩年的四個選項是同一組：SRL、Deltoid、RSC、DRC。111 年問「哪個不是外在」→ Deltoid；112 年問「哪條外在韌帶防掌側脫位」→ SRL。<b>同一張表問兩次。</b></p>
+</div>
+
+<article data-question-id="111-p29-q35" data-placement="chapter">
+  <span class="qhead">111 年 期中考 第 35 題 ｜ 邱兆澤</span>
+  <p class="stem">Which is not the extrinsic ligament of wrist?</p>
+  <ul class="opts">
+    <li>(A) Short radiolunate ligament (SRL)</li>
+    <li>(B) Deltoid ligament</li>
+    <li>(C) Radioscaophocapitate (RSC) ligament</li>
+    <li>(D) Dorsal radiocarpal (DRC) ligament</li>
+  </ul>
+  <details data-kind="answer">
+    <summary>答案與詳解</summary>
+    <div data-kind="zh-translation">
+      <p><strong>中文題目：</strong>下列何者<b>不是</b>腕部的外在韌帶？</p>
+      <p>(A) 短橈月韌帶（SRL）</p>
+      <p>(B) 三角（弓狀）韌帶</p>
+      <p>(C) 橈舟頭韌帶（RSC）</p>
+      <p>(D) 背側橈腕韌帶（DRC）</p>
+    </div>
+    <p class="ans">答案：(B) Deltoid ligament</p>
+    <p class="quote">詳解原文:「所謂的extrinsic的意思是要連接到radial bone或ulna bone，ACD都有看到中間有radio的字根，因此都不對，正確答案因此為B」</p>
+    <p>看字根：有 radio- 的都連到橈骨，是外在；<b>deltoid 沒有</b>，是腕骨間的內在韌帶。</p>
+    <p class="src">出處：邱兆澤 手部、腕部骨科功能解剖學 ｜ BM111 BLOCK-8 期中考詳解.pdf 第 29 頁</p>
+  </details>
+</article>
+
+<article data-question-id="112fin-p22-q23" data-placement="chapter">
+  <span class="qhead">112 年 期末考 第 23 題 ｜ 劉文智</span>
+  <p class="stem">Which extrinsic ligament of the wrist prevents volar subluxation of the carpus?</p>
+  <ul class="opts">
+    <li>(A) Short radiolunate ligament</li>
+    <li>(B) Deltoid ligament</li>
+    <li>(C) Radioscaphocapitate ligament</li>
+    <li>(D) Dorsal radiocarpal ligament</li>
+  </ul>
+  <details data-kind="answer">
+    <summary>答案與詳解</summary>
+    <div data-kind="zh-translation">
+      <p><strong>中文題目：</strong>哪一條腕部外在韌帶防止腕骨向掌側脫位？</p>
+      <p>(A) 短橈月韌帶</p>
+      <p>(B) 三角（弓狀）韌帶</p>
+      <p>(C) 橈舟頭韌帶</p>
+      <p>(D) 背側橈腕韌帶</p>
+    </div>
+    <p class="ans">答案：A</p>
+    <p class="quote">詳解原文:「SRL resist collar translation」</p>
+    <p>SRL 把月狀骨綁在橈骨上，<b>抵抗掌側位移</b>。(B) 甚至不是外在韌帶。</p>
+    <p class="src">出處：劉文智 手部、腕部骨科功能解剖學（ppt p.57） ｜ BM112_Block 8 期末考.pdf 第 22 頁</p>
+  </details>
+</article>
+</section>
+<section id="chapter-3" data-chapter-kind="story">
+<h2>三、TFCC 與 DRUJ：淺層接莖突、深層接 fovea</h2>
+
+<figure class="boxfig" data-visual-id="hwbox-05-story" data-image-kind="story" data-explanation-verified="true">
+<span class="figtag">情境場景</span>
+<img data-visual-id="hwbox-05-story" src="img/hwbox-05-story.webp" alt="情境場景：尺骨頭上的一塊三角形軟墊，兩層纖維各接一個位置，而旋轉軸從橈骨頭穿到尺骨凹。" loading="lazy" decoding="async" width="1600" height="914">
+<figcaption>情境場景：尺骨頭上的一塊三角形軟墊，兩層纖維各接一個位置，而旋轉軸從橈骨頭穿到尺骨凹。</figcaption>
+</figure>
+<div class="story" data-prose-kind="story"><span class="tag">故事</span>
+<p>前臂旋轉的時候，橈骨繞著尺骨轉。<b>旋轉軸從近端的橈骨頭，斜穿到遠端的尺骨凹（fovea）</b>——不是到橈骨莖突。112 年 (D) 說「連到橈骨莖突」，錯。</p>
+<p>遠端橈尺關節（DRUJ）靠一塊三角形的軟墊撐著，叫 <b>TFCC</b>（三角纖維軟骨複合體）。它的尺側附著分成兩層，<b>年年考</b>：</p>
+<p><b>淺層</b>（superficial / distal）纖維 → 接到<b>尺骨莖突</b>（ulnar styloid）。<br>
+<b>深層</b>（deep / proximal）纖維 → 接到<b>尺骨凹</b>（fovea）。</p>
+<p>111 年答「淺層接骨性莖突」對；112 年把淺層寫成接 fovea、深層寫成接莖突，兩句都錯。<b>淺莖深凹。</b></p>
+<p>再來是「誰在穩定 DRUJ」。<b>主要（內在）穩定者是 TFCC 本身</b>；其他幫手是<b>次要（外在）穩定者</b>：<b>ECU 腱鞘</b>、第六背側腔室的次鞘、<b>旋前方肌的深頭</b>、前臂骨間韌帶中央束、尺三角韌帶、尺月韌帶。所以 112 年說「ECU 腱鞘是關鍵的內在穩定者」錯（它是外在／次要）；113 年問「哪個是次要穩定者」答 ECU 腱鞘；111 年說「旋前方肌淺頭扮演主要角色」錯（是<b>深頭</b>，而且是次要）。</p>
+</div>
+
+<figure class="boxfig" data-visual-id="hwbox-06-reality" data-image-kind="mechanism" data-explanation-verified="true">
+<span class="figtag">TFCC 圖解</span>
+<img data-visual-id="hwbox-06-reality" src="img/hwbox-06-reality.webp" alt="TFCC 圖解：淺層接莖突、深層接 fovea；旋轉軸橈骨頭到尺骨凹；次要穩定者名單。" loading="lazy" decoding="async" width="1600" height="914">
+<figcaption>TFCC 圖解：淺層接莖突、深層接 fovea；旋轉軸橈骨頭到尺骨凹；次要穩定者名單。</figcaption>
+</figure>
+<div class="reality"><span class="tag">回到現實</span>
+<p class="quote">詳解原文（112）:「(A)(C) superficial portion 是連接到 ulnar styloid，deep portion 才是連接到fovea (B) ECU 是 extrinsic stabilizer (D) forearm rotation axis 是從 radial head 到 ulnar fovea」</p>
+<p class="quote">詳解原文（113）:「以下為secondary stabilizer of the distal radioulnar joint (DRUJ)：ECU (extensor carpi ulnaris) tendon sheath / 6th dorsal compartment (ECU) sub-sheath / Deep head of pronator quadratus(PQ) / Interosseous lig. Of the forearm(central band) / Ulnotriquetral lig. / Ulnolunate lig.」</p>
+<p><b>TFCC 附著：</b>淺層 → <b>尺骨莖突</b>；深層 → <b>fovea</b>。</p>
+<p><b>前臂旋轉軸：</b>橈骨頭 → <b>尺骨 fovea</b>。</p>
+<p><b>DRUJ 次要（外在）穩定者六個：</b>ECU 腱鞘、第六背側腔室次鞘、<b>旋前方肌深頭</b>、骨間韌帶中央束、尺三角韌帶、尺月韌帶。</p>
+<p class="infer">111 年 (A)(B) 問 TFCC 掌側纖維在旋前／旋後時鬆緊——這兩句是干擾選項，原卷未給詳解；作答時<b>抓住 (D) 淺層接莖突這句就夠</b>。</p>
+</div>
+
+<article data-question-id="111-p29-q36" data-placement="chapter">
+  <span class="qhead">111 年 期中考 第 36 題 ｜ 邱兆澤</span>
+  <p class="stem">Which is correct about wrist anatomic structure?</p>
+  <ul class="opts">
+    <li>(A) Volar deep fiber of Triangular fibrocartilage complex (TFCC) is lax while wrist pronation.</li>
+    <li>(B) volar superficial fiber of Triangular fibrocartilage complex (TFCC) is lax while wrist supination.</li>
+    <li>(C) Superficial head of Pronator quadratus plays major role of distal radioulnar joint stability.</li>
+    <li>(D) TFCC superficial fiber inserts directly into the bony ulna styloid.</li>
+  </ul>
+  <details data-kind="answer">
+    <summary>答案與詳解</summary>
+    <div data-kind="zh-translation">
+      <p><strong>中文題目：</strong>關於腕部解剖構造，下列何者<b>正確</b>？</p>
+      <p>(A) TFCC 的掌側深層纖維在腕旋前時鬆弛。</p>
+      <p>(B) TFCC 的掌側淺層纖維在腕旋後時鬆弛。</p>
+      <p>(C) 旋前方肌的淺頭在 DRUJ 穩定中扮演主要角色。</p>
+      <p>(D) TFCC 的淺層纖維直接附著於尺骨莖突骨質。</p>
+    </div>
+    <p class="ans">答案：(D) TFCC superficial fiber inserts directly into the bony ulna styloid.</p>
+    <p>原卷<b>詳解欄留空</b>。<b>淺層接莖突</b>是最穩的一句；(C) 是<b>深頭</b>（而且是次要穩定者）。</p>
+    <p class="src">出處：邱兆澤 手部、腕部骨科功能解剖學(ppt pg.43) ｜ BM111 BLOCK-8 期中考詳解.pdf 第 29 頁</p>
+  </details>
+</article>
+
+<article data-question-id="112fin-p23-q24" data-placement="chapter">
+  <span class="qhead">112 年 期末考 第 24 題 ｜ 劉文智</span>
+  <p class="stem">Which of the following statements about wrist anatomy is correct?</p>
+  <ul class="opts">
+    <li>(A) The superficial portion of the Triangular fibrocartilage complex (TFCC) attaches to the fovea of the ulnar head.</li>
+    <li>(B) Extensor capri ulnaris (ECU) tendon sheath is the key intrinsic stabilizer of the distal radioulnar joint(DRUJ)</li>
+    <li>(C) The deep portion of the TFCC attaches to the ulnar styloid.</li>
+    <li>(D) The forearm rotation axis is defined by the line connecting the radial head to the radial styloid.</li>
+  </ul>
+  <details data-kind="answer">
+    <summary>答案與詳解</summary>
+    <div data-kind="zh-translation">
+      <p><strong>中文題目：</strong>關於腕部解剖，下列何者<b>正確</b>？</p>
+      <p>(A) TFCC 的淺層附著於尺骨頭的 fovea。</p>
+      <p>(B) ECU 腱鞘是 DRUJ 關鍵的內在穩定者。</p>
+      <p>(C) TFCC 的深層附著於尺骨莖突。</p>
+      <p>(D) 前臂旋轉軸由橈骨頭連到橈骨莖突的線所定義。</p>
+    </div>
+    <p class="ans">答案：D</p>
+    <p class="quote">詳解原文:「(A)(C) superficial portion 是連接到 ulnar syloid，deep portion 才是連接到fovea (B) ECU 是 extrinsic stabilizer (D) forearm rotation axis 是從 radial head 到 ulnar fovea」</p>
+    <p><b>注意：原卷答案為 D，但詳解明確指出 (D) 的敘述「連到橈骨莖突」是錯的——旋轉軸應是橈骨頭到尺骨 fovea。</b>而 (A)(B)(C) 依詳解也都是錯的。這題四個選項依詳解全部有誤，原卷仍以 (D) 為答案；讀者請以「<b>淺莖深凹、ECU 是外在、旋轉軸到尺骨 fovea</b>」這三個正確事實為準。</p>
+    <p class="src">出處：劉文智 手部、腕部骨科功能解剖學（ppt p.33, 36, 45） ｜ BM112_Block 8 期末考.pdf 第 23 頁</p>
+  </details>
+</article>
+
+<article data-question-id="113-p104-q92" data-placement="chapter">
+  <span class="qhead">113 年 期中考 第 92 題 ｜ 劉文智</span>
+  <p class="stem">Which of the following is a secondary stabilizer of the distal radioulnar joint (DRUJ)?</p>
+  <ul class="opts">
+    <li>(A) Extensor carpi ulnaris tendon sheath</li>
+    <li>(B) Dordsal radiocarpal ligament</li>
+    <li>(C) Deep dorsal radioulnar ligament</li>
+    <li>(D) Extensor retinaculum</li>
+  </ul>
+  <details data-kind="answer">
+    <summary>答案與詳解</summary>
+    <div data-kind="zh-translation">
+      <p><strong>中文題目：</strong>下列何者是遠端橈尺關節（DRUJ）的<b>次要</b>穩定者？</p>
+      <p>(A) 尺側伸腕肌腱鞘</p>
+      <p>(B) 背側橈腕韌帶</p>
+      <p>(C) 深層背側橈尺韌帶</p>
+      <p>(D) 伸肌支持帶</p>
+    </div>
+    <p class="ans">答案：(A)</p>
+    <p class="quote">詳解原文:「以下為secondary stabilizer of the distal radioulnar joint (DRUJ)：ECU (extensor carpi ulnaris) tendon sheath / 6th dorsal compartment (ECU) sub-sheath / Deep head of pronator quadratus(PQ) / Interosseous lig. Of the forearm(central band) / Ulnotriquetral lig. / Ulnolunate lig.」</p>
+    <p>ECU 腱鞘在次要穩定者名單的第一個。(C) 深層橈尺韌帶是 TFCC 的一部分，屬<b>主要</b>穩定者；(B) 是腕關節的韌帶；(D) 是伸肌支持帶。</p>
+    <p class="src">出處：手部、腕部骨骼功能解剖學 劉文智 ppt. p69 ｜ BM113_Block8期中考詳解.pdf 第 104 頁</p>
+  </details>
+</article>
+</section>
+<section id="chapter-4" data-chapter-kind="story">
+<h2>四、拇指外展肌：長肌橈神經、短肌正中神經</h2>
+
+<figure class="boxfig" data-visual-id="hwbox-07-story" data-image-kind="story" data-explanation-verified="true">
+<span class="figtag">情境場景</span>
+<img data-visual-id="hwbox-07-story" src="img/hwbox-07-story.webp" alt="情境場景：兩條同名的外展肌各聽不同的指揮，題目沒說是哪一條，兩個答案都給。" loading="lazy" decoding="async" width="1600" height="914">
+<figcaption>情境場景：兩條同名的外展肌各聽不同的指揮，題目沒說是哪一條，兩個答案都給。</figcaption>
+</figure>
+<div class="story" data-prose-kind="story"><span class="tag">故事</span>
+<p>113 年出了一題「abductor pollicis 由哪條神經支配」，原答案寫尺神經。問題是——<b>拇指有兩條外展肌</b>，而且聽兩個不同的指揮：</p>
+<p><b>外展拇短肌（APB）</b>：手掌上的大魚際肌，由<b>正中神經</b>（返支）支配。<br>
+<b>外展拇長肌（APL）</b>：前臂上的外在肌，由<b>橈神經</b>（後骨間神經）支配。</p>
+<p>題幹沒寫長短，兩個都成立，所以申覆後 <b>(A) 橈神經與 (B) 正中神經皆給分</b>。至於原答案的尺神經——它管的是<b>內收</b>拇肌（adductor pollicis），方向相反。</p>
+<p>記法：<b>大魚際是正中、前臂是橈、內收是尺。</b></p>
+</div>
+
+<article data-question-id="113-p105-q93" data-placement="chapter">
+  <span class="qhead">113 年 期中考 第 93 題 ｜ 劉文智 ｜ 申覆後 (A)(B) 皆給分</span>
+  <p class="stem">Which nerve innervates the abductor pollicis muscle?</p>
+  <ul class="opts">
+    <li>(A) Radial nerve</li>
+    <li>(B) Median nerve</li>
+    <li>(C) Ulnar nerve</li>
+    <li>(D) Anterior interosseous nerve</li>
+  </ul>
+  <details data-kind="answer">
+    <summary>答案與詳解</summary>
+    <div data-kind="zh-translation">
+      <p><strong>中文題目：</strong>哪一條神經支配外展拇肌？</p>
+      <p>(A) 橈神經</p>
+      <p>(B) 正中神經</p>
+      <p>(C) 尺神經</p>
+      <p>(D) 前骨間神經</p>
+    </div>
+    <p class="ans">答案：原答案 (C)，申覆後改為 (A)(B) 皆給分</p>
+    <p class="quote">詳解原文:「abductor pollicis brevis(APB)由median n.支配　abductor pollicis longus(APL)則由radial n.支配」</p>
+    <p>題幹未指明長短肌：<b>APB 正中神經、APL 橈神經</b>，故兩者皆給分。尺神經支配的是<b>內收</b>拇肌。</p>
+    <p class="src">出處：手部、腕部骨骼功能解剖學 劉文智 p. 15,17 ｜ BM113_Block8期中考詳解.pdf 第 105 頁</p>
+  </details>
+</article>
+</section>
+
+<section id="chapter-cram" data-chapter-kind="cram">
+<h2>五、考前速記</h2>
+<div class="cram">
+<ul>
+<li><b>Sagittal band 伸 P1、接掌側板、固定 MCPJ 的伸肌腱</b>；MCPJ 過度伸直時外在伸肌伸不了 P2。</li>
+<li><b>Central slip 伸 P2</b>，斷了是鈕扣孔變形；<b>terminal tendon 伸 DIP</b>，斷了是槌狀指。</li>
+<li><b>Triangular ligament 防側帶掌側脫位</b>（PIP 屈曲時）；transverse retinacular ligament 防背側。</li>
+<li><b>固有指動脈在神經的背側</b>；<b>背側骨間肌外展（DAB）</b>、掌側骨間肌內收（PAD）。</li>
+<li><b>外在韌帶＝連到橈骨或尺骨，名字有 radio-</b>：SRL、RSC、DRC。</li>
+<li><b>Deltoid（arcuate）ligament 是內在韌帶</b>——「不是外在」的答案。</li>
+<li><b>SRL 防止腕骨掌側脫位。</b></li>
+<li><b>TFCC 淺層接尺骨莖突、深層接 fovea。</b>淺莖深凹。</li>
+<li><b>前臂旋轉軸：橈骨頭 → 尺骨 fovea</b>，不是橈骨莖突。</li>
+<li><b>DRUJ 次要（外在）穩定者：ECU 腱鞘、第六腔室次鞘、旋前方肌深頭、骨間韌帶中央束、尺三角韌帶、尺月韌帶。</b></li>
+<li><b>ECU 腱鞘是外在／次要</b>，不是「關鍵內在」；<b>旋前方肌是深頭</b>不是淺頭。</li>
+<li><b>APB 正中神經、APL 橈神經、內收拇肌尺神經。</b>113 年題幹沒寫長短，申覆後 (A)(B) 皆給分。</li>
+<li>112 年第 24 題四個選項依詳解全錯，原卷仍以 D 為答案——以正確事實為準。</li>
+</ul>
+</div>
+</section>
+
+<!-- ================= VOCAB ================= -->
+<section id="chapter-vocab" data-chapter-kind="vocab">
+<h2>六、單字表</h2>
+<dl class="vocab">
+<dt>sagittal band</dt>
+<dd><span class="root">sagittal＝矢狀（箭頭方向）</span>　矢狀帶。在 MCPJ 處把伸肌腱固定在正中，接掌側板，負責伸 P1。<details data-kind="vocab-memory"><summary>記憶提示</summary><p><b>管 P1、管 MCPJ。</b>寫成伸 P2 或伸 DIP 都是錯的。</p></details></dd>
+
+<dt>central slip</dt>
+<dd><span class="root">central＝中央；slip＝細條</span>　中央束。伸肌腱在 PIP 處的中央延伸，伸 P2（中節）。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>斷了就是<b>鈕扣孔變形</b>——不是終腱。</p></details></dd>
+
+<dt>terminal tendon</dt>
+<dd><span class="root">terminal＝末端</span>　終腱。兩條側帶匯合後的末端，伸 DIP。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>斷了是槌狀指（mallet finger）。</p></details></dd>
+
+<dt>lateral band</dt>
+<dd><span class="root">lateral＝側</span>　側帶。伸肌裝置兩側的纖維束，PIP 屈曲時易向掌側滑。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>三角韌帶就是防它往掌側跑。</p></details></dd>
+
+<dt>triangular ligament</dt>
+<dd><span class="root">triangular＝三角形</span>　三角韌帶。連接兩條側帶，防止 PIP 屈曲時側帶向掌側脫位。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>兩年的正解都是這一句。與腕部的 deltoid ligament 是不同東西。</p></details></dd>
+
+<dt>boutonnière deformity</dt>
+<dd><span class="root">法文 boutonnière＝鈕扣孔</span>　鈕扣孔變形。中央束斷裂，PIP 屈曲、DIP 過伸。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>PIP 像從鈕扣孔鑽出來。<b>中央束</b>的事。</p></details></dd>
+
+<dt>dorsal / palmar interossei</dt>
+<dd><span class="root">inter-（之間）+ os（骨）</span>　背側與掌側骨間肌。背側外展、掌側內收。<details data-kind="vocab-memory"><summary>記憶提示</summary><p><b>DAB / PAD</b>：Dorsal ABduct、Palmar ADduct。</p></details></dd>
+
+<dt>proper digital artery / nerve</dt>
+<dd><span class="root">proper＝固有</span>　固有指動脈與指神經，並行於手指兩側。<details data-kind="vocab-memory"><summary>記憶提示</summary><p><b>動脈在背側、神經在掌側。</b>兩年都把它反過來當錯項。</p></details></dd>
+
+<dt>extrinsic / intrinsic ligament (wrist)</dt>
+<dd><span class="root">extrinsic＝外在；intrinsic＝內在</span>　外在韌帶連前臂骨與腕骨，內在韌帶在腕骨之間。<details data-kind="vocab-memory"><summary>記憶提示</summary><p><b>名字有 radio- 或 ulno- 的是外在。</b></p></details></dd>
+
+<dt>short radiolunate ligament (SRL)</dt>
+<dd><span class="root">radio-（橈）+ lunate（月狀骨）</span>　短橈月韌帶，外在韌帶，防止腕骨掌側脫位。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>把月狀骨綁在橈骨上。</p></details></dd>
+
+<dt>deltoid (arcuate) ligament</dt>
+<dd><span class="root">deltoid＝三角形；arcuate＝弓形</span>　以頭狀骨為中心的 V 形內在韌帶。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>名字沒有 radio-，<b>不是外在韌帶</b>。</p></details></dd>
+
+<dt>TFCC</dt>
+<dd><span class="root">Triangular FibroCartilage Complex</span>　三角纖維軟骨複合體，DRUJ 的主要穩定構造。<details data-kind="vocab-memory"><summary>記憶提示</summary><p><b>淺層接莖突、深層接 fovea。</b></p></details></dd>
+
+<dt>fovea (ulnar fovea)</dt>
+<dd><span class="root">拉丁 fovea＝小凹</span>　尺骨頭上莖突基部的凹陷，TFCC 深層纖維的附著處，也是前臂旋轉軸的遠端點。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>深層接這裡；旋轉軸也通到這裡。</p></details></dd>
+
+<dt>ulnar styloid</dt>
+<dd><span class="root">styloid＝筆狀突起</span>　尺骨莖突。TFCC 淺層纖維的附著處。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>淺層接這裡。</p></details></dd>
+
+<dt>DRUJ</dt>
+<dd><span class="root">Distal RadioUlnar Joint</span>　遠端橈尺關節。主要穩定者是 TFCC，次要穩定者有六個。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>次要名單：ECU 腱鞘、第六腔室次鞘、PQ 深頭、骨間韌帶中央束、尺三角、尺月韌帶。</p></details></dd>
+
+<dt>ECU tendon sheath</dt>
+<dd><span class="root">Extensor Carpi Ulnaris</span>　尺側伸腕肌腱鞘，DRUJ 的次要（外在）穩定者。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>寫成「關鍵內在穩定者」就是錯的。</p></details></dd>
+
+<dt>pronator quadratus (deep head)</dt>
+<dd><span class="root">pronator＝旋前肌；quadratus＝方形</span>　旋前方肌，其深頭是 DRUJ 的次要穩定者。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>是<b>深頭</b>不是淺頭，而且是次要。</p></details></dd>
+
+<dt>forearm rotation axis</dt>
+<dd><span class="root">axis＝軸</span>　前臂旋轉軸，從橈骨頭到尺骨 fovea。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>遠端在<b>尺骨 fovea</b>，不是橈骨莖突。</p></details></dd>
+
+<dt>abductor pollicis brevis / longus</dt>
+<dd><span class="root">pollex＝拇指；brevis＝短；longus＝長</span>　外展拇短肌（正中神經）與外展拇長肌（橈神經）。<details data-kind="vocab-memory"><summary>記憶提示</summary><p><b>大魚際正中、前臂橈。</b>內收拇肌才是尺神經。</p></details></dd>
+</dl>
+</section>
+<section id="chapter-final" data-chapter-kind="final_questions">
+<h2>七、歷年考題總複習</h2>
+<p class="meta">依年度由新到舊、同年依原始題號排列。共 9 題（111 期中、112 期末、113 期中各 3 題）。<b style="color:#f08a8a">紅框</b>＝同一考點在兩個以上年度重複出現。</p>
+<h3><span class="yearchip">113 年</span>期中考 第 91 題</h3>
+<article data-question-id="113-p103-q91" data-placement="final" class="repeat">
+  <span class="qhead">113 年 期中考 第 91 題 ｜ 劉文智</span><span class="repeat-badge">重複考點 ×3</span>
+  <p class="repeat-note">同考點：111 第34題、112 第22題　—　手指伸肌裝置：sagittal band 伸 P1、central slip 伸 P2、terminal tendon 伸 DIP；triangular ligament 防側帶掌側脫位；背側骨間肌外展；動脈在神經背側</p>
+  <p class="stem">Which of the following statements about the sagittal band is correct?</p>
+  <ul class="opts"><li>(A) It extends the middle phalanx during metacarpophalangeal joint (MCPJ) extension.</li><li>(B) It attaches to the dorsal hood and stabilizes the lateral band.</li><li>(C) It assists in proximal phalanx extension and stabilizes the extensor tendon at the MCPJ.</li><li>(D) It allows distal interphalangeal joint extension when MCPJ is hyperextended.</li></ul>
+  <details data-kind="answer"><summary>答案與詳解</summary>
+    <div data-kind="zh-translation"><p><strong>中文題目：</strong>關於矢狀帶的敘述，下列何者<b>正確</b>？</p>
+      <p>(A) 它在 MCPJ 伸直時伸中節指骨。</p>
+      <p>(B) 它附著於背側罩並穩定側帶。</p>
+      <p>(C) 它協助近節指骨伸直並在 MCPJ 處穩定伸肌腱。</p>
+      <p>(D) 它在 MCPJ 過度伸直時允許 DIP 伸直。</p></div>
+    <p class="ans">答案：(C)</p>
+    <p>矢狀帶伸 P1、接掌側板、固定 MCPJ 的伸肌腱。<span class="src"> ｜ BM113_Block8期中考詳解 第 103 頁</span></p>
+  </details>
+</article>
+<article data-question-id="113-p104-q92" data-placement="final" class="repeat">
+  <span class="qhead">113 年 期中考 第 92 題 ｜ 劉文智</span><span class="repeat-badge">重複考點 ×3</span>
+  <p class="repeat-note">同考點：111 第36題、112 第24題　—　TFCC 與 DRUJ：淺層纖維接尺骨莖突、深層接 fovea；前臂旋轉軸從橈骨頭到尺骨 fovea；ECU 腱鞘與 PQ 深頭是次要（外在）穩定者</p>
+  <p class="stem">Which of the following is a secondary stabilizer of the distal radioulnar joint (DRUJ)?</p>
+  <ul class="opts"><li>(A) Extensor carpi ulnaris tendon sheath</li><li>(B) Dordsal radiocarpal ligament</li><li>(C) Deep dorsal radioulnar ligament</li><li>(D) Extensor retinaculum</li></ul>
+  <details data-kind="answer"><summary>答案與詳解</summary>
+    <div data-kind="zh-translation"><p><strong>中文題目：</strong>下列何者是遠端橈尺關節（DRUJ）的<b>次要</b>穩定者？</p>
+      <p>(A) 尺側伸腕肌腱鞘</p>
+      <p>(B) 背側橈腕韌帶</p>
+      <p>(C) 深層背側橈尺韌帶</p>
+      <p>(D) 伸肌支持帶</p></div>
+    <p class="ans">答案：(A)</p>
+    <p>ECU 腱鞘是 DRUJ 的次要穩定者；深層橈尺韌帶屬 TFCC 是主要。<span class="src"> ｜ BM113_Block8期中考詳解 第 104 頁</span></p>
+  </details>
+</article>
+<article data-question-id="113-p105-q93" data-placement="final">
+  <span class="qhead">113 年 期中考 第 93 題 ｜ 劉文智</span>
+  
+  <p class="stem">Which nerve innervates the abductor pollicis muscle?</p>
+  <ul class="opts"><li>(A) Radial nerve</li><li>(B) Median nerve</li><li>(C) Ulnar nerve</li><li>(D) Anterior interosseous nerve</li></ul>
+  <details data-kind="answer"><summary>答案與詳解</summary>
+    <div data-kind="zh-translation"><p><strong>中文題目：</strong>哪一條神經支配外展拇肌？</p>
+      <p>(A) 橈神經</p>
+      <p>(B) 正中神經</p>
+      <p>(C) 尺神經</p>
+      <p>(D) 前骨間神經</p></div>
+    <p class="ans">答案：原答案 (C)，申覆後改為 (A)(B) 皆給分</p>
+    <p>APB 正中、APL 橈；題幹沒寫長短，申覆後兩者皆給分。<span class="src"> ｜ BM113_Block8期中考詳解 第 105 頁</span></p>
+  </details>
+</article>
+<h3><span class="yearchip">112 年</span>期末考 第 22 題</h3>
+<article data-question-id="112fin-p21-q22" data-placement="final" class="repeat">
+  <span class="qhead">112 年 期末考 第 22 題 ｜ 劉文智 ｜ 來源答案欄</span><span class="repeat-badge">重複考點 ×3</span>
+  <p class="repeat-note">同考點：111 第34題、113 第91題　—　手指伸肌裝置：sagittal band 伸 P1、central slip 伸 P2、terminal tendon 伸 DIP；triangular ligament 防側帶掌側脫位；背側骨間肌外展；動脈在神經背側</p>
+  <p class="stem">Which of the following statements about finger anatomy is correct?</p>
+  <ul class="opts"><li>(A) Compared to the proper digital nerve, the proper digital artery is located on the palmar side of the finger.</li><li>(B) The triangular ligament prevents volar subluxation of the lateral band during proximal interphalangeal joint (PIPJ) flexion.</li><li>(C) The dorsal interossei muscles are responsible for abducting the index and ring fingers.</li><li>(D) The sagittal band facilitates P2 extension while the PIPJ is hyperextended.</li></ul>
+  <details data-kind="answer"><summary>答案與詳解</summary>
+    <div data-kind="zh-translation"><p><strong>中文題目：</strong>關於手指解剖，下列何者<b>正確</b>？</p>
+      <p>(A) 相較於固有指神經，固有指動脈位於手指的掌側。</p>
+      <p>(B) 三角韌帶在 PIPJ 屈曲時防止側帶向掌側脫位。</p>
+      <p>(C) 背側骨間肌負責食指與無名指的外展。</p>
+      <p>(D) 矢狀帶在 PIPJ 過度伸直時協助 P2 伸直。</p></div>
+    <p class="ans">答案：B</p>
+    <p>三角韌帶那句與 111 年相同；矢狀帶管的是 P1。<span class="src"> ｜ BM112_Block 8 期末考 第 21 頁</span></p>
+  </details>
+</article>
+<article data-question-id="112fin-p22-q23" data-placement="final" class="repeat">
+  <span class="qhead">112 年 期末考 第 23 題 ｜ 劉文智</span><span class="repeat-badge">重複考點 ×2</span>
+  <p class="repeat-note">同考點：111 第35題　—　腕部外在韌帶：連到橈骨或尺骨的才是 extrinsic（名字有 radio-）；deltoid 是內在韌帶；SRL 防腕骨掌側脫位</p>
+  <p class="stem">Which extrinsic ligament of the wrist prevents volar subluxation of the carpus?</p>
+  <ul class="opts"><li>(A) Short radiolunate ligament</li><li>(B) Deltoid ligament</li><li>(C) Radioscaphocapitate ligament</li><li>(D) Dorsal radiocarpal ligament</li></ul>
+  <details data-kind="answer"><summary>答案與詳解</summary>
+    <div data-kind="zh-translation"><p><strong>中文題目：</strong>哪一條腕部外在韌帶防止腕骨向掌側脫位？</p>
+      <p>(A) 短橈月韌帶</p>
+      <p>(B) 三角（弓狀）韌帶</p>
+      <p>(C) 橈舟頭韌帶</p>
+      <p>(D) 背側橈腕韌帶</p></div>
+    <p class="ans">答案：A</p>
+    <p>SRL 把月狀骨綁在橈骨上，抵抗腕骨掌側位移。<span class="src"> ｜ BM112_Block 8 期末考 第 22 頁</span></p>
+  </details>
+</article>
+<article data-question-id="112fin-p23-q24" data-placement="final" class="repeat">
+  <span class="qhead">112 年 期末考 第 24 題 ｜ 劉文智</span><span class="repeat-badge">重複考點 ×3</span>
+  <p class="repeat-note">同考點：111 第36題、113 第92題　—　TFCC 與 DRUJ：淺層纖維接尺骨莖突、深層接 fovea；前臂旋轉軸從橈骨頭到尺骨 fovea；ECU 腱鞘與 PQ 深頭是次要（外在）穩定者</p>
+  <p class="stem">Which of the following statements about wrist anatomy is correct?</p>
+  <ul class="opts"><li>(A) The superficial portion of the Triangular fibrocartilage complex (TFCC) attaches to the fovea of the ulnar head.</li><li>(B) Extensor capri ulnaris (ECU) tendon sheath is the key intrinsic stabilizer of the distal radioulnar joint(DRUJ)</li><li>(C) The deep portion of the TFCC attaches to the ulnar styloid.</li><li>(D) The forearm rotation axis is defined by the line connecting the radial head to the radial styloid.</li></ul>
+  <details data-kind="answer"><summary>答案與詳解</summary>
+    <div data-kind="zh-translation"><p><strong>中文題目：</strong>關於腕部解剖，下列何者<b>正確</b>？</p>
+      <p>(A) TFCC 的淺層附著於尺骨頭的 fovea。</p>
+      <p>(B) ECU 腱鞘是 DRUJ 關鍵的內在穩定者。</p>
+      <p>(C) TFCC 的深層附著於尺骨莖突。</p>
+      <p>(D) 前臂旋轉軸由橈骨頭連到橈骨莖突的線所定義。</p></div>
+    <p class="ans">答案：D</p>
+    <p>淺莖深凹、ECU 是外在、旋轉軸到尺骨 fovea；原卷答 D 但詳解指其敘述有誤。<span class="src"> ｜ BM112_Block 8 期末考 第 23 頁</span></p>
+  </details>
+</article>
+<h3><span class="yearchip">111 年</span>期中考 第 34 題</h3>
+<article data-question-id="111-p29-q34" data-placement="final" class="repeat">
+  <span class="qhead">111 年 期中考 第 34 題 ｜ 邱兆澤</span><span class="repeat-badge">重複考點 ×3</span>
+  <p class="repeat-note">同考點：112 第22題、113 第91題　—　手指伸肌裝置：sagittal band 伸 P1、central slip 伸 P2、terminal tendon 伸 DIP；triangular ligament 防側帶掌側脫位；背側骨間肌外展；動脈在神經背側</p>
+  <p class="stem">Which is correct about finger structure?</p>
+  <ul class="opts"><li>(A) Proper digital artery is lying below (volar to) its corresponding digital nerve.</li><li>(B) Triangular ligament prevents volar subluxation of the conjoint lateral bands with PIP joint flexion.</li><li>(C) The function of Dorsal interossei is index and ring finger adduction.</li><li>(D) Boutonniere deformity is caused by terminal tendon rupture.</li></ul>
+  <details data-kind="answer"><summary>答案與詳解</summary>
+    <div data-kind="zh-translation"><p><strong>中文題目：</strong>關於手指構造，下列何者<b>正確</b>？</p>
+      <p>(A) 固有指動脈位於相對應指神經的掌側（下方）。</p>
+      <p>(B) 三角韌帶在 PIP 關節屈曲時防止聯合側帶向掌側脫位。</p>
+      <p>(C) 背側骨間肌的功能是食指與無名指內收。</p>
+      <p>(D) 鈕扣孔變形由終腱斷裂造成。</p></div>
+    <p class="ans">答案：(B) Triangular ligament prevents volar subluxation of the conjoint lateral bands with PIP joint flexion.</p>
+    <p>三角韌帶防側帶掌側脫位；動脈在背側、背側骨間肌外展、鈕扣孔是中央束。<span class="src"> ｜ BM111 BLOCK-8 期中考詳解 第 29 頁</span></p>
+  </details>
+</article>
+<article data-question-id="111-p29-q35" data-placement="final" class="repeat">
+  <span class="qhead">111 年 期中考 第 35 題 ｜ 邱兆澤</span><span class="repeat-badge">重複考點 ×2</span>
+  <p class="repeat-note">同考點：112 第23題　—　腕部外在韌帶：連到橈骨或尺骨的才是 extrinsic（名字有 radio-）；deltoid 是內在韌帶；SRL 防腕骨掌側脫位</p>
+  <p class="stem">Which is not the extrinsic ligament of wrist?</p>
+  <ul class="opts"><li>(A) Short radiolunate ligament (SRL)</li><li>(B) Deltoid ligament</li><li>(C) Radioscaophocapitate (RSC) ligament</li><li>(D) Dorsal radiocarpal (DRC) ligament</li></ul>
+  <details data-kind="answer"><summary>答案與詳解</summary>
+    <div data-kind="zh-translation"><p><strong>中文題目：</strong>下列何者<b>不是</b>腕部的外在韌帶？</p>
+      <p>(A) 短橈月韌帶（SRL）</p>
+      <p>(B) 三角（弓狀）韌帶</p>
+      <p>(C) 橈舟頭韌帶（RSC）</p>
+      <p>(D) 背側橈腕韌帶（DRC）</p></div>
+    <p class="ans">答案：(B) Deltoid ligament</p>
+    <p>名字有 radio- 的才是外在韌帶；deltoid 是內在。<span class="src"> ｜ BM111 BLOCK-8 期中考詳解 第 29 頁</span></p>
+  </details>
+</article>
+<article data-question-id="111-p29-q36" data-placement="final" class="repeat">
+  <span class="qhead">111 年 期中考 第 36 題 ｜ 邱兆澤 ｜ 來源答案欄</span><span class="repeat-badge">重複考點 ×3</span>
+  <p class="repeat-note">同考點：112 第24題、113 第92題　—　TFCC 與 DRUJ：淺層纖維接尺骨莖突、深層接 fovea；前臂旋轉軸從橈骨頭到尺骨 fovea；ECU 腱鞘與 PQ 深頭是次要（外在）穩定者</p>
+  <p class="stem">Which is correct about wrist anatomic structure?</p>
+  <ul class="opts"><li>(A) Volar deep fiber of Triangular fibrocartilage complex (TFCC) is lax while wrist pronation.</li><li>(B) volar superficial fiber of Triangular fibrocartilage complex (TFCC) is lax while wrist supination.</li><li>(C) Superficial head of Pronator quadratus plays major role of distal radioulnar joint stability.</li><li>(D) TFCC superficial fiber inserts directly into the bony ulna styloid.</li></ul>
+  <details data-kind="answer"><summary>答案與詳解</summary>
+    <div data-kind="zh-translation"><p><strong>中文題目：</strong>關於腕部解剖構造，下列何者<b>正確</b>？</p>
+      <p>(A) TFCC 的掌側深層纖維在腕旋前時鬆弛。</p>
+      <p>(B) TFCC 的掌側淺層纖維在腕旋後時鬆弛。</p>
+      <p>(C) 旋前方肌的淺頭在 DRUJ 穩定中扮演主要角色。</p>
+      <p>(D) TFCC 的淺層纖維直接附著於尺骨莖突骨質。</p></div>
+    <p class="ans">答案：(D) TFCC superficial fiber inserts directly into the bony ulna styloid.</p>
+    <p>TFCC 淺層接尺骨莖突；旋前方肌是深頭且為次要穩定者。<span class="src"> ｜ BM111 BLOCK-8 期中考詳解 第 29 頁</span></p>
+  </details>
+</article>
+<p class="ending">每一題都在考一對相反詞：掌側背側、淺層深層、外展內收、內在外在。分清楚就結束了。</p>
+</section>
+</div>
+<!-- nb-comments:start -->
+<link rel="stylesheet" href="https://unpkg.com/@waline/client@v3/dist/waline.css">
+<style>
+  .nb-comments{margin:72px 0 48px;padding-top:32px;border-top:1px solid var(--line,#2a3340)}
+  .nb-comments h2{margin:0 0 6px;font-size:22px;font-weight:700;color:var(--ink,var(--text,#e8ecf3))}
+  .nb-comments p.nb-hint{margin:0 0 20px;font-size:14px;color:var(--dim,var(--text-2,#a3adbd))}
+  .nb-comments #waline{
+    --waline-theme-color:var(--cyan,var(--teal,#6fd3c7));
+    --waline-active-color:var(--gold,#e5b567);
+    --waline-font-size:15px;
+    --waline-bgcolor:var(--panel,var(--bg-2,#141922));
+    --waline-bgcolor-light:var(--panel2,var(--bg-3,#1b2230));
+    --waline-border-color:var(--line,#2a3340);
+    --waline-color:var(--ink,var(--text,#e8ecf3));
+    --waline-light-grey:var(--dim,var(--text-2,#a3adbd));
+    --waline-dark-grey:var(--dim,var(--text-2,#a3adbd));
+    --waline-white:var(--panel,var(--bg-2,#141922));
+    --waline-disable-bgcolor:var(--panel2,var(--bg-3,#1b2230));
+    --waline-disable-color:var(--dim,var(--text-3,#7a968d));
+    --waline-info-bgcolor:var(--panel2,var(--bg-3,#1b2230));
+    --waline-info-color:var(--dim,var(--text-2,#a3adbd));
+    --waline-border:1px solid var(--line,#2a3340);
+    --waline-code-bgcolor:var(--panel2,var(--bg-3,#1b2230));
+    --waline-badge-color:var(--gold,#e5b567);
+    --waline-bq-color:var(--dim,#a3adbd);
+  }
+  .nb-comments .wl-panel{background:var(--panel,var(--bg-2,#141922))}
+  .nb-comments .wl-editor,.nb-comments .wl-input{background:var(--bg,#0b0e13)}
+</style>
+<section class="nb-comments" id="comments">
+  <div class="container">
+    <h2>留言板</h2>
+    <p class="nb-hint">看不懂、想補充、發現錯誤都歡迎留言；填個暱稱就能發。</p>
+    <div id="waline"></div>
+  </div>
+</section>
+<script type="module">
+  import { init } from 'https://unpkg.com/@waline/client@v3/dist/waline.js';
+  init({
+    el: '#waline',
+    serverURL: 'https://notes-comments.vercel.app',
+    path: location.pathname,
+    lang: 'zh-TW',
+    dark: true,
+    meta: ['nick'],
+    requiredMeta: ['nick'],
+    login: 'disable',
+    reaction: false,
+    pageview: false,
+    search: false,
+    imageUploader: false,
+    copyright: false,
+    locale: { placeholder: '寫下你的想法或問題⋯⋯（支援 Markdown）' }
+  });
+</script>
+<!-- nb-comments:end -->
+</body>
+</html>
