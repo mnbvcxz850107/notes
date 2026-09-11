@@ -1,0 +1,1160 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>基礎生物力學與運動創傷及運動醫學 周伯禧</title>
+<style>
+:root{
+  color-scheme: dark;
+  --bg:#0b0e13; --panel:#141922; --panel2:#1b2230; --line:#2a3340;
+  --ink:#e8ecf3; --dim:#a3adbd; --gold:#e5b567; --cyan:#6fd3c7;
+  --rose:#e88b8b; --violet:#a99bf0;
+}
+*{box-sizing:border-box}
+html{font-size:150%}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font-family:"Noto Sans TC","PingFang TC","Helvetica Neue",system-ui,sans-serif;
+  line-height:1.85; overflow-wrap:anywhere;}
+/* Width follows the device, not the font size: px breakpoints stay put
+   while rem-based type scales with the 150% root. */
+.container{width:100%;max-width:none;margin:0 auto;
+  padding:clamp(.85rem,2.2vw,2.2rem);}
+@media (min-width:760px){ .container{max-width:730px} }
+@media (min-width:1024px){ .container{max-width:980px} }
+@media (min-width:1440px){ .container{max-width:1300px} }
+@media (min-width:1920px){ .container{max-width:1640px} }
+img{max-width:100%;height:auto}
+svg{max-width:100%;height:auto;display:block}
+h1{font-size:1.6rem;line-height:1.35;margin:.2rem 0 .6rem}
+h2{font-size:1.24rem;margin:2.4rem 0 .7rem;padding-bottom:.4rem;
+  border-bottom:1px solid var(--line);color:var(--gold)}
+h3{font-size:1.06rem;margin:1.5rem 0 .5rem;color:var(--cyan)}
+p{margin:.7rem 0}
+header#subject-overview{background:linear-gradient(160deg,#182031,#0e1219);
+  border:1px solid var(--line);border-radius:14px;padding:1.2rem;margin:.6rem 0 1.4rem}
+.meta{color:var(--dim);font-size:.86rem;margin:.3rem 0 0}
+nav#toc{background:var(--panel);border:1px solid var(--line);
+  border-radius:12px;padding:.9rem 1.1rem;margin:1.2rem 0}
+nav#toc ol{margin:.4rem 0 0;padding-left:1.3rem}
+nav#toc a{color:var(--ink);text-decoration:none;border-bottom:1px dotted var(--line)}
+.story{background:var(--panel2);border-left:3px solid var(--violet);
+  border-radius:0 10px 10px 0;padding:.9rem 1.1rem;margin:1.1rem 0}
+.story .tag{display:block;color:var(--violet);font-size:.78rem;
+  letter-spacing:.12em;margin-bottom:.35rem}
+.reality{background:var(--panel);border-left:3px solid var(--cyan);
+  border-radius:0 10px 10px 0;padding:.9rem 1.1rem;margin:1.1rem 0}
+.reality .tag{display:block;color:var(--cyan);font-size:.78rem;
+  letter-spacing:.12em;margin-bottom:.35rem}
+.keybox{background:#12202b;border:1px solid #26485a;border-radius:10px;
+  padding:.85rem 1rem;margin:1.1rem 0}
+.keybox b{color:var(--cyan)}
+.warn{background:#2a1c1c;border:1px solid #573434;border-radius:10px;
+  padding:.85rem 1rem;margin:1.1rem 0;color:#f0cfcf}
+article{background:var(--panel);border:1px solid var(--line);
+  border-radius:12px;padding:.95rem 1.05rem;margin:1.1rem 0}
+article .qhead{display:block;color:var(--gold);font-size:.82rem;
+  letter-spacing:.06em;margin-bottom:.45rem}
+article .stem{margin:.2rem 0 .5rem}
+article ul.opts{list-style:none;margin:.3rem 0 .2rem;padding:0}
+article ul.opts li{padding:.16rem 0 .16rem .2rem;color:#dbe2ec}
+details{background:#0f141c;border:1px solid var(--line);
+  border-radius:10px;padding:.15rem .8rem;margin:.6rem 0}
+details summary{cursor:pointer;padding:.6rem 0;color:var(--gold);
+  font-weight:600;min-height:44px;display:flex;align-items:center}
+details[data-kind="answer"] .ans{font-size:1.05rem;color:var(--cyan);font-weight:700}
+div[data-kind="zh-translation"]{background:#141c26;border:1px dashed #33465c;
+  border-radius:8px;padding:.7rem .85rem;margin:.5rem 0 .8rem}
+div[data-kind="zh-translation"] p{margin:.35rem 0}
+.src{color:var(--dim);font-size:.84rem;margin-top:.6rem}
+.quote{border-left:2px solid var(--gold);padding-left:.75rem;color:#f0e2c6}
+.infer{color:#f0d9a8;font-size:.92rem}
+figure{margin:1.3rem 0;background:var(--panel2);border:1px solid var(--line);
+  border-radius:12px;padding:.9rem}
+figcaption{color:var(--dim);font-size:.85rem;margin-top:.6rem;text-align:center}
+dl.vocab{margin:0}
+dl.vocab dt{color:var(--cyan);font-weight:700;margin-top:.9rem}
+dl.vocab dd{margin:.2rem 0 0;padding-left:0}
+dl.vocab .root{color:var(--dim);font-size:.86rem}
+.cram{background:var(--panel);border:1px solid var(--line);
+  border-radius:12px;padding:.4rem 1.1rem;margin:1rem 0}
+.cram li{margin:.55rem 0}
+.yearchip{display:inline-block;background:#233046;color:#bcd0ea;
+  border-radius:999px;padding:.05rem .55rem;font-size:.76rem;margin-right:.4rem}
+article.repeat{border:2px solid #e05252;box-shadow:0 0 0 3px rgba(224,82,82,.12)}
+article.repeat .qhead{color:#f08a8a}
+.repeat-badge{display:inline-block;background:#3a1c1c;border:1px solid #7d3a3a;
+  color:#f0a8a8;border-radius:999px;padding:.1rem .6rem;font-size:.76rem;
+  margin-left:.4rem;white-space:nowrap}
+.repeat-note{color:#e6a5a5;font-size:.84rem;margin:.45rem 0 0}
+figure.boxfig{margin:1.5rem 0 .5rem;background:transparent;border:0;padding:0}
+figure.boxfig img{border-radius:12px;border:1px solid var(--line);display:block;width:100%}
+figure.boxfig figcaption{color:var(--dim);font-size:.82rem;margin-top:.5rem;
+  text-align:left;line-height:1.6}
+figure.boxfig .figtag{color:var(--violet);font-size:.76rem;letter-spacing:.1em;
+  display:block;margin-bottom:.3rem}
+.ending{color:var(--dim);font-style:italic;margin:1.6rem 0 2.4rem}
+</style></head>
+<body>
+<div class="container">
+
+<header id="subject-overview">
+  <h1>基礎生物力學與運動創傷及運動醫學</h1>
+  <p>周伯禧老師的兩門課合併成一篇——因為卷面上的出處本來就互相混用，而且<b>三年十八題的結構完全一樣：六個題位、六個主題，年年重來</b>。老師自己在詳解裡寫「很古喔～」「經典考古題」「非常古，背誦題」。</p>
+  <p>六個主題是：<b>材料會不會碎</b>（脆性 vs 延性）、<b>動作分析能用在哪</b>（全部都能）、<b>投球哪一期最傷</b>（late cocking &amp; early acceleration）、<b>SLAP 怎麼診斷</b>（MR 關節攝影＋O'Brien＋compression rotation）、<b>十字韌帶</b>（PCL 車禍不必開刀、ACL 運動傷害合併傷要開刀）、<b>投手肘的外翻伸展過載</b>（內側拉、外側壓、後側夾）。</p>
+  <p class="meta">命題老師：周伯禧 ｜ 收錄 111、112、113 期中考，各 6 題共 18 題</p>
+</header>
+
+<nav id="toc">
+  <b>目錄</b>
+  <ol>
+    <li><a href="#chapter-1">材料會不會碎：脆性與延性</a></li>
+    <li><a href="#chapter-2">動作分析，與投球最傷的那一瞬間</a></li>
+    <li><a href="#chapter-3">肩：SLAP 怎麼診斷</a></li>
+    <li><a href="#chapter-4">肘：投手的外翻伸展過載</a></li>
+    <li><a href="#chapter-5">膝：ACL 與 PCL 是兩種病人</a></li>
+    <li><a href="#chapter-cram">考前速記</a></li>
+    <li><a href="#chapter-vocab">單字表</a></li>
+    <li><a href="#chapter-final">歷年考題總複習</a></li>
+  <li><a href="#comments" data-nb-toc="1">留言板</a></li>
+</ol>
+</nav>
+<section id="chapter-1" data-chapter-kind="story">
+<h2>一、材料會不會碎：脆性與延性</h2>
+
+<figure class="boxfig" data-visual-id="spbox-01-story" data-image-kind="story" data-explanation-verified="true">
+<span class="figtag">情境場景</span>
+<img data-visual-id="spbox-01-story" src="img/spbox-01-story.webp" alt="情境場景：陶瓷杯摔下去碎了，不鏽鋼杯摔下去只凹了一塊。" loading="lazy" decoding="async" width="1600" height="914">
+<figcaption>情境場景：陶瓷杯摔下去碎了，不鏽鋼杯摔下去只凹了一塊。</figcaption>
+</figure>
+<div class="story" data-prose-kind="story"><span class="tag">故事</span>
+<p>老師在 113 年的詳解裡用了一個非常好懂的比喻，直接借來用：</p>
+<p><b>陶瓷杯摔到地上會碎。不鏽鋼杯摔到地上只會凹進去。</b></p>
+<p>兩者的差別在於：受力超過<b>彈性極限</b>之後，材料<b>還能撐多久才斷</b>。</p>
+<p><b>脆性材料</b>（brittle）：超過彈性極限後，只經過<b>一小段</b>塑性變形就斷裂。陶瓷、PMMA（骨水泥）都是。所以它們<b>碎</b>。</p>
+<p><b>延性材料</b>（ductile）：超過彈性極限後，會先進入<b>一段不短的</b>塑性變形——被拉長、被壓扁、被凹——才斷裂。不鏽鋼、<b>肌腱</b>都是。所以它們<b>凹而不碎</b>。</p>
+<p>三年三題，每年都拿肌腱來考：<b>肌腱可以拉伸，是延性材料</b>。111 年說它是脆性的（錯），112 與 113 年說它是延性的（對）。</p>
+<p>113 年還多了一個小插曲：選項 (D)「不鏽鋼是脆性材料」——這句也是錯的，所以申覆後 (C)(D) 都給分。<b>不鏽鋼杯不會碎。</b></p>
+</div>
+
+<figure class="boxfig" data-visual-id="spbox-02-reality" data-image-kind="comparison" data-explanation-verified="true">
+<span class="figtag">應力應變圖</span>
+<img data-visual-id="spbox-02-reality" src="img/spbox-02-reality.webp" alt="應力應變圖：脆性材料過了彈性極限很快斷裂，延性材料有一段長長的塑性變形。" loading="lazy" decoding="async" width="1600" height="914">
+<figcaption>應力應變圖：脆性材料過了彈性極限很快斷裂，延性材料有一段長長的塑性變形。</figcaption>
+</figure>
+<div class="reality"><span class="tag">回到現實</span>
+<p class="quote">詳解原文（113）:「(C) brittle material 在超過彈性變形的極限(elastic limit)後，在經過”一小段”plastic deformation就會rupture；反之，ductile material 在超過彈性變形的極限(elastic limit)後，會進入一段不短的塑性變形(plastic deformation)才會rupture。」</p>
+<p class="quote">詳解原文（112）:「(A) (C)brittle-little plastic deformation; ductile-large plastic deformation　(B)例子：brittle-PMMA; ductile-tendon」</p>
+<p><b>兩條定義、四個例子：</b></p>
+<p>・<b>脆性（brittle）</b>＝破壞前<b>塑性變形很少</b>。例：<b>陶瓷、PMMA</b>。<br>
+・<b>延性（ductile）</b>＝破壞前<b>塑性變形很多</b>。例：<b>肌腱、不鏽鋼</b>。</p>
+<p class="infer">三年的錯項只有兩種：把肌腱說成脆性、把不鏽鋼說成脆性，或把「脆性」的定義寫成「塑性變形多」。<b>記住兩個杯子就夠了。</b></p>
+</div>
+
+<article data-question-id="111-p44-q54" data-placement="chapter">
+  <span class="qhead">111 年 期中考 第 54 題</span>
+  <p class="stem">Which statement(s) is/are false?</p>
+  <ul class="opts">
+    <li>(A) Brittle material undergoes very little plastic deformation before failure.</li>
+    <li>(B) Tendon is a brittle material.</li>
+    <li>(C) Ductile material undergoes more plastic deformation before failure.</li>
+    <li>(D) Ceramics is a brittle material.</li>
+  </ul>
+  <details data-kind="answer">
+    <summary>答案與詳解</summary>
+    <div data-kind="zh-translation">
+      <p><strong>中文題目：</strong>下列敘述何者<b>錯誤</b>？</p>
+      <p>(A) 脆性材料在破壞前只有極少的塑性變形。</p>
+      <p>(B) 肌腱是脆性材料。</p>
+      <p>(C) 延性材料在破壞前有較多的塑性變形。</p>
+      <p>(D) 陶瓷是脆性材料。</p>
+    </div>
+    <p class="ans">答案：(B) Tendon is a brittle material.</p>
+    <p class="quote">詳解原文:「Tendon is a ductile Materials」</p>
+    <p>肌腱可以拉伸，是<b>延性</b>材料。其餘三句都是標準定義。</p>
+    <p class="src">出處：周伯禧 基礎生物力學 ｜ BM111 BLOCK-8 期中考詳解.pdf 第 44 頁</p>
+  </details>
+</article>
+
+<article data-question-id="112-p73-q54" data-placement="chapter">
+  <span class="qhead">112 年 期中考 第 54 題</span>
+  <p class="stem">Which statement(s) is/are True？</p>
+  <ul class="opts">
+    <li>(A) Brittle material undergoes very little plastic deformation before failure.</li>
+    <li>(B) Tendon is a ductile material</li>
+    <li>(C) Ductile material undergoes more plastic deformation before failure.</li>
+    <li>(D) All of the above.</li>
+  </ul>
+  <details data-kind="answer">
+    <summary>答案與詳解</summary>
+    <div data-kind="zh-translation">
+      <p><strong>中文題目：</strong>下列敘述何者<b>正確</b>？</p>
+      <p>(A) 脆性材料在破壞前只有極少的塑性變形。</p>
+      <p>(B) 肌腱是延性材料。</p>
+      <p>(C) 延性材料在破壞前有較多的塑性變形。</p>
+      <p>(D) 以上皆是。</p>
+    </div>
+    <p class="ans">答案：D</p>
+    <p class="quote">詳解原文:「(A) (C)brittle-little plastic deformation; ductile-large plastic deformation　(B)例子：brittle-PMMA; ductile-tendon」</p>
+    <p>與 111 年同一組句子，把肌腱那句改對了，於是三句全對。</p>
+    <p class="src">出處：周伯禧 基礎生物力學 ppt pg. 16-18 ｜ BM112_Block 8 期中考(含申覆內容與結果).pdf 第 73 頁</p>
+  </details>
+</article>
+
+<article data-question-id="113-p79-q64" data-placement="chapter">
+  <span class="qhead">113 年 期中考 第 64 題 ｜ 申覆後 (C)(D) 皆給分</span>
+  <p class="stem">Which statement(s) is/are False？</p>
+  <ul class="opts">
+    <li>(A) Ceramics is a brittle material.</li>
+    <li>(B) Tendon is a ductile material</li>
+    <li>(C) Brittle material undergoes more plastic deformation before failure.</li>
+    <li>(D) Stainless steel is a brittle material.</li>
+  </ul>
+  <details data-kind="answer">
+    <summary>答案與詳解</summary>
+    <div data-kind="zh-translation">
+      <p><strong>中文題目：</strong>下列敘述何者<b>錯誤</b>？</p>
+      <p>(A) 陶瓷是脆性材料。</p>
+      <p>(B) 肌腱是延性材料。</p>
+      <p>(C) 脆性材料在破壞前有較多的塑性變形。</p>
+      <p>(D) 不鏽鋼是脆性材料。</p>
+    </div>
+    <p class="ans">答案：(C) 申覆後 (C)(D) 皆給分</p>
+    <p class="quote">詳解原文:「(A)……陶瓷杯摔到地板會碎即為brittle material的表現 (B)……tendon可以拉伸，具有延展性(ductility) (C)……brittle material 在超過彈性變形的極限後，在經過”一小段”plastic deformation就會rupture (D)……不鏽鋼杯摔到地板只會凹進去，不會碎掉，所以不為brittle material，而是ductile material。」</p>
+    <p>(C) 把脆性的定義寫反；(D) 把不鏽鋼說成脆性——<b>兩句都錯</b>，所以申覆後兩個都給分。</p>
+    <p class="src">出處：運動創傷及運動醫學 周伯禧 ｜ BM113_Block8期中考詳解.pdf 第 79 頁</p>
+  </details>
+</article>
+</section>
+<section id="chapter-2" data-chapter-kind="story">
+<h2>二、動作分析，與投球最傷的那一瞬間</h2>
+
+<figure class="boxfig" data-visual-id="spbox-03-story" data-image-kind="story" data-explanation-verified="true">
+<span class="figtag">情境場景</span>
+<img data-visual-id="spbox-03-story" src="img/spbox-03-story.webp" alt="情境場景：投球的六個階段像一條拉滿的弓，最緊的那一瞬間就是最容易斷的時候。" loading="lazy" decoding="async" width="1600" height="914">
+<figcaption>情境場景：投球的六個階段像一條拉滿的弓，最緊的那一瞬間就是最容易斷的時候。</figcaption>
+</figure>
+<div class="story" data-prose-kind="story"><span class="tag">故事</span>
+<p>動作分析（motion analysis）是這一科的工具箱。它拆成兩半：<b>運動學</b>（kinematics）看<b>動作長什麼樣</b>——關節角度、速度、順序；<b>動力學</b>（kinetics）算<b>關節承受多少力</b>。</p>
+<p>考題三年都問「動作分析能用在哪些情境」，選項年年換：投球、網球發球、跌倒時手撐地、ACL／PCL 不穩的步態、膝退化性關節炎的步態……<b>答案永遠是「以上皆是」</b>。因為只要是「人在動、關節在受力」的事，都在它的定義裡。</p>
+<p>而動作分析最經典的應用，就是<b>投球</b>。一顆球投出去分成六個階段：<b>揮臂（wind-up）→ 早期舉臂（early cocking）→ 晚期舉臂（late cocking）→ 加速（acceleration）→ 減速（deceleration）→ 隨勢（follow-through）</b>。</p>
+<p>「哪一段最傷？」</p>
+<p>「把手臂想成一把弓。<b>晚期舉臂到早期加速</b>的那一瞬間，肩膀外旋到極限、手肘被外翻的力量往內側拉開——<b>弓拉到最滿的時候</b>。肩關節與肘關節的負荷都在這一刻達到最大。」</p>
+<p>111 年問肩、112 年問肘、113 年又問肩，<b>答案都是 late cocking &amp; early acceleration</b>。</p>
+</div>
+
+<figure class="boxfig" data-visual-id="spbox-04-reality" data-image-kind="sequence" data-explanation-verified="true">
+<span class="figtag">投球分期</span>
+<img data-visual-id="spbox-04-reality" src="img/spbox-04-reality.webp" alt="投球分期：六個階段，肩與肘負荷在晚期舉臂與早期加速達到最高。" loading="lazy" decoding="async" width="1600" height="914">
+<figcaption>投球分期：六個階段，肩與肘負荷在晚期舉臂與早期加速達到最高。</figcaption>
+</figure>
+<div class="reality"><span class="tag">回到現實</span>
+<p class="quote">詳解原文（111 第 56 題）:「Motion analysis定義廣泛,關於Kinesiology等等都可以算其中一部分　其可分為Kinematics和Kinetic　Kinematics是study of motion，指動作上的差異，觀察物體如何運動　Kinetics是計算關節在運動中受力的大小　所以(A)(B)(C)都包含在以上兩者的定義中」</p>
+<p class="quote">詳解原文（111 第 57 題）:「在Late cocking & early acceleration phase時期，肩膀和手肘承受最大的力量，所以這時候肩膀與肘關節最容易受傷。」</p>
+<p><b>動作分析：</b>Kinematics（動作本身）＋ Kinetics（關節受力）。投球、發球、撐地跌倒、各種步態分析——<b>全部都是應用</b>，選「以上皆是」。</p>
+<p><b>投球六階段：</b>wind-up → early cocking → <b>late cocking → early acceleration</b> → deceleration → follow-through。<b>肩與肘的最大負荷都在粗體那一段。</b></p>
+<p class="infer">113 年的詳解另外補了兩個臨床連結：<b>手舉過肩的運動</b>（網球、棒球、排球、羽球）是旋轉肌袖撕裂的來源；<b>跌倒時手撐地</b>（fall on the outstretched hand）是手腕、肩、肘上肢創傷的重要機轉。這兩句會在本科其他題的選項裡反覆出現。</p>
+</div>
+
+<article data-question-id="111-p46-q56" data-placement="chapter">
+  <span class="qhead">111 年 期中考 第 56 題</span>
+  <p class="stem">Motion analysis can be clinically applied in which of the followings?</p>
+  <ul class="opts">
+    <li>(A) Study of baseball pitching</li>
+    <li>(B) Simulation of fall on the outstretched hand</li>
+    <li>(C) Gait Analysis in patients with ACL instability</li>
+    <li>(D) All of the above</li>
+  </ul>
+  <details data-kind="answer">
+    <summary>答案與詳解</summary>
+    <div data-kind="zh-translation">
+      <p><strong>中文題目：</strong>動作分析可臨床應用於下列何者？</p>
+      <p>(A) 棒球投球的研究</p>
+      <p>(B) 模擬跌倒時手撐地</p>
+      <p>(C) ACL 不穩定病人的步態分析</p>
+      <p>(D) 以上皆是</p>
+    </div>
+    <p class="ans">答案：(D) All off the above</p>
+    <p class="quote">詳解原文:「Motion analysis定義廣泛……所以(A)(B)(C)都包含在以上兩者的定義中」</p>
+    <p>三個選項分別是運動、創傷、步態——都在動作分析的範圍內。</p>
+    <p class="src">出處：周伯禧 基礎生物力學 ｜ BM111 BLOCK-8 期中考詳解.pdf 第 46 頁</p>
+  </details>
+</article>
+
+<article data-question-id="112-p75-q56" data-placement="chapter">
+  <span class="qhead">112 年 期中考 第 56 題</span>
+  <p class="stem">Motion analysis can be clinically applied in which of the followings?</p>
+  <ul class="opts">
+    <li>(A) Analysis of elbow joint loading during pitching</li>
+    <li>(B) Analysis of shoulder joint loading during fall on the outstretched hand.</li>
+    <li>(C) Gait Analysis in patients with PCL instability.</li>
+    <li>(D) All of the above.</li>
+  </ul>
+  <details data-kind="answer">
+    <summary>答案與詳解</summary>
+    <div data-kind="zh-translation">
+      <p><strong>中文題目：</strong>動作分析可臨床應用於下列何者？</p>
+      <p>(A) 投球時肘關節負荷的分析</p>
+      <p>(B) 跌倒手撐地時肩關節負荷的分析</p>
+      <p>(C) PCL 不穩定病人的步態分析</p>
+      <p>(D) 以上皆是</p>
+    </div>
+    <p class="ans">答案：D</p>
+    <p class="quote">詳解原文:「……所以(A)(B)(C)都包含在以上兩者的定義中　很古喔~~」</p>
+    <p>與 111 年同題，選項只是把 ACL 換成 PCL、把「研究」改成「負荷分析」。</p>
+    <p class="src">出處：周伯禧 運動創傷與運動醫學（ppt pg 3) ｜ BM112_Block 8 期中考(含申覆內容與結果).pdf 第 75 頁</p>
+  </details>
+</article>
+
+<article data-question-id="113-p82-q66" data-placement="chapter">
+  <span class="qhead">113 年 期中考 第 66 題</span>
+  <p class="stem">Motion analysis can be clinically applied in which of the followings?</p>
+  <ul class="opts">
+    <li>(A) Analysis of shoulder joint loading for tennis serve</li>
+    <li>(B) Analysis of elbow joint loading during fall on the outstretched hand.</li>
+    <li>(C) Gait Analysis in patients with osteoarthritis of the knee joint.</li>
+    <li>(D) All of the above.</li>
+  </ul>
+  <details data-kind="answer">
+    <summary>答案與詳解</summary>
+    <div data-kind="zh-translation">
+      <p><strong>中文題目：</strong>動作分析可臨床應用於下列何者？</p>
+      <p>(A) 網球發球時肩關節負荷的分析</p>
+      <p>(B) 跌倒手撐地時肘關節負荷的分析</p>
+      <p>(C) 膝關節退化性關節炎病人的步態分析</p>
+      <p>(D) 以上皆是</p>
+    </div>
+    <p class="ans">答案：(D)</p>
+    <p class="quote">詳解原文:「(A)手舉過肩的運動，如網球、棒球、排球、羽球都有可能出現 RCT的運動傷害　(B)……跌倒時用手撐地上(outstretched hand)是上肢創傷的重要因素　(C)正確」</p>
+    <p>第三年、第三組例子，答案還是「以上皆是」。</p>
+    <p class="src">出處：周伯禧 運動創傷與運動醫學 課堂ppt ｜ BM113_Block8期中考詳解.pdf 第 82 頁</p>
+  </details>
+</article>
+
+<article data-question-id="111-p46-q57" data-placement="chapter">
+  <span class="qhead">111 年 期中考 第 57 題</span>
+  <p class="stem">The highest shoulder joint loading can occur on which of the time interval during pitching motion?</p>
+  <ul class="opts">
+    <li>(A) Winding phase</li>
+    <li>(B) Late cocking &amp; early acceleration phase</li>
+    <li>(C) Deceleration phase</li>
+    <li>(D) Follow through phase</li>
+  </ul>
+  <details data-kind="answer">
+    <summary>答案與詳解</summary>
+    <div data-kind="zh-translation">
+      <p><strong>中文題目：</strong>投球動作中，<b>肩</b>關節負荷最高發生在哪一個時期？</p>
+      <p>(A) 揮臂期</p>
+      <p>(B) 晚期舉臂與早期加速期</p>
+      <p>(C) 減速期</p>
+      <p>(D) 隨勢期</p>
+    </div>
+    <p class="ans">答案：(B) Late cocking &amp; early acceleration phase</p>
+    <p class="quote">詳解原文:「在Late cocking & early acceleration phase時期，肩膀和手肘承受最大的力量，所以這時候肩膀與肘關節最容易受傷。」</p>
+    <p>弓拉到最滿的那一刻。</p>
+    <p class="src">出處：周伯禧 運動創傷及運動醫學 ｜ BM111 BLOCK-8 期中考詳解.pdf 第 46 頁</p>
+  </details>
+</article>
+
+<article data-question-id="112-p75-q57" data-placement="chapter">
+  <span class="qhead">112 年 期中考 第 57 題</span>
+  <p class="stem">The highest elbow joint loading can occur on which of the time interval during pitching motion?</p>
+  <ul class="opts">
+    <li>(A) Winding phase,</li>
+    <li>(B) Late cocking &amp; early acceleration phase,</li>
+    <li>(C) Deceleration phase,</li>
+    <li>(D) Follow through phase.</li>
+  </ul>
+  <details data-kind="answer">
+    <summary>答案與詳解</summary>
+    <div data-kind="zh-translation">
+      <p><strong>中文題目：</strong>投球動作中，<b>肘</b>關節負荷最高發生在哪一個時期？</p>
+      <p>(A) 揮臂期</p>
+      <p>(B) 晚期舉臂與早期加速期</p>
+      <p>(C) 減速期</p>
+      <p>(D) 隨勢期</p>
+    </div>
+    <p class="ans">答案：B</p>
+    <p>原卷<b>詳解欄留空</b>。把「肩」換成「肘」，答案不變——111 年的詳解已經說了「肩膀和手肘」都在這一期承受最大力量。</p>
+    <p class="src">出處：周伯禧 運動創傷與運動醫學 ｜ BM112_Block 8 期中考(含申覆內容與結果).pdf 第 75 頁</p>
+  </details>
+</article>
+
+<article data-question-id="113-p84-q67" data-placement="chapter">
+  <span class="qhead">113 年 期中考 第 67 題</span>
+  <p class="stem">The highest shoulder joint loading can occur on which of the time interval during pitching motion?</p>
+  <ul class="opts">
+    <li>(A) Winding phase</li>
+    <li>(B) Late cocking &amp; early acceleration phase</li>
+    <li>(C) Deceleration phase</li>
+    <li>(D) Follow through phase</li>
+  </ul>
+  <details data-kind="answer">
+    <summary>答案與詳解</summary>
+    <div data-kind="zh-translation">
+      <p><strong>中文題目：</strong>投球動作中，肩關節負荷最高發生在哪一個時期？</p>
+      <p>(A) 揮臂期</p>
+      <p>(B) 晚期舉臂與早期加速期</p>
+      <p>(C) 減速期</p>
+      <p>(D) 隨勢期</p>
+    </div>
+    <p class="ans">答案：(B)</p>
+    <p class="quote">詳解原文:「經典考古題」</p>
+    <p>與 111 年第 57 題<b>逐字相同</b>。</p>
+    <p class="src">出處：周伯禧 運動創傷與運動醫學 ｜ BM113_Block8期中考詳解.pdf 第 84 頁</p>
+  </details>
+</article>
+</section>
+<section id="chapter-3" data-chapter-kind="story">
+<h2>三、肩：SLAP 怎麼診斷</h2>
+
+<figure class="boxfig" data-visual-id="spbox-05-story" data-image-kind="story" data-explanation-verified="true">
+<span class="figtag">情境場景</span>
+<img data-visual-id="spbox-05-story" src="img/spbox-05-story.webp" alt="情境場景：關節唇上緣從前撕到後，三把鑰匙才打得開這個診斷。" loading="lazy" decoding="async" width="1600" height="914">
+<figcaption>情境場景：關節唇上緣從前撕到後，三把鑰匙才打得開這個診斷。</figcaption>
+</figure>
+<div class="story" data-prose-kind="story"><span class="tag">故事</span>
+<p>肩關節的關節窩很淺，全靠一圈軟骨的<b>關節唇</b>把它加深。肱二頭肌長頭的肌腱就接在關節唇的<b>上緣</b>。</p>
+<p>投手一次又一次把手臂拉到極限，那條肌腱一次又一次拉扯關節唇上緣，最後把它<b>從前面撕到後面</b>。這就是 <b>SLAP</b>——Superior Labrum Anterior to Posterior lesion。</p>
+<p>要診斷它，三年的題目給的答案很一致，可以整理成<b>三把鑰匙</b>：</p>
+<p><b>第一把：問。</b>受傷機制與臨床症狀——投擲運動員、肩深處疼痛、卡住感。<br>
+<b>第二把：做。</b>理學檢查——<b>O'Brien's test</b>（主動壓迫測試）、<b>compression rotation test</b>（壓迫旋轉測試）。<br>
+<b>第三把：照。</b>影像——<b>MR 關節攝影</b>（MR-arthrography），把顯影劑打進關節腔，撕裂處才看得清楚。</p>
+<p>三把都對。所以 111 年問「哪些有幫助」答「以上皆是」。</p>
+<p>112 與 113 年改問「哪一個<b>沒有</b>幫助」，塞進來的錯項是<b>別的關節的測試</b>：<b>Lachman test 是膝的 ACL</b>，<b>valgus stress test 是肘（或膝）的內側副韌帶</b>。認出它們不屬於肩，就結案。</p>
+</div>
+
+<figure class="boxfig" data-visual-id="spbox-06-reality" data-image-kind="comparison" data-explanation-verified="true">
+<span class="figtag">診斷三把鑰匙</span>
+<img data-visual-id="spbox-06-reality" src="img/spbox-06-reality.webp" alt="診斷三把鑰匙：問受傷機制、做 O'Brien 與 compression rotation、照 MR 關節攝影。" loading="lazy" decoding="async" width="1600" height="914">
+<figcaption>診斷三把鑰匙：問受傷機制、做 O'Brien 與 compression rotation、照 MR 關節攝影。</figcaption>
+</figure>
+<div class="reality"><span class="tag">回到現實</span>
+<p class="quote">詳解原文（111）:「1.受傷機制＆臨床症狀 2.PE（O'Brien test）以及 3.影像學的MR Arthrography 都對於SLAP的診斷有所幫助。」</p>
+<p class="quote">詳解原文（112）:「Lachman test用於檢測ACL，非SLAP。其他三個選項皆為SLAP之檢查。」</p>
+<p><b>屬於 SLAP 的：</b>受傷機制與症狀、<b>O'Brien's test</b>、<b>compression rotation test</b>、<b>MR-arthrography</b>。</p>
+<p><b>不屬於 SLAP 的（三年的錯項）：</b><b>Lachman test</b>（膝 ACL）、<b>valgus stress test</b>（肘內側副韌帶）。</p>
+<p class="infer">這一格的解法是<b>認關節</b>：題目問肩，選項裡凡是膝或肘的檢查就是「沒有幫助」的那一個。第五章會反過來用同一招——問 ACL 時把 compression rotation test 塞進來當錯項。</p>
+</div>
+
+<article data-question-id="111-p45-q55" data-placement="chapter">
+  <span class="qhead">111 年 期中考 第 55 題</span>
+  <p class="stem">Which of the following(s) can be helpful in diagnosing Superior Labrum Anterior to Posterior Lesion (SLAP)?</p>
+  <ul class="opts">
+    <li>(A) MR-Arthrography</li>
+    <li>(B) Injury Mechanism &amp; Clinical S/S</li>
+    <li>(C) O'Brien's Test</li>
+    <li>(D) All of the above</li>
+  </ul>
+  <details data-kind="answer">
+    <summary>答案與詳解</summary>
+    <div data-kind="zh-translation">
+      <p><strong>中文題目：</strong>下列何者有助於診斷上關節唇前後病變（SLAP）？</p>
+      <p>(A) MR 關節攝影</p>
+      <p>(B) 受傷機制與臨床症狀</p>
+      <p>(C) O'Brien 測試</p>
+      <p>(D) 以上皆是</p>
+    </div>
+    <p class="ans">答案：(D) All of the above</p>
+    <p class="quote">詳解原文:「1.受傷機制＆臨床症狀 2.PE（O'Brien test）以及 3.影像學的MR Arthrography 都對於SLAP的診斷有所幫助。」</p>
+    <p>問、做、照——三把鑰匙都對。</p>
+    <p class="src">出處：周伯禧 基礎生物力學 ｜ BM111 BLOCK-8 期中考詳解.pdf 第 45 頁</p>
+  </details>
+</article>
+
+<article data-question-id="112-p73-q55" data-placement="chapter">
+  <span class="qhead">112 年 期中考 第 55 題</span>
+  <p class="stem">Which of the following(s) may not be helpful in diagnosing Superior Labrum Anterior to Posterior Lesion(SLAP))？</p>
+  <ul class="opts">
+    <li>(A) MR-Arthrography.</li>
+    <li>(B) Compression Rotation Test</li>
+    <li>(C) O'Brien's Test</li>
+    <li>(D) Lachman Test.</li>
+  </ul>
+  <details data-kind="answer">
+    <summary>答案與詳解</summary>
+    <div data-kind="zh-translation">
+      <p><strong>中文題目：</strong>下列何者<b>無助於</b>診斷上關節唇前後病變（SLAP）？</p>
+      <p>(A) MR 關節攝影</p>
+      <p>(B) 壓迫旋轉測試</p>
+      <p>(C) O'Brien 測試</p>
+      <p>(D) Lachman 測試</p>
+    </div>
+    <p class="ans">答案：D</p>
+    <p class="quote">詳解原文:「Lachman test用於檢測ACL，非SLAP。其他三個選項皆為SLAP之檢查。」</p>
+    <p>Lachman 是<b>膝</b>的檢查。</p>
+    <p class="src">出處：周伯禧 運動創傷與運動醫學（ppt pg.66, 67） ｜ BM112_Block 8 期中考(含申覆內容與結果).pdf 第 73 頁</p>
+  </details>
+</article>
+
+<article data-question-id="113-p80-q65" data-placement="chapter">
+  <span class="qhead">113 年 期中考 第 65 題</span>
+  <p class="stem">Which of the following(s) may not be helpful in diagnosing Superior Labrum Anterior to Posterior Lesion (SLAP)？</p>
+  <ul class="opts">
+    <li>(A) MR-Arthrography.</li>
+    <li>(B) Valgus Stress Test</li>
+    <li>(C) O'Brien's Test</li>
+    <li>(D) Compression Rotation Test.</li>
+  </ul>
+  <details data-kind="answer">
+    <summary>答案與詳解</summary>
+    <div data-kind="zh-translation">
+      <p><strong>中文題目：</strong>下列何者<b>無助於</b>診斷上關節唇前後病變（SLAP）？</p>
+      <p>(A) MR 關節攝影</p>
+      <p>(B) 外翻壓力測試</p>
+      <p>(C) O'Brien 測試</p>
+      <p>(D) 壓迫旋轉測試</p>
+    </div>
+    <p class="ans">答案：(B)</p>
+    <p>原卷<b>詳解欄留空</b>。外翻壓力測試檢查的是<b>肘</b>（或膝）的內側副韌帶，不是肩關節唇。</p>
+    <p class="src">出處：運動創傷及運動醫學 周伯禧 ppt p11, 12 ｜ BM113_Block8期中考詳解.pdf 第 80 頁</p>
+  </details>
+</article>
+</section>
+<section id="chapter-4" data-chapter-kind="story">
+<h2>四、肘：投手的外翻伸展過載</h2>
+
+<figure class="boxfig" data-visual-id="spbox-07-story" data-image-kind="story" data-explanation-verified="true">
+<span class="figtag">情境場景</span>
+<img data-visual-id="spbox-07-story" src="img/spbox-07-story.webp" alt="情境場景：手肘被往外扳，內側拉開、外側撞擊、後側夾住。" loading="lazy" decoding="async" width="1600" height="914">
+<figcaption>情境場景：手肘被往外扳，內側拉開、外側撞擊、後側夾住。</figcaption>
+</figure>
+<div class="story" data-prose-kind="story"><span class="tag">故事</span>
+<p>投球時，手肘在晚期舉臂到加速那一瞬間承受一股<b>外翻</b>（valgus）的力——前臂被往外扳。同時手肘正在快速<b>伸直</b>。這兩件事加起來，就叫<b>外翻伸展過載</b>（valgus extension overload），是投手肘傷的最常見原因。</p>
+<p>把手肘想成一扇被往外扳的門，三個地方會出事：</p>
+<p><b>內側被拉開。</b>內側副韌帶（MCL／UCL）被扯鬆 → <b>內側副韌帶不穩</b>；跟它並排走的<b>尺神經</b>被拉到 → <b>尺神經病變</b>（小指麻）。</p>
+<p><b>外側被壓住。</b>橈骨小頭撞上肱骨小頭 → <b>橈骨小頭關節的骨軟骨損傷</b>。</p>
+<p><b>後側被夾住。</b>伸直時鷹嘴突撞進鷹嘴窩後內側 → <b>後側夾擊、骨刺</b>。</p>
+<p>三年三題全部問「<b>不</b>相關的是哪一個」，錯項分別是：<b>橈神經麻痺</b>（111，受影響的是尺神經不是橈神經）、<b>前側夾擊</b>（112，夾擊在後側不在前側）、<b>外側副韌帶不穩</b>（113，被拉開的是內側不是外側）。</p>
+</div>
+
+<figure class="boxfig" data-visual-id="spbox-08-reality" data-image-kind="mechanism" data-explanation-verified="true">
+<span class="figtag">三個受傷點</span>
+<img data-visual-id="spbox-08-reality" src="img/spbox-08-reality.webp" alt="三個受傷點：內側拉開、外側壓迫、後側夾擊；橈神經、前側、外側韌帶不在名單上。" loading="lazy" decoding="async" width="1600" height="914">
+<figcaption>三個受傷點：內側拉開、外側壓迫、後側夾擊；橈神經、前側、外側韌帶不在名單上。</figcaption>
+</figure>
+<div class="reality"><span class="tag">回到現實</span>
+<p class="quote">詳解原文（113）:「(A)投球的stress主要在medial side，非lateral side」</p>
+<p class="quote">詳解原文（111）:「非常古，背誦題」</p>
+<p><b>外翻伸展過載會造成的（三年的正確關聯）：</b></p>
+<p>・<b>內側副韌帶不穩</b>（medial collateral ligament instability）<br>
+・<b>尺神經病變</b>（ulnar nerve neuropathy）<br>
+・<b>橈骨小頭關節的骨軟骨損傷</b>（osteochondral injury of the radio-capitellar joint）<br>
+・<b>後側肘夾擊</b>（posterior elbow impingement）</p>
+<p><b>不會造成的（三年的錯項）：</b></p>
+<p>・<b>橈神經麻痺</b>（radial nerve palsy）——被拉的是內側的尺神經<br>
+・<b>前側肘夾擊</b>（anterior elbow impingement）——夾擊在後側<br>
+・<b>外側副韌帶不穩</b>（lateral collateral ligament instability）——被拉開的是內側</p>
+<p class="infer">記法：<b>內側拉、外側壓、後側夾。</b>三個方位對應三種傷，凡是方位錯的（外側韌帶、前側夾擊）或神經錯的（橈神經），就是答案。112 年有人申覆前側夾擊，老師維持原答案。</p>
+</div>
+
+<article data-question-id="111-p48-q59" data-placement="chapter">
+  <span class="qhead">111 年 期中考 第 59 題</span>
+  <p class="stem">Valgus Extension Overload is probably the most common cause of elbow injury in base ball pitchers. It is not associated with</p>
+  <ul class="opts">
+    <li>(A) medial collateral ligament instability</li>
+    <li>(B) osteochondral injuries of the radio-capitellar joint</li>
+    <li>(C) radial nerve palsy</li>
+    <li>(D) posterior elbow</li>
+  </ul>
+  <details data-kind="answer">
+    <summary>答案與詳解</summary>
+    <div data-kind="zh-translation">
+      <p><strong>中文題目：</strong>外翻伸展過載可能是棒球投手肘部傷害最常見的原因。它<b>與下列何者無關</b>？</p>
+      <p>(A) 內側副韌帶不穩</p>
+      <p>(B) 橈骨小頭關節的骨軟骨損傷</p>
+      <p>(C) 橈神經麻痺</p>
+      <p>(D) 後側肘</p>
+    </div>
+    <p class="ans">答案：(C) radial nerve palsy</p>
+    <p class="quote">詳解原文:「非常古，背誦題」</p>
+    <p>被拉到的是<b>內側的尺神經</b>，不是橈神經。</p>
+    <p class="src">出處：周伯禧 運動創傷及運動醫學 ｜ BM111 BLOCK-8 期中考詳解.pdf 第 48 頁</p>
+  </details>
+</article>
+
+<article data-question-id="112-p76-q59" data-placement="chapter">
+  <span class="qhead">112 年 期中考 第 59 題 ｜ 申覆後維持原答案</span>
+  <p class="stem">Valgus Extension Overload is probably the most common cause of elbow injury in baseball pitchers. It is not associated with :</p>
+  <ul class="opts">
+    <li>(A) medial collateral ligament instability,</li>
+    <li>(B) osteochondral injuries of the radio-capitellar joint,</li>
+    <li>(C) ulnar nerve neuropathy</li>
+    <li>(D) anterior elbow impingement.</li>
+  </ul>
+  <details data-kind="answer">
+    <summary>答案與詳解</summary>
+    <div data-kind="zh-translation">
+      <p><strong>中文題目：</strong>外翻伸展過載可能是棒球投手肘部傷害最常見的原因。它<b>與下列何者無關</b>？</p>
+      <p>(A) 內側副韌帶不穩</p>
+      <p>(B) 橈骨小頭關節的骨軟骨損傷</p>
+      <p>(C) 尺神經病變</p>
+      <p>(D) 前側肘夾擊</p>
+    </div>
+    <p class="ans">答案：D（申覆後維持原答案）</p>
+    <p>原卷<b>詳解欄留空</b>。夾擊發生在<b>後側</b>（鷹嘴突撞進鷹嘴窩），不在前側。這年把 111 年的「橈神經」換回正確的「尺神經」，改用方位設陷阱。</p>
+    <p class="src">出處：周伯禧 運動創傷與運動醫學（ppt pg.50, 51） ｜ BM112_Block 8 期中考(含申覆內容與結果).pdf 第 76 頁</p>
+  </details>
+</article>
+
+<article data-question-id="113-p84-q69" data-placement="chapter">
+  <span class="qhead">113 年 期中考 第 69 題</span>
+  <p class="stem">Valgus Extension Overload is probably the most common cause of elbow injury in baseball pitchers. It is not associated with :</p>
+  <ul class="opts">
+    <li>(A) lateral collateral ligament instability</li>
+    <li>(B) osteochondral injuries of the radio-capitellar joint</li>
+    <li>(C) ulnar nerve neuropathy</li>
+    <li>(D) posterior elbow impingement.</li>
+  </ul>
+  <details data-kind="answer">
+    <summary>答案與詳解</summary>
+    <div data-kind="zh-translation">
+      <p><strong>中文題目：</strong>外翻伸展過載可能是棒球投手肘部傷害最常見的原因。它<b>與下列何者無關</b>？</p>
+      <p>(A) 外側副韌帶不穩</p>
+      <p>(B) 橈骨小頭關節的骨軟骨損傷</p>
+      <p>(C) 尺神經病變</p>
+      <p>(D) 後側肘夾擊</p>
+    </div>
+    <p class="ans">答案：(A)</p>
+    <p class="quote">詳解原文:「(A)投球的stress主要在medial side，非lateral side」</p>
+    <p>第三年換成「外側副韌帶」當錯項——被拉開的是<b>內側</b>。</p>
+    <p class="src">出處：周伯禧 運動創傷與運動醫學 p.74 ｜ BM113_Block8期中考詳解.pdf 第 84 頁</p>
+  </details>
+</article>
+</section>
+<section id="chapter-5" data-chapter-kind="story">
+<h2>五、膝：ACL 與 PCL 是兩種病人</h2>
+
+<figure class="boxfig" data-visual-id="spbox-09-story" data-image-kind="story" data-explanation-verified="true">
+<span class="figtag">情境場景</span>
+<img data-visual-id="spbox-09-story" src="img/spbox-09-story.webp" alt="情境場景：ACL 斷在球場上，PCL 斷在儀表板上。" loading="lazy" decoding="async" width="1600" height="914">
+<figcaption>情境場景：ACL 斷在球場上，PCL 斷在儀表板上。</figcaption>
+</figure>
+<div class="story" data-prose-kind="story"><span class="tag">故事</span>
+<p>膝關節裡兩條十字韌帶，考題把它們寫成<b>兩種完全不同的病人</b>。</p>
+<p><b>ACL 病人是運動員。</b>急停、轉向、落地扭到，「啪」一聲——<b>ACL 斷裂多半是運動傷害</b>。112 年說它「常與外傷和車禍有關」，錯。檢查用<b>前抽屜測試</b>（anterior drawer）與 Lachman，影像用 MRI。要不要開刀看有沒有<b>合併傷害</b>：ACL 斷了又合併半月板或其他韌帶傷，就是<b>手術的適應症</b>。</p>
+<p><b>PCL 病人坐在車裡。</b>車禍時膝蓋撞上儀表板，脛骨被往後推——<b>PCL 斷裂與外傷、車禍有關</b>。檢查用<b>後沉徵象</b>（posterior sag）與<b>後抽屜測試</b>（posterior drawer），影像同樣是 MRI。</p>
+<p>但 PCL 有一個跟 ACL 不同的地方：<b>單獨的 PCL 斷裂不一定要開刀</b>。老師口述了一個研究——找二十位單純 PCL 斷裂、積極復健三個月以上的病人，其中恢復良好的那一組肌力更好，會用力量轉移和較小的膝角度減輕負擔。所以「PCL 重建是單獨 PCL 斷裂的最佳治療」這句是錯的。</p>
+<p>最後一個陷阱在 113 年：選項說「compression rotation test 可以檢查 ACL」——那是<b>肩</b>的 SLAP 測試，跑錯關節了。</p>
+</div>
+
+<figure class="boxfig" data-visual-id="spbox-10-reality" data-image-kind="comparison" data-explanation-verified="true">
+<span class="figtag">ACL 與 PCL 對照</span>
+<img data-visual-id="spbox-10-reality" src="img/spbox-10-reality.webp" alt="ACL 與 PCL 對照：受傷機轉、理學檢查、影像、治療原則。" loading="lazy" decoding="async" width="1600" height="914">
+<figcaption>ACL 與 PCL 對照：受傷機轉、理學檢查、影像、治療原則。</figcaption>
+</figure>
+<div class="reality"><span class="tag">回到現實</span>
+<p class="quote">詳解原文（111 PCL）:「老師口述: 單一PCL斷裂但復原良好組(Coper組)，找20位經過積極復健3個月以上的病患來進行測試，復原良好組會有比較好的肌肉強度，也會利用力量轉移的方式跟比較小的膝蓋角度來減輕膝蓋的負擔，不一定要開刀。」</p>
+<p class="quote">詳解原文（112 ACL）:「ACL受傷多為運動傷害」</p>
+<p class="quote">詳解原文（113 ACL）:「compression rotation test 是測 SLAP 肩關節唇傷害」</p>
+<p><b>ACL：</b>運動傷害 ｜ 前抽屜測試、Lachman ｜ MRI ｜ <b>合併傷害 → 手術</b></p>
+<p><b>PCL：</b>外傷、車禍（儀表板）｜ 後沉徵象、後抽屜測試 ｜ MRI ｜ <b>單獨斷裂 → 不一定開刀</b>（coper 組復健即可）</p>
+<p class="infer">兩條韌帶的四個欄位裡，<b>MRI 那一欄永遠是對的</b>；會被動手腳的是<b>受傷機轉</b>（運動 vs 車禍互換）、<b>檢查名稱</b>（塞進肩的測試）、<b>治療原則</b>（把 PCL 說成一定要重建）。</p>
+</div>
+
+<article data-question-id="111-p47-q58" data-placement="chapter">
+  <span class="qhead">111 年 期中考 第 58 題</span>
+  <p class="stem">Which of the following statement(s) about PCL (Posterior Cruciate Ligament) injuries is/are false</p>
+  <ul class="opts">
+    <li>(A) related to trauma and traffic accident</li>
+    <li>(B) PCL reconstruction is the best treatment for isolated PCL tear</li>
+    <li>(C) Posterior Sag &amp; Posterior Drawer Test can detect PCL injuries</li>
+    <li>(D) MRI is useful in diagnosing PCL injuries</li>
+  </ul>
+  <details data-kind="answer">
+    <summary>答案與詳解</summary>
+    <div data-kind="zh-translation">
+      <p><strong>中文題目：</strong>下列關於後十字韌帶（PCL）損傷的敘述，何者<b>錯誤</b>？</p>
+      <p>(A) 與外傷及車禍有關。</p>
+      <p>(B) PCL 重建是單獨 PCL 斷裂的最佳治療。</p>
+      <p>(C) 後沉徵象與後抽屜測試可偵測 PCL 損傷。</p>
+      <p>(D) MRI 有助於診斷 PCL 損傷。</p>
+    </div>
+    <p class="ans">答案：(B) PCL reconstruction is the best treatment for isolated PCL tear</p>
+    <p class="quote">詳解原文:「老師口述: 單一PCL斷裂但復原良好組(Coper組)……不一定要開刀。」</p>
+    <p><b>單獨 PCL 斷裂不一定要重建</b>，積極復健的 coper 組可以恢復良好。</p>
+    <p class="src">出處：周伯禧 運動創傷及運動醫學 ｜ BM111 BLOCK-8 期中考詳解.pdf 第 47 頁</p>
+  </details>
+</article>
+
+<article data-question-id="112-p76-q58" data-placement="chapter">
+  <span class="qhead">112 年 期中考 第 58 題</span>
+  <p class="stem">Which of the following statement(s) about ACL (Anterior Cruciate Ligament) injuries is/are false？</p>
+  <ul class="opts">
+    <li>(A) ACL injuries are frequently related to trauma and traffic accident</li>
+    <li>(B) ACL tear with associated injuries is an indication for surgical treatment</li>
+    <li>(C) Anterior Drawer Test can detect ACL injuries</li>
+    <li>(D) MRI is useful in diagnosing ACL injuries</li>
+  </ul>
+  <details data-kind="answer">
+    <summary>答案與詳解</summary>
+    <div data-kind="zh-translation">
+      <p><strong>中文題目：</strong>下列關於前十字韌帶（ACL）損傷的敘述，何者<b>錯誤</b>？</p>
+      <p>(A) ACL 損傷常與外傷及車禍有關。</p>
+      <p>(B) ACL 斷裂合併其他損傷是手術治療的適應症。</p>
+      <p>(C) 前抽屜測試可偵測 ACL 損傷。</p>
+      <p>(D) MRI 有助於診斷 ACL 損傷。</p>
+    </div>
+    <p class="ans">答案：A</p>
+    <p class="quote">詳解原文:「ACL受傷多為運動傷害」</p>
+    <p>把 PCL 的受傷機轉（車禍）搬到 ACL 頭上——<b>ACL 是運動傷害</b>。</p>
+    <p class="src">出處：基礎生物力學 周伯禧 ｜ BM112_Block 8 期中考(含申覆內容與結果).pdf 第 76 頁</p>
+  </details>
+</article>
+
+<article data-question-id="113-p84-q68" data-placement="chapter">
+  <span class="qhead">113 年 期中考 第 68 題</span>
+  <p class="stem">Which of the following statement(s) about ACL (Anterior Cruciate Ligament) injuries is/are false？</p>
+  <ul class="opts">
+    <li>(A) ACL injuries are frequently related to sports injuries</li>
+    <li>(B) ACL tear with associated injuries is an indication for surgical treatment</li>
+    <li>(C) Compression Rotation Test can detect ACL injuries</li>
+    <li>(D)MRI is useful in diagnosing ACL injuries</li>
+  </ul>
+  <details data-kind="answer">
+    <summary>答案與詳解</summary>
+    <div data-kind="zh-translation">
+      <p><strong>中文題目：</strong>下列關於前十字韌帶（ACL）損傷的敘述，何者<b>錯誤</b>？</p>
+      <p>(A) ACL 損傷常與運動傷害有關。</p>
+      <p>(B) ACL 斷裂合併其他損傷是手術治療的適應症。</p>
+      <p>(C) 壓迫旋轉測試可偵測 ACL 損傷。</p>
+      <p>(D) MRI 有助於診斷 ACL 損傷。</p>
+    </div>
+    <p class="ans">答案：(C)</p>
+    <p class="quote">詳解原文:「compression rotation test 是測 SLAP 肩關節唇傷害」</p>
+    <p>這年把 (A) 改對（運動傷害），改用<b>跑錯關節的檢查</b>當錯項——壓迫旋轉測試是肩的。</p>
+    <p class="src">出處：周伯禧 運動創傷與運動醫學 p.66 ｜ BM113_Block8期中考詳解.pdf 第 84 頁</p>
+  </details>
+</article>
+</section>
+<section id="chapter-cram" data-chapter-kind="cram">
+<h2>六、考前速記</h2>
+<div class="cram">
+<ul>
+<li><b>六個題位、六個主題，三年一模一樣。</b>老師自己說「很古喔」「經典考古題」「非常古」。</li>
+<li><b>脆性＝破壞前塑性變形很少</b>：陶瓷、PMMA。<b>延性＝塑性變形很多</b>：肌腱、不鏽鋼。</li>
+<li><b>陶瓷杯碎、不鏽鋼杯凹。</b>肌腱可以拉伸，是延性。113 年申覆後 (C)(D) 皆給分。</li>
+<li><b>動作分析＝運動學（動作）＋動力學（受力）</b>；投球、發球、撐地跌倒、各種步態全部算——答「以上皆是」。</li>
+<li><b>投球六階段：wind-up → early cocking → late cocking → acceleration → deceleration → follow-through。</b></li>
+<li><b>肩與肘負荷最大＝ late cocking &amp; early acceleration。</b>問肩問肘答案都一樣。</li>
+<li><b>SLAP 三把鑰匙：受傷機制與症狀、O'Brien's test 與 compression rotation test、MR 關節攝影。</b></li>
+<li><b>Lachman 是膝 ACL、valgus stress test 是肘</b>——出現在 SLAP 題裡就是「沒有幫助」的那一個。</li>
+<li><b>外翻伸展過載：內側拉、外側壓、後側夾。</b>MCL 不穩、尺神經病變、橈骨小頭骨軟骨損傷、後側夾擊。</li>
+<li><b>不相關的：橈神經麻痺、前側夾擊、外側副韌帶不穩。</b>三年各考一個。</li>
+<li><b>ACL＝運動傷害</b>；前抽屜、Lachman；MRI；<b>合併傷害就開刀</b>。</li>
+<li><b>PCL＝車禍儀表板</b>；後沉徵象、後抽屜；MRI；<b>單獨斷裂不一定開刀</b>（coper 組復健）。</li>
+<li><b>Compression rotation test 是肩的</b>，放進 ACL 題裡就是錯的。</li>
+<li><b>MRI 對十字韌帶「有幫助」這句永遠是對的。</b></li>
+<li><b>手舉過肩的運動→旋轉肌袖撕裂；跌倒手撐地→上肢創傷。</b>113 年詳解的兩個補充。</li>
+</ul>
+</div>
+</section>
+
+<!-- ================= VOCAB ================= -->
+<section id="chapter-vocab" data-chapter-kind="vocab">
+<h2>七、單字表</h2>
+<dl class="vocab">
+<dt>brittle / ductile</dt>
+<dd><span class="root">brittle＝易碎；ductile 源自拉丁 ducere＝拉引</span>　脆性與延性。脆性材料破壞前塑性變形極少，延性材料塑性變形大。<details data-kind="vocab-memory"><summary>記憶提示</summary><p><b>陶瓷杯碎、不鏽鋼杯凹。</b>肌腱是延性。</p></details></dd>
+
+<dt>plastic deformation</dt>
+<dd><span class="root">plastic＝可塑的</span>　塑性變形。超過彈性極限後不可恢復的變形。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>脆性材料「一小段」就斷，延性材料「一長段」才斷。</p></details></dd>
+
+<dt>elastic limit</dt>
+<dd><span class="root">elastic＝彈性</span>　彈性極限。超過此點後變形不再可逆。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>兩種材料的分歧點都在它之後。</p></details></dd>
+
+<dt>PMMA</dt>
+<dd><span class="root">polymethyl methacrylate</span>　聚甲基丙烯酸甲酯，骨水泥的主成分，脆性材料。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>112 年詳解給的脆性例子；和陶瓷一組。</p></details></dd>
+
+<dt>motion analysis</dt>
+<dd><span class="root">motion（運動）+ analysis</span>　動作分析，含運動學與動力學。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>「定義廣泛」——所以問應用時答<b>以上皆是</b>。</p></details></dd>
+
+<dt>kinematics / kinetics</dt>
+<dd><span class="root">希臘 kinein＝移動</span>　運動學（動作本身：角度、速度）與動力學（關節受力大小）。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>kinematics 看<b>怎麼動</b>，kinetics 算<b>多少力</b>。</p></details></dd>
+
+<dt>late cocking / early acceleration</dt>
+<dd><span class="root">cocking＝上膛、拉弓</span>　投球的晚期舉臂與早期加速期，肩與肘負荷最高。<details data-kind="vocab-memory"><summary>記憶提示</summary><p><b>弓拉到最滿的那一刻。</b>三年答案都是它。</p></details></dd>
+
+<dt>valgus extension overload</dt>
+<dd><span class="root">valgus＝外翻；extension＝伸直；overload＝過載</span>　外翻伸展過載，投手肘傷最常見原因。<details data-kind="vocab-memory"><summary>記憶提示</summary><p><b>內側拉、外側壓、後側夾。</b></p></details></dd>
+
+<dt>medial collateral ligament (MCL / UCL)</dt>
+<dd><span class="root">collateral＝側邊的</span>　肘內側副韌帶（尺側副韌帶）。外翻力下被拉開而不穩。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>是<b>內側</b>被拉，不是外側——113 年的錯項就是寫成外側。</p></details></dd>
+
+<dt>ulnar nerve neuropathy</dt>
+<dd><span class="root">ulnar＝尺側</span>　尺神經病變。尺神經走在肘內側，外翻時受牽拉。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>是<b>尺</b>神經不是<b>橈</b>神經——111 年的錯項。</p></details></dd>
+
+<dt>radio-capitellar joint</dt>
+<dd><span class="root">radius（橈骨）+ capitellum（肱骨小頭）</span>　橈骨小頭關節，肘外側。外翻時被壓迫造成骨軟骨損傷。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>「外側壓」就是壓在這裡。</p></details></dd>
+
+<dt>posterior elbow impingement</dt>
+<dd><span class="root">impinge＝撞擊、夾擊</span>　後側肘夾擊。伸直時鷹嘴突撞入鷹嘴窩後內側。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>是<b>後側</b>不是前側——112 年的錯項寫成前側。</p></details></dd>
+
+<dt>SLAP lesion</dt>
+<dd><span class="root">Superior Labrum Anterior to Posterior</span>　上關節唇由前到後的撕裂，肱二頭肌長頭腱附著處。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>投擲運動員的肩傷。<b>三把鑰匙：問、做、照。</b></p></details></dd>
+
+<dt>O'Brien's test</dt>
+<dd><span class="root">以醫師 O'Brien 命名</span>　主動壓迫測試，SLAP 的理學檢查。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>三年都以「有幫助」出現。</p></details></dd>
+
+<dt>compression rotation test</dt>
+<dd><span class="root">compression（壓迫）+ rotation（旋轉）</span>　壓迫旋轉測試，SLAP 的理學檢查。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>它是<b>肩</b>的。113 年被塞進 ACL 題當錯項。</p></details></dd>
+
+<dt>MR-arthrography</dt>
+<dd><span class="root">arthro-（關節）+ -graphy</span>　MR 關節攝影，顯影劑注入關節腔後的 MRI，看關節唇撕裂最清楚。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>SLAP 的影像鑰匙。</p></details></dd>
+
+<dt>Lachman test</dt>
+<dd><span class="root">以醫師 Lachman 命名</span>　膝 ACL 的理學檢查。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>它是<b>膝</b>的——112 年被塞進 SLAP 題當錯項。</p></details></dd>
+
+<dt>valgus stress test</dt>
+<dd><span class="root">valgus＝外翻</span>　外翻壓力測試，檢查肘（或膝）內側副韌帶。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>它是<b>肘</b>的——113 年被塞進 SLAP 題當錯項。</p></details></dd>
+
+<dt>anterior / posterior drawer test</dt>
+<dd><span class="root">drawer＝抽屜</span>　前抽屜測試查 ACL，後抽屜測試查 PCL。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>把小腿當抽屜往前拉是 ACL、往後推是 PCL。</p></details></dd>
+
+<dt>posterior sag sign</dt>
+<dd><span class="root">sag＝下沉</span>　後沉徵象。PCL 斷裂時脛骨相對股骨向後沉。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>與後抽屜配對，都是 PCL。</p></details></dd>
+
+<dt>coper</dt>
+<dd><span class="root">cope＝應付</span>　韌帶斷裂後靠復健與代償策略恢復良好、不需手術的病人。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>老師口述的研究：單獨 PCL 斷裂的 coper 組<b>不一定要開刀</b>。</p></details></dd>
+
+<dt>fall on the outstretched hand (FOOSH)</dt>
+<dd><span class="root">outstretched＝伸直的</span>　跌倒時手撐地，上肢創傷的重要機轉。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>動作分析題年年出現的例子之一。</p></details></dd>
+</dl>
+</section>
+<section id="chapter-final" data-chapter-kind="final_questions">
+<h2>六、歷年考題總複習</h2>
+<p class="meta">依年度由新到舊、同年依原始題號排列。共 18 題（111／112／113 期中考各 6 題）。<b style="color:#f08a8a">紅框</b>＝同一考點在兩個以上年度重複出現。</p>
+<h3><span class="yearchip">113 年</span>期中考 第 64 題</h3>
+<article data-question-id="113-p79-q64" data-placement="final" class="repeat">
+  <span class="qhead">113 年 期中考 第 64 題</span><span class="repeat-badge">重複考點 ×3</span>
+  <p class="repeat-note">同考點：111 第54題、112 第54題　—　脆性材料破壞前塑性變形很少（陶瓷、PMMA）、延性材料塑性變形大（肌腱、不鏽鋼）</p>
+  <p class="stem">Which statement(s) is/are False？</p>
+  <ul class="opts"><li>(A) Ceramics is a brittle material.</li><li>(B) Tendon is a ductile material</li><li>(C) Brittle material undergoes more plastic deformation before failure.</li><li>(D) Stainless steel is a brittle material.</li></ul>
+  <details data-kind="answer"><summary>答案與詳解</summary>
+    <div data-kind="zh-translation"><p><strong>中文題目：</strong>下列敘述何者<b>錯誤</b>？</p>
+      <p>(A) 陶瓷是脆性材料。</p>
+      <p>(B) 肌腱是延性材料。</p>
+      <p>(C) 脆性材料在破壞前有較多的塑性變形。</p>
+      <p>(D) 不鏽鋼是脆性材料。</p></div>
+    <p class="ans">答案：(C) 申覆後 (C)(D) 皆給分</p>
+    <p>脆性定義寫反、不鏽鋼說成脆性——兩句都錯，申覆後皆給分。<span class="src"> ｜ BM113_Block8期中考詳解 第 79 頁</span></p>
+  </details>
+</article>
+<article data-question-id="113-p80-q65" data-placement="final" class="repeat">
+  <span class="qhead">113 年 期中考 第 65 題 ｜ 來源答案欄</span><span class="repeat-badge">重複考點 ×3</span>
+  <p class="repeat-note">同考點：111 第55題、112 第55題　—　SLAP 的診斷：MR 關節攝影、O&#x27;Brien 與 compression rotation test；Lachman 是 ACL、外翻壓力測試是肘</p>
+  <p class="stem">Which of the following(s) may not be helpful in diagnosing Superior Labrum Anterior to Posterior Lesion (SLAP)？</p>
+  <ul class="opts"><li>(A) MR-Arthrography.</li><li>(B) Valgus Stress Test</li><li>(C) O&#x27;Brien&#x27;s Test</li><li>(D) Compression Rotation Test.</li></ul>
+  <details data-kind="answer"><summary>答案與詳解</summary>
+    <div data-kind="zh-translation"><p><strong>中文題目：</strong>下列何者<b>無助於</b>診斷上關節唇前後病變（SLAP）？</p>
+      <p>(A) MR 關節攝影</p>
+      <p>(B) 外翻壓力測試</p>
+      <p>(C) O'Brien 測試</p>
+      <p>(D) 壓迫旋轉測試</p></div>
+    <p class="ans">答案：(B)</p>
+    <p>外翻壓力測試是肘的，對 SLAP 沒有幫助。<span class="src"> ｜ BM113_Block8期中考詳解 第 80 頁</span></p>
+  </details>
+</article>
+<article data-question-id="113-p82-q66" data-placement="final" class="repeat">
+  <span class="qhead">113 年 期中考 第 66 題</span><span class="repeat-badge">重複考點 ×3</span>
+  <p class="repeat-note">同考點：111 第56題、112 第56題　—　動作分析的臨床應用：投球、撐地跌倒、步態分析全部都算</p>
+  <p class="stem">Motion analysis can be clinically applied in which of the followings?</p>
+  <ul class="opts"><li>(A) Analysis of shoulder joint loading for tennis serve</li><li>(B) Analysis of elbow joint loading during fall on the outstretched hand.</li><li>(C) Gait Analysis in patients with osteoarthritis of the knee joint.</li><li>(D) All of the above.</li></ul>
+  <details data-kind="answer"><summary>答案與詳解</summary>
+    <div data-kind="zh-translation"><p><strong>中文題目：</strong>動作分析可臨床應用於下列何者？</p>
+      <p>(A) 網球發球時肩關節負荷的分析</p>
+      <p>(B) 跌倒手撐地時肘關節負荷的分析</p>
+      <p>(C) 膝關節退化性關節炎病人的步態分析</p>
+      <p>(D) 以上皆是</p></div>
+    <p class="ans">答案：(D)</p>
+    <p>第三組例子，答案還是以上皆是。<span class="src"> ｜ BM113_Block8期中考詳解 第 82 頁</span></p>
+  </details>
+</article>
+<article data-question-id="113-p84-q67" data-placement="final" class="repeat">
+  <span class="qhead">113 年 期中考 第 67 題</span><span class="repeat-badge">重複考點 ×3</span>
+  <p class="repeat-note">同考點：111 第57題、112 第57題　—　投球動作中肩與肘負荷最大的階段：late cocking 與 early acceleration</p>
+  <p class="stem">The highest shoulder joint loading can occur on which of the time interval during pitching motion?</p>
+  <ul class="opts"><li>(A) Winding phase</li><li>(B) Late cocking &amp; early acceleration phase</li><li>(C) Deceleration phase</li><li>(D) Follow through phase</li></ul>
+  <details data-kind="answer"><summary>答案與詳解</summary>
+    <div data-kind="zh-translation"><p><strong>中文題目：</strong>投球動作中，肩關節負荷最高發生在哪一個時期？</p>
+      <p>(A) 揮臂期</p>
+      <p>(B) 晚期舉臂與早期加速期</p>
+      <p>(C) 減速期</p>
+      <p>(D) 隨勢期</p></div>
+    <p class="ans">答案：(B)</p>
+    <p>與 111 第 57 題逐字相同。<span class="src"> ｜ BM113_Block8期中考詳解 第 84 頁</span></p>
+  </details>
+</article>
+<article data-question-id="113-p84-q68" data-placement="final" class="repeat">
+  <span class="qhead">113 年 期中考 第 68 題</span><span class="repeat-badge">重複考點 ×3</span>
+  <p class="repeat-note">同考點：111 第58題、112 第58題　—　十字韌帶：PCL 多因車禍外傷且單獨斷裂不必重建；ACL 多因運動傷害且合併傷害要開刀</p>
+  <p class="stem">Which of the following statement(s) about ACL (Anterior Cruciate Ligament) injuries is/are false？</p>
+  <ul class="opts"><li>(A) ACL injuries are frequently related to sports injuries</li><li>(B) ACL tear with associated injuries is an indication for surgical treatment</li><li>(C) Compression Rotation Test can detect ACL injuries</li><li>(D)MRI is useful in diagnosing ACL injuries</li></ul>
+  <details data-kind="answer"><summary>答案與詳解</summary>
+    <div data-kind="zh-translation"><p><strong>中文題目：</strong>下列關於前十字韌帶（ACL）損傷的敘述，何者<b>錯誤</b>？</p>
+      <p>(A) ACL 損傷常與運動傷害有關。</p>
+      <p>(B) ACL 斷裂合併其他損傷是手術治療的適應症。</p>
+      <p>(C) 壓迫旋轉測試可偵測 ACL 損傷。</p>
+      <p>(D) MRI 有助於診斷 ACL 損傷。</p></div>
+    <p class="ans">答案：(C)</p>
+    <p>壓迫旋轉測試是肩的 SLAP 檢查，放進 ACL 題就是錯的。<span class="src"> ｜ BM113_Block8期中考詳解 第 84 頁</span></p>
+  </details>
+</article>
+<article data-question-id="113-p84-q69" data-placement="final" class="repeat">
+  <span class="qhead">113 年 期中考 第 69 題</span><span class="repeat-badge">重複考點 ×3</span>
+  <p class="repeat-note">同考點：111 第59題、112 第59題　—　投手肘的外翻伸展過載：內側拉開（MCL、尺神經）、外側壓迫（橈骨小頭）、後側夾擊；與橈神經、前側、外側韌帶無關</p>
+  <p class="stem">Valgus Extension Overload is probably the most common cause of elbow injury in baseball pitchers. It is not associated with :</p>
+  <ul class="opts"><li>(A) lateral collateral ligament instability</li><li>(B) osteochondral injuries of the radio-capitellar joint</li><li>(C) ulnar nerve neuropathy</li><li>(D) posterior elbow impingement.</li></ul>
+  <details data-kind="answer"><summary>答案與詳解</summary>
+    <div data-kind="zh-translation"><p><strong>中文題目：</strong>外翻伸展過載可能是棒球投手肘部傷害最常見的原因。它<b>與下列何者無關</b>？</p>
+      <p>(A) 外側副韌帶不穩</p>
+      <p>(B) 橈骨小頭關節的骨軟骨損傷</p>
+      <p>(C) 尺神經病變</p>
+      <p>(D) 後側肘夾擊</p></div>
+    <p class="ans">答案：(A)</p>
+    <p>投球的壓力在內側，被拉開的是內側韌帶不是外側。<span class="src"> ｜ BM113_Block8期中考詳解 第 84 頁</span></p>
+  </details>
+</article>
+<h3><span class="yearchip">112 年</span>期中考 第 54 題</h3>
+<article data-question-id="112-p73-q54" data-placement="final" class="repeat">
+  <span class="qhead">112 年 期中考 第 54 題</span><span class="repeat-badge">重複考點 ×3</span>
+  <p class="repeat-note">同考點：111 第54題、113 第64題　—　脆性材料破壞前塑性變形很少（陶瓷、PMMA）、延性材料塑性變形大（肌腱、不鏽鋼）</p>
+  <p class="stem">Which statement(s) is/are True？</p>
+  <ul class="opts"><li>(A) Brittle material undergoes very little plastic deformation before failure.</li><li>(B) Tendon is a ductile material</li><li>(C) Ductile material undergoes more plastic deformation before failure.</li><li>(D) All of the above.</li></ul>
+  <details data-kind="answer"><summary>答案與詳解</summary>
+    <div data-kind="zh-translation"><p><strong>中文題目：</strong>下列敘述何者<b>正確</b>？</p>
+      <p>(A) 脆性材料在破壞前只有極少的塑性變形。</p>
+      <p>(B) 肌腱是延性材料。</p>
+      <p>(C) 延性材料在破壞前有較多的塑性變形。</p>
+      <p>(D) 以上皆是。</p></div>
+    <p class="ans">答案：D</p>
+    <p>與 111 年同一組句子，把肌腱改成延性後三句全對。<span class="src"> ｜ BM112_Block 8 期中考(含申覆內容與結果) 第 73 頁</span></p>
+  </details>
+</article>
+<article data-question-id="112-p73-q55" data-placement="final" class="repeat">
+  <span class="qhead">112 年 期中考 第 55 題</span><span class="repeat-badge">重複考點 ×3</span>
+  <p class="repeat-note">同考點：111 第55題、113 第65題　—　SLAP 的診斷：MR 關節攝影、O&#x27;Brien 與 compression rotation test；Lachman 是 ACL、外翻壓力測試是肘</p>
+  <p class="stem">Which of the following(s) may not be helpful in diagnosing Superior Labrum Anterior to Posterior Lesion(SLAP))？</p>
+  <ul class="opts"><li>(A) MR-Arthrography.</li><li>(B) Compression Rotation Test</li><li>(C) O&#x27;Brien&#x27;s Test</li><li>(D) Lachman Test.</li></ul>
+  <details data-kind="answer"><summary>答案與詳解</summary>
+    <div data-kind="zh-translation"><p><strong>中文題目：</strong>下列何者<b>無助於</b>診斷上關節唇前後病變（SLAP）？</p>
+      <p>(A) MR 關節攝影</p>
+      <p>(B) 壓迫旋轉測試</p>
+      <p>(C) O'Brien 測試</p>
+      <p>(D) Lachman 測試</p></div>
+    <p class="ans">答案：D</p>
+    <p>Lachman 是膝 ACL 的檢查，對 SLAP 沒有幫助。<span class="src"> ｜ BM112_Block 8 期中考(含申覆內容與結果) 第 73 頁</span></p>
+  </details>
+</article>
+<article data-question-id="112-p75-q56" data-placement="final" class="repeat">
+  <span class="qhead">112 年 期中考 第 56 題</span><span class="repeat-badge">重複考點 ×3</span>
+  <p class="repeat-note">同考點：111 第56題、113 第66題　—　動作分析的臨床應用：投球、撐地跌倒、步態分析全部都算</p>
+  <p class="stem">Motion analysis can be clinically applied in which of the followings?</p>
+  <ul class="opts"><li>(A) Analysis of elbow joint loading during pitching</li><li>(B) Analysis of shoulder joint loading during fall on the outstretched hand.</li><li>(C) Gait Analysis in patients with PCL instability.</li><li>(D) All of the above.</li></ul>
+  <details data-kind="answer"><summary>答案與詳解</summary>
+    <div data-kind="zh-translation"><p><strong>中文題目：</strong>動作分析可臨床應用於下列何者？</p>
+      <p>(A) 投球時肘關節負荷的分析</p>
+      <p>(B) 跌倒手撐地時肩關節負荷的分析</p>
+      <p>(C) PCL 不穩定病人的步態分析</p>
+      <p>(D) 以上皆是</p></div>
+    <p class="ans">答案：D</p>
+    <p>把 ACL 換成 PCL、研究改成負荷分析，答案仍是以上皆是。<span class="src"> ｜ BM112_Block 8 期中考(含申覆內容與結果) 第 75 頁</span></p>
+  </details>
+</article>
+<article data-question-id="112-p75-q57" data-placement="final" class="repeat">
+  <span class="qhead">112 年 期中考 第 57 題 ｜ 來源答案欄</span><span class="repeat-badge">重複考點 ×3</span>
+  <p class="repeat-note">同考點：111 第57題、113 第67題　—　投球動作中肩與肘負荷最大的階段：late cocking 與 early acceleration</p>
+  <p class="stem">The highest elbow joint loading can occur on which of the time interval during pitching motion?</p>
+  <ul class="opts"><li>(A) Winding phase,</li><li>(B) Late cocking &amp; early acceleration phase,</li><li>(C) Deceleration phase,</li><li>(D) Follow through phase.</li></ul>
+  <details data-kind="answer"><summary>答案與詳解</summary>
+    <div data-kind="zh-translation"><p><strong>中文題目：</strong>投球動作中，<b>肘</b>關節負荷最高發生在哪一個時期？</p>
+      <p>(A) 揮臂期</p>
+      <p>(B) 晚期舉臂與早期加速期</p>
+      <p>(C) 減速期</p>
+      <p>(D) 隨勢期</p></div>
+    <p class="ans">答案：B</p>
+    <p>把肩換成肘，答案不變。<span class="src"> ｜ BM112_Block 8 期中考(含申覆內容與結果) 第 75 頁</span></p>
+  </details>
+</article>
+<article data-question-id="112-p76-q58" data-placement="final" class="repeat">
+  <span class="qhead">112 年 期中考 第 58 題</span><span class="repeat-badge">重複考點 ×3</span>
+  <p class="repeat-note">同考點：111 第58題、113 第68題　—　十字韌帶：PCL 多因車禍外傷且單獨斷裂不必重建；ACL 多因運動傷害且合併傷害要開刀</p>
+  <p class="stem">Which of the following statement(s) about ACL (Anterior Cruciate Ligament) injuries is/are false？</p>
+  <ul class="opts"><li>(A) ACL injuries are frequently related to trauma and traffic accident</li><li>(B) ACL tear with associated injuries is an indication for surgical treatment</li><li>(C) Anterior Drawer Test can detect ACL injuries</li><li>(D) MRI is useful in diagnosing ACL injuries</li></ul>
+  <details data-kind="answer"><summary>答案與詳解</summary>
+    <div data-kind="zh-translation"><p><strong>中文題目：</strong>下列關於前十字韌帶（ACL）損傷的敘述，何者<b>錯誤</b>？</p>
+      <p>(A) ACL 損傷常與外傷及車禍有關。</p>
+      <p>(B) ACL 斷裂合併其他損傷是手術治療的適應症。</p>
+      <p>(C) 前抽屜測試可偵測 ACL 損傷。</p>
+      <p>(D) MRI 有助於診斷 ACL 損傷。</p></div>
+    <p class="ans">答案：A</p>
+    <p>ACL 是運動傷害，不是車禍；車禍是 PCL 的機轉。<span class="src"> ｜ BM112_Block 8 期中考(含申覆內容與結果) 第 76 頁</span></p>
+  </details>
+</article>
+<article data-question-id="112-p76-q59" data-placement="final" class="repeat">
+  <span class="qhead">112 年 期中考 第 59 題 ｜ 來源答案欄</span><span class="repeat-badge">重複考點 ×3</span>
+  <p class="repeat-note">同考點：111 第59題、113 第69題　—　投手肘的外翻伸展過載：內側拉開（MCL、尺神經）、外側壓迫（橈骨小頭）、後側夾擊；與橈神經、前側、外側韌帶無關</p>
+  <p class="stem">Valgus Extension Overload is probably the most common cause of elbow injury in baseball pitchers. It is not associated with :</p>
+  <ul class="opts"><li>(A) medial collateral ligament instability,</li><li>(B) osteochondral injuries of the radio-capitellar joint,</li><li>(C) ulnar nerve neuropathy</li><li>(D) anterior elbow impingement.</li></ul>
+  <details data-kind="answer"><summary>答案與詳解</summary>
+    <div data-kind="zh-translation"><p><strong>中文題目：</strong>外翻伸展過載可能是棒球投手肘部傷害最常見的原因。它<b>與下列何者無關</b>？</p>
+      <p>(A) 內側副韌帶不穩</p>
+      <p>(B) 橈骨小頭關節的骨軟骨損傷</p>
+      <p>(C) 尺神經病變</p>
+      <p>(D) 前側肘夾擊</p></div>
+    <p class="ans">答案：D（申覆後維持原答案）</p>
+    <p>夾擊在後側不在前側；申覆後維持原答案。<span class="src"> ｜ BM112_Block 8 期中考(含申覆內容與結果) 第 76 頁</span></p>
+  </details>
+</article>
+<h3><span class="yearchip">111 年</span>期中考 第 54 題</h3>
+<article data-question-id="111-p44-q54" data-placement="final" class="repeat">
+  <span class="qhead">111 年 期中考 第 54 題</span><span class="repeat-badge">重複考點 ×3</span>
+  <p class="repeat-note">同考點：112 第54題、113 第64題　—　脆性材料破壞前塑性變形很少（陶瓷、PMMA）、延性材料塑性變形大（肌腱、不鏽鋼）</p>
+  <p class="stem">Which statement(s) is/are false?</p>
+  <ul class="opts"><li>(A) Brittle material undergoes very little plastic deformation before failure.</li><li>(B) Tendon is a brittle material.</li><li>(C) Ductile material undergoes more plastic deformation before failure.</li><li>(D) Ceramics is a brittle material.</li></ul>
+  <details data-kind="answer"><summary>答案與詳解</summary>
+    <div data-kind="zh-translation"><p><strong>中文題目：</strong>下列敘述何者<b>錯誤</b>？</p>
+      <p>(A) 脆性材料在破壞前只有極少的塑性變形。</p>
+      <p>(B) 肌腱是脆性材料。</p>
+      <p>(C) 延性材料在破壞前有較多的塑性變形。</p>
+      <p>(D) 陶瓷是脆性材料。</p></div>
+    <p class="ans">答案：(B) Tendon is a brittle material.</p>
+    <p>肌腱可以拉伸，是延性材料，說它是脆性就錯了。<span class="src"> ｜ BM111 BLOCK-8 期中考詳解 第 44 頁</span></p>
+  </details>
+</article>
+<article data-question-id="111-p45-q55" data-placement="final" class="repeat">
+  <span class="qhead">111 年 期中考 第 55 題</span><span class="repeat-badge">重複考點 ×3</span>
+  <p class="repeat-note">同考點：112 第55題、113 第65題　—　SLAP 的診斷：MR 關節攝影、O&#x27;Brien 與 compression rotation test；Lachman 是 ACL、外翻壓力測試是肘</p>
+  <p class="stem">Which of the following(s) can be helpful in diagnosing Superior Labrum Anterior to Posterior Lesion (SLAP)?</p>
+  <ul class="opts"><li>(A) MR-Arthrography</li><li>(B) Injury Mechanism &amp; Clinical S/S</li><li>(C) O&#x27;Brien&#x27;s Test</li><li>(D) All of the above</li></ul>
+  <details data-kind="answer"><summary>答案與詳解</summary>
+    <div data-kind="zh-translation"><p><strong>中文題目：</strong>下列何者有助於診斷上關節唇前後病變（SLAP）？</p>
+      <p>(A) MR 關節攝影</p>
+      <p>(B) 受傷機制與臨床症狀</p>
+      <p>(C) O'Brien 測試</p>
+      <p>(D) 以上皆是</p></div>
+    <p class="ans">答案：(D) All of the above</p>
+    <p>問受傷機制、做 O&#x27;Brien、照 MR 關節攝影——三把鑰匙都對。<span class="src"> ｜ BM111 BLOCK-8 期中考詳解 第 45 頁</span></p>
+  </details>
+</article>
+<article data-question-id="111-p46-q56" data-placement="final" class="repeat">
+  <span class="qhead">111 年 期中考 第 56 題</span><span class="repeat-badge">重複考點 ×3</span>
+  <p class="repeat-note">同考點：112 第56題、113 第66題　—　動作分析的臨床應用：投球、撐地跌倒、步態分析全部都算</p>
+  <p class="stem">Motion analysis can be clinically applied in which of the followings?</p>
+  <ul class="opts"><li>(A) Study of baseball pitching</li><li>(B) Simulation of fall on the outstretched hand</li><li>(C) Gait Analysis in patients with ACL instability</li><li>(D) All of the above</li></ul>
+  <details data-kind="answer"><summary>答案與詳解</summary>
+    <div data-kind="zh-translation"><p><strong>中文題目：</strong>動作分析可臨床應用於下列何者？</p>
+      <p>(A) 棒球投球的研究</p>
+      <p>(B) 模擬跌倒時手撐地</p>
+      <p>(C) ACL 不穩定病人的步態分析</p>
+      <p>(D) 以上皆是</p></div>
+    <p class="ans">答案：(D) All off the above</p>
+    <p>投球、撐地跌倒、步態分析都在動作分析的定義裡。<span class="src"> ｜ BM111 BLOCK-8 期中考詳解 第 46 頁</span></p>
+  </details>
+</article>
+<article data-question-id="111-p46-q57" data-placement="final" class="repeat">
+  <span class="qhead">111 年 期中考 第 57 題</span><span class="repeat-badge">重複考點 ×3</span>
+  <p class="repeat-note">同考點：112 第57題、113 第67題　—　投球動作中肩與肘負荷最大的階段：late cocking 與 early acceleration</p>
+  <p class="stem">The highest shoulder joint loading can occur on which of the time interval during pitching motion?</p>
+  <ul class="opts"><li>(A) Winding phase</li><li>(B) Late cocking &amp; early acceleration phase</li><li>(C) Deceleration phase</li><li>(D) Follow through phase</li></ul>
+  <details data-kind="answer"><summary>答案與詳解</summary>
+    <div data-kind="zh-translation"><p><strong>中文題目：</strong>投球動作中，<b>肩</b>關節負荷最高發生在哪一個時期？</p>
+      <p>(A) 揮臂期</p>
+      <p>(B) 晚期舉臂與早期加速期</p>
+      <p>(C) 減速期</p>
+      <p>(D) 隨勢期</p></div>
+    <p class="ans">答案：(B) Late cocking & early acceleration phase</p>
+    <p>肩與肘負荷最大都在 late cocking 與 early acceleration。<span class="src"> ｜ BM111 BLOCK-8 期中考詳解 第 46 頁</span></p>
+  </details>
+</article>
+<article data-question-id="111-p47-q58" data-placement="final" class="repeat">
+  <span class="qhead">111 年 期中考 第 58 題</span><span class="repeat-badge">重複考點 ×3</span>
+  <p class="repeat-note">同考點：112 第58題、113 第68題　—　十字韌帶：PCL 多因車禍外傷且單獨斷裂不必重建；ACL 多因運動傷害且合併傷害要開刀</p>
+  <p class="stem">Which of the following statement(s) about PCL (Posterior Cruciate Ligament) injuries is/are false</p>
+  <ul class="opts"><li>(A) related to trauma and traffic accident</li><li>(B) PCL reconstruction is the best treatment for isolated PCL tear</li><li>(C) Posterior Sag &amp; Posterior Drawer Test can detect PCL injuries</li><li>(D) MRI is useful in diagnosing PCL injuries</li></ul>
+  <details data-kind="answer"><summary>答案與詳解</summary>
+    <div data-kind="zh-translation"><p><strong>中文題目：</strong>下列關於後十字韌帶（PCL）損傷的敘述，何者<b>錯誤</b>？</p>
+      <p>(A) 與外傷及車禍有關。</p>
+      <p>(B) PCL 重建是單獨 PCL 斷裂的最佳治療。</p>
+      <p>(C) 後沉徵象與後抽屜測試可偵測 PCL 損傷。</p>
+      <p>(D) MRI 有助於診斷 PCL 損傷。</p></div>
+    <p class="ans">答案：(B) PCL reconstruction is the best treatment for isolated PCL tear</p>
+    <p>單獨 PCL 斷裂不一定要重建，coper 組靠復健即可。<span class="src"> ｜ BM111 BLOCK-8 期中考詳解 第 47 頁</span></p>
+  </details>
+</article>
+<article data-question-id="111-p48-q59" data-placement="final" class="repeat">
+  <span class="qhead">111 年 期中考 第 59 題</span><span class="repeat-badge">重複考點 ×3</span>
+  <p class="repeat-note">同考點：112 第59題、113 第69題　—　投手肘的外翻伸展過載：內側拉開（MCL、尺神經）、外側壓迫（橈骨小頭）、後側夾擊；與橈神經、前側、外側韌帶無關</p>
+  <p class="stem">Valgus Extension Overload is probably the most common cause of elbow injury in base ball pitchers. It is not associated with</p>
+  <ul class="opts"><li>(A) medial collateral ligament instability</li><li>(B) osteochondral injuries of the radio-capitellar joint</li><li>(C) radial nerve palsy</li><li>(D) posterior elbow</li></ul>
+  <details data-kind="answer"><summary>答案與詳解</summary>
+    <div data-kind="zh-translation"><p><strong>中文題目：</strong>外翻伸展過載可能是棒球投手肘部傷害最常見的原因。它<b>與下列何者無關</b>？</p>
+      <p>(A) 內側副韌帶不穩</p>
+      <p>(B) 橈骨小頭關節的骨軟骨損傷</p>
+      <p>(C) 橈神經麻痺</p>
+      <p>(D) 後側肘</p></div>
+    <p class="ans">答案：(C) radial nerve palsy</p>
+    <p>被拉到的是內側的尺神經，不是橈神經。<span class="src"> ｜ BM111 BLOCK-8 期中考詳解 第 48 頁</span></p>
+  </details>
+</article>
+<p class="ending">六格、三年、一張表。陶瓷碎不鏽鋼凹、弓拉滿最傷、肩用肩的測試、內側拉外側壓後側夾、ACL 球場 PCL 車禍。</p>
+</section>
+</div>
+<!-- nb-comments:start -->
+<link rel="stylesheet" href="https://unpkg.com/@waline/client@v3/dist/waline.css">
+<style>
+  .nb-comments{margin:72px 0 48px;padding-top:32px;border-top:1px solid var(--line,#2a3340)}
+  .nb-comments h2{margin:0 0 6px;font-size:22px;font-weight:700;color:var(--ink,var(--text,#e8ecf3))}
+  .nb-comments p.nb-hint{margin:0 0 20px;font-size:14px;color:var(--dim,var(--text-2,#a3adbd))}
+  .nb-comments #waline{
+    --waline-theme-color:var(--cyan,var(--teal,#6fd3c7));
+    --waline-active-color:var(--gold,#e5b567);
+    --waline-font-size:15px;
+    --waline-bgcolor:var(--panel,var(--bg-2,#141922));
+    --waline-bgcolor-light:var(--panel2,var(--bg-3,#1b2230));
+    --waline-border-color:var(--line,#2a3340);
+    --waline-color:var(--ink,var(--text,#e8ecf3));
+    --waline-light-grey:var(--dim,var(--text-2,#a3adbd));
+    --waline-dark-grey:var(--dim,var(--text-2,#a3adbd));
+    --waline-white:var(--panel,var(--bg-2,#141922));
+    --waline-disable-bgcolor:var(--panel2,var(--bg-3,#1b2230));
+    --waline-disable-color:var(--dim,var(--text-3,#7a968d));
+    --waline-info-bgcolor:var(--panel2,var(--bg-3,#1b2230));
+    --waline-info-color:var(--dim,var(--text-2,#a3adbd));
+    --waline-border:1px solid var(--line,#2a3340);
+    --waline-code-bgcolor:var(--panel2,var(--bg-3,#1b2230));
+    --waline-badge-color:var(--gold,#e5b567);
+    --waline-bq-color:var(--dim,#a3adbd);
+  }
+  .nb-comments .wl-panel{background:var(--panel,var(--bg-2,#141922))}
+  .nb-comments .wl-editor,.nb-comments .wl-input{background:var(--bg,#0b0e13)}
+</style>
+<section class="nb-comments" id="comments">
+  <div class="container">
+    <h2>留言板</h2>
+    <p class="nb-hint">看不懂、想補充、發現錯誤都歡迎留言；填個暱稱就能發。</p>
+    <div id="waline"></div>
+  </div>
+</section>
+<script type="module">
+  import { init } from 'https://unpkg.com/@waline/client@v3/dist/waline.js';
+  init({
+    el: '#waline',
+    serverURL: 'https://notes-comments.vercel.app',
+    path: location.pathname,
+    lang: 'zh-TW',
+    dark: true,
+    meta: ['nick'],
+    requiredMeta: ['nick'],
+    login: 'disable',
+    reaction: false,
+    pageview: false,
+    search: false,
+    imageUploader: false,
+    copyright: false,
+    locale: { placeholder: '寫下你的想法或問題⋯⋯（支援 Markdown）' }
+  });
+</script>
+<!-- nb-comments:end -->
+</body>
+</html>
