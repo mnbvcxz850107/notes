@@ -115,7 +115,8 @@ figure.boxfig .figtag{color:var(--violet);font-size:.76rem;letter-spacing:.1em;
     <li><a href="#chapter-cram">考前速記</a></li>
     <li><a href="#chapter-vocab">單字表</a></li>
     <li><a href="#chapter-final">歷年考題總複習</a></li>
-  </ol>
+  <li><a href="#comments" data-nb-toc="1">留言板</a></li>
+</ol>
 </nav>
 <section id="chapter-1" data-chapter-kind="story">
 <h2>一、認肌肉：三種肌肉在切片上的長相</h2>
@@ -761,7 +762,7 @@ figure.boxfig .figtag{color:var(--violet);font-size:.76rem;letter-spacing:.1em;
 <section class="nb-comments" id="comments">
   <div class="container">
     <h2>留言板</h2>
-    <p class="nb-hint">看不懂、想補充、發現錯誤都歡迎留言；填暱稱即可，Email 選填、不會公開。</p>
+    <p class="nb-hint">看不懂、想補充、發現錯誤都歡迎留言；填個暱稱就能發。</p>
     <div id="waline"></div>
   </div>
 </section>
@@ -773,9 +774,9 @@ figure.boxfig .figtag{color:var(--violet);font-size:.76rem;letter-spacing:.1em;
     path: location.pathname,
     lang: 'zh-TW',
     dark: true,
-    meta: ['nick', 'mail'],
+    meta: ['nick'],
     requiredMeta: ['nick'],
-    login: 'enable',
+    login: 'disable',
     reaction: false,
     pageview: false,
     search: false,
