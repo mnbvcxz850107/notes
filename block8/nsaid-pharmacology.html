@@ -1,0 +1,1221 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>非類固醇抗炎藥物之藥理學 陳柏任</title>
+<style>
+:root{
+  color-scheme: dark;
+  --bg:#0b0e13; --panel:#141922; --panel2:#1b2230; --line:#2a3340;
+  --ink:#e8ecf3; --dim:#a3adbd; --gold:#e5b567; --cyan:#6fd3c7;
+  --rose:#e88b8b; --violet:#a99bf0;
+}
+*{box-sizing:border-box}
+html{font-size:150%}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font-family:"Noto Sans TC","PingFang TC","Helvetica Neue",system-ui,sans-serif;
+  line-height:1.85; overflow-wrap:anywhere;}
+/* Width follows the device, not the font size: px breakpoints stay put
+   while rem-based type scales with the 150% root. */
+.container{width:100%;max-width:none;margin:0 auto;
+  padding:clamp(.85rem,2.2vw,2.2rem);}
+@media (min-width:760px){ .container{max-width:730px} }
+@media (min-width:1024px){ .container{max-width:980px} }
+@media (min-width:1440px){ .container{max-width:1300px} }
+@media (min-width:1920px){ .container{max-width:1640px} }
+img{max-width:100%;height:auto}
+svg{max-width:100%;height:auto;display:block}
+h1{font-size:1.6rem;line-height:1.35;margin:.2rem 0 .6rem}
+h2{font-size:1.24rem;margin:2.4rem 0 .7rem;padding-bottom:.4rem;
+  border-bottom:1px solid var(--line);color:var(--gold)}
+h3{font-size:1.06rem;margin:1.5rem 0 .5rem;color:var(--cyan)}
+p{margin:.7rem 0}
+header#subject-overview{background:linear-gradient(160deg,#182031,#0e1219);
+  border:1px solid var(--line);border-radius:14px;padding:1.2rem;margin:.6rem 0 1.4rem}
+.meta{color:var(--dim);font-size:.86rem;margin:.3rem 0 0}
+nav#toc{background:var(--panel);border:1px solid var(--line);
+  border-radius:12px;padding:.9rem 1.1rem;margin:1.2rem 0}
+nav#toc ol{margin:.4rem 0 0;padding-left:1.3rem}
+nav#toc a{color:var(--ink);text-decoration:none;border-bottom:1px dotted var(--line)}
+.story{background:var(--panel2);border-left:3px solid var(--violet);
+  border-radius:0 10px 10px 0;padding:.9rem 1.1rem;margin:1.1rem 0}
+.story .tag{display:block;color:var(--violet);font-size:.78rem;
+  letter-spacing:.12em;margin-bottom:.35rem}
+.reality{background:var(--panel);border-left:3px solid var(--cyan);
+  border-radius:0 10px 10px 0;padding:.9rem 1.1rem;margin:1.1rem 0}
+.reality .tag{display:block;color:var(--cyan);font-size:.78rem;
+  letter-spacing:.12em;margin-bottom:.35rem}
+.keybox{background:#12202b;border:1px solid #26485a;border-radius:10px;
+  padding:.85rem 1rem;margin:1.1rem 0}
+.keybox b{color:var(--cyan)}
+.warn{background:#2a1c1c;border:1px solid #573434;border-radius:10px;
+  padding:.85rem 1rem;margin:1.1rem 0;color:#f0cfcf}
+article{background:var(--panel);border:1px solid var(--line);
+  border-radius:12px;padding:.95rem 1.05rem;margin:1.1rem 0}
+article .qhead{display:block;color:var(--gold);font-size:.82rem;
+  letter-spacing:.06em;margin-bottom:.45rem}
+article .stem{margin:.2rem 0 .5rem}
+article ul.opts{list-style:none;margin:.3rem 0 .2rem;padding:0}
+article ul.opts li{padding:.16rem 0 .16rem .2rem;color:#dbe2ec}
+details{background:#0f141c;border:1px solid var(--line);
+  border-radius:10px;padding:.15rem .8rem;margin:.6rem 0}
+details summary{cursor:pointer;padding:.6rem 0;color:var(--gold);
+  font-weight:600;min-height:44px;display:flex;align-items:center}
+details[data-kind="answer"] .ans{font-size:1.05rem;color:var(--cyan);font-weight:700}
+div[data-kind="zh-translation"]{background:#141c26;border:1px dashed #33465c;
+  border-radius:8px;padding:.7rem .85rem;margin:.5rem 0 .8rem}
+div[data-kind="zh-translation"] p{margin:.35rem 0}
+.src{color:var(--dim);font-size:.84rem;margin-top:.6rem}
+.quote{border-left:2px solid var(--gold);padding-left:.75rem;color:#f0e2c6}
+.infer{color:#f0d9a8;font-size:.92rem}
+figure{margin:1.3rem 0;background:var(--panel2);border:1px solid var(--line);
+  border-radius:12px;padding:.9rem}
+figcaption{color:var(--dim);font-size:.85rem;margin-top:.6rem;text-align:center}
+dl.vocab{margin:0}
+dl.vocab dt{color:var(--cyan);font-weight:700;margin-top:.9rem}
+dl.vocab dd{margin:.2rem 0 0;padding-left:0}
+dl.vocab .root{color:var(--dim);font-size:.86rem}
+.cram{background:var(--panel);border:1px solid var(--line);
+  border-radius:12px;padding:.4rem 1.1rem;margin:1rem 0}
+.cram li{margin:.55rem 0}
+.yearchip{display:inline-block;background:#233046;color:#bcd0ea;
+  border-radius:999px;padding:.05rem .55rem;font-size:.76rem;margin-right:.4rem}
+article.repeat{border:2px solid #e05252;box-shadow:0 0 0 3px rgba(224,82,82,.12)}
+article.repeat .qhead{color:#f08a8a}
+.repeat-badge{display:inline-block;background:#3a1c1c;border:1px solid #7d3a3a;
+  color:#f0a8a8;border-radius:999px;padding:.1rem .6rem;font-size:.76rem;
+  margin-left:.4rem;white-space:nowrap}
+.repeat-note{color:#e6a5a5;font-size:.84rem;margin:.45rem 0 0}
+figure.boxfig{margin:1.5rem 0 .5rem;background:transparent;border:0;padding:0}
+figure.boxfig img{border-radius:12px;border:1px solid var(--line);display:block;width:100%}
+figure.boxfig figcaption{color:var(--dim);font-size:.82rem;margin-top:.5rem;
+  text-align:left;line-height:1.6}
+figure.boxfig .figtag{color:var(--violet);font-size:.76rem;letter-spacing:.1em;
+  display:block;margin-bottom:.3rem}
+.ending{color:var(--dim);font-style:italic;margin:1.6rem 0 2.4rem}
+</style></head>
+<body>
+<div class="container">
+
+<header id="subject-overview">
+  <h1>非類固醇抗炎藥物之藥理學</h1>
+  <p>這一科三年十八題，結構規律到可以直接畫成表：<b>每年六題、六個題位、六個主題，年年同一組</b>——Aspirin、Acetaminophen、COX-2 選擇性抑制劑、某一顆 NSAID 的獨門特徵、痛風藥、Pegloticase。111 與 112 年由吳炳男命題，113 年換成陳柏任，題位從期中考移到期末考，<b>但六個主題一個都沒換</b>。</p>
+  <p>整科的主軸只有一條線：<b>COX-1 管胃和血小板，COX-2 管發炎</b>。Aspirin 偏 COX-1 而且不可逆，所以能抗血小板；COX-2 選擇性抑制劑不碰血小板，所以保胃卻增加血栓；Acetaminophen 兩邊都不太碰，所以只退燒止痛不消炎。痛風那一段則是另一條線：<b>急性期壓發炎（秋水仙素），慢性期降尿酸（抑制合成或促進排泄）</b>，兩件事不能混。</p>
+  <p class="meta">命題老師：陳柏任（113 期末）、吳炳男（111、112 期中）｜ 收錄三年共 18 題</p>
+</header>
+
+<nav id="toc">
+  <b>目錄</b>
+  <ol>
+    <li><a href="#chapter-1">Aspirin：不可逆的那一刀</a></li>
+    <li><a href="#chapter-2">Acetaminophen：它不是消炎藥</a></li>
+    <li><a href="#chapter-3">COX-2 選擇性：保胃，不保心</a></li>
+    <li><a href="#chapter-4">每年抽一顆：Nabumetone、Indomethacin、Meloxicam</a></li>
+    <li><a href="#chapter-5">痛風：急性壓發炎、慢性降尿酸</a></li>
+    <li><a href="#chapter-cram">考前速記</a></li>
+    <li><a href="#chapter-vocab">單字表</a></li>
+    <li><a href="#chapter-final">歷年考題總複習</a></li>
+  <li><a href="#comments" data-nb-toc="1">留言板</a></li>
+</ol>
+</nav>
+<section id="chapter-1" data-chapter-kind="story">
+<h2>一、Aspirin：不可逆的那一刀</h2>
+
+<figure class="boxfig" data-visual-id="nsbox-01-story" data-image-kind="story" data-explanation-verified="true">
+<span class="figtag">情境場景</span>
+<img data-visual-id="nsbox-01-story" src="img/nsbox-01-story.webp" alt="情境場景：Aspirin 在血小板的酵素上留下一個拆不掉的標記，這顆血小板一輩子就廢了。" loading="lazy" decoding="async" width="1600" height="914">
+<figcaption>情境場景：Aspirin 在血小板的酵素上留下一個拆不掉的標記，這顆血小板一輩子就廢了。</figcaption>
+</figure>
+<div class="story" data-prose-kind="story"><span class="tag">故事</span>
+<p>身體裡有兩座工廠都在做前列腺素，用的是同一台機器：<b>COX</b>。</p>
+<p><b>COX-1</b> 是常設廠，一直開著，做的東西拿去<b>保護胃黏膜</b>、<b>讓血小板能聚集</b>（血小板做的那一種叫 TXA2）。<b>COX-2</b> 是臨時廠，發炎時才開，做的東西負責<b>紅腫熱痛</b>。</p>
+<p>大多數 NSAID 是<b>把機器暫時卡住</b>——藥一代謝掉，機器就恢復運轉。</p>
+<p><b>Aspirin 不一樣。它不是卡住，是直接在機器上焊一個乙醯基。</b>焊上去就拆不掉，這台機器永遠報廢。</p>
+<p>對一般細胞來說沒差，重新做一台 COX 就好。但<b>血小板沒有細胞核</b>，它做不出新的 COX-1。所以被 Aspirin 焊過的血小板，<b>一輩子都不會再產生 TXA2</b>——要等 7 到 10 天後新的血小板出來才恢復。</p>
+<p>這就是為什麼<b>低劑量的 Aspirin 就能抗血小板</b>：不需要劑量高，只要每天焊掉新生的那一批就夠了。也是為什麼 111 年那題說它「減少暫時性腦缺血發作」是對的。</p>
+<p>還有三件事跟著記：它<b>偏 COX-1</b>；它在體內<b>代謝成水楊酸</b>；它<b>退燒是靠穿過血腦障壁、抑制下視丘的 PGE2</b>——所以正常人吃了體溫不會降。</p>
+<p>「那 Diflunisal 呢？」</p>
+<p>「它是<b>沒有乙醯基</b>的水楊酸類。沒有乙醯基就沒東西可以焊，所以它<b>不是</b> COX-1 選擇性的那種不可逆抑制。111 年就拿這一點出題。」</p>
+</div>
+
+<figure class="boxfig" data-visual-id="nsbox-02-reality" data-image-kind="mechanism" data-explanation-verified="true">
+<span class="figtag">機轉圖解</span>
+<img data-visual-id="nsbox-02-reality" src="img/nsbox-02-reality.webp" alt="機轉圖解：COX-1 管胃與血小板、COX-2 管發炎；Aspirin 乙醯化後不可逆。" loading="lazy" decoding="async" width="1600" height="914">
+<figcaption>機轉圖解：COX-1 管胃與血小板、COX-2 管發炎；Aspirin 乙醯化後不可逆。</figcaption>
+</figure>
+<div class="reality"><span class="tag">回到現實</span>
+<p>112 年的詳解把核心一次講完：</p>
+<p class="quote">詳解原文（112）:「(D) 錯誤。Aspirin不可逆地抑制血小板中的 COX-1，這是它與其他NSAIDs的不同之處。Aspirin透過acetylation COX-1，永久性地抑制 COX-1 的活性，從而阻止了血小板生成TXA2……因為血小板無法自行產生新的 COX-1，這種抑制作用會持續到新的血小板生成（大約7-10天）。」</p>
+<p>113 年再補三條：</p>
+<p class="quote">詳解原文（113）:「(B) Aspirin是脂溶性的，可穿過 BBB，作用在下視丘，抑制 PGE2的作用，避免體溫上升，所以對正常人不會有影響　(C) Aspirin會抑制內皮細胞的 PGI2 (短期抑制)，和抑制血小板的 TxA2 (長期抑制)。能夠達到預防血栓的目的，主要是因為不可逆的抑制了血小板的 TxA2　(D) Reye's syndrome發生在受病毒感染……且服用Aspirin的「Children」(而非adult)」</p>
+<p><b>Aspirin 七條，三年全部考過：</b></p>
+<p>① <b>對 COX-1 比對 COX-2 更具選擇性。</b><br>
+② <b>不可逆</b>乙醯化血小板 COX-1；效果持續到新血小板生成（7–10 天）。「reversibly」就是錯的。<br>
+③ <b>低劑量即可抑制血小板</b>，用於預防心血管事件、減少 TIA。<br>
+④ 在體內<b>代謝成水楊酸</b>。<br>
+⑤ <b>退燒靠抑制下視丘 PGE2</b>，正常人吃了體溫不降。<br>
+⑥ <b>抗血栓靠的是長期抑制血小板 TXA2</b>，不是抑制內皮 PGI2（那只是短期、而且方向相反）。<br>
+⑦ <b>Reye's syndrome 發生在病毒感染的「小孩」</b>，不是成人。</p>
+<p class="infer">另一個 113 年的干擾選項值得記：<b>Aspirin 不能取代秋水仙素治急性痛風</b>——低劑量反而使尿酸滯留、加重痛風；高劑量雖促進排泄但副作用太大。這句在第五章會再出現。</p>
+</div>
+
+<figure class="boxfig" data-visual-id="nsbox-03-keybox" data-image-kind="comparison" data-explanation-verified="true">
+<span class="figtag">水楊酸家族</span>
+<img data-visual-id="nsbox-03-keybox" src="img/nsbox-03-keybox.webp" alt="水楊酸家族：有乙醯基的 Aspirin 才能不可逆抑制；Diflunisal 沒有乙醯基。" loading="lazy" decoding="async" width="1600" height="914">
+<figcaption>水楊酸家族：有乙醯基的 Aspirin 才能不可逆抑制；Diflunisal 沒有乙醯基。</figcaption>
+</figure>
+<div class="keybox"><span class="tag">有沒有乙醯基</span>
+<p>111 年第 45 題把水楊酸類分成兩支：</p>
+<p><b>乙醯化水楊酸（acetylated）＝ Aspirin。</b>有乙醯基可以焊到 COX 上 → 不可逆。</p>
+<p><b>非乙醯化水楊酸（nonacetylated）＝ Diflunisal 等。</b>沒有乙醯基 → 不能不可逆抑制 → <b>不是 COX-1 選擇性抑制劑</b>。</p>
+<p class="quote">詳解原文（111）:「老師的講義中並無提及Diflunisal為COX1 selective　根據其結構，並沒有乙醯基轉給COX酵素」</p>
+<p class="infer">記法：<b>「Aspirin」的化學名是 acetylsalicylic acid——名字裡就有 acetyl。</b>沒有這個字首的水楊酸類，就沒有那一刀。</p>
+</div>
+
+<article data-question-id="111-p38-q45" data-placement="chapter">
+  <span class="qhead">111 年 期中考 第 45 題 ｜ 吳炳男</span>
+  <p class="stem">All of the following statements regarding acetylated and nonacetylated salicylates are correct EXCEPT?</p>
+  <ul class="opts">
+    <li>(A) Diflunisal belongs to nonacetylated salicylates.</li>
+    <li>(B) Diflunisal belongs to COX-1 selective inhibitor.</li>
+    <li>(C) Aspirin selectively inhibits platelet function at low doses.</li>
+    <li>(D) Aspirin reduces the incidence of transient ischemic attacks.</li>
+  </ul>
+  <details data-kind="answer">
+    <summary>答案與詳解</summary>
+    <div data-kind="zh-translation">
+      <p><strong>中文題目：</strong>下列關於乙醯化與非乙醯化水楊酸類的敘述，何者<b>錯誤</b>？</p>
+      <p>(A) Diflunisal 屬於非乙醯化水楊酸類。</p>
+      <p>(B) Diflunisal 屬於 COX-1 選擇性抑制劑。</p>
+      <p>(C) Aspirin 在低劑量時選擇性地抑制血小板功能。</p>
+      <p>(D) Aspirin 可減少暫時性腦缺血發作的發生率。</p>
+    </div>
+    <p class="ans">答案：(B) Diflunisal belongs to COX-1 selective inhibitor.</p>
+    <p class="quote">詳解原文:「老師的講義中並無提及Diflunisal為COX1 selective　根據其結構，並沒有乙醯基轉給COX酵素」</p>
+    <p>Diflunisal <b>沒有乙醯基</b>，做不到 Aspirin 那種不可逆的 COX-1 抑制。(C)(D) 是 Aspirin 抗血小板的兩個標準敘述。</p>
+    <p class="src">出處：吳炳男 非類固醇抗發炎之藥理學 ｜ BM111 BLOCK-8 期中考詳解.pdf 第 38 頁</p>
+  </details>
+</article>
+
+<article data-question-id="112-p61-q45" data-placement="chapter">
+  <span class="qhead">112 年 期中考 第 45 題 ｜ 吳炳男</span>
+  <p class="stem">Which of the following statements regarding Aspirin is wrong?</p>
+  <ul class="opts">
+    <li>(A) It is more selective inhibition on COX-1 than on COX-2.</li>
+    <li>(B) It is metabolized to salicylic acid</li>
+    <li>(C) It inhibits platelet function at low doses</li>
+    <li>(D) It can reversibly suppress platelet COX-1</li>
+  </ul>
+  <details data-kind="answer">
+    <summary>答案與詳解</summary>
+    <div data-kind="zh-translation">
+      <p><strong>中文題目：</strong>下列關於 Aspirin 的敘述，何者<b>錯誤</b>？</p>
+      <p>(A) 它對 COX-1 的抑制比對 COX-2 更具選擇性。</p>
+      <p>(B) 它會被代謝為水楊酸。</p>
+      <p>(C) 它在低劑量時抑制血小板功能。</p>
+      <p>(D) 它可以<b>可逆地</b>抑制血小板的 COX-1。</p>
+    </div>
+    <p class="ans">答案：D</p>
+    <p class="quote">詳解原文:「(D) 錯誤。Aspirin不可逆地抑制血小板中的 COX-1，這是它與其他NSAIDs的不同之處。……因為血小板無法自行產生新的 COX-1，這種抑制作用會持續到新的血小板生成（大約7-10天）。」</p>
+    <p><b>「reversibly」一個字就錯了。</b>Aspirin 的乙醯化是不可逆的，這是它與其他 NSAID 最大的分野。</p>
+    <p class="src">出處：吳炳男 非類固醇抗炎藥物之藥理學 ppt pg.7, 9 ｜ BM112_Block 8 期中考(含申覆內容與結果).pdf 第 61 頁</p>
+  </details>
+</article>
+
+<article data-question-id="113fin-p17-q19" data-placement="chapter">
+  <span class="qhead">113 年 期末考 第 19 題 ｜ 陳柏任</span>
+  <p class="stem">Which of the following statements about aspirin is correct ?</p>
+  <ul class="opts">
+    <li>(A) It can be replace colchicine in the treatment of acute gout.</li>
+    <li>(B) Its antipyretic effect is due to inhibition of hypothalamic PGE₂.</li>
+    <li>(C) It prevents thrombosis by inhibiting PGI₂ in vascular endothelial cells.</li>
+    <li>(D) Use of aspirin in adults with influenza increases the risk of Reye's syndrome.</li>
+  </ul>
+  <details data-kind="answer">
+    <summary>答案與詳解</summary>
+    <div data-kind="zh-translation">
+      <p><strong>中文題目：</strong>下列關於 aspirin 的敘述，何者<b>正確</b>？</p>
+      <p>(A) 它可以取代秋水仙素治療急性痛風。</p>
+      <p>(B) 它的退燒作用來自抑制下視丘的 PGE₂。</p>
+      <p>(C) 它藉由抑制血管內皮細胞的 PGI₂ 來預防血栓。</p>
+      <p>(D) 成人流感時使用 aspirin 會增加 Reye's syndrome 的風險。</p>
+    </div>
+    <p class="ans">答案：(B)</p>
+    <p class="quote">詳解原文:「(A) 急性痛風應使用Colchicine……Aspirin低劑量(1-2 g/d)會加重痛風　(B) Aspirin是脂溶性的，可穿過 BBB，作用在下視丘，抑制 PGE2的作用　(C) ……能夠達到預防血栓的目的，主要是因為不可逆的抑制了血小板的 TxA2　(D) Reye's syndrome發生在……「Children」(而非adult)」</p>
+    <p>三個錯項各錯一處：<b>急性痛風不用 Aspirin</b>、<b>抗血栓靠的是血小板 TXA2 不是內皮 PGI2</b>、<b>Reye's 是小孩不是成人</b>。</p>
+    <p class="src">出處：陳柏任 非類固醇抗炎藥物之藥理學 ppt pg. 17、18、24 ｜ BM113_Block8期末考詳解.pdf 第 17 頁</p>
+  </details>
+</article>
+</section>
+<section id="chapter-2" data-chapter-kind="story">
+<h2>二、Acetaminophen：它不是消炎藥</h2>
+
+<figure class="boxfig" data-visual-id="nsbox-04-story" data-image-kind="story" data-explanation-verified="true">
+<span class="figtag">情境場景</span>
+<img data-visual-id="nsbox-04-story" src="img/nsbox-04-story.webp" alt="情境場景：它只在中樞工作，不去周邊的發炎現場，所以退燒止痛卻不消炎。" loading="lazy" decoding="async" width="1600" height="914">
+<figcaption>情境場景：它只在中樞工作，不去周邊的發炎現場，所以退燒止痛卻不消炎。</figcaption>
+</figure>
+<div class="story" data-prose-kind="story"><span class="tag">故事</span>
+<p>Acetaminophen（普拿疼）常被放在 NSAID 這堂課裡講，但它其實是個<b>異類</b>：它<b>幾乎不去周邊組織的發炎現場</b>。它對周邊的 COX-1、COX-2 都很弱，主要作用在中樞。所以它<b>能退燒、能止痛，卻沒有消炎作用</b>。</p>
+<p>三年三題，每一年都有一個選項想騙你說它「有強效抗發炎作用」或「強力抑制周邊 COX」——<b>全部是錯的</b>。</p>
+<p>既然它這麼溫和，考題就轉去問它<b>唯一的危險</b>：肝。</p>
+<p>正常劑量下，它的代謝產物會被肝臟裡的<b>穀胱甘肽</b>（glutathione）中和掉。但一次吞太多——例如一次三十顆——穀胱甘肽用光，有毒的代謝物就直接攻擊肝細胞，造成<b>致命的肝壞死</b>。</p>
+<p>解法是補穀胱甘肽。但穀胱甘肽本身吃了沒用，要給它的前驅物——<b>N-acetylcysteine（NAC，就是愛克痰）</b>。NAC 進去以後把穀胱甘肽<b>還原</b>回有作用的<b>還原態</b>，肝就能繼續解毒。</p>
+<p>「所以『增加氧化態穀胱甘肽有助解毒』——」</p>
+<p>「錯。<b>能解毒的是還原態</b>。氧化態是已經用掉的。113 年就考這個。」</p>
+<p>最後兩個數字：成人<b>一天不要超過 4 公克</b>（111 年寫 10 公克就是錯的）；<b>長期使用會傷腎</b>。</p>
+</div>
+
+<figure class="boxfig" data-visual-id="nsbox-05-reality" data-image-kind="mechanism" data-explanation-verified="true">
+<span class="figtag">解毒圖解</span>
+<img data-visual-id="nsbox-05-reality" src="img/nsbox-05-reality.webp" alt="解毒圖解：過量時穀胱甘肽耗盡、肝壞死；NAC 補回還原態穀胱甘肽。" loading="lazy" decoding="async" width="1600" height="914">
+<figcaption>解毒圖解：過量時穀胱甘肽耗盡、肝壞死；NAC 補回還原態穀胱甘肽。</figcaption>
+</figure>
+<div class="reality"><span class="tag">回到現實</span>
+<p class="quote">詳解原文（112）:「AB：Acetaminophen較特別，為COX-2b inhibitor，其效果為鎮痛解熱，無「消炎作用」因此AB都錯　D：Antidote為N-acetylcysteine（複習一下，他是愛克痰）」</p>
+<p class="quote">詳解原文（113）:「(C) Glutathione要達到detoxification的效果必須要是reduced form，如同NAC的作用就是還原glutathione，才可以解Acetaminophen過量的問題」</p>
+<p><b>Acetaminophen 六條：</b></p>
+<p>① <b>無消炎作用</b>；周邊 COX-1／COX-2 抑制都弱。<br>
+② <b>鎮痛、解熱</b>是它的兩個用途。<br>
+③ 成人劑量<b>不超過 4 g/d</b>。<br>
+④ 過量（如一次 30 顆）→ <b>致命肝壞死</b>。<br>
+⑤ 解毒劑是 <b>N-acetylcysteine（NAC）</b>，作用是把穀胱甘肽<b>還原</b>成有效的還原態。<br>
+⑥ <b>長期使用可致慢性腎毒性</b>。</p>
+<p class="infer">三年的錯項全是同一招——<b>把 NSAID 的特性安到它頭上</b>（強效消炎、強力抑制周邊 COX）——或<b>把數字放大</b>（10 g/d）、<b>把解毒說反</b>（無解毒劑／氧化態才有效）。</p>
+</div>
+
+<article data-question-id="111-p39-q46" data-placement="chapter">
+  <span class="qhead">111 年 期中考 第 46 題 ｜ 吳炳男</span>
+  <p class="stem">Which of the following statements regarding Acetaminophen is correct?</p>
+  <ul class="opts">
+    <li>(A) It has significant COX-2 inhibitory actions.</li>
+    <li>(B) It has potent anti-inflammatory effects.</li>
+    <li>(C) Dosing in adults is recommended not to exceed 10 g/d.</li>
+    <li>(D) N-acetylcysteine can be used for those at risk of hepatic injury.</li>
+  </ul>
+  <details data-kind="answer">
+    <summary>答案與詳解</summary>
+    <div data-kind="zh-translation">
+      <p><strong>中文題目：</strong>下列關於 Acetaminophen 的敘述，何者<b>正確</b>？</p>
+      <p>(A) 它有顯著的 COX-2 抑制作用。</p>
+      <p>(B) 它有強效的抗發炎作用。</p>
+      <p>(C) 成人建議劑量不超過每日 10 公克。</p>
+      <p>(D) N-acetylcysteine 可用於有肝損傷風險者。</p>
+    </div>
+    <p class="ans">答案：(D) N-acetylcysteine can be used for those at risk of hepatic injury.</p>
+    <p>原卷<b>詳解欄留空</b>。(A)(B) 都是把 NSAID 的特性硬安上去；(C) 的上限是 <b>4 g/d</b>，不是 10。</p>
+    <p class="src">出處：吳炳男 非類固醇抗發炎之藥理學 ｜ BM111 BLOCK-8 期中考詳解.pdf 第 39 頁</p>
+  </details>
+</article>
+
+<article data-question-id="112-p65-q46" data-placement="chapter">
+  <span class="qhead">112 年 期中考 第 46 題 ｜ 吳炳男</span>
+  <p class="stem">Which of the following statements regarding Acetaminophen is correct?</p>
+  <ul class="opts">
+    <li>(A) It has potent anti-inflammatory effects.</li>
+    <li>(B) It has a strong COX-1 and COX-2 inhibition in peripheral tissues.</li>
+    <li>(C) Dosing in adults is recommended not to exceed 4 g/d in most cases.</li>
+    <li>(D) No antidote can be used for the drug overdose-induced hepatic necrosis.</li>
+  </ul>
+  <details data-kind="answer">
+    <summary>答案與詳解</summary>
+    <div data-kind="zh-translation">
+      <p><strong>中文題目：</strong>下列關於 Acetaminophen 的敘述，何者<b>正確</b>？</p>
+      <p>(A) 它有強效的抗發炎作用。</p>
+      <p>(B) 它在周邊組織對 COX-1 與 COX-2 有強力抑制。</p>
+      <p>(C) 成人建議劑量在多數情況下不超過每日 4 公克。</p>
+      <p>(D) 藥物過量造成的肝壞死沒有解毒劑可用。</p>
+    </div>
+    <p class="ans">答案：C</p>
+    <p class="quote">詳解原文:「AB：Acetaminophen較特別，為COX-2b inhibitor，其效果為鎮痛解熱，無「消炎作用」因此AB都錯　D：Antidote為N-acetylcysteine（複習一下，他是愛克痰）」</p>
+    <p>與 111 年是同一組事實換個排列：這年把正確的數字（4 g/d）放進來當答案，把解毒劑改寫成「沒有解毒劑」當錯項。</p>
+    <p class="src">出處：吳炳男 非類固醇抗炎藥物之藥理學 ppt pg.19 ｜ BM112_Block 8 期中考(含申覆內容與結果).pdf 第 65 頁</p>
+  </details>
+</article>
+
+<article data-question-id="113fin-p20-q20" data-placement="chapter">
+  <span class="qhead">113 年 期末考 第 20 題 ｜ 陳柏任</span>
+  <p class="stem">Which of the following statements about acetaminophen toxicity is incorrect ?</p>
+  <ul class="opts">
+    <li>(A) Taking 30 tablets at once can cause fatal hepatic necrosis.</li>
+    <li>(B) The antidote for acetaminophen overdose is N-acetylcysteine (NAC).</li>
+    <li>(C) Increasing oxidized glutathione levels in liver helps detoxification.</li>
+    <li>(D) Long-term use may lead to chronic nephrotoxicity.</li>
+  </ul>
+  <details data-kind="answer">
+    <summary>答案與詳解</summary>
+    <div data-kind="zh-translation">
+      <p><strong>中文題目：</strong>下列關於 acetaminophen 毒性的敘述，何者<b>錯誤</b>？</p>
+      <p>(A) 一次服用 30 顆可造成致命的肝壞死。</p>
+      <p>(B) Acetaminophen 過量的解毒劑是 N-acetylcysteine（NAC）。</p>
+      <p>(C) 提高肝臟中<b>氧化態</b>穀胱甘肽的濃度有助於解毒。</p>
+      <p>(D) 長期使用可能導致慢性腎毒性。</p>
+    </div>
+    <p class="ans">答案：(C)</p>
+    <p class="quote">詳解原文:「(C) Glutathione要達到detoxification的效果必須要是reduced form，如同NAC的作用就是還原glutathione，才可以解Acetaminophen過量的問題，也就是(B)的概念。」</p>
+    <p>這年考得更深一層：<b>解毒靠的是「還原態」穀胱甘肽</b>，NAC 的工作就是把它還原。寫成「氧化態」就反了。</p>
+    <p class="src">出處：非類固醇抗炎藥物之藥理學 陳柏任 ｜ BM113_Block8期末考詳解.pdf 第 20 頁</p>
+  </details>
+</article>
+</section>
+<section id="chapter-3" data-chapter-kind="story">
+<h2>三、COX-2 選擇性：保胃，不保心</h2>
+
+<figure class="boxfig" data-visual-id="nsbox-06-story" data-image-kind="story" data-explanation-verified="true">
+<span class="figtag">情境場景</span>
+<img data-visual-id="nsbox-06-story" src="img/nsbox-06-story.webp" alt="情境場景：只關臨時廠、不動常設廠——胃保住了，但天平往血栓那邊倒。" loading="lazy" decoding="async" width="1600" height="914">
+<figcaption>情境場景：只關臨時廠、不動常設廠——胃保住了，但天平往血栓那邊倒。</figcaption>
+</figure>
+<div class="story" data-prose-kind="story"><span class="tag">故事</span>
+<p>傳統 NSAID 最大的問題是<b>胃</b>：因為它連 COX-1 一起關，胃黏膜的保護就沒了。</p>
+<p>於是有人想：<b>只關臨時廠（COX-2）、不動常設廠（COX-1）不就好了？</b>這就是 COX-2 選擇性抑制劑——Celecoxib、Etoricoxib 這一家。</p>
+<p>它們確實做到了兩件事：<b>胃潰瘍的風險大幅下降</b>，而且因為<b>不碰血小板的 COX-1，正常劑量下不影響血小板聚集</b>——111 與 112 年的答案都是這一句。</p>
+<p>但身體裡有一座天平。</p>
+<p>血小板那邊做 <b>TXA2</b>（促進凝血），靠 COX-1；血管內皮那邊做 <b>PGI2</b>（抑制凝血、擴張血管），主要靠 COX-2。傳統 NSAID 兩邊一起壓，天平不動。<b>COX-2 選擇性抑制劑只壓 PGI2 那一邊，TXA2 照常生產</b>——長期下來，天平就往<b>血栓</b>那一側倒。</p>
+<p>所以這家藥的副作用表是：<b>胃潰瘍少、但血栓風險增加、血壓上升、水腫</b>。113 年問「哪一個風險最不可能發生」，答案是<b>胃潰瘍</b>；111 年說「不會有水腫」「會降低血栓風險」「會增加 PGI2」，全部是錯的。</p>
+</div>
+
+<figure class="boxfig" data-visual-id="nsbox-07-reality" data-image-kind="mechanism" data-explanation-verified="true">
+<span class="figtag">天平圖解</span>
+<img data-visual-id="nsbox-07-reality" src="img/nsbox-07-reality.webp" alt="天平圖解：TXA2 促凝、PGI2 抗凝；只壓 COX-2 使天平倒向血栓。" loading="lazy" decoding="async" width="1600" height="914">
+<figcaption>天平圖解：TXA2 促凝、PGI2 抗凝；只壓 COX-2 使天平倒向血栓。</figcaption>
+</figure>
+<div class="reality"><span class="tag">回到現實</span>
+<p class="quote">詳解原文（112）:「可看到cox-2幾乎沒有影響血小板凝集作用 所以正常劑量下不影響」</p>
+<p><b>COX-2 選擇性抑制劑五條，三年全考過：</b></p>
+<p>① <b>正常劑量下不影響血小板聚集</b>（血小板只有 COX-1）。<br>
+② <b>長期使用會減少循環中的 PGI2</b>（不是增加）。<br>
+③ 因此<b>增加血栓風險</b>（不是降低）。<br>
+④ <b>會有水腫與高血壓</b>（不是「沒有水腫」）。<br>
+⑤ <b>胃腸潰瘍風險最低</b>——這是它存在的理由。</p>
+<p>另外兩條小的：<b>Etoricoxib 是高度選擇性的 COX-2 抑制劑</b>；<b>Celecoxib 與 warfarin 有交互作用</b>（113 年把它列為「會發生的風險」之一）。</p>
+<p class="infer">解題只要記住方向：<b>凡是說 COX-2 選擇性抑制劑「對心血管有好處」或「沒有心血管副作用」的敘述，一律是錯的；凡是說它「對胃比較好」的，一律是對的。</b></p>
+</div>
+
+<article data-question-id="111-p40-q48" data-placement="chapter">
+  <span class="qhead">111 年 期中考 第 48 題 ｜ 吳炳男</span>
+  <p class="stem">Which of the following statements regarding COX-2 inhibitors is correct?</p>
+  <ul class="opts">
+    <li>(A) There are no incidences of edema.</li>
+    <li>(B) They have no impact on platelet aggregation at usual doses.</li>
+    <li>(C) They increase circulating prostacyclin during long-term therapy.</li>
+    <li>(D) They decrease the incidence of thrombotic risk.</li>
+  </ul>
+  <details data-kind="answer">
+    <summary>答案與詳解</summary>
+    <div data-kind="zh-translation">
+      <p><strong>中文題目：</strong>下列關於 COX-2 抑制劑的敘述，何者<b>正確</b>？</p>
+      <p>(A) 不會發生水腫。</p>
+      <p>(B) 在正常劑量下不影響血小板聚集。</p>
+      <p>(C) 長期治療會增加循環中的前列環素。</p>
+      <p>(D) 它們會降低血栓風險的發生率。</p>
+    </div>
+    <p class="ans">答案：(B) They have no impact on platelet aggregation at usual doses.</p>
+    <p>原卷<b>詳解欄留空</b>。三個錯項全部把方向寫反：<b>會</b>水腫、PGI2 是<b>減少</b>、血栓風險是<b>增加</b>。</p>
+    <p class="src">出處：吳炳男 非類固醇抗發炎之藥理學(ppt pg.5) ｜ BM111 BLOCK-8 期中考詳解.pdf 第 40 頁</p>
+  </details>
+</article>
+
+<article data-question-id="112-p66-q47" data-placement="chapter">
+  <span class="qhead">112 年 期中考 第 47 題 ｜ 吳炳男</span>
+  <p class="stem">Which of the following statements regarding the COX-2 selective inhibitors is wrong?</p>
+  <ul class="opts">
+    <li>(A) It can be linked to an increase in thrombotic risk.</li>
+    <li>(B) It affects platelet aggregation at usual doses</li>
+    <li>(C) Reduction of circulating PGI2 during long-term therapy</li>
+    <li>(D) Etoricoxib is a highly selective COX-2 inhibitor</li>
+  </ul>
+  <details data-kind="answer">
+    <summary>答案與詳解</summary>
+    <div data-kind="zh-translation">
+      <p><strong>中文題目：</strong>下列關於 COX-2 選擇性抑制劑的敘述，何者<b>錯誤</b>？</p>
+      <p>(A) 它可能與血栓風險增加有關。</p>
+      <p>(B) 它在正常劑量下會影響血小板聚集。</p>
+      <p>(C) 長期治療會減少循環中的 PGI2。</p>
+      <p>(D) Etoricoxib 是高度選擇性的 COX-2 抑制劑。</p>
+    </div>
+    <p class="ans">答案：B</p>
+    <p class="quote">詳解原文:「可看到cox-2幾乎沒有影響血小板凝集作用 所以正常劑量下不影響」</p>
+    <p>與 111 年同一句，改成「哪句錯」：<b>它不影響血小板</b>，所以說它「會影響」就錯。(A)(C) 是前一年的錯項改正後的版本。</p>
+    <p class="src">出處：吳炳男 非類固醇抗炎藥物之藥理學 ppt pg.5 ｜ BM112_Block 8 期中考(含申覆內容與結果).pdf 第 66 頁</p>
+  </details>
+</article>
+
+<article data-question-id="113fin-p21-q22" data-placement="chapter">
+  <span class="qhead">113 年 期末考 第 22 題 ｜ 陳柏任</span>
+  <p class="stem">Which of the following is a risk least likely to occur with the use of celecoxib ?</p>
+  <ul class="opts">
+    <li>(A) Gastrointestinal ulcer</li>
+    <li>(B) Hypertension</li>
+    <li>(C) Drug interaction with warfarin</li>
+    <li>(D) Thrombosis</li>
+  </ul>
+  <details data-kind="answer">
+    <summary>答案與詳解</summary>
+    <div data-kind="zh-translation">
+      <p><strong>中文題目：</strong>使用 celecoxib 時，下列哪一種風險<b>最不可能</b>發生？</p>
+      <p>(A) 胃腸潰瘍</p>
+      <p>(B) 高血壓</p>
+      <p>(C) 與 warfarin 的藥物交互作用</p>
+      <p>(D) 血栓</p>
+    </div>
+    <p class="ans">答案：(A)</p>
+    <p>原卷<b>詳解欄留空</b>。<b>保胃是這家藥存在的理由</b>，所以胃腸潰瘍是最不可能的；高血壓、血栓、與 warfarin 的交互作用都是它已知的風險。</p>
+    <p class="src">出處：非類固醇抗炎藥物之藥理學 陳柏任 ppt p.39 ｜ BM113_Block8期末考詳解.pdf 第 21 頁</p>
+  </details>
+</article>
+</section>
+<section id="chapter-4" data-chapter-kind="story">
+<h2>四、每年抽一顆：Nabumetone、Indomethacin、Meloxicam</h2>
+
+<figure class="boxfig" data-visual-id="nsbox-08-story" data-image-kind="story" data-explanation-verified="true">
+<span class="figtag">情境場景</span>
+<img data-visual-id="nsbox-08-story" src="img/nsbox-08-story.webp" alt="情境場景：一排 NSAID 裡，每一顆都有一個只屬於它的標籤。" loading="lazy" decoding="async" width="1600" height="914">
+<figcaption>情境場景：一排 NSAID 裡，每一顆都有一個只屬於它的標籤。</figcaption>
+</figure>
+<div class="story" data-prose-kind="story"><span class="tag">故事</span>
+<p>六個題位裡有一格是「浮動的」：每年從一整排 NSAID 裡抽一顆出來，問它<b>獨有的那個特徵</b>。三年抽了三顆，正好是三種不同的問法。</p>
+<p><b>111 年抽 Nabumetone。</b>它有兩個「唯一」：它是<b>前驅藥</b>（吃進去要先代謝才有活性），而且是<b>目前唯一的非酸性 NSAID</b>。其他 NSAID 幾乎全是酸——這正是它們傷胃的原因之一——只有它不是。</p>
+<p><b>112 年抽 Indomethacin。</b>它的獨門用途是<b>幫早產兒關閉開放性動脈導管</b>（PDA）。動脈導管靠前列腺素維持開放，把前列腺素壓下去它就會關。它也是急性痛風時秋水仙素的替代選項——第五章會再提。副作用偏 COX-1，所以腸胃不適多。</p>
+<p><b>113 年抽 Meloxicam。</b>它是 oxicam 類裡<b>偏向 COX-2</b> 的那一個。題目給了四顆藥問誰的 COX-2 選擇性最強：Ibuprofen 和 Mefenamic acid 是非選擇性、Indomethacin 偏 COX-1，只有 <b>Meloxicam</b> 偏 COX-2。</p>
+<p>所以這一格的複習方式，就是把每顆藥的<b>那一個標籤</b>記住。</p>
+</div>
+
+<figure class="boxfig" data-visual-id="nsbox-09-reality" data-image-kind="comparison" data-explanation-verified="true">
+<span class="figtag">標籤對照</span>
+<img data-visual-id="nsbox-09-reality" src="img/nsbox-09-reality.webp" alt="標籤對照：各 NSAID 的獨門特徵與 COX 選擇性光譜。" loading="lazy" decoding="async" width="1600" height="914">
+<figcaption>標籤對照：各 NSAID 的獨門特徵與 COX 選擇性光譜。</figcaption>
+</figure>
+<div class="reality"><span class="tag">回到現實</span>
+<p class="quote">詳解原文（111）:「(A)上課時老師有提及唯一非酸性NSAID就是Nabumetone」</p>
+<p class="quote">詳解原文（113）:「（A）Ibuprofen：非選擇性，COX-1/COX-2 都抑制。（B）Meloxicam： COX-2 選擇性（本題最強）。（C）Mefenamic acid：非選擇性，對 COX-1/COX-2 相近。（D）Indomethacin：偏 COX-1，胃腸副作用較多。」</p>
+<p><b>三顆藥、三個標籤：</b></p>
+<p>・<b>Nabumetone</b>：<b>前驅藥</b>＋<b>唯一非酸性 NSAID</b>。<br>
+・<b>Indomethacin</b>：<b>加速 PDA 關閉</b>；急性痛風的替代藥；偏 COX-1、腸胃副作用多。<br>
+・<b>Meloxicam</b>：<b>偏 COX-2</b>（在 ibuprofen、mefenamic acid、indomethacin 之中選擇性最強）。</p>
+<p><b>COX 選擇性光譜</b>（由偏 COX-1 到偏 COX-2）：<b>Aspirin、Indomethacin</b> → <b>Ibuprofen、Mefenamic acid</b>（非選擇性）→ <b>Meloxicam</b>（偏 COX-2）→ <b>Celecoxib、Etoricoxib</b>（高度選擇 COX-2）。</p>
+<p class="infer">干擾選項的池子也固定：Meloxicam、Tenoxicam 是 oxicam 類（酸性）；Celecoxib 是 COX-2 選擇性；Mefenamic acid 是 fenamate 類。<b>它們都不是「非酸性」，也都不是 PDA 的用藥。</b></p>
+</div>
+
+<article data-question-id="111-p39-q47" data-placement="chapter">
+  <span class="qhead">111 年 期中考 第 47 題 ｜ 吳炳男</span>
+  <p class="stem">Which of the following NSAIDs is a prodrug and the only nonacid NSAID currently used?</p>
+  <ul class="opts">
+    <li>(A) Nabumetone</li>
+    <li>(B) Meloxicam</li>
+    <li>(C) Tenoxicam</li>
+    <li>(D) Celecoxib</li>
+  </ul>
+  <details data-kind="answer">
+    <summary>答案與詳解</summary>
+    <div data-kind="zh-translation">
+      <p><strong>中文題目：</strong>下列哪一種 NSAID 是前驅藥，且是目前唯一使用中的非酸性 NSAID？</p>
+      <p>(A) Nabumetone</p>
+      <p>(B) Meloxicam</p>
+      <p>(C) Tenoxicam</p>
+      <p>(D) Celecoxib</p>
+    </div>
+    <p class="ans">答案：(A) Nabumetone</p>
+    <p class="quote">詳解原文:「(A)上課時老師有提及唯一非酸性NSAID就是Nabumetone」</p>
+    <p>兩個「唯一」都指向它。(B)(C) 是 oxicam 類的酸性藥，(D) 是 COX-2 選擇性抑制劑。</p>
+    <p class="src">出處：吳炳男 非類固醇抗發炎之藥理學 ｜ BM111 BLOCK-8 期中考詳解.pdf 第 39 頁</p>
+  </details>
+</article>
+
+<article data-question-id="112-p67-q48" data-placement="chapter">
+  <span class="qhead">112 年 期中考 第 48 題 ｜ 吳炳男</span>
+  <p class="stem">Which of the following drugs can accelerate the closure of a patent ductus arteriosus?</p>
+  <ul class="opts">
+    <li>(A) Aspirin,</li>
+    <li>(B) Indomethacin,</li>
+    <li>(C) Nabumetone,</li>
+    <li>(D) Mefenamic acid</li>
+  </ul>
+  <details data-kind="answer">
+    <summary>答案與詳解</summary>
+    <div data-kind="zh-translation">
+      <p><strong>中文題目：</strong>下列哪一種藥物可以加速開放性動脈導管的關閉？</p>
+      <p>(A) Aspirin</p>
+      <p>(B) Indomethacin</p>
+      <p>(C) Nabumetone</p>
+      <p>(D) Mefenamic acid</p>
+    </div>
+    <p class="ans">答案：B</p>
+    <p>原卷<b>詳解欄留空</b>。動脈導管靠前列腺素維持開放；<b>Indomethacin 是臨床上用來促其關閉的 NSAID</b>。這是它的獨門標籤。</p>
+    <p class="src">出處：吳炳男 非類固醇抗炎藥物之藥理學 ppt pg.22 ｜ BM112_Block 8 期中考(含申覆內容與結果).pdf 第 67 頁</p>
+  </details>
+</article>
+
+<article data-question-id="113fin-p21-q21" data-placement="chapter">
+  <span class="qhead">113 年 期末考 第 21 題 ｜ 陳柏任</span>
+  <p class="stem">Among the following NSAIDs, which shows stronger COX-2 selectivity ?</p>
+  <ul class="opts">
+    <li>(A) Ibuprofen</li>
+    <li>(B) Meloxicam</li>
+    <li>(C) Mefenamic acid</li>
+    <li>(D) Indomethacin</li>
+  </ul>
+  <details data-kind="answer">
+    <summary>答案與詳解</summary>
+    <div data-kind="zh-translation">
+      <p><strong>中文題目：</strong>下列 NSAID 中，何者表現出較強的 COX-2 選擇性？</p>
+      <p>(A) Ibuprofen</p>
+      <p>(B) Meloxicam</p>
+      <p>(C) Mefenamic acid</p>
+      <p>(D) Indomethacin</p>
+    </div>
+    <p class="ans">答案：(B)</p>
+    <p class="quote">詳解原文:「（A）Ibuprofen：非選擇性，COX-1/COX-2 都抑制。（B）Meloxicam： COX-2 選擇性（本題最強）。（C）Mefenamic acid：非選擇性，對 COX-1/COX-2 相近。（D）Indomethacin：偏 COX-1，胃腸副作用較多。」</p>
+    <p>四顆藥在光譜上的位置：<b>Indomethacin 偏 COX-1 → Ibuprofen、Mefenamic acid 非選擇性 → Meloxicam 偏 COX-2</b>。</p>
+    <p class="src">出處：非類固醇抗炎藥物之藥理學 陳柏任 PPT p.37 ｜ BM113_Block8期末考詳解.pdf 第 21 頁</p>
+  </details>
+</article>
+</section>
+<section id="chapter-5" data-chapter-kind="story">
+<h2>五、痛風：急性壓發炎、慢性降尿酸</h2>
+
+<figure class="boxfig" data-visual-id="nsbox-10-story" data-image-kind="story" data-explanation-verified="true">
+<span class="figtag">情境場景</span>
+<img data-visual-id="nsbox-10-story" src="img/nsbox-10-story.webp" alt="情境場景：火燒起來的時候先滅火，火滅了才去清倉庫裡的易燃物。" loading="lazy" decoding="async" width="1600" height="914">
+<figcaption>情境場景：火燒起來的時候先滅火，火滅了才去清倉庫裡的易燃物。</figcaption>
+</figure>
+<div class="story" data-prose-kind="story"><span class="tag">故事</span>
+<p>痛風是關節裡堆了尿酸結晶，白血球衝進去吞結晶、引發劇烈發炎。治療分成<b>兩個完全不同的階段</b>，用的藥也是兩套。</p>
+<p><b>急性期：滅火。</b>此時要做的是<b>擋住白血球</b>，不是動尿酸。第一線是<b>秋水仙素</b>（colchicine）：它綁住細胞裡的<b>微管蛋白</b>（tubulin），白血球就走不動、也吞不了東西。注意——<b>它對尿酸的合成與排泄幾乎沒有作用</b>。111 年說它「減少尿酸合成與排泄」，錯；113 年說它「對尿酸排泄影響很小」，對。替代品是 <b>Indomethacin</b>（NSAID 壓發炎）。<b>Aspirin 不行</b>——低劑量反而讓尿酸滯留。</p>
+<p><b>慢性期：清倉庫。</b>火滅了才開始降尿酸，途徑有三：</p>
+<p>・<b>少做</b>：抑制黃嘌呤氧化酶（xanthine oxidase）。<b>Allopurinol</b>（注意 Stevens–Johnson 症候群的風險）與 <b>Febuxostat</b>（腎功能不好也能用）。<br>
+・<b>多排</b>：<b>Probenecid、Sulfinpyrazone</b>，擋住腎小管把尿酸再吸收回去——擋的位置是<b>近端</b>小管，112 年寫「遠端」就是錯的。<br>
+・<b>直接分解</b>：<b>Pegloticase</b>，下一段。</p>
+<p>「急性發作的時候可不可以順便開 Probenecid？」</p>
+<p>「<b>不行。</b>急性期突然把尿酸濃度拉下來，結晶會重新溶出、發作反而更兇。降尿酸藥要等急性期過了再開。113 年考的就是這句。」</p>
+</div>
+
+<figure class="boxfig" data-visual-id="nsbox-11-reality" data-image-kind="comparison" data-explanation-verified="true">
+<span class="figtag">痛風藥對照</span>
+<img data-visual-id="nsbox-11-reality" src="img/nsbox-11-reality.webp" alt="痛風藥對照：急性期用秋水仙素或 Indomethacin；慢性期抑制合成、促進排泄或直接分解。" loading="lazy" decoding="async" width="1600" height="914">
+<figcaption>痛風藥對照：急性期用秋水仙素或 Indomethacin；慢性期抑制合成、促進排泄或直接分解。</figcaption>
+</figure>
+<div class="reality"><span class="tag">回到現實 ①　急性與慢性</span>
+<p class="quote">詳解原文（111）:「Colchicine主要作用是抑制白血球的移動和吞噬作用，是針對急性痛風。」</p>
+<p class="quote">詳解原文（113）:「(C)錯誤。 Probenecid 是一種促尿酸排泄藥物 (uricosuric agent)，屬於「降尿酸藥物」(Urate-Lowering Therapy, ULT)。」</p>
+<p><b>急性期（壓發炎）</b>：<br>
+・<b>Colchicine</b>：綁 <b>tubulin</b>，抑制白血球移動與吞噬；<b>對尿酸合成與排泄幾乎無作用</b>。<br>
+・<b>Indomethacin</b>：可作為秋水仙素的替代。<br>
+・<b>Aspirin 不用</b>（低劑量加重痛風）。</p>
+<p><b>慢性期（降尿酸，ULT）</b>：<br>
+・<b>Allopurinol</b>：抑制 xanthine oxidase；有 <b>Stevens–Johnson syndrome</b> 風險。<br>
+・<b>Febuxostat</b>：抑制 xanthine oxidase，減少總尿酸負荷；<b>腎功能不佳者適用</b>。<br>
+・<b>Probenecid、Sulfinpyrazone</b>：促尿酸排泄（uricosuric），阻斷腎<b>近端</b>小管的主動再吸收；<b>不可在急性發作期直接使用</b>。</p>
+</div>
+
+<figure class="boxfig" data-visual-id="nsbox-12-keybox" data-image-kind="mechanism" data-explanation-verified="true">
+<span class="figtag">Pegloticase 圖解</span>
+<img data-visual-id="nsbox-12-keybox" src="img/nsbox-12-keybox.webp" alt="Pegloticase 圖解：尿酸氧化酶把尿酸變成 allantoin 與 H2O2，G6PD 缺乏者無法處理 H2O2。" loading="lazy" decoding="async" width="1600" height="914">
+<figcaption>Pegloticase 圖解：尿酸氧化酶把尿酸變成 allantoin 與 H2O2，G6PD 缺乏者無法處理 H2O2。</figcaption>
+</figure>
+<div class="keybox"><span class="tag">回到現實 ②　Pegloticase</span>
+<p>人類沒有尿酸氧化酶，所以尿酸是我們嘌呤代謝的終點。<b>Pegloticase 就是把哺乳類的尿酸氧化酶做成重組蛋白</b>，打進去直接把尿酸氧化成<b>尿囊素</b>（allantoin）——更可溶、無活性、容易排掉。</p>
+<p class="quote">詳解原文（113）:「(A) Pegloticase converts uric acid to allantoin, it doesn't inhibit uric acid biosynthesis. (B) One of its ADR is nephrolithiasis but it has nothing to do with G6PD deficiency. G6PD deficiency patients are unable to reduce H2O2. (C) Correct (D) IV ≥ 2hrs」</p>
+<p><b>Pegloticase 五條，三年全考過：</b></p>
+<p>① 是<b>重組哺乳類尿酸氧化酶</b>（recombinant mammalian urate oxidase / uricase）。<br>
+② 催化尿酸氧化成 <b>allantoin</b>（同時產生 <b>H2O2</b>）。它是<b>分解尿酸</b>，不是抑制合成。<br>
+③ <b>G6PD 缺乏者禁用</b>——因為他們無法還原 H2O2，會溶血。<br>
+④ 適應症是<b>難治性慢性痛風</b>。<br>
+⑤ <b>靜脈輸注需超過 2 小時並注意過敏反應</b>，不是「無需特別注意」。</p>
+<p class="infer">113 年的 (B) 是精心設計的半真半假：<b>腎結石確實是它的副作用之一，但跟 G6PD 無關</b>——G6PD 缺乏引起的問題是 H2O2 處理不了，不是結石。</p>
+</div>
+
+<article data-question-id="111-p40-q49" data-placement="chapter">
+  <span class="qhead">111 年 期中考 第 49 題 ｜ 吳炳男</span>
+  <p class="stem">All of the following statements about anti-gout agents are correct except</p>
+  <ul class="opts">
+    <li>(A) Colchicine can reduce uric acid synthesis and excretion.</li>
+    <li>(B) Probenecid and sulfinpyrazone are uricosuric agents.</li>
+    <li>(C) Febuxostat reduces total uric acid body burden by inhibiting xanthine oxidase.</li>
+    <li>(D) Indomethacin can be alternatively used in acute gout.</li>
+  </ul>
+  <details data-kind="answer">
+    <summary>答案與詳解</summary>
+    <div data-kind="zh-translation">
+      <p><strong>中文題目：</strong>下列關於抗痛風藥物的敘述，何者<b>錯誤</b>？</p>
+      <p>(A) 秋水仙素可以減少尿酸的合成與排泄。</p>
+      <p>(B) Probenecid 與 sulfinpyrazone 是促尿酸排泄劑。</p>
+      <p>(C) Febuxostat 藉由抑制黃嘌呤氧化酶減少全身尿酸負荷。</p>
+      <p>(D) Indomethacin 可作為急性痛風的替代用藥。</p>
+    </div>
+    <p class="ans">答案：(A) Colchicine can reduce uric acid synthesis and excretion.</p>
+    <p class="quote">詳解原文:「Colchicine主要作用是抑制白血球的移動和吞噬作用，是針對急性痛風。」</p>
+    <p><b>秋水仙素不動尿酸</b>，它只管白血球。其餘三句都是標準敘述。</p>
+    <p class="src">出處：吳炳男 非類固醇抗發炎之藥理學 ｜ BM111 BLOCK-8 期中考詳解.pdf 第 40 頁</p>
+  </details>
+</article>
+
+<article data-question-id="112-p68-q49" data-placement="chapter">
+  <span class="qhead">112 年 期中考 第 49 題 ｜ 吳炳男</span>
+  <p class="stem">Which of the following statements regarding the anti-gout agents is wrong?</p>
+  <ul class="opts">
+    <li>(A) Colchicine can bind to intracellular protein tubulin.</li>
+    <li>(B) Indomethacin can be used in acute gout as a replacement for colchicine.</li>
+    <li>(C) Febuxostat reduces total uric acid body burden by inhibiting xanthine oxidase.</li>
+    <li>(D) Probenecid blocks the active reabsorption of uric acid at the renal distal tubule.</li>
+  </ul>
+  <details data-kind="answer">
+    <summary>答案與詳解</summary>
+    <div data-kind="zh-translation">
+      <p><strong>中文題目：</strong>下列關於抗痛風藥物的敘述，何者<b>錯誤</b>？</p>
+      <p>(A) 秋水仙素可與細胞內蛋白質微管蛋白結合。</p>
+      <p>(B) Indomethacin 可在急性痛風時取代秋水仙素使用。</p>
+      <p>(C) Febuxostat 藉由抑制黃嘌呤氧化酶減少全身尿酸負荷。</p>
+      <p>(D) Probenecid 阻斷腎臟<b>遠端</b>小管對尿酸的主動再吸收。</p>
+    </div>
+    <p class="ans">答案：D</p>
+    <p>原卷<b>詳解欄留空</b>。Probenecid 阻斷的是<b>近端</b>小管的尿酸再吸收，不是遠端。(A) 是秋水仙素的正確機轉（綁 tubulin），(B)(C) 與 111 年相同。</p>
+    <p class="src">出處：吳炳男 非類固醇抗炎藥物之藥理學 ppt pg.31-33 ｜ BM112_Block 8 期中考(含申覆內容與結果).pdf 第 68 頁</p>
+  </details>
+</article>
+
+<article data-question-id="113fin-p23-q24" data-placement="chapter">
+  <span class="qhead">113 年 期末考 第 24 題 ｜ 陳柏任</span>
+  <p class="stem">Which of the following statements about drugs used in gout is incorrect ?</p>
+  <ul class="opts">
+    <li>(A) Allopurinol carries the risk of Stevens–Johnson syndrome.</li>
+    <li>(B) Febuxostat is suitable for patients with renal impairment.</li>
+    <li>(C) Probenecid can be used directly during an acute gout attack.</li>
+    <li>(D) Colchicine has little effect on uric acid excretion.</li>
+  </ul>
+  <details data-kind="answer">
+    <summary>答案與詳解</summary>
+    <div data-kind="zh-translation">
+      <p><strong>中文題目：</strong>下列關於痛風用藥的敘述，何者<b>錯誤</b>？</p>
+      <p>(A) Allopurinol 有 Stevens–Johnson 症候群的風險。</p>
+      <p>(B) Febuxostat 適用於腎功能不全的病人。</p>
+      <p>(C) Probenecid 可在急性痛風發作期間直接使用。</p>
+      <p>(D) 秋水仙素對尿酸排泄的影響很小。</p>
+    </div>
+    <p class="ans">答案：(C)</p>
+    <p class="quote">詳解原文:「C)錯誤。 Probenecid 是一種促尿酸排泄藥物 (uricosuric agent)，屬於「降尿酸藥物」(Urate-Lowering Therapy, ULT)。」</p>
+    <p><b>降尿酸藥不在急性期開</b>——急性期只壓發炎。(D) 是 111 年錯項的反面，這年寫對了。</p>
+    <p class="src">出處：非類固醇抗炎藥物之藥理學 陳柏任p49 ｜ BM113_Block8期末考詳解.pdf 第 23 頁</p>
+  </details>
+</article>
+
+<article data-question-id="111-p41-q50" data-placement="chapter">
+  <span class="qhead">111 年 期中考 第 50 題 ｜ 吳炳男</span>
+  <p class="stem">Which of the following anti-gout agents is a recombinant mammalian urate oxidase that catalyzes the enzymatic oxidation of uric acid into allantoin, a more soluble and in active metabolite?</p>
+  <ul class="opts">
+    <li>(A) Colchicine</li>
+    <li>(B) Allopurinol</li>
+    <li>(C) Probenecid</li>
+    <li>(D) Pegloticase</li>
+  </ul>
+  <details data-kind="answer">
+    <summary>答案與詳解</summary>
+    <div data-kind="zh-translation">
+      <p><strong>中文題目：</strong>下列哪一種抗痛風藥物是重組哺乳類尿酸氧化酶，能催化尿酸酵素性氧化為尿囊素（一種更可溶且無活性的代謝物）？</p>
+      <p>(A) 秋水仙素</p>
+      <p>(B) Allopurinol</p>
+      <p>(C) Probenecid</p>
+      <p>(D) Pegloticase</p>
+    </div>
+    <p class="ans">答案：(D) Pegloticase</p>
+    <p>原卷<b>詳解欄留空</b>。題幹就是 Pegloticase 的定義。另外三個分別是壓發炎、抑制合成、促進排泄——都不是「分解尿酸」。</p>
+    <p class="src">出處：吳炳男 非類固醇抗發炎之藥理學 ｜ BM111 BLOCK-8 期中考詳解.pdf 第 41 頁</p>
+  </details>
+</article>
+
+<article data-question-id="112-p70-q50" data-placement="chapter">
+  <span class="qhead">112 年 期中考 第 50 題 ｜ 吳炳男</span>
+  <p class="stem">Which of the following statements regarding pegloticase is wrong?</p>
+  <ul class="opts">
+    <li>(A) It is a recombinant mammalian urate oxidase (or uricase).</li>
+    <li>(B) Urate oxidase catalyzes the enzymatic oxidation of uric acid into allantoin.</li>
+    <li>(C) It can be used in patients with G6PD deficiency.</li>
+    <li>(D) It is approved for the treatment of refractory chronic gout.</li>
+  </ul>
+  <details data-kind="answer">
+    <summary>答案與詳解</summary>
+    <div data-kind="zh-translation">
+      <p><strong>中文題目：</strong>下列關於 pegloticase 的敘述，何者<b>錯誤</b>？</p>
+      <p>(A) 它是重組哺乳類尿酸氧化酶（尿酸酶）。</p>
+      <p>(B) 尿酸氧化酶催化尿酸酵素性氧化為尿囊素。</p>
+      <p>(C) 它可用於 G6PD 缺乏的病人。</p>
+      <p>(D) 它核准用於治療難治性慢性痛風。</p>
+    </div>
+    <p class="ans">答案：C</p>
+    <p class="quote">詳解原文:「(C) It cannot be used in patients with G6PD deficiency.」</p>
+    <p>反應產生 <b>H2O2</b>，G6PD 缺乏者還原不了它，會溶血——<b>禁用</b>。</p>
+    <p class="src">出處：吳炳男 非類固醇抗炎之藥物學 (ppt pg.34) ｜ BM112_Block 8 期中考(含申覆內容與結果).pdf 第 70 頁</p>
+  </details>
+</article>
+
+<article data-question-id="113fin-p22-q23" data-placement="chapter">
+  <span class="qhead">113 年 期末考 第 23 題 ｜ 陳柏任</span>
+  <p class="stem">Which of the following statements about pegloticase is correct ?</p>
+  <ul class="opts">
+    <li>(A) It is a recombinant uricase used to inhibit uric acid biosynthesis.</li>
+    <li>(B) It may cause nephrolithiasis in patients with G6PD deficiency.</li>
+    <li>(C) It converts uric acid into allantoin and H₂O₂</li>
+    <li>(D) Intravenous administration requires no special precautions.</li>
+  </ul>
+  <details data-kind="answer">
+    <summary>答案與詳解</summary>
+    <div data-kind="zh-translation">
+      <p><strong>中文題目：</strong>下列關於 pegloticase 的敘述，何者<b>正確</b>？</p>
+      <p>(A) 它是用來抑制尿酸生合成的重組尿酸酶。</p>
+      <p>(B) 它可能在 G6PD 缺乏的病人身上引起腎結石。</p>
+      <p>(C) 它把尿酸轉化為尿囊素與 H₂O₂。</p>
+      <p>(D) 靜脈給藥不需要特別注意事項。</p>
+    </div>
+    <p class="ans">答案：(C)</p>
+    <p class="quote">詳解原文:「(A) Pegloticase converts uric acid to allantoin, it doesn't inhibit uric acid biosynthesis. (B) One of its ADR is nephrolithiasis but it has nothing to do with G6PG deficiency. G6PD deficiency patients are unable to reduce H2O2. (C) Correct (D) IV ≥ 2hrs」</p>
+    <p>(A) 把「分解」寫成「抑制合成」；(B) 把兩個真的事實（腎結石、G6PD）硬接在一起；(D) 靜脈輸注要超過 2 小時並監測過敏。</p>
+    <p class="src">出處：非類固醇抗炎藥物之藥理學- 陳柏任 ppt p. 51 ｜ BM113_Block8期末考詳解.pdf 第 22 頁</p>
+  </details>
+</article>
+</section>
+<section id="chapter-cram" data-chapter-kind="cram">
+<h2>六、考前速記</h2>
+<div class="cram">
+<ul>
+<li><b>每年六題、六個主題、年年同一組</b>：Aspirin／Acetaminophen／COX-2 選擇性／某顆 NSAID 的獨門特徵／痛風藥／Pegloticase。</li>
+<li><b>COX-1 管胃與血小板（常設廠）；COX-2 管發炎（臨時廠）。</b>整科就這一條線。</li>
+<li><b>Aspirin 偏 COX-1、不可逆乙醯化血小板 COX-1</b>，效果持續到新血小板生成（7–10 天）。「reversibly」就是錯的。</li>
+<li><b>低劑量 Aspirin 即可抗血小板</b>，減少 TIA、預防心血管事件。</li>
+<li><b>Aspirin 代謝成水楊酸；退燒靠抑制下視丘 PGE2</b>，正常人吃了體溫不降。</li>
+<li><b>Aspirin 抗血栓靠長期抑制血小板 TXA2</b>，不是抑制內皮 PGI2。</li>
+<li><b>Reye's syndrome 發生在病毒感染的小孩</b>，不是成人。</li>
+<li><b>Aspirin 不能治急性痛風</b>：低劑量反使尿酸滯留。</li>
+<li><b>Diflunisal 沒有乙醯基</b>，不是 COX-1 選擇性的不可逆抑制。</li>
+<li><b>Acetaminophen 不消炎</b>，只鎮痛解熱；周邊 COX 抑制都弱。</li>
+<li><b>Acetaminophen 成人上限 4 g/d</b>；一次 30 顆可致命肝壞死；長期使用傷腎。</li>
+<li><b>解毒劑 NAC（愛克痰）</b>，作用是把穀胱甘肽<b>還原</b>——有效的是還原態，不是氧化態。</li>
+<li><b>COX-2 選擇性抑制劑：正常劑量不影響血小板；長期減少 PGI2；增加血栓風險；會水腫與高血壓；胃潰瘍最少。</b></li>
+<li><b>Etoricoxib 高度選擇 COX-2；Celecoxib 與 warfarin 有交互作用。</b></li>
+<li><b>Nabumetone：前驅藥＋唯一非酸性 NSAID。</b></li>
+<li><b>Indomethacin：加速 PDA 關閉</b>；急性痛風替代藥；偏 COX-1、腸胃副作用多。</li>
+<li><b>Meloxicam：偏 COX-2</b>——比 ibuprofen、mefenamic acid、indomethacin 都強。</li>
+<li><b>急性痛風壓發炎：Colchicine 綁 tubulin 擋白血球</b>，對尿酸合成與排泄幾乎無作用；替代品 Indomethacin。</li>
+<li><b>慢性痛風降尿酸（ULT）</b>：Allopurinol／Febuxostat 抑制 xanthine oxidase；Probenecid／Sulfinpyrazone 促排泄。</li>
+<li><b>Probenecid 阻斷「近端」小管的尿酸再吸收</b>，寫遠端就錯；<b>急性發作期不可直接使用</b>。</li>
+<li><b>Allopurinol 有 SJS 風險；Febuxostat 腎功能不佳可用。</b></li>
+<li><b>Pegloticase ＝ 重組哺乳類尿酸氧化酶</b>，尿酸 → allantoin ＋ H2O2；<b>不是抑制合成</b>。</li>
+<li><b>G6PD 缺乏禁用 Pegloticase</b>（還原不了 H2O2）；適應症難治性慢性痛風；IV 輸注 ≥ 2 小時並防過敏。</li>
+</ul>
+</div>
+</section>
+
+<!-- ================= VOCAB ================= -->
+<section id="chapter-vocab" data-chapter-kind="vocab">
+<h2>七、單字表</h2>
+<dl class="vocab">
+<dt>cyclooxygenase (COX-1 / COX-2)</dt>
+<dd><span class="root">cyclo-（環）+ oxygenase（加氧酶）</span>　環氧化酶。COX-1 恆定表現、管胃黏膜與血小板；COX-2 發炎時誘導、管紅腫熱痛。<details data-kind="vocab-memory"><summary>記憶提示</summary><p><b>1 是常設廠、2 是臨時廠。</b>整科的分類都從這裡長出來。</p></details></dd>
+
+<dt>thromboxane A2 (TXA2)</dt>
+<dd><span class="root">thrombo-（血栓）+ oxane</span>　血栓素 A2。血小板經 COX-1 製造，促進血小板聚集與血管收縮。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>thrombo-＝血栓。<b>Aspirin 抗血栓就是永久關掉它。</b></p></details></dd>
+
+<dt>prostacyclin (PGI2)</dt>
+<dd><span class="root">prosta-（前列腺素）+ cyclin</span>　前列環素。血管內皮主要經 COX-2 製造，抑制血小板聚集、擴張血管。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>它是 TXA2 的<b>對手</b>。只壓它不壓 TXA2，天平就倒向血栓——COX-2 選擇性抑制劑的原罪。</p></details></dd>
+
+<dt>acetylation (irreversible inhibition)</dt>
+<dd><span class="root">acetyl（乙醯基）+ -ation</span>　乙醯化。Aspirin 把乙醯基共價接到 COX 上，造成不可逆抑制。<details data-kind="vocab-memory"><summary>記憶提示</summary><p><b>焊上去拆不掉。</b>血小板沒有核、做不出新的 COX，所以要等 7–10 天。</p></details></dd>
+
+<dt>salicylic acid</dt>
+<dd><span class="root">拉丁 salix＝柳樹</span>　水楊酸。Aspirin 在體內的代謝產物。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>Aspirin 的化學名 acetyl<b>salicylic</b> acid——去掉乙醯基就是它。</p></details></dd>
+
+<dt>Diflunisal</dt>
+<dd><span class="root">di-fluoro-（二氟）+ salicylate</span>　非乙醯化水楊酸類。<details data-kind="vocab-memory"><summary>記憶提示</summary><p><b>沒有乙醯基</b>，所以做不到 Aspirin 那一刀。111 年的考點。</p></details></dd>
+
+<dt>transient ischemic attack (TIA)</dt>
+<dd><span class="root">transient（暫時）+ ischemic（缺血）</span>　暫時性腦缺血發作。低劑量 Aspirin 可減少其發生率。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>抗血小板的臨床用途之一，與「低劑量」配對記。</p></details></dd>
+
+<dt>Reye's syndrome</dt>
+<dd><span class="root">以醫師 Reye 命名</span>　雷氏症候群。病毒感染的<b>兒童</b>服用 Aspirin 後的腦病變與脂肪肝衰竭。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>關鍵字是 <b>children</b>。113 年把它改成 adults 當錯項。</p></details></dd>
+
+<dt>acetaminophen (paracetamol)</dt>
+<dd><span class="root">N-acetyl-para-aminophenol 的縮寫</span>　乙醯胺酚。鎮痛解熱、無消炎作用，成人上限 4 g/d。<details data-kind="vocab-memory"><summary>記憶提示</summary><p><b>不消炎、傷肝、上限 4 克</b>——三年三題就這三件事。</p></details></dd>
+
+<dt>N-acetylcysteine (NAC)</dt>
+<dd><span class="root">N-acetyl + cysteine（半胱胺酸）</span>　乙醯半胱胺酸，Acetaminophen 過量的解毒劑，補充還原態穀胱甘肽。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>就是<b>愛克痰</b>（詳解原話）。它提供半胱胺酸去<b>還原</b>穀胱甘肽。</p></details></dd>
+
+<dt>glutathione (reduced / oxidized)</dt>
+<dd><span class="root">glutamate + cysteine + glycine 三肽</span>　穀胱甘肽。<b>還原態</b>才能中和 Acetaminophen 的毒性代謝物。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>氧化態是<b>用過的</b>。113 年說「提高氧化態有助解毒」就是錯的。</p></details></dd>
+
+<dt>celecoxib / etoricoxib</dt>
+<dd><span class="root">-coxib＝COX-2 inhibitor 的字尾</span>　COX-2 選擇性抑制劑；Etoricoxib 選擇性更高。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>看到 <b>-coxib</b> 就是這一家：保胃、不碰血小板、增加血栓風險。</p></details></dd>
+
+<dt>Nabumetone</dt>
+<dd><span class="root">naphthyl-butanone 的縮寫</span>　前驅藥，目前唯一的非酸性 NSAID。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>兩個「唯一」：<b>唯一非酸性</b>、要先代謝才有活性。</p></details></dd>
+
+<dt>Indomethacin</dt>
+<dd><span class="root">indole（吲哚）+ methacin</span>　吲哚美辛。加速開放性動脈導管關閉；急性痛風替代藥；偏 COX-1。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>獨門標籤是 <b>PDA</b>。動脈導管靠前列腺素撐開，壓下去就關。</p></details></dd>
+
+<dt>patent ductus arteriosus (PDA)</dt>
+<dd><span class="root">patent＝開放的；ductus arteriosus＝動脈導管</span>　開放性動脈導管。出生後未關閉的胎兒血管。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>前列腺素維持它開放 → NSAID（Indomethacin）促其關閉。</p></details></dd>
+
+<dt>Meloxicam</dt>
+<dd><span class="root">-oxicam＝oxicam 類字尾</span>　oxicam 類中偏向 COX-2 的一員。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>在 ibuprofen、mefenamic acid、indomethacin 之中<b>它最偏 COX-2</b>。</p></details></dd>
+
+<dt>colchicine</dt>
+<dd><span class="root">源自秋水仙屬 Colchicum</span>　秋水仙素。綁 tubulin、抑制白血球移動與吞噬，急性痛風第一線。<details data-kind="vocab-memory"><summary>記憶提示</summary><p><b>只管白血球，不管尿酸。</b>「減少尿酸合成與排泄」就是錯的。</p></details></dd>
+
+<dt>tubulin</dt>
+<dd><span class="root">tubule（小管）+ -in</span>　微管蛋白。秋水仙素的結合標的，抑制微管聚合。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>微管壞了，白血球就<b>走不動、吞不了</b>。</p></details></dd>
+
+<dt>uricosuric agent</dt>
+<dd><span class="root">uric（尿酸）+ -uria（尿）</span>　促尿酸排泄劑，如 Probenecid、Sulfinpyrazone，阻斷近端小管再吸收。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>位置是<b>近端</b>小管；<b>急性期不用</b>。兩個考點各考過一次。</p></details></dd>
+
+<dt>xanthine oxidase</dt>
+<dd><span class="root">xanthine（黃嘌呤）+ oxidase</span>　黃嘌呤氧化酶，尿酸合成的最後一步酵素。Allopurinol 與 Febuxostat 抑制它。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>「少做」那條路。Febuxostat 腎不好也能用，Allopurinol 小心 SJS。</p></details></dd>
+
+<dt>Stevens–Johnson syndrome (SJS)</dt>
+<dd><span class="root">以兩位醫師命名</span>　嚴重的藥物過敏性皮膚黏膜反應，Allopurinol 的已知風險。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>113 年當正確敘述出現。Allopurinol 配 SJS。</p></details></dd>
+
+<dt>pegloticase</dt>
+<dd><span class="root">PEG（聚乙二醇）+ uricase</span>　聚乙二醇化重組尿酸氧化酶，把尿酸氧化為尿囊素。<details data-kind="vocab-memory"><summary>記憶提示</summary><p><b>分解</b>尿酸不是抑制合成；產生 H2O2 所以 <b>G6PD 缺乏禁用</b>。</p></details></dd>
+
+<dt>allantoin</dt>
+<dd><span class="root">源自 allantois（尿囊）</span>　尿囊素。尿酸氧化後的產物，更可溶、無活性、易排出。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>人類沒有尿酸酶，所以我們自己做不出它——要靠 Pegloticase。</p></details></dd>
+
+<dt>G6PD deficiency</dt>
+<dd><span class="root">glucose-6-phosphate dehydrogenase</span>　葡萄糖六磷酸去氫酶缺乏。無法還原 H2O2，故禁用 Pegloticase。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>問題是 <b>H2O2 處理不了</b>，不是腎結石——113 年 (B) 就是把兩件真事硬接起來。</p></details></dd>
+</dl>
+</section>
+<section id="chapter-final" data-chapter-kind="final_questions">
+<h2>八、歷年考題總複習</h2>
+<p class="meta">依年度由新到舊、同年依原始題號排列。共 18 題（111、112 期中考與 113 期末考各 6 題）。<b style="color:#f08a8a">紅框</b>＝同一考點在兩個以上年度重複出現。</p>
+<h3><span class="yearchip">113 年</span>期末考 第 19 題</h3>
+<article data-question-id="113fin-p17-q19" data-placement="final" class="repeat">
+  <span class="qhead">113 年 期末考 第 19 題 ｜ 陳柏任</span><span class="repeat-badge">重複考點 ×3</span>
+  <p class="repeat-note">同考點：111 第45題、112 第45題　—　Aspirin：偏 COX-1、不可逆乙醯化血小板 COX-1、低劑量抗血小板、退燒靠下視丘 PGE2、Reye&#x27;s 在小孩</p>
+  <p class="stem">Which of the following statements about aspirin is correct ?</p>
+  <ul class="opts"><li>(A) It can be replace colchicine in the treatment of acute gout.</li><li>(B) Its antipyretic effect is due to inhibition of hypothalamic PGE₂.</li><li>(C) It prevents thrombosis by inhibiting PGI₂ in vascular endothelial cells.</li><li>(D) Use of aspirin in adults with influenza increases the risk of Reye&#x27;s syndrome.</li></ul>
+  <details data-kind="answer"><summary>答案與詳解</summary>
+    <div data-kind="zh-translation"><p><strong>中文題目：</strong>下列關於 aspirin 的敘述，何者<b>正確</b>？</p>
+      <p>(A) 它可以取代秋水仙素治療急性痛風。</p>
+      <p>(B) 它的退燒作用來自抑制下視丘的 PGE₂。</p>
+      <p>(C) 它藉由抑制血管內皮細胞的 PGI₂ 來預防血栓。</p>
+      <p>(D) 成人流感時使用 aspirin 會增加 Reye's syndrome 的風險。</p></div>
+    <p class="ans">答案：(B)</p>
+    <p>退燒靠下視丘 PGE2；不能治急性痛風；抗血栓靠血小板 TXA2；Reye&#x27;s 是小孩。<span class="src"> ｜ BM113_Block8期末考詳解 第 17 頁</span></p>
+  </details>
+</article>
+<article data-question-id="113fin-p20-q20" data-placement="final" class="repeat">
+  <span class="qhead">113 年 期末考 第 20 題 ｜ 陳柏任</span><span class="repeat-badge">重複考點 ×3</span>
+  <p class="repeat-note">同考點：111 第46題、112 第46題　—　Acetaminophen：只鎮痛解熱不消炎、成人上限 4 g/d、過量肝壞死、解毒劑 NAC 還原 glutathione</p>
+  <p class="stem">Which of the following statements about acetaminophen toxicity is incorrect ?</p>
+  <ul class="opts"><li>(A) Taking 30 tablets at once can cause fatal hepatic necrosis.</li><li>(B) The antidote for acetaminophen overdose is N-acetylcysteine (NAC).</li><li>(C) Increasing oxidized glutathione levels in liver helps detoxification.</li><li>(D) Long-term use may lead to chronic nephrotoxicity.</li></ul>
+  <details data-kind="answer"><summary>答案與詳解</summary>
+    <div data-kind="zh-translation"><p><strong>中文題目：</strong>下列關於 acetaminophen 毒性的敘述，何者<b>錯誤</b>？</p>
+      <p>(A) 一次服用 30 顆可造成致命的肝壞死。</p>
+      <p>(B) Acetaminophen 過量的解毒劑是 N-acetylcysteine（NAC）。</p>
+      <p>(C) 提高肝臟中<b>氧化態</b>穀胱甘肽的濃度有助於解毒。</p>
+      <p>(D) 長期使用可能導致慢性腎毒性。</p></div>
+    <p class="ans">答案：(C)</p>
+    <p>能解毒的是還原態穀胱甘肽，NAC 的工作就是還原它。<span class="src"> ｜ BM113_Block8期末考詳解 第 20 頁</span></p>
+  </details>
+</article>
+<article data-question-id="113fin-p21-q21" data-placement="final" class="repeat">
+  <span class="qhead">113 年 期末考 第 21 題 ｜ 陳柏任</span><span class="repeat-badge">重複考點 ×3</span>
+  <p class="repeat-note">同考點：111 第47題、112 第48題　—　個別 NSAID 的獨門特徵：Nabumetone 唯一非酸性前驅藥、Indomethacin 關閉動脈導管、Meloxicam 偏 COX-2</p>
+  <p class="stem">Among the following NSAIDs, which shows stronger COX-2 selectivity ?</p>
+  <ul class="opts"><li>(A) Ibuprofen</li><li>(B) Meloxicam</li><li>(C) Mefenamic acid</li><li>(D) Indomethacin</li></ul>
+  <details data-kind="answer"><summary>答案與詳解</summary>
+    <div data-kind="zh-translation"><p><strong>中文題目：</strong>下列 NSAID 中，何者表現出較強的 COX-2 選擇性？</p>
+      <p>(A) Ibuprofen</p>
+      <p>(B) Meloxicam</p>
+      <p>(C) Mefenamic acid</p>
+      <p>(D) Indomethacin</p></div>
+    <p class="ans">答案：(B)</p>
+    <p>Meloxicam 偏 COX-2；Indomethacin 偏 COX-1；另外兩個非選擇性。<span class="src"> ｜ BM113_Block8期末考詳解 第 21 頁</span></p>
+  </details>
+</article>
+<article data-question-id="113fin-p21-q22" data-placement="final" class="repeat">
+  <span class="qhead">113 年 期末考 第 22 題 ｜ 陳柏任 ｜ 來源答案欄</span><span class="repeat-badge">重複考點 ×3</span>
+  <p class="repeat-note">同考點：111 第48題、112 第47題　—　COX-2 選擇性抑制劑：不影響血小板、減少 PGI2、增加血栓風險、胃潰瘍最少</p>
+  <p class="stem">Which of the following is a risk least likely to occur with the use of celecoxib ?</p>
+  <ul class="opts"><li>(A) Gastrointestinal ulcer</li><li>(B) Hypertension</li><li>(C) Drug interaction with warfarin</li><li>(D) Thrombosis</li></ul>
+  <details data-kind="answer"><summary>答案與詳解</summary>
+    <div data-kind="zh-translation"><p><strong>中文題目：</strong>使用 celecoxib 時，下列哪一種風險<b>最不可能</b>發生？</p>
+      <p>(A) 胃腸潰瘍</p>
+      <p>(B) 高血壓</p>
+      <p>(C) 與 warfarin 的藥物交互作用</p>
+      <p>(D) 血栓</p></div>
+    <p class="ans">答案：(A)</p>
+    <p>保胃是 celecoxib 存在的理由，胃潰瘍是最不可能的風險。<span class="src"> ｜ BM113_Block8期末考詳解 第 21 頁</span></p>
+  </details>
+</article>
+<article data-question-id="113fin-p22-q23" data-placement="final" class="repeat">
+  <span class="qhead">113 年 期末考 第 23 題 ｜ 陳柏任</span><span class="repeat-badge">重複考點 ×3</span>
+  <p class="repeat-note">同考點：111 第50題、112 第50題　—　Pegloticase：重組尿酸氧化酶把尿酸變成 allantoin 與 H2O2，G6PD 缺乏禁用</p>
+  <p class="stem">Which of the following statements about pegloticase is correct ?</p>
+  <ul class="opts"><li>(A) It is a recombinant uricase used to inhibit uric acid biosynthesis.</li><li>(B) It may cause nephrolithiasis in patients with G6PD deficiency.</li><li>(C) It converts uric acid into allantoin and H₂O₂</li><li>(D) Intravenous administration requires no special precautions.</li></ul>
+  <details data-kind="answer"><summary>答案與詳解</summary>
+    <div data-kind="zh-translation"><p><strong>中文題目：</strong>下列關於 pegloticase 的敘述，何者<b>正確</b>？</p>
+      <p>(A) 它是用來抑制尿酸生合成的重組尿酸酶。</p>
+      <p>(B) 它可能在 G6PD 缺乏的病人身上引起腎結石。</p>
+      <p>(C) 它把尿酸轉化為尿囊素與 H₂O₂。</p>
+      <p>(D) 靜脈給藥不需要特別注意事項。</p></div>
+    <p class="ans">答案：(C)</p>
+    <p>尿酸變 allantoin 加 H2O2；不是抑制合成；腎結石與 G6PD 無關。<span class="src"> ｜ BM113_Block8期末考詳解 第 22 頁</span></p>
+  </details>
+</article>
+<article data-question-id="113fin-p23-q24" data-placement="final" class="repeat">
+  <span class="qhead">113 年 期末考 第 24 題 ｜ 陳柏任</span><span class="repeat-badge">重複考點 ×3</span>
+  <p class="repeat-note">同考點：111 第49題、112 第49題　—　痛風藥：秋水仙素綁 tubulin 只管急性、Probenecid 促排泄且不用於急性期、Febuxostat 抑制 XO</p>
+  <p class="stem">Which of the following statements about drugs used in gout is incorrect ?</p>
+  <ul class="opts"><li>(A) Allopurinol carries the risk of Stevens–Johnson syndrome.</li><li>(B) Febuxostat is suitable for patients with renal impairment.</li><li>(C) Probenecid can be used directly during an acute gout attack.</li><li>(D) Colchicine has little effect on uric acid excretion.</li></ul>
+  <details data-kind="answer"><summary>答案與詳解</summary>
+    <div data-kind="zh-translation"><p><strong>中文題目：</strong>下列關於痛風用藥的敘述，何者<b>錯誤</b>？</p>
+      <p>(A) Allopurinol 有 Stevens–Johnson 症候群的風險。</p>
+      <p>(B) Febuxostat 適用於腎功能不全的病人。</p>
+      <p>(C) Probenecid 可在急性痛風發作期間直接使用。</p>
+      <p>(D) 秋水仙素對尿酸排泄的影響很小。</p></div>
+    <p class="ans">答案：(C)</p>
+    <p>降尿酸藥不在急性發作期開；Probenecid 是 ULT。<span class="src"> ｜ BM113_Block8期末考詳解 第 23 頁</span></p>
+  </details>
+</article>
+<h3><span class="yearchip">112 年</span>期中考 第 45 題</h3>
+<article data-question-id="112-p61-q45" data-placement="final" class="repeat">
+  <span class="qhead">112 年 期中考 第 45 題 ｜ 吳炳男</span><span class="repeat-badge">重複考點 ×3</span>
+  <p class="repeat-note">同考點：111 第45題、113 第19題　—　Aspirin：偏 COX-1、不可逆乙醯化血小板 COX-1、低劑量抗血小板、退燒靠下視丘 PGE2、Reye&#x27;s 在小孩</p>
+  <p class="stem">Which of the following statements regarding Aspirin is wrong?</p>
+  <ul class="opts"><li>(A) It is more selective inhibition on COX-1 than on COX-2.</li><li>(B) It is metabolized to salicylic acid</li><li>(C) It inhibits platelet function at low doses</li><li>(D) It can reversibly suppress platelet COX-1</li></ul>
+  <details data-kind="answer"><summary>答案與詳解</summary>
+    <div data-kind="zh-translation"><p><strong>中文題目：</strong>下列關於 Aspirin 的敘述，何者<b>錯誤</b>？</p>
+      <p>(A) 它對 COX-1 的抑制比對 COX-2 更具選擇性。</p>
+      <p>(B) 它會被代謝為水楊酸。</p>
+      <p>(C) 它在低劑量時抑制血小板功能。</p>
+      <p>(D) 它可以<b>可逆地</b>抑制血小板的 COX-1。</p></div>
+    <p class="ans">答案：D</p>
+    <p>Aspirin 不可逆乙醯化血小板 COX-1，reversibly 一個字就錯了。<span class="src"> ｜ BM112_Block 8 期中考(含申覆內容與結果) 第 61 頁</span></p>
+  </details>
+</article>
+<article data-question-id="112-p65-q46" data-placement="final" class="repeat">
+  <span class="qhead">112 年 期中考 第 46 題 ｜ 吳炳男</span><span class="repeat-badge">重複考點 ×3</span>
+  <p class="repeat-note">同考點：111 第46題、113 第20題　—　Acetaminophen：只鎮痛解熱不消炎、成人上限 4 g/d、過量肝壞死、解毒劑 NAC 還原 glutathione</p>
+  <p class="stem">Which of the following statements regarding Acetaminophen is correct?</p>
+  <ul class="opts"><li>(A) It has potent anti-inflammatory effects.</li><li>(B) It has a strong COX-1 and COX-2 inhibition in peripheral tissues.</li><li>(C) Dosing in adults is recommended not to exceed 4 g/d in most cases.</li><li>(D) No antidote can be used for the drug overdose-induced hepatic necrosis.</li></ul>
+  <details data-kind="answer"><summary>答案與詳解</summary>
+    <div data-kind="zh-translation"><p><strong>中文題目：</strong>下列關於 Acetaminophen 的敘述，何者<b>正確</b>？</p>
+      <p>(A) 它有強效的抗發炎作用。</p>
+      <p>(B) 它在周邊組織對 COX-1 與 COX-2 有強力抑制。</p>
+      <p>(C) 成人建議劑量在多數情況下不超過每日 4 公克。</p>
+      <p>(D) 藥物過量造成的肝壞死沒有解毒劑可用。</p></div>
+    <p class="ans">答案：C</p>
+    <p>成人上限 4 g/d 正確；它不消炎；解毒劑是 NAC。<span class="src"> ｜ BM112_Block 8 期中考(含申覆內容與結果) 第 65 頁</span></p>
+  </details>
+</article>
+<article data-question-id="112-p66-q47" data-placement="final" class="repeat">
+  <span class="qhead">112 年 期中考 第 47 題 ｜ 吳炳男</span><span class="repeat-badge">重複考點 ×3</span>
+  <p class="repeat-note">同考點：111 第48題、113 第22題　—　COX-2 選擇性抑制劑：不影響血小板、減少 PGI2、增加血栓風險、胃潰瘍最少</p>
+  <p class="stem">Which of the following statements regarding the COX-2 selective inhibitors is wrong?</p>
+  <ul class="opts"><li>(A) It can be linked to an increase in thrombotic risk.</li><li>(B) It affects platelet aggregation at usual doses</li><li>(C) Reduction of circulating PGI2 during long-term therapy</li><li>(D) Etoricoxib is a highly selective COX-2 inhibitor</li></ul>
+  <details data-kind="answer"><summary>答案與詳解</summary>
+    <div data-kind="zh-translation"><p><strong>中文題目：</strong>下列關於 COX-2 選擇性抑制劑的敘述，何者<b>錯誤</b>？</p>
+      <p>(A) 它可能與血栓風險增加有關。</p>
+      <p>(B) 它在正常劑量下會影響血小板聚集。</p>
+      <p>(C) 長期治療會減少循環中的 PGI2。</p>
+      <p>(D) Etoricoxib 是高度選擇性的 COX-2 抑制劑。</p></div>
+    <p class="ans">答案：B</p>
+    <p>COX-2 選擇性抑制劑正常劑量不影響血小板，說它會影響就錯。<span class="src"> ｜ BM112_Block 8 期中考(含申覆內容與結果) 第 66 頁</span></p>
+  </details>
+</article>
+<article data-question-id="112-p67-q48" data-placement="final" class="repeat">
+  <span class="qhead">112 年 期中考 第 48 題 ｜ 吳炳男 ｜ 來源答案欄</span><span class="repeat-badge">重複考點 ×3</span>
+  <p class="repeat-note">同考點：111 第47題、113 第21題　—　個別 NSAID 的獨門特徵：Nabumetone 唯一非酸性前驅藥、Indomethacin 關閉動脈導管、Meloxicam 偏 COX-2</p>
+  <p class="stem">Which of the following drugs can accelerate the closure of a patent ductus arteriosus?</p>
+  <ul class="opts"><li>(A) Aspirin,</li><li>(B) Indomethacin,</li><li>(C) Nabumetone,</li><li>(D) Mefenamic acid</li></ul>
+  <details data-kind="answer"><summary>答案與詳解</summary>
+    <div data-kind="zh-translation"><p><strong>中文題目：</strong>下列哪一種藥物可以加速開放性動脈導管的關閉？</p>
+      <p>(A) Aspirin</p>
+      <p>(B) Indomethacin</p>
+      <p>(C) Nabumetone</p>
+      <p>(D) Mefenamic acid</p></div>
+    <p class="ans">答案：B</p>
+    <p>加速動脈導管關閉的是 Indomethacin。<span class="src"> ｜ BM112_Block 8 期中考(含申覆內容與結果) 第 67 頁</span></p>
+  </details>
+</article>
+<article data-question-id="112-p68-q49" data-placement="final" class="repeat">
+  <span class="qhead">112 年 期中考 第 49 題 ｜ 吳炳男 ｜ 來源答案欄</span><span class="repeat-badge">重複考點 ×3</span>
+  <p class="repeat-note">同考點：111 第49題、113 第24題　—　痛風藥：秋水仙素綁 tubulin 只管急性、Probenecid 促排泄且不用於急性期、Febuxostat 抑制 XO</p>
+  <p class="stem">Which of the following statements regarding the anti-gout agents is wrong?</p>
+  <ul class="opts"><li>(A) Colchicine can bind to intracellular protein tubulin.</li><li>(B) Indomethacin can be used in acute gout as a replacement for colchicine.</li><li>(C) Febuxostat reduces total uric acid body burden by inhibiting xanthine oxidase.</li><li>(D) Probenecid blocks the active reabsorption of uric acid at the renal distal tubule.</li></ul>
+  <details data-kind="answer"><summary>答案與詳解</summary>
+    <div data-kind="zh-translation"><p><strong>中文題目：</strong>下列關於抗痛風藥物的敘述，何者<b>錯誤</b>？</p>
+      <p>(A) 秋水仙素可與細胞內蛋白質微管蛋白結合。</p>
+      <p>(B) Indomethacin 可在急性痛風時取代秋水仙素使用。</p>
+      <p>(C) Febuxostat 藉由抑制黃嘌呤氧化酶減少全身尿酸負荷。</p>
+      <p>(D) Probenecid 阻斷腎臟<b>遠端</b>小管對尿酸的主動再吸收。</p></div>
+    <p class="ans">答案：D</p>
+    <p>Probenecid 阻斷的是近端小管的再吸收，不是遠端。<span class="src"> ｜ BM112_Block 8 期中考(含申覆內容與結果) 第 68 頁</span></p>
+  </details>
+</article>
+<article data-question-id="112-p70-q50" data-placement="final" class="repeat">
+  <span class="qhead">112 年 期中考 第 50 題 ｜ 吳炳男</span><span class="repeat-badge">重複考點 ×3</span>
+  <p class="repeat-note">同考點：111 第50題、113 第23題　—　Pegloticase：重組尿酸氧化酶把尿酸變成 allantoin 與 H2O2，G6PD 缺乏禁用</p>
+  <p class="stem">Which of the following statements regarding pegloticase is wrong?</p>
+  <ul class="opts"><li>(A) It is a recombinant mammalian urate oxidase (or uricase).</li><li>(B) Urate oxidase catalyzes the enzymatic oxidation of uric acid into allantoin.</li><li>(C) It can be used in patients with G6PD deficiency.</li><li>(D) It is approved for the treatment of refractory chronic gout.</li></ul>
+  <details data-kind="answer"><summary>答案與詳解</summary>
+    <div data-kind="zh-translation"><p><strong>中文題目：</strong>下列關於 pegloticase 的敘述，何者<b>錯誤</b>？</p>
+      <p>(A) 它是重組哺乳類尿酸氧化酶（尿酸酶）。</p>
+      <p>(B) 尿酸氧化酶催化尿酸酵素性氧化為尿囊素。</p>
+      <p>(C) 它可用於 G6PD 缺乏的病人。</p>
+      <p>(D) 它核准用於治療難治性慢性痛風。</p></div>
+    <p class="ans">答案：C</p>
+    <p>產生 H2O2，G6PD 缺乏者禁用。<span class="src"> ｜ BM112_Block 8 期中考(含申覆內容與結果) 第 70 頁</span></p>
+  </details>
+</article>
+<h3><span class="yearchip">111 年</span>期中考 第 45 題</h3>
+<article data-question-id="111-p38-q45" data-placement="final" class="repeat">
+  <span class="qhead">111 年 期中考 第 45 題 ｜ 吳炳男</span><span class="repeat-badge">重複考點 ×3</span>
+  <p class="repeat-note">同考點：112 第45題、113 第19題　—　Aspirin：偏 COX-1、不可逆乙醯化血小板 COX-1、低劑量抗血小板、退燒靠下視丘 PGE2、Reye&#x27;s 在小孩</p>
+  <p class="stem">All of the following statements regarding acetylated and nonacetylated salicylates are correct EXCEPT?</p>
+  <ul class="opts"><li>(A) Diflunisal belongs to nonacetylated salicylates.</li><li>(B) Diflunisal belongs to COX-1 selective inhibitor.</li><li>(C) Aspirin selectively inhibits platelet function at low doses.</li><li>(D) Aspirin reduces the incidence of transient ischemic attacks.</li></ul>
+  <details data-kind="answer"><summary>答案與詳解</summary>
+    <div data-kind="zh-translation"><p><strong>中文題目：</strong>下列關於乙醯化與非乙醯化水楊酸類的敘述，何者<b>錯誤</b>？</p>
+      <p>(A) Diflunisal 屬於非乙醯化水楊酸類。</p>
+      <p>(B) Diflunisal 屬於 COX-1 選擇性抑制劑。</p>
+      <p>(C) Aspirin 在低劑量時選擇性地抑制血小板功能。</p>
+      <p>(D) Aspirin 可減少暫時性腦缺血發作的發生率。</p></div>
+    <p class="ans">答案：(B) Diflunisal belongs to COX-1 selective inhibitor.</p>
+    <p>Diflunisal 沒有乙醯基，做不到 Aspirin 那種不可逆的 COX-1 抑制。<span class="src"> ｜ BM111 BLOCK-8 期中考詳解 第 38 頁</span></p>
+  </details>
+</article>
+<article data-question-id="111-p39-q46" data-placement="final" class="repeat">
+  <span class="qhead">111 年 期中考 第 46 題 ｜ 吳炳男 ｜ 來源答案欄</span><span class="repeat-badge">重複考點 ×3</span>
+  <p class="repeat-note">同考點：112 第46題、113 第20題　—　Acetaminophen：只鎮痛解熱不消炎、成人上限 4 g/d、過量肝壞死、解毒劑 NAC 還原 glutathione</p>
+  <p class="stem">Which of the following statements regarding Acetaminophen is correct?</p>
+  <ul class="opts"><li>(A) It has significant COX-2 inhibitory actions.</li><li>(B) It has potent anti-inflammatory effects.</li><li>(C) Dosing in adults is recommended not to exceed 10 g/d.</li><li>(D) N-acetylcysteine can be used for those at risk of hepatic injury.</li></ul>
+  <details data-kind="answer"><summary>答案與詳解</summary>
+    <div data-kind="zh-translation"><p><strong>中文題目：</strong>下列關於 Acetaminophen 的敘述，何者<b>正確</b>？</p>
+      <p>(A) 它有顯著的 COX-2 抑制作用。</p>
+      <p>(B) 它有強效的抗發炎作用。</p>
+      <p>(C) 成人建議劑量不超過每日 10 公克。</p>
+      <p>(D) N-acetylcysteine 可用於有肝損傷風險者。</p></div>
+    <p class="ans">答案：(D) N-acetylcysteine can be used for those at risk of hepatic injury.</p>
+    <p>解毒劑 NAC；上限是 4 g/d 不是 10；它沒有消炎作用。<span class="src"> ｜ BM111 BLOCK-8 期中考詳解 第 39 頁</span></p>
+  </details>
+</article>
+<article data-question-id="111-p39-q47" data-placement="final" class="repeat">
+  <span class="qhead">111 年 期中考 第 47 題 ｜ 吳炳男</span><span class="repeat-badge">重複考點 ×3</span>
+  <p class="repeat-note">同考點：112 第48題、113 第21題　—　個別 NSAID 的獨門特徵：Nabumetone 唯一非酸性前驅藥、Indomethacin 關閉動脈導管、Meloxicam 偏 COX-2</p>
+  <p class="stem">Which of the following NSAIDs is a prodrug and the only nonacid NSAID currently used?</p>
+  <ul class="opts"><li>(A) Nabumetone</li><li>(B) Meloxicam</li><li>(C) Tenoxicam</li><li>(D) Celecoxib</li></ul>
+  <details data-kind="answer"><summary>答案與詳解</summary>
+    <div data-kind="zh-translation"><p><strong>中文題目：</strong>下列哪一種 NSAID 是前驅藥，且是目前唯一使用中的非酸性 NSAID？</p>
+      <p>(A) Nabumetone</p>
+      <p>(B) Meloxicam</p>
+      <p>(C) Tenoxicam</p>
+      <p>(D) Celecoxib</p></div>
+    <p class="ans">答案：(A) Nabumetone</p>
+    <p>Nabumetone 是前驅藥，也是唯一的非酸性 NSAID。<span class="src"> ｜ BM111 BLOCK-8 期中考詳解 第 39 頁</span></p>
+  </details>
+</article>
+<article data-question-id="111-p40-q48" data-placement="final" class="repeat">
+  <span class="qhead">111 年 期中考 第 48 題 ｜ 吳炳男 ｜ 來源答案欄</span><span class="repeat-badge">重複考點 ×3</span>
+  <p class="repeat-note">同考點：112 第47題、113 第22題　—　COX-2 選擇性抑制劑：不影響血小板、減少 PGI2、增加血栓風險、胃潰瘍最少</p>
+  <p class="stem">Which of the following statements regarding COX-2 inhibitors is correct?</p>
+  <ul class="opts"><li>(A) There are no incidences of edema.</li><li>(B) They have no impact on platelet aggregation at usual doses.</li><li>(C) They increase circulating prostacyclin during long-term therapy.</li><li>(D) They decrease the incidence of thrombotic risk.</li></ul>
+  <details data-kind="answer"><summary>答案與詳解</summary>
+    <div data-kind="zh-translation"><p><strong>中文題目：</strong>下列關於 COX-2 抑制劑的敘述，何者<b>正確</b>？</p>
+      <p>(A) 不會發生水腫。</p>
+      <p>(B) 在正常劑量下不影響血小板聚集。</p>
+      <p>(C) 長期治療會增加循環中的前列環素。</p>
+      <p>(D) 它們會降低血栓風險的發生率。</p></div>
+    <p class="ans">答案：(B) They have no impact on platelet aggregation at usual doses.</p>
+    <p>正常劑量不影響血小板；會水腫、PGI2 減少、血栓風險增加。<span class="src"> ｜ BM111 BLOCK-8 期中考詳解 第 40 頁</span></p>
+  </details>
+</article>
+<article data-question-id="111-p40-q49" data-placement="final" class="repeat">
+  <span class="qhead">111 年 期中考 第 49 題 ｜ 吳炳男</span><span class="repeat-badge">重複考點 ×3</span>
+  <p class="repeat-note">同考點：112 第49題、113 第24題　—　痛風藥：秋水仙素綁 tubulin 只管急性、Probenecid 促排泄且不用於急性期、Febuxostat 抑制 XO</p>
+  <p class="stem">All of the following statements about anti-gout agents are correct except</p>
+  <ul class="opts"><li>(A) Colchicine can reduce uric acid synthesis and excretion.</li><li>(B) Probenecid and sulfinpyrazone are uricosuric agents.</li><li>(C) Febuxostat reduces total uric acid body burden by inhibiting xanthine oxidase.</li><li>(D) Indomethacin can be alternatively used in acute gout.</li></ul>
+  <details data-kind="answer"><summary>答案與詳解</summary>
+    <div data-kind="zh-translation"><p><strong>中文題目：</strong>下列關於抗痛風藥物的敘述，何者<b>錯誤</b>？</p>
+      <p>(A) 秋水仙素可以減少尿酸的合成與排泄。</p>
+      <p>(B) Probenecid 與 sulfinpyrazone 是促尿酸排泄劑。</p>
+      <p>(C) Febuxostat 藉由抑制黃嘌呤氧化酶減少全身尿酸負荷。</p>
+      <p>(D) Indomethacin 可作為急性痛風的替代用藥。</p></div>
+    <p class="ans">答案：(A) Colchicine can reduce uric acid synthesis and excretion.</p>
+    <p>秋水仙素只擋白血球，對尿酸合成與排泄幾乎無作用。<span class="src"> ｜ BM111 BLOCK-8 期中考詳解 第 40 頁</span></p>
+  </details>
+</article>
+<article data-question-id="111-p41-q50" data-placement="final" class="repeat">
+  <span class="qhead">111 年 期中考 第 50 題 ｜ 吳炳男 ｜ 來源答案欄</span><span class="repeat-badge">重複考點 ×3</span>
+  <p class="repeat-note">同考點：112 第50題、113 第23題　—　Pegloticase：重組尿酸氧化酶把尿酸變成 allantoin 與 H2O2，G6PD 缺乏禁用</p>
+  <p class="stem">Which of the following anti-gout agents is a recombinant mammalian urate oxidase that catalyzes the enzymatic oxidation of uric acid into allantoin, a more soluble and in active metabolite?</p>
+  <ul class="opts"><li>(A) Colchicine</li><li>(B) Allopurinol</li><li>(C) Probenecid</li><li>(D) Pegloticase</li></ul>
+  <details data-kind="answer"><summary>答案與詳解</summary>
+    <div data-kind="zh-translation"><p><strong>中文題目：</strong>下列哪一種抗痛風藥物是重組哺乳類尿酸氧化酶，能催化尿酸酵素性氧化為尿囊素（一種更可溶且無活性的代謝物）？</p>
+      <p>(A) 秋水仙素</p>
+      <p>(B) Allopurinol</p>
+      <p>(C) Probenecid</p>
+      <p>(D) Pegloticase</p></div>
+    <p class="ans">答案：(D) Pegloticase</p>
+    <p>重組尿酸氧化酶把尿酸變成 allantoin，就是 Pegloticase 的定義。<span class="src"> ｜ BM111 BLOCK-8 期中考詳解 第 41 頁</span></p>
+  </details>
+</article>
+<p class="ending">六格、三年、同一張表。COX-1 管胃和血小板，COX-2 管發炎；Aspirin 那一刀不可逆；急性痛風滅火、慢性痛風清倉庫。</p>
+</section>
+</div>
+<!-- nb-comments:start -->
+<link rel="stylesheet" href="https://unpkg.com/@waline/client@v3/dist/waline.css">
+<style>
+  .nb-comments{margin:72px 0 48px;padding-top:32px;border-top:1px solid var(--line,#2a3340)}
+  .nb-comments h2{margin:0 0 6px;font-size:22px;font-weight:700;color:var(--ink,var(--text,#e8ecf3))}
+  .nb-comments p.nb-hint{margin:0 0 20px;font-size:14px;color:var(--dim,var(--text-2,#a3adbd))}
+  .nb-comments #waline{
+    --waline-theme-color:var(--cyan,var(--teal,#6fd3c7));
+    --waline-active-color:var(--gold,#e5b567);
+    --waline-font-size:15px;
+    --waline-bgcolor:var(--panel,var(--bg-2,#141922));
+    --waline-bgcolor-light:var(--panel2,var(--bg-3,#1b2230));
+    --waline-border-color:var(--line,#2a3340);
+    --waline-color:var(--ink,var(--text,#e8ecf3));
+    --waline-light-grey:var(--dim,var(--text-2,#a3adbd));
+    --waline-dark-grey:var(--dim,var(--text-2,#a3adbd));
+    --waline-white:var(--panel,var(--bg-2,#141922));
+    --waline-disable-bgcolor:var(--panel2,var(--bg-3,#1b2230));
+    --waline-disable-color:var(--dim,var(--text-3,#7a968d));
+    --waline-info-bgcolor:var(--panel2,var(--bg-3,#1b2230));
+    --waline-info-color:var(--dim,var(--text-2,#a3adbd));
+    --waline-border:1px solid var(--line,#2a3340);
+    --waline-code-bgcolor:var(--panel2,var(--bg-3,#1b2230));
+    --waline-badge-color:var(--gold,#e5b567);
+    --waline-bq-color:var(--dim,#a3adbd);
+  }
+  .nb-comments .wl-panel{background:var(--panel,var(--bg-2,#141922))}
+  .nb-comments .wl-editor,.nb-comments .wl-input{background:var(--bg,#0b0e13)}
+</style>
+<section class="nb-comments" id="comments">
+  <div class="container">
+    <h2>留言板</h2>
+    <p class="nb-hint">看不懂、想補充、發現錯誤都歡迎留言；填個暱稱就能發。</p>
+    <div id="waline"></div>
+  </div>
+</section>
+<script type="module">
+  import { init } from 'https://unpkg.com/@waline/client@v3/dist/waline.js';
+  init({
+    el: '#waline',
+    serverURL: 'https://notes-comments.vercel.app',
+    path: location.pathname,
+    lang: 'zh-TW',
+    dark: true,
+    meta: ['nick'],
+    requiredMeta: ['nick'],
+    login: 'disable',
+    reaction: false,
+    pageview: false,
+    search: false,
+    imageUploader: false,
+    copyright: false,
+    locale: { placeholder: '寫下你的想法或問題⋯⋯（支援 Markdown）' }
+  });
+</script>
+<!-- nb-comments:end -->
+</body>
+</html>
