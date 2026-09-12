@@ -1,0 +1,785 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>骨科學復健1 李佳玲</title>
+<style>
+:root{
+  color-scheme: dark;
+  --bg:#0b0e13; --panel:#141922; --panel2:#1b2230; --line:#2a3340;
+  --ink:#e8ecf3; --dim:#a3adbd; --gold:#e5b567; --cyan:#6fd3c7;
+  --rose:#e88b8b; --violet:#a99bf0;
+}
+*{box-sizing:border-box}
+html{font-size:150%}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font-family:"Noto Sans TC","PingFang TC","Helvetica Neue",system-ui,sans-serif;
+  line-height:1.85; overflow-wrap:anywhere;}
+/* Width follows the device, not the font size: px breakpoints stay put
+   while rem-based type scales with the 150% root. */
+.container{width:100%;max-width:none;margin:0 auto;
+  padding:clamp(.85rem,2.2vw,2.2rem);}
+@media (min-width:760px){ .container{max-width:730px} }
+@media (min-width:1024px){ .container{max-width:980px} }
+@media (min-width:1440px){ .container{max-width:1300px} }
+@media (min-width:1920px){ .container{max-width:1640px} }
+img{max-width:100%;height:auto}
+svg{max-width:100%;height:auto;display:block}
+h1{font-size:1.6rem;line-height:1.35;margin:.2rem 0 .6rem}
+h2{font-size:1.24rem;margin:2.4rem 0 .7rem;padding-bottom:.4rem;
+  border-bottom:1px solid var(--line);color:var(--gold)}
+h3{font-size:1.06rem;margin:1.5rem 0 .5rem;color:var(--cyan)}
+p{margin:.7rem 0}
+header#subject-overview{background:linear-gradient(160deg,#182031,#0e1219);
+  border:1px solid var(--line);border-radius:14px;padding:1.2rem;margin:.6rem 0 1.4rem}
+.meta{color:var(--dim);font-size:.86rem;margin:.3rem 0 0}
+nav#toc{background:var(--panel);border:1px solid var(--line);
+  border-radius:12px;padding:.9rem 1.1rem;margin:1.2rem 0}
+nav#toc ol{margin:.4rem 0 0;padding-left:1.3rem}
+nav#toc a{color:var(--ink);text-decoration:none;border-bottom:1px dotted var(--line)}
+.story{background:var(--panel2);border-left:3px solid var(--violet);
+  border-radius:0 10px 10px 0;padding:.9rem 1.1rem;margin:1.1rem 0}
+.story .tag{display:block;color:var(--violet);font-size:.78rem;
+  letter-spacing:.12em;margin-bottom:.35rem}
+.reality{background:var(--panel);border-left:3px solid var(--cyan);
+  border-radius:0 10px 10px 0;padding:.9rem 1.1rem;margin:1.1rem 0}
+.reality .tag{display:block;color:var(--cyan);font-size:.78rem;
+  letter-spacing:.12em;margin-bottom:.35rem}
+.keybox{background:#12202b;border:1px solid #26485a;border-radius:10px;
+  padding:.85rem 1rem;margin:1.1rem 0}
+.keybox b{color:var(--cyan)}
+.warn{background:#2a1c1c;border:1px solid #573434;border-radius:10px;
+  padding:.85rem 1rem;margin:1.1rem 0;color:#f0cfcf}
+article{background:var(--panel);border:1px solid var(--line);
+  border-radius:12px;padding:.95rem 1.05rem;margin:1.1rem 0}
+article .qhead{display:block;color:var(--gold);font-size:.82rem;
+  letter-spacing:.06em;margin-bottom:.45rem}
+article .stem{margin:.2rem 0 .5rem}
+article ul.opts{list-style:none;margin:.3rem 0 .2rem;padding:0}
+article ul.opts li{padding:.16rem 0 .16rem .2rem;color:#dbe2ec}
+details{background:#0f141c;border:1px solid var(--line);
+  border-radius:10px;padding:.15rem .8rem;margin:.6rem 0}
+details summary{cursor:pointer;padding:.6rem 0;color:var(--gold);
+  font-weight:600;min-height:44px;display:flex;align-items:center}
+details[data-kind="answer"] .ans{font-size:1.05rem;color:var(--cyan);font-weight:700}
+div[data-kind="zh-translation"]{background:#141c26;border:1px dashed #33465c;
+  border-radius:8px;padding:.7rem .85rem;margin:.5rem 0 .8rem}
+div[data-kind="zh-translation"] p{margin:.35rem 0}
+.src{color:var(--dim);font-size:.84rem;margin-top:.6rem}
+.quote{border-left:2px solid var(--gold);padding-left:.75rem;color:#f0e2c6}
+.infer{color:#f0d9a8;font-size:.92rem}
+figure{margin:1.3rem 0;background:var(--panel2);border:1px solid var(--line);
+  border-radius:12px;padding:.9rem}
+figcaption{color:var(--dim);font-size:.85rem;margin-top:.6rem;text-align:center}
+dl.vocab{margin:0}
+dl.vocab dt{color:var(--cyan);font-weight:700;margin-top:.9rem}
+dl.vocab dd{margin:.2rem 0 0;padding-left:0}
+dl.vocab .root{color:var(--dim);font-size:.86rem}
+.cram{background:var(--panel);border:1px solid var(--line);
+  border-radius:12px;padding:.4rem 1.1rem;margin:1rem 0}
+.cram li{margin:.55rem 0}
+.yearchip{display:inline-block;background:#233046;color:#bcd0ea;
+  border-radius:999px;padding:.05rem .55rem;font-size:.76rem;margin-right:.4rem}
+article.repeat{border:2px solid #e05252;box-shadow:0 0 0 3px rgba(224,82,82,.12)}
+article.repeat .qhead{color:#f08a8a}
+.repeat-badge{display:inline-block;background:#3a1c1c;border:1px solid #7d3a3a;
+  color:#f0a8a8;border-radius:999px;padding:.1rem .6rem;font-size:.76rem;
+  margin-left:.4rem;white-space:nowrap}
+.repeat-note{color:#e6a5a5;font-size:.84rem;margin:.45rem 0 0}
+figure.boxfig{margin:1.5rem 0 .5rem;background:transparent;border:0;padding:0}
+figure.boxfig img{border-radius:12px;border:1px solid var(--line);display:block;width:100%}
+figure.boxfig figcaption{color:var(--dim);font-size:.82rem;margin-top:.5rem;
+  text-align:left;line-height:1.6}
+figure.boxfig .figtag{color:var(--violet);font-size:.76rem;letter-spacing:.1em;
+  display:block;margin-bottom:.3rem}
+.ending{color:var(--dim);font-style:italic;margin:1.6rem 0 2.4rem}
+</style></head>
+<body>
+<div class="container">
+
+<header id="subject-overview">
+  <h1>骨科學復健1</h1>
+  <p>四年十二題，全部圍繞<b>頸痛與下背痛的復健</b>。110、111、112 三年是<b>同一組三題</b>換選項順序重考：<b>疼痛來源裡沒有軟骨</b>、<b>不建議臥床到不痛</b>、<b>椎間盤壓力坐比站大、平躺最小</b>。113 年改考三個觀念：復健的目標是恢復功能與回歸社會、頸痛最常見是拉傷扭傷（85%）、非特異性下背痛沒有結構病因、佔 85%、與心理社會因素有關、多能自限。</p>
+  <p>這一科背三個數字就夠：<b>坐 140、站 100、側躺 75、平躺 25、仰臥起坐 210</b>；<b>85%</b>（頸痛的拉傷扭傷、下背痛的非特異性）；<b>軟骨不痛</b>。</p>
+  <p class="meta">命題老師：李佳玲｜ 收錄 110 期末、111 期中、112 期末、113 期末，共 12 題</p>
+</header>
+
+<nav id="toc">
+  <b>目錄</b>
+  <ol>
+    <li><a href="#chapter-1">痛從哪裡來：目標、來源與 85%</a></li>
+    <li><a href="#chapter-2">怎麼治：別躺到不痛，還有坐著最傷椎間盤</a></li>
+    <li><a href="#chapter-cram">考前速記</a></li>
+    <li><a href="#chapter-vocab">單字表</a></li>
+    <li><a href="#chapter-final">歷年考題總複習</a></li>
+  <li><a href="#comments" data-nb-toc="1">留言板</a></li>
+</ol>
+</nav>
+<section id="chapter-1" data-chapter-kind="story">
+<h2>一、痛從哪裡來：目標、來源與 85%</h2>
+
+<figure class="boxfig" data-visual-id="rhbox-01-story" data-image-kind="story" data-explanation-verified="true">
+<span class="figtag">情境場景</span>
+<img data-visual-id="rhbox-01-story" src="img/rhbox-01-story.webp" alt="情境場景：復健科診間裡，治療師在脊椎模型上一一點名會痛的結構，唯獨軟骨沒有神經。" loading="lazy" decoding="async" width="1600" height="914">
+<figcaption>情境場景：復健科診間裡，治療師在脊椎模型上一一點名會痛的結構，唯獨軟骨沒有神經。</figcaption>
+</figure>
+<div class="story" data-prose-kind="story"><span class="tag">故事</span>
+<p>骨科復健的目標從來不是「讓病人吃一輩子止痛藥」，也不是「開刀預防以後受傷」或「把關節都換掉」，而是<b>恢復功能、讓病人回到社會</b>——113 年直接把這句話當題目。</p>
+<p>要治頸痛、下背痛，第一步是找出<b>痛從哪裡來（pain generator）</b>。脊椎周圍幾乎每個結構都可能是來源：<b>骨、關節、韌帶、肌肉、椎間盤、神經根</b>……唯獨<b>軟骨（cartilage）不會痛</b>，因為它沒有神經。110、111、112 三年這題只換了另外三個選項（joint／muscle、bone／ligament），答案永遠是 cartilage。</p>
+<p>再來是兩個 <b>85%</b>：<b>頸痛最常見的原因是頸部拉傷與扭傷（strain and sprain）</b>，約佔 85%；不是椎間盤突出、不是脊髓病變、不是風濕病。<b>下背痛裡 85% 是非特異性下背痛</b>——沒有明確的結構病因（骨折、椎間盤突出、腫瘤都排除了），反而跟<b>體能差、姿勢不良、缺乏運動、焦慮壓力憂鬱</b>這些因素有關；大多數<b>自限</b>，靠運動、物理治療、姿勢矯正、止痛藥就會好，<b>不需要手術</b>。</p>
+</div>
+
+<figure class="boxfig" data-visual-id="rhbox-02-reality" data-image-kind="comparison" data-explanation-verified="true">
+<span class="figtag">疼痛來源與 85% 對照</span>
+<img data-visual-id="rhbox-02-reality" src="img/rhbox-02-reality.webp" alt="疼痛來源與 85% 對照：會痛的結構清單與打叉的軟骨；頸痛 85% 拉傷扭傷、下背痛 85% 非特異性。" loading="lazy" decoding="async" width="1600" height="914">
+<figcaption>疼痛來源與 85% 對照：會痛的結構清單與打叉的軟骨；頸痛 85% 拉傷扭傷、下背痛 85% 非特異性。</figcaption>
+</figure>
+<div class="reality"><span class="tag">回到現實</span>
+<p class="quote">詳解原文（111）:「疼痛來源無cartilage」</p>
+<p class="quote">詳解原文（113 第 68 題）:「Cervical Strain and Sprains 大約占據了85% Neck pain的原因。」</p>
+<p class="quote">詳解原文（113 第 69 題）:「非特異性下背痛約佔 85% 的病例，是最常見類型。」「大多數情況是自限性（self-limiting），可藉由運動、物理治療、姿勢矯正、止痛藥改善，不需手術。」</p>
+<p><b>復健目標：</b>恢復功能、回歸社會。<br>
+<b>Pain generators：</b>骨、關節、韌帶、肌肉、神經根都是；<b>軟骨不是</b>。<br>
+<b>頸痛最常見：</b>strain and sprain，85%。<br>
+<b>非特異性下背痛：</b>無結構病因、佔 85%、與體能與情緒壓力有關、自限、不需手術。</p>
+</div>
+
+<article data-question-id="110fin-p111-q85" data-placement="chapter">
+  <span class="qhead">110 年 期末考 第 85 題</span>
+  <p class="stem">Pain generators should be identified before giving treatment for neck and lower back problems. Which is not the potential pain generator of neck and lower back problems?</p>
+  <ul class="opts">
+    <li>(A) Joint</li>
+    <li>(B) Muscle</li>
+    <li>(C) Cartilage</li>
+    <li>(D) Nerve root</li>
+  </ul>
+  <details data-kind="answer">
+    <summary>答案與詳解</summary>
+    <div data-kind="zh-translation">
+      <p><strong>中文題目：</strong>治療頸部與下背問題前應先找出疼痛來源。下列何者<b>不是</b>頸部與下背問題的潛在疼痛來源？</p>
+      <p>(A) 關節</p>
+      <p>(B) 肌肉</p>
+      <p>(C) 軟骨</p>
+      <p>(D) 神經根</p>
+    </div>
+    <p class="ans">答案：(C) Cartilage</p>
+    <p>軟骨沒有神經，不是疼痛來源。</p>
+    <p class="src">出處：李佳玲 骨科學復健1(ppt pg.9) ｜ BM110 BLOCK-8 期末考詳解 (審後附上申覆) (1).pdf 第 111 頁</p>
+  </details>
+</article>
+
+<article data-question-id="111-p61-q73" data-placement="chapter">
+  <span class="qhead">111 年 期中考 第 73 題</span>
+  <p class="stem">The key for management of neck and low back pain to find out pain generators. Which is not the potential pain generator of neck and lower back problems?</p>
+  <ul class="opts">
+    <li>(A) Bone</li>
+    <li>(B) Ligament</li>
+    <li>(C) Cartilage</li>
+    <li>(D) Nerve root</li>
+  </ul>
+  <details data-kind="answer">
+    <summary>答案與詳解</summary>
+    <div data-kind="zh-translation">
+      <p><strong>中文題目：</strong>處理頸痛與下背痛的關鍵是找出疼痛來源。下列何者<b>不是</b>頸部與下背問題的潛在疼痛來源？</p>
+      <p>(A) 骨</p>
+      <p>(B) 韌帶</p>
+      <p>(C) 軟骨</p>
+      <p>(D) 神經根</p>
+    </div>
+    <p class="ans">答案：(C) Cartilage</p>
+    <p class="quote">詳解原文:「疼痛來源無cartilage」</p>
+    <p>與 110 年同題，另外三個選項換成 bone／ligament。</p>
+    <p class="src">出處：李佳玲 骨科復健學(1) ｜ BM111 BLOCK-8 期中考詳解.pdf 第 61 頁</p>
+  </details>
+</article>
+
+<article data-question-id="112fin-p67-q67" data-placement="chapter">
+  <span class="qhead">112 年 期末考 第 67 題</span>
+  <p class="stem">The key for management of neck and low back pain to find out pain generators. Which is not the potential pain generator of neck and lower back problems?</p>
+  <ul class="opts">
+    <li>(A) Bone</li>
+    <li>(B) Ligament</li>
+    <li>(C) Nerve root</li>
+    <li>(D) Cartilage</li>
+  </ul>
+  <details data-kind="answer">
+    <summary>答案與詳解</summary>
+    <div data-kind="zh-translation">
+      <p><strong>中文題目：</strong>處理頸痛與下背痛的關鍵是找出疼痛來源。下列何者<b>不是</b>頸部與下背問題的潛在疼痛來源？</p>
+      <p>(A) 骨</p>
+      <p>(B) 韌帶</p>
+      <p>(C) 神經根</p>
+      <p>(D) 軟骨</p>
+    </div>
+    <p class="ans">答案：D</p>
+    <p class="quote">詳解原文:「疼痛來源中無包含Cartilage」</p>
+    <p>第三年同題，cartilage 移到 (D)。</p>
+    <p class="src">出處：李佳玲 骨科學復健1 (ppt pg. 9) ｜ BM112_Block 8 期末考.pdf 第 67 頁</p>
+  </details>
+</article>
+
+<article data-question-id="113fin-p61-q67" data-placement="chapter">
+  <span class="qhead">113 年 期末考 第 67 題</span>
+  <p class="stem">What is the primary goal of orthopedic rehabilitation?</p>
+  <ul class="opts">
+    <li>(A) Long-term prescription of medication to control pain</li>
+    <li>(B) Preventing future injuries through surgical intervention</li>
+    <li>(C) Restoring function and facilitating the patient's reintegration into society</li>
+    <li>(D) Replacing damaged joints with prostheses</li>
+  </ul>
+  <details data-kind="answer">
+    <summary>答案與詳解</summary>
+    <div data-kind="zh-translation">
+      <p><strong>中文題目：</strong>骨科復健的主要目標是什麼？</p>
+      <p>(A) 長期開立藥物控制疼痛</p>
+      <p>(B) 藉由手術介入預防未來的傷害</p>
+      <p>(C) 恢復功能並促進病人重返社會</p>
+      <p>(D) 以人工關節置換受損的關節</p>
+    </div>
+    <p class="ans">答案：(C)</p>
+    <p>復健的目標是<b>功能與回歸社會</b>，不是藥、不是刀、不是換關節。</p>
+    <p class="src">出處：李佳玲 骨科學復健 ppt pg. 5 ｜ BM113_Block8期末考詳解.pdf 第 61 頁</p>
+  </details>
+</article>
+
+<article data-question-id="113fin-p61-q68" data-placement="chapter">
+  <span class="qhead">113 年 期末考 第 68 題</span>
+  <p class="stem">What is the most common cause of neck pain?</p>
+  <ul class="opts">
+    <li>(A) Cervical disc herniation</li>
+    <li>(B) Neck strain and sprain</li>
+    <li>(C) Cervical myelopathy</li>
+    <li>(D) Rheumatic diseases</li>
+  </ul>
+  <details data-kind="answer">
+    <summary>答案與詳解</summary>
+    <div data-kind="zh-translation">
+      <p><strong>中文題目：</strong>頸痛最常見的原因是什麼？</p>
+      <p>(A) 頸椎椎間盤突出</p>
+      <p>(B) 頸部拉傷與扭傷</p>
+      <p>(C) 頸椎脊髓病變</p>
+      <p>(D) 風濕性疾病</p>
+    </div>
+    <p class="ans">答案：(B)</p>
+    <p class="quote">詳解原文:「Cervical Strain and Sprains 大約占據了85% Neck pain的原因。」</p>
+    <p class="src">出處：骨科學復健 李佳玲 page 13 ｜ BM113_Block8期末考詳解.pdf 第 61 頁</p>
+  </details>
+</article>
+
+<article data-question-id="113fin-p62-q69" data-placement="chapter">
+  <span class="qhead">113 年 期末考 第 69 題</span>
+  <p class="stem">Which of the following statements about non-specific low back pain is correct?</p>
+  <ul class="opts">
+    <li>(A) It usually has a clear and identifiable structural cause.</li>
+    <li>(B) It accounts for less than 20% of low back pain cases.</li>
+    <li>(C) It may be associated with factors such as poor physical condition and emotional stress.</li>
+    <li>(D) It typically requires surgical treatment.</li>
+  </ul>
+  <details data-kind="answer">
+    <summary>答案與詳解</summary>
+    <div data-kind="zh-translation">
+      <p><strong>中文題目：</strong>關於非特異性下背痛，下列敘述何者<b>正確</b>？</p>
+      <p>(A) 通常有明確且可辨識的結構性病因。</p>
+      <p>(B) 佔下背痛病例不到 20%。</p>
+      <p>(C) 可能與體能差、情緒壓力等因素有關。</p>
+      <p>(D) 通常需要手術治療。</p>
+    </div>
+    <p class="ans">答案：(C)</p>
+    <p class="quote">詳解原文:「（A）非特異性下背痛（non-specific low back pain）的特點就是沒有明確的結構性病因（例如骨折、椎間盤突出、腫瘤等都排除）（B）非特異性下背痛約佔 85% 的病例，是最常見類型。（C）不良姿勢、肌肉無力、缺乏運動、焦慮、壓力或憂鬱等心理因素都會增加或惡化下背痛。（D）大多數情況是自限性（self-limiting），可藉由運動、物理治療、姿勢矯正、止痛藥改善，不需手術。」</p>
+    <p class="src">出處：骨科學復健 1 李佳玲 PPT p.14 ｜ BM113_Block8期末考詳解.pdf 第 62 頁</p>
+  </details>
+</article>
+</section>
+<section id="chapter-2" data-chapter-kind="story">
+<h2>二、怎麼治：別躺到不痛，還有坐著最傷椎間盤</h2>
+
+<figure class="boxfig" data-visual-id="rhbox-03-story" data-image-kind="story" data-explanation-verified="true">
+<span class="figtag">情境場景</span>
+<img data-visual-id="rhbox-03-story" src="img/rhbox-03-story.webp" alt="情境場景：治療師把想躺到不痛的病人請下床，牆上貼著五種姿勢的椎間盤壓力數字。" loading="lazy" decoding="async" width="1600" height="914">
+<figcaption>情境場景：治療師把想躺到不痛的病人請下床，牆上貼著五種姿勢的椎間盤壓力數字。</figcaption>
+</figure>
+<div class="story" data-prose-kind="story"><span class="tag">故事</span>
+<p>病人腰痛，第一個念頭常是「躺到不痛再說」。但三年的考題都把這句話列為<b>唯一不建議的方法</b>：<b>臥床休息到疼痛消失</b>——不建議。稍微不痛就要開始動，把握<b>「輕、小、慢」</b>的原則維持活動。</p>
+<p>其他方法全都可以：<b>口服藥</b>、<b>影像導引的類固醇注射</b>（介入性治療）、<b>熱療</b>等物理因子、<b>徒手治療與按摩</b>、<b>急性期過後的運動</b>。三年題目只是把這些「可以」的選項輪流換上去，錯的那一個永遠是 bed rest。</p>
+<p>再來是這科最有名的數字：<b>不同姿勢下椎間盤承受的壓力</b>。以站直為 100%：<b>平躺 25%</b>（最小）、<b>側躺 75%</b>、<b>站 100%</b>、<b>坐 140%</b>（比站還大！）、<b>仰臥起坐 210%</b>（最大）。所以問「最大」是<b>坐</b>（110 年，選項裡沒有仰臥起坐），問「最小」是<b>平躺</b>（111、112 年）。</p>
+</div>
+
+<figure class="boxfig" data-visual-id="rhbox-04-reality" data-image-kind="comparison" data-explanation-verified="true">
+<span class="figtag">治療方法與椎間盤壓力表</span>
+<img data-visual-id="rhbox-04-reality" src="img/rhbox-04-reality.webp" alt="治療方法與椎間盤壓力表：可以的方法清單與打叉的臥床；平躺 25、側躺 75、站 100、坐 140、仰臥起坐 210 的長條圖。" loading="lazy" decoding="async" width="1600" height="914">
+<figcaption>治療方法與椎間盤壓力表：可以的方法清單與打叉的臥床；平躺 25、側躺 75、站 100、坐 140、仰臥起坐 210 的長條圖。</figcaption>
+</figure>
+<div class="reality"><span class="tag">回到現實</span>
+<p class="quote">詳解原文（112 第 68 題）:「A稍微不痛後，就要開始復健以維持active，活動過程應把握「輕、小、慢」原則」</p>
+<p class="quote">詳解原文（110）:「(B) steroid injection屬於interventional treatment (C) 物理因子的治療:熱療 (D) 物理治療中的manual therapy和massage皆有療效」</p>
+<p class="quote">詳解原文（112 第 69 題）:「以站直為 100%而言，躺平壓力是最小的 25%，側躺是 75%，坐著比站著壓力還要大,約為 140%，仰臥起坐是全部裡面壓力最大的210%。」</p>
+<p><b>不建議：</b>臥床休息到不痛。<b>可以：</b>口服藥、影像導引類固醇注射、熱療、徒手治療與按摩、急性期後運動（輕、小、慢）。</p>
+<p><b>椎間盤壓力：</b>仰臥起坐 210 ＞ 坐 140 ＞ 站 100 ＞ 側躺 75 ＞ 平躺 25。<b>最小平躺、坐比站大。</b></p>
+</div>
+
+<article data-question-id="110fin-p112-q86" data-placement="chapter">
+  <span class="qhead">110 年 期末考 第 86 題</span>
+  <p class="stem">To control pain and inflammation under neck and lower back problems, which method is not suggested?</p>
+  <ul class="opts">
+    <li>(A) Bed rest till pain is gone</li>
+    <li>(B) Image guided injection with steroid</li>
+    <li>(C) Physical modality with heat</li>
+    <li>(D) Manual therapy with massage</li>
+  </ul>
+  <details data-kind="answer">
+    <summary>答案與詳解</summary>
+    <div data-kind="zh-translation">
+      <p><strong>中文題目：</strong>為控制頸部與下背問題的疼痛與發炎，下列哪種方法<b>不建議</b>？</p>
+      <p>(A) 臥床休息直到疼痛消失</p>
+      <p>(B) 影像導引的類固醇注射</p>
+      <p>(C) 熱療等物理因子治療</p>
+      <p>(D) 徒手治療與按摩</p>
+    </div>
+    <p class="ans">答案：(A) Bed rest till pain is gone</p>
+    <p class="quote">詳解原文:「此張slide為治療的guideline (B) steroid injection屬於interventional treatment (C) 物理因子的治療:熱療 (D) 物理治療中的manual therapy和massage皆有療效」</p>
+    <p class="src">出處：李佳玲 骨科學復健1(ppt pg.21) ｜ BM110 BLOCK-8 期末考詳解 (審後附上申覆) (1).pdf 第 112 頁</p>
+  </details>
+</article>
+
+<article data-question-id="111-p61-q74" data-placement="chapter">
+  <span class="qhead">111 年 期中考 第 74 題</span>
+  <p class="stem">To control pain and inflammation under neck and lower back problems, which method is not suggested?</p>
+  <ul class="opts">
+    <li>(A) Bed rest till pain is gone</li>
+    <li>(B) Oral medication</li>
+    <li>(C) Exercise after acute stage</li>
+    <li>(D) Manual therapy with massage</li>
+  </ul>
+  <details data-kind="answer">
+    <summary>答案與詳解</summary>
+    <div data-kind="zh-translation">
+      <p><strong>中文題目：</strong>為控制頸部與下背問題的疼痛與發炎，下列哪種方法<b>不建議</b>？</p>
+      <p>(A) 臥床休息直到疼痛消失</p>
+      <p>(B) 口服藥物</p>
+      <p>(C) 急性期後運動</p>
+      <p>(D) 徒手治療與按摩</p>
+    </div>
+    <p class="ans">答案：(A) Bed rest till pain is gone</p>
+    <p>同 110 年，把注射與熱療換成口服藥與急性期後運動——一樣都是「可以」。</p>
+    <p class="src">出處：李佳玲 骨科復健學(1) ｜ BM111 BLOCK-8 期中考詳解.pdf 第 61 頁</p>
+  </details>
+</article>
+
+<article data-question-id="112fin-p68-q68" data-placement="chapter">
+  <span class="qhead">112 年 期末考 第 68 題</span>
+  <p class="stem">To control pain and inflammation under neck and lower back problems, which method is not suggested?</p>
+  <ul class="opts">
+    <li>(A) Bed rest till pain is gone</li>
+    <li>(B) Oral medication</li>
+    <li>(C) Manual therapy with massage</li>
+    <li>(D) Exercise after acute stage</li>
+  </ul>
+  <details data-kind="answer">
+    <summary>答案與詳解</summary>
+    <div data-kind="zh-translation">
+      <p><strong>中文題目：</strong>為控制頸部與下背問題的疼痛與發炎，下列哪種方法<b>不建議</b>？</p>
+      <p>(A) 臥床休息直到疼痛消失</p>
+      <p>(B) 口服藥物</p>
+      <p>(C) 徒手治療與按摩</p>
+      <p>(D) 急性期後運動</p>
+    </div>
+    <p class="ans">答案：A</p>
+    <p class="quote">詳解原文:「A稍微不痛後，就要開始復健以維持active，活動過程應把握「輕、小、慢」原則，其餘選項街正確。」</p>
+    <p class="src">出處：李佳玲 骨科學復健1 (ppt pg. 22, 35, 39) ｜ BM112_Block 8 期末考.pdf 第 68 頁</p>
+  </details>
+</article>
+
+<article data-question-id="110fin-p114-q87" data-placement="chapter">
+  <span class="qhead">110 年 期末考 第 87 題</span>
+  <p class="stem">The pressure over disc changes in different positions. In which position the disk will suffer from the most pressure?</p>
+  <ul class="opts">
+    <li>(A) Supine lying</li>
+    <li>(B) Side lying</li>
+    <li>(C) Standing</li>
+    <li>(D) Sitting</li>
+  </ul>
+  <details data-kind="answer">
+    <summary>答案與詳解</summary>
+    <div data-kind="zh-translation">
+      <p><strong>中文題目：</strong>椎間盤的壓力隨姿勢改變。在哪種姿勢下椎間盤承受的壓力<b>最大</b>？</p>
+      <p>(A) 平躺</p>
+      <p>(B) 側躺</p>
+      <p>(C) 站立</p>
+      <p>(D) 坐著</p>
+    </div>
+    <p class="ans">答案：(D) Sitting</p>
+    <p>四個選項裡<b>坐（140%）</b>最大，比站（100%）還大。</p>
+    <p class="src">出處：李佳玲 骨科學復健1(ppt pg.37) ｜ BM110 BLOCK-8 期末考詳解 (審後附上申覆) (1).pdf 第 114 頁</p>
+  </details>
+</article>
+
+<article data-question-id="111-p62-q75" data-placement="chapter">
+  <span class="qhead">111 年 期中考 第 75 題</span>
+  <p class="stem">The pressure over disc changes in different positions. In which position the disk will suffer from the least pressure?</p>
+  <ul class="opts">
+    <li>(A) Side lying</li>
+    <li>(B) Supine lying</li>
+    <li>(C) Standing</li>
+    <li>(D) Sitting</li>
+  </ul>
+  <details data-kind="answer">
+    <summary>答案與詳解</summary>
+    <div data-kind="zh-translation">
+      <p><strong>中文題目：</strong>椎間盤的壓力隨姿勢改變。在哪種姿勢下椎間盤承受的壓力<b>最小</b>？</p>
+      <p>(A) 側躺</p>
+      <p>(B) 平躺</p>
+      <p>(C) 站立</p>
+      <p>(D) 坐著</p>
+    </div>
+    <p class="ans">答案：(B) Supine lying</p>
+    <p class="quote">詳解原文:「椎間盤受到的壓力 Sitting > Standing > Side lying > Supine lying ，特別注意壓力坐大於站。」</p>
+    <p class="src">出處：李佳玲 骨科復健學(1) ｜ BM111 BLOCK-8 期中考詳解.pdf 第 62 頁</p>
+  </details>
+</article>
+
+<article data-question-id="112fin-p68-q69" data-placement="chapter">
+  <span class="qhead">112 年 期末考 第 69 題</span>
+  <p class="stem">The pressure over disc changes in different positions. In which position the disk will suffer from the least pressure?</p>
+  <ul class="opts">
+    <li>(A) Standing</li>
+    <li>(B) Sitting</li>
+    <li>(C) Supine lying</li>
+    <li>(D) Side lying</li>
+  </ul>
+  <details data-kind="answer">
+    <summary>答案與詳解</summary>
+    <div data-kind="zh-translation">
+      <p><strong>中文題目：</strong>椎間盤的壓力隨姿勢改變。在哪種姿勢下椎間盤承受的壓力<b>最小</b>？</p>
+      <p>(A) 站立</p>
+      <p>(B) 坐著</p>
+      <p>(C) 平躺</p>
+      <p>(D) 側躺</p>
+    </div>
+    <p class="ans">答案：C</p>
+    <p class="quote">詳解原文:「以站直為 100%而言，躺平壓力是最小的 25%，側躺是 75%，坐著比站著壓力還要大,約為 140%，仰臥起坐是全部裡面壓力最大的210%。」</p>
+    <p class="src">出處：李佳玲 骨科學復健1 (ppt pg. 37) ｜ BM112_Block 8 期末考.pdf 第 68 頁</p>
+  </details>
+</article>
+</section>
+
+<section id="chapter-cram" data-chapter-kind="cram">
+<h2>三、考前速記</h2>
+<div class="cram">
+<ul>
+<li><b>骨科復健的目標：恢復功能、回歸社會。</b>不是長期用藥、不是手術預防、不是換關節。</li>
+<li><b>Pain generators 裡沒有軟骨。</b>骨、關節、韌帶、肌肉、神經根都會痛，cartilage 沒神經。三年同題。</li>
+<li><b>頸痛最常見：拉傷與扭傷（strain and sprain），85%。</b></li>
+<li><b>非特異性下背痛：無明確結構病因、佔 85%、與體能差和情緒壓力有關、自限、不需手術。</b></li>
+<li><b>不建議：臥床休息到不痛。</b>其他（口服藥、類固醇注射、熱療、徒手治療按摩、急性期後運動）都可以。三年同題。</li>
+<li><b>稍微不痛就要動：輕、小、慢。</b></li>
+<li><b>椎間盤壓力：仰臥起坐 210 ＞ 坐 140 ＞ 站 100 ＞ 側躺 75 ＞ 平躺 25。</b></li>
+<li><b>最小是平躺，最大（選項內）是坐；坐比站大。</b>三年同題，只換問最大或最小。</li>
+</ul>
+</div>
+</section>
+
+<!-- ================= VOCAB ================= -->
+<section id="chapter-vocab" data-chapter-kind="vocab">
+<h2>四、單字表</h2>
+<dl class="vocab">
+<dt>pain generator</dt>
+<dd><span class="root">generate＝產生</span>　疼痛來源，治療頸背痛前要先找出的結構。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>什麼都可能，就是<b>不是軟骨</b>。</p></details></dd>
+
+<dt>cartilage</dt>
+<dd><span class="root">拉丁 cartilago＝軟骨</span>　軟骨，沒有神經，不是疼痛來源。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>三年答案都是它。</p></details></dd>
+
+<dt>nerve root</dt>
+<dd><span class="root">root＝根</span>　神經根，脊神經離開脊髓處，是常見的疼痛來源。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>三年都放在選項裡當「會痛的」干擾項。</p></details></dd>
+
+<dt>strain / sprain</dt>
+<dd><span class="root">strain＝肌肉肌腱拉傷；sprain＝韌帶扭傷</span>　頸部拉傷與扭傷，頸痛最常見原因，約 85%。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>不是椎間盤、不是脊髓病變、不是風濕。</p></details></dd>
+
+<dt>cervical myelopathy</dt>
+<dd><span class="root">myelo-（脊髓）+ -pathy（病變）</span>　頸椎脊髓病變。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>113 年的干擾項，不是最常見原因。</p></details></dd>
+
+<dt>non-specific low back pain</dt>
+<dd><span class="root">non-specific＝非特異性</span>　沒有明確結構病因的下背痛，佔 85%，多自限。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>跟體能、姿勢、情緒壓力有關；<b>不需手術</b>。</p></details></dd>
+
+<dt>self-limiting</dt>
+<dd><span class="root">limit＝限制</span>　自限性，不治療也會自己好。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>非特異性下背痛的特色。</p></details></dd>
+
+<dt>reintegration into society</dt>
+<dd><span class="root">re-（再）+ integrate（整合）</span>　重返社會，骨科復健的主要目標之一。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>目標是功能與社會，不是藥與刀。</p></details></dd>
+
+<dt>bed rest</dt>
+<dd><span class="root">rest＝休息</span>　臥床休息；「躺到不痛為止」是唯一不建議的方法。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>三年都是答案。稍微不痛就要動。</p></details></dd>
+
+<dt>image guided injection</dt>
+<dd><span class="root">guided＝導引</span>　影像導引注射（類固醇），屬介入性治療。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>可以做，不是不建議。</p></details></dd>
+
+<dt>physical modality</dt>
+<dd><span class="root">modality＝方式</span>　物理因子治療，如熱療。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>熱療可以。</p></details></dd>
+
+<dt>manual therapy</dt>
+<dd><span class="root">manual＝用手的</span>　徒手治療，含按摩，皆有療效。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>三年都在選項裡，都是可以。</p></details></dd>
+
+<dt>acute stage</dt>
+<dd><span class="root">acute＝急性</span>　急性期；急性期過後就要開始運動。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>「輕、小、慢」。</p></details></dd>
+
+<dt>intervertebral disc</dt>
+<dd><span class="root">inter-（之間）+ vertebral（椎骨）</span>　椎間盤，壓力隨姿勢改變。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>210 ＞ 140 ＞ 100 ＞ 75 ＞ 25。</p></details></dd>
+
+<dt>supine lying</dt>
+<dd><span class="root">supine＝仰臥</span>　平躺，椎間盤壓力最小（25%）。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>問「最小」選它。</p></details></dd>
+
+<dt>side lying</dt>
+<dd><span class="root">side＝側</span>　側躺，椎間盤壓力 75%。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>比平躺大、比站小。</p></details></dd>
+
+<dt>sitting</dt>
+<dd><span class="root">sit＝坐</span>　坐姿，椎間盤壓力 140%，比站立還大。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>問「最大」（無仰臥起坐選項時）選它。</p></details></dd>
+</dl>
+</section>
+<section id="chapter-final" data-chapter-kind="final_questions">
+<h2>五、歷年考題總複習</h2>
+<p class="meta">依年度由新到舊、同年依原始題號排列。共 12 題（110 期末、111 期中、112 期末、113 期末各 3 題）。<b style="color:#f08a8a">紅框</b>＝同一考點在兩個以上年度重複出現。</p>
+<h3><span class="yearchip">113 年</span>期末考 第 67 題</h3>
+<article data-question-id="113fin-p61-q67" data-placement="final">
+  <span class="qhead">113 年 期末考 第 67 題 ｜ 來源答案欄</span>
+  
+  <p class="stem">What is the primary goal of orthopedic rehabilitation?</p>
+  <ul class="opts"><li>(A) Long-term prescription of medication to control pain</li><li>(B) Preventing future injuries through surgical intervention</li><li>(C) Restoring function and facilitating the patient&#x27;s reintegration into society</li><li>(D) Replacing damaged joints with prostheses</li></ul>
+  <details data-kind="answer"><summary>答案與詳解</summary>
+    <div data-kind="zh-translation"><p><strong>中文題目：</strong>骨科復健的主要目標是什麼？</p>
+      <p>(A) 長期開立藥物控制疼痛</p>
+      <p>(B) 藉由手術介入預防未來的傷害</p>
+      <p>(C) 恢復功能並促進病人重返社會</p>
+      <p>(D) 以人工關節置換受損的關節</p></div>
+    <p class="ans">答案：(C)</p>
+    <p>復健目標：恢復功能、回歸社會。<span class="src"> ｜ BM113_Block8期末考詳解 第 61 頁</span></p>
+  </details>
+</article>
+<article data-question-id="113fin-p61-q68" data-placement="final">
+  <span class="qhead">113 年 期末考 第 68 題</span>
+  
+  <p class="stem">What is the most common cause of neck pain?</p>
+  <ul class="opts"><li>(A) Cervical disc herniation</li><li>(B) Neck strain and sprain</li><li>(C) Cervical myelopathy</li><li>(D) Rheumatic diseases</li></ul>
+  <details data-kind="answer"><summary>答案與詳解</summary>
+    <div data-kind="zh-translation"><p><strong>中文題目：</strong>頸痛最常見的原因是什麼？</p>
+      <p>(A) 頸椎椎間盤突出</p>
+      <p>(B) 頸部拉傷與扭傷</p>
+      <p>(C) 頸椎脊髓病變</p>
+      <p>(D) 風濕性疾病</p></div>
+    <p class="ans">答案：(B)</p>
+    <p>頸痛最常見是拉傷扭傷，85%。<span class="src"> ｜ BM113_Block8期末考詳解 第 61 頁</span></p>
+  </details>
+</article>
+<article data-question-id="113fin-p62-q69" data-placement="final">
+  <span class="qhead">113 年 期末考 第 69 題</span>
+  
+  <p class="stem">Which of the following statements about non-specific low back pain is correct?</p>
+  <ul class="opts"><li>(A) It usually has a clear and identifiable structural cause.</li><li>(B) It accounts for less than 20% of low back pain cases.</li><li>(C) It may be associated with factors such as poor physical condition and emotional stress.</li><li>(D) It typically requires surgical treatment.</li></ul>
+  <details data-kind="answer"><summary>答案與詳解</summary>
+    <div data-kind="zh-translation"><p><strong>中文題目：</strong>關於非特異性下背痛，下列敘述何者<b>正確</b>？</p>
+      <p>(A) 通常有明確且可辨識的結構性病因。</p>
+      <p>(B) 佔下背痛病例不到 20%。</p>
+      <p>(C) 可能與體能差、情緒壓力等因素有關。</p>
+      <p>(D) 通常需要手術治療。</p></div>
+    <p class="ans">答案：(C)</p>
+    <p>非特異性下背痛佔 85%，無結構病因、與體能與情緒有關、自限。<span class="src"> ｜ BM113_Block8期末考詳解 第 62 頁</span></p>
+  </details>
+</article>
+<h3><span class="yearchip">112 年</span>期末考 第 67 題</h3>
+<article data-question-id="112fin-p67-q67" data-placement="final" class="repeat">
+  <span class="qhead">112 年 期末考 第 67 題</span><span class="repeat-badge">重複考點 ×3</span>
+  <p class="repeat-note">同考點：110 第85題、111 第73題　—　頸痛與下背痛的疼痛來源（pain generators）：骨、關節、韌帶、肌肉、椎間盤、神經根都可能，唯獨軟骨不是</p>
+  <p class="stem">The key for management of neck and low back pain to find out pain generators. Which is not the potential pain generator of neck and lower back problems?</p>
+  <ul class="opts"><li>(A) Bone</li><li>(B) Ligament</li><li>(C) Nerve root</li><li>(D) Cartilage</li></ul>
+  <details data-kind="answer"><summary>答案與詳解</summary>
+    <div data-kind="zh-translation"><p><strong>中文題目：</strong>處理頸痛與下背痛的關鍵是找出疼痛來源。下列何者<b>不是</b>頸部與下背問題的潛在疼痛來源？</p>
+      <p>(A) 骨</p>
+      <p>(B) 韌帶</p>
+      <p>(C) 神經根</p>
+      <p>(D) 軟骨</p></div>
+    <p class="ans">答案：D</p>
+    <p>第三年同題，軟骨移到 (D)。<span class="src"> ｜ BM112_Block 8 期末考 第 67 頁</span></p>
+  </details>
+</article>
+<article data-question-id="112fin-p68-q68" data-placement="final" class="repeat">
+  <span class="qhead">112 年 期末考 第 68 題</span><span class="repeat-badge">重複考點 ×3</span>
+  <p class="repeat-note">同考點：110 第86題、111 第74題　—　控制頸背疼痛與發炎的方法：口服藥、注射、熱療、徒手治療與按摩、急性期後運動都可以；唯獨「臥床休息到不痛為止」不建議</p>
+  <p class="stem">To control pain and inflammation under neck and lower back problems, which method is not suggested?</p>
+  <ul class="opts"><li>(A) Bed rest till pain is gone</li><li>(B) Oral medication</li><li>(C) Manual therapy with massage</li><li>(D) Exercise after acute stage</li></ul>
+  <details data-kind="answer"><summary>答案與詳解</summary>
+    <div data-kind="zh-translation"><p><strong>中文題目：</strong>為控制頸部與下背問題的疼痛與發炎，下列哪種方法<b>不建議</b>？</p>
+      <p>(A) 臥床休息直到疼痛消失</p>
+      <p>(B) 口服藥物</p>
+      <p>(C) 徒手治療與按摩</p>
+      <p>(D) 急性期後運動</p></div>
+    <p class="ans">答案：A</p>
+    <p>臥床不建議，稍微不痛就要動：輕、小、慢。<span class="src"> ｜ BM112_Block 8 期末考 第 68 頁</span></p>
+  </details>
+</article>
+<article data-question-id="112fin-p68-q69" data-placement="final" class="repeat">
+  <span class="qhead">112 年 期末考 第 69 題</span><span class="repeat-badge">重複考點 ×3</span>
+  <p class="repeat-note">同考點：110 第87題、111 第75題　—　不同姿勢的椎間盤壓力：坐 140% &gt; 站 100% &gt; 側躺 75% &gt; 平躺 25%，仰臥起坐 210% 最大；坐比站大</p>
+  <p class="stem">The pressure over disc changes in different positions. In which position the disk will suffer from the least pressure?</p>
+  <ul class="opts"><li>(A) Standing</li><li>(B) Sitting</li><li>(C) Supine lying</li><li>(D) Side lying</li></ul>
+  <details data-kind="answer"><summary>答案與詳解</summary>
+    <div data-kind="zh-translation"><p><strong>中文題目：</strong>椎間盤的壓力隨姿勢改變。在哪種姿勢下椎間盤承受的壓力<b>最小</b>？</p>
+      <p>(A) 站立</p>
+      <p>(B) 坐著</p>
+      <p>(C) 平躺</p>
+      <p>(D) 側躺</p></div>
+    <p class="ans">答案：C</p>
+    <p>平躺 25 最小；坐 140、站 100、側躺 75、仰臥起坐 210。<span class="src"> ｜ BM112_Block 8 期末考 第 68 頁</span></p>
+  </details>
+</article>
+<h3><span class="yearchip">111 年</span>期中考 第 73 題</h3>
+<article data-question-id="111-p61-q73" data-placement="final" class="repeat">
+  <span class="qhead">111 年 期中考 第 73 題</span><span class="repeat-badge">重複考點 ×3</span>
+  <p class="repeat-note">同考點：110 第85題、112 第67題　—　頸痛與下背痛的疼痛來源（pain generators）：骨、關節、韌帶、肌肉、椎間盤、神經根都可能，唯獨軟骨不是</p>
+  <p class="stem">The key for management of neck and low back pain to find out pain generators. Which is not the potential pain generator of neck and lower back problems?</p>
+  <ul class="opts"><li>(A) Bone</li><li>(B) Ligament</li><li>(C) Cartilage</li><li>(D) Nerve root</li></ul>
+  <details data-kind="answer"><summary>答案與詳解</summary>
+    <div data-kind="zh-translation"><p><strong>中文題目：</strong>處理頸痛與下背痛的關鍵是找出疼痛來源。下列何者<b>不是</b>頸部與下背問題的潛在疼痛來源？</p>
+      <p>(A) 骨</p>
+      <p>(B) 韌帶</p>
+      <p>(C) 軟骨</p>
+      <p>(D) 神經根</p></div>
+    <p class="ans">答案：(C) Cartilage</p>
+    <p>同題再考，答案還是軟骨。<span class="src"> ｜ BM111 BLOCK-8 期中考詳解 第 61 頁</span></p>
+  </details>
+</article>
+<article data-question-id="111-p61-q74" data-placement="final" class="repeat">
+  <span class="qhead">111 年 期中考 第 74 題 ｜ 來源答案欄</span><span class="repeat-badge">重複考點 ×3</span>
+  <p class="repeat-note">同考點：110 第86題、112 第68題　—　控制頸背疼痛與發炎的方法：口服藥、注射、熱療、徒手治療與按摩、急性期後運動都可以；唯獨「臥床休息到不痛為止」不建議</p>
+  <p class="stem">To control pain and inflammation under neck and lower back problems, which method is not suggested?</p>
+  <ul class="opts"><li>(A) Bed rest till pain is gone</li><li>(B) Oral medication</li><li>(C) Exercise after acute stage</li><li>(D) Manual therapy with massage</li></ul>
+  <details data-kind="answer"><summary>答案與詳解</summary>
+    <div data-kind="zh-translation"><p><strong>中文題目：</strong>為控制頸部與下背問題的疼痛與發炎，下列哪種方法<b>不建議</b>？</p>
+      <p>(A) 臥床休息直到疼痛消失</p>
+      <p>(B) 口服藥物</p>
+      <p>(C) 急性期後運動</p>
+      <p>(D) 徒手治療與按摩</p></div>
+    <p class="ans">答案：(A) Bed rest till pain is gone</p>
+    <p>臥床不建議；口服藥、急性期後運動、按摩都可以。<span class="src"> ｜ BM111 BLOCK-8 期中考詳解 第 61 頁</span></p>
+  </details>
+</article>
+<article data-question-id="111-p62-q75" data-placement="final" class="repeat">
+  <span class="qhead">111 年 期中考 第 75 題</span><span class="repeat-badge">重複考點 ×3</span>
+  <p class="repeat-note">同考點：110 第87題、112 第69題　—　不同姿勢的椎間盤壓力：坐 140% &gt; 站 100% &gt; 側躺 75% &gt; 平躺 25%，仰臥起坐 210% 最大；坐比站大</p>
+  <p class="stem">The pressure over disc changes in different positions. In which position the disk will suffer from the least pressure?</p>
+  <ul class="opts"><li>(A) Side lying</li><li>(B) Supine lying</li><li>(C) Standing</li><li>(D) Sitting</li></ul>
+  <details data-kind="answer"><summary>答案與詳解</summary>
+    <div data-kind="zh-translation"><p><strong>中文題目：</strong>椎間盤的壓力隨姿勢改變。在哪種姿勢下椎間盤承受的壓力<b>最小</b>？</p>
+      <p>(A) 側躺</p>
+      <p>(B) 平躺</p>
+      <p>(C) 站立</p>
+      <p>(D) 坐著</p></div>
+    <p class="ans">答案：(B) Supine lying</p>
+    <p>壓力最小是平躺；坐 ＞ 站 ＞ 側躺 ＞ 平躺。<span class="src"> ｜ BM111 BLOCK-8 期中考詳解 第 62 頁</span></p>
+  </details>
+</article>
+<h3><span class="yearchip">110 年</span>期末考 第 85 題</h3>
+<article data-question-id="110fin-p111-q85" data-placement="final" class="repeat">
+  <span class="qhead">110 年 期末考 第 85 題 ｜ 來源答案欄</span><span class="repeat-badge">重複考點 ×3</span>
+  <p class="repeat-note">同考點：111 第73題、112 第67題　—　頸痛與下背痛的疼痛來源（pain generators）：骨、關節、韌帶、肌肉、椎間盤、神經根都可能，唯獨軟骨不是</p>
+  <p class="stem">Pain generators should be identified before giving treatment for neck and lower back problems. Which is not the potential pain generator of neck and lower back problems?</p>
+  <ul class="opts"><li>(A) Joint</li><li>(B) Muscle</li><li>(C) Cartilage</li><li>(D) Nerve root</li></ul>
+  <details data-kind="answer"><summary>答案與詳解</summary>
+    <div data-kind="zh-translation"><p><strong>中文題目：</strong>治療頸部與下背問題前應先找出疼痛來源。下列何者<b>不是</b>頸部與下背問題的潛在疼痛來源？</p>
+      <p>(A) 關節</p>
+      <p>(B) 肌肉</p>
+      <p>(C) 軟骨</p>
+      <p>(D) 神經根</p></div>
+    <p class="ans">答案：(C) Cartilage</p>
+    <p>疼痛來源沒有軟骨。<span class="src"> ｜ BM110 BLOCK-8 期末考詳解 (審後附上申覆) (1) 第 111 頁</span></p>
+  </details>
+</article>
+<article data-question-id="110fin-p112-q86" data-placement="final" class="repeat">
+  <span class="qhead">110 年 期末考 第 86 題</span><span class="repeat-badge">重複考點 ×3</span>
+  <p class="repeat-note">同考點：111 第74題、112 第68題　—　控制頸背疼痛與發炎的方法：口服藥、注射、熱療、徒手治療與按摩、急性期後運動都可以；唯獨「臥床休息到不痛為止」不建議</p>
+  <p class="stem">To control pain and inflammation under neck and lower back problems, which method is not suggested?</p>
+  <ul class="opts"><li>(A) Bed rest till pain is gone</li><li>(B) Image guided injection with steroid</li><li>(C) Physical modality with heat</li><li>(D) Manual therapy with massage</li></ul>
+  <details data-kind="answer"><summary>答案與詳解</summary>
+    <div data-kind="zh-translation"><p><strong>中文題目：</strong>為控制頸部與下背問題的疼痛與發炎，下列哪種方法<b>不建議</b>？</p>
+      <p>(A) 臥床休息直到疼痛消失</p>
+      <p>(B) 影像導引的類固醇注射</p>
+      <p>(C) 熱療等物理因子治療</p>
+      <p>(D) 徒手治療與按摩</p></div>
+    <p class="ans">答案：(A) Bed rest till pain is gone</p>
+    <p>臥床到不痛是唯一不建議的方法。<span class="src"> ｜ BM110 BLOCK-8 期末考詳解 (審後附上申覆) (1) 第 112 頁</span></p>
+  </details>
+</article>
+<article data-question-id="110fin-p114-q87" data-placement="final" class="repeat">
+  <span class="qhead">110 年 期末考 第 87 題 ｜ 來源答案欄</span><span class="repeat-badge">重複考點 ×3</span>
+  <p class="repeat-note">同考點：111 第75題、112 第69題　—　不同姿勢的椎間盤壓力：坐 140% &gt; 站 100% &gt; 側躺 75% &gt; 平躺 25%，仰臥起坐 210% 最大；坐比站大</p>
+  <p class="stem">The pressure over disc changes in different positions. In which position the disk will suffer from the most pressure?</p>
+  <ul class="opts"><li>(A) Supine lying</li><li>(B) Side lying</li><li>(C) Standing</li><li>(D) Sitting</li></ul>
+  <details data-kind="answer"><summary>答案與詳解</summary>
+    <div data-kind="zh-translation"><p><strong>中文題目：</strong>椎間盤的壓力隨姿勢改變。在哪種姿勢下椎間盤承受的壓力<b>最大</b>？</p>
+      <p>(A) 平躺</p>
+      <p>(B) 側躺</p>
+      <p>(C) 站立</p>
+      <p>(D) 坐著</p></div>
+    <p class="ans">答案：(D) Sitting</p>
+    <p>椎間盤壓力最大是坐，比站還大。<span class="src"> ｜ BM110 BLOCK-8 期末考詳解 (審後附上申覆) (1) 第 114 頁</span></p>
+  </details>
+</article>
+<p class="ending">軟骨不痛、別躺到不痛、坐比站傷。三年同一組三題，第四年換考 85% 與復健的目標。</p>
+</section>
+</div>
+<!-- nb-comments:start -->
+<link rel="stylesheet" href="https://unpkg.com/@waline/client@v3/dist/waline.css">
+<style>
+  .nb-comments{margin:72px 0 48px;padding-top:32px;border-top:1px solid var(--line,#2a3340)}
+  .nb-comments h2{margin:0 0 6px;font-size:22px;font-weight:700;color:var(--ink,var(--text,#e8ecf3))}
+  .nb-comments p.nb-hint{margin:0 0 20px;font-size:14px;color:var(--dim,var(--text-2,#a3adbd))}
+  .nb-comments #waline{
+    --waline-theme-color:var(--cyan,var(--teal,#6fd3c7));
+    --waline-active-color:var(--gold,#e5b567);
+    --waline-font-size:15px;
+    --waline-bgcolor:var(--panel,var(--bg-2,#141922));
+    --waline-bgcolor-light:var(--panel2,var(--bg-3,#1b2230));
+    --waline-border-color:var(--line,#2a3340);
+    --waline-color:var(--ink,var(--text,#e8ecf3));
+    --waline-light-grey:var(--dim,var(--text-2,#a3adbd));
+    --waline-dark-grey:var(--dim,var(--text-2,#a3adbd));
+    --waline-white:var(--panel,var(--bg-2,#141922));
+    --waline-disable-bgcolor:var(--panel2,var(--bg-3,#1b2230));
+    --waline-disable-color:var(--dim,var(--text-3,#7a968d));
+    --waline-info-bgcolor:var(--panel2,var(--bg-3,#1b2230));
+    --waline-info-color:var(--dim,var(--text-2,#a3adbd));
+    --waline-border:1px solid var(--line,#2a3340);
+    --waline-code-bgcolor:var(--panel2,var(--bg-3,#1b2230));
+    --waline-badge-color:var(--gold,#e5b567);
+    --waline-bq-color:var(--dim,#a3adbd);
+  }
+  .nb-comments .wl-panel{background:var(--panel,var(--bg-2,#141922))}
+  .nb-comments .wl-editor,.nb-comments .wl-input{background:var(--bg,#0b0e13)}
+</style>
+<section class="nb-comments" id="comments">
+  <div class="container">
+    <h2>留言板</h2>
+    <p class="nb-hint">看不懂、想補充、發現錯誤都歡迎留言；填個暱稱就能發。</p>
+    <div id="waline"></div>
+  </div>
+</section>
+<script type="module">
+  import { init } from 'https://unpkg.com/@waline/client@v3/dist/waline.js';
+  init({
+    el: '#waline',
+    serverURL: 'https://notes-comments.vercel.app',
+    path: location.pathname,
+    lang: 'zh-TW',
+    dark: true,
+    meta: ['nick'],
+    requiredMeta: ['nick'],
+    login: 'disable',
+    reaction: false,
+    pageview: false,
+    search: false,
+    imageUploader: false,
+    copyright: false,
+    locale: { placeholder: '寫下你的想法或問題⋯⋯（支援 Markdown）' }
+  });
+</script>
+<!-- nb-comments:end -->
+</body>
+</html>
