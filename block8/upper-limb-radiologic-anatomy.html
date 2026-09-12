@@ -1,0 +1,678 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>肌肉骨骼影像解剖學(1)-上肢 林育全</title>
+<style>
+:root{
+  color-scheme: dark;
+  --bg:#0b0e13; --panel:#141922; --panel2:#1b2230; --line:#2a3340;
+  --ink:#e8ecf3; --dim:#a3adbd; --gold:#e5b567; --cyan:#6fd3c7;
+  --rose:#e88b8b; --violet:#a99bf0;
+}
+*{box-sizing:border-box}
+html{font-size:150%}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font-family:"Noto Sans TC","PingFang TC","Helvetica Neue",system-ui,sans-serif;
+  line-height:1.85; overflow-wrap:anywhere;}
+/* Width follows the device, not the font size: px breakpoints stay put
+   while rem-based type scales with the 150% root. */
+.container{width:100%;max-width:none;margin:0 auto;
+  padding:clamp(.85rem,2.2vw,2.2rem);}
+@media (min-width:760px){ .container{max-width:730px} }
+@media (min-width:1024px){ .container{max-width:980px} }
+@media (min-width:1440px){ .container{max-width:1300px} }
+@media (min-width:1920px){ .container{max-width:1640px} }
+img{max-width:100%;height:auto}
+svg{max-width:100%;height:auto;display:block}
+h1{font-size:1.6rem;line-height:1.35;margin:.2rem 0 .6rem}
+h2{font-size:1.24rem;margin:2.4rem 0 .7rem;padding-bottom:.4rem;
+  border-bottom:1px solid var(--line);color:var(--gold)}
+h3{font-size:1.06rem;margin:1.5rem 0 .5rem;color:var(--cyan)}
+p{margin:.7rem 0}
+header#subject-overview{background:linear-gradient(160deg,#182031,#0e1219);
+  border:1px solid var(--line);border-radius:14px;padding:1.2rem;margin:.6rem 0 1.4rem}
+.meta{color:var(--dim);font-size:.86rem;margin:.3rem 0 0}
+nav#toc{background:var(--panel);border:1px solid var(--line);
+  border-radius:12px;padding:.9rem 1.1rem;margin:1.2rem 0}
+nav#toc ol{margin:.4rem 0 0;padding-left:1.3rem}
+nav#toc a{color:var(--ink);text-decoration:none;border-bottom:1px dotted var(--line)}
+.story{background:var(--panel2);border-left:3px solid var(--violet);
+  border-radius:0 10px 10px 0;padding:.9rem 1.1rem;margin:1.1rem 0}
+.story .tag{display:block;color:var(--violet);font-size:.78rem;
+  letter-spacing:.12em;margin-bottom:.35rem}
+.reality{background:var(--panel);border-left:3px solid var(--cyan);
+  border-radius:0 10px 10px 0;padding:.9rem 1.1rem;margin:1.1rem 0}
+.reality .tag{display:block;color:var(--cyan);font-size:.78rem;
+  letter-spacing:.12em;margin-bottom:.35rem}
+.keybox{background:#12202b;border:1px solid #26485a;border-radius:10px;
+  padding:.85rem 1rem;margin:1.1rem 0}
+.keybox b{color:var(--cyan)}
+.warn{background:#2a1c1c;border:1px solid #573434;border-radius:10px;
+  padding:.85rem 1rem;margin:1.1rem 0;color:#f0cfcf}
+article{background:var(--panel);border:1px solid var(--line);
+  border-radius:12px;padding:.95rem 1.05rem;margin:1.1rem 0}
+article .qhead{display:block;color:var(--gold);font-size:.82rem;
+  letter-spacing:.06em;margin-bottom:.45rem}
+article .stem{margin:.2rem 0 .5rem}
+article ul.opts{list-style:none;margin:.3rem 0 .2rem;padding:0}
+article ul.opts li{padding:.16rem 0 .16rem .2rem;color:#dbe2ec}
+details{background:#0f141c;border:1px solid var(--line);
+  border-radius:10px;padding:.15rem .8rem;margin:.6rem 0}
+details summary{cursor:pointer;padding:.6rem 0;color:var(--gold);
+  font-weight:600;min-height:44px;display:flex;align-items:center}
+details[data-kind="answer"] .ans{font-size:1.05rem;color:var(--cyan);font-weight:700}
+div[data-kind="zh-translation"]{background:#141c26;border:1px dashed #33465c;
+  border-radius:8px;padding:.7rem .85rem;margin:.5rem 0 .8rem}
+div[data-kind="zh-translation"] p{margin:.35rem 0}
+.src{color:var(--dim);font-size:.84rem;margin-top:.6rem}
+.quote{border-left:2px solid var(--gold);padding-left:.75rem;color:#f0e2c6}
+.infer{color:#f0d9a8;font-size:.92rem}
+figure{margin:1.3rem 0;background:var(--panel2);border:1px solid var(--line);
+  border-radius:12px;padding:.9rem}
+figcaption{color:var(--dim);font-size:.85rem;margin-top:.6rem;text-align:center}
+dl.vocab{margin:0}
+dl.vocab dt{color:var(--cyan);font-weight:700;margin-top:.9rem}
+dl.vocab dd{margin:.2rem 0 0;padding-left:0}
+dl.vocab .root{color:var(--dim);font-size:.86rem}
+.cram{background:var(--panel);border:1px solid var(--line);
+  border-radius:12px;padding:.4rem 1.1rem;margin:1rem 0}
+.cram li{margin:.55rem 0}
+.yearchip{display:inline-block;background:#233046;color:#bcd0ea;
+  border-radius:999px;padding:.05rem .55rem;font-size:.76rem;margin-right:.4rem}
+article.repeat{border:2px solid #e05252;box-shadow:0 0 0 3px rgba(224,82,82,.12)}
+article.repeat .qhead{color:#f08a8a}
+.repeat-badge{display:inline-block;background:#3a1c1c;border:1px solid #7d3a3a;
+  color:#f0a8a8;border-radius:999px;padding:.1rem .6rem;font-size:.76rem;
+  margin-left:.4rem;white-space:nowrap}
+.repeat-note{color:#e6a5a5;font-size:.84rem;margin:.45rem 0 0}
+figure.boxfig{margin:1.5rem 0 .5rem;background:transparent;border:0;padding:0}
+figure.boxfig img{border-radius:12px;border:1px solid var(--line);display:block;width:100%}
+figure.boxfig figcaption{color:var(--dim);font-size:.82rem;margin-top:.5rem;
+  text-align:left;line-height:1.6}
+figure.boxfig .figtag{color:var(--violet);font-size:.76rem;letter-spacing:.1em;
+  display:block;margin-bottom:.3rem}
+.ending{color:var(--dim);font-style:italic;margin:1.6rem 0 2.4rem}
+</style></head>
+<body>
+<div class="container">
+
+<header id="subject-overview">
+  <h1>肌肉骨骼影像解剖學(1)-上肢</h1>
+  <p>三年九題，只有兩個考點。<b>六題考 YCL 讀片法的五字訣 CNRMT</b>——而且三年用的是<b>同一組四個選項</b>（肩的鈣化、肘的脫位、橈骨過彎、多一節指骨），只是每年問不同的字母。剩下三題問<b>腕部特殊投影看得到哪幾塊骨</b>：carpal tunnel view 看不到掌骨、側面投影沒有一塊叫 cuboid（那是腳的）。</p>
+  <p>這一科的讀法：把五個字母各配一個「問題」，再把四個固定選項各配一個字母，九題就全部解完。</p>
+  <p class="meta">命題老師：林育全 ｜ 收錄 111 期中、112 期末、113 期中，各 3 題共 9 題</p>
+</header>
+
+<nav id="toc">
+  <b>目錄</b>
+  <ol>
+    <li><a href="#chapter-1">CNRMT：五個字母各問一個問題</a></li>
+    <li><a href="#chapter-2">腕部特殊投影：看得到誰、看不到誰</a></li>
+    <li><a href="#chapter-cram">考前速記</a></li>
+    <li><a href="#chapter-vocab">單字表</a></li>
+    <li><a href="#chapter-final">歷年考題總複習</a></li>
+  <li><a href="#comments" data-nb-toc="1">留言板</a></li>
+</ol>
+</nav>
+<section id="chapter-1" data-chapter-kind="story">
+<h2>一、CNRMT：五個字母各問一個問題</h2>
+
+<figure class="boxfig" data-visual-id="ulbox-01-story" data-image-kind="story" data-explanation-verified="true">
+<span class="figtag">情境場景</span>
+<img data-visual-id="ulbox-01-story" src="img/ulbox-01-story.webp" alt="情境場景：讀片像點名——先問有沒有不該來的、再數人數、看站位、看長相、最後看膚色。" loading="lazy" decoding="async" width="1600" height="914">
+<figcaption>情境場景：讀片像點名——先問有沒有不該來的、再數人數、看站位、看長相、最後看膚色。</figcaption>
+</figure>
+<div class="story" data-prose-kind="story"><span class="tag">故事</span>
+<p>林老師的讀片法叫 <b>YCL method</b>，五個字母 <b>C-N-R-M-T</b>，像對一群人<b>點名</b>：</p>
+<p><b>C — Category（種類）</b>：這裡該有的骨頭有沒有少一種？有沒有<b>不該出現的東西</b>——異物、金屬植入物、軟組織裡的鈣化？<br>
+<b>N — Number（數量）</b>：某種骨頭的<b>數目</b>對不對？多一節指骨、少一塊腕骨。<br>
+<b>R — Relation（相對位置）</b>：骨頭之間<b>站的位置</b>對不對？脫位、內翻外翻、關節腔太寬太窄。<br>
+<b>M — Morphology（形態）</b>：骨頭本身的<b>形狀與尺寸</b>對不對？橈骨過度彎曲、變短、變粗。<br>
+<b>T — Texture（質地）</b>：骨頭的<b>密度</b>對不對？骨折線、變白（硬化）、變黑（溶骨）。</p>
+<p>三年的考題全用<b>同一組四個例子</b>：</p>
+<p>(A) 肩 AP 片上大結節處一個<b>鈣化病灶</b> → <b>Category</b>（軟組織裡出現了不該有的東西）<br>
+(B) 肘側位片上橈骨與尺骨<b>脫位</b> → <b>Relation</b><br>
+(C) 前臂 AP 片上橈骨<b>過度彎曲</b> → <b>Morphology</b><br>
+(D) 手 AP 片上<b>多了一組</b>中節與遠節指骨 → <b>Number</b></p>
+<p>111 年問 R 和 M、112 年問 C 和 N、113 年問 M——<b>四個選項一字不差，只換題幹的字母。</b>113 年另出一題問「哪個<b>不屬於</b> Texture」：骨折線、變白的月狀骨、溶骨病灶都是密度問題；<b>金屬植入物是 Category</b>。</p>
+</div>
+
+<figure class="boxfig" data-visual-id="ulbox-02-reality" data-image-kind="comparison" data-explanation-verified="true">
+<span class="figtag">五字訣對照</span>
+<img data-visual-id="ulbox-02-reality" src="img/ulbox-02-reality.webp" alt="五字訣對照：C 種類與異物、N 數量、R 相對位置、M 形態、T 質地，各配一個考題例子。" loading="lazy" decoding="async" width="1600" height="914">
+<figcaption>五字訣對照：C 種類與異物、N 數量、R 相對位置、M 形態、T 質地，各配一個考題例子。</figcaption>
+</figure>
+<div class="reality"><span class="tag">回到現實</span>
+<p class="quote">詳解原文（112 第 60 題）:「(A):category,看骨頭種類有沒有異常:有沒有多一整或少一種、有沒有出現異物。(B):relation,看骨頭之間的相對位置有沒有問題(排列:是否有內翻或外翻。關節的空間:是否有比較寬或窄)。(C):morphology,看骨頭型態有沒有問題，如:形狀、尺寸。(D):number:看某種骨頭數量有沒有問題」</p>
+<p class="quote">詳解原文（113 第 72 題）:「金屬植入物屬於Category」</p>
+<p><b>五字母＋固定例子：</b></p>
+<p><b>C</b> 種類／異物 → 大結節鈣化、金屬植入物<br>
+<b>N</b> 數量 → 多一組中節與遠節指骨<br>
+<b>R</b> 相對位置 → 橈尺骨脫位<br>
+<b>M</b> 形態 → 橈骨過度彎曲<br>
+<b>T</b> 質地（密度）→ 骨折線、月狀骨變白、溶骨病灶</p>
+<p class="infer">注意一個小分歧：112 年第 59 題以「大結節鈣化＝Category」為<b>正確答案</b>，但 113 年第 71 題的學生詳解寫「鈣化為 Texture」。以<b>正式答案</b>為準：<b>鈣化與金屬植入物一樣，都是「出現了不該有的東西」，歸 Category</b>；Texture 指的是<b>骨頭本身</b>密度的改變。113 年那題正解是 (C) Morphology，不受這個分歧影響。</p>
+</div>
+
+<article data-question-id="111-p42-q52" data-placement="chapter">
+  <span class="qhead">111 年 期中考 第 52 題</span>
+  <p class="stem">According to YCL method (CNRMT) interpreting a skeletal radiograph, which of the following belongs to Relation(R)?</p>
+  <ul class="opts">
+    <li>(A) A calcified lesion over greater tubercle in X-ray Shoulder AP view</li>
+    <li>(B) Dislocated radius and ulna in X-ray Elbow lateral view</li>
+    <li>(C) An over-bowing radius in X-ray Forearm AP view</li>
+    <li>(D) Additional middle phalanx and distal phalanx in X-ray Hand AP view</li>
+  </ul>
+  <details data-kind="answer">
+    <summary>答案與詳解</summary>
+    <div data-kind="zh-translation">
+      <p><strong>中文題目：</strong>依 YCL 讀片法（CNRMT）判讀骨骼 X 光，下列何者屬於 Relation（相對位置）？</p>
+      <p>(A) 肩 AP 位大結節處的鈣化病灶</p>
+      <p>(B) 肘側位橈骨與尺骨脫位</p>
+      <p>(C) 前臂 AP 位橈骨過度彎曲</p>
+      <p>(D) 手 AP 位多出的中節與遠節指骨</p>
+    </div>
+    <p class="ans">答案：(B) Dislocated radius and ulna in X-ray Elbow lateral view</p>
+    <p>原卷<b>詳解欄留空</b>。<b>脫位＝骨頭之間的相對位置出問題＝Relation。</b></p>
+    <p class="src">出處：林育全 肌肉骨骼影像解剖學(1)-上肢 ｜ BM111 BLOCK-8 期中考詳解.pdf 第 42 頁</p>
+  </details>
+</article>
+
+<article data-question-id="111-p43-q53" data-placement="chapter">
+  <span class="qhead">111 年 期中考 第 53 題</span>
+  <p class="stem">According to YCL method (CNRMT) interpreting a skeletal radiograph, which of the following belongs to Morphology (M)?</p>
+  <ul class="opts">
+    <li>(A) A calcified lesion over greater tubercle in X-ray Shoulder AP view</li>
+    <li>(B) Dislocated radius and ulna in X-ray Elbow lateral view</li>
+    <li>(C) An over-bowing radius in X-ray Forearm AP view</li>
+    <li>(D) Additional middle phalanx and distal phalanx in X-ray Hand AP view</li>
+  </ul>
+  <details data-kind="answer">
+    <summary>答案與詳解</summary>
+    <div data-kind="zh-translation">
+      <p><strong>中文題目：</strong>依 YCL 讀片法（CNRMT）判讀骨骼 X 光，下列何者屬於 Morphology（形態）？</p>
+      <p>(A) 肩 AP 位大結節處的鈣化病灶</p>
+      <p>(B) 肘側位橈骨與尺骨脫位</p>
+      <p>(C) 前臂 AP 位橈骨過度彎曲</p>
+      <p>(D) 手 AP 位多出的中節與遠節指骨</p>
+    </div>
+    <p class="ans">答案：(C) An over-bowing radius in X-ray Forearm AP view</p>
+    <p class="quote">詳解原文:「考古題」</p>
+    <p><b>過度彎曲＝骨頭本身的形狀出問題＝Morphology。</b></p>
+    <p class="src">出處：林育全 肌肉骨骼影像解剖學(1)-上肢 ｜ BM111 BLOCK-8 期中考詳解.pdf 第 43 頁</p>
+  </details>
+</article>
+
+<article data-question-id="112fin-p60-q59" data-placement="chapter">
+  <span class="qhead">112 年 期末考 第 59 題</span>
+  <p class="stem">According to YCL method (CNRMT) interpreting a skeletal radiograph, which of the following belongs to Category (C)?</p>
+  <ul class="opts">
+    <li>(A) A calcified lesion over greater tubercle in X-ray Shoulder AP view</li>
+    <li>(B) Dislocated radius and ulna in X-ray Elbow lateral view</li>
+    <li>(C) An over-bowing radius in X-ray Forearm AP view</li>
+    <li>(D) Additional middle phalanx and distal phalanx in X-ray Hand AP view</li>
+  </ul>
+  <details data-kind="answer">
+    <summary>答案與詳解</summary>
+    <div data-kind="zh-translation">
+      <p><strong>中文題目：</strong>依 YCL 讀片法（CNRMT）判讀骨骼 X 光，下列何者屬於 Category（種類）？</p>
+      <p>(A) 肩 AP 位大結節處的鈣化病灶</p>
+      <p>(B) 肘側位橈骨與尺骨脫位</p>
+      <p>(C) 前臂 AP 位橈骨過度彎曲</p>
+      <p>(D) 手 AP 位多出的中節與遠節指骨</p>
+    </div>
+    <p class="ans">答案：A</p>
+    <p class="quote">詳解原文:「(A) X-ray Shoulder AP view 中在 Greater tubercl 處看到 calcification：Category (B)……Relation (C)……Morphology (D)……Number」</p>
+    <p>鈣化是<b>出現了不該有的東西</b>，歸 Category。這一題把四個選項的歸類一次列全。</p>
+    <p class="src">出處：肌肉骨骼影像解剖學(1)-上肢 林育全(ppt pg.18) ｜ BM112_Block 8 期末考.pdf 第 60 頁</p>
+  </details>
+</article>
+
+<article data-question-id="112fin-p61-q60" data-placement="chapter">
+  <span class="qhead">112 年 期末考 第 60 題</span>
+  <p class="stem">According to YCL method (CNRMT) interpreting a skeletal radiograph, which of the following belongs to Number (N)?</p>
+  <ul class="opts">
+    <li>(A) A calcified lesion over greater tubercle in X-ray Shoulder AP view</li>
+    <li>(B) Dislocated radius and ulna in X-ray Elbow lateral view</li>
+    <li>(C) An over-bowing radius in X-ray Forearm AP view</li>
+    <li>(D) Additional middle phalanx and distal phalanx in X-ray Hand AP view</li>
+  </ul>
+  <details data-kind="answer">
+    <summary>答案與詳解</summary>
+    <div data-kind="zh-translation">
+      <p><strong>中文題目：</strong>依 YCL 讀片法（CNRMT）判讀骨骼 X 光，下列何者屬於 Number（數量）？</p>
+      <p>(A) 肩 AP 位大結節處的鈣化病灶</p>
+      <p>(B) 肘側位橈骨與尺骨脫位</p>
+      <p>(C) 前臂 AP 位橈骨過度彎曲</p>
+      <p>(D) 手 AP 位多出的中節與遠節指骨</p>
+    </div>
+    <p class="ans">答案：D</p>
+    <p class="quote">詳解原文:「(A):category,看骨頭種類有沒有異常……(B):relation,看骨頭之間的相對位置……(C):morphology,看骨頭型態……(D):number:看某種骨頭數量有沒有問題」</p>
+    <p><b>多一節指骨＝數量出問題＝Number。</b>這一題的詳解是五字訣定義的最完整版本。</p>
+    <p class="src">出處：肌肉骨骼影像解剖學(1)-上肢 林育全(ppt pg.18) ｜ BM112_Block 8 期末考.pdf 第 61 頁</p>
+  </details>
+</article>
+
+<article data-question-id="113-p86-q71" data-placement="chapter">
+  <span class="qhead">113 年 期中考 第 71 題</span>
+  <p class="stem">According to YCL method (CNRMT) interpreting a skeletal radiograph, which of the following belongs to Morphology (M)?</p>
+  <ul class="opts">
+    <li>(A) A calcified lesion over greater tubercle in X-ray Shoulder AP view</li>
+    <li>(B) Dislocated radius and ulna in X-ray Elbow lateral view</li>
+    <li>(C) An over-bowing radius in X-ray Forearm AP view</li>
+    <li>(D) Additional middle phalanx and distal phalanx in X-ray Hand AP view</li>
+  </ul>
+  <details data-kind="answer">
+    <summary>答案與詳解</summary>
+    <div data-kind="zh-translation">
+      <p><strong>中文題目：</strong>依 YCL 讀片法（CNRMT）判讀骨骼 X 光，下列何者屬於 Morphology（形態）？</p>
+      <p>(A) 肩 AP 位大結節處的鈣化病灶</p>
+      <p>(B) 肘側位橈骨與尺骨脫位</p>
+      <p>(C) 前臂 AP 位橈骨過度彎曲</p>
+      <p>(D) 手 AP 位多出的中節與遠節指骨</p>
+    </div>
+    <p class="ans">答案：(C)</p>
+    <p class="quote">詳解原文:「(A)鈣化為Texture (B)Dislocated屬於Relation (C)over-bowing屬於Morphology (D)Additional middle phalanx and distal phalanx屬於Number」</p>
+    <p>與 111 年第 53 題<b>逐字相同</b>。（本題詳解把鈣化歸為 Texture，與 112 年正式答案的 Category 不同——以 112 年為準，不影響本題答案。）</p>
+    <p class="src">出處：肌肉骨骼影像解剖學(1)-上肢 林育全 p.19 ｜ BM113_Block8期中考詳解.pdf 第 86 頁</p>
+  </details>
+</article>
+
+<article data-question-id="113-p87-q72" data-placement="chapter">
+  <span class="qhead">113 年 期中考 第 72 題</span>
+  <p class="stem">According to YCL method (CNRMT) interpreting a skeletal radiograph, which of the following does not belong to Texture (T)?</p>
+  <ul class="opts">
+    <li>(A) A fracture line over greater tubercle in X-ray Shoulder AP view</li>
+    <li>(B) A whiter lunate (increased density) in X-ray Wrist AP view</li>
+    <li>(C) An osteolytic lesion over metaphysis of radius in X-ray Forearm AP view</li>
+    <li>(D) A metal implant over distal radius in X-ray Wrist lateral view</li>
+  </ul>
+  <details data-kind="answer">
+    <summary>答案與詳解</summary>
+    <div data-kind="zh-translation">
+      <p><strong>中文題目：</strong>依 YCL 讀片法（CNRMT）判讀骨骼 X 光，下列何者<b>不屬於</b> Texture（質地）？</p>
+      <p>(A) 肩 AP 位大結節處的骨折線</p>
+      <p>(B) 腕 AP 位變白（密度增加）的月狀骨</p>
+      <p>(C) 前臂 AP 位橈骨幹骺端的溶骨病灶</p>
+      <p>(D) 腕側位遠端橈骨處的金屬植入物</p>
+    </div>
+    <p class="ans">答案：(D)</p>
+    <p class="quote">詳解原文:「金屬植入物屬於Category」</p>
+    <p>骨折線、變白、溶骨都是<b>骨頭本身密度</b>的改變（Texture）；金屬植入物是<b>不該有的東西出現</b>（Category）。</p>
+    <p class="src">出處：肌肉骨骼影像解剖學(1)-上肢 林育全 ｜ BM113_Block8期中考詳解.pdf 第 87 頁</p>
+  </details>
+</article>
+</section>
+<section id="chapter-2" data-chapter-kind="story">
+<h2>二、腕部特殊投影：看得到誰、看不到誰</h2>
+
+<figure class="boxfig" data-visual-id="ulbox-03-story" data-image-kind="story" data-explanation-verified="true">
+<span class="figtag">情境場景</span>
+<img data-visual-id="ulbox-03-story" src="img/ulbox-03-story.webp" alt="情境場景：手腕往後折、從掌根往上看，隧道的邊緣露出五塊骨頭。" loading="lazy" decoding="async" width="1600" height="914">
+<figcaption>情境場景：手腕往後折、從掌根往上看，隧道的邊緣露出五塊骨頭。</figcaption>
+</figure>
+<div class="story" data-prose-kind="story"><span class="tag">故事</span>
+<p>腕隧道是掌側腕骨圍成的一條溝。要在 X 光上看它，得把手腕<b>用力往後折</b>、X 光從掌根方向<b>沿著隧道的軸線</b>射進去——這叫 <b>carpal tunnel view</b>。</p>
+<p>從這個角度，圍成隧道的骨頭會排成一個弧形露出來：<b>鉤骨的鉤（hook of hamate）、豌豆骨、頭狀骨、舟狀骨、大多角骨</b>。這五個是「主要看得到的構造」。</p>
+<p><b>掌骨不在裡面</b>——它在隧道的遠端，不構成隧道的邊緣。111 與 112 年同一題，答案都是掌骨。</p>
+<p>113 年換考<b>側面投影</b>：手部 lateral view 看得到頭狀骨、大多角骨、豌豆骨、舟狀骨、月狀骨。選項裡塞了一個 <b>cuboid（骰骨）</b>——那是<b>腳</b>的骨頭，八塊腕骨裡沒有它。詳解自己說「送分題」。</p>
+</div>
+
+<figure class="boxfig" data-visual-id="ulbox-04-reality" data-image-kind="comparison" data-explanation-verified="true">
+<span class="figtag">投影對照</span>
+<img data-visual-id="ulbox-04-reality" src="img/ulbox-04-reality.webp" alt="投影對照：carpal tunnel view 的五塊骨、lateral view 的五塊骨；掌骨與骰骨不在名單上。" loading="lazy" decoding="async" width="1600" height="914">
+<figcaption>投影對照：carpal tunnel view 的五塊骨、lateral view 的五塊骨；掌骨與骰骨不在名單上。</figcaption>
+</figure>
+<div class="reality"><span class="tag">回到現實</span>
+<p class="quote">詳解原文（112）:「在Carpel tunnel view中比較能看到：trapezium, scaphoid, capitate, hamate,pisiform」</p>
+<p class="quote">詳解原文（113）:「送分題，8塊腕骨沒有一塊叫 Cuboid　看一下真正的lateral view 可以看到什麼吧！1. Capitate 2. Trapezium 3. Pisiform 4. Scaphoid 5. Lunate」</p>
+<p><b>Carpal tunnel view 主要構造：</b>鉤骨鉤、豌豆骨、頭狀骨、舟狀骨、大多角骨。<b>不含掌骨。</b></p>
+<p><b>Hand lateral view 看得到：</b>頭狀骨、大多角骨、豌豆骨、舟狀骨、月狀骨。<b>Cuboid 是足部的骨頭。</b></p>
+<p class="infer">兩題的解法都是<b>找那個「根本不是腕骨」或「不在隧道邊緣」的選項</b>——掌骨是手的但不圍隧道；骰骨連手都不是。</p>
+</div>
+
+<article data-question-id="111-p42-q51" data-placement="chapter">
+  <span class="qhead">111 年 期中考 第 51 題</span>
+  <p class="stem">Which of the following is not the main structures in X-ray Wrist carpal tunnel view?</p>
+  <ul class="opts">
+    <li>(A) Hook of Hamate</li>
+    <li>(B) Capitate</li>
+    <li>(C) Metacarpal</li>
+    <li>(D) Scaphoid</li>
+  </ul>
+  <details data-kind="answer">
+    <summary>答案與詳解</summary>
+    <div data-kind="zh-translation">
+      <p><strong>中文題目：</strong>下列何者<b>不是</b>腕部 X 光腕隧道投影中的主要構造？</p>
+      <p>(A) 鉤骨鉤</p>
+      <p>(B) 頭狀骨</p>
+      <p>(C) 掌骨</p>
+      <p>(D) 舟狀骨</p>
+    </div>
+    <p class="ans">答案：(C) Metacarpal</p>
+    <p class="quote">詳解原文:「在carpal tunnel view 比較能看到的構造: capitate, scaphoid, trapezium, hamate, pisiform」</p>
+    <p>掌骨不圍成腕隧道。</p>
+    <p class="src">出處：林育全 肌肉骨骼影像解剖學(1)-上肢 ｜ BM111 BLOCK-8 期中考詳解.pdf 第 42 頁</p>
+  </details>
+</article>
+
+<article data-question-id="112fin-p60-q58" data-placement="chapter">
+  <span class="qhead">112 年 期末考 第 58 題</span>
+  <p class="stem">Which of the following is not the main structures in X-ray Wrist carpal tunnel view?</p>
+  <ul class="opts">
+    <li>(A) Hook of Hamate</li>
+    <li>(B) Capitate</li>
+    <li>(C) Metacarpal</li>
+    <li>(D) Scaphoid</li>
+  </ul>
+  <details data-kind="answer">
+    <summary>答案與詳解</summary>
+    <div data-kind="zh-translation">
+      <p><strong>中文題目：</strong>下列何者<b>不是</b>腕部 X 光腕隧道投影中的主要構造？</p>
+      <p>(A) 鉤骨鉤</p>
+      <p>(B) 頭狀骨</p>
+      <p>(C) 掌骨</p>
+      <p>(D) 舟狀骨</p>
+    </div>
+    <p class="ans">答案：C</p>
+    <p class="quote">詳解原文:「在Carpel tunnel view中比較能看到：trapezium, scaphoid, capitate, hamate,pisiform」</p>
+    <p>與 111 年第 51 題<b>逐字相同</b>。</p>
+    <p class="src">出處：肌肉骨骼影像解剖學(1)-上肢 林育全(ppt pg.16) ｜ BM112_Block 8 期末考.pdf 第 60 頁</p>
+  </details>
+</article>
+
+<article data-question-id="113-p85-q70" data-placement="chapter">
+  <span class="qhead">113 年 期中考 第 70 題</span>
+  <p class="stem">Which bone cannot be seen in X-ray Hand lateral view?</p>
+  <ul class="opts">
+    <li>(A) Cuboid</li>
+    <li>(B) Lunate</li>
+    <li>(C) Capitate</li>
+    <li>(D) Trapezium</li>
+  </ul>
+  <details data-kind="answer">
+    <summary>答案與詳解</summary>
+    <div data-kind="zh-translation">
+      <p><strong>中文題目：</strong>手部 X 光側位投影中<b>看不到</b>哪一塊骨頭？</p>
+      <p>(A) 骰骨</p>
+      <p>(B) 月狀骨</p>
+      <p>(C) 頭狀骨</p>
+      <p>(D) 大多角骨</p>
+    </div>
+    <p class="ans">答案：(A)</p>
+    <p class="quote">詳解原文:「送分題，8塊腕骨沒有一塊叫 Cuboid　看一下真正的lateral view 可以看到什麼吧！1. Capitate 2. Trapezium 3. Pisiform 4. Scaphoid 5. Lunate」</p>
+    <p>骰骨在<b>腳</b>上。</p>
+    <p class="src">出處：肌肉骨骼影像解剖學(1)-上肢 林育全 p.17 ｜ BM113_Block8期中考詳解.pdf 第 85 頁</p>
+  </details>
+</article>
+</section>
+
+<section id="chapter-cram" data-chapter-kind="cram">
+<h2>三、考前速記</h2>
+<div class="cram">
+<ul>
+<li><b>CNRMT ＝ Category 種類與異物、Number 數量、Relation 相對位置、Morphology 形態、Texture 質地。</b></li>
+<li><b>大結節鈣化 → Category；金屬植入物 → Category。</b>「出現不該有的東西」都是 C。</li>
+<li><b>多一組指骨 → Number。</b></li>
+<li><b>橈尺骨脫位 → Relation。</b>內翻外翻、關節腔寬窄也是 R。</li>
+<li><b>橈骨過度彎曲 → Morphology。</b>形狀、尺寸都是 M。</li>
+<li><b>骨折線、變白（硬化）、溶骨 → Texture。</b>骨頭本身的密度。</li>
+<li>三年同一組四個選項，只換題幹字母——<b>把四個例子各配一個字母背死</b>。</li>
+<li><b>Carpal tunnel view 五塊：鉤骨鉤、豌豆骨、頭狀骨、舟狀骨、大多角骨。掌骨不在。</b></li>
+<li><b>Hand lateral view 五塊：頭狀骨、大多角骨、豌豆骨、舟狀骨、月狀骨。Cuboid 是腳的。</b></li>
+<li>113 年詳解把鈣化寫成 Texture，與 112 年正式答案（Category）不同——以正式答案為準。</li>
+</ul>
+</div>
+</section>
+
+<!-- ================= VOCAB ================= -->
+<section id="chapter-vocab" data-chapter-kind="vocab">
+<h2>四、單字表</h2>
+<dl class="vocab">
+<dt>YCL method (CNRMT)</dt>
+<dd><span class="root">林育全老師的讀片口訣</span>　五步驟判讀骨骼 X 光：Category、Number、Relation、Morphology、Texture。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>像點名：<b>有沒有不該來的、人數、站位、長相、膚色</b>。</p></details></dd>
+
+<dt>Category</dt>
+<dd><span class="root">category＝類別</span>　種類：該有的骨頭少了一種、或出現異物（金屬、鈣化）。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>鈣化與金屬植入物都歸這裡。</p></details></dd>
+
+<dt>Number</dt>
+<dd><span class="root">number＝數目</span>　數量：某種骨頭多了或少了。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>多一組中節遠節指骨。</p></details></dd>
+
+<dt>Relation</dt>
+<dd><span class="root">relation＝關係</span>　相對位置：脫位、排列（內翻外翻）、關節腔寬窄。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>橈尺骨脫位。</p></details></dd>
+
+<dt>Morphology</dt>
+<dd><span class="root">morpho-（形）+ -logy</span>　形態：骨頭本身的形狀與尺寸。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>橈骨過度彎曲。</p></details></dd>
+
+<dt>Texture</dt>
+<dd><span class="root">texture＝質地</span>　質地：骨頭的密度——骨折線、硬化變白、溶骨變黑。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>三個都是<b>骨頭本身</b>的密度，金屬不算。</p></details></dd>
+
+<dt>over-bowing</dt>
+<dd><span class="root">bow＝弓</span>　過度彎曲。長骨呈弓形變形，屬 Morphology。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>三年固定的 M 例子。</p></details></dd>
+
+<dt>osteolytic lesion</dt>
+<dd><span class="root">osteo-（骨）+ lysis（溶解）</span>　溶骨病灶，X 光上變黑，屬 Texture。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>密度<b>減少</b>；變白是密度增加，兩者都是 T。</p></details></dd>
+
+<dt>carpal tunnel view</dt>
+<dd><span class="root">carpal＝腕的；tunnel＝隧道</span>　腕隧道投影。腕背屈、X 光沿隧道軸射入。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>看到<b>鉤骨鉤、豌豆骨、頭狀骨、舟狀骨、大多角骨</b>；掌骨不在。</p></details></dd>
+
+<dt>hook of hamate</dt>
+<dd><span class="root">hamate＝鉤狀的</span>　鉤骨鉤，腕隧道尺側壁，carpal tunnel view 的主要構造。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>這個投影就是為了看它與豌豆骨。</p></details></dd>
+
+<dt>pisiform</dt>
+<dd><span class="root">拉丁 pisum＝豌豆</span>　豌豆骨，腕隧道尺側的小骨。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>兩種投影都看得到它。</p></details></dd>
+
+<dt>trapezium</dt>
+<dd><span class="root">希臘 trapezion＝梯形</span>　大多角骨，腕隧道橈側壁。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>兩種投影都看得到它。</p></details></dd>
+
+<dt>cuboid</dt>
+<dd><span class="root">cube＝立方體</span>　骰骨，<b>足部</b>的跗骨之一。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>八塊腕骨沒有它——113 年的送分題。</p></details></dd>
+
+<dt>metacarpal</dt>
+<dd><span class="root">meta-（之後）+ carpal（腕）</span>　掌骨，腕骨遠端的五根長骨。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>不圍成腕隧道，所以不是 carpal tunnel view 的主要構造。</p></details></dd>
+</dl>
+</section>
+<section id="chapter-final" data-chapter-kind="final_questions">
+<h2>六、歷年考題總複習</h2>
+<p class="meta">依年度由新到舊、同年依原始題號排列。共 9 題（111 期中、112 期末、113 期中各 3 題）。<b style="color:#f08a8a">紅框</b>＝同一考點在兩個以上年度重複出現。</p>
+<h3><span class="yearchip">113 年</span>期中考 第 70 題</h3>
+<article data-question-id="113-p85-q70" data-placement="final" class="repeat">
+  <span class="qhead">113 年 期中考 第 70 題</span><span class="repeat-badge">重複考點 ×3</span>
+  <p class="repeat-note">同考點：111 第51題、112 第58題　—　腕部特殊投影：carpal tunnel view 看到 capitate、scaphoid、trapezium、hamate、pisiform，不是掌骨；側面投影的五塊骨</p>
+  <p class="stem">Which bone cannot be seen in X-ray Hand lateral view?</p>
+  <ul class="opts"><li>(A) Cuboid</li><li>(B) Lunate</li><li>(C) Capitate</li><li>(D) Trapezium</li></ul>
+  <details data-kind="answer"><summary>答案與詳解</summary>
+    <div data-kind="zh-translation"><p><strong>中文題目：</strong>手部 X 光側位投影中<b>看不到</b>哪一塊骨頭？</p>
+      <p>(A) 骰骨</p>
+      <p>(B) 月狀骨</p>
+      <p>(C) 頭狀骨</p>
+      <p>(D) 大多角骨</p></div>
+    <p class="ans">答案：(A)</p>
+    <p>Cuboid 是腳的骨頭，八塊腕骨沒有它。<span class="src"> ｜ BM113_Block8期中考詳解 第 85 頁</span></p>
+  </details>
+</article>
+<article data-question-id="113-p86-q71" data-placement="final" class="repeat">
+  <span class="qhead">113 年 期中考 第 71 題</span><span class="repeat-badge">重複考點 ×6</span>
+  <p class="repeat-note">同考點：111 第52題、111 第53題、112 第59題、112 第60題、113 第72題　—　YCL 讀片法 CNRMT 五字訣：Category 種類與異物、Number 數量、Relation 相對位置、Morphology 形狀尺寸、Texture 密度；四個固定選項年年輪流問</p>
+  <p class="stem">According to YCL method (CNRMT) interpreting a skeletal radiograph, which of the following belongs to Morphology (M)?</p>
+  <ul class="opts"><li>(A) A calcified lesion over greater tubercle in X-ray Shoulder AP view</li><li>(B) Dislocated radius and ulna in X-ray Elbow lateral view</li><li>(C) An over-bowing radius in X-ray Forearm AP view</li><li>(D) Additional middle phalanx and distal phalanx in X-ray Hand AP view</li></ul>
+  <details data-kind="answer"><summary>答案與詳解</summary>
+    <div data-kind="zh-translation"><p><strong>中文題目：</strong>依 YCL 讀片法（CNRMT）判讀骨骼 X 光，下列何者屬於 Morphology（形態）？</p>
+      <p>(A) 肩 AP 位大結節處的鈣化病灶</p>
+      <p>(B) 肘側位橈骨與尺骨脫位</p>
+      <p>(C) 前臂 AP 位橈骨過度彎曲</p>
+      <p>(D) 手 AP 位多出的中節與遠節指骨</p></div>
+    <p class="ans">答案：(C)</p>
+    <p>與 111 第 53 題逐字相同，過度彎曲是 Morphology。<span class="src"> ｜ BM113_Block8期中考詳解 第 86 頁</span></p>
+  </details>
+</article>
+<article data-question-id="113-p87-q72" data-placement="final" class="repeat">
+  <span class="qhead">113 年 期中考 第 72 題</span><span class="repeat-badge">重複考點 ×6</span>
+  <p class="repeat-note">同考點：111 第52題、111 第53題、112 第59題、112 第60題、113 第71題　—　YCL 讀片法 CNRMT 五字訣：Category 種類與異物、Number 數量、Relation 相對位置、Morphology 形狀尺寸、Texture 密度；四個固定選項年年輪流問</p>
+  <p class="stem">According to YCL method (CNRMT) interpreting a skeletal radiograph, which of the following does not belong to Texture (T)?</p>
+  <ul class="opts"><li>(A) A fracture line over greater tubercle in X-ray Shoulder AP view</li><li>(B) A whiter lunate (increased density) in X-ray Wrist AP view</li><li>(C) An osteolytic lesion over metaphysis of radius in X-ray Forearm AP view</li><li>(D) A metal implant over distal radius in X-ray Wrist lateral view</li></ul>
+  <details data-kind="answer"><summary>答案與詳解</summary>
+    <div data-kind="zh-translation"><p><strong>中文題目：</strong>依 YCL 讀片法（CNRMT）判讀骨骼 X 光，下列何者<b>不屬於</b> Texture（質地）？</p>
+      <p>(A) 肩 AP 位大結節處的骨折線</p>
+      <p>(B) 腕 AP 位變白（密度增加）的月狀骨</p>
+      <p>(C) 前臂 AP 位橈骨幹骺端的溶骨病灶</p>
+      <p>(D) 腕側位遠端橈骨處的金屬植入物</p></div>
+    <p class="ans">答案：(D)</p>
+    <p>骨折線、變白、溶骨都是密度；金屬植入物是 Category。<span class="src"> ｜ BM113_Block8期中考詳解 第 87 頁</span></p>
+  </details>
+</article>
+<h3><span class="yearchip">112 年</span>期末考 第 58 題</h3>
+<article data-question-id="112fin-p60-q58" data-placement="final" class="repeat">
+  <span class="qhead">112 年 期末考 第 58 題</span><span class="repeat-badge">重複考點 ×3</span>
+  <p class="repeat-note">同考點：111 第51題、113 第70題　—　腕部特殊投影：carpal tunnel view 看到 capitate、scaphoid、trapezium、hamate、pisiform，不是掌骨；側面投影的五塊骨</p>
+  <p class="stem">Which of the following is not the main structures in X-ray Wrist carpal tunnel view?</p>
+  <ul class="opts"><li>(A) Hook of Hamate</li><li>(B) Capitate</li><li>(C) Metacarpal</li><li>(D) Scaphoid</li></ul>
+  <details data-kind="answer"><summary>答案與詳解</summary>
+    <div data-kind="zh-translation"><p><strong>中文題目：</strong>下列何者<b>不是</b>腕部 X 光腕隧道投影中的主要構造？</p>
+      <p>(A) 鉤骨鉤</p>
+      <p>(B) 頭狀骨</p>
+      <p>(C) 掌骨</p>
+      <p>(D) 舟狀骨</p></div>
+    <p class="ans">答案：C</p>
+    <p>與 111 第 51 題逐字相同，答案仍是掌骨。<span class="src"> ｜ BM112_Block 8 期末考 第 60 頁</span></p>
+  </details>
+</article>
+<article data-question-id="112fin-p60-q59" data-placement="final" class="repeat">
+  <span class="qhead">112 年 期末考 第 59 題</span><span class="repeat-badge">重複考點 ×6</span>
+  <p class="repeat-note">同考點：111 第52題、111 第53題、112 第60題、113 第71題、113 第72題　—　YCL 讀片法 CNRMT 五字訣：Category 種類與異物、Number 數量、Relation 相對位置、Morphology 形狀尺寸、Texture 密度；四個固定選項年年輪流問</p>
+  <p class="stem">According to YCL method (CNRMT) interpreting a skeletal radiograph, which of the following belongs to Category (C)?</p>
+  <ul class="opts"><li>(A) A calcified lesion over greater tubercle in X-ray Shoulder AP view</li><li>(B) Dislocated radius and ulna in X-ray Elbow lateral view</li><li>(C) An over-bowing radius in X-ray Forearm AP view</li><li>(D) Additional middle phalanx and distal phalanx in X-ray Hand AP view</li></ul>
+  <details data-kind="answer"><summary>答案與詳解</summary>
+    <div data-kind="zh-translation"><p><strong>中文題目：</strong>依 YCL 讀片法（CNRMT）判讀骨骼 X 光，下列何者屬於 Category（種類）？</p>
+      <p>(A) 肩 AP 位大結節處的鈣化病灶</p>
+      <p>(B) 肘側位橈骨與尺骨脫位</p>
+      <p>(C) 前臂 AP 位橈骨過度彎曲</p>
+      <p>(D) 手 AP 位多出的中節與遠節指骨</p></div>
+    <p class="ans">答案：A</p>
+    <p>鈣化是出現了不該有的東西，Category。<span class="src"> ｜ BM112_Block 8 期末考 第 60 頁</span></p>
+  </details>
+</article>
+<article data-question-id="112fin-p61-q60" data-placement="final" class="repeat">
+  <span class="qhead">112 年 期末考 第 60 題</span><span class="repeat-badge">重複考點 ×6</span>
+  <p class="repeat-note">同考點：111 第52題、111 第53題、112 第59題、113 第71題、113 第72題　—　YCL 讀片法 CNRMT 五字訣：Category 種類與異物、Number 數量、Relation 相對位置、Morphology 形狀尺寸、Texture 密度；四個固定選項年年輪流問</p>
+  <p class="stem">According to YCL method (CNRMT) interpreting a skeletal radiograph, which of the following belongs to Number (N)?</p>
+  <ul class="opts"><li>(A) A calcified lesion over greater tubercle in X-ray Shoulder AP view</li><li>(B) Dislocated radius and ulna in X-ray Elbow lateral view</li><li>(C) An over-bowing radius in X-ray Forearm AP view</li><li>(D) Additional middle phalanx and distal phalanx in X-ray Hand AP view</li></ul>
+  <details data-kind="answer"><summary>答案與詳解</summary>
+    <div data-kind="zh-translation"><p><strong>中文題目：</strong>依 YCL 讀片法（CNRMT）判讀骨骼 X 光，下列何者屬於 Number（數量）？</p>
+      <p>(A) 肩 AP 位大結節處的鈣化病灶</p>
+      <p>(B) 肘側位橈骨與尺骨脫位</p>
+      <p>(C) 前臂 AP 位橈骨過度彎曲</p>
+      <p>(D) 手 AP 位多出的中節與遠節指骨</p></div>
+    <p class="ans">答案：D</p>
+    <p>多一組指骨是數量問題，Number。<span class="src"> ｜ BM112_Block 8 期末考 第 61 頁</span></p>
+  </details>
+</article>
+<h3><span class="yearchip">111 年</span>期中考 第 51 題</h3>
+<article data-question-id="111-p42-q51" data-placement="final" class="repeat">
+  <span class="qhead">111 年 期中考 第 51 題</span><span class="repeat-badge">重複考點 ×3</span>
+  <p class="repeat-note">同考點：112 第58題、113 第70題　—　腕部特殊投影：carpal tunnel view 看到 capitate、scaphoid、trapezium、hamate、pisiform，不是掌骨；側面投影的五塊骨</p>
+  <p class="stem">Which of the following is not the main structures in X-ray Wrist carpal tunnel view?</p>
+  <ul class="opts"><li>(A) Hook of Hamate</li><li>(B) Capitate</li><li>(C) Metacarpal</li><li>(D) Scaphoid</li></ul>
+  <details data-kind="answer"><summary>答案與詳解</summary>
+    <div data-kind="zh-translation"><p><strong>中文題目：</strong>下列何者<b>不是</b>腕部 X 光腕隧道投影中的主要構造？</p>
+      <p>(A) 鉤骨鉤</p>
+      <p>(B) 頭狀骨</p>
+      <p>(C) 掌骨</p>
+      <p>(D) 舟狀骨</p></div>
+    <p class="ans">答案：(C) Metacarpal</p>
+    <p>掌骨不圍成腕隧道，不是 carpal tunnel view 的主要構造。<span class="src"> ｜ BM111 BLOCK-8 期中考詳解 第 42 頁</span></p>
+  </details>
+</article>
+<article data-question-id="111-p42-q52" data-placement="final" class="repeat">
+  <span class="qhead">111 年 期中考 第 52 題 ｜ 來源答案欄</span><span class="repeat-badge">重複考點 ×6</span>
+  <p class="repeat-note">同考點：111 第53題、112 第59題、112 第60題、113 第71題、113 第72題　—　YCL 讀片法 CNRMT 五字訣：Category 種類與異物、Number 數量、Relation 相對位置、Morphology 形狀尺寸、Texture 密度；四個固定選項年年輪流問</p>
+  <p class="stem">According to YCL method (CNRMT) interpreting a skeletal radiograph, which of the following belongs to Relation(R)?</p>
+  <ul class="opts"><li>(A) A calcified lesion over greater tubercle in X-ray Shoulder AP view</li><li>(B) Dislocated radius and ulna in X-ray Elbow lateral view</li><li>(C) An over-bowing radius in X-ray Forearm AP view</li><li>(D) Additional middle phalanx and distal phalanx in X-ray Hand AP view</li></ul>
+  <details data-kind="answer"><summary>答案與詳解</summary>
+    <div data-kind="zh-translation"><p><strong>中文題目：</strong>依 YCL 讀片法（CNRMT）判讀骨骼 X 光，下列何者屬於 Relation（相對位置）？</p>
+      <p>(A) 肩 AP 位大結節處的鈣化病灶</p>
+      <p>(B) 肘側位橈骨與尺骨脫位</p>
+      <p>(C) 前臂 AP 位橈骨過度彎曲</p>
+      <p>(D) 手 AP 位多出的中節與遠節指骨</p></div>
+    <p class="ans">答案：(B) Dislocated radius and ulna in X-ray Elbow lateral view</p>
+    <p>脫位是骨頭之間的相對位置出問題，Relation。<span class="src"> ｜ BM111 BLOCK-8 期中考詳解 第 42 頁</span></p>
+  </details>
+</article>
+<article data-question-id="111-p43-q53" data-placement="final" class="repeat">
+  <span class="qhead">111 年 期中考 第 53 題</span><span class="repeat-badge">重複考點 ×6</span>
+  <p class="repeat-note">同考點：111 第52題、112 第59題、112 第60題、113 第71題、113 第72題　—　YCL 讀片法 CNRMT 五字訣：Category 種類與異物、Number 數量、Relation 相對位置、Morphology 形狀尺寸、Texture 密度；四個固定選項年年輪流問</p>
+  <p class="stem">According to YCL method (CNRMT) interpreting a skeletal radiograph, which of the following belongs to Morphology (M)?</p>
+  <ul class="opts"><li>(A) A calcified lesion over greater tubercle in X-ray Shoulder AP view</li><li>(B) Dislocated radius and ulna in X-ray Elbow lateral view</li><li>(C) An over-bowing radius in X-ray Forearm AP view</li><li>(D) Additional middle phalanx and distal phalanx in X-ray Hand AP view</li></ul>
+  <details data-kind="answer"><summary>答案與詳解</summary>
+    <div data-kind="zh-translation"><p><strong>中文題目：</strong>依 YCL 讀片法（CNRMT）判讀骨骼 X 光，下列何者屬於 Morphology（形態）？</p>
+      <p>(A) 肩 AP 位大結節處的鈣化病灶</p>
+      <p>(B) 肘側位橈骨與尺骨脫位</p>
+      <p>(C) 前臂 AP 位橈骨過度彎曲</p>
+      <p>(D) 手 AP 位多出的中節與遠節指骨</p></div>
+    <p class="ans">答案：(C) An over-bowing radius in X-ray Forearm AP view</p>
+    <p>過度彎曲是骨頭本身形狀出問題，Morphology。<span class="src"> ｜ BM111 BLOCK-8 期中考詳解 第 43 頁</span></p>
+  </details>
+</article>
+<p class="ending">五個字母、四個例子、三年不換。鈣化與金屬是 C、多一節是 N、脫位是 R、過彎是 M、密度是 T。</p>
+</section>
+</div>
+<!-- nb-comments:start -->
+<link rel="stylesheet" href="https://unpkg.com/@waline/client@v3/dist/waline.css">
+<style>
+  .nb-comments{margin:72px 0 48px;padding-top:32px;border-top:1px solid var(--line,#2a3340)}
+  .nb-comments h2{margin:0 0 6px;font-size:22px;font-weight:700;color:var(--ink,var(--text,#e8ecf3))}
+  .nb-comments p.nb-hint{margin:0 0 20px;font-size:14px;color:var(--dim,var(--text-2,#a3adbd))}
+  .nb-comments #waline{
+    --waline-theme-color:var(--cyan,var(--teal,#6fd3c7));
+    --waline-active-color:var(--gold,#e5b567);
+    --waline-font-size:15px;
+    --waline-bgcolor:var(--panel,var(--bg-2,#141922));
+    --waline-bgcolor-light:var(--panel2,var(--bg-3,#1b2230));
+    --waline-border-color:var(--line,#2a3340);
+    --waline-color:var(--ink,var(--text,#e8ecf3));
+    --waline-light-grey:var(--dim,var(--text-2,#a3adbd));
+    --waline-dark-grey:var(--dim,var(--text-2,#a3adbd));
+    --waline-white:var(--panel,var(--bg-2,#141922));
+    --waline-disable-bgcolor:var(--panel2,var(--bg-3,#1b2230));
+    --waline-disable-color:var(--dim,var(--text-3,#7a968d));
+    --waline-info-bgcolor:var(--panel2,var(--bg-3,#1b2230));
+    --waline-info-color:var(--dim,var(--text-2,#a3adbd));
+    --waline-border:1px solid var(--line,#2a3340);
+    --waline-code-bgcolor:var(--panel2,var(--bg-3,#1b2230));
+    --waline-badge-color:var(--gold,#e5b567);
+    --waline-bq-color:var(--dim,#a3adbd);
+  }
+  .nb-comments .wl-panel{background:var(--panel,var(--bg-2,#141922))}
+  .nb-comments .wl-editor,.nb-comments .wl-input{background:var(--bg,#0b0e13)}
+</style>
+<section class="nb-comments" id="comments">
+  <div class="container">
+    <h2>留言板</h2>
+    <p class="nb-hint">看不懂、想補充、發現錯誤都歡迎留言；填個暱稱就能發。</p>
+    <div id="waline"></div>
+  </div>
+</section>
+<script type="module">
+  import { init } from 'https://unpkg.com/@waline/client@v3/dist/waline.js';
+  init({
+    el: '#waline',
+    serverURL: 'https://notes-comments.vercel.app',
+    path: location.pathname,
+    lang: 'zh-TW',
+    dark: true,
+    meta: ['nick'],
+    requiredMeta: ['nick'],
+    login: 'disable',
+    reaction: false,
+    pageview: false,
+    search: false,
+    imageUploader: false,
+    copyright: false,
+    locale: { placeholder: '寫下你的想法或問題⋯⋯（支援 Markdown）' }
+  });
+</script>
+<!-- nb-comments:end -->
+</body>
+</html>
