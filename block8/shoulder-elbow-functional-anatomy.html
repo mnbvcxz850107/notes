@@ -1,0 +1,705 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>肩肘關節之骨科功能解剖學 盧政昌</title>
+<style>
+:root{
+  color-scheme: dark;
+  --bg:#0b0e13; --panel:#141922; --panel2:#1b2230; --line:#2a3340;
+  --ink:#e8ecf3; --dim:#a3adbd; --gold:#e5b567; --cyan:#6fd3c7;
+  --rose:#e88b8b; --violet:#a99bf0;
+}
+*{box-sizing:border-box}
+html{font-size:150%}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font-family:"Noto Sans TC","PingFang TC","Helvetica Neue",system-ui,sans-serif;
+  line-height:1.85; overflow-wrap:anywhere;}
+/* Width follows the device, not the font size: px breakpoints stay put
+   while rem-based type scales with the 150% root. */
+.container{width:100%;max-width:none;margin:0 auto;
+  padding:clamp(.85rem,2.2vw,2.2rem);}
+@media (min-width:760px){ .container{max-width:730px} }
+@media (min-width:1024px){ .container{max-width:980px} }
+@media (min-width:1440px){ .container{max-width:1300px} }
+@media (min-width:1920px){ .container{max-width:1640px} }
+img{max-width:100%;height:auto}
+svg{max-width:100%;height:auto;display:block}
+h1{font-size:1.6rem;line-height:1.35;margin:.2rem 0 .6rem}
+h2{font-size:1.24rem;margin:2.4rem 0 .7rem;padding-bottom:.4rem;
+  border-bottom:1px solid var(--line);color:var(--gold)}
+h3{font-size:1.06rem;margin:1.5rem 0 .5rem;color:var(--cyan)}
+p{margin:.7rem 0}
+header#subject-overview{background:linear-gradient(160deg,#182031,#0e1219);
+  border:1px solid var(--line);border-radius:14px;padding:1.2rem;margin:.6rem 0 1.4rem}
+.meta{color:var(--dim);font-size:.86rem;margin:.3rem 0 0}
+nav#toc{background:var(--panel);border:1px solid var(--line);
+  border-radius:12px;padding:.9rem 1.1rem;margin:1.2rem 0}
+nav#toc ol{margin:.4rem 0 0;padding-left:1.3rem}
+nav#toc a{color:var(--ink);text-decoration:none;border-bottom:1px dotted var(--line)}
+.story{background:var(--panel2);border-left:3px solid var(--violet);
+  border-radius:0 10px 10px 0;padding:.9rem 1.1rem;margin:1.1rem 0}
+.story .tag{display:block;color:var(--violet);font-size:.78rem;
+  letter-spacing:.12em;margin-bottom:.35rem}
+.reality{background:var(--panel);border-left:3px solid var(--cyan);
+  border-radius:0 10px 10px 0;padding:.9rem 1.1rem;margin:1.1rem 0}
+.reality .tag{display:block;color:var(--cyan);font-size:.78rem;
+  letter-spacing:.12em;margin-bottom:.35rem}
+.keybox{background:#12202b;border:1px solid #26485a;border-radius:10px;
+  padding:.85rem 1rem;margin:1.1rem 0}
+.keybox b{color:var(--cyan)}
+.warn{background:#2a1c1c;border:1px solid #573434;border-radius:10px;
+  padding:.85rem 1rem;margin:1.1rem 0;color:#f0cfcf}
+article{background:var(--panel);border:1px solid var(--line);
+  border-radius:12px;padding:.95rem 1.05rem;margin:1.1rem 0}
+article .qhead{display:block;color:var(--gold);font-size:.82rem;
+  letter-spacing:.06em;margin-bottom:.45rem}
+article .stem{margin:.2rem 0 .5rem}
+article ul.opts{list-style:none;margin:.3rem 0 .2rem;padding:0}
+article ul.opts li{padding:.16rem 0 .16rem .2rem;color:#dbe2ec}
+details{background:#0f141c;border:1px solid var(--line);
+  border-radius:10px;padding:.15rem .8rem;margin:.6rem 0}
+details summary{cursor:pointer;padding:.6rem 0;color:var(--gold);
+  font-weight:600;min-height:44px;display:flex;align-items:center}
+details[data-kind="answer"] .ans{font-size:1.05rem;color:var(--cyan);font-weight:700}
+div[data-kind="zh-translation"]{background:#141c26;border:1px dashed #33465c;
+  border-radius:8px;padding:.7rem .85rem;margin:.5rem 0 .8rem}
+div[data-kind="zh-translation"] p{margin:.35rem 0}
+.src{color:var(--dim);font-size:.84rem;margin-top:.6rem}
+.quote{border-left:2px solid var(--gold);padding-left:.75rem;color:#f0e2c6}
+.infer{color:#f0d9a8;font-size:.92rem}
+figure{margin:1.3rem 0;background:var(--panel2);border:1px solid var(--line);
+  border-radius:12px;padding:.9rem}
+figcaption{color:var(--dim);font-size:.85rem;margin-top:.6rem;text-align:center}
+dl.vocab{margin:0}
+dl.vocab dt{color:var(--cyan);font-weight:700;margin-top:.9rem}
+dl.vocab dd{margin:.2rem 0 0;padding-left:0}
+dl.vocab .root{color:var(--dim);font-size:.86rem}
+.cram{background:var(--panel);border:1px solid var(--line);
+  border-radius:12px;padding:.4rem 1.1rem;margin:1rem 0}
+.cram li{margin:.55rem 0}
+.yearchip{display:inline-block;background:#233046;color:#bcd0ea;
+  border-radius:999px;padding:.05rem .55rem;font-size:.76rem;margin-right:.4rem}
+article.repeat{border:2px solid #e05252;box-shadow:0 0 0 3px rgba(224,82,82,.12)}
+article.repeat .qhead{color:#f08a8a}
+.repeat-badge{display:inline-block;background:#3a1c1c;border:1px solid #7d3a3a;
+  color:#f0a8a8;border-radius:999px;padding:.1rem .6rem;font-size:.76rem;
+  margin-left:.4rem;white-space:nowrap}
+.repeat-note{color:#e6a5a5;font-size:.84rem;margin:.45rem 0 0}
+figure.boxfig{margin:1.5rem 0 .5rem;background:transparent;border:0;padding:0}
+figure.boxfig img{border-radius:12px;border:1px solid var(--line);display:block;width:100%}
+figure.boxfig figcaption{color:var(--dim);font-size:.82rem;margin-top:.5rem;
+  text-align:left;line-height:1.6}
+figure.boxfig .figtag{color:var(--violet);font-size:.76rem;letter-spacing:.1em;
+  display:block;margin-bottom:.3rem}
+.ending{color:var(--dim);font-style:italic;margin:1.6rem 0 2.4rem}
+</style></head>
+<body>
+<div class="container">
+
+<header id="subject-overview">
+  <h1>肩肘關節之骨科功能解剖學／骨科鑑別診斷</h1>
+  <p>盧老師的題目全是<b>情境題</b>——排球選手肩痛、投手肘痛、上班族肩痛——而且三年用的是<b>同三個病人</b>，連名字都差不多。111 年的詳解直接點破：「盧老師的考題愛考肩膀疾病的鑑別診斷，一定要背列入診斷考量的疾病種類：<b>Bone、Cartilage、Capsule and ligament、Bursa、Tendon、Nerve</b>。」</p>
+  <p>三個題位：<b>舉手過肩的肩痛</b>（SLAP、二頭肌長頭、旋轉肌袖都要想到，軟組織照 MRI）、<b>投手的肘內側痛</b>（尺側副韌帶最常見、查尺神經、做外翻壓力測試，網球肘在外側不算）、<b>鑑別診斷要問什麼</b>（除了薪水都要問）。113 年多了一題肘部恐怖三聯。</p>
+  <p class="meta">命題老師：盧政昌 ｜ 收錄 111、112、113 期中考，各 3 題共 9 題</p>
+</header>
+
+<nav id="toc">
+  <b>目錄</b>
+  <ol>
+    <li><a href="#chapter-1">排球選手與投手的肩：舉過頭就會拉到的那條肌腱</a></li>
+    <li><a href="#chapter-2">投手的肘：內側痛不是網球肘</a></li>
+    <li><a href="#chapter-3">鑑別診斷要問什麼：除了薪水都要</a></li>
+    <li><a href="#chapter-cram">考前速記</a></li>
+    <li><a href="#chapter-vocab">單字表</a></li>
+    <li><a href="#chapter-final">歷年考題總複習</a></li>
+  <li><a href="#comments" data-nb-toc="1">留言板</a></li>
+</ol>
+</nav>
+<section id="chapter-1" data-chapter-kind="story">
+<h2>一、排球選手與投手的肩：舉過頭就會拉到的那條肌腱</h2>
+
+<figure class="boxfig" data-visual-id="sebox-01-story" data-image-kind="story" data-explanation-verified="true">
+<span class="figtag">情境場景</span>
+<img data-visual-id="sebox-01-story" src="img/sebox-01-story.webp" alt="情境場景：手每舉過頭一次，二頭肌長頭就拉一次關節唇上緣。" loading="lazy" decoding="async" width="1600" height="914">
+<figcaption>情境場景：手每舉過頭一次，二頭肌長頭就拉一次關節唇上緣。</figcaption>
+</figure>
+<div class="story" data-prose-kind="story"><span class="tag">故事</span>
+<p>三年三個病人：高醫排球隊的林同學、林同學、大谷翔平。共同點只有一個——<b>手舉過頭之後肩膀痛</b>。</p>
+<p>老師要你想到的是這條線：<b>二頭肌長頭</b>的肌腱穿進關節囊之後，附著在<b>關節唇的上緣</b>（supraglenoid tubercle）。平常它是一個很好的固定點，投手靠它投快速球。但每一次投球、扣球、舉手過肩，它都會<b>拉一次關節唇</b>——拉多了，關節唇從關節窩上鬆脫，就是 <b>SLAP</b>（上關節唇由前到後的損傷）。</p>
+<p>所以「二頭肌肌腱不需要考慮」——錯（113）。「SLAP 是可能的病因」——對（112、113）。</p>
+<p>同時要想到的還有<b>旋轉肌袖</b>。它走在肩峰和肱骨頭之間，中間隔著滑液囊當墊片；斷了就是痛、活動受限、手舉不起來或舉起來沒力。「旋轉肌袖損傷不可能」——錯（111）。</p>
+<p>影像：<b>X 光要照三個角度</b>——AP、scapular Y、axillary；<b>軟組織要用 MRI</b>，不是 CT（112 年把 MRI 換成 CT 當錯項）。</p>
+</div>
+
+<figure class="boxfig" data-visual-id="sebox-02-reality" data-image-kind="comparison" data-explanation-verified="true">
+<span class="figtag">肩痛鑑別</span>
+<img data-visual-id="sebox-02-reality" src="img/sebox-02-reality.webp" alt="肩痛鑑別：六大類、二頭肌長頭與 SLAP、旋轉肌袖、X 光三角度、軟組織用 MRI。" loading="lazy" decoding="async" width="1600" height="914">
+<figcaption>肩痛鑑別：六大類、二頭肌長頭與 SLAP、旋轉肌袖、X 光三角度、軟組織用 MRI。</figcaption>
+</figure>
+<div class="reality"><span class="tag">回到現實</span>
+<p class="quote">詳解原文（111）:「盧老師的考題愛考肩膀疾病的鑑別診斷，一定要背列入診斷考量的疾病種類，包括Bone, Cartilage, Capsule and ligament, Bursa, Tendon, Nerve這幾種。……B是正確且biceps tendon的兩個proximal insertion常考（短頭：coracoid process/長頭：supraglenoid tubercle）　D正確，MRI對軟組織鑑別度較好」</p>
+<p class="quote">詳解原文（113）:「Biceps long tendon 穿進關節囊後會附著在 labrum 之上緣……當關節唇損傷不穩定時，投球的動作會產生很大往前甩動的力量，造成 labrum 從glenoid 上鬆弛……(C)旋轉肌是走在 acromion 和 humerus 之間，中間的bursa 是在骨頭其他軟組織之間的緩衝組織……(D)MRI：針對軟組織損傷的檢查」</p>
+<p><b>肩痛鑑別六大類：</b>骨、軟骨、關節囊與韌帶、滑液囊、肌腱、神經。</p>
+<p><b>舉手過肩肩痛要想到：</b>① <b>SLAP</b>（二頭肌長頭反覆拉扯關節唇上緣）；② <b>旋轉肌袖損傷</b>；③ 二頭肌肌腱本身。</p>
+<p><b>二頭肌近端兩個附著點：</b>短頭 → 喙突（coracoid）；長頭 → 盂上結節（supraglenoid tubercle）。</p>
+<p><b>影像：</b>X 光 <b>AP、scapular Y、axillary</b> 三個角度；軟組織 <b>MRI</b>。</p>
+</div>
+
+<article data-question-id="111-p9-q8" data-placement="chapter">
+  <span class="qhead">111 年 期中考 第 8 題</span>
+  <p class="stem">Miss Lin is a volleyball player in KMU. She sustained right shoulder pain after shoulder overhead motion during volleyball training. Which statement is not right?</p>
+  <ul class="opts">
+    <li>(A) The image examination of X ray should include shoulder AP view, scapular Y view or axillary view</li>
+    <li>(B) The long head of biceps is inserted and connected with superior labrum of shoulder, which might injury in overhead motion</li>
+    <li>(C) Rotator cuff injury is not possible in this case</li>
+    <li>(D) To survey the soft tissue injury in shoulder joint, MRI is preferred</li>
+  </ul>
+  <details data-kind="answer">
+    <summary>答案與詳解</summary>
+    <div data-kind="zh-translation">
+      <p><strong>中文題目：</strong>林小姐是高醫的排球選手，在排球訓練中做過肩動作後出現右肩疼痛。下列敘述何者<b>不正確</b>？</p>
+      <p>(A) X 光影像檢查應包含肩 AP 位、scapular Y 位或腋位。</p>
+      <p>(B) 二頭肌長頭附著並連接於肩關節上關節唇，在過肩動作中可能受傷。</p>
+      <p>(C) 此案例不可能有旋轉肌袖損傷。</p>
+      <p>(D) 要評估肩關節軟組織損傷，MRI 為首選。</p>
+    </div>
+    <p class="ans">答案：(C) Rotator cuff injury is not possible in this case</p>
+    <p class="quote">詳解原文:「……BC考的是肩膀的tendon常見的鑑別診斷，B是正確且biceps tendon的兩個proximal insertion常考……D正確，MRI對軟組織鑑別度較好」</p>
+    <p>過肩運動員的肩痛，<b>旋轉肌袖一定要列入考慮</b>。</p>
+    <p class="src">出處：盧政昌 肩肘關節之骨科功能解剖學/骨科鑑別診斷 ｜ BM111 BLOCK-8 期中考詳解.pdf 第 9 頁</p>
+  </details>
+</article>
+
+<article data-question-id="112-p12-q8" data-placement="chapter">
+  <span class="qhead">112 年 期中考 第 8 題</span>
+  <p class="stem">Miss Lin is a volleyball player in Kaohsiung medical university. She sustained right shoulder pain after shoulder overhead motion during volleyball training. Which statement is “not” right?</p>
+  <ul class="opts">
+    <li>(A) The image examination of X ray should include shoulder AP view, scapular Y view or axillary view.</li>
+    <li>(B) The “Superior labrum Anterior to posterior injury” is the possible etiology in this case.</li>
+    <li>(C) Rotator cuff injury should be considered in this case.</li>
+    <li>(D) To survey the soft tissue injury in shoulder joint, CT is preferred.</li>
+  </ul>
+  <details data-kind="answer">
+    <summary>答案與詳解</summary>
+    <div data-kind="zh-translation">
+      <p><strong>中文題目：</strong>林小姐是高雄醫學大學的排球選手，在排球訓練中做過肩動作後出現右肩疼痛。下列敘述何者<b>不正確</b>？</p>
+      <p>(A) X 光影像檢查應包含肩 AP 位、scapular Y 位或腋位。</p>
+      <p>(B) 上關節唇前後損傷（SLAP）是此案例可能的病因。</p>
+      <p>(C) 此案例應考慮旋轉肌袖損傷。</p>
+      <p>(D) 要評估肩關節軟組織損傷，CT 為首選。</p>
+    </div>
+    <p class="ans">答案：D</p>
+    <p class="quote">詳解原文:「考古 (D)老師上課有提到，若懷疑軟組織受傷，可以照MRI確認受傷位置」</p>
+    <p>同一個病人，把 111 年的 (C) 改對、把 MRI 換成 <b>CT</b> 當錯項。<b>軟組織用 MRI。</b></p>
+    <p class="src">出處：肩肘關節之骨科功能解剖學/骨科鑑別診斷 盧政昌(ppt pg.6) ｜ BM112_Block 8 期中考(含申覆內容與結果).pdf 第 12 頁</p>
+  </details>
+</article>
+
+<article data-question-id="113-p8-q9" data-placement="chapter">
+  <span class="qhead">113 年 期中考 第 9 題</span>
+  <p class="stem">Shohei Ohtani experiences right shoulder pain after pitching. Which of the following is NOT correct?</p>
+  <ul class="opts">
+    <li>(A) A SLAP lesion (Superior Labrum Anterior to Posterior) is a possible cause in this case.</li>
+    <li>(B)Injury to the biceps tendon does not need to be considered.</li>
+    <li>(C) In such cases, a rotator cuff injury should also be considered.</li>
+    <li>(D) An MRI can be performed to evaluate possible soft tissue injuries.</li>
+  </ul>
+  <details data-kind="answer">
+    <summary>答案與詳解</summary>
+    <div data-kind="zh-translation">
+      <p><strong>中文題目：</strong>大谷翔平投球後出現右肩疼痛。下列何者<b>不正確</b>？</p>
+      <p>(A) SLAP 損傷是此案例可能的病因。</p>
+      <p>(B) 二頭肌肌腱的損傷不需要考慮。</p>
+      <p>(C) 此類案例也應考慮旋轉肌袖損傷。</p>
+      <p>(D) 可做 MRI 評估可能的軟組織損傷。</p>
+    </div>
+    <p class="ans">答案：(B)</p>
+    <p class="quote">詳解原文:「(A)……附著在關節唇上的二頭肌長頭肌腱會不斷拉扯周圍組織，產生關節唇的損傷……(C)旋轉肌是走在 acromion 和 humerus 之間……(D)MRI：針對軟組織損傷的檢查」</p>
+    <p>換了個病人，三個對的敘述沒變；<b>二頭肌肌腱正是 SLAP 的源頭，當然要考慮</b>。</p>
+    <p class="src">出處：肩肘關節之骨科功能解剖學:骨科鑑別診斷 盧政昌 ppt. p17, 18, 24, 25, 40 ｜ BM113_Block8期中考詳解.pdf 第 8 頁</p>
+  </details>
+</article>
+</section>
+<section id="chapter-2" data-chapter-kind="story">
+<h2>二、投手的肘：內側痛不是網球肘</h2>
+
+<figure class="boxfig" data-visual-id="sebox-03-story" data-image-kind="story" data-explanation-verified="true">
+<span class="figtag">情境場景</span>
+<img data-visual-id="sebox-03-story" src="img/sebox-03-story.webp" alt="情境場景：投手的肘痛在內側——尺側副韌帶、尺神經、外翻壓力測試；網球肘在另一邊。" loading="lazy" decoding="async" width="1600" height="914">
+<figcaption>情境場景：投手的肘痛在內側——尺側副韌帶、尺神經、外翻壓力測試；網球肘在另一邊。</figcaption>
+</figure>
+<div class="story" data-prose-kind="story"><span class="tag">故事</span>
+<p>中職投手王先生，投完球<b>右肘內側</b>痛。這一題兩年都考，關鍵字只有一個：<b>內側</b>。</p>
+<p>投球時肘關節被往外扳（外翻），受力全在內側。所以：</p>
+<p><b>最常見的韌帶損傷是尺側副韌帶（UCL）</b>——它就在內側。112 年寫成「橈側副韌帶最常見」，錯。<br>
+<b>尺神經要一併檢查</b>——它走在肘內側，跟 UCL 是鄰居。「不需要查尺神經」，錯。<br>
+<b>理學檢查要做外翻壓力測試（valgus stress test）</b>——把肘往外扳，看 UCL 撐不撐得住。這是檢查 UCL 最重要的測試。</p>
+<p>那<b>網球肘</b>呢？它是<b>外上髁炎</b>（lateral epicondylitis），在<b>外側</b>。病人痛的是內側，網球肘根本不該優先考慮。兩年都拿它當錯項。</p>
+<p>113 年換考一個名詞：<b>肘部恐怖三聯</b>（elbow terrible triad）——<b>肘關節脫位＋橈骨頭骨折＋冠狀突骨折</b>，三個一起發生，所以叫恐怖。答案是「以上皆是」。</p>
+</div>
+
+<figure class="boxfig" data-visual-id="sebox-04-reality" data-image-kind="comparison" data-explanation-verified="true">
+<span class="figtag">肘部對照</span>
+<img data-visual-id="sebox-04-reality" src="img/sebox-04-reality.webp" alt="肘部對照：內側是投手的 UCL 與尺神經，外側是網球肘；恐怖三聯的三個成員。" loading="lazy" decoding="async" width="1600" height="914">
+<figcaption>肘部對照：內側是投手的 UCL 與尺神經，外側是網球肘；恐怖三聯的三個成員。</figcaption>
+</figure>
+<div class="reality"><span class="tag">回到現實</span>
+<p class="quote">詳解原文（111）:「(A) Ulnar nerve 在手臂內側，因此也要一併確認。(B) Tennis elbow是lateral epicondylitis，而Mr. Wang是medial side elbow pain，因此為錯誤選項。」</p>
+<p class="quote">詳解原文（112）:「(A)應改為should be checked (B)tennis elbow 在外側，應不考慮 (D)最常見的為ulnar collateral ligament」</p>
+<p><b>投手肘內側痛：</b>① 最常見韌帶損傷＝<b>UCL</b>；② <b>查尺神經</b>；③ 做<b>外翻壓力測試</b>；④ <b>網球肘在外側，不考慮</b>。</p>
+<p><b>肘部恐怖三聯：</b>肘關節脫位 ＋ 橈骨頭骨折 ＋ 冠狀突骨折。</p>
+<p class="infer">這一格與周伯禧那科的「外翻伸展過載」是同一件事的兩個角度：那邊講機轉（內側拉、外側壓、後側夾），這邊講臨床（內側痛 → UCL、尺神經、外翻測試）。</p>
+</div>
+
+<article data-question-id="111-p10-q9" data-placement="chapter">
+  <span class="qhead">111 年 期中考 第 9 題</span>
+  <p class="stem">Mr. Wang is a pitcher of Chinese Professional Baseball League, he complained of right elbow medial side pain after throwing, which statement is “not” right?</p>
+  <ul class="opts">
+    <li>(A) Ulnar nerve function should be checked.</li>
+    <li>(B) “Tennis elbow” should be first considered.</li>
+    <li>(C) Physical examination should include the elbow valgus stress test.</li>
+    <li>(D) The most common pitcher's ligament injury of elbow is ulnar collateral ligament injury.</li>
+  </ul>
+  <details data-kind="answer">
+    <summary>答案與詳解</summary>
+    <div data-kind="zh-translation">
+      <p><strong>中文題目：</strong>王先生是中華職棒的投手，主訴投球後右肘<b>內側</b>疼痛。下列敘述何者<b>不正確</b>？</p>
+      <p>(A) 應檢查尺神經功能。</p>
+      <p>(B) 應優先考慮「網球肘」。</p>
+      <p>(C) 理學檢查應包含肘外翻壓力測試。</p>
+      <p>(D) 投手最常見的肘韌帶損傷是尺側副韌帶損傷。</p>
+    </div>
+    <p class="ans">答案：(B) “Tennis elbow” should be first considered.</p>
+    <p class="quote">詳解原文:「(A) Ulnar nerve 在手臂內側，因此也要一併確認。(B) Tennis elbow是lateral epicondylitis，而Mr. Wang是medial side elbow pain，因此為錯誤選項。」</p>
+    <p>網球肘在<b>外側</b>，病人痛的是<b>內側</b>。</p>
+    <p class="src">出處：盧政昌 肩肘關節之骨科功能解剖學/骨科鑑別診斷 ｜ BM111 BLOCK-8 期中考詳解.pdf 第 10 頁</p>
+  </details>
+</article>
+
+<article data-question-id="112-p13-q9" data-placement="chapter">
+  <span class="qhead">112 年 期中考 第 9 題</span>
+  <p class="stem">Mr. Wang is a pitcher of Chinese Professional Baseball League, he complained of right elbow ulna side pain after throwing, which statement is right?</p>
+  <ul class="opts">
+    <li>(A) Ulnar nerve function should not be checked</li>
+    <li>(B) “Tennis elbow” should be first considered.</li>
+    <li>(C) Valgus stress test is most important physical examination to check ulnar collateral ligament function.</li>
+    <li>(D) The most common pitcher's elbow ligament injury is radial collateral ligament injury.</li>
+  </ul>
+  <details data-kind="answer">
+    <summary>答案與詳解</summary>
+    <div data-kind="zh-translation">
+      <p><strong>中文題目：</strong>王先生是中華職棒的投手，主訴投球後右肘<b>尺側</b>疼痛。下列敘述何者<b>正確</b>？</p>
+      <p>(A) 不需要檢查尺神經功能。</p>
+      <p>(B) 應優先考慮「網球肘」。</p>
+      <p>(C) 外翻壓力測試是檢查尺側副韌帶功能最重要的理學檢查。</p>
+      <p>(D) 投手最常見的肘韌帶損傷是橈側副韌帶損傷。</p>
+    </div>
+    <p class="ans">答案：C</p>
+    <p class="quote">詳解原文:「(A)應改為should be checked (B)tennis elbow 在外側，應不考慮 (D)最常見的為ulnar collateral ligament」</p>
+    <p>同一個病人改問「哪句對」；三個錯項各反轉一件事：尺神經<b>要</b>查、網球肘<b>不</b>考慮、最常見是<b>尺側</b>副韌帶。</p>
+    <p class="src">出處：肩肘關節之骨科功能解剖學/骨科鑑別診斷 盧政昌 ｜ BM112_Block 8 期中考(含申覆內容與結果).pdf 第 13 頁</p>
+  </details>
+</article>
+
+<article data-question-id="113-p8-q8" data-placement="chapter">
+  <span class="qhead">113 年 期中考 第 8 題</span>
+  <p class="stem">What is the “Elbow terrible triad”? Which of the following are included?</p>
+  <ul class="opts">
+    <li>(A)Radial head fracture</li>
+    <li>(B) Coronoid fracture</li>
+    <li>(C)Elbow dislocation</li>
+    <li>(D) All of the above</li>
+  </ul>
+  <details data-kind="answer">
+    <summary>答案與詳解</summary>
+    <div data-kind="zh-translation">
+      <p><strong>中文題目：</strong>什麼是「肘部恐怖三聯」？下列何者包含在內？</p>
+      <p>(A) 橈骨頭骨折</p>
+      <p>(B) 冠狀突骨折</p>
+      <p>(C) 肘關節脫位</p>
+      <p>(D) 以上皆是</p>
+    </div>
+    <p class="ans">答案：(D)</p>
+    <p>原卷<b>詳解欄留空</b>。<b>脫位＋橈骨頭骨折＋冠狀突骨折</b>，三個一起發生才叫三聯。</p>
+    <p class="src">出處：肩肘關節之骨科功能解剖學/骨科鑑別診斷 盧政昌 ppt p.31 ｜ BM113_Block8期中考詳解.pdf 第 8 頁</p>
+  </details>
+</article>
+</section>
+<section id="chapter-3" data-chapter-kind="story">
+<h2>三、鑑別診斷要問什麼：除了薪水都要</h2>
+
+<figure class="boxfig" data-visual-id="sebox-05-story" data-image-kind="story" data-explanation-verified="true">
+<span class="figtag">情境場景</span>
+<img data-visual-id="sebox-05-story" src="img/sebox-05-story.webp" alt="情境場景：門診裡問診的六張卡，只有「薪水」那張被丟掉。" loading="lazy" decoding="async" width="1600" height="914">
+<figcaption>情境場景：門診裡問診的六張卡，只有「薪水」那張被丟掉。</figcaption>
+</figure>
+<div class="story" data-prose-kind="story"><span class="tag">故事</span>
+<p>三年三個病人肩痛來門診：陳先生、盧先生、做完關節鏡手術的盧醫師。題目列了七個項目，問哪些要納入鑑別診斷。</p>
+<p>七個項目是：X 光、理學檢查、<b>薪水</b>、年齡、職業、肩部解剖、受傷史。</p>
+<p>答案三年都一樣：<b>除了薪水，全部都要。</b></p>
+<p>為什麼<b>職業</b>要問？因為它告訴你受傷機轉——投手、排球員、骨科醫師做關節鏡，都是反覆過肩的工作。為什麼<b>年齡</b>要問？因為年輕人的肩痛想不穩定與 SLAP，老年人想旋轉肌袖退化與退化性關節炎。<b>受傷史</b>決定急性還是慢性。<b>解剖</b>是你把症狀對回六大類（骨、軟骨、關節囊韌帶、滑液囊、肌腱、神經）的地圖。</p>
+<p>至於薪水——113 年的詳解只畫了一個 💰 然後寫「不用問薪水」。</p>
+</div>
+
+<figure class="boxfig" data-visual-id="sebox-06-reality" data-image-kind="comparison" data-explanation-verified="true">
+<span class="figtag">問診清單</span>
+<img data-visual-id="sebox-06-reality" src="img/sebox-06-reality.webp" alt="問診清單：X 光、理學檢查、年齡、職業、肩部解剖、受傷史六項要納入，只有薪水不列入鑑別診斷。" loading="lazy" decoding="async" width="1600" height="914">
+<figcaption>問診清單：X 光、理學檢查、年齡、職業、肩部解剖、受傷史六項要納入，只有薪水不列入鑑別診斷。</figcaption>
+</figure>
+<div class="reality"><span class="tag">回到現實</span>
+<p class="quote">詳解原文（112）:「只有b.薪資不列入鑑別診斷」</p>
+<p class="quote">詳解原文（113）:「不用問薪水　底下是老師DD的thinking pathway可以參考問了什麼考量了什麼　職業也很重要可以判斷可能造成受傷的原因」</p>
+<p><b>要納入：</b>X 光、理學檢查、年齡、職業、肩部解剖、受傷史。<br><b>不納入：</b>薪水。</p>
+<p class="infer">三年的選項排列不同（薪水的代號從 c 變 b），所以<b>不要背答案字母，找到「income」那個字母，選沒有它的那個全集</b>。</p>
+</div>
+
+<article data-question-id="111-p11-q10" data-placement="chapter">
+  <span class="qhead">111 年 期中考 第 10 題</span>
+  <p class="stem">Mr. Chen complained of right shoulder pain after work. He visited an Orthopedic clinic, which items should consider to make the differential diagnosis of shoulder pain? a. X-ray b. Physical examination c. Income d. Patient's age e. Occupation f. Shoulder anatomy g. Injury history</p>
+  <ul class="opts">
+    <li>(A) a,b,c,d,e,f</li>
+    <li>(B) a,c,d</li>
+    <li>(C) a,b,d,e,f,g</li>
+    <li>(D) a,b,c,e,f</li>
+  </ul>
+  <details data-kind="answer">
+    <summary>答案與詳解</summary>
+    <div data-kind="zh-translation">
+      <p><strong>中文題目：</strong>陳先生工作後主訴右肩疼痛，至骨科門診就診。做肩痛的鑑別診斷時應考慮哪些項目？a. X 光 b. 理學檢查 c. 收入 d. 病人年齡 e. 職業 f. 肩部解剖 g. 受傷史</p>
+      <p>(A) a,b,c,d,e,f</p>
+      <p>(B) a,c,d</p>
+      <p>(C) a,b,d,e,f,g</p>
+      <p>(D) a,b,c,e,f</p>
+    </div>
+    <p class="ans">答案：(C) a,b,d,e,f,g</p>
+    <p>原卷<b>詳解欄留空</b>。唯一沒有 c（收入）而且其餘六項齊全的選項。</p>
+    <p class="src">出處：盧政昌 肩肘關節之骨科功能解剖學/骨科鑑別診斷 ｜ BM111 BLOCK-8 期中考詳解.pdf 第 11 頁</p>
+  </details>
+</article>
+
+<article data-question-id="112-p13-q10" data-placement="chapter">
+  <span class="qhead">112 年 期中考 第 10 題</span>
+  <p class="stem">Mr. Lu complained of right shoulder pain after work. He visited Orthopedic clinic, which items should consider to make the differential diagnosis of shoulder pain? a. X-ray. b. Income. c. Physical examination. d. Patient's age. e. Occupation. f. Shoulder anatomy. g. Injury History</p>
+  <ul class="opts">
+    <li>(A) a,b,c,d,e,f.</li>
+    <li>(B) a, c,d.</li>
+    <li>(C) a,c,d,e,f,g.</li>
+    <li>(D) a,b,c,e,f</li>
+  </ul>
+  <details data-kind="answer">
+    <summary>答案與詳解</summary>
+    <div data-kind="zh-translation">
+      <p><strong>中文題目：</strong>盧先生工作後主訴右肩疼痛，至骨科門診就診。做肩痛的鑑別診斷時應考慮哪些項目？a. X 光 b. 收入 c. 理學檢查 d. 病人年齡 e. 職業 f. 肩部解剖 g. 受傷史</p>
+      <p>(A) a,b,c,d,e,f</p>
+      <p>(B) a,c,d</p>
+      <p>(C) a,c,d,e,f,g</p>
+      <p>(D) a,b,c,e,f</p>
+    </div>
+    <p class="ans">答案：C</p>
+    <p class="quote">詳解原文:「只有b.薪資不列入鑑別診斷」</p>
+    <p>這年薪水是 b，答案還是「沒有薪水的全集」。</p>
+    <p class="src">出處：盧政昌 Functional Anatomy of Shoulder and Elbow Joint + DD.(ppt pg.31) ｜ BM112_Block 8 期中考(含申覆內容與結果).pdf 第 13 頁</p>
+  </details>
+</article>
+
+<article data-question-id="113-p12-q10" data-placement="chapter">
+  <span class="qhead">113 年 期中考 第 10 題</span>
+  <p class="stem">Dr. Lu, an orthopedic surgeon, experiences shoulder pain after performing arthroscopic surgery. What factors should be considered when performing a differential diagnosis of shoulder pain? a. X-ray examination b. Income c. Shoulder physical exam d. Age e. Occupation f. Shoulder anatomy g. History of injury</p>
+  <ul class="opts">
+    <li>(A) a、c、d、e、f、g</li>
+    <li>(B) a、b、c、d、e、f</li>
+    <li>(C) a、c、d</li>
+    <li>(D) a、b、c、e、f</li>
+  </ul>
+  <details data-kind="answer">
+    <summary>答案與詳解</summary>
+    <div data-kind="zh-translation">
+      <p><strong>中文題目：</strong>盧醫師是骨科醫師，做完關節鏡手術後出現肩痛。做肩痛的鑑別診斷時應考慮哪些因素？a. X 光檢查 b. 收入 c. 肩部理學檢查 d. 年齡 e. 職業 f. 肩部解剖 g. 受傷史</p>
+      <p>(A) a、c、d、e、f、g</p>
+      <p>(B) a、b、c、d、e、f</p>
+      <p>(C) a、c、d</p>
+      <p>(D) a、b、c、e、f</p>
+    </div>
+    <p class="ans">答案：(A)</p>
+    <p class="quote">詳解原文:「不用問薪水　底下是老師DD的thinking pathway可以參考問了什麼考量了什麼　職業也很重要可以判斷可能造成受傷的原因」</p>
+    <p>病人換成老師本人，答案還是那六項。</p>
+    <p class="src">出處：肩肘關節之骨科功能解剖學:骨科鑑別診斷 盧政昌 p.36 ｜ BM113_Block8期中考詳解.pdf 第 12 頁</p>
+  </details>
+</article>
+</section>
+
+<section id="chapter-cram" data-chapter-kind="cram">
+<h2>四、考前速記</h2>
+<div class="cram">
+<ul>
+<li><b>肩痛鑑別六大類：骨、軟骨、關節囊與韌帶、滑液囊、肌腱、神經。</b>老師愛考。</li>
+<li><b>舉手過肩肩痛 → 想 SLAP、二頭肌長頭、旋轉肌袖。</b>三者都要考慮，寫「不可能」「不需考慮」就錯。</li>
+<li><b>二頭肌長頭附著在關節唇上緣（盂上結節）</b>；短頭在喙突。反覆過肩拉扯 → SLAP。</li>
+<li><b>旋轉肌袖走在肩峰與肱骨頭之間</b>，中間有滑液囊當墊片。</li>
+<li><b>肩 X 光三角度：AP、scapular Y、axillary。軟組織用 MRI 不是 CT。</b></li>
+<li><b>投手肘內側痛：UCL 最常見、查尺神經、做外翻壓力測試。</b></li>
+<li><b>網球肘＝外上髁炎，在外側</b>——內側痛不考慮它。</li>
+<li><b>肘部恐怖三聯：脫位＋橈骨頭骨折＋冠狀突骨折。</b></li>
+<li><b>鑑別診斷要納入：X 光、理學檢查、年齡、職業、解剖、受傷史。只有薪水不用。</b></li>
+<li>三年薪水的代號會換，<b>找 income 那個字母，選不含它的全集</b>。</li>
+</ul>
+</div>
+</section>
+
+<!-- ================= VOCAB ================= -->
+<section id="chapter-vocab" data-chapter-kind="vocab">
+<h2>五、單字表</h2>
+<dl class="vocab">
+<dt>differential diagnosis (DD)</dt>
+<dd><span class="root">differential＝區別的</span>　鑑別診斷。列出可能的病因再逐一排除。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>盧老師的六大類：<b>骨、軟骨、囊韌帶、滑液囊、肌腱、神經</b>。</p></details></dd>
+
+<dt>overhead motion</dt>
+<dd><span class="root">overhead＝過頭</span>　過肩動作。投球、扣球、發球等手舉過頭的動作。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>三個病人的共同點。<b>過肩 → SLAP、旋轉肌袖。</b></p></details></dd>
+
+<dt>SLAP lesion</dt>
+<dd><span class="root">Superior Labrum Anterior to Posterior</span>　上關節唇由前到後的損傷，二頭肌長頭反覆拉扯所致。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>「可能的病因」——兩年都以正確敘述出現。</p></details></dd>
+
+<dt>long head of biceps</dt>
+<dd><span class="root">biceps＝二頭</span>　二頭肌長頭，肌腱穿過關節囊附著於盂上結節與關節唇上緣。<details data-kind="vocab-memory"><summary>記憶提示</summary><p><b>長頭 → 盂上結節；短頭 → 喙突。</b>老師說常考。</p></details></dd>
+
+<dt>supraglenoid tubercle</dt>
+<dd><span class="root">supra-（上）+ glenoid（關節盂）</span>　盂上結節，二頭肌長頭的近端附著點。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>就在關節唇上緣旁邊，所以拉扯會傷到關節唇。</p></details></dd>
+
+<dt>coracoid process</dt>
+<dd><span class="root">希臘 korax＝烏鴉（喙）</span>　喙突，二頭肌短頭的附著點。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>短頭在這裡；長頭不在。</p></details></dd>
+
+<dt>rotator cuff</dt>
+<dd><span class="root">rotator（旋轉）+ cuff（袖）</span>　旋轉肌袖，走在肩峰與肱骨頭之間的四條肌腱。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>斷了就<b>痛、活動受限、舉不起來或沒力</b>。過肩運動員一定要考慮。</p></details></dd>
+
+<dt>subacromial bursa</dt>
+<dd><span class="root">sub-（下）+ acromion（肩峰）+ bursa（囊）</span>　肩峰下滑液囊，旋轉肌袖與肩峰之間的墊片。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>詳解說「像是墊片」。六大類裡的 bursa 就是它。</p></details></dd>
+
+<dt>scapular Y view / axillary view</dt>
+<dd><span class="root">Y＝肩胛骨側面呈 Y 形；axillary＝腋下</span>　肩部 X 光的側面與腋位投影。<details data-kind="vocab-memory"><summary>記憶提示</summary><p><b>AP ＋ scapular Y ＋ axillary</b>，三個角度三年都當正確敘述。</p></details></dd>
+
+<dt>ulnar collateral ligament (UCL)</dt>
+<dd><span class="root">ulnar＝尺側；collateral＝側副</span>　尺側副韌帶，肘內側，投手最常見的韌帶損傷。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>內側。寫成「橈側副韌帶最常見」就錯。</p></details></dd>
+
+<dt>valgus stress test (elbow)</dt>
+<dd><span class="root">valgus＝外翻</span>　肘外翻壓力測試，檢查 UCL 最重要的理學檢查。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>把肘往外扳看 UCL 撐不撐得住。</p></details></dd>
+
+<dt>ulnar nerve</dt>
+<dd><span class="root">ulnar＝尺側</span>　尺神經，走在肘內側（肘隧道），UCL 的鄰居。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>內側痛<b>一定要查</b>它。</p></details></dd>
+
+<dt>tennis elbow (lateral epicondylitis)</dt>
+<dd><span class="root">lateral（外側）+ epicondyle（上髁）+ -itis</span>　網球肘，外上髁炎，在肘<b>外側</b>。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>兩年的錯項——病人痛的是內側。</p></details></dd>
+
+<dt>elbow terrible triad</dt>
+<dd><span class="root">triad＝三聯</span>　肘部恐怖三聯：肘關節脫位＋橈骨頭骨折＋冠狀突骨折。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>三個一起才「恐怖」。113 年答「以上皆是」。</p></details></dd>
+
+<dt>coronoid process</dt>
+<dd><span class="root">希臘 korone＝冠</span>　尺骨冠狀突，肘前方的骨突。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>恐怖三聯的第三個成員。</p></details></dd>
+
+<dt>radial head</dt>
+<dd><span class="root">radial＝橈側</span>　橈骨頭。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>恐怖三聯的第二個成員；也是前臂旋轉軸的近端點。</p></details></dd>
+</dl>
+</section>
+<section id="chapter-final" data-chapter-kind="final_questions">
+<h2>六、歷年考題總複習</h2>
+<p class="meta">依年度由新到舊、同年依原始題號排列。共 9 題（111／112／113 期中考各 3 題）。<b style="color:#f08a8a">紅框</b>＝同一考點在兩個以上年度重複出現。</p>
+<h3><span class="yearchip">113 年</span>期中考 第 8 題</h3>
+<article data-question-id="113-p8-q8" data-placement="final">
+  <span class="qhead">113 年 期中考 第 8 題 ｜ 來源答案欄</span>
+  
+  <p class="stem">What is the “Elbow terrible triad”? Which of the following are included?</p>
+  <ul class="opts"><li>(A)Radial head fracture</li><li>(B) Coronoid fracture</li><li>(C)Elbow dislocation</li><li>(D) All of the above</li></ul>
+  <details data-kind="answer"><summary>答案與詳解</summary>
+    <div data-kind="zh-translation"><p><strong>中文題目：</strong>什麼是「肘部恐怖三聯」？下列何者包含在內？</p>
+      <p>(A) 橈骨頭骨折</p>
+      <p>(B) 冠狀突骨折</p>
+      <p>(C) 肘關節脫位</p>
+      <p>(D) 以上皆是</p></div>
+    <p class="ans">答案：(D)</p>
+    <p>脫位加橈骨頭骨折加冠狀突骨折，以上皆是。<span class="src"> ｜ BM113_Block8期中考詳解 第 8 頁</span></p>
+  </details>
+</article>
+<article data-question-id="113-p8-q9" data-placement="final" class="repeat">
+  <span class="qhead">113 年 期中考 第 9 題</span><span class="repeat-badge">重複考點 ×3</span>
+  <p class="repeat-note">同考點：111 第8題、112 第8題　—　舉手過肩運動員的肩痛：SLAP 與二頭肌長頭、旋轉肌袖都要考慮、X 光三個角度、軟組織用 MRI 不是 CT</p>
+  <p class="stem">Shohei Ohtani experiences right shoulder pain after pitching. Which of the following is NOT correct?</p>
+  <ul class="opts"><li>(A) A SLAP lesion (Superior Labrum Anterior to Posterior) is a possible cause in this case.</li><li>(B)Injury to the biceps tendon does not need to be considered.</li><li>(C) In such cases, a rotator cuff injury should also be considered.</li><li>(D) An MRI can be performed to evaluate possible soft tissue injuries.</li></ul>
+  <details data-kind="answer"><summary>答案與詳解</summary>
+    <div data-kind="zh-translation"><p><strong>中文題目：</strong>大谷翔平投球後出現右肩疼痛。下列何者<b>不正確</b>？</p>
+      <p>(A) SLAP 損傷是此案例可能的病因。</p>
+      <p>(B) 二頭肌肌腱的損傷不需要考慮。</p>
+      <p>(C) 此類案例也應考慮旋轉肌袖損傷。</p>
+      <p>(D) 可做 MRI 評估可能的軟組織損傷。</p></div>
+    <p class="ans">答案：(B)</p>
+    <p>二頭肌肌腱正是 SLAP 的源頭，當然要考慮。<span class="src"> ｜ BM113_Block8期中考詳解 第 8 頁</span></p>
+  </details>
+</article>
+<article data-question-id="113-p12-q10" data-placement="final" class="repeat">
+  <span class="qhead">113 年 期中考 第 10 題</span><span class="repeat-badge">重複考點 ×3</span>
+  <p class="repeat-note">同考點：111 第10題、112 第10題　—　肩痛的鑑別診斷要考慮：X 光、理學檢查、年齡、職業、解剖、受傷史——只有薪水不用</p>
+  <p class="stem">Dr. Lu, an orthopedic surgeon, experiences shoulder pain after performing arthroscopic surgery. What factors should be considered when performing a differential diagnosis of shoulder pain? a. X-ray examination b. Income c. Shoulder physical exam d. Age e. Occupation f. Shoulder anatomy g. History of injury</p>
+  <ul class="opts"><li>(A) a、c、d、e、f、g</li><li>(B) a、b、c、d、e、f</li><li>(C) a、c、d</li><li>(D) a、b、c、e、f</li></ul>
+  <details data-kind="answer"><summary>答案與詳解</summary>
+    <div data-kind="zh-translation"><p><strong>中文題目：</strong>盧醫師是骨科醫師，做完關節鏡手術後出現肩痛。做肩痛的鑑別診斷時應考慮哪些因素？a. X 光檢查 b. 收入 c. 肩部理學檢查 d. 年齡 e. 職業 f. 肩部解剖 g. 受傷史</p>
+      <p>(A) a、c、d、e、f、g</p>
+      <p>(B) a、b、c、d、e、f</p>
+      <p>(C) a、c、d</p>
+      <p>(D) a、b、c、e、f</p></div>
+    <p class="ans">答案：(A)</p>
+    <p>不用問薪水；職業很重要。<span class="src"> ｜ BM113_Block8期中考詳解 第 12 頁</span></p>
+  </details>
+</article>
+<h3><span class="yearchip">112 年</span>期中考 第 8 題</h3>
+<article data-question-id="112-p12-q8" data-placement="final" class="repeat">
+  <span class="qhead">112 年 期中考 第 8 題</span><span class="repeat-badge">重複考點 ×3</span>
+  <p class="repeat-note">同考點：111 第8題、113 第9題　—　舉手過肩運動員的肩痛：SLAP 與二頭肌長頭、旋轉肌袖都要考慮、X 光三個角度、軟組織用 MRI 不是 CT</p>
+  <p class="stem">Miss Lin is a volleyball player in Kaohsiung medical university. She sustained right shoulder pain after shoulder overhead motion during volleyball training. Which statement is “not” right?</p>
+  <ul class="opts"><li>(A) The image examination of X ray should include shoulder AP view, scapular Y view or axillary view.</li><li>(B) The “Superior labrum Anterior to posterior injury” is the possible etiology in this case.</li><li>(C) Rotator cuff injury should be considered in this case.</li><li>(D) To survey the soft tissue injury in shoulder joint, CT is preferred.</li></ul>
+  <details data-kind="answer"><summary>答案與詳解</summary>
+    <div data-kind="zh-translation"><p><strong>中文題目：</strong>林小姐是高雄醫學大學的排球選手，在排球訓練中做過肩動作後出現右肩疼痛。下列敘述何者<b>不正確</b>？</p>
+      <p>(A) X 光影像檢查應包含肩 AP 位、scapular Y 位或腋位。</p>
+      <p>(B) 上關節唇前後損傷（SLAP）是此案例可能的病因。</p>
+      <p>(C) 此案例應考慮旋轉肌袖損傷。</p>
+      <p>(D) 要評估肩關節軟組織損傷，CT 為首選。</p></div>
+    <p class="ans">答案：D</p>
+    <p>軟組織用 MRI，不是 CT。<span class="src"> ｜ BM112_Block 8 期中考(含申覆內容與結果) 第 12 頁</span></p>
+  </details>
+</article>
+<article data-question-id="112-p13-q9" data-placement="final" class="repeat">
+  <span class="qhead">112 年 期中考 第 9 題</span><span class="repeat-badge">重複考點 ×2</span>
+  <p class="repeat-note">同考點：111 第9題　—　投手的肘內側痛：最常見是尺側副韌帶損傷、要查尺神經、做外翻壓力測試；網球肘在外側不考慮</p>
+  <p class="stem">Mr. Wang is a pitcher of Chinese Professional Baseball League, he complained of right elbow ulna side pain after throwing, which statement is right?</p>
+  <ul class="opts"><li>(A) Ulnar nerve function should not be checked</li><li>(B) “Tennis elbow” should be first considered.</li><li>(C) Valgus stress test is most important physical examination to check ulnar collateral ligament function.</li><li>(D) The most common pitcher&#x27;s elbow ligament injury is radial collateral ligament injury.</li></ul>
+  <details data-kind="answer"><summary>答案與詳解</summary>
+    <div data-kind="zh-translation"><p><strong>中文題目：</strong>王先生是中華職棒的投手，主訴投球後右肘<b>尺側</b>疼痛。下列敘述何者<b>正確</b>？</p>
+      <p>(A) 不需要檢查尺神經功能。</p>
+      <p>(B) 應優先考慮「網球肘」。</p>
+      <p>(C) 外翻壓力測試是檢查尺側副韌帶功能最重要的理學檢查。</p>
+      <p>(D) 投手最常見的肘韌帶損傷是橈側副韌帶損傷。</p></div>
+    <p class="ans">答案：C</p>
+    <p>外翻壓力測試查 UCL；尺神經要查、網球肘不考慮、最常見是尺側。<span class="src"> ｜ BM112_Block 8 期中考(含申覆內容與結果) 第 13 頁</span></p>
+  </details>
+</article>
+<article data-question-id="112-p13-q10" data-placement="final" class="repeat">
+  <span class="qhead">112 年 期中考 第 10 題</span><span class="repeat-badge">重複考點 ×3</span>
+  <p class="repeat-note">同考點：111 第10題、113 第10題　—　肩痛的鑑別診斷要考慮：X 光、理學檢查、年齡、職業、解剖、受傷史——只有薪水不用</p>
+  <p class="stem">Mr. Lu complained of right shoulder pain after work. He visited Orthopedic clinic, which items should consider to make the differential diagnosis of shoulder pain? a. X-ray. b. Income. c. Physical examination. d. Patient&#x27;s age. e. Occupation. f. Shoulder anatomy. g. Injury History</p>
+  <ul class="opts"><li>(A) a,b,c,d,e,f.</li><li>(B) a, c,d.</li><li>(C) a,c,d,e,f,g.</li><li>(D) a,b,c,e,f</li></ul>
+  <details data-kind="answer"><summary>答案與詳解</summary>
+    <div data-kind="zh-translation"><p><strong>中文題目：</strong>盧先生工作後主訴右肩疼痛，至骨科門診就診。做肩痛的鑑別診斷時應考慮哪些項目？a. X 光 b. 收入 c. 理學檢查 d. 病人年齡 e. 職業 f. 肩部解剖 g. 受傷史</p>
+      <p>(A) a,b,c,d,e,f</p>
+      <p>(B) a,c,d</p>
+      <p>(C) a,c,d,e,f,g</p>
+      <p>(D) a,b,c,e,f</p></div>
+    <p class="ans">答案：C</p>
+    <p>只有薪資不列入鑑別診斷。<span class="src"> ｜ BM112_Block 8 期中考(含申覆內容與結果) 第 13 頁</span></p>
+  </details>
+</article>
+<h3><span class="yearchip">111 年</span>期中考 第 8 題</h3>
+<article data-question-id="111-p9-q8" data-placement="final" class="repeat">
+  <span class="qhead">111 年 期中考 第 8 題</span><span class="repeat-badge">重複考點 ×3</span>
+  <p class="repeat-note">同考點：112 第8題、113 第9題　—　舉手過肩運動員的肩痛：SLAP 與二頭肌長頭、旋轉肌袖都要考慮、X 光三個角度、軟組織用 MRI 不是 CT</p>
+  <p class="stem">Miss Lin is a volleyball player in KMU. She sustained right shoulder pain after shoulder overhead motion during volleyball training. Which statement is not right?</p>
+  <ul class="opts"><li>(A) The image examination of X ray should include shoulder AP view, scapular Y view or axillary view</li><li>(B) The long head of biceps is inserted and connected with superior labrum of shoulder, which might injury in overhead motion</li><li>(C) Rotator cuff injury is not possible in this case</li><li>(D) To survey the soft tissue injury in shoulder joint, MRI is preferred</li></ul>
+  <details data-kind="answer"><summary>答案與詳解</summary>
+    <div data-kind="zh-translation"><p><strong>中文題目：</strong>林小姐是高醫的排球選手，在排球訓練中做過肩動作後出現右肩疼痛。下列敘述何者<b>不正確</b>？</p>
+      <p>(A) X 光影像檢查應包含肩 AP 位、scapular Y 位或腋位。</p>
+      <p>(B) 二頭肌長頭附著並連接於肩關節上關節唇，在過肩動作中可能受傷。</p>
+      <p>(C) 此案例不可能有旋轉肌袖損傷。</p>
+      <p>(D) 要評估肩關節軟組織損傷，MRI 為首選。</p></div>
+    <p class="ans">答案：(C) Rotator cuff injury is not possible in this case</p>
+    <p>過肩運動員的肩痛，旋轉肌袖一定要列入考慮。<span class="src"> ｜ BM111 BLOCK-8 期中考詳解 第 9 頁</span></p>
+  </details>
+</article>
+<article data-question-id="111-p10-q9" data-placement="final" class="repeat">
+  <span class="qhead">111 年 期中考 第 9 題</span><span class="repeat-badge">重複考點 ×2</span>
+  <p class="repeat-note">同考點：112 第9題　—　投手的肘內側痛：最常見是尺側副韌帶損傷、要查尺神經、做外翻壓力測試；網球肘在外側不考慮</p>
+  <p class="stem">Mr. Wang is a pitcher of Chinese Professional Baseball League, he complained of right elbow medial side pain after throwing, which statement is “not” right?</p>
+  <ul class="opts"><li>(A) Ulnar nerve function should be checked.</li><li>(B) “Tennis elbow” should be first considered.</li><li>(C) Physical examination should include the elbow valgus stress test.</li><li>(D) The most common pitcher&#x27;s ligament injury of elbow is ulnar collateral ligament injury.</li></ul>
+  <details data-kind="answer"><summary>答案與詳解</summary>
+    <div data-kind="zh-translation"><p><strong>中文題目：</strong>王先生是中華職棒的投手，主訴投球後右肘<b>內側</b>疼痛。下列敘述何者<b>不正確</b>？</p>
+      <p>(A) 應檢查尺神經功能。</p>
+      <p>(B) 應優先考慮「網球肘」。</p>
+      <p>(C) 理學檢查應包含肘外翻壓力測試。</p>
+      <p>(D) 投手最常見的肘韌帶損傷是尺側副韌帶損傷。</p></div>
+    <p class="ans">答案：(B) “Tennis elbow” should be first considered.</p>
+    <p>網球肘在外側，病人痛的是內側。<span class="src"> ｜ BM111 BLOCK-8 期中考詳解 第 10 頁</span></p>
+  </details>
+</article>
+<article data-question-id="111-p11-q10" data-placement="final" class="repeat">
+  <span class="qhead">111 年 期中考 第 10 題 ｜ 來源答案欄</span><span class="repeat-badge">重複考點 ×3</span>
+  <p class="repeat-note">同考點：112 第10題、113 第10題　—　肩痛的鑑別診斷要考慮：X 光、理學檢查、年齡、職業、解剖、受傷史——只有薪水不用</p>
+  <p class="stem">Mr. Chen complained of right shoulder pain after work. He visited an Orthopedic clinic, which items should consider to make the differential diagnosis of shoulder pain? a. X-ray b. Physical examination c. Income d. Patient&#x27;s age e. Occupation f. Shoulder anatomy g. Injury history</p>
+  <ul class="opts"><li>(A) a,b,c,d,e,f</li><li>(B) a,c,d</li><li>(C) a,b,d,e,f,g</li><li>(D) a,b,c,e,f</li></ul>
+  <details data-kind="answer"><summary>答案與詳解</summary>
+    <div data-kind="zh-translation"><p><strong>中文題目：</strong>陳先生工作後主訴右肩疼痛，至骨科門診就診。做肩痛的鑑別診斷時應考慮哪些項目？a. X 光 b. 理學檢查 c. 收入 d. 病人年齡 e. 職業 f. 肩部解剖 g. 受傷史</p>
+      <p>(A) a,b,c,d,e,f</p>
+      <p>(B) a,c,d</p>
+      <p>(C) a,b,d,e,f,g</p>
+      <p>(D) a,b,c,e,f</p></div>
+    <p class="ans">答案：(C) a,b,d,e,f,g</p>
+    <p>沒有收入而其餘六項齊全的選項。<span class="src"> ｜ BM111 BLOCK-8 期中考詳解 第 11 頁</span></p>
+  </details>
+</article>
+<p class="ending">三個病人、三年不換。過肩想 SLAP 和旋轉肌袖、內側痛想 UCL 和尺神經、問診除了薪水都要問。</p>
+</section>
+</div>
+<!-- nb-comments:start -->
+<link rel="stylesheet" href="https://unpkg.com/@waline/client@v3/dist/waline.css">
+<style>
+  .nb-comments{margin:72px 0 48px;padding-top:32px;border-top:1px solid var(--line,#2a3340)}
+  .nb-comments h2{margin:0 0 6px;font-size:22px;font-weight:700;color:var(--ink,var(--text,#e8ecf3))}
+  .nb-comments p.nb-hint{margin:0 0 20px;font-size:14px;color:var(--dim,var(--text-2,#a3adbd))}
+  .nb-comments #waline{
+    --waline-theme-color:var(--cyan,var(--teal,#6fd3c7));
+    --waline-active-color:var(--gold,#e5b567);
+    --waline-font-size:15px;
+    --waline-bgcolor:var(--panel,var(--bg-2,#141922));
+    --waline-bgcolor-light:var(--panel2,var(--bg-3,#1b2230));
+    --waline-border-color:var(--line,#2a3340);
+    --waline-color:var(--ink,var(--text,#e8ecf3));
+    --waline-light-grey:var(--dim,var(--text-2,#a3adbd));
+    --waline-dark-grey:var(--dim,var(--text-2,#a3adbd));
+    --waline-white:var(--panel,var(--bg-2,#141922));
+    --waline-disable-bgcolor:var(--panel2,var(--bg-3,#1b2230));
+    --waline-disable-color:var(--dim,var(--text-3,#7a968d));
+    --waline-info-bgcolor:var(--panel2,var(--bg-3,#1b2230));
+    --waline-info-color:var(--dim,var(--text-2,#a3adbd));
+    --waline-border:1px solid var(--line,#2a3340);
+    --waline-code-bgcolor:var(--panel2,var(--bg-3,#1b2230));
+    --waline-badge-color:var(--gold,#e5b567);
+    --waline-bq-color:var(--dim,#a3adbd);
+  }
+  .nb-comments .wl-panel{background:var(--panel,var(--bg-2,#141922))}
+  .nb-comments .wl-editor,.nb-comments .wl-input{background:var(--bg,#0b0e13)}
+</style>
+<section class="nb-comments" id="comments">
+  <div class="container">
+    <h2>留言板</h2>
+    <p class="nb-hint">看不懂、想補充、發現錯誤都歡迎留言；填個暱稱就能發。</p>
+    <div id="waline"></div>
+  </div>
+</section>
+<script type="module">
+  import { init } from 'https://unpkg.com/@waline/client@v3/dist/waline.js';
+  init({
+    el: '#waline',
+    serverURL: 'https://notes-comments.vercel.app',
+    path: location.pathname,
+    lang: 'zh-TW',
+    dark: true,
+    meta: ['nick'],
+    requiredMeta: ['nick'],
+    login: 'disable',
+    reaction: false,
+    pageview: false,
+    search: false,
+    imageUploader: false,
+    copyright: false,
+    locale: { placeholder: '寫下你的想法或問題⋯⋯（支援 Markdown）' }
+  });
+</script>
+<!-- nb-comments:end -->
+</body>
+</html>
