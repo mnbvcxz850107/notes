@@ -1,0 +1,828 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>骨科學復健2 曾昱璇</title>
+<style>
+:root{
+  color-scheme: dark;
+  --bg:#0b0e13; --panel:#141922; --panel2:#1b2230; --line:#2a3340;
+  --ink:#e8ecf3; --dim:#a3adbd; --gold:#e5b567; --cyan:#6fd3c7;
+  --rose:#e88b8b; --violet:#a99bf0;
+}
+*{box-sizing:border-box}
+html{font-size:150%}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font-family:"Noto Sans TC","PingFang TC","Helvetica Neue",system-ui,sans-serif;
+  line-height:1.85; overflow-wrap:anywhere;}
+/* Width follows the device, not the font size: px breakpoints stay put
+   while rem-based type scales with the 150% root. */
+.container{width:100%;max-width:none;margin:0 auto;
+  padding:clamp(.85rem,2.2vw,2.2rem);}
+@media (min-width:760px){ .container{max-width:730px} }
+@media (min-width:1024px){ .container{max-width:980px} }
+@media (min-width:1440px){ .container{max-width:1300px} }
+@media (min-width:1920px){ .container{max-width:1640px} }
+img{max-width:100%;height:auto}
+svg{max-width:100%;height:auto;display:block}
+h1{font-size:1.6rem;line-height:1.35;margin:.2rem 0 .6rem}
+h2{font-size:1.24rem;margin:2.4rem 0 .7rem;padding-bottom:.4rem;
+  border-bottom:1px solid var(--line);color:var(--gold)}
+h3{font-size:1.06rem;margin:1.5rem 0 .5rem;color:var(--cyan)}
+p{margin:.7rem 0}
+header#subject-overview{background:linear-gradient(160deg,#182031,#0e1219);
+  border:1px solid var(--line);border-radius:14px;padding:1.2rem;margin:.6rem 0 1.4rem}
+.meta{color:var(--dim);font-size:.86rem;margin:.3rem 0 0}
+nav#toc{background:var(--panel);border:1px solid var(--line);
+  border-radius:12px;padding:.9rem 1.1rem;margin:1.2rem 0}
+nav#toc ol{margin:.4rem 0 0;padding-left:1.3rem}
+nav#toc a{color:var(--ink);text-decoration:none;border-bottom:1px dotted var(--line)}
+.story{background:var(--panel2);border-left:3px solid var(--violet);
+  border-radius:0 10px 10px 0;padding:.9rem 1.1rem;margin:1.1rem 0}
+.story .tag{display:block;color:var(--violet);font-size:.78rem;
+  letter-spacing:.12em;margin-bottom:.35rem}
+.reality{background:var(--panel);border-left:3px solid var(--cyan);
+  border-radius:0 10px 10px 0;padding:.9rem 1.1rem;margin:1.1rem 0}
+.reality .tag{display:block;color:var(--cyan);font-size:.78rem;
+  letter-spacing:.12em;margin-bottom:.35rem}
+.keybox{background:#12202b;border:1px solid #26485a;border-radius:10px;
+  padding:.85rem 1rem;margin:1.1rem 0}
+.keybox b{color:var(--cyan)}
+.warn{background:#2a1c1c;border:1px solid #573434;border-radius:10px;
+  padding:.85rem 1rem;margin:1.1rem 0;color:#f0cfcf}
+article{background:var(--panel);border:1px solid var(--line);
+  border-radius:12px;padding:.95rem 1.05rem;margin:1.1rem 0}
+article .qhead{display:block;color:var(--gold);font-size:.82rem;
+  letter-spacing:.06em;margin-bottom:.45rem}
+article .stem{margin:.2rem 0 .5rem}
+article ul.opts{list-style:none;margin:.3rem 0 .2rem;padding:0}
+article ul.opts li{padding:.16rem 0 .16rem .2rem;color:#dbe2ec}
+details{background:#0f141c;border:1px solid var(--line);
+  border-radius:10px;padding:.15rem .8rem;margin:.6rem 0}
+details summary{cursor:pointer;padding:.6rem 0;color:var(--gold);
+  font-weight:600;min-height:44px;display:flex;align-items:center}
+details[data-kind="answer"] .ans{font-size:1.05rem;color:var(--cyan);font-weight:700}
+div[data-kind="zh-translation"]{background:#141c26;border:1px dashed #33465c;
+  border-radius:8px;padding:.7rem .85rem;margin:.5rem 0 .8rem}
+div[data-kind="zh-translation"] p{margin:.35rem 0}
+.src{color:var(--dim);font-size:.84rem;margin-top:.6rem}
+.quote{border-left:2px solid var(--gold);padding-left:.75rem;color:#f0e2c6}
+.infer{color:#f0d9a8;font-size:.92rem}
+figure{margin:1.3rem 0;background:var(--panel2);border:1px solid var(--line);
+  border-radius:12px;padding:.9rem}
+figcaption{color:var(--dim);font-size:.85rem;margin-top:.6rem;text-align:center}
+dl.vocab{margin:0}
+dl.vocab dt{color:var(--cyan);font-weight:700;margin-top:.9rem}
+dl.vocab dd{margin:.2rem 0 0;padding-left:0}
+dl.vocab .root{color:var(--dim);font-size:.86rem}
+.cram{background:var(--panel);border:1px solid var(--line);
+  border-radius:12px;padding:.4rem 1.1rem;margin:1rem 0}
+.cram li{margin:.55rem 0}
+.yearchip{display:inline-block;background:#233046;color:#bcd0ea;
+  border-radius:999px;padding:.05rem .55rem;font-size:.76rem;margin-right:.4rem}
+article.repeat{border:2px solid #e05252;box-shadow:0 0 0 3px rgba(224,82,82,.12)}
+article.repeat .qhead{color:#f08a8a}
+.repeat-badge{display:inline-block;background:#3a1c1c;border:1px solid #7d3a3a;
+  color:#f0a8a8;border-radius:999px;padding:.1rem .6rem;font-size:.76rem;
+  margin-left:.4rem;white-space:nowrap}
+.repeat-note{color:#e6a5a5;font-size:.84rem;margin:.45rem 0 0}
+figure.boxfig{margin:1.5rem 0 .5rem;background:transparent;border:0;padding:0}
+figure.boxfig img{border-radius:12px;border:1px solid var(--line);display:block;width:100%}
+figure.boxfig figcaption{color:var(--dim);font-size:.82rem;margin-top:.5rem;
+  text-align:left;line-height:1.6}
+figure.boxfig .figtag{color:var(--violet);font-size:.76rem;letter-spacing:.1em;
+  display:block;margin-bottom:.3rem}
+.ending{color:var(--dim);font-style:italic;margin:1.6rem 0 2.4rem}
+</style></head>
+<body>
+<div class="container">
+
+<header id="subject-overview">
+  <h1>骨科學復健2</h1>
+  <p>四年十二題，主題是<b>運動傷害與軟組織損傷的復健</b>。111、112 兩年是<b>同一組三題</b>原封不動重考：急性期處理 <b>PEACE 裡沒有 vascularisation</b>、<b>hamstring 是離心收縮時受傷</b>、<b>no man's land 是 Zone II 不是 III</b>。113 年換考觀念：急性 vs 慢性傷害、韌帶扭傷 Grade II 的定義、肌肉拉傷在肌腱交界處且與離心收縮有關、DOMS 24–48 小時。110 年（蕭毓璇）考網球肘是退化不是發炎、骨折復健不可完全不動、unhappy triad 沒有外側半月板。</p>
+  <p>這一科的關鍵字是<b>「離心」</b>：hamstring、肌肉拉傷、DOMS 全都跟 eccentric 綁在一起。</p>
+  <p class="meta">命題老師：曾昱璇（110 年為蕭毓璇）｜ 收錄 110 期末、111 期中、112 期末、113 期末，共 12 題</p>
+</header>
+
+<nav id="toc">
+  <b>目錄</b>
+  <ol>
+    <li><a href="#chapter-1">軟組織損傷：急性 vs 慢性、PEACE、扭傷分級</a></li>
+    <li><a href="#chapter-2">肌肉與肌腱：離心收縮、網球肘、手指屈肌腱分區</a></li>
+    <li><a href="#chapter-3">骨折復健與 unhappy triad</a></li>
+    <li><a href="#chapter-cram">考前速記</a></li>
+    <li><a href="#chapter-vocab">單字表</a></li>
+    <li><a href="#chapter-final">歷年考題總複習</a></li>
+  <li><a href="#comments" data-nb-toc="1">留言板</a></li>
+</ol>
+</nav>
+<section id="chapter-1" data-chapter-kind="story">
+<h2>一、軟組織損傷：急性 vs 慢性、PEACE、扭傷分級</h2>
+
+<figure class="boxfig" data-visual-id="r2box-01-story" data-image-kind="story" data-explanation-verified="true">
+<span class="figtag">情境場景</span>
+<img data-visual-id="r2box-01-story" src="img/r2box-01-story.webp" alt="情境場景：球場邊，治療師替扭傷的球員抬高加壓，白板上寫著 PEACE 五個字母，另一個字被劃掉。" loading="lazy" decoding="async" width="1600" height="914">
+<figcaption>情境場景：球場邊，治療師替扭傷的球員抬高加壓，白板上寫著 PEACE 五個字母，另一個字被劃掉。</figcaption>
+</figure>
+<div class="story" data-prose-kind="story"><span class="tag">故事</span>
+<p>先分清楚兩種傷。<b>急性傷害</b>：突然發生、有典型的強烈發炎反應、處理得當通常會完全恢復。<b>慢性傷害</b>：持續超過三個月、沒有強烈發炎（只有低度長期的發炎）、容易復發、較難痊癒。113 年把四個選項寫成三個相反、一個正確——急性才是「突然、發炎、走向痊癒」。</p>
+<p>急性期怎麼處理？口訣是 <b>PEACE</b>：<b>P</b>rotection 保護、<b>E</b>levation 抬高、<b>A</b>void anti-inflammatories 避免抗發炎藥、<b>C</b>ompression 加壓、<b>E</b>ducation 衛教。111、112 兩年同一題：選項裡的 elevation、protection、compression 都在 PEACE 裡，唯獨 <b>vascularisation（血管化）不在</b>——它是不建議的那個（其實根本不是處置）。</p>
+<p>再來是<b>韌帶扭傷分級</b>。<b>Grade I</b>：結構幾乎沒壞、發炎輕、很快完全恢復。<b>Grade II</b>：<b>部分斷裂</b>、疼痛與發炎明顯、通常 <b>4–6 週</b>恢復但疼痛可能拖數月。<b>Grade III</b>：完全斷裂。113 年考 Grade II，另外兩個選項分別是 I 和 III 的描述；還有一個陷阱：「沒有本體感覺障礙」——<b>只要韌帶有損傷就會有本體感覺障礙</b>。</p>
+</div>
+
+<figure class="boxfig" data-visual-id="r2box-02-reality" data-image-kind="comparison" data-explanation-verified="true">
+<span class="figtag">急慢性、PEACE 與扭傷分級對照</span>
+<img data-visual-id="r2box-02-reality" src="img/r2box-02-reality.webp" alt="急慢性、PEACE 與扭傷分級對照：急性突然發炎會好、慢性超過三個月低度發炎易復發；PEACE 五字；韌帶 Grade I 輕微、II 部分斷裂 4 到 6 週、III 完全斷裂。" loading="lazy" decoding="async" width="1600" height="914">
+<figcaption>急慢性、PEACE 與扭傷分級對照：急性突然發炎會好、慢性超過三個月低度發炎易復發；PEACE 五字；韌帶 Grade I 輕微、II 部分斷裂 4 到 6 週、III 完全斷裂。</figcaption>
+</figure>
+<div class="reality"><span class="tag">回到現實</span>
+<p class="quote">詳解原文（112 第 16 題）:「急性期的處理方式: PEACE，沒有Vascularisation !」</p>
+<p class="quote">詳解原文（113 第 16 題）:「急性傷害： 突然發生，會出現強烈的急性發炎反應，適當處理下，通常會完全恢復。慢性傷害：持續發生（通常超過三個月），沒有強烈的發炎反應（通常為低度長期的發炎反應），易復發較難痊癒。」</p>
+<p class="quote">詳解原文（113 第 17 題）:「A 應為Grade 1 C 應為Grade 3 D 有韌帶損傷就會有proprioceptive impairment」</p>
+<p><b>急性：</b>突然、典型發炎、走向痊癒。<b>慢性：</b>＞3 個月、低度發炎、易復發。<br>
+<b>PEACE：</b>Protection、Elevation、Avoid anti-inflammatories、Compression、Education。<b>沒有 vascularisation。</b><br>
+<b>Grade II 扭傷：</b>部分斷裂、明顯痛與發炎、4–6 週恢復、疼痛可能持續數月。<b>任何韌帶損傷都有本體感覺障礙。</b></p>
+</div>
+
+<article data-question-id="111-p15-q16" data-placement="chapter">
+  <span class="qhead">111 年 期中考 第 16 題 ｜ 曾昱璇</span>
+  <p class="stem">Which option is not suggested for management of soft tissue injury in acute phase?</p>
+  <ul class="opts">
+    <li>(A) Elevation</li>
+    <li>(B) Protection</li>
+    <li>(C) Vascularization</li>
+    <li>(D) Compression</li>
+  </ul>
+  <details data-kind="answer">
+    <summary>答案與詳解</summary>
+    <div data-kind="zh-translation">
+      <p><strong>中文題目：</strong>下列何者<b>不是</b>急性期軟組織損傷建議的處置？</p>
+      <p>(A) 抬高</p>
+      <p>(B) 保護</p>
+      <p>(C) 血管化</p>
+      <p>(D) 加壓</p>
+    </div>
+    <p class="ans">答案：(C) Vascularization</p>
+    <p>PEACE 裡有 P、E、C，沒有 V。</p>
+    <p class="src">出處：曾昱璇 骨科學復健(2)(ppt pg.5) ｜ BM111 BLOCK-8 期中考詳解.pdf 第 15 頁</p>
+  </details>
+</article>
+
+<article data-question-id="112fin-p16-q16" data-placement="chapter">
+  <span class="qhead">112 年 期末考 第 16 題 ｜ 曾昱璇</span>
+  <p class="stem">Which option is not suggested for management of soft tissue injury in acute phase?</p>
+  <ul class="opts">
+    <li>(A) Elevation</li>
+    <li>(B) Protection</li>
+    <li>(C) Vascularisation</li>
+    <li>(D) Compression</li>
+  </ul>
+  <details data-kind="answer">
+    <summary>答案與詳解</summary>
+    <div data-kind="zh-translation">
+      <p><strong>中文題目：</strong>下列何者<b>不是</b>急性期軟組織損傷建議的處置？</p>
+      <p>(A) 抬高</p>
+      <p>(B) 保護</p>
+      <p>(C) 血管化</p>
+      <p>(D) 加壓</p>
+    </div>
+    <p class="ans">答案：C</p>
+    <p class="quote">詳解原文:「急性期的處理方式: PEACE，沒有Vascularisation !」</p>
+    <p class="src">出處：曾昱璇 骨科復建(ppt pg.6) ｜ BM112_Block 8 期末考.pdf 第 16 頁</p>
+  </details>
+</article>
+
+<article data-question-id="113fin-p16-q16" data-placement="chapter">
+  <span class="qhead">113 年 期末考 第 16 題 ｜ 曾昱璇</span>
+  <p class="stem">Which of the following statements about soft tissue injury mechanisms is correct?</p>
+  <ul class="opts">
+    <li>(A) Acute injuries usually develop gradually, with pain appearing months later.</li>
+    <li>(B) Chronic injuries are typically marked by a strong and short-lived inflammatory response.</li>
+    <li>(C) Acute injuries often occur suddenly, are associated with a classic inflammatory reaction, and tend to progress toward resolution.</li>
+    <li>(D) Chronic injuries usually last less than three weeks and recover quickly.</li>
+  </ul>
+  <details data-kind="answer">
+    <summary>答案與詳解</summary>
+    <div data-kind="zh-translation">
+      <p><strong>中文題目：</strong>關於軟組織損傷的機轉，下列敘述何者<b>正確</b>？</p>
+      <p>(A) 急性傷害通常逐漸發展，疼痛在數月後才出現。</p>
+      <p>(B) 慢性傷害通常以強烈且短暫的發炎反應為特徵。</p>
+      <p>(C) 急性傷害常突然發生、伴隨典型的發炎反應，並傾向走向痊癒。</p>
+      <p>(D) 慢性傷害通常持續不到三週且恢復快速。</p>
+    </div>
+    <p class="ans">答案：(C)</p>
+    <p class="quote">詳解原文:「急性傷害： 突然發生，會出現強烈的急性發炎反應，適當處理下，通常會完全恢復。慢性傷害：持續發生（通常超過三個月），沒有強烈的發炎反應（通常為低度長期的發炎反應），易復發較難痊癒。所以ＡＢＤ都相反，只有Ｃ是對的。」</p>
+    <p class="src">出處：骨科學復健 2 曾昱璇＋常識 ｜ BM113_Block8期末考詳解.pdf 第 16 頁</p>
+  </details>
+</article>
+
+<article data-question-id="113fin-p16-q17" data-placement="chapter">
+  <span class="qhead">113 年 期末考 第 17 題 ｜ 曾昱璇</span>
+  <p class="stem">Which of the following best describes a Grade II ligament sprain?</p>
+  <ul class="opts">
+    <li>(A) Negligible structural damage, minimal inflammation, and rapid full recovery.</li>
+    <li>(B) Partial ligament rupture with significant pain and inflammation; recovery usually within 4–6 weeks but pain may persist for months.</li>
+    <li>(C) Complete rupture with negligible risk of reinjury and full proprioceptive recovery.</li>
+    <li>(D) Prolonged healing time without instability or proprioceptive impairment.</li>
+  </ul>
+  <details data-kind="answer">
+    <summary>答案與詳解</summary>
+    <div data-kind="zh-translation">
+      <p><strong>中文題目：</strong>下列何者最能描述第 II 級韌帶扭傷？</p>
+      <p>(A) 結構損傷可忽略、發炎輕微、快速完全恢復。</p>
+      <p>(B) 韌帶部分斷裂、疼痛與發炎明顯；通常 4–6 週內恢復，但疼痛可能持續數月。</p>
+      <p>(C) 完全斷裂、再受傷風險可忽略、本體感覺完全恢復。</p>
+      <p>(D) 癒合時間延長，但沒有不穩定或本體感覺障礙。</p>
+    </div>
+    <p class="ans">答案：(B)</p>
+    <p class="quote">詳解原文:「A 應為Grade 1 C 應為Grade 3 D 有韌帶損傷就會有proprioceptive impairment」</p>
+    <p class="src">出處：骨科學復健 2 曾昱璇 ｜ BM113_Block8期末考詳解.pdf 第 16 頁</p>
+  </details>
+</article>
+</section>
+<section id="chapter-2" data-chapter-kind="story">
+<h2>二、肌肉與肌腱：離心收縮、網球肘、手指屈肌腱分區</h2>
+
+<figure class="boxfig" data-visual-id="r2box-03-story" data-image-kind="story" data-explanation-verified="true">
+<span class="figtag">情境場景</span>
+<img data-visual-id="r2box-03-story" src="img/r2box-03-story.webp" alt="情境場景：短跑選手在踏出前腿、大腿後肌被拉長時受傷；旁邊網球選手手肘外側發痛；治療師手裡拿著一隻標了五個分區的手掌模型。" loading="lazy" decoding="async" width="1600" height="914">
+<figcaption>情境場景：短跑選手在踏出前腿、大腿後肌被拉長時受傷；旁邊網球選手手肘外側發痛；治療師手裡拿著一隻標了五個分區的手掌模型。</figcaption>
+</figure>
+<div class="story" data-prose-kind="story"><span class="tag">故事</span>
+<p>肌肉最容易在什麼時候拉傷？不是用力縮短（向心）的時候，而是<b>一邊出力、一邊被拉長——離心收縮（eccentric）</b>的時候。短跑擺腿、大腿後肌（hamstring）在膝快伸直時煞車，就是典型。111、112 兩年的題目都把「hamstring 通常在用力的<b>向心</b>收縮時受傷」列為錯誤；113 年則正面考：<b>肌肉拉傷通常發生在肌肉肌腱交界處（musculotendinous junction），因為過度伸展或尖峰收縮，特別是離心活動時</b>。</p>
+<p>hamstring 的其他三句都是對的：可以用<b>超音波分級</b>嚴重度；急性過負荷發生在肌肉<b>接近完全屈曲或完全伸直</b>時；回場前<b>等速肌力比 hamstring：quadriceps 要進步到 0.6</b>。</p>
+<p>113 年另外三個錯誤選項也值得記：<b>肌肉內挫傷不輕微</b>，可能併發<b>骨化性肌炎（myositis ossificans）</b>；急性拉傷後肌力要<b>兩週以上</b>才恢復，不是一週；<b>延遲性肌肉痠痛（DOMS）在運動後 24–48 小時出現，而且跟離心收縮有關</b>。</p>
+<p>再看<b>網球肘</b>（110 年，蕭毓璇）：最常侵犯 <b>extensor carpi radialis brevis（ECRB）</b>，壓痛點在<b>肱骨外上髁</b>，要避免誘發動作——但<b>病理變化是退化（degenerative），不是發炎</b>，所以「大部分病變是發炎」是錯的。這題申覆後 (B) 也算對：ECRB 在外上髁是 origin 不是 insertion，老師承認字面有瑕疵。</p>
+<p>最後是<b>手指屈肌腱斷裂</b>：五個分區裡 <b>Zone II 才叫 no man's land</b>（111、112 都把 Zone III 寫成 no man's land 當錯項），<b>Zone IV 在腕隧道內</b>；急性期用 <b>dorsal blocking splint</b> 擺位，它<b>限制主動與被動的手指伸直</b>，避免修補的肌腱再斷。</p>
+</div>
+
+<figure class="boxfig" data-visual-id="r2box-04-reality" data-image-kind="comparison" data-explanation-verified="true">
+<span class="figtag">離心收縮、網球肘與屈肌腱分區對照</span>
+<img data-visual-id="r2box-04-reality" src="img/r2box-04-reality.webp" alt="離心收縮、網球肘與屈肌腱分區對照：拉傷在肌腱交界離心時、超音波分級、H 比 Q 0.6、DOMS 24 到 48 小時；網球肘 ECRB 外上髁退化非發炎；手掌五區，Zone II 是 no man's land、Zone IV 腕隧道。" loading="lazy" decoding="async" width="1600" height="914">
+<figcaption>離心收縮、網球肘與屈肌腱分區對照：拉傷在肌腱交界離心時、超音波分級、H 比 Q 0.6、DOMS 24 到 48 小時；網球肘 ECRB 外上髁退化非發炎；手掌五區，Zone II 是 no man's land、Zone IV 腕隧道。</figcaption>
+</figure>
+<div class="reality"><span class="tag">回到現實</span>
+<p class="quote">詳解原文（111 第 17 題）:「Hamstring is usually injured when forceful eccentric contractions.」</p>
+<p class="quote">詳解原文（113 第 18 題）:「(A)錯誤，contusions可能造成myositis ossificans，此外也未必恢復迅速 ... (C)錯誤，基本上要2周以上才會恢復 ... (D)錯誤，發生在24-48小時，且和離心收縮有關」</p>
+<p class="quote">詳解原文（110）:「(A) 師曰：“Lateral epicondylitis is degenerative change, not inflammatory change.”」</p>
+<p class="quote">詳解原文（112 第 18 題）:「(A)應該為Zone II」</p>
+<p><b>肌肉拉傷：</b>肌肉肌腱交界處、離心收縮時；hamstring 超音波分級、H:Q 0.6 回場；挫傷可致骨化性肌炎；拉傷恢復 ≥2 週；DOMS 24–48 小時、與離心有關。<br>
+<b>網球肘：</b>ECRB、外上髁壓痛、避免誘發動作；<b>退化不是發炎</b>。<br>
+<b>屈肌腱：</b><b>Zone II ＝ no man's land</b>、Zone IV ＝ 腕隧道；急性期 dorsal blocking splint 限制伸直。</p>
+</div>
+
+<article data-question-id="111-p16-q17" data-placement="chapter">
+  <span class="qhead">111 年 期中考 第 17 題 ｜ 曾昱璇</span>
+  <p class="stem">Which description as below about hamstring injury is incorrect?</p>
+  <ul class="opts">
+    <li>(A) We can use sonography for grading the severity of hamstring injury.</li>
+    <li>(B) Acute overload happens when the muscle is near full flexion or full extension.</li>
+    <li>(C) Hamstring is usually injured when forceful concentric contractions.</li>
+    <li>(D) The strength ratio should improve to an isokinetic strength ratio of 0.6 hamstrings to quadriceps before return to most sports.</li>
+  </ul>
+  <details data-kind="answer">
+    <summary>答案與詳解</summary>
+    <div data-kind="zh-translation">
+      <p><strong>中文題目：</strong>關於大腿後肌損傷，下列敘述何者<b>錯誤</b>？</p>
+      <p>(A) 可用超音波為大腿後肌損傷的嚴重度分級。</p>
+      <p>(B) 急性過負荷發生在肌肉接近完全屈曲或完全伸直時。</p>
+      <p>(C) 大腿後肌通常在用力的向心收縮時受傷。</p>
+      <p>(D) 回到多數運動前，等速肌力比（大腿後肌：股四頭肌）應進步到 0.6。</p>
+    </div>
+    <p class="ans">答案：(C) Hamstring is usually injured when forceful concentric contractions.</p>
+    <p class="quote">詳解原文:「Hamstring is usually injured when forceful eccentric contractions.」</p>
+    <p class="src">出處：曾昱璇 骨科學復健(2)(ppt pg.25) ｜ BM111 BLOCK-8 期中考詳解.pdf 第 16 頁</p>
+  </details>
+</article>
+
+<article data-question-id="112fin-p17-q17" data-placement="chapter">
+  <span class="qhead">112 年 期末考 第 17 題 ｜ 曾昱璇</span>
+  <p class="stem">Which description as below about hamstring injury is incorrect?</p>
+  <ul class="opts">
+    <li>(A) We can use sonography for grading the severity of hamstring injury.</li>
+    <li>(B) Acute overload happens when the muscle is near full flexion or full extension.</li>
+    <li>(C) Hamstring is usually injured when forceful concentric contractions.</li>
+    <li>(D) The strength ratio should improve to an isokinetic strength ratio of 0.6 hamstrings to quadriceps before return to most sports.</li>
+  </ul>
+  <details data-kind="answer">
+    <summary>答案與詳解</summary>
+    <div data-kind="zh-translation">
+      <p><strong>中文題目：</strong>關於大腿後肌損傷，下列敘述何者<b>錯誤</b>？</p>
+      <p>(A) 可用超音波為大腿後肌損傷的嚴重度分級。</p>
+      <p>(B) 急性過負荷發生在肌肉接近完全屈曲或完全伸直時。</p>
+      <p>(C) 大腿後肌通常在用力的向心收縮時受傷。</p>
+      <p>(D) 回到多數運動前，等速肌力比（大腿後肌：股四頭肌）應進步到 0.6。</p>
+    </div>
+    <p class="ans">答案：C</p>
+    <p class="quote">詳解原文:「應該改成eccentric contractions (離心收縮)」</p>
+    <p class="src">出處：曾昱璇 骨科復建(ppt pg.35) ｜ BM112_Block 8 期末考.pdf 第 17 頁</p>
+  </details>
+</article>
+
+<article data-question-id="113fin-p16-q18" data-placement="chapter">
+  <span class="qhead">113 年 期末考 第 18 題 ｜ 曾昱璇</span>
+  <p class="stem">Which of the following statements about muscle injuries is correct?</p>
+  <ul class="opts">
+    <li>(A) Intramuscular contusions are mild, heal quickly, and rarely cause complications such as myositis ossificans.</li>
+    <li>(B) Muscular strains usually occur at the musculotendinous junction due to overstretching or peak contraction, especially during eccentric activity.</li>
+    <li>(C) After an acute strain, full contractile strength is usually restored within one week without long-term limitations.</li>
+    <li>(D) Delayed-onset muscle soreness typically appears immediately after exercise and is unrelated to eccentric contractions.</li>
+  </ul>
+  <details data-kind="answer">
+    <summary>答案與詳解</summary>
+    <div data-kind="zh-translation">
+      <p><strong>中文題目：</strong>關於肌肉損傷，下列敘述何者<b>正確</b>？</p>
+      <p>(A) 肌肉內挫傷輕微、癒合快，很少造成骨化性肌炎等併發症。</p>
+      <p>(B) 肌肉拉傷通常發生在肌肉肌腱交界處，因過度伸展或尖峰收縮，特別是離心活動時。</p>
+      <p>(C) 急性拉傷後，完整收縮力通常一週內恢復，沒有長期限制。</p>
+      <p>(D) 延遲性肌肉痠痛通常在運動後立即出現，與離心收縮無關。</p>
+    </div>
+    <p class="ans">答案：(B)</p>
+    <p class="quote">詳解原文:「(A)錯誤，contusions可能造成myositis ossificans，此外也未必恢復迅速 (B)正確，如上圖有關strains的說明 (C)錯誤，基本上要2周以上才會恢復 (D)錯誤，發生在24-48小時，且和離心收縮有關」</p>
+    <p class="src">出處：骨科學復健2 曾昱璇 ppt pg.13 ｜ BM113_Block8期末考詳解.pdf 第 16 頁</p>
+  </details>
+</article>
+
+<article data-question-id="110fin-p114-q88" data-placement="chapter">
+  <span class="qhead">110 年 期末考 第 88 題 ｜ 蕭毓璇</span>
+  <p class="stem">About the following statement, which one is wrong about tennis elbow?</p>
+  <ul class="opts">
+    <li>(A) Most of the pathological change is inflammation.</li>
+    <li>(B) The pathological site is more common at the tendon insertion site.</li>
+    <li>(C) The most common involved site is extensor carpi radialis brevis tendon.</li>
+    <li>(D) There is significant tender point at lateral epicondyle of humerus.</li>
+    <li>(E) Need adequate avoid or decrease the provocative movement.</li>
+  </ul>
+  <details data-kind="answer">
+    <summary>答案與詳解</summary>
+    <div data-kind="zh-translation">
+      <p><strong>中文題目：</strong>關於網球肘，下列敘述何者<b>錯誤</b>？</p>
+      <p>(A) 大部分的病理變化是發炎。</p>
+      <p>(B) 病變部位較常在肌腱附著處。</p>
+      <p>(C) 最常侵犯的是橈側伸腕短肌肌腱。</p>
+      <p>(D) 肱骨外上髁有明顯壓痛點。</p>
+      <p>(E) 需要充分避免或減少誘發的動作。</p>
+    </div>
+    <p class="ans">答案：(A) Most of the pathological change is inflammation.（申覆後改答案為 (A)、(B)）</p>
+    <p class="quote">詳解原文:「(A) 師曰：“Lateral epicondylitis is degenerative change, not inflammatory change.”」</p>
+    <p class="quote">申覆原文:「tennis elbow中容易受損的位置是lateral epicondyle，此為extensor carpi radialis brevis的origin site，因此B選項好像也有錯誤」老師回覆:「許要標示成elbow tendon insertion site，但A確實是錯的，若針對文字上的瑕疵，那就 AB 都可吧」</p>
+    <p>要記的是：<b>網球肘是退化，不是發炎</b>；ECRB 在外上髁是 origin。</p>
+    <p class="src">出處：蕭毓璇 骨科學復健2(ppt pg.42) ｜ BM110 BLOCK-8 期末考詳解 (審後附上申覆) (1).pdf 第 114 頁</p>
+  </details>
+</article>
+
+<article data-question-id="111-p16-q18" data-placement="chapter">
+  <span class="qhead">111 年 期中考 第 18 題 ｜ 曾昱璇</span>
+  <p class="stem">Which description as below about finger flexor tendon rupture is incorrect?</p>
+  <ul class="opts">
+    <li>(A) Zone III is called as no man's land.</li>
+    <li>(B) Zone IV is within the carpal tunnel.</li>
+    <li>(C) In acute phase, dorsal blocking splint is usually prescribed for positioning.</li>
+    <li>(D) Dorsal blocking splint limits the amount of active and passive finger extension to prevent possible tendon rupture.</li>
+  </ul>
+  <details data-kind="answer">
+    <summary>答案與詳解</summary>
+    <div data-kind="zh-translation">
+      <p><strong>中文題目：</strong>關於手指屈肌腱斷裂，下列敘述何者<b>錯誤</b>？</p>
+      <p>(A) 第 III 區稱為 no man's land。</p>
+      <p>(B) 第 IV 區在腕隧道內。</p>
+      <p>(C) 急性期通常開立背側阻擋副木做擺位。</p>
+      <p>(D) 背側阻擋副木限制手指主動與被動伸直的幅度，以預防可能的肌腱斷裂。</p>
+    </div>
+    <p class="ans">答案：(A) Zone III is called as no man's land.</p>
+    <p>No man's land 是 <b>Zone II</b>。</p>
+    <p class="src">出處：曾昱璇 骨科學復健(2)(ppt pg.30) ｜ BM111 BLOCK-8 期中考詳解.pdf 第 16 頁</p>
+  </details>
+</article>
+
+<article data-question-id="112fin-p17-q18" data-placement="chapter">
+  <span class="qhead">112 年 期末考 第 18 題 ｜ 曾昱璇</span>
+  <p class="stem">Which description as below about finger flexor tendon rupture is incorrect?</p>
+  <ul class="opts">
+    <li>(A) Zone III is called as no man's land.</li>
+    <li>(B) Zone IV is within the carpal tunnel.</li>
+    <li>(C) In acute phase, dorsal blocking splint is usually prescribed for positioning.</li>
+    <li>(D) Dorsal blocking splint limits the amount of active and passive finger extension to prevent possible tendon rupture</li>
+  </ul>
+  <details data-kind="answer">
+    <summary>答案與詳解</summary>
+    <div data-kind="zh-translation">
+      <p><strong>中文題目：</strong>關於手指屈肌腱斷裂，下列敘述何者<b>錯誤</b>？</p>
+      <p>(A) 第 III 區稱為 no man's land。</p>
+      <p>(B) 第 IV 區在腕隧道內。</p>
+      <p>(C) 急性期通常開立背側阻擋副木做擺位。</p>
+      <p>(D) 背側阻擋副木限制手指主動與被動伸直的幅度，以預防可能的肌腱斷裂。</p>
+    </div>
+    <p class="ans">答案：A</p>
+    <p class="quote">詳解原文:「(A)應該為Zone II」</p>
+    <p class="src">出處：曾昱璇 骨科復建(ppt pg. 44) ｜ BM112_Block 8 期末考.pdf 第 17 頁</p>
+  </details>
+</article>
+</section>
+<section id="chapter-3" data-chapter-kind="story">
+<h2>三、骨折復健與 unhappy triad</h2>
+
+<figure class="boxfig" data-visual-id="r2box-05-story" data-image-kind="story" data-explanation-verified="true">
+<span class="figtag">情境場景</span>
+<img data-visual-id="r2box-05-story" src="img/r2box-05-story.webp" alt="情境場景：打著石膏的病人在治療師協助下做等長收縮與輔助關節活動；旁邊足球員的右膝從外側被撞，膝內側三個結構亮起紅燈。" loading="lazy" decoding="async" width="1600" height="914">
+<figcaption>情境場景：打著石膏的病人在治療師協助下做等長收縮與輔助關節活動；旁邊足球員的右膝從外側被撞，膝內側三個結構亮起紅燈。</figcaption>
+</figure>
+<div class="story" data-prose-kind="story"><span class="tag">故事</span>
+<p>骨折之後，復健的原則是<b>不要完全不動</b>。完全不動，水腫消不掉、肌肉萎縮、關節攣縮。所以早期就要開始：肌力從<b>等長收縮（isometric）</b>開始；關節活動從<b>主動輔助（active assist ROM）</b>開始；<b>適當的負重會促進骨折癒合</b>；<b>經皮電刺激（TENS）</b>能改善骨折後的疼痛與水腫。110 年唯一錯的選項就是「早期應絕對固定不動」——有同學申覆想從寬，老師回：課堂講過骨折後要 early exercise，維持原答案。</p>
+<p>再來是膝的經典：<b>王先生踢足球時右膝從外側被撞</b>，膝關節腫痛，診斷 <b>unhappy triad</b>。從外側撞、膝往內翻（外翻應力），受傷的是內側和前方的三個結構：<b>前十字韌帶（ACL）、內側副韌帶（MCL）、內側半月板（medial meniscus）</b>。<b>外側半月板不在裡面</b>。</p>
+</div>
+
+<figure class="boxfig" data-visual-id="r2box-06-reality" data-image-kind="comparison" data-explanation-verified="true">
+<span class="figtag">骨折復健原則與 unhappy triad 對照</span>
+<img data-visual-id="r2box-06-reality" src="img/r2box-06-reality.webp" alt="骨折復健原則與 unhappy triad 對照：等長收縮起步、主動輔助關節活動、適當負重、電刺激消腫止痛，絕對不動打叉；膝關節從外側受力，ACL、MCL、內側半月板三處紅色，外側半月板打叉。" loading="lazy" decoding="async" width="1600" height="914">
+<figcaption>骨折復健原則與 unhappy triad 對照：等長收縮起步、主動輔助關節活動、適當負重、電刺激消腫止痛，絕對不動打叉；膝關節從外側受力，ACL、MCL、內側半月板三處紅色，外側半月板打叉。</figcaption>
+</figure>
+<div class="reality"><span class="tag">回到現實</span>
+<p class="quote">詳解原文（110 第 89 題）:「基本上復健原則都不希望病人完全不動，因為在不動的情況下水腫不容易消除外，肌肉也會萎縮、關節也會攣縮。所以D是錯誤的。」</p>
+<p class="quote">詳解原文（110 第 90 題）:「unhappy triad包含ACL, MCL及medial meniscus injury」</p>
+<p><b>骨折復健：</b>肌力從等長開始、ROM 從主動輔助開始、適當負重促進癒合、TENS 改善疼痛水腫；<b>不可絕對不動</b>。<br>
+<b>Unhappy triad：</b>外側撞擊 → <b>ACL ＋ MCL ＋ 內側半月板</b>；不含外側半月板。</p>
+</div>
+
+<article data-question-id="110fin-p116-q89" data-placement="chapter">
+  <span class="qhead">110 年 期末考 第 89 題 ｜ 蕭毓璇</span>
+  <p class="stem">About the following statements of rehabilitation for fracture, which one is wrong?</p>
+  <ul class="opts">
+    <li>(A) Strengthening for patient with fracture, start from isometric exercise.</li>
+    <li>(B) Adequate weight bearing will facilitate healing of fracture.</li>
+    <li>(C) Transcutaneous electrical stimulation could improve the post fracture pain and edema.</li>
+    <li>(D) In the early stage of fracture, we should absolutely immobilize.</li>
+    <li>(E) In the early stage of fracture, we should start ROM(range of motion) exercise from active assist range of motion.</li>
+  </ul>
+  <details data-kind="answer">
+    <summary>答案與詳解</summary>
+    <div data-kind="zh-translation">
+      <p><strong>中文題目：</strong>關於骨折的復健，下列敘述何者<b>錯誤</b>？</p>
+      <p>(A) 骨折病人的肌力訓練從等長收縮開始。</p>
+      <p>(B) 適當的負重會促進骨折癒合。</p>
+      <p>(C) 經皮電刺激可改善骨折後的疼痛與水腫。</p>
+      <p>(D) 骨折早期應絕對固定不動。</p>
+      <p>(E) 骨折早期關節活動度運動應從主動輔助關節活動開始。</p>
+    </div>
+    <p class="ans">答案：(D) In the early stage of fracture, we should absolutely immobilize（申覆後維持原答案）</p>
+    <p class="quote">詳解原文:「基本上復健原則都不希望病人完全不動，因為在不動的情況下水腫不容易消除外，肌肉也會萎縮、關節也會攣縮。所以D是錯誤的。」老師回覆:「堂中有提及骨折後要early exercise, 因此absolute immobilization is not the correct answer 維持原答案D」</p>
+    <p class="src">出處：蕭毓璇 骨科學復健2(ppt pg.4) ｜ BM110 BLOCK-8 期末考詳解 (審後附上申覆) (1).pdf 第 116 頁</p>
+  </details>
+</article>
+
+<article data-question-id="110fin-p117-q90" data-placement="chapter">
+  <span class="qhead">110 年 期末考 第 90 題 ｜ 蕭毓璇</span>
+  <p class="stem">Mr. Wang's right knee was hit from lateral side by another athlete during playing football, right knee swelling and pain also noted, the impression of unhappy Triad of the knee. Which compartment is not the lesion of Unhappy Triad?</p>
+  <ul class="opts">
+    <li>(A) Anterior cruciate ligament of knee</li>
+    <li>(B) Medial collateral ligament of knee</li>
+    <li>(C) Lateral meniscus of knee</li>
+    <li>(D) Medial meniscus of knee</li>
+  </ul>
+  <details data-kind="answer">
+    <summary>答案與詳解</summary>
+    <div data-kind="zh-translation">
+      <p><strong>中文題目：</strong>王先生踢足球時右膝被另一位運動員從外側撞擊，右膝腫脹疼痛，診斷印象為膝關節 unhappy triad。下列何者<b>不是</b> unhappy triad 的病灶？</p>
+      <p>(A) 膝前十字韌帶</p>
+      <p>(B) 膝內側副韌帶</p>
+      <p>(C) 膝外側半月板</p>
+      <p>(D) 膝內側半月板</p>
+    </div>
+    <p class="ans">答案：(C) Lateral meniscus of knee</p>
+    <p class="quote">詳解原文:「unhappy triad包含ACL, MCL及medial meniscus injury」</p>
+    <p class="src">出處：蕭毓璇 骨科學復健2(ppt pg.62) ｜ BM110 BLOCK-8 期末考詳解 (審後附上申覆) (1).pdf 第 117 頁</p>
+  </details>
+</article>
+</section>
+
+<section id="chapter-cram" data-chapter-kind="cram">
+<h2>四、考前速記</h2>
+<div class="cram">
+<ul>
+<li><b>急性傷害：突然、典型發炎、走向痊癒。慢性：＞3 個月、低度發炎、易復發。</b></li>
+<li><b>PEACE：Protection、Elevation、Avoid anti-inflammatories、Compression、Education。沒有 vascularisation。</b>兩年同題。</li>
+<li><b>韌帶扭傷 Grade II：部分斷裂、明顯痛與發炎、4–6 週恢復、疼痛可拖數月。</b>Grade I 幾乎沒壞、Grade III 完全斷。<b>只要有韌帶損傷就有本體感覺障礙。</b></li>
+<li><b>肌肉在離心收縮時拉傷</b>，位置在肌肉肌腱交界處。hamstring 兩年同題，「向心」是錯的。</li>
+<li><b>hamstring：超音波分級；接近完全屈曲或伸直時過負荷；H:Q 等速肌力比 0.6 才回場。</b></li>
+<li><b>肌肉挫傷可致骨化性肌炎；拉傷恢復 ≥2 週；DOMS 24–48 小時、與離心收縮有關。</b></li>
+<li><b>網球肘：退化不是發炎</b>；ECRB、外上髁壓痛、避免誘發動作。</li>
+<li><b>屈肌腱 Zone II ＝ no man's land；Zone IV ＝ 腕隧道</b>；急性期 dorsal blocking splint 限制主動與被動伸直。兩年同題把 Zone III 當錯項。</li>
+<li><b>骨折復健不可絕對不動</b>：等長收縮起步、主動輔助 ROM 起步、適當負重促進癒合、TENS 止痛消腫。</li>
+<li><b>Unhappy triad ＝ ACL ＋ MCL ＋ 內側半月板</b>；外側撞擊造成；沒有外側半月板。</li>
+</ul>
+</div>
+</section>
+
+<!-- ================= VOCAB ================= -->
+<section id="chapter-vocab" data-chapter-kind="vocab">
+<h2>五、單字表</h2>
+<dl class="vocab">
+<dt>PEACE</dt>
+<dd><span class="root">Protection / Elevation / Avoid anti-inflammatories / Compression / Education</span>　急性軟組織損傷的處理口訣。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>P、E、C 都在，<b>V（vascularisation）不在</b>。</p></details></dd>
+
+<dt>vascularisation</dt>
+<dd><span class="root">vascular＝血管的</span>　血管化、血管新生；不是急性期處置。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>兩年都是「不建議」的答案。</p></details></dd>
+
+<dt>acute / chronic injury</dt>
+<dd><span class="root">acute＝急性；chronic＝慢性</span>　急性：突然、典型發炎、會好。慢性：超過三個月、低度發炎、易復發。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>113 年三個相反、一個正確。</p></details></dd>
+
+<dt>ligament sprain grade</dt>
+<dd><span class="root">sprain＝韌帶扭傷</span>　I 幾乎無結構損傷；II 部分斷裂、4–6 週；III 完全斷裂。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>任何等級都有本體感覺障礙。</p></details></dd>
+
+<dt>proprioceptive impairment</dt>
+<dd><span class="root">proprio-（自身）+ ception（感知）</span>　本體感覺障礙，韌帶損傷後必然出現。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>「沒有本體感覺障礙」是錯的。</p></details></dd>
+
+<dt>eccentric contraction</dt>
+<dd><span class="root">ec-（向外）+ centric（中心）</span>　離心收縮，肌肉出力同時被拉長；肌肉拉傷、DOMS 都與它有關。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>這科的關鍵字。「concentric」出現就是錯項。</p></details></dd>
+
+<dt>hamstring</dt>
+<dd><span class="root">ham＝大腿後側；string＝肌腱</span>　大腿後肌群，離心收縮時易拉傷。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>超音波分級、H:Q 0.6 回場。</p></details></dd>
+
+<dt>isokinetic strength ratio</dt>
+<dd><span class="root">iso-（等）+ kinetic（運動）</span>　等速肌力比；hamstring：quadriceps 要到 0.6 才回到多數運動。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>0.6，H 在前 Q 在後。</p></details></dd>
+
+<dt>musculotendinous junction</dt>
+<dd><span class="root">musculo-（肌肉）+ tendinous（肌腱）</span>　肌肉肌腱交界處，肌肉拉傷最常發生的位置。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>113 年正確答案裡的地點。</p></details></dd>
+
+<dt>myositis ossificans</dt>
+<dd><span class="root">myo-（肌）+ -itis（炎）+ ossificans（骨化）</span>　骨化性肌炎，肌肉內挫傷的併發症。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>挫傷不是「輕微、很少併發症」。</p></details></dd>
+
+<dt>delayed-onset muscle soreness (DOMS)</dt>
+<dd><span class="root">delayed＝延遲</span>　延遲性肌肉痠痛，運動後 24–48 小時出現，與離心收縮有關。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>不是「立即」、不是「與離心無關」。</p></details></dd>
+
+<dt>tennis elbow / lateral epicondylitis</dt>
+<dd><span class="root">epi-（上）+ condyle（髁）</span>　網球肘，外上髁壓痛，最常侵犯 ECRB；病理是退化不是發炎。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>「-itis」名不符實：degenerative。</p></details></dd>
+
+<dt>extensor carpi radialis brevis (ECRB)</dt>
+<dd><span class="root">extensor（伸肌）carpi（腕）radialis（橈側）brevis（短）</span>　橈側伸腕短肌，網球肘最常侵犯的肌腱，起點在外上髁。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>外上髁是它的 origin，不是 insertion（申覆點）。</p></details></dd>
+
+<dt>no man's land (Zone II)</dt>
+<dd><span class="root">無人地帶</span>　手指屈肌腱第 II 區，修補預後最差的區域。<details data-kind="vocab-memory"><summary>記憶提示</summary><p><b>II 不是 III</b>；Zone IV 在腕隧道。</p></details></dd>
+
+<dt>dorsal blocking splint</dt>
+<dd><span class="root">dorsal（背側）+ blocking（阻擋）</span>　背側阻擋副木，屈肌腱修補後急性期擺位，限制主動與被動伸直。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>擋住伸直，肌腱才不會再斷。</p></details></dd>
+
+<dt>isometric exercise</dt>
+<dd><span class="root">iso-（等）+ metric（長度）</span>　等長收縮運動，骨折病人肌力訓練的起點。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>長度不變、先出力。</p></details></dd>
+
+<dt>active assist range of motion</dt>
+<dd><span class="root">assist＝協助</span>　主動輔助關節活動，骨折早期 ROM 運動的起點。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>早期就要動，只是有人幫。</p></details></dd>
+
+<dt>transcutaneous electrical stimulation (TENS)</dt>
+<dd><span class="root">trans-（穿過）+ cutaneous（皮膚）</span>　經皮電刺激，可改善骨折後疼痛與水腫。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>止痛又消腫，是對的敘述。</p></details></dd>
+
+<dt>unhappy triad</dt>
+<dd><span class="root">triad＝三合一</span>　膝外側撞擊造成的 ACL ＋ MCL ＋ 內側半月板損傷。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>三個都在「內側／前方」，外側半月板不在。</p></details></dd>
+</dl>
+</section>
+<section id="chapter-final" data-chapter-kind="final_questions">
+<h2>六、歷年考題總複習</h2>
+<p class="meta">依年度由新到舊、同年依原始題號排列。共 12 題（110 期末、111 期中、112 期末、113 期末各 3 題）。<b style="color:#f08a8a">紅框</b>＝同一考點在兩個以上年度重複出現。</p>
+<h3><span class="yearchip">113 年</span>期末考 第 16 題</h3>
+<article data-question-id="113fin-p16-q16" data-placement="final">
+  <span class="qhead">113 年 期末考 第 16 題 ｜ 曾昱璇</span>
+  
+  <p class="stem">Which of the following statements about soft tissue injury mechanisms is correct?</p>
+  <ul class="opts"><li>(A) Acute injuries usually develop gradually, with pain appearing months later.</li><li>(B) Chronic injuries are typically marked by a strong and short-lived inflammatory response.</li><li>(C) Acute injuries often occur suddenly, are associated with a classic inflammatory reaction, and tend to progress toward resolution.</li><li>(D) Chronic injuries usually last less than three weeks and recover quickly.</li></ul>
+  <details data-kind="answer"><summary>答案與詳解</summary>
+    <div data-kind="zh-translation"><p><strong>中文題目：</strong>關於軟組織損傷的機轉，下列敘述何者<b>正確</b>？</p>
+      <p>(A) 急性傷害通常逐漸發展，疼痛在數月後才出現。</p>
+      <p>(B) 慢性傷害通常以強烈且短暫的發炎反應為特徵。</p>
+      <p>(C) 急性傷害常突然發生、伴隨典型的發炎反應，並傾向走向痊癒。</p>
+      <p>(D) 慢性傷害通常持續不到三週且恢復快速。</p></div>
+    <p class="ans">答案：(C)</p>
+    <p>急性傷害突然發生、典型發炎、走向痊癒；慢性超過三個月、低度發炎。<span class="src"> ｜ BM113_Block8期末考詳解 第 16 頁</span></p>
+  </details>
+</article>
+<article data-question-id="113fin-p16-q17" data-placement="final">
+  <span class="qhead">113 年 期末考 第 17 題 ｜ 曾昱璇</span>
+  
+  <p class="stem">Which of the following best describes a Grade II ligament sprain?</p>
+  <ul class="opts"><li>(A) Negligible structural damage, minimal inflammation, and rapid full recovery.</li><li>(B) Partial ligament rupture with significant pain and inflammation; recovery usually within 4–6 weeks but pain may persist for months.</li><li>(C) Complete rupture with negligible risk of reinjury and full proprioceptive recovery.</li><li>(D) Prolonged healing time without instability or proprioceptive impairment.</li></ul>
+  <details data-kind="answer"><summary>答案與詳解</summary>
+    <div data-kind="zh-translation"><p><strong>中文題目：</strong>下列何者最能描述第 II 級韌帶扭傷？</p>
+      <p>(A) 結構損傷可忽略、發炎輕微、快速完全恢復。</p>
+      <p>(B) 韌帶部分斷裂、疼痛與發炎明顯；通常 4–6 週內恢復，但疼痛可能持續數月。</p>
+      <p>(C) 完全斷裂、再受傷風險可忽略、本體感覺完全恢復。</p>
+      <p>(D) 癒合時間延長，但沒有不穩定或本體感覺障礙。</p></div>
+    <p class="ans">答案：(B)</p>
+    <p>Grade II 扭傷＝部分斷裂、4–6 週恢復；任何韌帶損傷都有本體感覺障礙。<span class="src"> ｜ BM113_Block8期末考詳解 第 16 頁</span></p>
+  </details>
+</article>
+<article data-question-id="113fin-p16-q18" data-placement="final" class="repeat">
+  <span class="qhead">113 年 期末考 第 18 題 ｜ 曾昱璇</span><span class="repeat-badge">重複考點 ×3</span>
+  <p class="repeat-note">同考點：111 第17題、112 第17題　—　肌肉拉傷發生在用力的離心收縮（eccentric），不是向心收縮；hamstring 用超音波分級、H:Q 等速肌力比 0.6 才回場</p>
+  <p class="stem">Which of the following statements about muscle injuries is correct?</p>
+  <ul class="opts"><li>(A) Intramuscular contusions are mild, heal quickly, and rarely cause complications such as myositis ossificans.</li><li>(B) Muscular strains usually occur at the musculotendinous junction due to overstretching or peak contraction, especially during eccentric activity.</li><li>(C) After an acute strain, full contractile strength is usually restored within one week without long-term limitations.</li><li>(D) Delayed-onset muscle soreness typically appears immediately after exercise and is unrelated to eccentric contractions.</li></ul>
+  <details data-kind="answer"><summary>答案與詳解</summary>
+    <div data-kind="zh-translation"><p><strong>中文題目：</strong>關於肌肉損傷，下列敘述何者<b>正確</b>？</p>
+      <p>(A) 肌肉內挫傷輕微、癒合快，很少造成骨化性肌炎等併發症。</p>
+      <p>(B) 肌肉拉傷通常發生在肌肉肌腱交界處，因過度伸展或尖峰收縮，特別是離心活動時。</p>
+      <p>(C) 急性拉傷後，完整收縮力通常一週內恢復，沒有長期限制。</p>
+      <p>(D) 延遲性肌肉痠痛通常在運動後立即出現，與離心收縮無關。</p></div>
+    <p class="ans">答案：(B)</p>
+    <p>肌肉拉傷在肌腱交界處、離心活動時；挫傷可骨化性肌炎；DOMS 24–48 小時。<span class="src"> ｜ BM113_Block8期末考詳解 第 16 頁</span></p>
+  </details>
+</article>
+<h3><span class="yearchip">112 年</span>期末考 第 16 題</h3>
+<article data-question-id="112fin-p16-q16" data-placement="final" class="repeat">
+  <span class="qhead">112 年 期末考 第 16 題 ｜ 曾昱璇</span><span class="repeat-badge">重複考點 ×2</span>
+  <p class="repeat-note">同考點：111 第16題　—　軟組織損傷急性期處理 PEACE（Protection、Elevation、Avoid anti-inflammatories、Compression、Education），沒有 Vascularisation</p>
+  <p class="stem">Which option is not suggested for management of soft tissue injury in acute phase?</p>
+  <ul class="opts"><li>(A) Elevation</li><li>(B) Protection</li><li>(C) Vascularisation</li><li>(D) Compression</li></ul>
+  <details data-kind="answer"><summary>答案與詳解</summary>
+    <div data-kind="zh-translation"><p><strong>中文題目：</strong>下列何者<b>不是</b>急性期軟組織損傷建議的處置？</p>
+      <p>(A) 抬高</p>
+      <p>(B) 保護</p>
+      <p>(C) 血管化</p>
+      <p>(D) 加壓</p></div>
+    <p class="ans">答案：C</p>
+    <p>同題再考：急性期是 PEACE，沒有 vascularisation。<span class="src"> ｜ BM112_Block 8 期末考 第 16 頁</span></p>
+  </details>
+</article>
+<article data-question-id="112fin-p17-q17" data-placement="final" class="repeat">
+  <span class="qhead">112 年 期末考 第 17 題 ｜ 曾昱璇</span><span class="repeat-badge">重複考點 ×3</span>
+  <p class="repeat-note">同考點：111 第17題、113 第18題　—　肌肉拉傷發生在用力的離心收縮（eccentric），不是向心收縮；hamstring 用超音波分級、H:Q 等速肌力比 0.6 才回場</p>
+  <p class="stem">Which description as below about hamstring injury is incorrect?</p>
+  <ul class="opts"><li>(A) We can use sonography for grading the severity of hamstring injury.</li><li>(B) Acute overload happens when the muscle is near full flexion or full extension.</li><li>(C) Hamstring is usually injured when forceful concentric contractions.</li><li>(D) The strength ratio should improve to an isokinetic strength ratio of 0.6 hamstrings to quadriceps before return to most sports.</li></ul>
+  <details data-kind="answer"><summary>答案與詳解</summary>
+    <div data-kind="zh-translation"><p><strong>中文題目：</strong>關於大腿後肌損傷，下列敘述何者<b>錯誤</b>？</p>
+      <p>(A) 可用超音波為大腿後肌損傷的嚴重度分級。</p>
+      <p>(B) 急性過負荷發生在肌肉接近完全屈曲或完全伸直時。</p>
+      <p>(C) 大腿後肌通常在用力的向心收縮時受傷。</p>
+      <p>(D) 回到多數運動前，等速肌力比（大腿後肌：股四頭肌）應進步到 0.6。</p></div>
+    <p class="ans">答案：C</p>
+    <p>同題再考：應該改成 eccentric。<span class="src"> ｜ BM112_Block 8 期末考 第 17 頁</span></p>
+  </details>
+</article>
+<article data-question-id="112fin-p17-q18" data-placement="final" class="repeat">
+  <span class="qhead">112 年 期末考 第 18 題 ｜ 曾昱璇</span><span class="repeat-badge">重複考點 ×2</span>
+  <p class="repeat-note">同考點：111 第18題　—　手指屈肌腱：Zone II 才是 no man&#x27;s land、Zone IV 在腕隧道內；急性期用 dorsal blocking splint 限制伸直</p>
+  <p class="stem">Which description as below about finger flexor tendon rupture is incorrect?</p>
+  <ul class="opts"><li>(A) Zone III is called as no man&#x27;s land.</li><li>(B) Zone IV is within the carpal tunnel.</li><li>(C) In acute phase, dorsal blocking splint is usually prescribed for positioning.</li><li>(D) Dorsal blocking splint limits the amount of active and passive finger extension to prevent possible tendon rupture</li></ul>
+  <details data-kind="answer"><summary>答案與詳解</summary>
+    <div data-kind="zh-translation"><p><strong>中文題目：</strong>關於手指屈肌腱斷裂，下列敘述何者<b>錯誤</b>？</p>
+      <p>(A) 第 III 區稱為 no man's land。</p>
+      <p>(B) 第 IV 區在腕隧道內。</p>
+      <p>(C) 急性期通常開立背側阻擋副木做擺位。</p>
+      <p>(D) 背側阻擋副木限制手指主動與被動伸直的幅度，以預防可能的肌腱斷裂。</p></div>
+    <p class="ans">答案：A</p>
+    <p>同題再考：(A) 應該為 Zone II。<span class="src"> ｜ BM112_Block 8 期末考 第 17 頁</span></p>
+  </details>
+</article>
+<h3><span class="yearchip">111 年</span>期中考 第 16 題</h3>
+<article data-question-id="111-p15-q16" data-placement="final" class="repeat">
+  <span class="qhead">111 年 期中考 第 16 題 ｜ 曾昱璇 ｜ 來源答案欄</span><span class="repeat-badge">重複考點 ×2</span>
+  <p class="repeat-note">同考點：112 第16題　—　軟組織損傷急性期處理 PEACE（Protection、Elevation、Avoid anti-inflammatories、Compression、Education），沒有 Vascularisation</p>
+  <p class="stem">Which option is not suggested for management of soft tissue injury in acute phase?</p>
+  <ul class="opts"><li>(A) Elevation</li><li>(B) Protection</li><li>(C) Vascularization</li><li>(D) Compression</li></ul>
+  <details data-kind="answer"><summary>答案與詳解</summary>
+    <div data-kind="zh-translation"><p><strong>中文題目：</strong>下列何者<b>不是</b>急性期軟組織損傷建議的處置？</p>
+      <p>(A) 抬高</p>
+      <p>(B) 保護</p>
+      <p>(C) 血管化</p>
+      <p>(D) 加壓</p></div>
+    <p class="ans">答案：(C) Vascularization</p>
+    <p>PEACE 裡沒有 vascularization。<span class="src"> ｜ BM111 BLOCK-8 期中考詳解 第 15 頁</span></p>
+  </details>
+</article>
+<article data-question-id="111-p16-q17" data-placement="final" class="repeat">
+  <span class="qhead">111 年 期中考 第 17 題 ｜ 曾昱璇</span><span class="repeat-badge">重複考點 ×3</span>
+  <p class="repeat-note">同考點：112 第17題、113 第18題　—　肌肉拉傷發生在用力的離心收縮（eccentric），不是向心收縮；hamstring 用超音波分級、H:Q 等速肌力比 0.6 才回場</p>
+  <p class="stem">Which description as below about hamstring injury is incorrect?</p>
+  <ul class="opts"><li>(A) We can use sonography for grading the severity of hamstring injury.</li><li>(B) Acute overload happens when the muscle is near full flexion or full extension.</li><li>(C) Hamstring is usually injured when forceful concentric contractions.</li><li>(D) The strength ratio should improve to an isokinetic strength ratio of 0.6 hamstrings to quadriceps before return to most sports.</li></ul>
+  <details data-kind="answer"><summary>答案與詳解</summary>
+    <div data-kind="zh-translation"><p><strong>中文題目：</strong>關於大腿後肌損傷，下列敘述何者<b>錯誤</b>？</p>
+      <p>(A) 可用超音波為大腿後肌損傷的嚴重度分級。</p>
+      <p>(B) 急性過負荷發生在肌肉接近完全屈曲或完全伸直時。</p>
+      <p>(C) 大腿後肌通常在用力的向心收縮時受傷。</p>
+      <p>(D) 回到多數運動前，等速肌力比（大腿後肌：股四頭肌）應進步到 0.6。</p></div>
+    <p class="ans">答案：(C) Hamstring is usually injured when forceful concentric contractions.</p>
+    <p>hamstring 在離心收縮時受傷，不是向心。<span class="src"> ｜ BM111 BLOCK-8 期中考詳解 第 16 頁</span></p>
+  </details>
+</article>
+<article data-question-id="111-p16-q18" data-placement="final" class="repeat">
+  <span class="qhead">111 年 期中考 第 18 題 ｜ 曾昱璇 ｜ 來源答案欄</span><span class="repeat-badge">重複考點 ×2</span>
+  <p class="repeat-note">同考點：112 第18題　—　手指屈肌腱：Zone II 才是 no man&#x27;s land、Zone IV 在腕隧道內；急性期用 dorsal blocking splint 限制伸直</p>
+  <p class="stem">Which description as below about finger flexor tendon rupture is incorrect?</p>
+  <ul class="opts"><li>(A) Zone III is called as no man&#x27;s land.</li><li>(B) Zone IV is within the carpal tunnel.</li><li>(C) In acute phase, dorsal blocking splint is usually prescribed for positioning.</li><li>(D) Dorsal blocking splint limits the amount of active and passive finger extension to prevent possible tendon rupture.</li></ul>
+  <details data-kind="answer"><summary>答案與詳解</summary>
+    <div data-kind="zh-translation"><p><strong>中文題目：</strong>關於手指屈肌腱斷裂，下列敘述何者<b>錯誤</b>？</p>
+      <p>(A) 第 III 區稱為 no man's land。</p>
+      <p>(B) 第 IV 區在腕隧道內。</p>
+      <p>(C) 急性期通常開立背側阻擋副木做擺位。</p>
+      <p>(D) 背側阻擋副木限制手指主動與被動伸直的幅度，以預防可能的肌腱斷裂。</p></div>
+    <p class="ans">答案：(A) Zone III is called as no man's land.</p>
+    <p>No man&#x27;s land 是 Zone II，不是 III。<span class="src"> ｜ BM111 BLOCK-8 期中考詳解 第 16 頁</span></p>
+  </details>
+</article>
+<h3><span class="yearchip">110 年</span>期末考 第 88 題</h3>
+<article data-question-id="110fin-p114-q88" data-placement="final">
+  <span class="qhead">110 年 期末考 第 88 題 ｜ 蕭毓璇</span>
+  
+  <p class="stem">About the following statement, which one is wrong about tennis elbow?</p>
+  <ul class="opts"><li>(A) Most of the pathological change is inflammation.</li><li>(B) The pathological site is more common at the tendon insertion site.</li><li>(C) The most common involved site is extensor carpi radialis brevis tendon.</li><li>(D) There is significant tender point at lateral epicondyle of humerus. (E) Need adequate avoid or decrease the provocative movement.</li></ul>
+  <details data-kind="answer"><summary>答案與詳解</summary>
+    <div data-kind="zh-translation"><p><strong>中文題目：</strong>關於網球肘，下列敘述何者<b>錯誤</b>？</p>
+      <p>(A) 大部分的病理變化是發炎。</p>
+      <p>(B) 病變部位較常在肌腱附著處。</p>
+      <p>(C) 最常侵犯的是橈側伸腕短肌肌腱。</p>
+      <p>(D) 肱骨外上髁有明顯壓痛點。</p>
+      <p>(E) 需要充分避免或減少誘發的動作。</p></div>
+    <p class="ans">答案：(A) Most of the pathological change is inflammation.（申覆後改答案為 (A)、(B)）</p>
+    <p>網球肘是退化不是發炎；ECRB 在外上髁是 origin，申覆後 A、B 都算。<span class="src"> ｜ BM110 BLOCK-8 期末考詳解 (審後附上申覆) (1) 第 114 頁</span></p>
+  </details>
+</article>
+<article data-question-id="110fin-p116-q89" data-placement="final">
+  <span class="qhead">110 年 期末考 第 89 題 ｜ 蕭毓璇</span>
+  
+  <p class="stem">About the following statements of rehabilitation for fracture, which one is wrong?</p>
+  <ul class="opts"><li>(A) Strengthening for patient with fracture, start from isometric exercise.</li><li>(B) Adequate weight bearing will facilitate healing of fracture.</li><li>(C) Transcutaneous electrical stimulation could improve the post fracture pain and edema.</li><li>(D) In the early stage of fracture, we should absolutely immobilize. (E) In the early stage of fracture, we should start ROM(range of motion) exercise from active assist range of motion.</li></ul>
+  <details data-kind="answer"><summary>答案與詳解</summary>
+    <div data-kind="zh-translation"><p><strong>中文題目：</strong>關於骨折的復健，下列敘述何者<b>錯誤</b>？</p>
+      <p>(A) 骨折病人的肌力訓練從等長收縮開始。</p>
+      <p>(B) 適當的負重會促進骨折癒合。</p>
+      <p>(C) 經皮電刺激可改善骨折後的疼痛與水腫。</p>
+      <p>(D) 骨折早期應絕對固定不動。</p>
+      <p>(E) 骨折早期關節活動度運動應從主動輔助關節活動開始。</p></div>
+    <p class="ans">答案：(D) In the early stage of fracture, we should absolutely immobilize（申覆後維持原答案）</p>
+    <p>骨折早期不可絕對不動：等長起步、主動輔助 ROM、適當負重、TENS。<span class="src"> ｜ BM110 BLOCK-8 期末考詳解 (審後附上申覆) (1) 第 116 頁</span></p>
+  </details>
+</article>
+<article data-question-id="110fin-p117-q90" data-placement="final">
+  <span class="qhead">110 年 期末考 第 90 題 ｜ 蕭毓璇</span>
+  
+  <p class="stem">Mr. Wang&#x27;s right knee was hit from lateral side by another athlete during playing football, right knee swelling and pain also noted, the impression of unhappy Triad of the knee. Which compartment is not the lesion of Unhappy Triad?</p>
+  <ul class="opts"><li>(A) Anterior cruciate ligament of knee</li><li>(B) Medial collateral ligament of knee</li><li>(C) Lateral meniscus of knee</li><li>(D) Medial meniscus of knee</li></ul>
+  <details data-kind="answer"><summary>答案與詳解</summary>
+    <div data-kind="zh-translation"><p><strong>中文題目：</strong>王先生踢足球時右膝被另一位運動員從外側撞擊，右膝腫脹疼痛，診斷印象為膝關節 unhappy triad。下列何者<b>不是</b> unhappy triad 的病灶？</p>
+      <p>(A) 膝前十字韌帶</p>
+      <p>(B) 膝內側副韌帶</p>
+      <p>(C) 膝外側半月板</p>
+      <p>(D) 膝內側半月板</p></div>
+    <p class="ans">答案：(C) Lateral meniscus of knee</p>
+    <p>Unhappy triad ＝ ACL ＋ MCL ＋ 內側半月板，沒有外側半月板。<span class="src"> ｜ BM110 BLOCK-8 期末考詳解 (審後附上申覆) (1) 第 117 頁</span></p>
+  </details>
+</article>
+<p class="ending">離心才會拉傷、PEACE 沒有 V、no man's land 是 II。網球肘是退化、骨折不能完全不動、unhappy triad 不含外側半月板。</p>
+</section>
+</div>
+<!-- nb-comments:start -->
+<link rel="stylesheet" href="https://unpkg.com/@waline/client@v3/dist/waline.css">
+<style>
+  .nb-comments{margin:72px 0 48px;padding-top:32px;border-top:1px solid var(--line,#2a3340)}
+  .nb-comments h2{margin:0 0 6px;font-size:22px;font-weight:700;color:var(--ink,var(--text,#e8ecf3))}
+  .nb-comments p.nb-hint{margin:0 0 20px;font-size:14px;color:var(--dim,var(--text-2,#a3adbd))}
+  .nb-comments #waline{
+    --waline-theme-color:var(--cyan,var(--teal,#6fd3c7));
+    --waline-active-color:var(--gold,#e5b567);
+    --waline-font-size:15px;
+    --waline-bgcolor:var(--panel,var(--bg-2,#141922));
+    --waline-bgcolor-light:var(--panel2,var(--bg-3,#1b2230));
+    --waline-border-color:var(--line,#2a3340);
+    --waline-color:var(--ink,var(--text,#e8ecf3));
+    --waline-light-grey:var(--dim,var(--text-2,#a3adbd));
+    --waline-dark-grey:var(--dim,var(--text-2,#a3adbd));
+    --waline-white:var(--panel,var(--bg-2,#141922));
+    --waline-disable-bgcolor:var(--panel2,var(--bg-3,#1b2230));
+    --waline-disable-color:var(--dim,var(--text-3,#7a968d));
+    --waline-info-bgcolor:var(--panel2,var(--bg-3,#1b2230));
+    --waline-info-color:var(--dim,var(--text-2,#a3adbd));
+    --waline-border:1px solid var(--line,#2a3340);
+    --waline-code-bgcolor:var(--panel2,var(--bg-3,#1b2230));
+    --waline-badge-color:var(--gold,#e5b567);
+    --waline-bq-color:var(--dim,#a3adbd);
+  }
+  .nb-comments .wl-panel{background:var(--panel,var(--bg-2,#141922))}
+  .nb-comments .wl-editor,.nb-comments .wl-input{background:var(--bg,#0b0e13)}
+</style>
+<section class="nb-comments" id="comments">
+  <div class="container">
+    <h2>留言板</h2>
+    <p class="nb-hint">看不懂、想補充、發現錯誤都歡迎留言；填個暱稱就能發。</p>
+    <div id="waline"></div>
+  </div>
+</section>
+<script type="module">
+  import { init } from 'https://unpkg.com/@waline/client@v3/dist/waline.js';
+  init({
+    el: '#waline',
+    serverURL: 'https://notes-comments.vercel.app',
+    path: location.pathname,
+    lang: 'zh-TW',
+    dark: true,
+    meta: ['nick'],
+    requiredMeta: ['nick'],
+    login: 'disable',
+    reaction: false,
+    pageview: false,
+    search: false,
+    imageUploader: false,
+    copyright: false,
+    locale: { placeholder: '寫下你的想法或問題⋯⋯（支援 Markdown）' }
+  });
+</script>
+<!-- nb-comments:end -->
+</body>
+</html>
