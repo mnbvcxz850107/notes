@@ -1,0 +1,668 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>冷凍肩及撞擊肩症候群/不穩性肩關節 陳勝凱</title>
+<style>
+:root{
+  color-scheme: dark;
+  --bg:#0b0e13; --panel:#141922; --panel2:#1b2230; --line:#2a3340;
+  --ink:#e8ecf3; --dim:#a3adbd; --gold:#e5b567; --cyan:#6fd3c7;
+  --rose:#e88b8b; --violet:#a99bf0;
+}
+*{box-sizing:border-box}
+html{font-size:150%}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font-family:"Noto Sans TC","PingFang TC","Helvetica Neue",system-ui,sans-serif;
+  line-height:1.85; overflow-wrap:anywhere;}
+/* Width follows the device, not the font size: px breakpoints stay put
+   while rem-based type scales with the 150% root. */
+.container{width:100%;max-width:none;margin:0 auto;
+  padding:clamp(.85rem,2.2vw,2.2rem);}
+@media (min-width:760px){ .container{max-width:730px} }
+@media (min-width:1024px){ .container{max-width:980px} }
+@media (min-width:1440px){ .container{max-width:1300px} }
+@media (min-width:1920px){ .container{max-width:1640px} }
+img{max-width:100%;height:auto}
+svg{max-width:100%;height:auto;display:block}
+h1{font-size:1.6rem;line-height:1.35;margin:.2rem 0 .6rem}
+h2{font-size:1.24rem;margin:2.4rem 0 .7rem;padding-bottom:.4rem;
+  border-bottom:1px solid var(--line);color:var(--gold)}
+h3{font-size:1.06rem;margin:1.5rem 0 .5rem;color:var(--cyan)}
+p{margin:.7rem 0}
+header#subject-overview{background:linear-gradient(160deg,#182031,#0e1219);
+  border:1px solid var(--line);border-radius:14px;padding:1.2rem;margin:.6rem 0 1.4rem}
+.meta{color:var(--dim);font-size:.86rem;margin:.3rem 0 0}
+nav#toc{background:var(--panel);border:1px solid var(--line);
+  border-radius:12px;padding:.9rem 1.1rem;margin:1.2rem 0}
+nav#toc ol{margin:.4rem 0 0;padding-left:1.3rem}
+nav#toc a{color:var(--ink);text-decoration:none;border-bottom:1px dotted var(--line)}
+.story{background:var(--panel2);border-left:3px solid var(--violet);
+  border-radius:0 10px 10px 0;padding:.9rem 1.1rem;margin:1.1rem 0}
+.story .tag{display:block;color:var(--violet);font-size:.78rem;
+  letter-spacing:.12em;margin-bottom:.35rem}
+.reality{background:var(--panel);border-left:3px solid var(--cyan);
+  border-radius:0 10px 10px 0;padding:.9rem 1.1rem;margin:1.1rem 0}
+.reality .tag{display:block;color:var(--cyan);font-size:.78rem;
+  letter-spacing:.12em;margin-bottom:.35rem}
+.keybox{background:#12202b;border:1px solid #26485a;border-radius:10px;
+  padding:.85rem 1rem;margin:1.1rem 0}
+.keybox b{color:var(--cyan)}
+.warn{background:#2a1c1c;border:1px solid #573434;border-radius:10px;
+  padding:.85rem 1rem;margin:1.1rem 0;color:#f0cfcf}
+article{background:var(--panel);border:1px solid var(--line);
+  border-radius:12px;padding:.95rem 1.05rem;margin:1.1rem 0}
+article .qhead{display:block;color:var(--gold);font-size:.82rem;
+  letter-spacing:.06em;margin-bottom:.45rem}
+article .stem{margin:.2rem 0 .5rem}
+article ul.opts{list-style:none;margin:.3rem 0 .2rem;padding:0}
+article ul.opts li{padding:.16rem 0 .16rem .2rem;color:#dbe2ec}
+details{background:#0f141c;border:1px solid var(--line);
+  border-radius:10px;padding:.15rem .8rem;margin:.6rem 0}
+details summary{cursor:pointer;padding:.6rem 0;color:var(--gold);
+  font-weight:600;min-height:44px;display:flex;align-items:center}
+details[data-kind="answer"] .ans{font-size:1.05rem;color:var(--cyan);font-weight:700}
+div[data-kind="zh-translation"]{background:#141c26;border:1px dashed #33465c;
+  border-radius:8px;padding:.7rem .85rem;margin:.5rem 0 .8rem}
+div[data-kind="zh-translation"] p{margin:.35rem 0}
+.src{color:var(--dim);font-size:.84rem;margin-top:.6rem}
+.quote{border-left:2px solid var(--gold);padding-left:.75rem;color:#f0e2c6}
+.infer{color:#f0d9a8;font-size:.92rem}
+figure{margin:1.3rem 0;background:var(--panel2);border:1px solid var(--line);
+  border-radius:12px;padding:.9rem}
+figcaption{color:var(--dim);font-size:.85rem;margin-top:.6rem;text-align:center}
+dl.vocab{margin:0}
+dl.vocab dt{color:var(--cyan);font-weight:700;margin-top:.9rem}
+dl.vocab dd{margin:.2rem 0 0;padding-left:0}
+dl.vocab .root{color:var(--dim);font-size:.86rem}
+.cram{background:var(--panel);border:1px solid var(--line);
+  border-radius:12px;padding:.4rem 1.1rem;margin:1rem 0}
+.cram li{margin:.55rem 0}
+.yearchip{display:inline-block;background:#233046;color:#bcd0ea;
+  border-radius:999px;padding:.05rem .55rem;font-size:.76rem;margin-right:.4rem}
+article.repeat{border:2px solid #e05252;box-shadow:0 0 0 3px rgba(224,82,82,.12)}
+article.repeat .qhead{color:#f08a8a}
+.repeat-badge{display:inline-block;background:#3a1c1c;border:1px solid #7d3a3a;
+  color:#f0a8a8;border-radius:999px;padding:.1rem .6rem;font-size:.76rem;
+  margin-left:.4rem;white-space:nowrap}
+.repeat-note{color:#e6a5a5;font-size:.84rem;margin:.45rem 0 0}
+figure.boxfig{margin:1.5rem 0 .5rem;background:transparent;border:0;padding:0}
+figure.boxfig img{border-radius:12px;border:1px solid var(--line);display:block;width:100%}
+figure.boxfig figcaption{color:var(--dim);font-size:.82rem;margin-top:.5rem;
+  text-align:left;line-height:1.6}
+figure.boxfig .figtag{color:var(--violet);font-size:.76rem;letter-spacing:.1em;
+  display:block;margin-bottom:.3rem}
+.ending{color:var(--dim);font-style:italic;margin:1.6rem 0 2.4rem}
+</style></head>
+<body>
+<div class="container">
+
+<header id="subject-overview">
+  <h1>冷凍肩及撞擊肩症候群／不穩性肩關節</h1>
+  <p>三年九題，每年固定三題、三個主題各一：<b>冷凍肩</b>（五十肩，最常見於 50 歲；第二期黏連期是輕痛、嚴重僵硬）、<b>撞擊肩</b>（被撞擊的、也是最重要的旋轉肌是<b>棘上肌 supraspinatus</b>）、<b>不穩性肩</b>（最常見方向是<b>前方</b>，病因是<b>關節唇 labrum</b> 被撕裂）。111 年和 113 年的三題一字不差。</p>
+  <p>這一科只要三個詞：<b>50、supraspinatus、anterior</b>，外加 phase 2 與 labrum。</p>
+  <p class="meta">命題老師：陳勝凱｜ 收錄 111–113 期末，共 9 題（110 年考卷無此科）</p>
+</header>
+
+<nav id="toc">
+  <b>目錄</b>
+  <ol>
+    <li><a href="#chapter-1">冷凍肩：五十歲、第二期輕痛重僵</a></li>
+    <li><a href="#chapter-2">撞擊肩：最上面那條——棘上肌</a></li>
+    <li><a href="#chapter-3">不穩性肩：往前脫、關節唇撕裂</a></li>
+    <li><a href="#chapter-cram">考前速記</a></li>
+    <li><a href="#chapter-vocab">單字表</a></li>
+    <li><a href="#chapter-final">歷年考題總複習</a></li>
+  <li><a href="#comments" data-nb-toc="1">留言板</a></li>
+</ol>
+</nav>
+<section id="chapter-1" data-chapter-kind="story">
+<h2>一、冷凍肩：五十歲、第二期輕痛重僵</h2>
+
+<figure class="boxfig" data-visual-id="fsbox-01-story" data-image-kind="story" data-explanation-verified="true">
+<span class="figtag">情境場景</span>
+<img data-visual-id="fsbox-01-story" src="img/fsbox-01-story.webp" alt="情境場景：骨科診間裡一位五十歲的病人舉不起手臂，肩關節像被冰塊凍住；牆上的三階段海報第二格寫著輕痛、嚴重僵硬。" loading="lazy" decoding="async" width="1600" height="914">
+<figcaption>情境場景：骨科診間裡一位五十歲的病人舉不起手臂，肩關節像被冰塊凍住；牆上的三階段海報第二格寫著輕痛、嚴重僵硬。</figcaption>
+</figure>
+<div class="story" data-prose-kind="story"><span class="tag">故事</span>
+<p><b>冷凍肩（frozen shoulder）</b>俗稱<b>五十肩</b>——名字就是答案：<b>最常見的年齡是 50 歲</b>。111 年、113 年考同一題，選項 50、30、80、10，老師上課口頭說過，共筆也寫「秒選」。</p>
+<p>它分三期。第一期是<b>疼痛期</b>，痛得厲害、活動度剛開始受限；<b>第二期是黏連期（adhesion phase）</b>：關節囊黏住了，<b>僵硬非常嚴重、活動度嚴重受限，但疼痛反而緩解、只剩輕痛</b>；第三期是解凍期，慢慢恢復。112 年問 phase 2——「輕痛、嚴重受限」，不是「劇痛、輕微受限」（那是第一期的樣子）。</p>
+</div>
+
+<figure class="boxfig" data-visual-id="fsbox-02-reality" data-image-kind="comparison" data-explanation-verified="true">
+<span class="figtag">冷凍肩三期表</span>
+<img data-visual-id="fsbox-02-reality" src="img/fsbox-02-reality.webp" alt="冷凍肩三期表：五十歲最常見；第一期疼痛期劇痛、活動度輕微受限；第二期黏連期輕痛、活動度嚴重受限；第三期解凍期恢復。" loading="lazy" decoding="async" width="1600" height="914">
+<figcaption>冷凍肩三期表：五十歲最常見；第一期疼痛期劇痛、活動度輕微受限；第二期黏連期輕痛、活動度嚴重受限；第三期解凍期恢復。</figcaption>
+</figure>
+<div class="reality"><span class="tag">回到現實</span>
+<p class="quote">詳解原文（111）:「老師上課提及，冷凍肩又稱五十肩，代表50歲年齡層最常發生」</p>
+<p class="quote">詳解原文（112）:「在phase 2(adhesion phase)中，病人的表現為 1. severe stiffness( severe limited ROM) 2. pain relief (mild pain) 因此選C」</p>
+<p><b>最常見年齡：50 歲。</b><br>
+<b>Phase 2（黏連期）：mild pain ＋ severe limited ROM。</b></p>
+</div>
+
+<article data-question-id="111fin-p70-q90" data-placement="chapter">
+  <span class="qhead">111 年 期末考 第 90 題</span>
+  <p class="stem">The most common age of Frozen Shoulder is</p>
+  <ul class="opts">
+    <li>(A) 50</li>
+    <li>(B) 30</li>
+    <li>(C) 80</li>
+    <li>(D) 10</li>
+  </ul>
+  <details data-kind="answer">
+    <summary>答案與詳解</summary>
+    <div data-kind="zh-translation">
+      <p><strong>中文題目：</strong>冷凍肩最常見的年齡是？</p>
+      <p>(A) 50 歲</p>
+      <p>(B) 30 歲</p>
+      <p>(C) 80 歲</p>
+      <p>(D) 10 歲</p>
+    </div>
+    <p class="ans">答案：(A) 50</p>
+    <p class="quote">詳解原文:「老師上課提及，冷凍肩又稱五十肩，代表50歲年齡層最常發生」</p>
+    <p class="src">出處：陳勝凱 冷凍肩及撞擊肩症候群/不穩性肩關節(ppt pg.26) ｜ BM111 BLOCK-8 期末考詳解.pdf 第 70 頁</p>
+  </details>
+</article>
+
+<article data-question-id="112fin-p62-q61" data-placement="chapter">
+  <span class="qhead">112 年 期末考 第 61 題</span>
+  <p class="stem">Frozen shoulder at phase 2 is</p>
+  <ul class="opts">
+    <li>(A) severe pain and mild limited ROM</li>
+    <li>(B) no pain and no limited ROM</li>
+    <li>(C) Mild pain and severe limited ROM</li>
+    <li>(D) none of above.</li>
+  </ul>
+  <details data-kind="answer">
+    <summary>答案與詳解</summary>
+    <div data-kind="zh-translation">
+      <p><strong>中文題目：</strong>冷凍肩第二期的表現是？</p>
+      <p>(A) 劇烈疼痛、活動度輕微受限</p>
+      <p>(B) 無疼痛、活動度不受限</p>
+      <p>(C) 輕微疼痛、活動度嚴重受限</p>
+      <p>(D) 以上皆非</p>
+    </div>
+    <p class="ans">答案：C</p>
+    <p class="quote">詳解原文:「在phase 2(adhesion phase)中，病人的表現為 1. severe stiffness( severe limited ROM) 2. pain relief (mild pain) 因此選C」</p>
+    <p class="src">出處：陳勝凱 冷凍肩及撞擊肩症候群/不穩性肩關節 (ppt pg.34) ｜ BM112_Block 8 期末考.pdf 第 62 頁</p>
+  </details>
+</article>
+
+<article data-question-id="113fin-p58-q63" data-placement="chapter">
+  <span class="qhead">113 年 期末考 第 63 題</span>
+  <p class="stem">The most common age of Frozen Shoulder is?</p>
+  <ul class="opts">
+    <li>(A) 50</li>
+    <li>(B) 30</li>
+    <li>(C) 80</li>
+    <li>(D) 10</li>
+  </ul>
+  <details data-kind="answer">
+    <summary>答案與詳解</summary>
+    <div data-kind="zh-translation">
+      <p><strong>中文題目：</strong>冷凍肩最常見的年齡是？</p>
+      <p>(A) 50 歲</p>
+      <p>(B) 30 歲</p>
+      <p>(C) 80 歲</p>
+      <p>(D) 10 歲</p>
+    </div>
+    <p class="ans">答案：(A)</p>
+    <p class="quote">詳解原文:「Frozen shoulder又稱五十肩，秒選(A)。雖然老師講義沒有提到幾歲，但依照常識 & 老師上課有口頭提到50歲是frozen shoulder好發高峰也可選得出(A)。」</p>
+    <p class="src">出處：冷凍肩及撞擊肩症候群/不穩性肩關節 陳勝凱 老師上課口述 + 常識 + 醫學系共筆 ｜ BM113_Block8期末考詳解.pdf 第 58 頁</p>
+  </details>
+</article>
+</section>
+<section id="chapter-2" data-chapter-kind="story">
+<h2>二、撞擊肩：最上面那條——棘上肌</h2>
+
+<figure class="boxfig" data-visual-id="fsbox-03-story" data-image-kind="story" data-explanation-verified="true">
+<span class="figtag">情境場景</span>
+<img data-visual-id="fsbox-03-story" src="img/fsbox-03-story.webp" alt="情境場景：病人舉手時，肱骨大結節往上頂到肩峰，夾在中間的棘上肌腱被壓紅；旁邊另外三條旋轉肌沒事。" loading="lazy" decoding="async" width="1600" height="914">
+<figcaption>情境場景：病人舉手時，肱骨大結節往上頂到肩峰，夾在中間的棘上肌腱被壓紅；旁邊另外三條旋轉肌沒事。</figcaption>
+</figure>
+<div class="story" data-prose-kind="story"><span class="tag">故事</span>
+<p>旋轉肌群四條：<b>棘上肌 supraspinatus、棘下肌 infraspinatus、小圓肌 teres minor、肩胛下肌 subscapularis</b>。<b>撞擊症候群</b>的機制是舉手時<b>肱骨大結節撞到肩峰</b>，而肩峰下面那個狹窄的空間，<b>正好是棘上肌腱通過的地方</b>——所以被撞擊的旋轉肌病灶是<b>棘上肌</b>，它是「位置最上面的那一條」。111、113 年同一題，答案都是 supraspinatus。</p>
+<p>112 年換個問法：「<b>最重要的</b>旋轉肌是哪條？」答案還是<b>棘上肌</b>（負責手臂外展、也是最常出事的那條）。共筆同學抱怨這題老師沒講清楚、講義也沒寫——但三年下來，這一科只要看到旋轉肌四選一，就選 supraspinatus。</p>
+</div>
+
+<figure class="boxfig" data-visual-id="fsbox-04-reality" data-image-kind="comparison" data-explanation-verified="true">
+<span class="figtag">旋轉肌群與撞擊機制對照</span>
+<img data-visual-id="fsbox-04-reality" src="img/fsbox-04-reality.webp" alt="旋轉肌群與撞擊機制對照：四條旋轉肌中棘上肌在最上方、負責外展；大結節撞肩峰，肩峰下空間夾住棘上肌腱；被撞擊與最重要的都是棘上肌。" loading="lazy" decoding="async" width="1600" height="914">
+<figcaption>旋轉肌群與撞擊機制對照：四條旋轉肌中棘上肌在最上方、負責外展；大結節撞肩峰，肩峰下空間夾住棘上肌腱；被撞擊與最重要的都是棘上肌。</figcaption>
+</figure>
+<div class="reality"><span class="tag">回到現實</span>
+<p class="quote">詳解原文（111）:「The most commonly affected muscle in the Rotator Cuff group is the one situated top-most: Supraspinatus.」</p>
+<p class="quote">詳解原文（113）:「在描述撞擊症候群 (Impingement Syndrome) 的頁面，其機制是大結節(Greater Tuberosity) 撞擊到肩峰 (Acromion) 。這個空間（肩峰下空間）正是棘上肌腱通過的地方。」</p>
+<p class="quote">詳解原文（112）:「Supraspinatus —performs abduction of the arm」</p>
+<p><b>被撞擊的旋轉肌：棘上肌。最重要的旋轉肌：棘上肌。</b>機制：大結節撞肩峰，肩峰下空間夾住棘上肌腱。</p>
+</div>
+
+<article data-question-id="111fin-p68-q88" data-placement="chapter">
+  <span class="qhead">111 年 期末考 第 88 題</span>
+  <p class="stem">Which is impinged rotator cuff lesion?</p>
+  <ul class="opts">
+    <li>(A) supraspinatus</li>
+    <li>(B) Infraspinatus</li>
+    <li>(C) teres minor</li>
+    <li>(D) subscapularis</li>
+  </ul>
+  <details data-kind="answer">
+    <summary>答案與詳解</summary>
+    <div data-kind="zh-translation">
+      <p><strong>中文題目：</strong>被撞擊的旋轉肌病灶是哪一條？</p>
+      <p>(A) 棘上肌</p>
+      <p>(B) 棘下肌</p>
+      <p>(C) 小圓肌</p>
+      <p>(D) 肩胛下肌</p>
+    </div>
+    <p class="ans">答案：(A) supraspinatus</p>
+    <p class="quote">詳解原文:「The most commonly affected muscle in the Rotator Cuff group is the one situated top-most: Supraspinatus.」</p>
+    <p class="src">出處：陳勝凱 冷凍肩及撞擊肩症候群/不穩性肩關節(ppt pg.52) ｜ BM111 BLOCK-8 期末考詳解.pdf 第 68 頁</p>
+  </details>
+</article>
+
+<article data-question-id="112fin-p64-q63" data-placement="chapter">
+  <span class="qhead">112 年 期末考 第 63 題</span>
+  <p class="stem">The most important Rotator Cuff muscle is</p>
+  <ul class="opts">
+    <li>(A) Teres minor</li>
+    <li>(B) Subscapularis</li>
+    <li>(C) Supraspinatus</li>
+    <li>(D) Infraspinatus</li>
+  </ul>
+  <details data-kind="answer">
+    <summary>答案與詳解</summary>
+    <div data-kind="zh-translation">
+      <p><strong>中文題目：</strong>最重要的旋轉肌是？</p>
+      <p>(A) 小圓肌</p>
+      <p>(B) 肩胛下肌</p>
+      <p>(C) 棘上肌</p>
+      <p>(D) 棘下肌</p>
+    </div>
+    <p class="ans">答案：C</p>
+    <p class="quote">詳解原文:「Supraspinatus —performs abduction of the arm Infraspinatus — external rotator of the shoulder Teres minor— externally (laterally) rotate the humerus, as well as adduction. ... 小弟弟我覺得老師提議沒有講得很清楚，且講義也沒有特別寫。」</p>
+    <p>共筆自己也說題目不清楚，但答案就是 supraspinatus。</p>
+    <p class="src">出處：陳勝凱 冷凍肩及撞擊肩症候群/不穩性肩關節 ｜ BM112_Block 8 期末考.pdf 第 64 頁</p>
+  </details>
+</article>
+
+<article data-question-id="113fin-p55-q61" data-placement="chapter">
+  <span class="qhead">113 年 期末考 第 61 題</span>
+  <p class="stem">Which is Impinged rotator cuff lesion :</p>
+  <ul class="opts">
+    <li>(A) supraspinatus</li>
+    <li>(B) Infraspinatus</li>
+    <li>(C) teres minor</li>
+    <li>(D) subscapularis</li>
+  </ul>
+  <details data-kind="answer">
+    <summary>答案與詳解</summary>
+    <div data-kind="zh-translation">
+      <p><strong>中文題目：</strong>被撞擊的旋轉肌病灶是哪一條？</p>
+      <p>(A) 棘上肌</p>
+      <p>(B) 棘下肌</p>
+      <p>(C) 小圓肌</p>
+      <p>(D) 肩胛下肌</p>
+    </div>
+    <p class="ans">答案：(A)</p>
+    <p class="quote">詳解原文:「在描述撞擊症候群 (Impingement Syndrome) 的頁面，其機制是大結節(Greater Tuberosity) 撞擊到肩峰 (Acromion) 。這個空間（肩峰下空間）正是棘上肌腱通過的地方。」</p>
+    <p class="src">出處：陳勝凱-冷凍肩及撞擊肩症候群/不穩性肩關節 ppt p 39. 51. ｜ BM113_Block8期末考詳解.pdf 第 55 頁</p>
+  </details>
+</article>
+</section>
+<section id="chapter-3" data-chapter-kind="story">
+<h2>三、不穩性肩：往前脫、關節唇撕裂</h2>
+
+<figure class="boxfig" data-visual-id="fsbox-05-story" data-image-kind="story" data-explanation-verified="true">
+<span class="figtag">情境場景</span>
+<img data-visual-id="fsbox-05-story" src="img/fsbox-05-story.webp" alt="情境場景：投手甩臂時肱骨頭往前方滑出關節窩，關節窩邊緣的軟骨環被撕開一道口子。" loading="lazy" decoding="async" width="1600" height="914">
+<figcaption>情境場景：投手甩臂時肱骨頭往前方滑出關節窩，關節窩邊緣的軟骨環被撕開一道口子。</figcaption>
+</figure>
+<div class="story" data-prose-kind="story"><span class="tag">故事</span>
+<p>肩關節是全身最容易脫臼的關節，而<b>最常見的方向是前方（anterior）</b>——外傷性脫臼絕大多數往前。後方脫臼少見，常跟癲癇發作或電擊有關；下方脫臼（直立脫臼）非常罕見；多方向不穩定則出現在韌帶鬆弛的年輕人，但發生率仍低於前方。111、113 年同一題。</p>
+<p>為什麼會變成<b>習慣性脫臼</b>？112 年考病因：<b>外力超過關節唇（labrum）能承受的力量，關節唇撕裂</b>——關節窩邊緣那圈加深關節窩的軟骨環一旦破了，肱骨頭就一再滑出去。不是骨頭對骨頭、不是韌帶、也不是肌肉。</p>
+</div>
+
+<figure class="boxfig" data-visual-id="fsbox-06-reality" data-image-kind="comparison" data-explanation-verified="true">
+<span class="figtag">肩關節不穩定對照</span>
+<img data-visual-id="fsbox-06-reality" src="img/fsbox-06-reality.webp" alt="肩關節不穩定對照：四個方向中前方最常見、後方與癲癇電擊有關、下方罕見、多方向見於韌帶鬆弛的年輕人；病因是關節唇撕裂。" loading="lazy" decoding="async" width="1600" height="914">
+<figcaption>肩關節不穩定對照：四個方向中前方最常見、後方與癲癇電擊有關、下方罕見、多方向見於韌帶鬆弛的年輕人；病因是關節唇撕裂。</figcaption>
+</figure>
+<div class="reality"><span class="tag">回到現實</span>
+<p class="quote">詳解原文（113）:「肩關節不穩定最常見的方向是前方，佔多數的外傷性肩關節脫臼。後方脫臼較少見，常與癲癇發作或電擊有關。下方脫臼（俗稱 “直立脫臼”）非常罕見。」</p>
+<p class="quote">詳解原文（112）:「習慣性脫臼的主要病因 → 外力超過關節唇(labrum)能夠承受的力量後導致斷裂」</p>
+<p><b>最常見方向：前方。病因：關節唇撕裂。</b></p>
+</div>
+
+<article data-question-id="111fin-p69-q89" data-placement="chapter">
+  <span class="qhead">111 年 期末考 第 89 題</span>
+  <p class="stem">The common direction of shoulder instability is</p>
+  <ul class="opts">
+    <li>(A) ant.</li>
+    <li>(B) post.</li>
+    <li>(C) inf.</li>
+    <li>(D) multiple</li>
+  </ul>
+  <details data-kind="answer">
+    <summary>答案與詳解</summary>
+    <div data-kind="zh-translation">
+      <p><strong>中文題目：</strong>肩關節不穩定常見的方向是？</p>
+      <p>(A) 前方</p>
+      <p>(B) 後方</p>
+      <p>(C) 下方</p>
+      <p>(D) 多方向</p>
+    </div>
+    <p class="ans">答案：(A) ant.</p>
+    <p class="quote">詳解原文:「講義上沒有特別提到，但最常出現的dislocation是anterior，也可以根據解剖構造推測。」</p>
+    <p class="src">出處：陳勝凱 冷凍肩及撞擊肩症候群/不穩性肩關節(ppt pg.6) ｜ BM111 BLOCK-8 期末考詳解.pdf 第 69 頁</p>
+  </details>
+</article>
+
+<article data-question-id="112fin-p63-q62" data-placement="chapter">
+  <span class="qhead">112 年 期末考 第 62 題</span>
+  <p class="stem">The pathogenesis of shoulder instability is</p>
+  <ul class="opts">
+    <li>(A) bone to bone</li>
+    <li>(B) Ligment</li>
+    <li>(C) Labrum</li>
+    <li>(D) Muscle</li>
+  </ul>
+  <details data-kind="answer">
+    <summary>答案與詳解</summary>
+    <div data-kind="zh-translation">
+      <p><strong>中文題目：</strong>肩關節不穩定的致病機轉是？</p>
+      <p>(A) 骨頭對骨頭</p>
+      <p>(B) 韌帶</p>
+      <p>(C) 關節唇</p>
+      <p>(D) 肌肉</p>
+    </div>
+    <p class="ans">答案：C</p>
+    <p class="quote">詳解原文:「習慣性脫臼的主要病因 → 外力超過關節唇(labrum)能夠承受的力量後導致斷裂」</p>
+    <p class="src">出處：陳勝凱 冷凍肩及撞擊肩症候群/不穩性肩關節 (ppt pg.13) ｜ BM112_Block 8 期末考.pdf 第 63 頁</p>
+  </details>
+</article>
+
+<article data-question-id="113fin-p57-q62" data-placement="chapter">
+  <span class="qhead">113 年 期末考 第 62 題</span>
+  <p class="stem">The common direction of shoulder instability is</p>
+  <ul class="opts">
+    <li>(A) ant.</li>
+    <li>(B) post.</li>
+    <li>(C) inf.</li>
+    <li>(D) multiple directions</li>
+  </ul>
+  <details data-kind="answer">
+    <summary>答案與詳解</summary>
+    <div data-kind="zh-translation">
+      <p><strong>中文題目：</strong>肩關節不穩定常見的方向是？</p>
+      <p>(A) 前方</p>
+      <p>(B) 後方</p>
+      <p>(C) 下方</p>
+      <p>(D) 多方向</p>
+    </div>
+    <p class="ans">答案：(A)</p>
+    <p class="quote">詳解原文:「肩關節不穩定最常見的方向是前方，佔多數的外傷性肩關節脫臼。後方脫臼較少見，常與癲癇發作或電擊有關。下方脫臼（俗稱 “直立脫臼”）非常罕見。多方向不穩定通常出現在有韌帶鬆弛的年輕患者，但發生率低於前方不穩定。」</p>
+    <p class="src">出處：陳勝凱-冷凍肩及撞擊肩症候群/不穩性肩關節 ppt p7 ｜ BM113_Block8期末考詳解.pdf 第 57 頁</p>
+  </details>
+</article>
+</section>
+
+<section id="chapter-cram" data-chapter-kind="cram">
+<h2>四、考前速記</h2>
+<div class="cram">
+<ul>
+<li><b>冷凍肩＝五十肩，最常見 50 歲。</b>兩年同題。</li>
+<li><b>冷凍肩 phase 2（黏連期）：輕痛、活動度嚴重受限。</b>第一期才是劇痛、輕微受限。</li>
+<li><b>被撞擊的旋轉肌：棘上肌 supraspinatus</b>——大結節撞肩峰，肩峰下空間正是棘上肌腱通過處。兩年同題。</li>
+<li><b>最重要的旋轉肌：也是棘上肌</b>（外展）。</li>
+<li><b>肩關節不穩定最常見方向：前方。</b>後方與癲癇電擊有關、下方罕見、多方向見於韌帶鬆弛的年輕人。兩年同題。</li>
+<li><b>習慣性脫臼的病因：關節唇 labrum 撕裂。</b>不是骨、韌帶、肌肉。</li>
+</ul>
+</div>
+</section>
+
+<!-- ================= VOCAB ================= -->
+<section id="chapter-vocab" data-chapter-kind="vocab">
+<h2>五、單字表</h2>
+<dl class="vocab">
+<dt>frozen shoulder (adhesive capsulitis)</dt>
+<dd><span class="root">adhesive＝黏連；capsul-（關節囊）+ -itis（炎）</span>　冷凍肩、沾黏性關節囊炎，俗稱五十肩。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>名字就是年齡：50。</p></details></dd>
+
+<dt>adhesion phase</dt>
+<dd><span class="root">adhesion＝黏連</span>　冷凍肩第二期，關節囊黏連：僵硬嚴重、疼痛緩解。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>黏住了就不痛但動不了：mild pain、severe limited ROM。</p></details></dd>
+
+<dt>range of motion (ROM)</dt>
+<dd><span class="root">range＝範圍；motion＝動作</span>　關節活動度。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>phase 2 是 severe limited ROM。</p></details></dd>
+
+<dt>impingement syndrome</dt>
+<dd><span class="root">impinge＝撞擊</span>　撞擊症候群，大結節撞到肩峰、夾住棘上肌腱。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>撞的是最上面那條：supraspinatus。</p></details></dd>
+
+<dt>rotator cuff</dt>
+<dd><span class="root">rotator＝旋轉者；cuff＝袖口</span>　旋轉肌群：棘上肌、棘下肌、小圓肌、肩胛下肌。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>SITS；考題四選一永遠選 S（supraspinatus）。</p></details></dd>
+
+<dt>supraspinatus</dt>
+<dd><span class="root">supra-（上）+ spina（棘）</span>　棘上肌，位於肩胛棘上方，負責外展；最常被撞擊、也最重要。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>三年三題的共同答案。</p></details></dd>
+
+<dt>infraspinatus / teres minor / subscapularis</dt>
+<dd><span class="root">infra-（下）；teres（圓）；sub-（下）+ scapula（肩胛）</span>　棘下肌與小圓肌做外旋，肩胛下肌做內旋。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>都是干擾項。</p></details></dd>
+
+<dt>greater tuberosity</dt>
+<dd><span class="root">tuberosity＝粗隆、結節</span>　肱骨大結節，舉手時撞到肩峰。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>大結節撞肩峰＝撞擊機制。</p></details></dd>
+
+<dt>acromion</dt>
+<dd><span class="root">acro-（頂端）+ omos（肩）</span>　肩峰，肩胛骨最外上端。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>肩峰下空間是棘上肌腱的走道。</p></details></dd>
+
+<dt>shoulder instability</dt>
+<dd><span class="root">in-（不）+ stability（穩定）</span>　肩關節不穩定，最常見方向為前方。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>ant. 兩年同答案。</p></details></dd>
+
+<dt>anterior dislocation</dt>
+<dd><span class="root">anterior＝前方</span>　前方脫臼，佔外傷性肩脫臼的絕大多數。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>後方＝癲癇、電擊；下方＝罕見。</p></details></dd>
+
+<dt>labrum</dt>
+<dd><span class="root">拉丁 labrum＝唇</span>　關節唇，加深關節窩的纖維軟骨環；撕裂是習慣性脫臼的病因。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>112 年答案；不是 bone、ligament、muscle。</p></details></dd>
+</dl>
+</section>
+<section id="chapter-final" data-chapter-kind="final_questions">
+<h2>六、歷年考題總複習</h2>
+<p class="meta">依年度由新到舊、同年依原始題號排列。共 9 題（111–113 期末各 3 題）。<b style="color:#f08a8a">紅框</b>＝同一考點在兩個以上年度重複出現。</p>
+<h3><span class="yearchip">113 年</span>期末考 第 61 題</h3>
+<article data-question-id="113fin-p55-q61" data-placement="final" class="repeat">
+  <span class="qhead">113 年 期末考 第 61 題 ｜ 陳勝凱</span><span class="repeat-badge">重複考點 ×3</span>
+  <p class="repeat-note">同考點：111 第88題、112 第63題　—　旋轉肌群中被撞擊、也最重要的是棘上肌 supraspinatus（大結節撞肩峰，肩峰下空間正是棘上肌腱通過處）</p>
+  <p class="stem">Which is Impinged rotator cuff lesion :</p>
+  <ul class="opts"><li>(A)supraspinatus</li><li>(B)Infraspinatus</li><li>(C)teres minor</li><li>(D)subscapularis</li></ul>
+  <details data-kind="answer"><summary>答案與詳解</summary>
+    <div data-kind="zh-translation"><p><strong>中文題目：</strong>被撞擊的旋轉肌病灶是哪一條？</p>
+      <p>(A) 棘上肌</p>
+      <p>(B) 棘下肌</p>
+      <p>(C) 小圓肌</p>
+      <p>(D) 肩胛下肌</p></div>
+    <p class="ans">答案：(A)</p>
+    <p>同題再考：大結節撞肩峰，夾住棘上肌腱。<span class="src"> ｜ BM113_Block8期末考詳解 第 55 頁</span></p>
+  </details>
+</article>
+<article data-question-id="113fin-p57-q62" data-placement="final" class="repeat">
+  <span class="qhead">113 年 期末考 第 62 題 ｜ 陳勝凱</span><span class="repeat-badge">重複考點 ×2</span>
+  <p class="repeat-note">同考點：111 第89題　—　肩關節不穩定最常見的方向是前方（anterior）</p>
+  <p class="stem">The common direction of shoulder instability is</p>
+  <ul class="opts"><li>(A)ant.</li><li>(B)post.</li><li>(C)inf.</li><li>(D)multiple directions</li></ul>
+  <details data-kind="answer"><summary>答案與詳解</summary>
+    <div data-kind="zh-translation"><p><strong>中文題目：</strong>肩關節不穩定常見的方向是？</p>
+      <p>(A) 前方</p>
+      <p>(B) 後方</p>
+      <p>(C) 下方</p>
+      <p>(D) 多方向</p></div>
+    <p class="ans">答案：(A)</p>
+    <p>同題再考：前方最常見；後方與癲癇電擊有關、下方罕見。<span class="src"> ｜ BM113_Block8期末考詳解 第 57 頁</span></p>
+  </details>
+</article>
+<article data-question-id="113fin-p58-q63" data-placement="final" class="repeat">
+  <span class="qhead">113 年 期末考 第 63 題 ｜ 陳勝凱</span><span class="repeat-badge">重複考點 ×2</span>
+  <p class="repeat-note">同考點：111 第90題　—　冷凍肩（五十肩）最常見於 50 歲</p>
+  <p class="stem">The most common age of Frozen Shoulder is?</p>
+  <ul class="opts"><li>(A)50</li><li>(B)30</li><li>(C)80</li><li>(D)10</li></ul>
+  <details data-kind="answer"><summary>答案與詳解</summary>
+    <div data-kind="zh-translation"><p><strong>中文題目：</strong>冷凍肩最常見的年齡是？</p>
+      <p>(A) 50 歲</p>
+      <p>(B) 30 歲</p>
+      <p>(C) 80 歲</p>
+      <p>(D) 10 歲</p></div>
+    <p class="ans">答案：(A)</p>
+    <p>同題再考：五十肩，秒選 50。<span class="src"> ｜ BM113_Block8期末考詳解 第 58 頁</span></p>
+  </details>
+</article>
+<h3><span class="yearchip">112 年</span>期末考 第 61 題</h3>
+<article data-question-id="112fin-p62-q61" data-placement="final">
+  <span class="qhead">112 年 期末考 第 61 題 ｜ 陳勝凱</span>
+  
+  <p class="stem">Frozen shoulder at phase 2 is</p>
+  <ul class="opts"><li>(A) severe pain and mild limited ROM</li><li>(B) no pain and no limited ROM</li><li>(C) Mild pain and severe limited ROM</li><li>(D) none of above.</li></ul>
+  <details data-kind="answer"><summary>答案與詳解</summary>
+    <div data-kind="zh-translation"><p><strong>中文題目：</strong>冷凍肩第二期的表現是？</p>
+      <p>(A) 劇烈疼痛、活動度輕微受限</p>
+      <p>(B) 無疼痛、活動度不受限</p>
+      <p>(C) 輕微疼痛、活動度嚴重受限</p>
+      <p>(D) 以上皆非</p></div>
+    <p class="ans">答案：C</p>
+    <p>Phase 2 黏連期：輕痛、活動度嚴重受限。<span class="src"> ｜ BM112_Block 8 期末考 第 62 頁</span></p>
+  </details>
+</article>
+<article data-question-id="112fin-p63-q62" data-placement="final">
+  <span class="qhead">112 年 期末考 第 62 題 ｜ 陳勝凱</span>
+  
+  <p class="stem">The pathogenesis of shoulder instability is</p>
+  <ul class="opts"><li>(A) bone to bone</li><li>(B) Ligment</li><li>(C) Labrum</li><li>(D) Muscle</li></ul>
+  <details data-kind="answer"><summary>答案與詳解</summary>
+    <div data-kind="zh-translation"><p><strong>中文題目：</strong>肩關節不穩定的致病機轉是？</p>
+      <p>(A) 骨頭對骨頭</p>
+      <p>(B) 韌帶</p>
+      <p>(C) 關節唇</p>
+      <p>(D) 肌肉</p></div>
+    <p class="ans">答案：C</p>
+    <p>習慣性脫臼的病因：關節唇撕裂。<span class="src"> ｜ BM112_Block 8 期末考 第 63 頁</span></p>
+  </details>
+</article>
+<article data-question-id="112fin-p64-q63" data-placement="final" class="repeat">
+  <span class="qhead">112 年 期末考 第 63 題 ｜ 陳勝凱</span><span class="repeat-badge">重複考點 ×3</span>
+  <p class="repeat-note">同考點：111 第88題、113 第61題　—　旋轉肌群中被撞擊、也最重要的是棘上肌 supraspinatus（大結節撞肩峰，肩峰下空間正是棘上肌腱通過處）</p>
+  <p class="stem">The most important Rotator Cuff muscle is</p>
+  <ul class="opts"><li>(A) Teres minor</li><li>(B) Subscapularis</li><li>(C) Supraspinatus</li><li>(D) Infraspinatus</li></ul>
+  <details data-kind="answer"><summary>答案與詳解</summary>
+    <div data-kind="zh-translation"><p><strong>中文題目：</strong>最重要的旋轉肌是？</p>
+      <p>(A) 小圓肌</p>
+      <p>(B) 肩胛下肌</p>
+      <p>(C) 棘上肌</p>
+      <p>(D) 棘下肌</p></div>
+    <p class="ans">答案：C</p>
+    <p>最重要的旋轉肌：棘上肌（外展）。<span class="src"> ｜ BM112_Block 8 期末考 第 64 頁</span></p>
+  </details>
+</article>
+<h3><span class="yearchip">111 年</span>期末考 第 88 題</h3>
+<article data-question-id="111fin-p68-q88" data-placement="final" class="repeat">
+  <span class="qhead">111 年 期末考 第 88 題 ｜ 陳勝凱</span><span class="repeat-badge">重複考點 ×3</span>
+  <p class="repeat-note">同考點：112 第63題、113 第61題　—　旋轉肌群中被撞擊、也最重要的是棘上肌 supraspinatus（大結節撞肩峰，肩峰下空間正是棘上肌腱通過處）</p>
+  <p class="stem">Which is impinged rotator cuff lesion?</p>
+  <ul class="opts"><li>(A) supraspinatus</li><li>(B) Infraspinatus</li><li>(C) teres minor</li><li>(D) subscapularis</li></ul>
+  <details data-kind="answer"><summary>答案與詳解</summary>
+    <div data-kind="zh-translation"><p><strong>中文題目：</strong>被撞擊的旋轉肌病灶是哪一條？</p>
+      <p>(A) 棘上肌</p>
+      <p>(B) 棘下肌</p>
+      <p>(C) 小圓肌</p>
+      <p>(D) 肩胛下肌</p></div>
+    <p class="ans">答案：(A) supraspinatus</p>
+    <p>被撞擊的旋轉肌是最上面那條：棘上肌。<span class="src"> ｜ BM111 BLOCK-8 期末考詳解 第 68 頁</span></p>
+  </details>
+</article>
+<article data-question-id="111fin-p69-q89" data-placement="final" class="repeat">
+  <span class="qhead">111 年 期末考 第 89 題 ｜ 陳勝凱</span><span class="repeat-badge">重複考點 ×2</span>
+  <p class="repeat-note">同考點：113 第62題　—　肩關節不穩定最常見的方向是前方（anterior）</p>
+  <p class="stem">The common direction of shoulder instability is</p>
+  <ul class="opts"><li>(A) ant.</li><li>(B) post.</li><li>(C) inf.</li><li>(D) multiple</li></ul>
+  <details data-kind="answer"><summary>答案與詳解</summary>
+    <div data-kind="zh-translation"><p><strong>中文題目：</strong>肩關節不穩定常見的方向是？</p>
+      <p>(A) 前方</p>
+      <p>(B) 後方</p>
+      <p>(C) 下方</p>
+      <p>(D) 多方向</p></div>
+    <p class="ans">答案：(A) ant.</p>
+    <p>肩關節不穩定最常見方向：前方。<span class="src"> ｜ BM111 BLOCK-8 期末考詳解 第 69 頁</span></p>
+  </details>
+</article>
+<article data-question-id="111fin-p70-q90" data-placement="final" class="repeat">
+  <span class="qhead">111 年 期末考 第 90 題 ｜ 陳勝凱</span><span class="repeat-badge">重複考點 ×2</span>
+  <p class="repeat-note">同考點：113 第63題　—　冷凍肩（五十肩）最常見於 50 歲</p>
+  <p class="stem">The most common age of Frozen Shoulder is</p>
+  <ul class="opts"><li>(A) 50</li><li>(B) 30</li><li>(C) 80</li><li>(D) 10</li></ul>
+  <details data-kind="answer"><summary>答案與詳解</summary>
+    <div data-kind="zh-translation"><p><strong>中文題目：</strong>冷凍肩最常見的年齡是？</p>
+      <p>(A) 50 歲</p>
+      <p>(B) 30 歲</p>
+      <p>(C) 80 歲</p>
+      <p>(D) 10 歲</p></div>
+    <p class="ans">答案：(A) 50</p>
+    <p>冷凍肩＝五十肩，最常見 50 歲。<span class="src"> ｜ BM111 BLOCK-8 期末考詳解 第 70 頁</span></p>
+  </details>
+</article>
+<p class="ending">50、supraspinatus、anterior。再加 phase 2 輕痛重僵、labrum 撕裂——這一科就結束了。</p>
+</section>
+</div>
+<!-- nb-comments:start -->
+<link rel="stylesheet" href="https://unpkg.com/@waline/client@v3/dist/waline.css">
+<style>
+  .nb-comments{margin:72px 0 48px;padding-top:32px;border-top:1px solid var(--line,#2a3340)}
+  .nb-comments h2{margin:0 0 6px;font-size:22px;font-weight:700;color:var(--ink,var(--text,#e8ecf3))}
+  .nb-comments p.nb-hint{margin:0 0 20px;font-size:14px;color:var(--dim,var(--text-2,#a3adbd))}
+  .nb-comments #waline{
+    --waline-theme-color:var(--cyan,var(--teal,#6fd3c7));
+    --waline-active-color:var(--gold,#e5b567);
+    --waline-font-size:15px;
+    --waline-bgcolor:var(--panel,var(--bg-2,#141922));
+    --waline-bgcolor-light:var(--panel2,var(--bg-3,#1b2230));
+    --waline-border-color:var(--line,#2a3340);
+    --waline-color:var(--ink,var(--text,#e8ecf3));
+    --waline-light-grey:var(--dim,var(--text-2,#a3adbd));
+    --waline-dark-grey:var(--dim,var(--text-2,#a3adbd));
+    --waline-white:var(--panel,var(--bg-2,#141922));
+    --waline-disable-bgcolor:var(--panel2,var(--bg-3,#1b2230));
+    --waline-disable-color:var(--dim,var(--text-3,#7a968d));
+    --waline-info-bgcolor:var(--panel2,var(--bg-3,#1b2230));
+    --waline-info-color:var(--dim,var(--text-2,#a3adbd));
+    --waline-border:1px solid var(--line,#2a3340);
+    --waline-code-bgcolor:var(--panel2,var(--bg-3,#1b2230));
+    --waline-badge-color:var(--gold,#e5b567);
+    --waline-bq-color:var(--dim,#a3adbd);
+  }
+  .nb-comments .wl-panel{background:var(--panel,var(--bg-2,#141922))}
+  .nb-comments .wl-editor,.nb-comments .wl-input{background:var(--bg,#0b0e13)}
+</style>
+<section class="nb-comments" id="comments">
+  <div class="container">
+    <h2>留言板</h2>
+    <p class="nb-hint">看不懂、想補充、發現錯誤都歡迎留言；填個暱稱就能發。</p>
+    <div id="waline"></div>
+  </div>
+</section>
+<script type="module">
+  import { init } from 'https://unpkg.com/@waline/client@v3/dist/waline.js';
+  init({
+    el: '#waline',
+    serverURL: 'https://notes-comments.vercel.app',
+    path: location.pathname,
+    lang: 'zh-TW',
+    dark: true,
+    meta: ['nick'],
+    requiredMeta: ['nick'],
+    login: 'disable',
+    reaction: false,
+    pageview: false,
+    search: false,
+    imageUploader: false,
+    copyright: false,
+    locale: { placeholder: '寫下你的想法或問題⋯⋯（支援 Markdown）' }
+  });
+</script>
+<!-- nb-comments:end -->
+</body>
+</html>
