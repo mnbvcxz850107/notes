@@ -1,0 +1,825 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>輔助支架及義肢 黃怡靜</title>
+<style>
+:root{
+  color-scheme: dark;
+  --bg:#0b0e13; --panel:#141922; --panel2:#1b2230; --line:#2a3340;
+  --ink:#e8ecf3; --dim:#a3adbd; --gold:#e5b567; --cyan:#6fd3c7;
+  --rose:#e88b8b; --violet:#a99bf0;
+}
+*{box-sizing:border-box}
+html{font-size:150%}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font-family:"Noto Sans TC","PingFang TC","Helvetica Neue",system-ui,sans-serif;
+  line-height:1.85; overflow-wrap:anywhere;}
+/* Width follows the device, not the font size: px breakpoints stay put
+   while rem-based type scales with the 150% root. */
+.container{width:100%;max-width:none;margin:0 auto;
+  padding:clamp(.85rem,2.2vw,2.2rem);}
+@media (min-width:760px){ .container{max-width:730px} }
+@media (min-width:1024px){ .container{max-width:980px} }
+@media (min-width:1440px){ .container{max-width:1300px} }
+@media (min-width:1920px){ .container{max-width:1640px} }
+img{max-width:100%;height:auto}
+svg{max-width:100%;height:auto;display:block}
+h1{font-size:1.6rem;line-height:1.35;margin:.2rem 0 .6rem}
+h2{font-size:1.24rem;margin:2.4rem 0 .7rem;padding-bottom:.4rem;
+  border-bottom:1px solid var(--line);color:var(--gold)}
+h3{font-size:1.06rem;margin:1.5rem 0 .5rem;color:var(--cyan)}
+p{margin:.7rem 0}
+header#subject-overview{background:linear-gradient(160deg,#182031,#0e1219);
+  border:1px solid var(--line);border-radius:14px;padding:1.2rem;margin:.6rem 0 1.4rem}
+.meta{color:var(--dim);font-size:.86rem;margin:.3rem 0 0}
+nav#toc{background:var(--panel);border:1px solid var(--line);
+  border-radius:12px;padding:.9rem 1.1rem;margin:1.2rem 0}
+nav#toc ol{margin:.4rem 0 0;padding-left:1.3rem}
+nav#toc a{color:var(--ink);text-decoration:none;border-bottom:1px dotted var(--line)}
+.story{background:var(--panel2);border-left:3px solid var(--violet);
+  border-radius:0 10px 10px 0;padding:.9rem 1.1rem;margin:1.1rem 0}
+.story .tag{display:block;color:var(--violet);font-size:.78rem;
+  letter-spacing:.12em;margin-bottom:.35rem}
+.reality{background:var(--panel);border-left:3px solid var(--cyan);
+  border-radius:0 10px 10px 0;padding:.9rem 1.1rem;margin:1.1rem 0}
+.reality .tag{display:block;color:var(--cyan);font-size:.78rem;
+  letter-spacing:.12em;margin-bottom:.35rem}
+.keybox{background:#12202b;border:1px solid #26485a;border-radius:10px;
+  padding:.85rem 1rem;margin:1.1rem 0}
+.keybox b{color:var(--cyan)}
+.warn{background:#2a1c1c;border:1px solid #573434;border-radius:10px;
+  padding:.85rem 1rem;margin:1.1rem 0;color:#f0cfcf}
+article{background:var(--panel);border:1px solid var(--line);
+  border-radius:12px;padding:.95rem 1.05rem;margin:1.1rem 0}
+article .qhead{display:block;color:var(--gold);font-size:.82rem;
+  letter-spacing:.06em;margin-bottom:.45rem}
+article .stem{margin:.2rem 0 .5rem}
+article ul.opts{list-style:none;margin:.3rem 0 .2rem;padding:0}
+article ul.opts li{padding:.16rem 0 .16rem .2rem;color:#dbe2ec}
+details{background:#0f141c;border:1px solid var(--line);
+  border-radius:10px;padding:.15rem .8rem;margin:.6rem 0}
+details summary{cursor:pointer;padding:.6rem 0;color:var(--gold);
+  font-weight:600;min-height:44px;display:flex;align-items:center}
+details[data-kind="answer"] .ans{font-size:1.05rem;color:var(--cyan);font-weight:700}
+div[data-kind="zh-translation"]{background:#141c26;border:1px dashed #33465c;
+  border-radius:8px;padding:.7rem .85rem;margin:.5rem 0 .8rem}
+div[data-kind="zh-translation"] p{margin:.35rem 0}
+.src{color:var(--dim);font-size:.84rem;margin-top:.6rem}
+.quote{border-left:2px solid var(--gold);padding-left:.75rem;color:#f0e2c6}
+.infer{color:#f0d9a8;font-size:.92rem}
+figure{margin:1.3rem 0;background:var(--panel2);border:1px solid var(--line);
+  border-radius:12px;padding:.9rem}
+figcaption{color:var(--dim);font-size:.85rem;margin-top:.6rem;text-align:center}
+dl.vocab{margin:0}
+dl.vocab dt{color:var(--cyan);font-weight:700;margin-top:.9rem}
+dl.vocab dd{margin:.2rem 0 0;padding-left:0}
+dl.vocab .root{color:var(--dim);font-size:.86rem}
+.cram{background:var(--panel);border:1px solid var(--line);
+  border-radius:12px;padding:.4rem 1.1rem;margin:1rem 0}
+.cram li{margin:.55rem 0}
+.yearchip{display:inline-block;background:#233046;color:#bcd0ea;
+  border-radius:999px;padding:.05rem .55rem;font-size:.76rem;margin-right:.4rem}
+article.repeat{border:2px solid #e05252;box-shadow:0 0 0 3px rgba(224,82,82,.12)}
+article.repeat .qhead{color:#f08a8a}
+.repeat-badge{display:inline-block;background:#3a1c1c;border:1px solid #7d3a3a;
+  color:#f0a8a8;border-radius:999px;padding:.1rem .6rem;font-size:.76rem;
+  margin-left:.4rem;white-space:nowrap}
+.repeat-note{color:#e6a5a5;font-size:.84rem;margin:.45rem 0 0}
+figure.boxfig{margin:1.5rem 0 .5rem;background:transparent;border:0;padding:0}
+figure.boxfig img{border-radius:12px;border:1px solid var(--line);display:block;width:100%}
+figure.boxfig figcaption{color:var(--dim);font-size:.82rem;margin-top:.5rem;
+  text-align:left;line-height:1.6}
+figure.boxfig .figtag{color:var(--violet);font-size:.76rem;letter-spacing:.1em;
+  display:block;margin-bottom:.3rem}
+.ending{color:var(--dim);font-style:italic;margin:1.6rem 0 2.4rem}
+</style></head>
+<body>
+<div class="container">
+
+<header id="subject-overview">
+  <h1>輔助支架及義肢</h1>
+  <p>四年十二題，每年固定三題：<b>一題脊椎輔具、一題四肢輔具、一題截肢與義肢</b>。脊椎那題三年都是「這個側彎病人用哪種背架」——答案都是 <b>Milwaukee</b>（CTLSO，apex 高於 T8）；110 年則是腰椎壓迫性骨折用 <b>Knight</b>。義肢那題兩年都問膝下截肢哪裡不能承壓——<b>腓骨頭</b>。其餘是 KAFO 給小兒麻痺後膝、中風軟癱不用 sugar-tong、田徑選手用儲能的 flex foot、義肢裝配的負面因子、先天缺損多在上肢而後天截肢多在下肢。</p>
+  <p>這一科背一條線：<b>T8</b>——apex 在 T8 以上用 CTLSO（Milwaukee），以下用 TLSO（Boston、Taylor、CASH），只有腰椎用 LSO（Knight、corset），頸胸交界用 CTO（four-poster）。</p>
+  <p class="meta">命題老師：黃怡靜（110 年為李權峰；課表列林晁瑞）｜ 收錄 110–113 期末，共 12 題</p>
+</header>
+
+<nav id="toc">
+  <b>目錄</b>
+  <ol>
+    <li><a href="#chapter-1">脊椎輔具：以 T8 為界，Milwaukee 與 Knight</a></li>
+    <li><a href="#chapter-2">四肢輔具：KAFO、中風與周邊神經</a></li>
+    <li><a href="#chapter-3">截肢與義肢：腓骨頭不能壓、田徑用 flex foot</a></li>
+    <li><a href="#chapter-cram">考前速記</a></li>
+    <li><a href="#chapter-vocab">單字表</a></li>
+    <li><a href="#chapter-final">歷年考題總複習</a></li>
+  <li><a href="#comments" data-nb-toc="1">留言板</a></li>
+</ol>
+</nav>
+<section id="chapter-1" data-chapter-kind="story">
+<h2>一、脊椎輔具：以 T8 為界，Milwaukee 與 Knight</h2>
+
+<figure class="boxfig" data-visual-id="orbox-01-story" data-image-kind="story" data-explanation-verified="true">
+<span class="figtag">情境場景</span>
+<img data-visual-id="orbox-01-story" src="img/orbox-01-story.webp" alt="情境場景：輔具室裡，技師在脊椎模型的 T8 畫一條線，線上方的側彎配有頸環的 Milwaukee，線下方配無頸環的背架，腰椎壓迫性骨折的老太太拿到 Knight 硬式支架。" loading="lazy" decoding="async" width="1600" height="914">
+<figcaption>情境場景：輔具室裡，技師在脊椎模型的 T8 畫一條線，線上方的側彎配有頸環的 Milwaukee，線下方配無頸環的背架，腰椎壓迫性骨折的老太太拿到 Knight 硬式支架。</figcaption>
+</figure>
+<div class="story" data-prose-kind="story"><span class="tag">故事</span>
+<p>脊椎輔具用「管到哪一節」來命名：<b>CTO</b> 管頸椎到上胸椎（four-poster collar 就是）；<b>CTLSO</b> 從頸管到薦椎，代表就是有頸環的 <b>Milwaukee brace</b>；<b>TLSO</b> 從胸管到薦椎，沒有頸環（Boston、Taylor、CASH）；<b>LSO</b> 只管腰薦（Knight brace、腰薦束腹）。</p>
+<p><b>脊椎側彎</b>要選哪一種？看<b>最彎的頂點（apex）在哪</b>：<b>T8 以上用 CTLSO，也就是 Milwaukee</b>；T8 以下用 TLSO。111、112 年給圖、113 年直接說「側彎在第六胸椎以上」——三年的答案都是 Milwaukee。老師上課就強調「Milwaukee 會考」。</p>
+<p>110 年反過來問：75 歲老太太跌倒後 <b>L4 壓迫性骨折</b>，<b>換姿勢就更痛</b>——換姿勢會痛代表<b>需要硬式支撐</b>，所以選 <b>Knight brace</b>（LSO 裡的側向控制硬架），不是軟的束腹，也不是管到胸椎的 Taylor 或管到頸的 Milwaukee。</p>
+</div>
+
+<figure class="boxfig" data-visual-id="orbox-02-reality" data-image-kind="comparison" data-explanation-verified="true">
+<span class="figtag">脊椎輔具分級表</span>
+<img data-visual-id="orbox-02-reality" src="img/orbox-02-reality.webp" alt="脊椎輔具分級表：CTO four-poster、CTLSO Milwaukee 管 T8 以上、TLSO Boston Taylor CASH 管 T8 以下、LSO Knight corset 只管腰；側彎看 apex，腰椎壓迫性骨折換姿勢痛用 Knight。" loading="lazy" decoding="async" width="1600" height="914">
+<figcaption>脊椎輔具分級表：CTO four-poster、CTLSO Milwaukee 管 T8 以上、TLSO Boston Taylor CASH 管 T8 以下、LSO Knight corset 只管腰；側彎看 apex，腰椎壓迫性骨折換姿勢痛用 Knight。</figcaption>
+</figure>
+<div class="reality"><span class="tag">回到現實</span>
+<p class="quote">詳解原文（112）:「CTO: 受傷部位在 lower cervical 和 upper thoracic 之間 CTLSO: T8 以上 TLSO: T8 以下 LSO: 單獨腰椎彎曲(single lumbar curves) (A)Milwaukee 是從頭固定到尾的 CTLSO 輔具，脊椎側彎最彎曲的角度應高於T8，因此適合此案例使用 (B)看到knight 代表 Lateral control，雖然限制側向彎曲，但屬於 LSO 輔具 (C)屬於Flexion control，TLSO 輔具 (D)Four poster cervical brace 是 CTO 輔具」</p>
+<p class="quote">詳解原文（113）:「以T8為界，apex在T8以上的椎節用CTLSO，反之則用TLSO。依題幹敘述apex在T6所以應選用CTLSO，也就是Milwaukee brace」</p>
+<p class="quote">詳解原文（110）:「Pain aggregation upon change of posture suggests the need for rigid support, hence choice of Knight brace」</p>
+<p><b>CTO：</b>four-poster collar。<b>CTLSO：</b>Milwaukee（apex ＞ T8 的側彎）。<b>TLSO：</b>Boston、Taylor、CASH（屈曲控制）。<b>LSO：</b>Knight（側向控制、硬式）、lumbosacral corset（軟）。<br>
+<b>側彎 apex 在 T8 以上 → Milwaukee。腰椎壓迫性骨折、換姿勢痛 → Knight。</b></p>
+</div>
+
+<article data-question-id="110fin-p118-q91" data-placement="chapter">
+  <span class="qhead">110 年 期末考 第 91 題 ｜ 李權峰</span>
+  <p class="stem">A 75 years old female, accidently falling down days ago. Pain over lower lumbar area. The pain aggregated after changing her posture. X-ray of lumbar shows 4th lumbar spine compression fracture. Which spinal orthosis is the most proper suggestion for her.</p>
+  <ul class="opts">
+    <li>(A) Lumbosacral corset</li>
+    <li>(B) Taylor orthosis</li>
+    <li>(C) Knight's orthosis</li>
+    <li>(D) Milwaukee brace</li>
+  </ul>
+  <details data-kind="answer">
+    <summary>答案與詳解</summary>
+    <div data-kind="zh-translation">
+      <p><strong>中文題目：</strong>75 歲女性，數天前不慎跌倒，下腰部疼痛，改變姿勢後疼痛加劇。腰椎 X 光顯示第 4 腰椎壓迫性骨折。最適合她的脊椎輔具是？</p>
+      <p>(A) 腰薦束腹</p>
+      <p>(B) Taylor 支架</p>
+      <p>(C) Knight 支架</p>
+      <p>(D) Milwaukee 背架</p>
+    </div>
+    <p class="ans">答案：(C) Knight's orthosis</p>
+    <p class="quote">詳解原文:「Pain aggregation upon change of posture suggests the need for rigid support, hence choice of Knight brace」</p>
+    <p>腰椎骨折要硬式的 LSO：Knight。束腹太軟，Taylor／Milwaukee 管太高。</p>
+    <p class="src">出處：李權峰 輔助支架及義肢(ppt pg.15) ｜ BM110 BLOCK-8 期末考詳解 (審後附上申覆) (1).pdf 第 118 頁</p>
+  </details>
+</article>
+
+<article data-question-id="111fin-p70-q91" data-placement="chapter">
+  <span class="qhead">111 年 期末考 第 91 題 ｜ 黃怡靜</span>
+  <p class="stem">According to the Figure, which kind of the spinal orthosis is the best option for this scoliosis patient?</p>
+  <ul class="opts">
+    <li>(A) Milwaukee orthosis</li>
+    <li>(B) Knight brace</li>
+    <li>(C) CASH orthosis</li>
+    <li>(D) Four-poster collar brace</li>
+  </ul>
+  <details data-kind="answer">
+    <summary>答案與詳解</summary>
+    <div data-kind="zh-translation">
+      <p><strong>中文題目：</strong>根據圖示，這位脊椎側彎病人最適合哪種脊椎輔具？</p>
+      <p>(A) Milwaukee 背架</p>
+      <p>(B) Knight 支架</p>
+      <p>(C) CASH 支架</p>
+      <p>(D) 四柱式頸圈</p>
+    </div>
+    <p class="ans">答案：(A) Milwaukee orthosis</p>
+    <p class="quote">詳解原文:「老師上課強調Milwaukee brace會考，可以適用於apex高於T8 (high thoracic curves)」</p>
+    <p class="src">出處：黃怡靜 輔助支架及義肢 ｜ BM111 BLOCK-8 期末考詳解.pdf 第 70 頁</p>
+  </details>
+</article>
+
+<article data-question-id="112fin-p37-q34" data-placement="chapter">
+  <span class="qhead">112 年 期末考 第 34 題 ｜ 黃怡靜</span>
+  <p class="stem">According to the Figure, which kind of the spinal orthosis is the best option for this scoliosis patient?</p>
+  <ul class="opts">
+    <li>(A) Milwaukee orthosis</li>
+    <li>(B) Knight brace</li>
+    <li>(C) CASH orthosis</li>
+    <li>(D) Four-poster collar brace</li>
+  </ul>
+  <details data-kind="answer">
+    <summary>答案與詳解</summary>
+    <div data-kind="zh-translation">
+      <p><strong>中文題目：</strong>根據圖示，這位脊椎側彎病人最適合哪種脊椎輔具？</p>
+      <p>(A) Milwaukee 背架</p>
+      <p>(B) Knight 支架</p>
+      <p>(C) CASH 支架</p>
+      <p>(D) 四柱式頸圈</p>
+    </div>
+    <p class="ans">答案：A</p>
+    <p class="quote">詳解原文:「CTO: 受傷部位在 lower cervical 和 upper thoracic 之間 CTLSO: T8 以上 TLSO: T8 以下 LSO: 單獨腰椎彎曲(single lumbar curves) (A)Milwaukee 是從頭固定到尾的 CTLSO 輔具，脊椎側彎最彎曲的角度應高於T8，因此適合此案例使用 (B)看到knight 代表 Lateral control，雖然限制側向彎曲，但屬於 LSO 輔具 (C)屬於Flexion control，TLSO 輔具 (D)Four poster cervical brace 是 CTO 輔具」</p>
+    <p class="src">出處：黃怡靜 輔助支架及義肢 (ppt. pg.12,15,27,28) ｜ BM112_Block 8 期末考.pdf 第 37 頁</p>
+  </details>
+</article>
+
+<article data-question-id="113fin-p30-q34" data-placement="chapter">
+  <span class="qhead">113 年 期末考 第 34 題 ｜ 黃怡靜</span>
+  <p class="stem">For scoliosis occurring above the sixth thoracic vertebra, which type of brace should be used for correction?</p>
+  <ul class="opts">
+    <li>(A) Boston brace</li>
+    <li>(B) Milwaukee brace</li>
+    <li>(C) Taylor brace</li>
+    <li>(D) Knight brace</li>
+  </ul>
+  <details data-kind="answer">
+    <summary>答案與詳解</summary>
+    <div data-kind="zh-translation">
+      <p><strong>中文題目：</strong>發生在第六胸椎以上的脊椎側彎，應使用哪種背架矯正？</p>
+      <p>(A) Boston 背架</p>
+      <p>(B) Milwaukee 背架</p>
+      <p>(C) Taylor 背架</p>
+      <p>(D) Knight 背架</p>
+    </div>
+    <p class="ans">答案：(B)</p>
+    <p class="quote">詳解原文:「Scoliosis的背架可以選用CTLSO或TLSO，主要是依照scoliosis apex位置決定，以T8為界，apex在T8以上的椎節用CTLSO，反之則用TLSO。依題幹敘述apex在T6所以應選用CTLSO，也就是Milwaukee brace」</p>
+    <p class="src">出處：輔助支架及義肢 黃怡靜 ppt pg. 37 ｜ BM113_Block8期末考詳解.pdf 第 30 頁</p>
+  </details>
+</article>
+</section>
+<section id="chapter-2" data-chapter-kind="story">
+<h2>二、四肢輔具：KAFO、中風與周邊神經</h2>
+
+<figure class="boxfig" data-visual-id="orbox-03-story" data-image-kind="story" data-explanation-verified="true">
+<span class="figtag">情境場景</span>
+<img data-visual-id="orbox-03-story" src="img/orbox-03-story.webp" alt="情境場景：輔具室裡三位病人：小兒麻痺後膝的人穿上包住膝踝足的長支架，中風軟癱的人掛著肩吊帶與後側踝足支架，桌上的 sugar-tong 副木被推到一旁。" loading="lazy" decoding="async" width="1600" height="914">
+<figcaption>情境場景：輔具室裡三位病人：小兒麻痺後膝的人穿上包住膝踝足的長支架，中風軟癱的人掛著肩吊帶與後側踝足支架，桌上的 sugar-tong 副木被推到一旁。</figcaption>
+</figure>
+<div class="story" data-prose-kind="story"><span class="tag">故事</span>
+<p>下肢輔具也是用「包到哪一節」命名：<b>AFO</b> 踝足、<b>KAFO</b> 膝踝足。<b>小兒麻痺</b>病人有下運動神經元無力，膝蓋撐不住而<b>後膝（back knee，膝過度伸直）</b>——膝都不穩了，只包踝的 AFO 或短腿支架不夠，要<b>KAFO</b>把膝一起管住。</p>
+<p><b>中風右側軟癱（flaccid hemiplegia）</b>需要什麼？軟癱的肩會半脫位，用<b>肩吊帶</b>；手用<b>功能性副木</b>擺位；足下垂用<b>後側踝足支架（posterior AFO）</b>。<b>Sugar-tong 副木</b>是給前臂／腕骨折用來限制旋前旋後的固定副木，跟中風軟癱無關——它是最不適合的。</p>
+<p>113 年考<b>周邊神經損傷的輔具</b>：<b>肘隧道症候群</b>用長臂副木把肘固定在<b>屈曲 45 度</b>；<b>尺神經損傷的 Benediction sign</b>（祝禱手）用 <b>figure-of-eight 副木</b>把第 4、5 掌指關節維持在微屈；<b>多條神經或臂神經叢損傷</b>可用類似義肢的<b>外骨骼裝置</b>，靠肩帶與肩胛骨動作帶動手肘。錯的那句是<b>腕隧道症候群的 cock-up 副木固定在伸直 45 度</b>——腕隧道要的是把手腕放在<b>接近中立位</b>減壓，不是 45 度大伸直（這句是講義題，詳解沒多說；中立位的說明是補充）。</p>
+</div>
+
+<figure class="boxfig" data-visual-id="orbox-04-reality" data-image-kind="comparison" data-explanation-verified="true">
+<span class="figtag">四肢輔具對照表</span>
+<img data-visual-id="orbox-04-reality" src="img/orbox-04-reality.webp" alt="四肢輔具對照表：小兒麻痺後膝用 KAFO；中風軟癱用肩吊帶、功能性副木、後側 AFO，sugar-tong 打叉；肘隧道長臂副木屈 45 度、腕隧道 cock-up 不是伸 45 度、尺神經 figure-of-eight 4 5 MCP 微屈、臂神經叢外骨骼肩帶。" loading="lazy" decoding="async" width="1600" height="914">
+<figcaption>四肢輔具對照表：小兒麻痺後膝用 KAFO；中風軟癱用肩吊帶、功能性副木、後側 AFO，sugar-tong 打叉；肘隧道長臂副木屈 45 度、腕隧道 cock-up 不是伸 45 度、尺神經 figure-of-eight 4 5 MCP 微屈、臂神經叢外骨骼肩帶。</figcaption>
+</figure>
+<div class="reality"><span class="tag">回到現實</span>
+<p class="quote">詳解原文（110）:「對於小兒麻痺的患者，若有 lower motor neuron weakness，可以使用 KAFO。」</p>
+<p class="quote">詳解原文（113 第 35 題）:「老師講義上的題目」</p>
+<p><b>小兒麻痺 back knee → KAFO。</b><br>
+<b>中風軟癱：</b>肩吊帶、功能性副木、posterior AFO 都合適；<b>sugar-tong 最不適合</b>。<br>
+<b>周邊神經：</b>肘隧道 → 長臂副木肘屈 45°；尺神經 Benediction → figure-of-eight 固定 4、5 MCP 微屈；臂神經叢 → 外骨骼裝置＋肩帶；<b>腕隧道 cock-up 不是伸直 45°</b>（錯項）。</p>
+</div>
+
+<article data-question-id="110fin-p121-q93" data-placement="chapter">
+  <span class="qhead">110 年 期末考 第 93 題 ｜ 李權峰</span>
+  <p class="stem">A poliomyelitis patient with back knee, which kind of lower leg orthosis is the suggestion?</p>
+  <ul class="opts">
+    <li>(A) Ankle-Foot-Orthosis</li>
+    <li>(B) Knee-Ankle-Foot-Orthosis</li>
+    <li>(C) Short Leg Brace</li>
+    <li>(D) Florida Brace</li>
+  </ul>
+  <details data-kind="answer">
+    <summary>答案與詳解</summary>
+    <div data-kind="zh-translation">
+      <p><strong>中文題目：</strong>小兒麻痺病人合併後膝（膝過度伸直），建議哪種下肢輔具？</p>
+      <p>(A) 踝足輔具</p>
+      <p>(B) 膝踝足輔具</p>
+      <p>(C) 短腿支架</p>
+      <p>(D) Florida 支架</p>
+    </div>
+    <p class="ans">答案：(B) Knee-Ankle-Foot-Orthosis</p>
+    <p class="quote">詳解原文:「對於小兒麻痺的患者，若有 lower motor neuron weakness，可以使用 KAFO。」</p>
+    <p class="src">出處：李權峰 輔助支架及義肢(ppt pg. 37) ｜ BM110 BLOCK-8 期末考詳解 (審後附上申覆) (1).pdf 第 121 頁</p>
+  </details>
+</article>
+
+<article data-question-id="111fin-p71-q93" data-placement="chapter">
+  <span class="qhead">111 年 期末考 第 93 題 ｜ 黃怡靜</span>
+  <p class="stem">Which of the following orthosis is the most inappropriate one for stroke patient with right flaccid hemiplegia?</p>
+  <ul class="opts">
+    <li>(A) shoulder sling</li>
+    <li>(B) functional splint</li>
+    <li>(C) Sugar-tong orthosis</li>
+    <li>(D) posterior ankle foot orthosis</li>
+  </ul>
+  <details data-kind="answer">
+    <summary>答案與詳解</summary>
+    <div data-kind="zh-translation">
+      <p><strong>中文題目：</strong>右側軟癱型偏癱的中風病人，下列哪種輔具<b>最不適合</b>？</p>
+      <p>(A) 肩吊帶</p>
+      <p>(B) 功能性副木</p>
+      <p>(C) Sugar-tong 副木</p>
+      <p>(D) 後側踝足輔具</p>
+    </div>
+    <p class="ans">答案：(C) Sugar-tong orthosis</p>
+    <p>Sugar-tong 是前臂骨折用的固定副木，跟中風軟癱無關。</p>
+    <p class="src">出處：黃怡靜 輔助支架及義肢 ｜ BM111 BLOCK-8 期末考詳解.pdf 第 71 頁</p>
+  </details>
+</article>
+
+<article data-question-id="113fin-p31-q35" data-placement="chapter">
+  <span class="qhead">113 年 期末考 第 35 題 ｜ 黃怡靜</span>
+  <p class="stem">Regarding orthoses commonly used for peripheral nerve injuries, which of the following statements is incorrect?</p>
+  <ul class="opts">
+    <li>(A) For cubital tunnel syndrome, a long arm orthosis can be used to fix the elbow at 45 degrees of flexion.</li>
+    <li>(B) For carpal tunnel syndrome, a wrist cock-up orthosis can be used to fix the wrist at 45 degrees of extension.</li>
+    <li>(C) In the case of Benediction sign caused by ulnar nerve injury, a figure-of-eight splint can be used to hold the 4th and 5th MCP joints in slight flexion.</li>
+    <li>(D) For patients with multiple nerve injuries or brachial plexus lesions, an exoskeletal device similar to a prosthesis can be used, utilizing a shoulder harness and scapular movements to generate elbow motion.</li>
+  </ul>
+  <details data-kind="answer">
+    <summary>答案與詳解</summary>
+    <div data-kind="zh-translation">
+      <p><strong>中文題目：</strong>關於周邊神經損傷常用的輔具，下列敘述何者<b>錯誤</b>？</p>
+      <p>(A) 肘隧道症候群可用長臂副木將肘固定在屈曲 45 度。</p>
+      <p>(B) 腕隧道症候群可用 wrist cock-up 副木將手腕固定在伸直 45 度。</p>
+      <p>(C) 尺神經損傷造成的 Benediction sign，可用 figure-of-eight 副木將第 4、5 掌指關節維持在微屈。</p>
+      <p>(D) 多條神經損傷或臂神經叢病變的病人，可使用類似義肢的外骨骼裝置，利用肩帶與肩胛骨動作帶動手肘活動。</p>
+    </div>
+    <p class="ans">答案：(B)</p>
+    <p class="quote">詳解原文:「老師講義上的題目」</p>
+    <p>腕隧道的 cock-up 副木不是伸直 45 度（補充：一般固定在接近中立位）。其餘三句是講義上的正確敘述。</p>
+    <p class="src">出處：黃怡靜 輔助支架及義肢 ppt pg. 49 ｜ BM113_Block8期末考詳解.pdf 第 31 頁</p>
+  </details>
+</article>
+</section>
+<section id="chapter-3" data-chapter-kind="story">
+<h2>三、截肢與義肢：腓骨頭不能壓、田徑用 flex foot</h2>
+
+<figure class="boxfig" data-visual-id="orbox-05-story" data-image-kind="story" data-explanation-verified="true">
+<span class="figtag">情境場景</span>
+<img data-visual-id="orbox-05-story" src="img/orbox-05-story.webp" alt="情境場景：義肢室裡，技師在膝下殘肢模型上把腓骨頭、脛骨嵴貼上紅色禁壓貼紙，髕腱與後腔室貼綠色；旁邊田徑選手試穿刀鋒狀的儲能義足。" loading="lazy" decoding="async" width="1600" height="914">
+<figcaption>情境場景：義肢室裡，技師在膝下殘肢模型上把腓骨頭、脛骨嵴貼上紅色禁壓貼紙，髕腱與後腔室貼綠色；旁邊田徑選手試穿刀鋒狀的儲能義足。</figcaption>
+</figure>
+<div class="story" data-prose-kind="story"><span class="tag">故事</span>
+<p><b>膝下截肢（transtibial）</b>的義肢承筒要把重量放在<b>耐壓區</b>：<b>髕腱、股骨髁、後腔室（小腿後方軟組織）</b>。<b>不能壓的地方</b>是尖銳的骨頭和神經經過處：<b>腓骨頭、脛骨嵴、hamstring 肌腱</b>——壓下去就壓瘡、爛掉。111、112 兩年同題，四個選項只有<b>腓骨頭</b>是禁壓區。</p>
+<p><b>義足怎麼選</b>？110 年：高中田徑校隊車禍膝下截肢，要繼續運動——選<b>儲能型的 flex foot</b>。有同學申覆說老師上課提過多軸義足適合年輕人和運動員，老師回：多軸適合桌球、登山健走這類；<b>田徑選手要跑，儲能義足最適合</b>，答案維持 flex foot。SACH 和單軸都是基礎款。</p>
+<p><b>義肢裝配會不會成功</b>，負面因子有：<b>截肢位置越高</b>（通常病人狀況也越差）、<b>失智或認知障礙</b>（學不會用）、<b>傷口癒合延遲</b>（殘肢腫、套不上）。<b>年齡小於 60 不是負面因子</b>——那是好事。</p>
+<p>最後是 113 年的國考題，<b>截肢的流行病學</b>：截肢分先天缺損與後天截肢；<b>先天缺損較常見於上肢</b>，<b>後天截肢多在下肢、主因是血管疾病</b>——所以「先天多下肢、後天多上肢」整句相反，是錯的。上肢截肢多由外傷造成、以手指最常見；近年重建與再植手術進步、職安意識提高，外傷性截肢的比例逐漸下降。</p>
+</div>
+
+<figure class="boxfig" data-visual-id="orbox-06-reality" data-image-kind="comparison" data-explanation-verified="true">
+<span class="figtag">截肢與義肢對照表</span>
+<img data-visual-id="orbox-06-reality" src="img/orbox-06-reality.webp" alt="截肢與義肢對照表：膝下殘肢耐壓區髕腱、股骨髁、後腔室與禁壓區腓骨頭、脛骨嵴、hamstring 肌腱；義足 SACH、單軸、多軸、flex foot 儲能給田徑；裝配負面因子高位、失智、癒合慢，年齡小於 60 打勾；先天缺損多上肢、後天截肢多下肢血管病。" loading="lazy" decoding="async" width="1600" height="914">
+<figcaption>截肢與義肢對照表：膝下殘肢耐壓區髕腱、股骨髁、後腔室與禁壓區腓骨頭、脛骨嵴、hamstring 肌腱；義足 SACH、單軸、多軸、flex foot 儲能給田徑；裝配負面因子高位、失智、癒合慢，年齡小於 60 打勾；先天缺損多上肢、後天截肢多下肢血管病。</figcaption>
+</figure>
+<div class="reality"><span class="tag">回到現實</span>
+<p class="quote">詳解原文（112 第 35 題）:「Avoid pressure on pressure-intolerant area 很尖銳的骨頭(如 tibial crest, hamstring tendons, fibular head)/有很多神經通過這些地方不能承重」</p>
+<p class="quote">詳解原文（110）:「Flex foot is the energy storage foot mentioned during lecture」老師回覆:「多軸義肢可適應年輕人及運動員(如桌球，登山健走等)，田徑隊選手則是以儲能義肢選擇較佳。」</p>
+<p class="quote">詳解原文（112 第 36 題）:「(B)年齡小於60並不是risk factor，因此選這個答案」</p>
+<p class="quote">詳解原文（113）:「先天性肢體缺損較常見於上肢。而後天截肢則多發生於下肢，主因是血管疾病。」</p>
+<p><b>禁壓區：</b>腓骨頭、脛骨嵴、hamstring 肌腱。<b>耐壓區：</b>髕腱、股骨髁、後腔室。<br>
+<b>田徑選手 → flex foot（儲能）。</b><br>
+<b>裝配負面因子：</b>高位截肢、失智、傷口癒合延遲；<b>＜60 歲不是</b>。<br>
+<b>先天缺損多上肢；後天截肢多下肢（血管病）</b>；上肢截肢多外傷、手指最常見；外傷性截肢比例下降。</p>
+</div>
+
+<article data-question-id="110fin-p119-q92" data-placement="chapter">
+  <span class="qhead">110 年 期末考 第 92 題 ｜ 李權峰</span>
+  <p class="stem">A senior high school athlete lost his right leg because of a traffic accident. He received transtibial amputation. Which kind of prosthesis ensures he can keep exercising?</p>
+  <ul class="opts">
+    <li>(A) SACH(Single Axis Cushion Heel) foot</li>
+    <li>(B) Single-Axis foot</li>
+    <li>(C) Multiple-Axis foot</li>
+    <li>(D) Flex foot</li>
+  </ul>
+  <details data-kind="answer">
+    <summary>答案與詳解</summary>
+    <div data-kind="zh-translation">
+      <p><strong>中文題目：</strong>一位高中田徑選手因車禍失去右腿，接受膝下截肢。哪種義肢能確保他繼續運動？</p>
+      <p>(A) SACH 足（單軸軟跟足）</p>
+      <p>(B) 單軸足</p>
+      <p>(C) 多軸足</p>
+      <p>(D) Flex foot（儲能義足）</p>
+    </div>
+    <p class="ans">答案：(D) Flex foot（申覆後維持原答案）</p>
+    <p class="quote">詳解原文:「Flex foot is the energy storage foot mentioned during lecture」</p>
+    <p class="quote">老師回覆:「答案維持D。說明如下：1. 題幹為田徑校隊選手，儲能型義肢可以協助此選手繼續運動。2. 本題選最適合的義肢，因此最適合繼續運動為儲能義肢。3. 多軸義肢可適應年輕人及運動員(如桌球，登山健走等)，田徑隊選手則是以儲能義肢選擇較佳。」</p>
+    <p class="src">出處：李權峰 輔助支架及義肢(共筆 pg. 39) ｜ BM110 BLOCK-8 期末考詳解 (審後附上申覆) (1).pdf 第 119 頁</p>
+  </details>
+</article>
+
+<article data-question-id="111fin-p71-q92" data-placement="chapter">
+  <span class="qhead">111 年 期末考 第 92 題 ｜ 黃怡靜</span>
+  <p class="stem">Which of the following item is a pressure intolerance area for transtibial amputation patient?</p>
+  <ul class="opts">
+    <li>(A) Patellar tendon</li>
+    <li>(B) Fibular head</li>
+    <li>(C) Femoral condyle</li>
+    <li>(D) Posterior compartment</li>
+  </ul>
+  <details data-kind="answer">
+    <summary>答案與詳解</summary>
+    <div data-kind="zh-translation">
+      <p><strong>中文題目：</strong>下列何者是膝下截肢病人的承壓禁區？</p>
+      <p>(A) 髕腱</p>
+      <p>(B) 腓骨頭</p>
+      <p>(C) 股骨髁</p>
+      <p>(D) 後腔室</p>
+    </div>
+    <p class="ans">答案：(B) Fibular head</p>
+    <p class="quote">詳解原文:「Fibular head 是pressure intolerant，其他選項都是pressure tolerant」</p>
+    <p class="src">出處：黃怡靜 輔助支架及義肢(ppt pg.80) ｜ BM111 BLOCK-8 期末考詳解.pdf 第 71 頁</p>
+  </details>
+</article>
+
+<article data-question-id="112fin-p38-q35" data-placement="chapter">
+  <span class="qhead">112 年 期末考 第 35 題 ｜ 黃怡靜</span>
+  <p class="stem">Which of the following item is a pressure-intolerance area for transtibial amputation patient?</p>
+  <ul class="opts">
+    <li>(A) Patellar tendon</li>
+    <li>(B) Fibular head</li>
+    <li>(C) Femoral condyle</li>
+    <li>(D) Posterior compartment</li>
+  </ul>
+  <details data-kind="answer">
+    <summary>答案與詳解</summary>
+    <div data-kind="zh-translation">
+      <p><strong>中文題目：</strong>下列何者是膝下截肢病人的承壓禁區？</p>
+      <p>(A) 髕腱</p>
+      <p>(B) 腓骨頭</p>
+      <p>(C) 股骨髁</p>
+      <p>(D) 後腔室</p>
+    </div>
+    <p class="ans">答案：B</p>
+    <p class="quote">詳解原文:「Avoid pressure on pressure-intolerant area 很尖銳的骨頭(如 tibial crest, hamstring tendons, fibular head)/有很多神經通過這些地方不能承重，不能對這些解剖區域施加壓力，如果把承重放在這些點，容易造成壓瘡，這個地方就會爛掉」</p>
+    <p class="src">出處：黃怡靜 輔助支架及義肢 (ppt. pg.80) ｜ BM112_Block 8 期末考.pdf 第 38 頁</p>
+  </details>
+</article>
+
+<article data-question-id="112fin-p39-q36" data-placement="chapter">
+  <span class="qhead">112 年 期末考 第 36 題 ｜ 黃怡靜</span>
+  <p class="stem">The success of prosthetic fitting and training is influenced by multiple factors. Which of the following is not considered a negative factor for prosthetic fitting?</p>
+  <ul class="opts">
+    <li>(A) Higher levels of limb amputation</li>
+    <li>(B) Age under 60 years old (＜60 years old)</li>
+    <li>(C) Dementia or cognitive disorders</li>
+    <li>(D) Delay in wound healing</li>
+  </ul>
+  <details data-kind="answer">
+    <summary>答案與詳解</summary>
+    <div data-kind="zh-translation">
+      <p><strong>中文題目：</strong>義肢裝配與訓練的成功受多種因素影響。下列何者<b>不</b>被視為義肢裝配的負面因子？</p>
+      <p>(A) 較高位的肢體截肢</p>
+      <p>(B) 年齡小於 60 歲</p>
+      <p>(C) 失智或認知障礙</p>
+      <p>(D) 傷口癒合延遲</p>
+    </div>
+    <p class="ans">答案：B</p>
+    <p class="quote">詳解原文:「(A)高位截肢會是risk factor的原因: 通常會需要高位截肢，患者本身的狀況就是比較不佳的狀態 (B)年齡小於60並不是risk factor，因此選這個答案 (C)由於裝義肢需要學習如何使用與適應義肢，因此對於有認知功能失調的患者會有較大的困難 (D)殘肢與義肢的吻合對於義肢裝配相當重要，因此當傷口復原情況不佳，可能會水腫等等，必然會影響到義肢的裝配」</p>
+    <p class="src">出處：黃怡靜 輔助支架及義肢 ｜ BM112_Block 8 期末考.pdf 第 39 頁</p>
+  </details>
+</article>
+
+<article data-question-id="113fin-p32-q36" data-placement="chapter">
+  <span class="qhead">113 年 期末考 第 36 題 ｜ 黃怡靜</span>
+  <p class="stem">Regarding amputation, which of the following statements is the least appropriate?</p>
+  <ul class="opts">
+    <li>(A) Amputation refers to a state of limb loss, and can be classified as congenital limb deficiency or acquired amputation.</li>
+    <li>(B) Congenital limb deficiency occurs more frequently in the lower limbs than in the upper limbs; acquired amputations occur much more often in the upper limbs than in the lower limbs.</li>
+    <li>(C) In terms of amputation site, upper limb amputations are mostly caused by trauma, with finger amputations being the most common.</li>
+    <li>(D) In recent years, due to advances in reconstructive and replantation surgery as well as increased awareness of occupational safety, the proportion of traumatic amputations has gradually declined.</li>
+  </ul>
+  <details data-kind="answer">
+    <summary>答案與詳解</summary>
+    <div data-kind="zh-translation">
+      <p><strong>中文題目：</strong>關於截肢，下列敘述何者<b>最不恰當</b>？</p>
+      <p>(A) 截肢指肢體喪失的狀態，可分為先天性肢體缺損與後天性截肢。</p>
+      <p>(B) 先天性肢體缺損下肢多於上肢；後天性截肢上肢遠多於下肢。</p>
+      <p>(C) 就截肢部位而言，上肢截肢多由外傷造成，以手指截肢最常見。</p>
+      <p>(D) 近年因重建與再植手術進步及職業安全意識提高，外傷性截肢的比例逐漸下降。</p>
+    </div>
+    <p class="ans">答案：(B)</p>
+    <p class="quote">詳解原文:「此題為 114 國考題。先天性肢體缺損較常見於上肢。而後天截肢則多發生於下肢，主因是血管疾病。」</p>
+    <p class="src">出處：黃怡靜 輔助支架及義肢 ppt pg. 67 ｜ BM113_Block8期末考詳解.pdf 第 32 頁</p>
+  </details>
+</article>
+</section>
+
+<section id="chapter-cram" data-chapter-kind="cram">
+<h2>四、考前速記</h2>
+<div class="cram">
+<ul>
+<li><b>脊椎輔具看管到哪：CTO（four-poster）、CTLSO（Milwaukee）、TLSO（Boston、Taylor、CASH）、LSO（Knight、corset）。</b></li>
+<li><b>側彎 apex 在 T8 以上 → Milwaukee（CTLSO）；以下 → TLSO。</b>三年同答案。</li>
+<li><b>腰椎壓迫性骨折、換姿勢就痛 → 要硬式支撐 → Knight brace。</b></li>
+<li><b>Knight ＝ LSO 側向控制；CASH ＝ TLSO 屈曲控制。</b></li>
+<li><b>小兒麻痺後膝 → KAFO</b>，不是只包踝的 AFO。</li>
+<li><b>中風軟癱：肩吊帶、功能性副木、posterior AFO 都可以；sugar-tong 最不適合</b>（那是前臂骨折用的）。</li>
+<li><b>肘隧道 → 長臂副木肘屈 45°；尺神經 Benediction → figure-of-eight 固定 4、5 MCP 微屈；臂神經叢 → 外骨骼＋肩帶。腕隧道 cock-up 不是伸直 45°。</b></li>
+<li><b>膝下截肢禁壓區：腓骨頭、脛骨嵴、hamstring 肌腱。耐壓區：髕腱、股骨髁、後腔室。</b>兩年同題答腓骨頭。</li>
+<li><b>田徑選手要繼續跑 → flex foot（儲能義足）</b>；多軸是桌球、登山那種。</li>
+<li><b>義肢裝配負面因子：高位截肢、失智、傷口癒合延遲。＜60 歲不是。</b></li>
+<li><b>先天缺損多上肢；後天截肢多下肢（血管病）。</b>上肢截肢多外傷、手指最多；外傷性比例在降。</li>
+</ul>
+</div>
+</section>
+
+<!-- ================= VOCAB ================= -->
+<section id="chapter-vocab" data-chapter-kind="vocab">
+<h2>五、單字表</h2>
+<dl class="vocab">
+<dt>orthosis / prosthesis</dt>
+<dd><span class="root">ortho-（矯正）；pros-（附加）+ thesis（放置）</span>　輔具（支架）與義肢；前者輔助現有肢體，後者取代缺失肢體。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>ortho 矯、pros 補。</p></details></dd>
+
+<dt>CTO / CTLSO / TLSO / LSO</dt>
+<dd><span class="root">C 頸、T 胸、L 腰、S 薦、O 輔具</span>　脊椎輔具依涵蓋節段命名。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>字母越多管越長；CTLSO ＝ Milwaukee。</p></details></dd>
+
+<dt>Milwaukee brace</dt>
+<dd><span class="root">以美國密爾瓦基命名</span>　有頸環的 CTLSO，用於 apex 高於 T8 的脊椎側彎。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>老師說會考，三年都考。</p></details></dd>
+
+<dt>Knight brace</dt>
+<dd><span class="root">以 Knight 醫師命名</span>　LSO 側向控制的硬式腰薦支架。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>「看到 Knight 代表 lateral control」；腰椎壓迫性骨折用它。</p></details></dd>
+
+<dt>CASH orthosis</dt>
+<dd><span class="root">Cruciform Anterior Spinal Hyperextension</span>　十字形前方過伸支架，TLSO 屈曲控制。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>CASH ＝ flexion control ＝ TLSO。</p></details></dd>
+
+<dt>four-poster collar</dt>
+<dd><span class="root">four poster＝四根柱子</span>　四柱式頸圈，CTO。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>管下頸椎到上胸椎。</p></details></dd>
+
+<dt>Taylor / Boston brace</dt>
+<dd><span class="root">皆以人名或地名命名</span>　TLSO，用於 T8 以下的側彎或胸腰椎問題。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>沒有頸環的那些都是 TLSO。</p></details></dd>
+
+<dt>lumbosacral corset</dt>
+<dd><span class="root">corset＝束腹</span>　軟式腰薦束腹，LSO。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>骨折要硬的，束腹太軟。</p></details></dd>
+
+<dt>KAFO / AFO</dt>
+<dd><span class="root">K 膝、A 踝、F 足、O 輔具</span>　膝踝足輔具、踝足輔具。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>膝不穩（back knee）就要加 K。</p></details></dd>
+
+<dt>back knee (genu recurvatum)</dt>
+<dd><span class="root">recurvatum＝向後彎</span>　後膝、膝過度伸直，小兒麻痺常見。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>小兒麻痺後膝 → KAFO。</p></details></dd>
+
+<dt>flaccid hemiplegia</dt>
+<dd><span class="root">flaccid＝鬆軟；hemi-（半）+ plegia（癱）</span>　軟癱型偏癱，中風早期。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>肩吊帶、功能性副木、後側 AFO；不用 sugar-tong。</p></details></dd>
+
+<dt>sugar-tong splint</dt>
+<dd><span class="root">sugar tong＝方糖夾</span>　U 形前臂副木，限制旋前旋後，用於前臂／腕骨折。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>骨折用的，中風最不適合。</p></details></dd>
+
+<dt>wrist cock-up orthosis</dt>
+<dd><span class="root">cock up＝翹起</span>　腕伸直位副木，腕隧道症候群用。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>不是伸直 45°——113 年的錯項。</p></details></dd>
+
+<dt>Benediction sign</dt>
+<dd><span class="root">benediction＝祝禱</span>　祝禱手，尺神經損傷時第 4、5 指爪形。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>figure-of-eight 副木固定 4、5 MCP 微屈。</p></details></dd>
+
+<dt>transtibial amputation</dt>
+<dd><span class="root">trans-（穿過）+ tibial（脛骨）</span>　膝下截肢。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>禁壓區腓骨頭、脛骨嵴、hamstring 肌腱。</p></details></dd>
+
+<dt>pressure-intolerant area</dt>
+<dd><span class="root">intolerant＝不能耐受</span>　承壓禁區，尖銳骨突與神經經過處。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>腓骨頭是兩年的答案。</p></details></dd>
+
+<dt>SACH foot</dt>
+<dd><span class="root">Solid Ankle Cushion Heel</span>　固定踝軟跟義足，基礎款。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>考卷寫 Single Axis Cushion Heel；反正不是給田徑的。</p></details></dd>
+
+<dt>flex foot / energy-storing foot</dt>
+<dd><span class="root">flex＝彎曲；energy storing＝儲能</span>　碳纖維儲能義足，適合跑步運動。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>田徑選手 → flex foot；多軸是桌球登山。</p></details></dd>
+
+<dt>congenital limb deficiency</dt>
+<dd><span class="root">congenital＝先天</span>　先天性肢體缺損，較常見於上肢。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>先天上肢、後天下肢（血管病）。</p></details></dd>
+</dl>
+</section>
+<section id="chapter-final" data-chapter-kind="final_questions">
+<h2>六、歷年考題總複習</h2>
+<p class="meta">依年度由新到舊、同年依原始題號排列。共 12 題（110–113 期末各 3 題）。<b style="color:#f08a8a">紅框</b>＝同一考點在兩個以上年度重複出現。</p>
+<h3><span class="yearchip">113 年</span>期末考 第 34 題</h3>
+<article data-question-id="113fin-p30-q34" data-placement="final" class="repeat">
+  <span class="qhead">113 年 期末考 第 34 題 ｜ 黃怡靜</span><span class="repeat-badge">重複考點 ×4</span>
+  <p class="repeat-note">同考點：110 第91題、111 第91題、112 第34題　—　脊椎輔具的選擇：脊椎側彎 apex 高於 T8 用 Milwaukee（CTLSO）；Knight 是 LSO 側向控制的硬式支架，姿勢改變會痛的腰椎壓迫性骨折用它；CASH 是 TLSO 屈曲控制；four-poster 是 CTO</p>
+  <p class="stem">For scoliosis occurring above the sixth thoracic vertebra, which type of brace should be used for correction?</p>
+  <ul class="opts"><li>(A) Boston brace</li><li>(B) Milwaukee brace</li><li>(C) Taylor brace</li><li>(D) Knight brace</li></ul>
+  <details data-kind="answer"><summary>答案與詳解</summary>
+    <div data-kind="zh-translation"><p><strong>中文題目：</strong>發生在第六胸椎以上的脊椎側彎，應使用哪種背架矯正？</p>
+      <p>(A) Boston 背架</p>
+      <p>(B) Milwaukee 背架</p>
+      <p>(C) Taylor 背架</p>
+      <p>(D) Knight 背架</p></div>
+    <p class="ans">答案：(B)</p>
+    <p>T6 以上的側彎 → CTLSO → Milwaukee。<span class="src"> ｜ BM113_Block8期末考詳解 第 30 頁</span></p>
+  </details>
+</article>
+<article data-question-id="113fin-p31-q35" data-placement="final">
+  <span class="qhead">113 年 期末考 第 35 題 ｜ 黃怡靜</span>
+  
+  <p class="stem">Regarding orthoses commonly used for peripheral nerve injuries, which of the following statements is incorrect?</p>
+  <ul class="opts"><li>(A) For cubital tunnel syndrome, a long arm orthosis can be used to fix the elbow at 45 degrees of flexion.</li><li>(B) For carpal tunnel syndrome, a wrist cock-up orthosis can be used to fix the wrist at 45 degrees of extension.</li><li>(C) In the case of Benediction sign caused by ulnar nerve injury, a figure-of-eight splint can be used to hold the 4th and 5th MCP joints in slight flexion.</li><li>(D) For patients with multiple nerve injuries or brachial plexus lesions, an exoskeletal device similar to a prosthesis can be used, utilizing a shoulder harness and scapular movements to generate elbow motion.</li></ul>
+  <details data-kind="answer"><summary>答案與詳解</summary>
+    <div data-kind="zh-translation"><p><strong>中文題目：</strong>關於周邊神經損傷常用的輔具，下列敘述何者<b>錯誤</b>？</p>
+      <p>(A) 肘隧道症候群可用長臂副木將肘固定在屈曲 45 度。</p>
+      <p>(B) 腕隧道症候群可用 wrist cock-up 副木將手腕固定在伸直 45 度。</p>
+      <p>(C) 尺神經損傷造成的 Benediction sign，可用 figure-of-eight 副木將第 4、5 掌指關節維持在微屈。</p>
+      <p>(D) 多條神經損傷或臂神經叢病變的病人，可使用類似義肢的外骨骼裝置，利用肩帶與肩胛骨動作帶動手肘活動。</p></div>
+    <p class="ans">答案：(B)</p>
+    <p>腕隧道 cock-up 不是伸直 45°；肘隧道屈 45°、尺神經 figure-of-eight、臂神經叢外骨骼。<span class="src"> ｜ BM113_Block8期末考詳解 第 31 頁</span></p>
+  </details>
+</article>
+<article data-question-id="113fin-p32-q36" data-placement="final">
+  <span class="qhead">113 年 期末考 第 36 題 ｜ 黃怡靜</span>
+  
+  <p class="stem">Regarding amputation, which of the following statements is the least appropriate?</p>
+  <ul class="opts"><li>(A) Amputation refers to a state of limb loss, and can be classified as congenital limb deficiency or acquired amputation.</li><li>(B) Congenital limb deficiency occurs more frequently in the lower limbs than in the upper limbs; acquired amputations occur much more often in the upper limbs than in the lower limbs.</li><li>(C) In terms of amputation site, upper limb amputations are mostly caused by trauma, with finger amputations being the most common.</li><li>(D) In recent years, due to advances in reconstructive and replantation surgery as well as increased awareness of occupational safety, the proportion of traumatic amputations has gradually declined.</li></ul>
+  <details data-kind="answer"><summary>答案與詳解</summary>
+    <div data-kind="zh-translation"><p><strong>中文題目：</strong>關於截肢，下列敘述何者<b>最不恰當</b>？</p>
+      <p>(A) 截肢指肢體喪失的狀態，可分為先天性肢體缺損與後天性截肢。</p>
+      <p>(B) 先天性肢體缺損下肢多於上肢；後天性截肢上肢遠多於下肢。</p>
+      <p>(C) 就截肢部位而言，上肢截肢多由外傷造成，以手指截肢最常見。</p>
+      <p>(D) 近年因重建與再植手術進步及職業安全意識提高，外傷性截肢的比例逐漸下降。</p></div>
+    <p class="ans">答案：(B)</p>
+    <p>先天缺損多上肢、後天截肢多下肢（血管病）；反過來說是錯的。<span class="src"> ｜ BM113_Block8期末考詳解 第 32 頁</span></p>
+  </details>
+</article>
+<h3><span class="yearchip">112 年</span>期末考 第 34 題</h3>
+<article data-question-id="112fin-p37-q34" data-placement="final" class="repeat">
+  <span class="qhead">112 年 期末考 第 34 題 ｜ 黃怡靜</span><span class="repeat-badge">重複考點 ×4</span>
+  <p class="repeat-note">同考點：110 第91題、111 第91題、113 第34題　—　脊椎輔具的選擇：脊椎側彎 apex 高於 T8 用 Milwaukee（CTLSO）；Knight 是 LSO 側向控制的硬式支架，姿勢改變會痛的腰椎壓迫性骨折用它；CASH 是 TLSO 屈曲控制；four-poster 是 CTO</p>
+  <p class="stem">According to the Figure, which kind of the spinal orthosis is the best option for this scoliosis patient?</p>
+  <ul class="opts"><li>(A) Milwaukee orthosis</li><li>(B) Knight brace</li><li>(C) CASH orthosis</li><li>(D) Four-poster collar brace</li></ul>
+  <details data-kind="answer"><summary>答案與詳解</summary>
+    <div data-kind="zh-translation"><p><strong>中文題目：</strong>根據圖示，這位脊椎側彎病人最適合哪種脊椎輔具？</p>
+      <p>(A) Milwaukee 背架</p>
+      <p>(B) Knight 支架</p>
+      <p>(C) CASH 支架</p>
+      <p>(D) 四柱式頸圈</p></div>
+    <p class="ans">答案：A</p>
+    <p>同題再考：CTLSO T8 以上、TLSO T8 以下、LSO 腰；Milwaukee。<span class="src"> ｜ BM112_Block 8 期末考 第 37 頁</span></p>
+  </details>
+</article>
+<article data-question-id="112fin-p38-q35" data-placement="final" class="repeat">
+  <span class="qhead">112 年 期末考 第 35 題 ｜ 黃怡靜</span><span class="repeat-badge">重複考點 ×2</span>
+  <p class="repeat-note">同考點：111 第92題　—　膝下截肢的承壓禁區：腓骨頭、脛骨嵴、hamstring 肌腱不能承重；髕腱、股骨髁、後腔室可以</p>
+  <p class="stem">Which of the following item is a pressure-intolerance area for transtibial amputation patient?</p>
+  <ul class="opts"><li>(A) Patellar tendon</li><li>(B) Fibular head</li><li>(C) Femoral condyle</li><li>(D) Posterior compartment</li></ul>
+  <details data-kind="answer"><summary>答案與詳解</summary>
+    <div data-kind="zh-translation"><p><strong>中文題目：</strong>下列何者是膝下截肢病人的承壓禁區？</p>
+      <p>(A) 髕腱</p>
+      <p>(B) 腓骨頭</p>
+      <p>(C) 股骨髁</p>
+      <p>(D) 後腔室</p></div>
+    <p class="ans">答案：B</p>
+    <p>同題再考：腓骨頭、脛骨嵴、hamstring 肌腱不能承重。<span class="src"> ｜ BM112_Block 8 期末考 第 38 頁</span></p>
+  </details>
+</article>
+<article data-question-id="112fin-p39-q36" data-placement="final">
+  <span class="qhead">112 年 期末考 第 36 題 ｜ 黃怡靜</span>
+  
+  <p class="stem">The success of prosthetic fitting and training is influenced by multiple factors. Which of the following is not considered a negative factor for prosthetic fitting?</p>
+  <ul class="opts"><li>(A) Higher levels of limb amputation</li><li>(B) Age under 60 years old (＜60 years old)</li><li>(C) Dementia or cognitive disorders</li><li>(D) Delay in wound healing</li></ul>
+  <details data-kind="answer"><summary>答案與詳解</summary>
+    <div data-kind="zh-translation"><p><strong>中文題目：</strong>義肢裝配與訓練的成功受多種因素影響。下列何者<b>不</b>被視為義肢裝配的負面因子？</p>
+      <p>(A) 較高位的肢體截肢</p>
+      <p>(B) 年齡小於 60 歲</p>
+      <p>(C) 失智或認知障礙</p>
+      <p>(D) 傷口癒合延遲</p></div>
+    <p class="ans">答案：B</p>
+    <p>義肢裝配負面因子：高位、失智、癒合慢；＜60 歲不是。<span class="src"> ｜ BM112_Block 8 期末考 第 39 頁</span></p>
+  </details>
+</article>
+<h3><span class="yearchip">111 年</span>期末考 第 91 題</h3>
+<article data-question-id="111fin-p70-q91" data-placement="final" class="repeat">
+  <span class="qhead">111 年 期末考 第 91 題 ｜ 黃怡靜</span><span class="repeat-badge">重複考點 ×4</span>
+  <p class="repeat-note">同考點：110 第91題、112 第34題、113 第34題　—　脊椎輔具的選擇：脊椎側彎 apex 高於 T8 用 Milwaukee（CTLSO）；Knight 是 LSO 側向控制的硬式支架，姿勢改變會痛的腰椎壓迫性骨折用它；CASH 是 TLSO 屈曲控制；four-poster 是 CTO</p>
+  <p class="stem">According to the Figure, which kind of the spinal orthosis is the best option for this scoliosis patient?</p>
+  <ul class="opts"><li>(A) Milwaukee orthosis</li><li>(B) Knight brace</li><li>(C) CASH orthosis</li><li>(D) Four-poster collar brace</li></ul>
+  <details data-kind="answer"><summary>答案與詳解</summary>
+    <div data-kind="zh-translation"><p><strong>中文題目：</strong>根據圖示，這位脊椎側彎病人最適合哪種脊椎輔具？</p>
+      <p>(A) Milwaukee 背架</p>
+      <p>(B) Knight 支架</p>
+      <p>(C) CASH 支架</p>
+      <p>(D) 四柱式頸圈</p></div>
+    <p class="ans">答案：(A) Milwaukee orthosis</p>
+    <p>側彎 apex 高於 T8 → Milwaukee（CTLSO）。<span class="src"> ｜ BM111 BLOCK-8 期末考詳解 第 70 頁</span></p>
+  </details>
+</article>
+<article data-question-id="111fin-p71-q92" data-placement="final" class="repeat">
+  <span class="qhead">111 年 期末考 第 92 題 ｜ 黃怡靜</span><span class="repeat-badge">重複考點 ×2</span>
+  <p class="repeat-note">同考點：112 第35題　—　膝下截肢的承壓禁區：腓骨頭、脛骨嵴、hamstring 肌腱不能承重；髕腱、股骨髁、後腔室可以</p>
+  <p class="stem">Which of the following item is a pressure intolerance area for transtibial amputation patient?</p>
+  <ul class="opts"><li>(A) Patellar tendon</li><li>(B) Fibular head</li><li>(C) Femoral condyle</li><li>(D) Posterior compartment</li></ul>
+  <details data-kind="answer"><summary>答案與詳解</summary>
+    <div data-kind="zh-translation"><p><strong>中文題目：</strong>下列何者是膝下截肢病人的承壓禁區？</p>
+      <p>(A) 髕腱</p>
+      <p>(B) 腓骨頭</p>
+      <p>(C) 股骨髁</p>
+      <p>(D) 後腔室</p></div>
+    <p class="ans">答案：(B) Fibular head</p>
+    <p>膝下截肢禁壓區：腓骨頭；髕腱、股骨髁、後腔室可以壓。<span class="src"> ｜ BM111 BLOCK-8 期末考詳解 第 71 頁</span></p>
+  </details>
+</article>
+<article data-question-id="111fin-p71-q93" data-placement="final">
+  <span class="qhead">111 年 期末考 第 93 題 ｜ 黃怡靜 ｜ 來源答案欄</span>
+  
+  <p class="stem">Which of the following orthosis is the most inappropriate one for stroke patient with right flaccid hemiplegia?</p>
+  <ul class="opts"><li>(A) shoulder sling</li><li>(B) functional splint</li><li>(C) Sugar-tong orthosis</li><li>(D) posterior ankle foot orthosis</li></ul>
+  <details data-kind="answer"><summary>答案與詳解</summary>
+    <div data-kind="zh-translation"><p><strong>中文題目：</strong>右側軟癱型偏癱的中風病人，下列哪種輔具<b>最不適合</b>？</p>
+      <p>(A) 肩吊帶</p>
+      <p>(B) 功能性副木</p>
+      <p>(C) Sugar-tong 副木</p>
+      <p>(D) 後側踝足輔具</p></div>
+    <p class="ans">答案：(C) Sugar-tong orthosis</p>
+    <p>中風軟癱：肩吊帶、功能性副木、後側 AFO 可以；sugar-tong 最不適合。<span class="src"> ｜ BM111 BLOCK-8 期末考詳解 第 71 頁</span></p>
+  </details>
+</article>
+<h3><span class="yearchip">110 年</span>期末考 第 91 題</h3>
+<article data-question-id="110fin-p118-q91" data-placement="final" class="repeat">
+  <span class="qhead">110 年 期末考 第 91 題 ｜ 李權峰</span><span class="repeat-badge">重複考點 ×4</span>
+  <p class="repeat-note">同考點：111 第91題、112 第34題、113 第34題　—　脊椎輔具的選擇：脊椎側彎 apex 高於 T8 用 Milwaukee（CTLSO）；Knight 是 LSO 側向控制的硬式支架，姿勢改變會痛的腰椎壓迫性骨折用它；CASH 是 TLSO 屈曲控制；four-poster 是 CTO</p>
+  <p class="stem">A 75 years old female, accidently falling down days ago. Pain over lower lumbar area. The pain aggregated after changing her posture. X-ray of lumbar shows 4th lumbar spine compression fracture. Which spinal orthosis is the most proper suggestion for her.</p>
+  <ul class="opts"><li>(A) Lumbosacral corset</li><li>(B) Taylor orthosis</li><li>(C) Knight&#x27;s orthosis</li><li>(D) Milwaukee brace</li></ul>
+  <details data-kind="answer"><summary>答案與詳解</summary>
+    <div data-kind="zh-translation"><p><strong>中文題目：</strong>75 歲女性，數天前不慎跌倒，下腰部疼痛，改變姿勢後疼痛加劇。腰椎 X 光顯示第 4 腰椎壓迫性骨折。最適合她的脊椎輔具是？</p>
+      <p>(A) 腰薦束腹</p>
+      <p>(B) Taylor 支架</p>
+      <p>(C) Knight 支架</p>
+      <p>(D) Milwaukee 背架</p></div>
+    <p class="ans">答案：(C) Knight's orthosis</p>
+    <p>腰椎壓迫性骨折、換姿勢會痛 → 硬式支撐 → Knight brace。<span class="src"> ｜ BM110 BLOCK-8 期末考詳解 (審後附上申覆) (1) 第 118 頁</span></p>
+  </details>
+</article>
+<article data-question-id="110fin-p119-q92" data-placement="final">
+  <span class="qhead">110 年 期末考 第 92 題 ｜ 李權峰</span>
+  
+  <p class="stem">A senior high school athlete lost his right leg because of a traffic accident. He received transtibial amputation. Which kind of prosthesis ensures he can keep exercising?</p>
+  <ul class="opts"><li>(A) SACH(Single Axis Cushion Heel) foot</li><li>(B) Single-Axis foot</li><li>(C) Multiple-Axis foot</li><li>(D) Flex foot</li></ul>
+  <details data-kind="answer"><summary>答案與詳解</summary>
+    <div data-kind="zh-translation"><p><strong>中文題目：</strong>一位高中田徑選手因車禍失去右腿，接受膝下截肢。哪種義肢能確保他繼續運動？</p>
+      <p>(A) SACH 足（單軸軟跟足）</p>
+      <p>(B) 單軸足</p>
+      <p>(C) 多軸足</p>
+      <p>(D) Flex foot（儲能義足）</p></div>
+    <p class="ans">答案：(D) Flex foot（申覆後維持原答案）</p>
+    <p>田徑選手要繼續跑 → 儲能的 flex foot；多軸是桌球登山。<span class="src"> ｜ BM110 BLOCK-8 期末考詳解 (審後附上申覆) (1) 第 119 頁</span></p>
+  </details>
+</article>
+<article data-question-id="110fin-p121-q93" data-placement="final">
+  <span class="qhead">110 年 期末考 第 93 題 ｜ 李權峰</span>
+  
+  <p class="stem">A poliomyelitis patient with back knee, which kind of lower leg orthosis is the suggestion?</p>
+  <ul class="opts"><li>(A) Ankle-Foot-Orthosis</li><li>(B) Knee-Ankle-Foot-Orthosis</li><li>(C) Short Leg Brace</li><li>(D) Florida Brace</li></ul>
+  <details data-kind="answer"><summary>答案與詳解</summary>
+    <div data-kind="zh-translation"><p><strong>中文題目：</strong>小兒麻痺病人合併後膝（膝過度伸直），建議哪種下肢輔具？</p>
+      <p>(A) 踝足輔具</p>
+      <p>(B) 膝踝足輔具</p>
+      <p>(C) 短腿支架</p>
+      <p>(D) Florida 支架</p></div>
+    <p class="ans">答案：(B) Knee-Ankle-Foot-Orthosis</p>
+    <p>小兒麻痺後膝 → KAFO。<span class="src"> ｜ BM110 BLOCK-8 期末考詳解 (審後附上申覆) (1) 第 121 頁</span></p>
+  </details>
+</article>
+<p class="ending">T8 以上 Milwaukee、腰椎骨折 Knight、後膝 KAFO。腓骨頭不能壓、田徑用 flex foot、先天上肢後天下肢。</p>
+</section>
+</div>
+<!-- nb-comments:start -->
+<link rel="stylesheet" href="https://unpkg.com/@waline/client@v3/dist/waline.css">
+<style>
+  .nb-comments{margin:72px 0 48px;padding-top:32px;border-top:1px solid var(--line,#2a3340)}
+  .nb-comments h2{margin:0 0 6px;font-size:22px;font-weight:700;color:var(--ink,var(--text,#e8ecf3))}
+  .nb-comments p.nb-hint{margin:0 0 20px;font-size:14px;color:var(--dim,var(--text-2,#a3adbd))}
+  .nb-comments #waline{
+    --waline-theme-color:var(--cyan,var(--teal,#6fd3c7));
+    --waline-active-color:var(--gold,#e5b567);
+    --waline-font-size:15px;
+    --waline-bgcolor:var(--panel,var(--bg-2,#141922));
+    --waline-bgcolor-light:var(--panel2,var(--bg-3,#1b2230));
+    --waline-border-color:var(--line,#2a3340);
+    --waline-color:var(--ink,var(--text,#e8ecf3));
+    --waline-light-grey:var(--dim,var(--text-2,#a3adbd));
+    --waline-dark-grey:var(--dim,var(--text-2,#a3adbd));
+    --waline-white:var(--panel,var(--bg-2,#141922));
+    --waline-disable-bgcolor:var(--panel2,var(--bg-3,#1b2230));
+    --waline-disable-color:var(--dim,var(--text-3,#7a968d));
+    --waline-info-bgcolor:var(--panel2,var(--bg-3,#1b2230));
+    --waline-info-color:var(--dim,var(--text-2,#a3adbd));
+    --waline-border:1px solid var(--line,#2a3340);
+    --waline-code-bgcolor:var(--panel2,var(--bg-3,#1b2230));
+    --waline-badge-color:var(--gold,#e5b567);
+    --waline-bq-color:var(--dim,#a3adbd);
+  }
+  .nb-comments .wl-panel{background:var(--panel,var(--bg-2,#141922))}
+  .nb-comments .wl-editor,.nb-comments .wl-input{background:var(--bg,#0b0e13)}
+</style>
+<section class="nb-comments" id="comments">
+  <div class="container">
+    <h2>留言板</h2>
+    <p class="nb-hint">看不懂、想補充、發現錯誤都歡迎留言；填個暱稱就能發。</p>
+    <div id="waline"></div>
+  </div>
+</section>
+<script type="module">
+  import { init } from 'https://unpkg.com/@waline/client@v3/dist/waline.js';
+  init({
+    el: '#waline',
+    serverURL: 'https://notes-comments.vercel.app',
+    path: location.pathname,
+    lang: 'zh-TW',
+    dark: true,
+    meta: ['nick'],
+    requiredMeta: ['nick'],
+    login: 'disable',
+    reaction: false,
+    pageview: false,
+    search: false,
+    imageUploader: false,
+    copyright: false,
+    locale: { placeholder: '寫下你的想法或問題⋯⋯（支援 Markdown）' }
+  });
+</script>
+<!-- nb-comments:end -->
+</body>
+</html>
