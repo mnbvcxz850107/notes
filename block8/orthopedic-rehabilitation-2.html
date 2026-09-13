@@ -94,6 +94,23 @@ figure.boxfig figcaption{color:var(--dim);font-size:.82rem;margin-top:.5rem;
 figure.boxfig .figtag{color:var(--violet);font-size:.76rem;letter-spacing:.1em;
   display:block;margin-bottom:.3rem}
 .ending{color:var(--dim);font-style:italic;margin:1.6rem 0 2.4rem}
+
+/* nb-vocab-flip:start */
+dl.vocab dt{cursor:pointer;user-select:none;position:relative;padding-right:6.2rem;border-bottom:1px dashed var(--line)}
+dl.vocab dt::after{content:"點我翻牌 ▸";position:absolute;right:0;top:.15rem;font-size:.8rem;color:var(--dim);font-weight:400}
+dl.vocab dt.open::after{content:"蓋回去 ▾";color:var(--gold)}
+dl.vocab dt:focus-visible{outline:2px solid var(--cyan);outline-offset:3px;border-radius:4px}
+dl.vocab dd[hidden]{display:none}
+dl.vocab dd{padding:.5rem .7rem .6rem;background:var(--panel);border:1px solid var(--line);border-top:0;border-radius:0 0 8px 8px;margin-bottom:.4rem}
+dl.vocab .vpun{margin:.5rem 0 0;padding:.45rem .65rem;border-left:3px solid var(--gold);background:rgba(229,181,103,.08);border-radius:4px}
+dl.vocab .vpun .vtag{color:var(--gold);font-weight:700;margin-right:.45rem}
+dl.vocab details[data-kind="vocab-memory"]{margin-top:.45rem}
+.vtools{display:flex;gap:.5rem;flex-wrap:wrap;align-items:center;margin:.5rem 0 .3rem}
+.vtools button{font:inherit;font-size:.9rem;padding:.35rem .8rem;border-radius:999px;border:1px solid var(--line);background:var(--panel);color:var(--ink);cursor:pointer}
+.vtools button:hover{border-color:var(--cyan);color:var(--cyan)}
+.vtools .vcount{color:var(--dim);font-size:.85rem;margin-left:auto}
+.vhow{color:var(--dim);font-size:.9rem;margin:.2rem 0 .4rem}
+/* nb-vocab-flip:end */
 </style></head>
 <body>
 <div class="container">
@@ -517,63 +534,65 @@ figure.boxfig .figtag{color:var(--violet);font-size:.76rem;letter-spacing:.1em;
 <!-- ================= VOCAB ================= -->
 <section id="chapter-vocab" data-chapter-kind="vocab">
 <h2>五、單字表</h2>
+<p class="vhow">先看英文想中文，點單字翻牌看意思、諧音梗與記憶提示。</p>
+<div class="vtools"><button type="button" data-act="quiz">🎲 隨機抽一張</button><button type="button" data-act="open">全部翻開</button><button type="button" data-act="close">全部蓋上</button><span class="vcount"></span></div>
 <dl class="vocab">
 <dt>PEACE</dt>
-<dd><span class="root">Protection / Elevation / Avoid anti-inflammatories / Compression / Education</span>　急性軟組織損傷的處理口訣。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>P、E、C 都在，<b>V（vascularisation）不在</b>。</p></details></dd>
+<dd hidden><span class="root">Protection / Elevation / Avoid anti-inflammatories / Compression / Education</span>　急性軟組織損傷的處理口訣。<p class="vpun"><span class="vtag">諧音梗</span>PEACE「和平」五步：保護、抬高、避消炎藥、加壓、衛教。</p><details data-kind="vocab-memory" open><summary>記憶提示</summary><p>P、E、C 都在，<b>V（vascularisation）不在</b>。</p></details></dd>
 
 <dt>vascularisation</dt>
-<dd><span class="root">vascular＝血管的</span>　血管化、血管新生；不是急性期處置。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>兩年都是「不建議」的答案。</p></details></dd>
+<dd hidden><span class="root">vascular＝血管的</span>　血管化、血管新生；不是急性期處置。<p class="vpun"><span class="vtag">諧音梗</span>vascular「血管」化：不在 PEACE 裡，不是急性處置。</p><details data-kind="vocab-memory" open><summary>記憶提示</summary><p>兩年都是「不建議」的答案。</p></details></dd>
 
 <dt>acute / chronic injury</dt>
-<dd><span class="root">acute＝急性；chronic＝慢性</span>　急性：突然、典型發炎、會好。慢性：超過三個月、低度發炎、易復發。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>113 年三個相反、一個正確。</p></details></dd>
+<dd hidden><span class="root">acute＝急性；chronic＝慢性</span>　急性：突然、典型發炎、會好。慢性：超過三個月、低度發炎、易復發。<p class="vpun"><span class="vtag">諧音梗</span>acute「哎、急」發炎會好；chronic「拖」三個月易復發。</p><details data-kind="vocab-memory" open><summary>記憶提示</summary><p>113 年三個相反、一個正確。</p></details></dd>
 
 <dt>ligament sprain grade</dt>
-<dd><span class="root">sprain＝韌帶扭傷</span>　I 幾乎無結構損傷；II 部分斷裂、4–6 週；III 完全斷裂。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>任何等級都有本體感覺障礙。</p></details></dd>
+<dd hidden><span class="root">sprain＝韌帶扭傷</span>　I 幾乎無結構損傷；II 部分斷裂、4–6 週；III 完全斷裂。<p class="vpun"><span class="vtag">諧音梗</span>Grade「一二三」：I 沒壞、II 半斷 4–6 週、III 全斷。</p><details data-kind="vocab-memory" open><summary>記憶提示</summary><p>任何等級都有本體感覺障礙。</p></details></dd>
 
 <dt>proprioceptive impairment</dt>
-<dd><span class="root">proprio-（自身）+ ception（感知）</span>　本體感覺障礙，韌帶損傷後必然出現。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>「沒有本體感覺障礙」是錯的。</p></details></dd>
+<dd hidden><span class="root">proprio-（自身）+ ception（感知）</span>　本體感覺障礙，韌帶損傷後必然出現。<p class="vpun"><span class="vtag">諧音梗</span>proprio「自己」ception「感」：韌帶傷了本體感一定壞。</p><details data-kind="vocab-memory" open><summary>記憶提示</summary><p>「沒有本體感覺障礙」是錯的。</p></details></dd>
 
 <dt>eccentric contraction</dt>
-<dd><span class="root">ec-（向外）+ centric（中心）</span>　離心收縮，肌肉出力同時被拉長；肌肉拉傷、DOMS 都與它有關。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>這科的關鍵字。「concentric」出現就是錯項。</p></details></dd>
+<dd hidden><span class="root">ec-（向外）+ centric（中心）</span>　離心收縮，肌肉出力同時被拉長；肌肉拉傷、DOMS 都與它有關。<p class="vpun"><span class="vtag">諧音梗</span>eccentric「一伸就」出力：被拉長時出力，最易拉傷。</p><details data-kind="vocab-memory" open><summary>記憶提示</summary><p>這科的關鍵字。「concentric」出現就是錯項。</p></details></dd>
 
 <dt>hamstring</dt>
-<dd><span class="root">ham＝大腿後側；string＝肌腱</span>　大腿後肌群，離心收縮時易拉傷。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>超音波分級、H:Q 0.6 回場。</p></details></dd>
+<dd hidden><span class="root">ham＝大腿後側；string＝肌腱</span>　大腿後肌群，離心收縮時易拉傷。<p class="vpun"><span class="vtag">諧音梗</span>hamstring「後腿弦」：大腿後肌離心時易斷弦。</p><details data-kind="vocab-memory" open><summary>記憶提示</summary><p>超音波分級、H:Q 0.6 回場。</p></details></dd>
 
 <dt>isokinetic strength ratio</dt>
-<dd><span class="root">iso-（等）+ kinetic（運動）</span>　等速肌力比；hamstring：quadriceps 要到 0.6 才回到多數運動。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>0.6，H 在前 Q 在後。</p></details></dd>
+<dd hidden><span class="root">iso-（等）+ kinetic（運動）</span>　等速肌力比；hamstring：quadriceps 要到 0.6 才回到多數運動。<p class="vpun"><span class="vtag">諧音梗</span>iso「等速」比 0.6：H:Q 到 0.6 才回場。</p><details data-kind="vocab-memory" open><summary>記憶提示</summary><p>0.6，H 在前 Q 在後。</p></details></dd>
 
 <dt>musculotendinous junction</dt>
-<dd><span class="root">musculo-（肌肉）+ tendinous（肌腱）</span>　肌肉肌腱交界處，肌肉拉傷最常發生的位置。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>113 年正確答案裡的地點。</p></details></dd>
+<dd hidden><span class="root">musculo-（肌肉）+ tendinous（肌腱）</span>　肌肉肌腱交界處，肌肉拉傷最常發生的位置。<p class="vpun"><span class="vtag">諧音梗</span>「肌腱交界」junction：拉傷最愛的地點。</p><details data-kind="vocab-memory" open><summary>記憶提示</summary><p>113 年正確答案裡的地點。</p></details></dd>
 
 <dt>myositis ossificans</dt>
-<dd><span class="root">myo-（肌）+ -itis（炎）+ ossificans（骨化）</span>　骨化性肌炎，肌肉內挫傷的併發症。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>挫傷不是「輕微、很少併發症」。</p></details></dd>
+<dd hidden><span class="root">myo-（肌）+ -itis（炎）+ ossificans（骨化）</span>　骨化性肌炎，肌肉內挫傷的併發症。<p class="vpun"><span class="vtag">諧音梗</span>ossificans「骨化」的肌炎：挫傷後肌肉長骨頭。</p><details data-kind="vocab-memory" open><summary>記憶提示</summary><p>挫傷不是「輕微、很少併發症」。</p></details></dd>
 
 <dt>delayed-onset muscle soreness (DOMS)</dt>
-<dd><span class="root">delayed＝延遲</span>　延遲性肌肉痠痛，運動後 24–48 小時出現，與離心收縮有關。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>不是「立即」、不是「與離心無關」。</p></details></dd>
+<dd hidden><span class="root">delayed＝延遲</span>　延遲性肌肉痠痛，運動後 24–48 小時出現，與離心收縮有關。<p class="vpun"><span class="vtag">諧音梗</span>DOMS「等兩天」痠：24–48 小時，離心引起。</p><details data-kind="vocab-memory" open><summary>記憶提示</summary><p>不是「立即」、不是「與離心無關」。</p></details></dd>
 
 <dt>tennis elbow / lateral epicondylitis</dt>
-<dd><span class="root">epi-（上）+ condyle（髁）</span>　網球肘，外上髁壓痛，最常侵犯 ECRB；病理是退化不是發炎。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>「-itis」名不符實：degenerative。</p></details></dd>
+<dd hidden><span class="root">epi-（上）+ condyle（髁）</span>　網球肘，外上髁壓痛，最常侵犯 ECRB；病理是退化不是發炎。<p class="vpun"><span class="vtag">諧音梗</span>「網球肘＝退化」：外上髁痛，不是發炎。</p><details data-kind="vocab-memory" open><summary>記憶提示</summary><p>「-itis」名不符實：degenerative。</p></details></dd>
 
 <dt>extensor carpi radialis brevis (ECRB)</dt>
-<dd><span class="root">extensor（伸肌）carpi（腕）radialis（橈側）brevis（短）</span>　橈側伸腕短肌，網球肘最常侵犯的肌腱，起點在外上髁。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>外上髁是它的 origin，不是 insertion（申覆點）。</p></details></dd>
+<dd hidden><span class="root">extensor（伸肌）carpi（腕）radialis（橈側）brevis（短）</span>　橈側伸腕短肌，網球肘最常侵犯的肌腱，起點在外上髁。<p class="vpun"><span class="vtag">諧音梗</span>ECRB「伊拷 RB」：橈側伸腕短肌，網球肘主犯。</p><details data-kind="vocab-memory" open><summary>記憶提示</summary><p>外上髁是它的 origin，不是 insertion（申覆點）。</p></details></dd>
 
 <dt>no man's land (Zone II)</dt>
-<dd><span class="root">無人地帶</span>　手指屈肌腱第 II 區，修補預後最差的區域。<details data-kind="vocab-memory"><summary>記憶提示</summary><p><b>II 不是 III</b>；Zone IV 在腕隧道。</p></details></dd>
+<dd hidden><span class="root">無人地帶</span>　手指屈肌腱第 II 區，修補預後最差的區域。<p class="vpun"><span class="vtag">諧音梗</span>no man's land「無人區」＝Zone II：預後最差。</p><details data-kind="vocab-memory" open><summary>記憶提示</summary><p><b>II 不是 III</b>；Zone IV 在腕隧道。</p></details></dd>
 
 <dt>dorsal blocking splint</dt>
-<dd><span class="root">dorsal（背側）+ blocking（阻擋）</span>　背側阻擋副木，屈肌腱修補後急性期擺位，限制主動與被動伸直。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>擋住伸直，肌腱才不會再斷。</p></details></dd>
+<dd hidden><span class="root">dorsal（背側）+ blocking（阻擋）</span>　背側阻擋副木，屈肌腱修補後急性期擺位，限制主動與被動伸直。<p class="vpun"><span class="vtag">諧音梗</span>dorsal「背」blocking「擋」：擋住伸直，肌腱不再斷。</p><details data-kind="vocab-memory" open><summary>記憶提示</summary><p>擋住伸直，肌腱才不會再斷。</p></details></dd>
 
 <dt>isometric exercise</dt>
-<dd><span class="root">iso-（等）+ metric（長度）</span>　等長收縮運動，骨折病人肌力訓練的起點。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>長度不變、先出力。</p></details></dd>
+<dd hidden><span class="root">iso-（等）+ metric（長度）</span>　等長收縮運動，骨折病人肌力訓練的起點。<p class="vpun"><span class="vtag">諧音梗</span>iso「等」metric「長」：長度不變先出力，骨折起步。</p><details data-kind="vocab-memory" open><summary>記憶提示</summary><p>長度不變、先出力。</p></details></dd>
 
 <dt>active assist range of motion</dt>
-<dd><span class="root">assist＝協助</span>　主動輔助關節活動，骨折早期 ROM 運動的起點。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>早期就要動，只是有人幫。</p></details></dd>
+<dd hidden><span class="root">assist＝協助</span>　主動輔助關節活動，骨折早期 ROM 運動的起點。<p class="vpun"><span class="vtag">諧音梗</span>「主動＋有人扶」：早期 ROM 起步。</p><details data-kind="vocab-memory" open><summary>記憶提示</summary><p>早期就要動，只是有人幫。</p></details></dd>
 
 <dt>transcutaneous electrical stimulation (TENS)</dt>
-<dd><span class="root">trans-（穿過）+ cutaneous（皮膚）</span>　經皮電刺激，可改善骨折後疼痛與水腫。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>止痛又消腫，是對的敘述。</p></details></dd>
+<dd hidden><span class="root">trans-（穿過）+ cutaneous（皮膚）</span>　經皮電刺激，可改善骨折後疼痛與水腫。<p class="vpun"><span class="vtag">諧音梗</span>TENS「疼死」電一電：止痛消腫。</p><details data-kind="vocab-memory" open><summary>記憶提示</summary><p>止痛又消腫，是對的敘述。</p></details></dd>
 
 <dt>unhappy triad</dt>
-<dd><span class="root">triad＝三合一</span>　膝外側撞擊造成的 ACL ＋ MCL ＋ 內側半月板損傷。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>三個都在「內側／前方」，外側半月板不在。</p></details></dd>
+<dd hidden><span class="root">triad＝三合一</span>　膝外側撞擊造成的 ACL ＋ MCL ＋ 內側半月板損傷。<p class="vpun"><span class="vtag">諧音梗</span>unhappy「不開心三兄弟」：ACL＋MCL＋內側半月板。</p><details data-kind="vocab-memory" open><summary>記憶提示</summary><p>三個都在「內側／前方」，外側半月板不在。</p></details></dd>
 </dl>
 </section>
 <section id="chapter-final" data-chapter-kind="final_questions">
@@ -824,5 +843,36 @@ figure.boxfig .figtag{color:var(--violet);font-size:.76rem;letter-spacing:.1em;
   });
 </script>
 <!-- nb-comments:end -->
+
+<script data-nb-vocab-flip>
+(function(){
+  var dl=document.querySelector('dl.vocab'); if(!dl) return;
+  var dts=Array.prototype.slice.call(dl.querySelectorAll('dt'));
+  var count=document.querySelector('.vtools .vcount');
+  function dd(dt){return dt.nextElementSibling && dt.nextElementSibling.tagName==='DD' ? dt.nextElementSibling : null;}
+  function set(dt,open){var d=dd(dt); if(!d) return; d.hidden=!open; dt.classList.toggle('open',open); dt.setAttribute('aria-expanded',open?'true':'false');}
+  function refresh(){ if(!count) return; var n=dts.filter(function(dt){return dt.classList.contains('open');}).length; count.textContent='已翻 '+n+' / '+dts.length; }
+  dts.forEach(function(dt){
+    dt.tabIndex=0; dt.setAttribute('role','button'); set(dt,false);
+    dt.addEventListener('click',function(){ set(dt,dd(dt).hidden); refresh(); });
+    dt.addEventListener('keydown',function(e){ if(e.key==='Enter'||e.key===' '){ e.preventDefault(); dt.click(); } });
+  });
+  var tools=document.querySelector('.vtools'); if(!tools) return;
+  tools.addEventListener('click',function(e){
+    var b=e.target.closest('button'); if(!b) return;
+    var act=b.getAttribute('data-act');
+    if(act==='open'){ dts.forEach(function(dt){set(dt,true);}); }
+    else if(act==='close'){ dts.forEach(function(dt){set(dt,false);}); }
+    else if(act==='quiz'){
+      var closed=dts.filter(function(dt){return !dt.classList.contains('open');});
+      if(!closed.length){ dts.forEach(function(dt){set(dt,false);}); closed=dts; }
+      var pick=closed[Math.floor(Math.random()*closed.length)];
+      pick.scrollIntoView({behavior:'smooth',block:'center'}); pick.focus({preventScroll:true});
+    }
+    refresh();
+  });
+  refresh();
+})();
+</script>
 </body>
 </html>
