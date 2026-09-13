@@ -94,6 +94,23 @@ figure.boxfig figcaption{color:var(--dim);font-size:.82rem;margin-top:.5rem;
 figure.boxfig .figtag{color:var(--violet);font-size:.76rem;letter-spacing:.1em;
   display:block;margin-bottom:.3rem}
 .ending{color:var(--dim);font-style:italic;margin:1.6rem 0 2.4rem}
+
+/* nb-vocab-flip:start */
+dl.vocab dt{cursor:pointer;user-select:none;position:relative;padding-right:6.2rem;border-bottom:1px dashed var(--line)}
+dl.vocab dt::after{content:"點我翻牌 ▸";position:absolute;right:0;top:.15rem;font-size:.8rem;color:var(--dim);font-weight:400}
+dl.vocab dt.open::after{content:"蓋回去 ▾";color:var(--gold)}
+dl.vocab dt:focus-visible{outline:2px solid var(--cyan);outline-offset:3px;border-radius:4px}
+dl.vocab dd[hidden]{display:none}
+dl.vocab dd{padding:.5rem .7rem .6rem;background:var(--panel);border:1px solid var(--line);border-top:0;border-radius:0 0 8px 8px;margin-bottom:.4rem}
+dl.vocab .vpun{margin:.5rem 0 0;padding:.45rem .65rem;border-left:3px solid var(--gold);background:rgba(229,181,103,.08);border-radius:4px}
+dl.vocab .vpun .vtag{color:var(--gold);font-weight:700;margin-right:.45rem}
+dl.vocab details[data-kind="vocab-memory"]{margin-top:.45rem}
+.vtools{display:flex;gap:.5rem;flex-wrap:wrap;align-items:center;margin:.5rem 0 .3rem}
+.vtools button{font:inherit;font-size:.9rem;padding:.35rem .8rem;border-radius:999px;border:1px solid var(--line);background:var(--panel);color:var(--ink);cursor:pointer}
+.vtools button:hover{border-color:var(--cyan);color:var(--cyan)}
+.vtools .vcount{color:var(--dim);font-size:.85rem;margin-left:auto}
+.vhow{color:var(--dim);font-size:.9rem;margin:.2rem 0 .4rem}
+/* nb-vocab-flip:end */
 </style></head>
 <body>
 <div class="container">
@@ -425,60 +442,62 @@ figure.boxfig .figtag{color:var(--violet);font-size:.76rem;letter-spacing:.1em;
 <!-- ================= VOCAB ================= -->
 <section id="chapter-vocab" data-chapter-kind="vocab">
 <h2>四、單字表</h2>
+<p class="vhow">先看英文想中文，點單字翻牌看意思、諧音梗與記憶提示。</p>
+<div class="vtools"><button type="button" data-act="quiz">🎲 隨機抽一張</button><button type="button" data-act="open">全部翻開</button><button type="button" data-act="close">全部蓋上</button><span class="vcount"></span></div>
 <dl class="vocab">
 <dt>primary (direct) bone healing</dt>
-<dd><span class="root">primary＝一期；direct＝直接</span>　一期骨癒合。絕對穩定下骨元直接跨過斷面，無骨痂。<details data-kind="vocab-memory"><summary>記憶提示</summary><p><b>壓死了走這條。</b>靠膜內骨化與骨元重塑。</p></details></dd>
+<dd hidden><span class="root">primary＝一期；direct＝直接</span>　一期骨癒合。絕對穩定下骨元直接跨過斷面，無骨痂。<p class="vpun"><span class="vtag">諧音梗</span>primary「排一」直接縫：絕對穩定下骨元直接跨過，沒骨痂。</p><details data-kind="vocab-memory" open><summary>記憶提示</summary><p><b>壓死了走這條。</b>靠膜內骨化與骨元重塑。</p></details></dd>
 
 <dt>secondary (indirect) bone healing</dt>
-<dd><span class="root">secondary＝二期；indirect＝間接</span>　二期骨癒合。相對穩定下經骨痂癒合，膜內加軟骨內骨化。<details data-kind="vocab-memory"><summary>記憶提示</summary><p><b>留縫走這條，最常見。</b></p></details></dd>
+<dd hidden><span class="root">secondary＝二期；indirect＝間接</span>　二期骨癒合。相對穩定下經骨痂癒合，膜內加軟骨內骨化。<p class="vpun"><span class="vtag">諧音梗</span>secondary「塞坑」：相對穩定下先用骨痂塞住斷面再變骨。</p><details data-kind="vocab-memory" open><summary>記憶提示</summary><p><b>留縫走這條，最常見。</b></p></details></dd>
 
 <dt>absolute stability</dt>
-<dd><span class="root">absolute＝絕對</span>　絕對穩定。骨折處完全沒有動作，導向一期癒合。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>加壓鋼板、拉力螺絲給的。<b>不該看到骨痂。</b></p></details></dd>
+<dd hidden><span class="root">absolute＝絕對</span>　絕對穩定。骨折處完全沒有動作，導向一期癒合。<p class="vpun"><span class="vtag">諧音梗</span>absolute「阿伯死了都不動」：斷端完全不動＝一期癒合。</p><details data-kind="vocab-memory" open><summary>記憶提示</summary><p>加壓鋼板、拉力螺絲給的。<b>不該看到骨痂。</b></p></details></dd>
 
 <dt>relative stability</dt>
-<dd><span class="root">relative＝相對</span>　相對穩定。允許斷端微動作為機械刺激，導向二期癒合。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>髓內釘、外固定架給的。<b>微動是刺激，不是失敗。</b></p></details></dd>
+<dd hidden><span class="root">relative＝相對</span>　相對穩定。允許斷端微動作為機械刺激，導向二期癒合。<p class="vpun"><span class="vtag">諧音梗</span>relative「略動」：允許微動當刺激＝二期癒合。</p><details data-kind="vocab-memory" open><summary>記憶提示</summary><p>髓內釘、外固定架給的。<b>微動是刺激，不是失敗。</b></p></details></dd>
 
 <dt>callus</dt>
-<dd><span class="root">拉丁 callus＝硬皮</span>　骨痂。二期癒合時斷端外先形成的軟骨痂與硬骨痂。<details data-kind="vocab-memory"><summary>記憶提示</summary><p><b>相對穩定的產物。</b>絕對穩定配骨痂就是錯的。</p></details></dd>
+<dd hidden><span class="root">拉丁 callus＝硬皮</span>　骨痂。二期癒合時斷端外先形成的軟骨痂與硬骨痂。<p class="vpun"><span class="vtag">諧音梗</span>callus「卡勒死」：斷端外面卡一圈骨痂。</p><details data-kind="vocab-memory" open><summary>記憶提示</summary><p><b>相對穩定的產物。</b>絕對穩定配骨痂就是錯的。</p></details></dd>
 
 <dt>osteonal remodeling</dt>
-<dd><span class="root">osteon（骨元）</span>　骨元重塑。一期癒合的核心：骨元直接鑽過斷面把骨縫起來。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>屬<b>一期</b>。寫成二期就是錯的。</p></details></dd>
+<dd hidden><span class="root">osteon（骨元）</span>　骨元重塑。一期癒合的核心：骨元直接鑽過斷面把骨縫起來。<p class="vpun"><span class="vtag">諧音梗</span>osteon「骨東」鑽過去：骨元直接鑽過斷面把骨縫起來。</p><details data-kind="vocab-memory" open><summary>記憶提示</summary><p>屬<b>一期</b>。寫成二期就是錯的。</p></details></dd>
 
 <dt>intramedullary nail</dt>
-<dd><span class="root">intra-（內）+ medulla（髓）</span>　髓內釘。穿過骨髓腔固定，提供相對穩定。<details data-kind="vocab-memory"><summary>記憶提示</summary><p><b>最不會造成一期癒合</b>的植入物。擴髓會減少骨內膜血流。</p></details></dd>
+<dd hidden><span class="root">intra-（內）+ medulla（髓）</span>　髓內釘。穿過骨髓腔固定，提供相對穩定。<p class="vpun"><span class="vtag">諧音梗</span>intra「插」medullary「髓」：釘子插進骨髓腔，相對穩定。</p><details data-kind="vocab-memory" open><summary>記憶提示</summary><p><b>最不會造成一期癒合</b>的植入物。擴髓會減少骨內膜血流。</p></details></dd>
 
 <dt>compression plate</dt>
-<dd><span class="root">compression＝加壓</span>　加壓鋼板。把斷面壓緊，提供絕對穩定。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>一期癒合的代表植入物；接觸面積大會減少灌注。</p></details></dd>
+<dd hidden><span class="root">compression＝加壓</span>　加壓鋼板。把斷面壓緊，提供絕對穩定。<p class="vpun"><span class="vtag">諧音梗</span>compression「壓緊」plate：鋼板把斷面壓緊，絕對穩定。</p><details data-kind="vocab-memory" open><summary>記憶提示</summary><p>一期癒合的代表植入物；接觸面積大會減少灌注。</p></details></dd>
 
 <dt>external fixator</dt>
-<dd><span class="root">external＝外部</span>　外固定架。骨釘穿出體外以支架連接，提供相對穩定。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>與髓內釘同組——相對穩定。</p></details></dd>
+<dd hidden><span class="root">external＝外部</span>　外固定架。骨釘穿出體外以支架連接，提供相對穩定。<p class="vpun"><span class="vtag">諧音梗</span>external「外」fix：骨釘伸出體外接支架，相對穩定。</p><details data-kind="vocab-memory" open><summary>記憶提示</summary><p>與髓內釘同組——相對穩定。</p></details></dd>
 
 <dt>reaming</dt>
-<dd><span class="root">ream＝擴孔</span>　擴髓。打髓內釘前把髓腔刮大。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>刮掉髓腔就刮掉裡面的血管——<b>減少骨內膜血流</b>。</p></details></dd>
+<dd hidden><span class="root">ream＝擴孔</span>　擴髓。打髓內釘前把髓腔刮大。<p class="vpun"><span class="vtag">諧音梗</span>reaming「刮明」：打髓內釘前把髓腔刮大。</p><details data-kind="vocab-memory" open><summary>記憶提示</summary><p>刮掉髓腔就刮掉裡面的血管——<b>減少骨內膜血流</b>。</p></details></dd>
 
 <dt>endosteal blood flow</dt>
-<dd><span class="root">endo-（內）+ osteum（骨）</span>　骨內膜血流，來自髓腔側的血供。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>擴髓傷的就是它。</p></details></dd>
+<dd hidden><span class="root">endo-（內）+ osteum（骨）</span>　骨內膜血流，來自髓腔側的血供。<p class="vpun"><span class="vtag">諧音梗</span>endo「內」骨膜血流：從髓腔側供血。</p><details data-kind="vocab-memory" open><summary>記憶提示</summary><p>擴髓傷的就是它。</p></details></dd>
 
 <dt>perfusion</dt>
-<dd><span class="root">per-（穿過）+ fusion（流）</span>　灌注。血流進入組織的程度。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>植入物壓住的地方灌注變差——接觸面積越大越差。</p></details></dd>
+<dd hidden><span class="root">per-（穿過）+ fusion（流）</span>　灌注。血流進入組織的程度。<p class="vpun"><span class="vtag">諧音梗</span>perfusion「噴進去」：血流灌進組織的程度。</p><details data-kind="vocab-memory" open><summary>記憶提示</summary><p>植入物壓住的地方灌注變差——接觸面積越大越差。</p></details></dd>
 
 <dt>surgical approach</dt>
-<dd><span class="root">approach＝入路</span>　手術入路。決定剝離多少骨膜、保留多少血供。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>影響血供的三因素之一（另兩個：受傷機轉、早期固定）。</p></details></dd>
+<dd hidden><span class="root">approach＝入路</span>　手術入路。決定剝離多少骨膜、保留多少血供。<p class="vpun"><span class="vtag">諧音梗</span>approach「怎麼靠近」：入路決定剝多少骨膜、留多少血供。</p><details data-kind="vocab-memory" open><summary>記憶提示</summary><p>影響血供的三因素之一（另兩個：受傷機轉、早期固定）。</p></details></dd>
 
 <dt>VEGF</dt>
-<dd><span class="root">Vascular Endothelial Growth Factor</span>　血管內皮生長因子，骨折癒合中驅動血管新生。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>名字裡就有 vascular——<b>老師特別強調</b>。</p></details></dd>
+<dd hidden><span class="root">Vascular Endothelial Growth Factor</span>　血管內皮生長因子，骨折癒合中驅動血管新生。<p class="vpun"><span class="vtag">諧音梗</span>VEGF「V 開血管」：血管內皮生長因子，骨折時長新血管。</p><details data-kind="vocab-memory" open><summary>記憶提示</summary><p>名字裡就有 vascular——<b>老師特別強調</b>。</p></details></dd>
 
 <dt>BMP-2</dt>
-<dd><span class="root">Bone Morphogenetic Protein 2</span>　骨形態發生蛋白，誘導成骨分化。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>它管成骨，不管血管——113 年的干擾選項。</p></details></dd>
+<dd hidden><span class="root">Bone Morphogenetic Protein 2</span>　骨形態發生蛋白，誘導成骨分化。<p class="vpun"><span class="vtag">諧音梗</span>BMP「變骨 Protein」：骨形態發生蛋白，叫細胞去成骨。</p><details data-kind="vocab-memory" open><summary>記憶提示</summary><p>它管成骨，不管血管——113 年的干擾選項。</p></details></dd>
 
 <dt>IL-1β / TNF-α</dt>
-<dd><span class="root">interleukin、tumor necrosis factor</span>　發炎期的促發炎激素，參與骨折癒合早期。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>發炎是癒合的一部分，所以它們「有參與」。</p></details></dd>
+<dd hidden><span class="root">interleukin、tumor necrosis factor</span>　發炎期的促發炎激素，參與骨折癒合早期。<p class="vpun"><span class="vtag">諧音梗</span>IL-1「發炎一號」、TNF「腫瘤壞死」：早期發炎期的兩大促炎激素。</p><details data-kind="vocab-memory" open><summary>記憶提示</summary><p>發炎是癒合的一部分，所以它們「有參與」。</p></details></dd>
 
 <dt>IL-9</dt>
-<dd><span class="root">interleukin-9</span>　與造血相關的介白素，與骨折癒合無直接關係。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>112 年「不參與」的答案。老師完全沒講到。</p></details></dd>
+<dd hidden><span class="root">interleukin-9</span>　與造血相關的介白素，與骨折癒合無直接關係。<p class="vpun"><span class="vtag">諧音梗</span>IL-9「久」不相關：管造血，跟骨折癒合無關，考題干擾項。</p><details data-kind="vocab-memory" open><summary>記憶提示</summary><p>112 年「不參與」的答案。老師完全沒講到。</p></details></dd>
 
 <dt>mechanical stimulation</dt>
-<dd><span class="root">mechanical＝機械的</span>　機械刺激。相對穩定下的微動對癒合的促進訊號。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>「允許一些機械刺激」就是相對穩定的定義句。</p></details></dd>
+<dd hidden><span class="root">mechanical＝機械的</span>　機械刺激。相對穩定下的微動對癒合的促進訊號。<p class="vpun"><span class="vtag">諧音梗</span>mechanical「搖一搖」：相對穩定下的微動是促癒合的訊號。</p><details data-kind="vocab-memory" open><summary>記憶提示</summary><p>「允許一些機械刺激」就是相對穩定的定義句。</p></details></dd>
 </dl>
 </section>
 <section id="chapter-final" data-chapter-kind="final_questions">
@@ -681,5 +700,36 @@ figure.boxfig .figtag{color:var(--violet);font-size:.76rem;letter-spacing:.1em;
   });
 </script>
 <!-- nb-comments:end -->
+
+<script data-nb-vocab-flip>
+(function(){
+  var dl=document.querySelector('dl.vocab'); if(!dl) return;
+  var dts=Array.prototype.slice.call(dl.querySelectorAll('dt'));
+  var count=document.querySelector('.vtools .vcount');
+  function dd(dt){return dt.nextElementSibling && dt.nextElementSibling.tagName==='DD' ? dt.nextElementSibling : null;}
+  function set(dt,open){var d=dd(dt); if(!d) return; d.hidden=!open; dt.classList.toggle('open',open); dt.setAttribute('aria-expanded',open?'true':'false');}
+  function refresh(){ if(!count) return; var n=dts.filter(function(dt){return dt.classList.contains('open');}).length; count.textContent='已翻 '+n+' / '+dts.length; }
+  dts.forEach(function(dt){
+    dt.tabIndex=0; dt.setAttribute('role','button'); set(dt,false);
+    dt.addEventListener('click',function(){ set(dt,dd(dt).hidden); refresh(); });
+    dt.addEventListener('keydown',function(e){ if(e.key==='Enter'||e.key===' '){ e.preventDefault(); dt.click(); } });
+  });
+  var tools=document.querySelector('.vtools'); if(!tools) return;
+  tools.addEventListener('click',function(e){
+    var b=e.target.closest('button'); if(!b) return;
+    var act=b.getAttribute('data-act');
+    if(act==='open'){ dts.forEach(function(dt){set(dt,true);}); }
+    else if(act==='close'){ dts.forEach(function(dt){set(dt,false);}); }
+    else if(act==='quiz'){
+      var closed=dts.filter(function(dt){return !dt.classList.contains('open');});
+      if(!closed.length){ dts.forEach(function(dt){set(dt,false);}); closed=dts; }
+      var pick=closed[Math.floor(Math.random()*closed.length)];
+      pick.scrollIntoView({behavior:'smooth',block:'center'}); pick.focus({preventScroll:true});
+    }
+    refresh();
+  });
+  refresh();
+})();
+</script>
 </body>
 </html>
