@@ -94,6 +94,23 @@ figure.boxfig figcaption{color:var(--dim);font-size:.82rem;margin-top:.5rem;
 figure.boxfig .figtag{color:var(--violet);font-size:.76rem;letter-spacing:.1em;
   display:block;margin-bottom:.3rem}
 .ending{color:var(--dim);font-style:italic;margin:1.6rem 0 2.4rem}
+
+/* nb-vocab-flip:start */
+dl.vocab dt{cursor:pointer;user-select:none;position:relative;padding-right:6.2rem;border-bottom:1px dashed var(--line)}
+dl.vocab dt::after{content:"點我翻牌 ▸";position:absolute;right:0;top:.15rem;font-size:.8rem;color:var(--dim);font-weight:400}
+dl.vocab dt.open::after{content:"蓋回去 ▾";color:var(--gold)}
+dl.vocab dt:focus-visible{outline:2px solid var(--cyan);outline-offset:3px;border-radius:4px}
+dl.vocab dd[hidden]{display:none}
+dl.vocab dd{padding:.5rem .7rem .6rem;background:var(--panel);border:1px solid var(--line);border-top:0;border-radius:0 0 8px 8px;margin-bottom:.4rem}
+dl.vocab .vpun{margin:.5rem 0 0;padding:.45rem .65rem;border-left:3px solid var(--gold);background:rgba(229,181,103,.08);border-radius:4px}
+dl.vocab .vpun .vtag{color:var(--gold);font-weight:700;margin-right:.45rem}
+dl.vocab details[data-kind="vocab-memory"]{margin-top:.45rem}
+.vtools{display:flex;gap:.5rem;flex-wrap:wrap;align-items:center;margin:.5rem 0 .3rem}
+.vtools button{font:inherit;font-size:.9rem;padding:.35rem .8rem;border-radius:999px;border:1px solid var(--line);background:var(--panel);color:var(--ink);cursor:pointer}
+.vtools button:hover{border-color:var(--cyan);color:var(--cyan)}
+.vtools .vcount{color:var(--dim);font-size:.85rem;margin-left:auto}
+.vhow{color:var(--dim);font-size:.9rem;margin:.2rem 0 .4rem}
+/* nb-vocab-flip:end */
 </style></head>
 <body>
 <div class="container">
@@ -511,66 +528,68 @@ figure.boxfig .figtag{color:var(--violet);font-size:.76rem;letter-spacing:.1em;
 <!-- ================= VOCAB ================= -->
 <section id="chapter-vocab" data-chapter-kind="vocab">
 <h2>五、單字表</h2>
+<p class="vhow">先看英文想中文，點單字翻牌看意思、諧音梗與記憶提示。</p>
+<div class="vtools"><button type="button" data-act="quiz">🎲 隨機抽一張</button><button type="button" data-act="open">全部翻開</button><button type="button" data-act="close">全部蓋上</button><span class="vcount"></span></div>
 <dl class="vocab">
 <dt>inlet / outlet view</dt>
-<dd><span class="root">inlet＝入口；outlet＝出口</span>　骨盆入口位與出口位，分別顯示環狀結構與薦骨最長徑。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>入口看環、出口看薦骨。</p></details></dd>
+<dd hidden><span class="root">inlet＝入口；outlet＝出口</span>　骨盆入口位與出口位，分別顯示環狀結構與薦骨最長徑。<p class="vpun"><span class="vtag">諧音梗</span>inlet「入」看環、outlet「出」看薦骨：入口看圈圈，出口看薦骨最長。</p><details data-kind="vocab-memory" open><summary>記憶提示</summary><p>入口看環、出口看薦骨。</p></details></dd>
 
 <dt>anteroposterior compression (APC)</dt>
-<dd><span class="root">antero-（前）+ posterior（後）</span>　前後壓迫損傷，造成翻書型骨盆與半骨盆外旋。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>前面撞，門打開。</p></details></dd>
+<dd hidden><span class="root">antero-（前）+ posterior（後）</span>　前後壓迫損傷，造成翻書型骨盆與半骨盆外旋。<p class="vpun"><span class="vtag">諧音梗</span>APC「啊、前撞」：前後壓迫，門被打開＝翻書、外旋。</p><details data-kind="vocab-memory" open><summary>記憶提示</summary><p>前面撞，門打開。</p></details></dd>
 
 <dt>lateral compression (LC)</dt>
-<dd><span class="root">lateral＝側</span>　側向壓迫損傷，造成半骨盆內旋。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>側面撞，門關上。三年都拿它當錯項。</p></details></dd>
+<dd hidden><span class="root">lateral＝側</span>　側向壓迫損傷，造成半骨盆內旋。<p class="vpun"><span class="vtag">諧音梗</span>LC「側撞」：側面壓，門被關上＝內旋。</p><details data-kind="vocab-memory" open><summary>記憶提示</summary><p>側面撞，門關上。三年都拿它當錯項。</p></details></dd>
 
 <dt>open book injury</dt>
-<dd><span class="root">open book＝翻開的書</span>　翻書型骨盆損傷，恥骨聯合分離、雙側半骨盆外旋。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>來自 <b>APC</b>，不是 LC。</p></details></dd>
+<dd hidden><span class="root">open book＝翻開的書</span>　翻書型骨盆損傷，恥骨聯合分離、雙側半骨盆外旋。<p class="vpun"><span class="vtag">諧音梗</span>「翻開的書」：恥骨聯合裂開、兩側半骨盆外翻，來自 APC。</p><details data-kind="vocab-memory" open><summary>記憶提示</summary><p>來自 <b>APC</b>，不是 LC。</p></details></dd>
 
 <dt>Garden classification</dt>
-<dd><span class="root">以 Garden 醫師命名</span>　股骨頸骨折分級，I／II 未移位、III／IV 移位。<details data-kind="vocab-memory"><summary>記憶提示</summary><p><b>I／II 固定、III／IV 換關節。</b></p></details></dd>
+<dd hidden><span class="root">以 Garden 醫師命名</span>　股骨頸骨折分級，I／II 未移位、III／IV 移位。<p class="vpun"><span class="vtag">諧音梗</span>Garden「花園」四等分：I／II 沒移位固定，III／IV 移位換關節。</p><details data-kind="vocab-memory" open><summary>記憶提示</summary><p><b>I／II 固定、III／IV 換關節。</b></p></details></dd>
 
 <dt>medial femoral circumflex artery</dt>
-<dd><span class="root">circumflex＝繞行</span>　內側迴旋股動脈，股骨頭主要血供，沿股骨頸由下往上。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>頸斷了它就斷了。<b>不是圓韌帶動脈。</b></p></details></dd>
+<dd hidden><span class="root">circumflex＝繞行</span>　內側迴旋股動脈，股骨頭主要血供，沿股骨頸由下往上。<p class="vpun"><span class="vtag">諧音梗</span>circumflex「繞著爬」：內側迴旋動脈沿股骨頸從下往上爬。</p><details data-kind="vocab-memory" open><summary>記憶提示</summary><p>頸斷了它就斷了。<b>不是圓韌帶動脈。</b></p></details></dd>
 
 <dt>ligamentum teres artery</dt>
-<dd><span class="root">teres＝圓的</span>　圓韌帶動脈，股骨頭的次要血供。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>113 年說它是主要血供——錯。</p></details></dd>
+<dd hidden><span class="root">teres＝圓的</span>　圓韌帶動脈，股骨頭的次要血供。<p class="vpun"><span class="vtag">諧音梗</span>teres「太細」：圓韌帶動脈太細，不算主要血供。</p><details data-kind="vocab-memory" open><summary>記憶提示</summary><p>113 年說它是主要血供——錯。</p></details></dd>
 
 <dt>osteonecrosis of femoral head</dt>
-<dd><span class="root">osteo-（骨）+ necrosis（壞死）</span>　股骨頭壞死，移位型頸骨折與髖脫臼的後果。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>這就是移位型要換關節的理由。</p></details></dd>
+<dd hidden><span class="root">osteo-（骨）+ necrosis（壞死）</span>　股骨頭壞死，移位型頸骨折與髖脫臼的後果。<p class="vpun"><span class="vtag">諧音梗</span>「頸斷血斷頭壞死」：頸骨折或脫臼後股骨頭沒血。</p><details data-kind="vocab-memory" open><summary>記憶提示</summary><p>這就是移位型要換關節的理由。</p></details></dd>
 
 <dt>intertrochanteric fracture</dt>
-<dd><span class="root">inter-（之間）+ trochanter（轉子）</span>　轉子間骨折，在股骨頸下方，血供不受影響。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>穩定 DHS、不穩定髓內釘，<b>不換關節</b>。</p></details></dd>
+<dd hidden><span class="root">inter-（之間）+ trochanter（轉子）</span>　轉子間骨折，在股骨頸下方，血供不受影響。<p class="vpun"><span class="vtag">諧音梗</span>inter「介於」trochanter「轉子」之間：頸下方，血供沒斷。</p><details data-kind="vocab-memory" open><summary>記憶提示</summary><p>穩定 DHS、不穩定髓內釘，<b>不換關節</b>。</p></details></dd>
 
 <dt>reverse oblique</dt>
-<dd><span class="root">reverse（反向）+ oblique（斜）</span>　反斜型轉子間骨折，屬不穩定型。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>不穩定 → 髓內釘／PFN。說它穩定或做半髖都錯。</p></details></dd>
+<dd hidden><span class="root">reverse（反向）+ oblique（斜）</span>　反斜型轉子間骨折，屬不穩定型。<p class="vpun"><span class="vtag">諧音梗</span>reverse「反」斜：反斜型＝不穩定，用髓內釘。</p><details data-kind="vocab-memory" open><summary>記憶提示</summary><p>不穩定 → 髓內釘／PFN。說它穩定或做半髖都錯。</p></details></dd>
 
 <dt>dynamic hip screw (DHS)</dt>
-<dd><span class="root">dynamic＝動態</span>　動態髖螺絲，穩定型轉子間骨折的固定。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>穩定用它，不穩定換髓內釘。</p></details></dd>
+<dd hidden><span class="root">dynamic＝動態</span>　動態髖螺絲，穩定型轉子間骨折的固定。<p class="vpun"><span class="vtag">諧音梗</span>DHS「大回絲」：穩定型轉子間用動態髖螺絲。</p><details data-kind="vocab-memory" open><summary>記憶提示</summary><p>穩定用它，不穩定換髓內釘。</p></details></dd>
 
 <dt>proximal femoral nail (PFN)</dt>
-<dd><span class="root">proximal＝近端</span>　股骨近端髓內釘，不穩定型轉子間骨折的固定。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>113 年的正確答案。</p></details></dd>
+<dd hidden><span class="root">proximal＝近端</span>　股骨近端髓內釘，不穩定型轉子間骨折的固定。<p class="vpun"><span class="vtag">諧音梗</span>PFN「碰釘」：不穩定型轉子間打股骨近端髓內釘。</p><details data-kind="vocab-memory" open><summary>記憶提示</summary><p>113 年的正確答案。</p></details></dd>
 
 <dt>hemiarthroplasty</dt>
-<dd><span class="root">hemi-（半）+ arthro-（關節）+ plasty（成形）</span>　半髖關節置換，只換股骨頭。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>給<b>移位型頸骨折的老人</b>；未移位或轉子間都不用。</p></details></dd>
+<dd hidden><span class="root">hemi-（半）+ arthro-（關節）+ plasty（成形）</span>　半髖關節置換，只換股骨頭。<p class="vpun"><span class="vtag">諧音梗</span>hemi「半」arthro「關節」plasty「換」：只換股骨頭，給移位型老人。</p><details data-kind="vocab-memory" open><summary>記憶提示</summary><p>給<b>移位型頸骨折的老人</b>；未移位或轉子間都不用。</p></details></dd>
 
 <dt>Schatzker classification</dt>
-<dd><span class="root">以 Schatzker 醫師命名</span>　脛骨平台骨折六型分類，依類型不依嚴重度。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>I–III 外側：劈裂、劈裂塌陷、純塌陷。</p></details></dd>
+<dd hidden><span class="root">以 Schatzker 醫師命名</span>　脛骨平台骨折六型分類，依類型不依嚴重度。<p class="vpun"><span class="vtag">諧音梗</span>Schatzker「殺去卡」六型：依類型不依嚴重度，I–III 在外側。</p><details data-kind="vocab-memory" open><summary>記憶提示</summary><p>I–III 外側：劈裂、劈裂塌陷、純塌陷。</p></details></dd>
 
 <dt>compartment syndrome / fracture blister</dt>
-<dd><span class="root">compartment＝腔室；blister＝水泡</span>　腔室症候群與骨折水泡，高能量平台骨折的併發症。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>110 年唯一正確的那句。</p></details></dd>
+<dd hidden><span class="root">compartment＝腔室；blister＝水泡</span>　腔室症候群與骨折水泡，高能量平台骨折的併發症。<p class="vpun"><span class="vtag">諧音梗</span>compartment「卡爆」腔室、blister「泡」：高能量平台骨折併發。</p><details data-kind="vocab-memory" open><summary>記憶提示</summary><p>110 年唯一正確的那句。</p></details></dd>
 
 <dt>buttress plate</dt>
-<dd><span class="root">buttress＝扶壁</span>　支撐鋼板，脛骨平台骨折的固定。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>兩年都以正確處置出現。</p></details></dd>
+<dd hidden><span class="root">buttress＝扶壁</span>　支撐鋼板，脛骨平台骨折的固定。<p class="vpun"><span class="vtag">諧音梗</span>buttress「扶住」plate：支撐鋼板扶住脛骨平台。</p><details data-kind="vocab-memory" open><summary>記憶提示</summary><p>兩年都以正確處置出現。</p></details></dd>
 
 <dt>Hoffa fracture</dt>
-<dd><span class="root">以 Hoffa 醫師命名</span>　股骨髁冠狀面骨折，正面片易漏，通常手術。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>「冠狀面、易漏、要開刀」三個關鍵字。</p></details></dd>
+<dd hidden><span class="root">以 Hoffa 醫師命名</span>　股骨髁冠狀面骨折，正面片易漏，通常手術。<p class="vpun"><span class="vtag">諧音梗</span>Hoffa「厚髁」冠狀面裂：正面片看不到，易漏要開刀。</p><details data-kind="vocab-memory" open><summary>記憶提示</summary><p>「冠狀面、易漏、要開刀」三個關鍵字。</p></details></dd>
 
 <dt>patella alta</dt>
-<dd><span class="root">alta＝高</span>　髕骨高位，最常見原因是髕腱斷裂。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>腱斷了，髕骨被往上拉。</p></details></dd>
+<dd hidden><span class="root">alta＝高</span>　髕骨高位，最常見原因是髕腱斷裂。<p class="vpun"><span class="vtag">諧音梗</span>alta「高」：髕骨高位，最常因髕腱斷裂被往上拉。</p><details data-kind="vocab-memory" open><summary>記憶提示</summary><p>腱斷了，髕骨被往上拉。</p></details></dd>
 
 <dt>crescent sign</dt>
-<dd><span class="root">crescent＝新月</span>　新月徵象，軟骨下骨折的透亮線，是骨壞死的徵象。<details data-kind="vocab-memory"><summary>記憶提示</summary><p><b>不是 OA</b>；出現時股骨頭輪廓還是圓的。</p></details></dd>
+<dd hidden><span class="root">crescent＝新月</span>　新月徵象，軟骨下骨折的透亮線，是骨壞死的徵象。<p class="vpun"><span class="vtag">諧音梗</span>crescent「可口新月」：新月透亮線＝骨壞死，不是 OA。</p><details data-kind="vocab-memory" open><summary>記憶提示</summary><p><b>不是 OA</b>；出現時股骨頭輪廓還是圓的。</p></details></dd>
 
 <dt>subchondral sclerosis / cyst</dt>
-<dd><span class="root">sub-（下）+ chondral（軟骨）</span>　軟骨下硬化與囊腫，OA 四徵象之二。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>四徵象：變窄、骨刺、硬化、囊腫。</p></details></dd>
+<dd hidden><span class="root">sub-（下）+ chondral（軟骨）</span>　軟骨下硬化與囊腫，OA 四徵象之二。<p class="vpun"><span class="vtag">諧音梗</span>sub「軟骨下」硬化＋囊腫：OA 四徵象之二。</p><details data-kind="vocab-memory" open><summary>記憶提示</summary><p>四徵象：變窄、骨刺、硬化、囊腫。</p></details></dd>
 </dl>
 </section>
 <section id="chapter-final" data-chapter-kind="final_questions">
@@ -804,5 +823,36 @@ figure.boxfig .figtag{color:var(--violet);font-size:.76rem;letter-spacing:.1em;
   });
 </script>
 <!-- nb-comments:end -->
+
+<script data-nb-vocab-flip>
+(function(){
+  var dl=document.querySelector('dl.vocab'); if(!dl) return;
+  var dts=Array.prototype.slice.call(dl.querySelectorAll('dt'));
+  var count=document.querySelector('.vtools .vcount');
+  function dd(dt){return dt.nextElementSibling && dt.nextElementSibling.tagName==='DD' ? dt.nextElementSibling : null;}
+  function set(dt,open){var d=dd(dt); if(!d) return; d.hidden=!open; dt.classList.toggle('open',open); dt.setAttribute('aria-expanded',open?'true':'false');}
+  function refresh(){ if(!count) return; var n=dts.filter(function(dt){return dt.classList.contains('open');}).length; count.textContent='已翻 '+n+' / '+dts.length; }
+  dts.forEach(function(dt){
+    dt.tabIndex=0; dt.setAttribute('role','button'); set(dt,false);
+    dt.addEventListener('click',function(){ set(dt,dd(dt).hidden); refresh(); });
+    dt.addEventListener('keydown',function(e){ if(e.key==='Enter'||e.key===' '){ e.preventDefault(); dt.click(); } });
+  });
+  var tools=document.querySelector('.vtools'); if(!tools) return;
+  tools.addEventListener('click',function(e){
+    var b=e.target.closest('button'); if(!b) return;
+    var act=b.getAttribute('data-act');
+    if(act==='open'){ dts.forEach(function(dt){set(dt,true);}); }
+    else if(act==='close'){ dts.forEach(function(dt){set(dt,false);}); }
+    else if(act==='quiz'){
+      var closed=dts.filter(function(dt){return !dt.classList.contains('open');});
+      if(!closed.length){ dts.forEach(function(dt){set(dt,false);}); closed=dts; }
+      var pick=closed[Math.floor(Math.random()*closed.length)];
+      pick.scrollIntoView({behavior:'smooth',block:'center'}); pick.focus({preventScroll:true});
+    }
+    refresh();
+  });
+  refresh();
+})();
+</script>
 </body>
 </html>
