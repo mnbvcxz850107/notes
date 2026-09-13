@@ -94,6 +94,23 @@ figure.boxfig figcaption{color:var(--dim);font-size:.82rem;margin-top:.5rem;
 figure.boxfig .figtag{color:var(--violet);font-size:.76rem;letter-spacing:.1em;
   display:block;margin-bottom:.3rem}
 .ending{color:var(--dim);font-style:italic;margin:1.6rem 0 2.4rem}
+
+/* nb-vocab-flip:start */
+dl.vocab dt{cursor:pointer;user-select:none;position:relative;padding-right:6.2rem;border-bottom:1px dashed var(--line)}
+dl.vocab dt::after{content:"點我翻牌 ▸";position:absolute;right:0;top:.15rem;font-size:.8rem;color:var(--dim);font-weight:400}
+dl.vocab dt.open::after{content:"蓋回去 ▾";color:var(--gold)}
+dl.vocab dt:focus-visible{outline:2px solid var(--cyan);outline-offset:3px;border-radius:4px}
+dl.vocab dd[hidden]{display:none}
+dl.vocab dd{padding:.5rem .7rem .6rem;background:var(--panel);border:1px solid var(--line);border-top:0;border-radius:0 0 8px 8px;margin-bottom:.4rem}
+dl.vocab .vpun{margin:.5rem 0 0;padding:.45rem .65rem;border-left:3px solid var(--gold);background:rgba(229,181,103,.08);border-radius:4px}
+dl.vocab .vpun .vtag{color:var(--gold);font-weight:700;margin-right:.45rem}
+dl.vocab details[data-kind="vocab-memory"]{margin-top:.45rem}
+.vtools{display:flex;gap:.5rem;flex-wrap:wrap;align-items:center;margin:.5rem 0 .3rem}
+.vtools button{font:inherit;font-size:.9rem;padding:.35rem .8rem;border-radius:999px;border:1px solid var(--line);background:var(--panel);color:var(--ink);cursor:pointer}
+.vtools button:hover{border-color:var(--cyan);color:var(--cyan)}
+.vtools .vcount{color:var(--dim);font-size:.85rem;margin-left:auto}
+.vhow{color:var(--dim);font-size:.9rem;margin:.2rem 0 .4rem}
+/* nb-vocab-flip:end */
 </style></head>
 <body>
 <div class="container">
@@ -430,48 +447,50 @@ figure.boxfig .figtag{color:var(--violet);font-size:.76rem;letter-spacing:.1em;
 <!-- ================= VOCAB ================= -->
 <section id="chapter-vocab" data-chapter-kind="vocab">
 <h2>四、單字表</h2>
+<p class="vhow">先看英文想中文，點單字翻牌看意思、諧音梗與記憶提示。</p>
+<div class="vtools"><button type="button" data-act="quiz">🎲 隨機抽一張</button><button type="button" data-act="open">全部翻開</button><button type="button" data-act="close">全部蓋上</button><span class="vcount"></span></div>
 <dl class="vocab">
 <dt>YCL method (CNRMT)</dt>
-<dd><span class="root">林育全老師的讀片口訣</span>　五步驟判讀骨骼 X 光：Category、Number、Relation、Morphology、Texture。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>像點名：<b>有沒有不該來的、人數、站位、長相、膚色</b>。</p></details></dd>
+<dd hidden><span class="root">林育全老師的讀片口訣</span>　五步驟判讀骨骼 X 光：Category、Number、Relation、Morphology、Texture。<p class="vpun"><span class="vtag">諧音梗</span>CNRMT「C 你、R 摸、T」：種類、數量、關係、形態、質地。</p><details data-kind="vocab-memory" open><summary>記憶提示</summary><p>像點名：<b>有沒有不該來的、人數、站位、長相、膚色</b>。</p></details></dd>
 
 <dt>Category</dt>
-<dd><span class="root">category＝類別</span>　種類：該有的骨頭少了一種、或出現異物（金屬、鈣化）。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>鈣化與金屬植入物都歸這裡。</p></details></dd>
+<dd hidden><span class="root">category＝類別</span>　種類：該有的骨頭少了一種、或出現異物（金屬、鈣化）。<p class="vpun"><span class="vtag">諧音梗</span>Category「該有的種類」：少一種骨或多異物（金屬鈣化）。</p><details data-kind="vocab-memory" open><summary>記憶提示</summary><p>鈣化與金屬植入物都歸這裡。</p></details></dd>
 
 <dt>Number</dt>
-<dd><span class="root">number＝數目</span>　數量：某種骨頭多了或少了。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>多一組中節遠節指骨。</p></details></dd>
+<dd hidden><span class="root">number＝數目</span>　數量：某種骨頭多了或少了。<p class="vpun"><span class="vtag">諧音梗</span>Number「數目」：某種骨多了或少了。</p><details data-kind="vocab-memory" open><summary>記憶提示</summary><p>多一組中節遠節指骨。</p></details></dd>
 
 <dt>Relation</dt>
-<dd><span class="root">relation＝關係</span>　相對位置：脫位、排列（內翻外翻）、關節腔寬窄。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>橈尺骨脫位。</p></details></dd>
+<dd hidden><span class="root">relation＝關係</span>　相對位置：脫位、排列（內翻外翻）、關節腔寬窄。<p class="vpun"><span class="vtag">諧音梗</span>Relation「關係」：脫位、內外翻、關節腔寬窄。</p><details data-kind="vocab-memory" open><summary>記憶提示</summary><p>橈尺骨脫位。</p></details></dd>
 
 <dt>Morphology</dt>
-<dd><span class="root">morpho-（形）+ -logy</span>　形態：骨頭本身的形狀與尺寸。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>橈骨過度彎曲。</p></details></dd>
+<dd hidden><span class="root">morpho-（形）+ -logy</span>　形態：骨頭本身的形狀與尺寸。<p class="vpun"><span class="vtag">諧音梗</span>Morphology「摸形」：骨頭形狀與尺寸，過彎算這裡。</p><details data-kind="vocab-memory" open><summary>記憶提示</summary><p>橈骨過度彎曲。</p></details></dd>
 
 <dt>Texture</dt>
-<dd><span class="root">texture＝質地</span>　質地：骨頭的密度——骨折線、硬化變白、溶骨變黑。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>三個都是<b>骨頭本身</b>的密度，金屬不算。</p></details></dd>
+<dd hidden><span class="root">texture＝質地</span>　質地：骨頭的密度——骨折線、硬化變白、溶骨變黑。<p class="vpun"><span class="vtag">諧音梗</span>Texture「質地」：密度——骨折線、變白、變黑。</p><details data-kind="vocab-memory" open><summary>記憶提示</summary><p>三個都是<b>骨頭本身</b>的密度，金屬不算。</p></details></dd>
 
 <dt>over-bowing</dt>
-<dd><span class="root">bow＝弓</span>　過度彎曲。長骨呈弓形變形，屬 Morphology。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>三年固定的 M 例子。</p></details></dd>
+<dd hidden><span class="root">bow＝弓</span>　過度彎曲。長骨呈弓形變形，屬 Morphology。<p class="vpun"><span class="vtag">諧音梗</span>over-bowing「過彎」弓形：屬 Morphology。</p><details data-kind="vocab-memory" open><summary>記憶提示</summary><p>三年固定的 M 例子。</p></details></dd>
 
 <dt>osteolytic lesion</dt>
-<dd><span class="root">osteo-（骨）+ lysis（溶解）</span>　溶骨病灶，X 光上變黑，屬 Texture。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>密度<b>減少</b>；變白是密度增加，兩者都是 T。</p></details></dd>
+<dd hidden><span class="root">osteo-（骨）+ lysis（溶解）</span>　溶骨病灶，X 光上變黑，屬 Texture。<p class="vpun"><span class="vtag">諧音梗</span>lytic「溶」：溶骨變黑，屬 Texture。</p><details data-kind="vocab-memory" open><summary>記憶提示</summary><p>密度<b>減少</b>；變白是密度增加，兩者都是 T。</p></details></dd>
 
 <dt>carpal tunnel view</dt>
-<dd><span class="root">carpal＝腕的；tunnel＝隧道</span>　腕隧道投影。腕背屈、X 光沿隧道軸射入。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>看到<b>鉤骨鉤、豌豆骨、頭狀骨、舟狀骨、大多角骨</b>；掌骨不在。</p></details></dd>
+<dd hidden><span class="root">carpal＝腕的；tunnel＝隧道</span>　腕隧道投影。腕背屈、X 光沿隧道軸射入。<p class="vpun"><span class="vtag">諧音梗</span>carpal tunnel「腕隧道」投影：腕背屈沿隧道射。</p><details data-kind="vocab-memory" open><summary>記憶提示</summary><p>看到<b>鉤骨鉤、豌豆骨、頭狀骨、舟狀骨、大多角骨</b>；掌骨不在。</p></details></dd>
 
 <dt>hook of hamate</dt>
-<dd><span class="root">hamate＝鉤狀的</span>　鉤骨鉤，腕隧道尺側壁，carpal tunnel view 的主要構造。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>這個投影就是為了看它與豌豆骨。</p></details></dd>
+<dd hidden><span class="root">hamate＝鉤狀的</span>　鉤骨鉤，腕隧道尺側壁，carpal tunnel view 的主要構造。<p class="vpun"><span class="vtag">諧音梗</span>hamate「鉤」骨鉤：腕隧道尺側壁，投影主角。</p><details data-kind="vocab-memory" open><summary>記憶提示</summary><p>這個投影就是為了看它與豌豆骨。</p></details></dd>
 
 <dt>pisiform</dt>
-<dd><span class="root">拉丁 pisum＝豌豆</span>　豌豆骨，腕隧道尺側的小骨。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>兩種投影都看得到它。</p></details></dd>
+<dd hidden><span class="root">拉丁 pisum＝豌豆</span>　豌豆骨，腕隧道尺側的小骨。<p class="vpun"><span class="vtag">諧音梗</span>pisiform「豌豆」：腕隧道尺側小骨。</p><details data-kind="vocab-memory" open><summary>記憶提示</summary><p>兩種投影都看得到它。</p></details></dd>
 
 <dt>trapezium</dt>
-<dd><span class="root">希臘 trapezion＝梯形</span>　大多角骨，腕隧道橈側壁。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>兩種投影都看得到它。</p></details></dd>
+<dd hidden><span class="root">希臘 trapezion＝梯形</span>　大多角骨，腕隧道橈側壁。<p class="vpun"><span class="vtag">諧音梗</span>trapezium「大多角」：腕隧道橈側壁。</p><details data-kind="vocab-memory" open><summary>記憶提示</summary><p>兩種投影都看得到它。</p></details></dd>
 
 <dt>cuboid</dt>
-<dd><span class="root">cube＝立方體</span>　骰骨，<b>足部</b>的跗骨之一。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>八塊腕骨沒有它——113 年的送分題。</p></details></dd>
+<dd hidden><span class="root">cube＝立方體</span>　骰骨，<b>足部</b>的跗骨之一。<p class="vpun"><span class="vtag">諧音梗</span>cuboid「骰子」骨：那是腳的，不在腕部投影。</p><details data-kind="vocab-memory" open><summary>記憶提示</summary><p>八塊腕骨沒有它——113 年的送分題。</p></details></dd>
 
 <dt>metacarpal</dt>
-<dd><span class="root">meta-（之後）+ carpal（腕）</span>　掌骨，腕骨遠端的五根長骨。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>不圍成腕隧道，所以不是 carpal tunnel view 的主要構造。</p></details></dd>
+<dd hidden><span class="root">meta-（之後）+ carpal（腕）</span>　掌骨，腕骨遠端的五根長骨。<p class="vpun"><span class="vtag">諧音梗</span>meta「掌」carpal：腕骨遠端五根長骨，carpal tunnel view 沒它。</p><details data-kind="vocab-memory" open><summary>記憶提示</summary><p>不圍成腕隧道，所以不是 carpal tunnel view 的主要構造。</p></details></dd>
 </dl>
 </section>
 <section id="chapter-final" data-chapter-kind="final_questions">
@@ -674,5 +693,36 @@ figure.boxfig .figtag{color:var(--violet);font-size:.76rem;letter-spacing:.1em;
   });
 </script>
 <!-- nb-comments:end -->
+
+<script data-nb-vocab-flip>
+(function(){
+  var dl=document.querySelector('dl.vocab'); if(!dl) return;
+  var dts=Array.prototype.slice.call(dl.querySelectorAll('dt'));
+  var count=document.querySelector('.vtools .vcount');
+  function dd(dt){return dt.nextElementSibling && dt.nextElementSibling.tagName==='DD' ? dt.nextElementSibling : null;}
+  function set(dt,open){var d=dd(dt); if(!d) return; d.hidden=!open; dt.classList.toggle('open',open); dt.setAttribute('aria-expanded',open?'true':'false');}
+  function refresh(){ if(!count) return; var n=dts.filter(function(dt){return dt.classList.contains('open');}).length; count.textContent='已翻 '+n+' / '+dts.length; }
+  dts.forEach(function(dt){
+    dt.tabIndex=0; dt.setAttribute('role','button'); set(dt,false);
+    dt.addEventListener('click',function(){ set(dt,dd(dt).hidden); refresh(); });
+    dt.addEventListener('keydown',function(e){ if(e.key==='Enter'||e.key===' '){ e.preventDefault(); dt.click(); } });
+  });
+  var tools=document.querySelector('.vtools'); if(!tools) return;
+  tools.addEventListener('click',function(e){
+    var b=e.target.closest('button'); if(!b) return;
+    var act=b.getAttribute('data-act');
+    if(act==='open'){ dts.forEach(function(dt){set(dt,true);}); }
+    else if(act==='close'){ dts.forEach(function(dt){set(dt,false);}); }
+    else if(act==='quiz'){
+      var closed=dts.filter(function(dt){return !dt.classList.contains('open');});
+      if(!closed.length){ dts.forEach(function(dt){set(dt,false);}); closed=dts; }
+      var pick=closed[Math.floor(Math.random()*closed.length)];
+      pick.scrollIntoView({behavior:'smooth',block:'center'}); pick.focus({preventScroll:true});
+    }
+    refresh();
+  });
+  refresh();
+})();
+</script>
 </body>
 </html>
