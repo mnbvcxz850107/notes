@@ -94,6 +94,23 @@ figure.boxfig figcaption{color:var(--dim);font-size:.82rem;margin-top:.5rem;
 figure.boxfig .figtag{color:var(--violet);font-size:.76rem;letter-spacing:.1em;
   display:block;margin-bottom:.3rem}
 .ending{color:var(--dim);font-style:italic;margin:1.6rem 0 2.4rem}
+
+/* nb-vocab-flip:start */
+dl.vocab dt{cursor:pointer;user-select:none;position:relative;padding-right:6.2rem;border-bottom:1px dashed var(--line)}
+dl.vocab dt::after{content:"點我翻牌 ▸";position:absolute;right:0;top:.15rem;font-size:.8rem;color:var(--dim);font-weight:400}
+dl.vocab dt.open::after{content:"蓋回去 ▾";color:var(--gold)}
+dl.vocab dt:focus-visible{outline:2px solid var(--cyan);outline-offset:3px;border-radius:4px}
+dl.vocab dd[hidden]{display:none}
+dl.vocab dd{padding:.5rem .7rem .6rem;background:var(--panel);border:1px solid var(--line);border-top:0;border-radius:0 0 8px 8px;margin-bottom:.4rem}
+dl.vocab .vpun{margin:.5rem 0 0;padding:.45rem .65rem;border-left:3px solid var(--gold);background:rgba(229,181,103,.08);border-radius:4px}
+dl.vocab .vpun .vtag{color:var(--gold);font-weight:700;margin-right:.45rem}
+dl.vocab details[data-kind="vocab-memory"]{margin-top:.45rem}
+.vtools{display:flex;gap:.5rem;flex-wrap:wrap;align-items:center;margin:.5rem 0 .3rem}
+.vtools button{font:inherit;font-size:.9rem;padding:.35rem .8rem;border-radius:999px;border:1px solid var(--line);background:var(--panel);color:var(--ink);cursor:pointer}
+.vtools button:hover{border-color:var(--cyan);color:var(--cyan)}
+.vtools .vcount{color:var(--dim);font-size:.85rem;margin-left:auto}
+.vhow{color:var(--dim);font-size:.9rem;margin:.2rem 0 .4rem}
+/* nb-vocab-flip:end */
 </style></head>
 <body>
 <div class="container">
@@ -475,66 +492,68 @@ figure.boxfig .figtag{color:var(--violet);font-size:.76rem;letter-spacing:.1em;
 <!-- ================= VOCAB ================= -->
 <section id="chapter-vocab" data-chapter-kind="vocab">
 <h2>五、單字表</h2>
+<p class="vhow">先看英文想中文，點單字翻牌看意思、諧音梗與記憶提示。</p>
+<div class="vtools"><button type="button" data-act="quiz">🎲 隨機抽一張</button><button type="button" data-act="open">全部翻開</button><button type="button" data-act="close">全部蓋上</button><span class="vcount"></span></div>
 <dl class="vocab">
 <dt>macrophage</dt>
-<dd><span class="root">macro-（大）+ phage（吞噬者）</span>　巨噬細胞。吞噬、清除、調節發炎、釋放訊號。<details data-kind="vocab-memory"><summary>記憶提示</summary><p><b>兩張臉：點火也滅火。</b>三年都考它「會收」這件事。</p></details></dd>
+<dd hidden><span class="root">macro-（大）+ phage（吞噬者）</span>　巨噬細胞。吞噬、清除、調節發炎、釋放訊號。<p class="vpun"><span class="vtag">諧音梗</span>macro「大」phage「吃」：大胃王，吞、清、調、發訊號。</p><details data-kind="vocab-memory" open><summary>記憶提示</summary><p><b>兩張臉：點火也滅火。</b>三年都考它「會收」這件事。</p></details></dd>
 
 <dt>resolve inflammation</dt>
-<dd><span class="root">resolve＝解決、消退</span>　解決發炎。巨噬細胞在清除完畢後主動終止發炎、進入修復。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>「promote and resolve」——<b>不是 sustain</b>。</p></details></dd>
+<dd hidden><span class="root">resolve＝解決、消退</span>　解決發炎。巨噬細胞在清除完畢後主動終止發炎、進入修復。<p class="vpun"><span class="vtag">諧音梗</span>resolve「解決」：巨噬細胞清完場主動喊停，進修復。</p><details data-kind="vocab-memory" open><summary>記憶提示</summary><p>「promote and resolve」——<b>不是 sustain</b>。</p></details></dd>
 
 <dt>angiogenesis</dt>
-<dd><span class="root">angio-（血管）+ genesis（生成）</span>　血管新生。增生期由巨噬細胞訊號啟動。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>巨噬細胞是<b>促進</b>它，111 年寫「對抗」就是錯的。</p></details></dd>
+<dd hidden><span class="root">angio-（血管）+ genesis（生成）</span>　血管新生。增生期由巨噬細胞訊號啟動。<p class="vpun"><span class="vtag">諧音梗</span>angio「血管」genesis「生」：增生期長新血管。</p><details data-kind="vocab-memory" open><summary>記憶提示</summary><p>巨噬細胞是<b>促進</b>它，111 年寫「對抗」就是錯的。</p></details></dd>
 
 <dt>hemostasis</dt>
-<dd><span class="root">hemo-（血）+ stasis（停止）</span>　止血期，癒合的第一階段。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>先關水管。<b>止血 → 發炎 → 增生 → 成熟。</b></p></details></dd>
+<dd hidden><span class="root">hemo-（血）+ stasis（停止）</span>　止血期，癒合的第一階段。<p class="vpun"><span class="vtag">諧音梗</span>hemo「血」stasis「停」：止血，癒合第一步。</p><details data-kind="vocab-memory" open><summary>記憶提示</summary><p>先關水管。<b>止血 → 發炎 → 增生 → 成熟。</b></p></details></dd>
 
 <dt>proliferation phase</dt>
-<dd><span class="root">proliferate＝增生</span>　增生期。新血管、新細胞填入傷口。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>水電進場的階段——血管新生在這裡。</p></details></dd>
+<dd hidden><span class="root">proliferate＝增生</span>　增生期。新血管、新細胞填入傷口。<p class="vpun"><span class="vtag">諧音梗</span>proliferation「撲來撲來生」：新血管新細胞填傷口。</p><details data-kind="vocab-memory" open><summary>記憶提示</summary><p>水電進場的階段——血管新生在這裡。</p></details></dd>
 
 <dt>maturation (remodeling) phase</dt>
-<dd><span class="root">mature＝成熟</span>　成熟期。膠原重排、疤痕收縮。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>最後收尾。編號題裡是 ③。</p></details></dd>
+<dd hidden><span class="root">mature＝成熟</span>　成熟期。膠原重排、疤痕收縮。<p class="vpun"><span class="vtag">諧音梗</span>maturation「熟了」：膠原重排、疤痕收縮。</p><details data-kind="vocab-memory" open><summary>記憶提示</summary><p>最後收尾。編號題裡是 ③。</p></details></dd>
 
 <dt>sarcopenia</dt>
-<dd><span class="root">sarco-（肉）+ -penia（缺乏）</span>　肌少症。老化相關的肌肉量與肌力流失。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>-penia＝缺少（比較 leukopenia）。餘燼悶燒把肉燒掉。</p></details></dd>
+<dd hidden><span class="root">sarco-（肉）+ -penia（缺乏）</span>　肌少症。老化相關的肌肉量與肌力流失。<p class="vpun"><span class="vtag">諧音梗</span>sarco「肌」penia「貧」：肌肉貧窮＝肌少症。</p><details data-kind="vocab-memory" open><summary>記憶提示</summary><p>-penia＝缺少（比較 leukopenia）。餘燼悶燒把肉燒掉。</p></details></dd>
 
 <dt>chronic low-grade inflammation (inflammaging)</dt>
-<dd><span class="root">inflammation + aging</span>　低度慢性發炎／發炎性老化。老年免疫低下累積出的持續發炎。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>老人免疫是<b>低下</b>才會這樣——111 年 (A) 寫「比年輕人高」就錯。</p></details></dd>
+<dd hidden><span class="root">inflammation + aging</span>　低度慢性發炎／發炎性老化。老年免疫低下累積出的持續發炎。<p class="vpun"><span class="vtag">諧音梗</span>inflamm「發炎」＋aging「老化」：老了慢慢燒。</p><details data-kind="vocab-memory" open><summary>記憶提示</summary><p>老人免疫是<b>低下</b>才會這樣——111 年 (A) 寫「比年輕人高」就錯。</p></details></dd>
 
 <dt>M1 / M2 macrophage</dt>
-<dd><span class="root">M＝macrophage</span>　M1 促發炎型、M2 抗發炎修復型。<details data-kind="vocab-memory"><summary>記憶提示</summary><p><b>M1 點火、M2 滅火。肌少症是 M1 多。</b></p></details></dd>
+<dd hidden><span class="root">M＝macrophage</span>　M1 促發炎型、M2 抗發炎修復型。<p class="vpun"><span class="vtag">諧音梗</span>M1「猛一」促發炎；M2「摸二」修復抗炎。</p><details data-kind="vocab-memory" open><summary>記憶提示</summary><p><b>M1 點火、M2 滅火。肌少症是 M1 多。</b></p></details></dd>
 
 <dt>IL-6 / IL-1β / TNF-α / CRP</dt>
-<dd><span class="root">interleukin、tumor necrosis factor、C-reactive protein</span>　促發炎細胞激素與發炎指標，肌少症病人偏高。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>IL-6 過量是<b>促發炎</b>，不是「降低免疫」。</p></details></dd>
+<dd hidden><span class="root">interleukin、tumor necrosis factor、C-reactive protein</span>　促發炎細胞激素與發炎指標，肌少症病人偏高。<p class="vpun"><span class="vtag">諧音梗</span>「六一腫 C」：肌少症病人這四個促炎指標偏高。</p><details data-kind="vocab-memory" open><summary>記憶提示</summary><p>IL-6 過量是<b>促發炎</b>，不是「降低免疫」。</p></details></dd>
 
 <dt>rheumatoid arthritis (RA)</dt>
-<dd><span class="root">rheuma（希臘：流動）+ -oid</span>　類風濕性關節炎，自體免疫疾病。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>「自體免疫不是 RA 的問題」——三年最直白的錯項。</p></details></dd>
+<dd hidden><span class="root">rheuma（希臘：流動）+ -oid</span>　類風濕性關節炎，自體免疫疾病。<p class="vpun"><span class="vtag">諧音梗</span>RA「啊」痛：類風濕，自體免疫攻擊關節。</p><details data-kind="vocab-memory" open><summary>記憶提示</summary><p>「自體免疫不是 RA 的問題」——三年最直白的錯項。</p></details></dd>
 
 <dt>autoantibody</dt>
-<dd><span class="root">auto-（自己）+ antibody</span>　自體抗體。RA 病人體內存在，與促發炎激素一起活化 M1 與 Th17。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>火種。112 年以正確敘述出現。</p></details></dd>
+<dd hidden><span class="root">auto-（自己）+ antibody</span>　自體抗體。RA 病人體內存在，與促發炎激素一起活化 M1 與 Th17。<p class="vpun"><span class="vtag">諧音梗</span>auto「自己」antibody：打自己的抗體，RA 有。</p><details data-kind="vocab-memory" open><summary>記憶提示</summary><p>火種。112 年以正確敘述出現。</p></details></dd>
 
 <dt>Th17 cell</dt>
-<dd><span class="root">T helper 17</span>　第 17 型輔助 T 細胞，釋放 IL-17（與 IL-1），RA 的關鍵驅動者。<details data-kind="vocab-memory"><summary>記憶提示</summary><p><b>下令的人。</b>它讓軟骨細胞叛變。</p></details></dd>
+<dd hidden><span class="root">T helper 17</span>　第 17 型輔助 T 細胞，釋放 IL-17（與 IL-1），RA 的關鍵驅動者。<p class="vpun"><span class="vtag">諧音梗</span>Th「十七」歲最衝：放 IL-17，RA 的關鍵驅動者。</p><details data-kind="vocab-memory" open><summary>記憶提示</summary><p><b>下令的人。</b>它讓軟骨細胞叛變。</p></details></dd>
 
 <dt>IL-17</dt>
-<dd><span class="root">interleukin-17</span>　Th17 釋放的激素，誘導軟骨細胞由合成基質轉為分解基質。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>軟骨自己拆自己。</p></details></dd>
+<dd hidden><span class="root">interleukin-17</span>　Th17 釋放的激素，誘導軟骨細胞由合成基質轉為分解基質。<p class="vpun"><span class="vtag">諧音梗</span>IL-17「一起拆」：把軟骨細胞從蓋房子切成拆房子。</p><details data-kind="vocab-memory" open><summary>記憶提示</summary><p>軟骨自己拆自己。</p></details></dd>
 
 <dt>matrix degradation</dt>
-<dd><span class="root">matrix（基質）+ degradation（分解）</span>　基質分解。RA 中軟骨細胞被切換到的模式。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>「從合成型變分解型」——111 與 112 年都出現這句。</p></details></dd>
+<dd hidden><span class="root">matrix（基質）+ degradation（分解）</span>　基質分解。RA 中軟骨細胞被切換到的模式。<p class="vpun"><span class="vtag">諧音梗</span>matrix「基質」degrade「掉價」：RA 裡軟骨基質被分解。</p><details data-kind="vocab-memory" open><summary>記憶提示</summary><p>「從合成型變分解型」——111 與 112 年都出現這句。</p></details></dd>
 
 <dt>TNF-α</dt>
-<dd><span class="root">tumor necrosis factor alpha</span>　腫瘤壞死因子，促進破骨細胞分化、驅動 RA 發炎。<details data-kind="vocab-memory"><summary>記憶提示</summary><p><b>執行的人</b>，也是治療的<b>首要標靶</b>。</p></details></dd>
+<dd hidden><span class="root">tumor necrosis factor alpha</span>　腫瘤壞死因子，促進破骨細胞分化、驅動 RA 發炎。<p class="vpun"><span class="vtag">諧音梗</span>TNF「腫瘤壞死」阿法：促破骨、驅 RA 發炎。</p><details data-kind="vocab-memory" open><summary>記憶提示</summary><p><b>執行的人</b>，也是治療的<b>首要標靶</b>。</p></details></dd>
 
 <dt>osteoclast differentiation</dt>
-<dd><span class="root">osteoclast（破骨細胞）</span>　破骨細胞分化。IL-1、TNF、IL-17、IL-7 皆參與。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>RA 把骨頭啃掉就是靠這條路。</p></details></dd>
+<dd hidden><span class="root">osteoclast（破骨細胞）</span>　破骨細胞分化。IL-1、TNF、IL-17、IL-7 皆參與。<p class="vpun"><span class="vtag">諧音梗</span>「拆骨工人培訓」：IL-1、TNF、IL-17、IL-7 都來帶。</p><details data-kind="vocab-memory" open><summary>記憶提示</summary><p>RA 把骨頭啃掉就是靠這條路。</p></details></dd>
 
 <dt>anti-TNF-α (certolizumab)</dt>
-<dd><span class="root">-mab＝monoclonal antibody</span>　抗 TNF-α 生物製劑，RA 最常用且有效的治療。<details data-kind="vocab-memory"><summary>記憶提示</summary><p><b>RA 選 TNF。</b>113 年直接問「最常用」。</p></details></dd>
+<dd hidden><span class="root">-mab＝monoclonal antibody</span>　抗 TNF-α 生物製劑，RA 最常用且有效的治療。<p class="vpun"><span class="vtag">諧音梗</span>certolizumab「瑟托」擋 TNF：RA 最常用最有效。</p><details data-kind="vocab-memory" open><summary>記憶提示</summary><p><b>RA 選 TNF。</b>113 年直接問「最常用」。</p></details></dd>
 
 <dt>IL-1 receptor antagonist (anakinra)</dt>
-<dd><span class="root">antagonist＝拮抗劑</span>　IL-1 受體拮抗劑。RA 治療效果不佳，台灣未引進。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>寫成「常用治療」就是錯的（112 年）。</p></details></dd>
+<dd hidden><span class="root">antagonist＝拮抗劑</span>　IL-1 受體拮抗劑。RA 治療效果不佳，台灣未引進。<p class="vpun"><span class="vtag">諧音梗</span>anakinra「阿娜金拉」擋 IL-1：RA 效果差，台灣沒有。</p><details data-kind="vocab-memory" open><summary>記憶提示</summary><p>寫成「常用治療」就是錯的（112 年）。</p></details></dd>
 
 <dt>secukinumab / anifrolumab</dt>
-<dd><span class="root">-mab</span>　抗 IL-17 與抗 IFN 的單株抗體，分別用於乾癬／僵直性脊椎炎與紅斑性狼瘡。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>113 年的干擾選項——都不是 RA 的首選。</p></details></dd>
+<dd hidden><span class="root">-mab</span>　抗 IL-17 與抗 IFN 的單株抗體，分別用於乾癬／僵直性脊椎炎與紅斑性狼瘡。<p class="vpun"><span class="vtag">諧音梗</span>secu「速庫」擋 IL-17（乾癬／AS）；anifro「安妮」擋 IFN（狼瘡）。</p><details data-kind="vocab-memory" open><summary>記憶提示</summary><p>113 年的干擾選項——都不是 RA 的首選。</p></details></dd>
 </dl>
 </section>
 <section id="chapter-final" data-chapter-kind="final_questions">
@@ -737,5 +756,36 @@ figure.boxfig .figtag{color:var(--violet);font-size:.76rem;letter-spacing:.1em;
   });
 </script>
 <!-- nb-comments:end -->
+
+<script data-nb-vocab-flip>
+(function(){
+  var dl=document.querySelector('dl.vocab'); if(!dl) return;
+  var dts=Array.prototype.slice.call(dl.querySelectorAll('dt'));
+  var count=document.querySelector('.vtools .vcount');
+  function dd(dt){return dt.nextElementSibling && dt.nextElementSibling.tagName==='DD' ? dt.nextElementSibling : null;}
+  function set(dt,open){var d=dd(dt); if(!d) return; d.hidden=!open; dt.classList.toggle('open',open); dt.setAttribute('aria-expanded',open?'true':'false');}
+  function refresh(){ if(!count) return; var n=dts.filter(function(dt){return dt.classList.contains('open');}).length; count.textContent='已翻 '+n+' / '+dts.length; }
+  dts.forEach(function(dt){
+    dt.tabIndex=0; dt.setAttribute('role','button'); set(dt,false);
+    dt.addEventListener('click',function(){ set(dt,dd(dt).hidden); refresh(); });
+    dt.addEventListener('keydown',function(e){ if(e.key==='Enter'||e.key===' '){ e.preventDefault(); dt.click(); } });
+  });
+  var tools=document.querySelector('.vtools'); if(!tools) return;
+  tools.addEventListener('click',function(e){
+    var b=e.target.closest('button'); if(!b) return;
+    var act=b.getAttribute('data-act');
+    if(act==='open'){ dts.forEach(function(dt){set(dt,true);}); }
+    else if(act==='close'){ dts.forEach(function(dt){set(dt,false);}); }
+    else if(act==='quiz'){
+      var closed=dts.filter(function(dt){return !dt.classList.contains('open');});
+      if(!closed.length){ dts.forEach(function(dt){set(dt,false);}); closed=dts; }
+      var pick=closed[Math.floor(Math.random()*closed.length)];
+      pick.scrollIntoView({behavior:'smooth',block:'center'}); pick.focus({preventScroll:true});
+    }
+    refresh();
+  });
+  refresh();
+})();
+</script>
 </body>
 </html>
