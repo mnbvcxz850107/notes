@@ -94,6 +94,23 @@ figure.boxfig figcaption{color:var(--dim);font-size:.82rem;margin-top:.5rem;
 figure.boxfig .figtag{color:var(--violet);font-size:.76rem;letter-spacing:.1em;
   display:block;margin-bottom:.3rem}
 .ending{color:var(--dim);font-style:italic;margin:1.6rem 0 2.4rem}
+
+/* nb-vocab-flip:start */
+dl.vocab dt{cursor:pointer;user-select:none;position:relative;padding-right:6.2rem;border-bottom:1px dashed var(--line)}
+dl.vocab dt::after{content:"點我翻牌 ▸";position:absolute;right:0;top:.15rem;font-size:.8rem;color:var(--dim);font-weight:400}
+dl.vocab dt.open::after{content:"蓋回去 ▾";color:var(--gold)}
+dl.vocab dt:focus-visible{outline:2px solid var(--cyan);outline-offset:3px;border-radius:4px}
+dl.vocab dd[hidden]{display:none}
+dl.vocab dd{padding:.5rem .7rem .6rem;background:var(--panel);border:1px solid var(--line);border-top:0;border-radius:0 0 8px 8px;margin-bottom:.4rem}
+dl.vocab .vpun{margin:.5rem 0 0;padding:.45rem .65rem;border-left:3px solid var(--gold);background:rgba(229,181,103,.08);border-radius:4px}
+dl.vocab .vpun .vtag{color:var(--gold);font-weight:700;margin-right:.45rem}
+dl.vocab details[data-kind="vocab-memory"]{margin-top:.45rem}
+.vtools{display:flex;gap:.5rem;flex-wrap:wrap;align-items:center;margin:.5rem 0 .3rem}
+.vtools button{font:inherit;font-size:.9rem;padding:.35rem .8rem;border-radius:999px;border:1px solid var(--line);background:var(--panel);color:var(--ink);cursor:pointer}
+.vtools button:hover{border-color:var(--cyan);color:var(--cyan)}
+.vtools .vcount{color:var(--dim);font-size:.85rem;margin-left:auto}
+.vhow{color:var(--dim);font-size:.9rem;margin:.2rem 0 .4rem}
+/* nb-vocab-flip:end */
 </style></head>
 <body>
 <div class="container">
@@ -354,42 +371,44 @@ figure.boxfig .figtag{color:var(--violet);font-size:.76rem;letter-spacing:.1em;
 <!-- ================= VOCAB ================= -->
 <section id="chapter-vocab" data-chapter-kind="vocab">
 <h2>五、單字表</h2>
+<p class="vhow">先看英文想中文，點單字翻牌看意思、諧音梗與記憶提示。</p>
+<div class="vtools"><button type="button" data-act="quiz">🎲 隨機抽一張</button><button type="button" data-act="open">全部翻開</button><button type="button" data-act="close">全部蓋上</button><span class="vcount"></span></div>
 <dl class="vocab">
 <dt>mineralization</dt>
-<dd><span class="root">mineral（礦物）+ -ization（……化）</span>　礦化。成骨細胞分泌的類骨質沉積鈣磷、變硬成骨的過程。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>題目問 mineralization <b>ability</b>——問的是「有沒有做出成品」，所以要去找<b>產物</b>，不是找細胞長相。</p></details></dd>
+<dd hidden><span class="root">mineral（礦物）+ -ization（……化）</span>　礦化。成骨細胞分泌的類骨質沉積鈣磷、變硬成骨的過程。<p class="vpun"><span class="vtag">諧音梗</span>mineral「礦」化：類骨質沉積鈣磷變硬。</p><details data-kind="vocab-memory" open><summary>記憶提示</summary><p>題目問 mineralization <b>ability</b>——問的是「有沒有做出成品」，所以要去找<b>產物</b>，不是找細胞長相。</p></details></dd>
 
 <dt>Alizarin Red S</dt>
-<dd><span class="root">alizarin 源自茜草（madder root）的紅色染料</span>　茜素紅。與<b>鈣離子</b>螯合呈橘紅色，用來顯示礦化結節。<details data-kind="vocab-memory"><summary>記憶提示</summary><p><b>紅色＝鈣</b>。記一組對子：茜素紅染鈣、von Kossa 染磷。</p></details></dd>
+<dd hidden><span class="root">alizarin 源自茜草（madder root）的紅色染料</span>　茜素紅。與<b>鈣離子</b>螯合呈橘紅色，用來顯示礦化結節。<p class="vpun"><span class="vtag">諧音梗</span>Alizarin「阿里紅」：抓鈣呈橘紅，顯示礦化結節。</p><details data-kind="vocab-memory" open><summary>記憶提示</summary><p><b>紅色＝鈣</b>。記一組對子：茜素紅染鈣、von Kossa 染磷。</p></details></dd>
 
 <dt>von Kossa staining</dt>
-<dd><span class="root">以發明者 von Kossa 命名</span>　以銀鹽反應顯示<b>磷酸鹽</b>沉積，呈黑褐色。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>Kossa 的 K 想成「黑（Kuro）」——黑色的那個染磷。</p></details></dd>
+<dd hidden><span class="root">以發明者 von Kossa 命名</span>　以銀鹽反應顯示<b>磷酸鹽</b>沉積，呈黑褐色。<p class="vpun"><span class="vtag">諧音梗</span>von Kossa「銀扣殺」磷：銀鹽反應顯磷酸鹽，黑褐色。</p><details data-kind="vocab-memory" open><summary>記憶提示</summary><p>Kossa 的 K 想成「黑（Kuro）」——黑色的那個染磷。</p></details></dd>
 
 <dt>alkaline phosphatase (ALP)</dt>
-<dd><span class="root">alkaline（鹼性）+ phosphatase（磷酸酶）</span>　鹼性磷酸酶，成骨細胞<b>分化早期</b>的標記。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>ALP 高＝工人<b>換上工作服</b>；茜素紅紅＝<b>牆真的砌起來了</b>。兩件事差好幾天。</p></details></dd>
+<dd hidden><span class="root">alkaline（鹼性）+ phosphatase（磷酸酶）</span>　鹼性磷酸酶，成骨細胞<b>分化早期</b>的標記。<p class="vpun"><span class="vtag">諧音梗</span>ALP「愛累撲」早：成骨細胞分化早期標記。</p><details data-kind="vocab-memory" open><summary>記憶提示</summary><p>ALP 高＝工人<b>換上工作服</b>；茜素紅紅＝<b>牆真的砌起來了</b>。兩件事差好幾天。</p></details></dd>
 
 <dt>TRAP staining</dt>
-<dd><span class="root">Tartrate-Resistant Acid Phosphatase（抗酒石酸酸性磷酸酶）</span>　破骨細胞的辨識標記，陽性且多核者即為破骨細胞。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>TRAP 是<b>認人</b>用的，不是<b>看行為</b>用的。</p></details></dd>
+<dd hidden><span class="root">Tartrate-Resistant Acid Phosphatase（抗酒石酸酸性磷酸酶）</span>　破骨細胞的辨識標記，陽性且多核者即為破骨細胞。<p class="vpun"><span class="vtag">諧音梗</span>TRAP「抓破骨」：陽性又多核＝破骨細胞。</p><details data-kind="vocab-memory" open><summary>記憶提示</summary><p>TRAP 是<b>認人</b>用的，不是<b>看行為</b>用的。</p></details></dd>
 
 <dt>Transwell migration assay</dt>
-<dd><span class="root">trans-（穿越）+ well（培養孔）</span>　穿膜移行分析。細胞由上層穿過多孔膜移向下層誘引物，事後計數。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>trans-＝穿過去。它只回答「<b>過去了幾個</b>」，不回答「怎麼過去的」。</p></details></dd>
+<dd hidden><span class="root">trans-（穿越）+ well（培養孔）</span>　穿膜移行分析。細胞由上層穿過多孔膜移向下層誘引物，事後計數。<p class="vpun"><span class="vtag">諧音梗</span>Transwell「穿井」：細胞穿過多孔膜往下層誘引物爬。</p><details data-kind="vocab-memory" open><summary>記憶提示</summary><p>trans-＝穿過去。它只回答「<b>過去了幾個</b>」，不回答「怎麼過去的」。</p></details></dd>
 
 <dt>time-lapse recording</dt>
-<dd><span class="root">time（時間）+ lapse（流逝）</span>　縮時錄影。同一視野定時連續拍攝，串成影片以追蹤單一細胞。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>lapse＝時間流過。<b>有時間軸的方法，才追得到個體。</b></p></details></dd>
+<dd hidden><span class="root">time（時間）+ lapse（流逝）</span>　縮時錄影。同一視野定時連續拍攝，串成影片以追蹤單一細胞。<p class="vpun"><span class="vtag">諧音梗</span>time-lapse「時間縮」：定時連拍串成影片追單一細胞。</p><details data-kind="vocab-memory" open><summary>記憶提示</summary><p>lapse＝時間流過。<b>有時間軸的方法，才追得到個體。</b></p></details></dd>
 
 <dt>two-photon microscopy</dt>
-<dd><span class="root">two（二）+ photon（光子）</span>　雙光子顯微鏡。以兩個長波長光子同時激發螢光，可深入活體組織成像。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>兩個光子＝波長加倍＝<b>穿得更深</b>。要看「活著的骨頭裡面」，就得靠它。</p></details></dd>
+<dd hidden><span class="root">two（二）+ photon（光子）</span>　雙光子顯微鏡。以兩個長波長光子同時激發螢光，可深入活體組織成像。<p class="vpun"><span class="vtag">諧音梗</span>two-photon「兩顆光子」同時打：長波長，深入活體。</p><details data-kind="vocab-memory" open><summary>記憶提示</summary><p>兩個光子＝波長加倍＝<b>穿得更深</b>。要看「活著的骨頭裡面」，就得靠它。</p></details></dd>
 
 <dt>bone resorption assay</dt>
-<dd><span class="root">re-（回）+ sorbere（拉丁：吸）</span>　骨吸收分析。破骨細胞養在骨片或鈣磷塗層上，量它挖出的吸收凹坑（pit）。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>resorption＝把骨頭「吸回去」。這個分析只留下<b>坑</b>，不留下<b>路</b>。</p></details></dd>
+<dd hidden><span class="root">re-（回）+ sorbere（拉丁：吸）</span>　骨吸收分析。破骨細胞養在骨片或鈣磷塗層上，量它挖出的吸收凹坑（pit）。<p class="vpun"><span class="vtag">諧音梗</span>resorption「吸收」坑：破骨細胞在骨片上挖 pit。</p><details data-kind="vocab-memory" open><summary>記憶提示</summary><p>resorption＝把骨頭「吸回去」。這個分析只留下<b>坑</b>，不留下<b>路</b>。</p></details></dd>
 
 <dt>immunohistochemistry (IHC)</dt>
-<dd><span class="root">immuno-（免疫）+ histo-（組織）+ chemistry（化學）</span>　免疫組織化學染色。以抗體標定切片中特定蛋白的位置。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>切片＝細胞已經被固定住了。<b>凡是題目在問「動」，IHC 一律出局。</b></p></details></dd>
+<dd hidden><span class="root">immuno-（免疫）+ histo-（組織）+ chemistry（化學）</span>　免疫組織化學染色。以抗體標定切片中特定蛋白的位置。<p class="vpun"><span class="vtag">諧音梗</span>IHC「抗體染組織」：標定切片上蛋白位置。</p><details data-kind="vocab-memory" open><summary>記憶提示</summary><p>切片＝細胞已經被固定住了。<b>凡是題目在問「動」，IHC 一律出局。</b></p></details></dd>
 
 <dt>micro-computed tomography (MicroCT)</dt>
-<dd><span class="root">tomos（希臘：切片）+ graphein（寫）</span>　微電腦斷層。高解析 X 光重建礦化組織的三維結構與骨量。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>它的單位是<b>一整塊骨頭</b>。細胞層級的問題不會是它。</p></details></dd>
+<dd hidden><span class="root">tomos（希臘：切片）+ graphein（寫）</span>　微電腦斷層。高解析 X 光重建礦化組織的三維結構與骨量。<p class="vpun"><span class="vtag">諧音梗</span>MicroCT「小 CT」：高解析 X 光重建 3D 骨量。</p><details data-kind="vocab-memory" open><summary>記憶提示</summary><p>它的單位是<b>一整塊骨頭</b>。細胞層級的問題不會是它。</p></details></dd>
 
 <dt>calvarium (calvarial defect)</dt>
-<dd><span class="root">拉丁 calvaria＝顱頂</span>　頭蓋骨。於顱頂造出固定大小缺損，觀察骨再生能力的活體模式。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>層級在<b>活體、組織、再生</b>——三個關鍵字都不是「單一細胞的移動」。</p></details></dd>
+<dd hidden><span class="root">拉丁 calvaria＝顱頂</span>　頭蓋骨。於顱頂造出固定大小缺損，觀察骨再生能力的活體模式。<p class="vpun"><span class="vtag">諧音梗</span>calvarium「頭蓋」：顱頂挖固定大小的洞看骨再生。</p><details data-kind="vocab-memory" open><summary>記憶提示</summary><p>層級在<b>活體、組織、再生</b>——三個關鍵字都不是「單一細胞的移動」。</p></details></dd>
 </dl>
 </section>
 <section id="chapter-final" data-chapter-kind="final_questions">
@@ -502,5 +521,36 @@ figure.boxfig .figtag{color:var(--violet);font-size:.76rem;letter-spacing:.1em;
   });
 </script>
 <!-- nb-comments:end -->
+
+<script data-nb-vocab-flip>
+(function(){
+  var dl=document.querySelector('dl.vocab'); if(!dl) return;
+  var dts=Array.prototype.slice.call(dl.querySelectorAll('dt'));
+  var count=document.querySelector('.vtools .vcount');
+  function dd(dt){return dt.nextElementSibling && dt.nextElementSibling.tagName==='DD' ? dt.nextElementSibling : null;}
+  function set(dt,open){var d=dd(dt); if(!d) return; d.hidden=!open; dt.classList.toggle('open',open); dt.setAttribute('aria-expanded',open?'true':'false');}
+  function refresh(){ if(!count) return; var n=dts.filter(function(dt){return dt.classList.contains('open');}).length; count.textContent='已翻 '+n+' / '+dts.length; }
+  dts.forEach(function(dt){
+    dt.tabIndex=0; dt.setAttribute('role','button'); set(dt,false);
+    dt.addEventListener('click',function(){ set(dt,dd(dt).hidden); refresh(); });
+    dt.addEventListener('keydown',function(e){ if(e.key==='Enter'||e.key===' '){ e.preventDefault(); dt.click(); } });
+  });
+  var tools=document.querySelector('.vtools'); if(!tools) return;
+  tools.addEventListener('click',function(e){
+    var b=e.target.closest('button'); if(!b) return;
+    var act=b.getAttribute('data-act');
+    if(act==='open'){ dts.forEach(function(dt){set(dt,true);}); }
+    else if(act==='close'){ dts.forEach(function(dt){set(dt,false);}); }
+    else if(act==='quiz'){
+      var closed=dts.filter(function(dt){return !dt.classList.contains('open');});
+      if(!closed.length){ dts.forEach(function(dt){set(dt,false);}); closed=dts; }
+      var pick=closed[Math.floor(Math.random()*closed.length)];
+      pick.scrollIntoView({behavior:'smooth',block:'center'}); pick.focus({preventScroll:true});
+    }
+    refresh();
+  });
+  refresh();
+})();
+</script>
 </body>
 </html>
