@@ -94,6 +94,23 @@ figure.boxfig figcaption{color:var(--dim);font-size:.82rem;margin-top:.5rem;
 figure.boxfig .figtag{color:var(--violet);font-size:.76rem;letter-spacing:.1em;
   display:block;margin-bottom:.3rem}
 .ending{color:var(--dim);font-style:italic;margin:1.6rem 0 2.4rem}
+
+/* nb-vocab-flip:start */
+dl.vocab dt{cursor:pointer;user-select:none;position:relative;padding-right:6.2rem;border-bottom:1px dashed var(--line)}
+dl.vocab dt::after{content:"點我翻牌 ▸";position:absolute;right:0;top:.15rem;font-size:.8rem;color:var(--dim);font-weight:400}
+dl.vocab dt.open::after{content:"蓋回去 ▾";color:var(--gold)}
+dl.vocab dt:focus-visible{outline:2px solid var(--cyan);outline-offset:3px;border-radius:4px}
+dl.vocab dd[hidden]{display:none}
+dl.vocab dd{padding:.5rem .7rem .6rem;background:var(--panel);border:1px solid var(--line);border-top:0;border-radius:0 0 8px 8px;margin-bottom:.4rem}
+dl.vocab .vpun{margin:.5rem 0 0;padding:.45rem .65rem;border-left:3px solid var(--gold);background:rgba(229,181,103,.08);border-radius:4px}
+dl.vocab .vpun .vtag{color:var(--gold);font-weight:700;margin-right:.45rem}
+dl.vocab details[data-kind="vocab-memory"]{margin-top:.45rem}
+.vtools{display:flex;gap:.5rem;flex-wrap:wrap;align-items:center;margin:.5rem 0 .3rem}
+.vtools button{font:inherit;font-size:.9rem;padding:.35rem .8rem;border-radius:999px;border:1px solid var(--line);background:var(--panel);color:var(--ink);cursor:pointer}
+.vtools button:hover{border-color:var(--cyan);color:var(--cyan)}
+.vtools .vcount{color:var(--dim);font-size:.85rem;margin-left:auto}
+.vhow{color:var(--dim);font-size:.9rem;margin:.2rem 0 .4rem}
+/* nb-vocab-flip:end */
 </style>
 </head>
 <body>
@@ -957,78 +974,80 @@ figure.boxfig .figtag{color:var(--violet);font-size:.76rem;letter-spacing:.1em;
 <!-- ================= VOCAB ================= -->
 <section id="chapter-vocab" data-chapter-kind="vocab">
 <h2>八、單字表</h2>
+<p class="vhow">先看英文想中文，點單字翻牌看意思、諧音梗與記憶提示。</p>
+<div class="vtools"><button type="button" data-act="quiz">🎲 隨機抽一張</button><button type="button" data-act="open">全部翻開</button><button type="button" data-act="close">全部蓋上</button><span class="vcount"></span></div>
 <dl class="vocab">
 <dt>osteoid</dt>
-<dd><span class="root">oste-（骨）+ -oid（像…的）</span>　類骨質。骨的未礦化有機基質，主成分 type I collagen。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>「像骨但還不是骨」＝還沒乾的水泥。細胞先分泌它，它才在細胞外鈣化。</p></details></dd>
+<dd hidden><span class="root">oste-（骨）+ -oid（像…的）</span>　類骨質。骨的未礦化有機基質，主成分 type I collagen。<p class="vpun"><span class="vtag">諧音梗</span>osteoid「骨的樣子」：還沒礦化的有機基質，type I 膠原。</p><details data-kind="vocab-memory" open><summary>記憶提示</summary><p>「像骨但還不是骨」＝還沒乾的水泥。細胞先分泌它，它才在細胞外鈣化。</p></details></dd>
 
 <dt>osteoblast</dt>
-<dd><span class="root">oste-（骨）+ -blast（生芽、造者）</span>　成骨細胞。分泌 osteoid 並促進礦化。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>-blast 一律是「製造者」：chondroblast 造軟骨、fibroblast 造纖維。</p></details></dd>
+<dd hidden><span class="root">oste-（骨）+ -blast（生芽、造者）</span>　成骨細胞。分泌 osteoid 並促進礦化。<p class="vpun"><span class="vtag">諧音梗</span>-blast「爆」生：分泌 osteoid 並礦化的成骨細胞。</p><details data-kind="vocab-memory" open><summary>記憶提示</summary><p>-blast 一律是「製造者」：chondroblast 造軟骨、fibroblast 造纖維。</p></details></dd>
 
 <dt>osteocyte</dt>
-<dd><span class="root">oste-（骨）+ -cyte（細胞）</span>　骨細胞。被自身基質包埋的 osteoblast，住在 lacuna，經 canaliculi 連通，感知力學訊號。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>-blast 是動工中，-cyte 是定居後。定居後的骨細胞不再砌牆，但軟骨的 -cyte 仍在做工。</p></details></dd>
+<dd hidden><span class="root">oste-（骨）+ -cyte（細胞）</span>　骨細胞。被自身基質包埋的 osteoblast，住在 lacuna，經 canaliculi 連通，感知力學訊號。<p class="vpun"><span class="vtag">諧音梗</span>-cyte「住」：被自己的基質埋住，住 lacuna，感知力學。</p><details data-kind="vocab-memory" open><summary>記憶提示</summary><p>-blast 是動工中，-cyte 是定居後。定居後的骨細胞不再砌牆，但軟骨的 -cyte 仍在做工。</p></details></dd>
 
 <dt>osteoclast</dt>
-<dd><span class="root">oste-（骨）+ -clast（打碎，源自 klastos）</span>　破骨細胞。來自單核球系，多核，負責骨吸收。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>clast＝break，跟 iconoclast（打破偶像者）同源。出身跟另外兩種骨細胞不同，這點常考。</p></details></dd>
+<dd hidden><span class="root">oste-（骨）+ -clast（打碎，源自 klastos）</span>　破骨細胞。來自單核球系，多核，負責骨吸收。<p class="vpun"><span class="vtag">諧音梗</span>-clast「拆」：單核球來的多核拆骨工。</p><details data-kind="vocab-memory" open><summary>記憶提示</summary><p>clast＝break，跟 iconoclast（打破偶像者）同源。出身跟另外兩種骨細胞不同，這點常考。</p></details></dd>
 
 <dt>osteoprogenitor cell</dt>
-<dd><span class="root">pro-（在前）+ genitor（產生者）</span>　骨原前驅細胞。介於間質細胞與成骨細胞之間，存在於骨膜 cambium layer。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>「祖先細胞」。它的存在就是為了證明 mesenchymal 不能直接跳到 osteocyte。</p></details></dd>
+<dd hidden><span class="root">pro-（在前）+ genitor（產生者）</span>　骨原前驅細胞。介於間質細胞與成骨細胞之間，存在於骨膜 cambium layer。<p class="vpun"><span class="vtag">諧音梗</span>progenitor「祖先」：骨膜 cambium 層裡的骨前驅細胞。</p><details data-kind="vocab-memory" open><summary>記憶提示</summary><p>「祖先細胞」。它的存在就是為了證明 mesenchymal 不能直接跳到 osteocyte。</p></details></dd>
 
 <dt>intramembranous ossification</dt>
-<dd><span class="root">intra-（在內）+ membran-（膜）+ -ous</span>　膜內骨化。由纖維結締組織膜直接成骨，見於顱骨、鎖骨。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>字面就是「在膜裡面」。膜＝membrane，不是 cartilage——名字沒有軟骨，過程也沒有軟骨。</p></details></dd>
+<dd hidden><span class="root">intra-（在內）+ membran-（膜）+ -ous</span>　膜內骨化。由纖維結締組織膜直接成骨，見於顱骨、鎖骨。<p class="vpun"><span class="vtag">諧音梗</span>intra「膜內」直接成骨：顱骨、鎖骨。</p><details data-kind="vocab-memory" open><summary>記憶提示</summary><p>字面就是「在膜裡面」。膜＝membrane，不是 cartilage——名字沒有軟骨，過程也沒有軟骨。</p></details></dd>
 
 <dt>endochondral ossification</dt>
-<dd><span class="root">endo-（在內）+ chondr-（軟骨）+ -al</span>　軟骨內骨化。先做 hyaline cartilage 模型再置換成骨，見於長骨。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>chondr- 出現就跟軟骨有關。字面「在軟骨之內」＝在軟骨模型裡面把骨長出來。</p></details></dd>
+<dd hidden><span class="root">endo-（在內）+ chondr-（軟骨）+ -al</span>　軟骨內骨化。先做 hyaline cartilage 模型再置換成骨，見於長骨。<p class="vpun"><span class="vtag">諧音梗</span>endo「軟骨內」置換成骨：長骨。</p><details data-kind="vocab-memory" open><summary>記憶提示</summary><p>chondr- 出現就跟軟骨有關。字面「在軟骨之內」＝在軟骨模型裡面把骨長出來。</p></details></dd>
 
 <dt>ossification center</dt>
-<dd><span class="root">oss-（骨，拉丁 os）+ -ification（化）</span>　骨化中心。初級位於骨幹中央，次級位於骨骺。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>初級在中間、次級在兩端；先中央後兩端，順序不可顛倒。</p></details></dd>
+<dd hidden><span class="root">oss-（骨，拉丁 os）+ -ification（化）</span>　骨化中心。初級位於骨幹中央，次級位於骨骺。<p class="vpun"><span class="vtag">諧音梗</span>center「中心」：初級在骨幹中央，次級在骨骺。</p><details data-kind="vocab-memory" open><summary>記憶提示</summary><p>初級在中間、次級在兩端；先中央後兩端，順序不可顛倒。</p></details></dd>
 
 <dt>periosteum</dt>
-<dd><span class="root">peri-（周圍）+ oste-（骨）+ -um</span>　骨膜。內層 cambium layer 含 osteoprogenitor，主司骨生長與修復。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>peri-＝周圍，比較 pericardium（心包）、perichondrium（軟骨膜）。</p></details></dd>
+<dd hidden><span class="root">peri-（周圍）+ oste-（骨）+ -um</span>　骨膜。內層 cambium layer 含 osteoprogenitor，主司骨生長與修復。<p class="vpun"><span class="vtag">諧音梗</span>peri「外圍」骨膜：內層 cambium 有前驅細胞，管生長修復。</p><details data-kind="vocab-memory" open><summary>記憶提示</summary><p>peri-＝周圍，比較 pericardium（心包）、perichondrium（軟骨膜）。</p></details></dd>
 
 <dt>perichondrium</dt>
-<dd><span class="root">peri-（周圍）+ chondr-（軟骨）</span>　軟骨膜。可分化出 chondroblast；<b>纖維軟骨缺乏它</b>。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>三型軟骨中唯一沒有軟骨膜的是 fibrocartilage，這是 113 年第 63 題的答案。</p></details></dd>
+<dd hidden><span class="root">peri-（周圍）+ chondr-（軟骨）</span>　軟骨膜。可分化出 chondroblast；<b>纖維軟骨缺乏它</b>。<p class="vpun"><span class="vtag">諧音梗</span>peri「圍」軟骨膜：可分化 chondroblast；纖維軟骨沒有。</p><details data-kind="vocab-memory" open><summary>記憶提示</summary><p>三型軟骨中唯一沒有軟骨膜的是 fibrocartilage，這是 113 年第 63 題的答案。</p></details></dd>
 
 <dt>lamellar bone</dt>
-<dd><span class="root">lamella（薄板、薄層）</span>　板層骨。collagen 纖維平行成層，構成所有成熟骨。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>lamella 就是「薄片」，跟 laminate（層壓板）同源。像書頁一層層疊。</p></details></dd>
+<dd hidden><span class="root">lamella（薄板、薄層）</span>　板層骨。collagen 纖維平行成層，構成所有成熟骨。<p class="vpun"><span class="vtag">諧音梗</span>lamellar「拉美拉」層層：所有成熟骨。</p><details data-kind="vocab-memory" open><summary>記憶提示</summary><p>lamella 就是「薄片」，跟 laminate（層壓板）同源。像書頁一層層疊。</p></details></dd>
 
 <dt>woven bone</dt>
-<dd><span class="root">weave（編織）</span>　編織骨。纖維隨機交織，見於胎兒骨、骨折癒合早期。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>「編織」＝亂中有序但不整齊，趕工的產物，之後會被改建成 lamellar。</p></details></dd>
+<dd hidden><span class="root">weave（編織）</span>　編織骨。纖維隨機交織，見於胎兒骨、骨折癒合早期。<p class="vpun"><span class="vtag">諧音梗</span>woven「窩混」亂織：胎兒骨、骨折早期。</p><details data-kind="vocab-memory" open><summary>記憶提示</summary><p>「編織」＝亂中有序但不整齊，趕工的產物，之後會被改建成 lamellar。</p></details></dd>
 
 <dt>trabecular bone</dt>
-<dd><span class="root">trabecula（小樑）</span>　骨小梁／海綿骨。不規則網狀，內含骨髓，具造血功能。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>trabecula 拉丁文是「小橫樑」。想像網狀鷹架，空隙裡塞著骨髓。</p></details></dd>
+<dd hidden><span class="root">trabecula（小樑）</span>　骨小梁／海綿骨。不規則網狀，內含骨髓，具造血功能。<p class="vpun"><span class="vtag">諧音梗</span>trabecular「柱扁哭啦」網狀：海綿骨，裝骨髓造血。</p><details data-kind="vocab-memory" open><summary>記憶提示</summary><p>trabecula 拉丁文是「小橫樑」。想像網狀鷹架，空隙裡塞著骨髓。</p></details></dd>
 
 <dt>hydroxyapatite</dt>
-<dd><span class="root">hydroxy-（氫氧基）+ apatite（磷灰石）</span>　Ca₁₀(PO₄)₆(OH)₂，骨的主要礦物質。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>考點只有一句：骨的礦物是氫氧磷灰石，<b>不是純鈣</b>。</p></details></dd>
+<dd hidden><span class="root">hydroxy-（氫氧基）+ apatite（磷灰石）</span>　Ca₁₀(PO₄)₆(OH)₂，骨的主要礦物質。<p class="vpun"><span class="vtag">諧音梗</span>hydroxyapatite「海枯石爛」：Ca10(PO4)6(OH)2 骨的礦物。</p><details data-kind="vocab-memory" open><summary>記憶提示</summary><p>考點只有一句：骨的礦物是氫氧磷灰石，<b>不是純鈣</b>。</p></details></dd>
 
 <dt>ARF cycle</dt>
-<dd><span class="root">Activation / Resorption / Reversal / Formation 的縮寫</span>　骨重塑循環。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>縮寫只取 A、R、F，中間的 Reversal 容易被漏掉——但選項常靠它做文章。四拍：叫醒、啃掉、交接、填回。</p></details></dd>
+<dd hidden><span class="root">Activation / Resorption / Reversal / Formation 的縮寫</span>　骨重塑循環。<p class="vpun"><span class="vtag">諧音梗</span>ARF「A 拆 R 修 F 蓋」：活化、吸收、形成，骨重塑循環。</p><details data-kind="vocab-memory" open><summary>記憶提示</summary><p>縮寫只取 A、R、F，中間的 Reversal 容易被漏掉——但選項常靠它做文章。四拍：叫醒、啃掉、交接、填回。</p></details></dd>
 
 <dt>resorption</dt>
-<dd><span class="root">re-（回）+ sorb（吸收）</span>　骨吸收。破骨細胞分解骨基質、釋出鈣質。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>不是 absorption（吸收進來）而是 resorption（把自己的組織收回去）。</p></details></dd>
+<dd hidden><span class="root">re-（回）+ sorb（吸收）</span>　骨吸收。破骨細胞分解骨基質、釋出鈣質。<p class="vpun"><span class="vtag">諧音梗</span>resorption「吸收」：破骨細胞分解骨基質放鈣。</p><details data-kind="vocab-memory" open><summary>記憶提示</summary><p>不是 absorption（吸收進來）而是 resorption（把自己的組織收回去）。</p></details></dd>
 
 <dt>chondrogenesis</dt>
-<dd><span class="root">chondr-（軟骨）+ -genesis（生成）</span>　軟骨生成。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>-genesis 系列：osteogenesis 成骨、angiogenesis 血管新生、hematopoiesis 造血。</p></details></dd>
+<dd hidden><span class="root">chondr-（軟骨）+ -genesis（生成）</span>　軟骨生成。<p class="vpun"><span class="vtag">諧音梗</span>chondro「軟骨」genesis「生」：軟骨生成。</p><details data-kind="vocab-memory" open><summary>記憶提示</summary><p>-genesis 系列：osteogenesis 成骨、angiogenesis 血管新生、hematopoiesis 造血。</p></details></dd>
 
 <dt>hyaline cartilage</dt>
-<dd><span class="root">hyalos（希臘文：玻璃）</span>　透明軟骨。最常見，見於關節面、肋末端、生長板、氣管。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>hyalo-＝玻璃，比較 hyaluronic acid（玻尿酸）。外觀半透明如毛玻璃。</p></details></dd>
+<dd hidden><span class="root">hyalos（希臘文：玻璃）</span>　透明軟骨。最常見，見於關節面、肋末端、生長板、氣管。<p class="vpun"><span class="vtag">諧音梗</span>hyaline「玻璃」透明：關節面、肋末端、生長板、氣管。</p><details data-kind="vocab-memory" open><summary>記憶提示</summary><p>hyalo-＝玻璃，比較 hyaluronic acid（玻尿酸）。外觀半透明如毛玻璃。</p></details></dd>
 
 <dt>fibrocartilage</dt>
-<dd><span class="root">fibro-（纖維）+ cartilage</span>　纖維軟骨。type I collagen 為主、耐壓、無軟骨膜；見於椎間盤、恥骨聯合、半月板。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>名字有 fibro 但<b>不是</b>膜內骨化的來源——112 年第 61 題就靠這個字設陷阱。</p></details></dd>
+<dd hidden><span class="root">fibro-（纖維）+ cartilage</span>　纖維軟骨。type I collagen 為主、耐壓、無軟骨膜；見於椎間盤、恥骨聯合、半月板。<p class="vpun"><span class="vtag">諧音梗</span>fibro「纖維」：type I，耐壓無軟骨膜；椎間盤、恥骨聯合、半月板。</p><details data-kind="vocab-memory" open><summary>記憶提示</summary><p>名字有 fibro 但<b>不是</b>膜內骨化的來源——112 年第 61 題就靠這個字設陷阱。</p></details></dd>
 
 <dt>elastic cartilage</dt>
-<dd><span class="root">elastic（有彈性的）</span>　彈性軟骨。富含彈性纖維，見於外耳、會厭。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>捏一下自己的耳朵——會彈回來，所以是 elastic，不是 hyaline。連兩年考。</p></details></dd>
+<dd hidden><span class="root">elastic（有彈性的）</span>　彈性軟骨。富含彈性纖維，見於外耳、會厭。<p class="vpun"><span class="vtag">諧音梗</span>elastic「橡皮」：外耳、會厭。</p><details data-kind="vocab-memory" open><summary>記憶提示</summary><p>捏一下自己的耳朵——會彈回來，所以是 elastic，不是 hyaline。連兩年考。</p></details></dd>
 
 <dt>avascular</dt>
-<dd><span class="root">a-（無）+ vascular（血管的）</span>　無血管的。軟骨的核心特性。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>無血管 → 靠擴散 → 修復慢。這條因果鏈可以直接推出好幾個選項的對錯。</p></details></dd>
+<dd hidden><span class="root">a-（無）+ vascular（血管的）</span>　無血管的。軟骨的核心特性。<p class="vpun"><span class="vtag">諧音梗</span>a「無」vascular「血管」：軟骨核心特性。</p><details data-kind="vocab-memory" open><summary>記憶提示</summary><p>無血管 → 靠擴散 → 修復慢。這條因果鏈可以直接推出好幾個選項的對錯。</p></details></dd>
 
 <dt>ovariectomy</dt>
-<dd><span class="root">ovari-（卵巢）+ -ectomy（切除）</span>　去卵巢術。建立停經後骨質疏鬆動物模式的標準方法。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>-ectomy＝切除，比較 appendectomy（闌尾切除）。切掉雌激素來源＝模擬停經。</p></details></dd>
+<dd hidden><span class="root">ovari-（卵巢）+ -ectomy（切除）</span>　去卵巢術。建立停經後骨質疏鬆動物模式的標準方法。<p class="vpun"><span class="vtag">諧音梗</span>ovari「卵巢」ectomy「切」：停經骨鬆動物模式。</p><details data-kind="vocab-memory" open><summary>記憶提示</summary><p>-ectomy＝切除，比較 appendectomy（闌尾切除）。切掉雌激素來源＝模擬停經。</p></details></dd>
 
 <dt>glucocorticoid</dt>
-<dd><span class="root">gluco-（糖）+ cortic-（皮質）+ -oid</span>　糖皮質素。長期過量導致骨質疏鬆，也用於誘發動物模式。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>類固醇抑制成骨、促進骨吸收——臨床上的類固醇性骨鬆與實驗模型是同一個機轉。</p></details></dd>
+<dd hidden><span class="root">gluco-（糖）+ cortic-（皮質）+ -oid</span>　糖皮質素。長期過量導致骨質疏鬆，也用於誘發動物模式。<p class="vpun"><span class="vtag">諧音梗</span>gluco「骨骼扣」：長期類固醇→骨鬆，也用來造模型。</p><details data-kind="vocab-memory" open><summary>記憶提示</summary><p>類固醇抑制成骨、促進骨吸收——臨床上的類固醇性骨鬆與實驗模型是同一個機轉。</p></details></dd>
 
 <dt>grip strength test / rota-rod test</dt>
-<dd><span class="root">grip（抓握）／rota（旋轉）+ rod（桿）</span>　抓握力測試＝肌力與神經肌肉功能；轉棒測試＝動作協調。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>rota- 就是「轉」（rotate）——會轉的那個測協調；用手抓的那個測肌力。</p></details></dd>
+<dd hidden><span class="root">grip（抓握）／rota（旋轉）+ rod（桿）</span>　抓握力測試＝肌力與神經肌肉功能；轉棒測試＝動作協調。<p class="vpun"><span class="vtag">諧音梗</span>grip「抓」肌力；rota-rod「轉棒」協調。</p><details data-kind="vocab-memory" open><summary>記憶提示</summary><p>rota- 就是「轉」（rotate）——會轉的那個測協調；用手抓的那個測肌力。</p></details></dd>
 </dl>
 </section>
 
@@ -1315,5 +1334,36 @@ figure.boxfig .figtag{color:var(--violet);font-size:.76rem;letter-spacing:.1em;
   });
 </script>
 <!-- nb-comments:end -->
+
+<script data-nb-vocab-flip>
+(function(){
+  var dl=document.querySelector('dl.vocab'); if(!dl) return;
+  var dts=Array.prototype.slice.call(dl.querySelectorAll('dt'));
+  var count=document.querySelector('.vtools .vcount');
+  function dd(dt){return dt.nextElementSibling && dt.nextElementSibling.tagName==='DD' ? dt.nextElementSibling : null;}
+  function set(dt,open){var d=dd(dt); if(!d) return; d.hidden=!open; dt.classList.toggle('open',open); dt.setAttribute('aria-expanded',open?'true':'false');}
+  function refresh(){ if(!count) return; var n=dts.filter(function(dt){return dt.classList.contains('open');}).length; count.textContent='已翻 '+n+' / '+dts.length; }
+  dts.forEach(function(dt){
+    dt.tabIndex=0; dt.setAttribute('role','button'); set(dt,false);
+    dt.addEventListener('click',function(){ set(dt,dd(dt).hidden); refresh(); });
+    dt.addEventListener('keydown',function(e){ if(e.key==='Enter'||e.key===' '){ e.preventDefault(); dt.click(); } });
+  });
+  var tools=document.querySelector('.vtools'); if(!tools) return;
+  tools.addEventListener('click',function(e){
+    var b=e.target.closest('button'); if(!b) return;
+    var act=b.getAttribute('data-act');
+    if(act==='open'){ dts.forEach(function(dt){set(dt,true);}); }
+    else if(act==='close'){ dts.forEach(function(dt){set(dt,false);}); }
+    else if(act==='quiz'){
+      var closed=dts.filter(function(dt){return !dt.classList.contains('open');});
+      if(!closed.length){ dts.forEach(function(dt){set(dt,false);}); closed=dts; }
+      var pick=closed[Math.floor(Math.random()*closed.length)];
+      pick.scrollIntoView({behavior:'smooth',block:'center'}); pick.focus({preventScroll:true});
+    }
+    refresh();
+  });
+  refresh();
+})();
+</script>
 </body>
 </html>
