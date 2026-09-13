@@ -94,6 +94,23 @@ figure.boxfig figcaption{color:var(--dim);font-size:.82rem;margin-top:.5rem;
 figure.boxfig .figtag{color:var(--violet);font-size:.76rem;letter-spacing:.1em;
   display:block;margin-bottom:.3rem}
 .ending{color:var(--dim);font-style:italic;margin:1.6rem 0 2.4rem}
+
+/* nb-vocab-flip:start */
+dl.vocab dt{cursor:pointer;user-select:none;position:relative;padding-right:6.2rem;border-bottom:1px dashed var(--line)}
+dl.vocab dt::after{content:"點我翻牌 ▸";position:absolute;right:0;top:.15rem;font-size:.8rem;color:var(--dim);font-weight:400}
+dl.vocab dt.open::after{content:"蓋回去 ▾";color:var(--gold)}
+dl.vocab dt:focus-visible{outline:2px solid var(--cyan);outline-offset:3px;border-radius:4px}
+dl.vocab dd[hidden]{display:none}
+dl.vocab dd{padding:.5rem .7rem .6rem;background:var(--panel);border:1px solid var(--line);border-top:0;border-radius:0 0 8px 8px;margin-bottom:.4rem}
+dl.vocab .vpun{margin:.5rem 0 0;padding:.45rem .65rem;border-left:3px solid var(--gold);background:rgba(229,181,103,.08);border-radius:4px}
+dl.vocab .vpun .vtag{color:var(--gold);font-weight:700;margin-right:.45rem}
+dl.vocab details[data-kind="vocab-memory"]{margin-top:.45rem}
+.vtools{display:flex;gap:.5rem;flex-wrap:wrap;align-items:center;margin:.5rem 0 .3rem}
+.vtools button{font:inherit;font-size:.9rem;padding:.35rem .8rem;border-radius:999px;border:1px solid var(--line);background:var(--panel);color:var(--ink);cursor:pointer}
+.vtools button:hover{border-color:var(--cyan);color:var(--cyan)}
+.vtools .vcount{color:var(--dim);font-size:.85rem;margin-left:auto}
+.vhow{color:var(--dim);font-size:.9rem;margin:.2rem 0 .4rem}
+/* nb-vocab-flip:end */
 </style></head>
 <body>
 <div class="container">
@@ -560,81 +577,83 @@ figure.boxfig .figtag{color:var(--violet);font-size:.76rem;letter-spacing:.1em;
 <!-- ================= VOCAB ================= -->
 <section id="chapter-vocab" data-chapter-kind="vocab">
 <h2>六、單字表</h2>
+<p class="vhow">先看英文想中文，點單字翻牌看意思、諧音梗與記憶提示。</p>
+<div class="vtools"><button type="button" data-act="quiz">🎲 隨機抽一張</button><button type="button" data-act="open">全部翻開</button><button type="button" data-act="close">全部蓋上</button><span class="vcount"></span></div>
 <dl class="vocab">
 <dt>intramembranous ossification</dt>
-<dd><span class="root">intra-（在……之內）+ membrane（膜）</span>　膜內骨化。間葉細胞直接在膜內分化為成骨細胞成骨。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>「在膜裡面直接蓋」。不需要模型，所以蓋出來的骨不會靠生長板長長。</p></details></dd>
+<dd hidden><span class="root">intra-（在……之內）+ membrane（膜）</span>　膜內骨化。間葉細胞直接在膜內分化為成骨細胞成骨。<p class="vpun"><span class="vtag">諧音梗</span>intra「在膜內」直接變骨：顱頂、鎖骨這樣長。</p><details data-kind="vocab-memory" open><summary>記憶提示</summary><p>「在膜裡面直接蓋」。不需要模型，所以蓋出來的骨不會靠生長板長長。</p></details></dd>
 
 <dt>endochondral ossification</dt>
-<dd><span class="root">endo-（在內）+ chondro-（軟骨）</span>　軟骨內骨化。先形成透明軟骨模型，再由骨取代。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>chondro-＝軟骨。「在軟骨裡面換掉」。<b>會長長的骨都走這條路。</b></p></details></dd>
+<dd hidden><span class="root">endo-（在內）+ chondro-（軟骨）</span>　軟骨內骨化。先形成透明軟骨模型，再由骨取代。<p class="vpun"><span class="vtag">諧音梗</span>endo「在軟骨內」換成骨：先做軟骨模型再置換。</p><details data-kind="vocab-memory" open><summary>記憶提示</summary><p>chondro-＝軟骨。「在軟骨裡面換掉」。<b>會長長的骨都走這條路。</b></p></details></dd>
 
 <dt>notochord</dt>
-<dd><span class="root">noto-（背）+ chord（索）</span>　脊索。中軸的暫時性結構，是頭與軀幹胚層來源的分界線。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>它是<b>那條線</b>：線以前歸神經脊，線以後歸旁軸中胚層。殘餘物就是髓核。</p></details></dd>
+<dd hidden><span class="root">noto-（背）+ chord（索）</span>　脊索。中軸的暫時性結構，是頭與軀幹胚層來源的分界線。<p class="vpun"><span class="vtag">諧音梗</span>notochord「弄頭抽」：中軸那條暫時的索，頭與軀幹的分界。</p><details data-kind="vocab-memory" open><summary>記憶提示</summary><p>它是<b>那條線</b>：線以前歸神經脊，線以後歸旁軸中胚層。殘餘物就是髓核。</p></details></dd>
 
 <dt>neural crest</dt>
-<dd><span class="root">crest＝脊、冠</span>　神經脊。源自外胚層，遷徙後形成顱顏面的骨與軟骨等構造。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>它屬<b>外胚層</b>卻做中胚層的工作——這個違反直覺的點就是考點本身。</p></details></dd>
+<dd hidden><span class="root">crest＝脊、冠</span>　神經脊。源自外胚層，遷徙後形成顱顏面的骨與軟骨等構造。<p class="vpun"><span class="vtag">諧音梗</span>neural crest「神經克瑞斯特」：外胚層出走，做顱顏面骨與軟骨。</p><details data-kind="vocab-memory" open><summary>記憶提示</summary><p>它屬<b>外胚層</b>卻做中胚層的工作——這個違反直覺的點就是考點本身。</p></details></dd>
 
 <dt>paraxial mesoderm</dt>
-<dd><span class="root">para-（旁）+ axial（軸）</span>　旁軸中胚層。分節成體節，供應軀幹與四肢的骨骼肌肉。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>「軸的兩旁」。脊索<b>以後</b>的材料都出自這裡。</p></details></dd>
+<dd hidden><span class="root">para-（旁）+ axial（軸）</span>　旁軸中胚層。分節成體節，供應軀幹與四肢的骨骼肌肉。<p class="vpun"><span class="vtag">諧音梗</span>paraxial「旁邊軸」：旁軸中胚層分節成體節，供應軀幹四肢骨與肌。</p><details data-kind="vocab-memory" open><summary>記憶提示</summary><p>「軸的兩旁」。脊索<b>以後</b>的材料都出自這裡。</p></details></dd>
 
 <dt>somatic mesoderm</dt>
-<dd><span class="root">soma（希臘：身體）</span>　體壁中胚層（側板中胚層的體壁層），構成肢芽的間葉核心。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>肢芽的<b>裡層</b>就是它，外面只蓋一層表面外胚層——中間沒有第三層。</p></details></dd>
+<dd hidden><span class="root">soma（希臘：身體）</span>　體壁中胚層（側板中胚層的體壁層），構成肢芽的間葉核心。<p class="vpun"><span class="vtag">諧音梗</span>somatic「體壁」：側板中胚層的體壁層，肢芽的間葉核心。</p><details data-kind="vocab-memory" open><summary>記憶提示</summary><p>肢芽的<b>裡層</b>就是它，外面只蓋一層表面外胚層——中間沒有第三層。</p></details></dd>
 
 <dt>neurocranium</dt>
-<dd><span class="root">neuro-（神經、腦）+ cranium（顱）</span>　神經顱。包覆並保護腦的顱骨部分。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>名字裡有 neuro＝<b>裝腦的那個殼</b>。頂蓋走膜內、顱底走軟骨內。</p></details></dd>
+<dd hidden><span class="root">neuro-（神經、腦）+ cranium（顱）</span>　神經顱。包覆並保護腦的顱骨部分。<p class="vpun"><span class="vtag">諧音梗</span>neuro「腦」cranium「殼」：包腦的顱骨。</p><details data-kind="vocab-memory" open><summary>記憶提示</summary><p>名字裡有 neuro＝<b>裝腦的那個殼</b>。頂蓋走膜內、顱底走軟骨內。</p></details></dd>
 
 <dt>viscerocranium</dt>
-<dd><span class="root">viscero-（內臟）+ cranium（顱）</span>　臟顱。形成臉、鼻腔與口腔的部分。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>「內臟那一面」——呼吸道與消化道的入口都在這裡，所以是臉。</p></details></dd>
+<dd hidden><span class="root">viscero-（內臟）+ cranium（顱）</span>　臟顱。形成臉、鼻腔與口腔的部分。<p class="vpun"><span class="vtag">諧音梗</span>viscero「臉」cranium：做臉、鼻腔、口腔的骨。</p><details data-kind="vocab-memory" open><summary>記憶提示</summary><p>「內臟那一面」——呼吸道與消化道的入口都在這裡，所以是臉。</p></details></dd>
 
 <dt>pharyngeal arch</dt>
-<dd><span class="root">pharynx（咽）+ arch（弓）</span>　咽弓。頸部一系列成對的胚胎構造，各自產出固定的骨與軟骨。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>把它當成<b>編號好的預鑄構件</b>：出貨單固定，只能背。</p></details></dd>
+<dd hidden><span class="root">pharynx（咽）+ arch（弓）</span>　咽弓。頸部一系列成對的胚胎構造，各自產出固定的骨與軟骨。<p class="vpun"><span class="vtag">諧音梗</span>pharyngeal「咽」arch「弓」：頸部一對對的弓，各出固定的骨。</p><details data-kind="vocab-memory" open><summary>記憶提示</summary><p>把它當成<b>編號好的預鑄構件</b>：出貨單固定，只能背。</p></details></dd>
 
 <dt>cornu (lesser / greater cornu)</dt>
-<dd><span class="root">拉丁 cornu＝角（比較 unicorn）</span>　舌骨的小角與大角。<details data-kind="vocab-memory"><summary>記憶提示</summary><p><b>小角配第二、大角配第三。</b>兩年就考這兩格。</p></details></dd>
+<dd hidden><span class="root">拉丁 cornu＝角（比較 unicorn）</span>　舌骨的小角與大角。<p class="vpun"><span class="vtag">諧音梗</span>cornu「角」：舌骨的小角（第二弓）與大角（第三弓）。</p><details data-kind="vocab-memory" open><summary>記憶提示</summary><p><b>小角配第二、大角配第三。</b>兩年就考這兩格。</p></details></dd>
 
 <dt>hyoid bone</dt>
-<dd><span class="root">希臘字母 upsilon 的形狀</span>　舌骨。頸前唯一不與其他骨形成關節的骨。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>它的身體、小角、大角來自不同咽弓——所以才會被拿來出題。</p></details></dd>
+<dd hidden><span class="root">希臘字母 upsilon 的形狀</span>　舌骨。頸前唯一不與其他骨形成關節的骨。<p class="vpun"><span class="vtag">諧音梗</span>hyoid「孤獨」骨：頸前唯一不跟別的骨形成關節。</p><details data-kind="vocab-memory" open><summary>記憶提示</summary><p>它的身體、小角、大角來自不同咽弓——所以才會被拿來出題。</p></details></dd>
 
 <dt>Meckel's cartilage</dt>
-<dd><span class="root">以解剖學家 Meckel 命名</span>　第一咽弓的軟骨，與下頜及槌骨、砧骨的形成有關。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>第一弓＝「下巴那一組」。</p></details></dd>
+<dd hidden><span class="root">以解剖學家 Meckel 命名</span>　第一咽弓的軟骨，與下頜及槌骨、砧骨的形成有關。<p class="vpun"><span class="vtag">諧音梗</span>Meckel「麥可」第一弓：下頜、槌骨、砧骨。</p><details data-kind="vocab-memory" open><summary>記憶提示</summary><p>第一弓＝「下巴那一組」。</p></details></dd>
 
 <dt>Reichert's cartilage</dt>
-<dd><span class="root">以解剖學家 Reichert 命名</span>　第二咽弓的軟骨，形成鐙骨與舌骨小角等構造。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>第二弓＝「鐙骨＋小角」。這兩個一起記，剛好對應到兩年的兩題。</p></details></dd>
+<dd hidden><span class="root">以解剖學家 Reichert 命名</span>　第二咽弓的軟骨，形成鐙骨與舌骨小角等構造。<p class="vpun"><span class="vtag">諧音梗</span>Reichert「萊克特」第二弓：鐙骨、舌骨小角。</p><details data-kind="vocab-memory" open><summary>記憶提示</summary><p>第二弓＝「鐙骨＋小角」。這兩個一起記，剛好對應到兩年的兩題。</p></details></dd>
 
 <dt>stapes</dt>
-<dd><span class="root">拉丁 stapes＝馬鐙</span>　鐙骨，中耳三小骨中最內側者，源自第二咽弓軟骨。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>來自<b>軟骨</b>，所以它走<b>軟骨內骨化</b>——111 年的 (B) 就是靠這點成為錯項。</p></details></dd>
+<dd hidden><span class="root">拉丁 stapes＝馬鐙</span>　鐙骨，中耳三小骨中最內側者，源自第二咽弓軟骨。<p class="vpun"><span class="vtag">諧音梗</span>stapes「踏鐙」：中耳最內側的鐙骨，來自第二弓。</p><details data-kind="vocab-memory" open><summary>記憶提示</summary><p>來自<b>軟骨</b>，所以它走<b>軟骨內骨化</b>——111 年的 (B) 就是靠這點成為錯項。</p></details></dd>
 
 <dt>squamous part of temporal bone</dt>
-<dd><span class="root">squama（拉丁：鱗片）</span>　顳骨鱗部，扁平如鱗，走膜內骨化。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>squama＝鱗片＝<b>扁平</b>＝直接砌起來的那種。扁平骨幾乎都是膜內。</p></details></dd>
+<dd hidden><span class="root">squama（拉丁：鱗片）</span>　顳骨鱗部，扁平如鱗，走膜內骨化。<p class="vpun"><span class="vtag">諧音梗</span>squamous「鱗」部扁扁的：膜內骨化。</p><details data-kind="vocab-memory" open><summary>記憶提示</summary><p>squama＝鱗片＝<b>扁平</b>＝直接砌起來的那種。扁平骨幾乎都是膜內。</p></details></dd>
 
 <dt>petrous / mastoid part</dt>
-<dd><span class="root">petra（希臘：岩石）；mastos（乳房）</span>　顳骨的岩部與乳突部，走軟骨內骨化。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>petra＝岩石，全身最硬的骨。跟鱗部同屬一塊顳骨，工法卻不同。</p></details></dd>
+<dd hidden><span class="root">petra（希臘：岩石）；mastos（乳房）</span>　顳骨的岩部與乳突部，走軟骨內骨化。<p class="vpun"><span class="vtag">諧音梗</span>petrous「石頭」硬部＋乳突：軟骨內骨化。</p><details data-kind="vocab-memory" open><summary>記憶提示</summary><p>petra＝岩石，全身最硬的骨。跟鱗部同屬一塊顳骨，工法卻不同。</p></details></dd>
 
 <dt>clavicle</dt>
-<dd><span class="root">拉丁 clavicula＝小鑰匙</span>　鎖骨。初級骨化中心為膜內骨化，兩端後來形成軟骨。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>全身最早開始骨化的骨，也是唯一的「混血」——113 年申覆的主角。</p></details></dd>
+<dd hidden><span class="root">拉丁 clavicula＝小鑰匙</span>　鎖骨。初級骨化中心為膜內骨化，兩端後來形成軟骨。<p class="vpun"><span class="vtag">諧音梗</span>clavicle「鎖骨」先膜內：初級骨化膜內，兩端後來變軟骨。</p><details data-kind="vocab-memory" open><summary>記憶提示</summary><p>全身最早開始骨化的骨，也是唯一的「混血」——113 年申覆的主角。</p></details></dd>
 
 <dt>limb bud</dt>
-<dd><span class="root">bud＝芽</span>　肢芽。體壁中胚層的間葉核心外覆表面外胚層。<details data-kind="vocab-memory"><summary>記憶提示</summary><p><b>兩層，就兩層。</b>中間不夾皮肌節。</p></details></dd>
+<dd hidden><span class="root">bud＝芽</span>　肢芽。體壁中胚層的間葉核心外覆表面外胚層。<p class="vpun"><span class="vtag">諧音梗</span>limb bud「肢芽」：中胚層核心外面包一層外胚層。</p><details data-kind="vocab-memory" open><summary>記憶提示</summary><p><b>兩層，就兩層。</b>中間不夾皮肌節。</p></details></dd>
 
 <dt>apical ectodermal ridge (AER)</dt>
-<dd><span class="root">apical（頂端）+ ridge（脊）</span>　頂端外胚層脊，建立<b>近端—遠端</b>軸。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>它長在肢芽的<b>尖端</b>，所以管的是「往外長多遠」——近遠軸。</p></details></dd>
+<dd hidden><span class="root">apical（頂端）+ ridge（脊）</span>　頂端外胚層脊，建立<b>近端—遠端</b>軸。<p class="vpun"><span class="vtag">諧音梗</span>AER「A 遠」：頂端外胚層脊，管近端到遠端。</p><details data-kind="vocab-memory" open><summary>記憶提示</summary><p>它長在肢芽的<b>尖端</b>，所以管的是「往外長多遠」——近遠軸。</p></details></dd>
 
 <dt>zone of polarizing activity (ZPA)</dt>
-<dd><span class="root">polarize＝極化</span>　極化活性區，位於肢芽後緣，建立<b>前—後</b>軸。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>它長在<b>後緣</b>，所以管前後。<b>AER 尖端管遠近、ZPA 後緣管前後。</b></p></details></dd>
+<dd hidden><span class="root">polarize＝極化</span>　極化活性區，位於肢芽後緣，建立<b>前—後</b>軸。<p class="vpun"><span class="vtag">諧音梗</span>ZPA「Z 後」：在肢芽後緣，管前後軸（拇指小指）。</p><details data-kind="vocab-memory" open><summary>記憶提示</summary><p>它長在<b>後緣</b>，所以管前後。<b>AER 尖端管遠近、ZPA 後緣管前後。</b></p></details></dd>
 
 <dt>myotome</dt>
-<dd><span class="root">myo-（肌）+ -tome（節、切片）</span>　肌節。體節中發育為骨骼肌的部分。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>每個肌節一上工就<b>分成兩班</b>：軸上與軸下。</p></details></dd>
+<dd hidden><span class="root">myo-（肌）+ -tome（節、切片）</span>　肌節。體節中發育為骨骼肌的部分。<p class="vpun"><span class="vtag">諧音梗</span>myo「肌」tome「節」：體節裡變骨骼肌的那塊。</p><details data-kind="vocab-memory" open><summary>記憶提示</summary><p>每個肌節一上工就<b>分成兩班</b>：軸上與軸下。</p></details></dd>
 
 <dt>epaxial division</dt>
-<dd><span class="root">ep-（在上）+ axial（軸）</span>　軸上部，形成脊柱背側的深層伸肌，由脊神經背側枝支配。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>ep-＝上面／背面。範圍很窄，<b>只有背部深層那一條</b>。</p></details></dd>
+<dd hidden><span class="root">ep-（在上）+ axial（軸）</span>　軸上部，形成脊柱背側的深層伸肌，由脊神經背側枝支配。<p class="vpun"><span class="vtag">諧音梗</span>epi「上」axial：軸上部→背側深層伸肌，背側枝支配。</p><details data-kind="vocab-memory" open><summary>記憶提示</summary><p>ep-＝上面／背面。範圍很窄，<b>只有背部深層那一條</b>。</p></details></dd>
 
 <dt>hypaxial division</dt>
-<dd><span class="root">hypo-（在下）+ axial（軸）</span>　軸下部，形成頸前、肋間、腹壁與骨盆底肌，由腹側枝支配。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>hypo-＝下面／腹面。範圍很大，<b>其餘幾乎都是它</b>。</p></details></dd>
+<dd hidden><span class="root">hypo-（在下）+ axial（軸）</span>　軸下部，形成頸前、肋間、腹壁與骨盆底肌，由腹側枝支配。<p class="vpun"><span class="vtag">諧音梗</span>hypo「下」axial：軸下部→頸前、肋間、腹壁，腹側枝支配。</p><details data-kind="vocab-memory" open><summary>記憶提示</summary><p>hypo-＝下面／腹面。範圍很大，<b>其餘幾乎都是它</b>。</p></details></dd>
 
 <dt>dermomyotome</dt>
-<dd><span class="root">dermo-（皮）+ myotome（肌節）</span>　皮肌節，體節中日後形成真皮與骨骼肌的部分。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>老師在申覆裡強調：<b>皮肌節只出現在軀幹</b>，肢芽的兩層之間不會有它。</p></details></dd>
+<dd hidden><span class="root">dermo-（皮）+ myotome（肌節）</span>　皮肌節，體節中日後形成真皮與骨骼肌的部分。<p class="vpun"><span class="vtag">諧音梗</span>dermo「皮」＋myo「肌」tome：體節裡做真皮與骨骼肌的部分。</p><details data-kind="vocab-memory" open><summary>記憶提示</summary><p>老師在申覆裡強調：<b>皮肌節只出現在軀幹</b>，肢芽的兩層之間不會有它。</p></details></dd>
 
 <dt>secondary ossification center</dt>
-<dd><span class="root">secondary＝次級</span>　次級骨化中心，位於長骨兩端骨骺。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>大多出生後才出現——但<b>股骨遠端與脛骨近端是例外</b>，出生時就在。看到「all」先懷疑。</p></details></dd>
+<dd hidden><span class="root">secondary＝次級</span>　次級骨化中心，位於長骨兩端骨骺。<p class="vpun"><span class="vtag">諧音梗</span>secondary「二級」在骨骺：長骨兩端頭的骨化中心。</p><details data-kind="vocab-memory" open><summary>記憶提示</summary><p>大多出生後才出現——但<b>股骨遠端與脛骨近端是例外</b>，出生時就在。看到「all」先懷疑。</p></details></dd>
 </dl>
 </section>
 <section id="chapter-final" data-chapter-kind="final_questions">
@@ -837,5 +856,36 @@ figure.boxfig .figtag{color:var(--violet);font-size:.76rem;letter-spacing:.1em;
   });
 </script>
 <!-- nb-comments:end -->
+
+<script data-nb-vocab-flip>
+(function(){
+  var dl=document.querySelector('dl.vocab'); if(!dl) return;
+  var dts=Array.prototype.slice.call(dl.querySelectorAll('dt'));
+  var count=document.querySelector('.vtools .vcount');
+  function dd(dt){return dt.nextElementSibling && dt.nextElementSibling.tagName==='DD' ? dt.nextElementSibling : null;}
+  function set(dt,open){var d=dd(dt); if(!d) return; d.hidden=!open; dt.classList.toggle('open',open); dt.setAttribute('aria-expanded',open?'true':'false');}
+  function refresh(){ if(!count) return; var n=dts.filter(function(dt){return dt.classList.contains('open');}).length; count.textContent='已翻 '+n+' / '+dts.length; }
+  dts.forEach(function(dt){
+    dt.tabIndex=0; dt.setAttribute('role','button'); set(dt,false);
+    dt.addEventListener('click',function(){ set(dt,dd(dt).hidden); refresh(); });
+    dt.addEventListener('keydown',function(e){ if(e.key==='Enter'||e.key===' '){ e.preventDefault(); dt.click(); } });
+  });
+  var tools=document.querySelector('.vtools'); if(!tools) return;
+  tools.addEventListener('click',function(e){
+    var b=e.target.closest('button'); if(!b) return;
+    var act=b.getAttribute('data-act');
+    if(act==='open'){ dts.forEach(function(dt){set(dt,true);}); }
+    else if(act==='close'){ dts.forEach(function(dt){set(dt,false);}); }
+    else if(act==='quiz'){
+      var closed=dts.filter(function(dt){return !dt.classList.contains('open');});
+      if(!closed.length){ dts.forEach(function(dt){set(dt,false);}); closed=dts; }
+      var pick=closed[Math.floor(Math.random()*closed.length)];
+      pick.scrollIntoView({behavior:'smooth',block:'center'}); pick.focus({preventScroll:true});
+    }
+    refresh();
+  });
+  refresh();
+})();
+</script>
 </body>
 </html>
