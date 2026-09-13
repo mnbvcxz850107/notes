@@ -94,6 +94,23 @@ figure.boxfig figcaption{color:var(--dim);font-size:.82rem;margin-top:.5rem;
 figure.boxfig .figtag{color:var(--violet);font-size:.76rem;letter-spacing:.1em;
   display:block;margin-bottom:.3rem}
 .ending{color:var(--dim);font-style:italic;margin:1.6rem 0 2.4rem}
+
+/* nb-vocab-flip:start */
+dl.vocab dt{cursor:pointer;user-select:none;position:relative;padding-right:6.2rem;border-bottom:1px dashed var(--line)}
+dl.vocab dt::after{content:"點我翻牌 ▸";position:absolute;right:0;top:.15rem;font-size:.8rem;color:var(--dim);font-weight:400}
+dl.vocab dt.open::after{content:"蓋回去 ▾";color:var(--gold)}
+dl.vocab dt:focus-visible{outline:2px solid var(--cyan);outline-offset:3px;border-radius:4px}
+dl.vocab dd[hidden]{display:none}
+dl.vocab dd{padding:.5rem .7rem .6rem;background:var(--panel);border:1px solid var(--line);border-top:0;border-radius:0 0 8px 8px;margin-bottom:.4rem}
+dl.vocab .vpun{margin:.5rem 0 0;padding:.45rem .65rem;border-left:3px solid var(--gold);background:rgba(229,181,103,.08);border-radius:4px}
+dl.vocab .vpun .vtag{color:var(--gold);font-weight:700;margin-right:.45rem}
+dl.vocab details[data-kind="vocab-memory"]{margin-top:.45rem}
+.vtools{display:flex;gap:.5rem;flex-wrap:wrap;align-items:center;margin:.5rem 0 .3rem}
+.vtools button{font:inherit;font-size:.9rem;padding:.35rem .8rem;border-radius:999px;border:1px solid var(--line);background:var(--panel);color:var(--ink);cursor:pointer}
+.vtools button:hover{border-color:var(--cyan);color:var(--cyan)}
+.vtools .vcount{color:var(--dim);font-size:.85rem;margin-left:auto}
+.vhow{color:var(--dim);font-size:.9rem;margin:.2rem 0 .4rem}
+/* nb-vocab-flip:end */
 </style></head>
 <body>
 <div class="container">
@@ -1517,122 +1534,124 @@ figure.boxfig .figtag{color:var(--violet);font-size:.76rem;letter-spacing:.1em;
 
 <section id="chapter-vocab" data-chapter-kind="vocab">
 <h2>十六、單字表</h2>
+<p class="vhow">先看英文想中文，點單字翻牌看意思、諧音梗與記憶提示。</p>
+<div class="vtools"><button type="button" data-act="quiz">🎲 隨機抽一張</button><button type="button" data-act="open">全部翻開</button><button type="button" data-act="close">全部蓋上</button><span class="vcount"></span></div>
 <dl class="vocab">
 <dt>achondroplasia</dt>
-<dd><span class="root">a-（無）+ chondro-（軟骨）+ -plasia（生成）</span>　軟骨發育不全。FGFR3 活化突變抑制軟骨內骨化。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>字面「沒有軟骨生成」——正好指出受影響的是<b>軟骨內</b>骨化，膜內骨化無關。</p></details></dd>
+<dd hidden><span class="root">a-（無）+ chondro-（軟骨）+ -plasia（生成）</span>　軟骨發育不全。FGFR3 活化突變抑制軟骨內骨化。<p class="vpun"><span class="vtag">諧音梗</span>a「無」chondro「軟骨」plasia「生」：FGFR3 太活躍，軟骨長不出來，侏儒。</p><details data-kind="vocab-memory" open><summary>記憶提示</summary><p>字面「沒有軟骨生成」——正好指出受影響的是<b>軟骨內</b>骨化，膜內骨化無關。</p></details></dd>
 
 <dt>osteopetrosis</dt>
-<dd><span class="root">osteo-（骨）+ petro-（岩石，希臘 petra）+ -osis</span>　大理石骨病／石骨症。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>petra＝石頭，比較 petroleum（石油）。石頭硬但脆，一敲就裂——正是本病「硬卻易骨折」的考點。</p></details></dd>
+<dd hidden><span class="root">osteo-（骨）+ petro-（岩石，希臘 petra）+ -osis</span>　大理石骨病／石骨症。<p class="vpun"><span class="vtag">諧音梗</span>petro「石頭」：骨頭硬得像大理石，卻脆；破骨細胞壞掉。</p><details data-kind="vocab-memory" open><summary>記憶提示</summary><p>petra＝石頭，比較 petroleum（石油）。石頭硬但脆，一敲就裂——正是本病「硬卻易骨折」的考點。</p></details></dd>
 
 <dt>osteogenesis imperfecta</dt>
-<dd><span class="root">osteo-（骨）+ genesis（生成）+ imperfecta（不完全）</span>　成骨不全、玻璃娃娃。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>字面「造骨造得不完全」。缺的是鋼筋（type I collagen），不是水泥。</p></details></dd>
+<dd hidden><span class="root">osteo-（骨）+ genesis（生成）+ imperfecta（不完全）</span>　成骨不全、玻璃娃娃。<p class="vpun"><span class="vtag">諧音梗</span>imperfecta「不完美」的骨生成：玻璃娃娃，第一型膠原壞。</p><details data-kind="vocab-memory" open><summary>記憶提示</summary><p>字面「造骨造得不完全」。缺的是鋼筋（type I collagen），不是水泥。</p></details></dd>
 
 <dt>type I collagen</dt>
-<dd><span class="root">colla（膠）+ -gen（生成者）</span>　第一型膠原蛋白，骨、肌腱、皮膚與鞏膜的主要結構蛋白。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>鞏膜也靠它，所以缺了會變薄透出色素 → 藍鞏膜。骨與眼睛的症狀來自同一個缺陷。</p></details></dd>
+<dd hidden><span class="root">colla（膠）+ -gen（生成者）</span>　第一型膠原蛋白，骨、肌腱、皮膚與鞏膜的主要結構蛋白。<p class="vpun"><span class="vtag">諧音梗</span>type I「一」號膠原：骨、肌腱、皮膚、鞏膜的主結構。</p><details data-kind="vocab-memory" open><summary>記憶提示</summary><p>鞏膜也靠它，所以缺了會變薄透出色素 → 藍鞏膜。骨與眼睛的症狀來自同一個缺陷。</p></details></dd>
 
 <dt>blue sclerae</dt>
-<dd><span class="root">sclera（鞏膜，希臘 skleros＝硬）</span>　藍鞏膜，成骨不全的特徵性眼徵。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>鞏膜＝眼白。膠原不足 → 變薄 → 底下脈絡膜透出來 → 泛藍。</p></details></dd>
+<dd hidden><span class="root">sclera（鞏膜，希臘 skleros＝硬）</span>　藍鞏膜，成骨不全的特徵性眼徵。<p class="vpun"><span class="vtag">諧音梗</span>blue「藍」鞏膜：膠原太薄透出底下藍色，成骨不全。</p><details data-kind="vocab-memory" open><summary>記憶提示</summary><p>鞏膜＝眼白。膠原不足 → 變薄 → 底下脈絡膜透出來 → 泛藍。</p></details></dd>
 
 <dt>Lisch nodules</dt>
-<dd><span class="root">人名 Karl Lisch + nodule（小結節）</span>　虹膜色素缺陷瘤，見於<b>第一型神經纖維瘤病 (NF1)</b>，<b>不是</b>成骨不全。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>長在<b>虹膜</b>（有顏色那圈），不是鞏膜（眼白）。位置不同就是不同的病。</p></details></dd>
+<dd hidden><span class="root">人名 Karl Lisch + nodule（小結節）</span>　虹膜色素缺陷瘤，見於<b>第一型神經纖維瘤病 (NF1)</b>，<b>不是</b>成骨不全。<p class="vpun"><span class="vtag">諧音梗</span>Lisch「立志」在虹膜：NF1 的虹膜小瘤，不是玻璃娃娃的。</p><details data-kind="vocab-memory" open><summary>記憶提示</summary><p>長在<b>虹膜</b>（有顏色那圈），不是鞏膜（眼白）。位置不同就是不同的病。</p></details></dd>
 
 <dt>stress fracture</dt>
-<dd><span class="root">stress（應力）</span>　壓力性骨折。長期重複受力致疲勞裂開，好發蹠骨、脛骨、舟狀骨。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>疲勞骨折。想像迴紋針反覆折，沒有哪一次特別用力，但終究會斷。</p></details></dd>
+<dd hidden><span class="root">stress（應力）</span>　壓力性骨折。長期重複受力致疲勞裂開，好發蹠骨、脛骨、舟狀骨。<p class="vpun"><span class="vtag">諧音梗</span>stress「壓力」大：反覆受力累到裂，蹠骨脛骨舟狀骨。</p><details data-kind="vocab-memory" open><summary>記憶提示</summary><p>疲勞骨折。想像迴紋針反覆折，沒有哪一次特別用力，但終究會斷。</p></details></dd>
 
 <dt>pathological fracture</dt>
-<dd><span class="root">patho-（疾病）+ logical</span>　病理性骨折。骨頭先被疾病弱化，輕微施力即骨折。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>重點在「骨頭本身先有病」，跟外力大小無關。與 stress fracture 的差別是「材料壞了」而非「累壞了」。</p></details></dd>
+<dd hidden><span class="root">patho-（疾病）+ logical</span>　病理性骨折。骨頭先被疾病弱化，輕微施力即骨折。<p class="vpun"><span class="vtag">諧音梗</span>patho「病」先弱化：輕輕一碰就斷。</p><details data-kind="vocab-memory" open><summary>記憶提示</summary><p>重點在「骨頭本身先有病」，跟外力大小無關。與 stress fracture 的差別是「材料壞了」而非「累壞了」。</p></details></dd>
 
 <dt>woven bone</dt>
-<dd><span class="root">weave（編織）</span>　編織骨。骨折後約六週形成的臨時網狀骨痂，之後重塑為板層骨。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>趕工搭的鷹架，纖維亂交織。骨折癒合、胎兒骨、快速生長處都看得到。</p></details></dd>
+<dd hidden><span class="root">weave（編織）</span>　編織骨。骨折後約六週形成的臨時網狀骨痂，之後重塑為板層骨。<p class="vpun"><span class="vtag">諧音梗</span>woven「窩混」：骨折六週的臨時亂織骨痂。</p><details data-kind="vocab-memory" open><summary>記憶提示</summary><p>趕工搭的鷹架，纖維亂交織。骨折癒合、胎兒骨、快速生長處都看得到。</p></details></dd>
 
 <dt>osteonecrosis / avascular necrosis</dt>
-<dd><span class="root">a-（無）+ vascular（血管）+ necrosis（壞死）</span>　骨壞死／缺血性壞死。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>名字裡就寫著 <b>avascular</b>——病因是<b>缺血</b>，不是感染。這一個字就能解掉三年的第一個選項。</p></details></dd>
+<dd hidden><span class="root">a-（無）+ vascular（血管）+ necrosis（壞死）</span>　骨壞死／缺血性壞死。<p class="vpun"><span class="vtag">諧音梗</span>a「無」vascular「血」necrosis「死」：沒血就壞死。</p><details data-kind="vocab-memory" open><summary>記憶提示</summary><p>名字裡就寫著 <b>avascular</b>——病因是<b>缺血</b>，不是感染。這一個字就能解掉三年的第一個選項。</p></details></dd>
 
 <dt>femoral head</dt>
-<dd><span class="root">femur（股骨）+ head（頭）</span>　股骨頭，長期酗酒者骨壞死的好發部位。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>股骨頭的血供是末端型、側枝少，一斷就沒有備援，所以最容易壞死。</p></details></dd>
+<dd hidden><span class="root">femur（股骨）+ head（頭）</span>　股骨頭，長期酗酒者骨壞死的好發部位。<p class="vpun"><span class="vtag">諧音梗</span>「酒鬼的股骨頭」：長期酗酒最常壞死這裡。</p><details data-kind="vocab-memory" open><summary>記憶提示</summary><p>股骨頭的血供是末端型、側枝少，一斷就沒有備援，所以最容易壞死。</p></details></dd>
 
 <dt>medullary bone</dt>
-<dd><span class="root">medulla（髓）</span>　髓質骨。骨壞死時最先受影響的部位。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>medulla＝內部、髓。比較 adrenal medulla（腎上腺髓質）。裡面先死，外殼後死。</p></details></dd>
+<dd hidden><span class="root">medulla（髓）</span>　髓質骨。骨壞死時最先受影響的部位。<p class="vpun"><span class="vtag">諧音梗</span>medullary「髓」質骨：骨壞死最先中招的部位。</p><details data-kind="vocab-memory" open><summary>記憶提示</summary><p>medulla＝內部、髓。比較 adrenal medulla（腎上腺髓質）。裡面先死，外殼後死。</p></details></dd>
 
 <dt>osteomyelitis</dt>
-<dd><span class="root">osteo-（骨）+ myelo-（髓）+ -itis（發炎）</span>　骨髓炎。細菌經直接暴露或血行傳播感染。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>-itis 就是發炎，代表有病原體或免疫反應——與骨壞死（無菌性）正好相對。</p></details></dd>
+<dd hidden><span class="root">osteo-（骨）+ myelo-（髓）+ -itis（發炎）</span>　骨髓炎。細菌經直接暴露或血行傳播感染。<p class="vpun"><span class="vtag">諧音梗</span>osteo「骨」myel「髓」itis「炎」：細菌直接或血行進骨髓。</p><details data-kind="vocab-memory" open><summary>記憶提示</summary><p>-itis 就是發炎，代表有病原體或免疫反應——與骨壞死（無菌性）正好相對。</p></details></dd>
 
 <dt>hematogenous spread</dt>
-<dd><span class="root">hemato-（血）+ -genous（源自）</span>　血行傳播。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>細菌搭血流從遠處漂過來，對照「直接暴露」（開放傷口、手術）。</p></details></dd>
+<dd hidden><span class="root">hemato-（血）+ -genous（源自）</span>　血行傳播。<p class="vpun"><span class="vtag">諧音梗</span>hemato「血」genous「經由」：血行傳播。</p><details data-kind="vocab-memory" open><summary>記憶提示</summary><p>細菌搭血流從遠處漂過來，對照「直接暴露」（開放傷口、手術）。</p></details></dd>
 
 <dt>Staphylococcus aureus</dt>
-<dd><span class="root">staphyle（葡萄串）+ coccus（球菌）+ aureus（金色）</span>　金黃色葡萄球菌，兒童長骨幹骺端骨髓炎最常見病原。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>三年考三次都是同一個陷阱：選項把它換成 E. coli。看到 E. coli 出現在小兒骨髓炎題就是錯的。</p></details></dd>
+<dd hidden><span class="root">staphyle（葡萄串）+ coccus（球菌）+ aureus（金色）</span>　金黃色葡萄球菌，兒童長骨幹骺端骨髓炎最常見病原。<p class="vpun"><span class="vtag">諧音梗</span>Staph「死他夫」aureus「金」：金黃色葡萄球菌，兒童骨髓炎首犯。</p><details data-kind="vocab-memory" open><summary>記憶提示</summary><p>三年考三次都是同一個陷阱：選項把它換成 E. coli。看到 E. coli 出現在小兒骨髓炎題就是錯的。</p></details></dd>
 
 <dt>metaphysis</dt>
-<dd><span class="root">meta-（之後、之間）+ physis（生長）</span>　幹骺端，長骨骨幹與生長板之間血流豐富的區段。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>血流豐富＝細菌容易卡住，所以兒童骨髓炎好發於此。</p></details></dd>
+<dd hidden><span class="root">meta-（之後、之間）+ physis（生長）</span>　幹骺端，長骨骨幹與生長板之間血流豐富的區段。<p class="vpun"><span class="vtag">諧音梗</span>meta「中間」physis：骨幹與生長板之間，血流多細菌愛。</p><details data-kind="vocab-memory" open><summary>記憶提示</summary><p>血流豐富＝細菌容易卡住，所以兒童骨髓炎好發於此。</p></details></dd>
 
 <dt>osteoporosis</dt>
-<dd><span class="root">osteo-（骨）+ poros（孔洞）+ -osis</span>　骨質疏鬆。骨量減少、骨小梁變細變薄。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>poros＝孔，比較 porous（多孔的）。骨頭變成多孔材料。</p></details></dd>
+<dd hidden><span class="root">osteo-（骨）+ poros（孔洞）+ -osis</span>　骨質疏鬆。骨量減少、骨小梁變細變薄。<p class="vpun"><span class="vtag">諧音梗</span>porosis「破洞」：骨頭變多孔，骨小梁變細變薄。</p><details data-kind="vocab-memory" open><summary>記憶提示</summary><p>poros＝孔，比較 porous（多孔的）。骨頭變成多孔材料。</p></details></dd>
 
 <dt>trabecula</dt>
-<dd><span class="root">拉丁 trabecula＝小橫樑</span>　骨小梁。骨質疏鬆時變小變薄，失去支撐力。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>房子裡的橫樑。樑變細，樓就撐不住。</p></details></dd>
+<dd hidden><span class="root">拉丁 trabecula＝小橫樑</span>　骨小梁。骨質疏鬆時變小變薄，失去支撐力。<p class="vpun"><span class="vtag">諧音梗</span>trabecula「柱扁哭啦」：骨小梁變細變薄失去支撐。</p><details data-kind="vocab-memory" open><summary>記憶提示</summary><p>房子裡的橫樑。樑變細，樓就撐不住。</p></details></dd>
 
 <dt>osteomalacia</dt>
-<dd><span class="root">osteo-（骨）+ malacia（軟化）</span>　骨軟化症，<b>成人</b>維生素 D 缺乏所致。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>malacia＝軟化。成人生長板已閉合，骨頭只能「軟」而不會變形。</p></details></dd>
+<dd hidden><span class="root">osteo-（骨）+ malacia（軟化）</span>　骨軟化症，<b>成人</b>維生素 D 缺乏所致。<p class="vpun"><span class="vtag">諧音梗</span>malacia「馬拉軟」：成人缺 D，骨頭軟。</p><details data-kind="vocab-memory" open><summary>記憶提示</summary><p>malacia＝軟化。成人生長板已閉合，骨頭只能「軟」而不會變形。</p></details></dd>
 
 <dt>rickets</dt>
-<dd><span class="root">古英語 wrickken＝扭曲</span>　佝僂症，<b>兒童</b>維生素 D 缺乏所致，生長板未閉合而骨骼變形。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>字源就是「扭曲」。小孩的生長板還開著，缺鈣會長歪；成人只會軟。<b>年齡決定名稱</b>。</p></details></dd>
+<dd hidden><span class="root">古英語 wrickken＝扭曲</span>　佝僂症，<b>兒童</b>維生素 D 缺乏所致，生長板未閉合而骨骼變形。<p class="vpun"><span class="vtag">諧音梗</span>rickets「累急擠」：小孩缺 D，生長板沒關、骨頭變形。</p><details data-kind="vocab-memory" open><summary>記憶提示</summary><p>字源就是「扭曲」。小孩的生長板還開著，缺鈣會長歪；成人只會軟。<b>年齡決定名稱</b>。</p></details></dd>
 
 <dt>parathyroid hormone (PTH)</dt>
-<dd><span class="root">para-（旁）+ thyroid（甲狀腺）</span>　副甲狀腺素。腺瘤或增生皆致 PTH 升高，促進骨吸收而影響骨結構。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>PTH 的工作就是「把骨頭的鈣調出來用」。長期過多＝長期拆牆。</p></details></dd>
+<dd hidden><span class="root">para-（旁）+ thyroid（甲狀腺）</span>　副甲狀腺素。腺瘤或增生皆致 PTH 升高，促進骨吸收而影響骨結構。<p class="vpun"><span class="vtag">諧音梗</span>PTH「拚吐骨」：副甲狀腺素太高，骨頭被吸走。</p><details data-kind="vocab-memory" open><summary>記憶提示</summary><p>PTH 的工作就是「把骨頭的鈣調出來用」。長期過多＝長期拆牆。</p></details></dd>
 
 <dt>hematopoietic stem cell transplantation</dt>
-<dd><span class="root">hemato-（血）+ poiesis（生成）</span>　造血幹細胞移植，大理石骨病的治療方式。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>破骨細胞源自單核球／巨噬細胞系，屬造血系統——所以補造血幹細胞等於補回拆除隊。</p></details></dd>
+<dd hidden><span class="root">hemato-（血）+ poiesis（生成）</span>　造血幹細胞移植，大理石骨病的治療方式。<p class="vpun"><span class="vtag">諧音梗</span>「換造血幹細胞」：換掉壞的破骨細胞來源，治大理石骨病。</p><details data-kind="vocab-memory" open><summary>記憶提示</summary><p>破骨細胞源自單核球／巨噬細胞系，屬造血系統——所以補造血幹細胞等於補回拆除隊。</p></details></dd>
 
 <dt>hepatosplenomegaly</dt>
-<dd><span class="root">hepato-（肝）+ spleno-（脾）+ -megaly（腫大）</span>　肝脾腫大，大理石骨病因髓外造血而出現。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>骨髓腔被塞滿 → 造血搬到肝脾 → 兩者腫大。是「結果」不是「原因」。</p></details></dd>
+<dd hidden><span class="root">hepato-（肝）+ spleno-（脾）+ -megaly（腫大）</span>　肝脾腫大，大理石骨病因髓外造血而出現。<p class="vpun"><span class="vtag">諧音梗</span>hepato「肝」spleno「脾」megaly「巨大」：髓外造血把肝脾撐大。</p><details data-kind="vocab-memory" open><summary>記憶提示</summary><p>骨髓腔被塞滿 → 造血搬到肝脾 → 兩者腫大。是「結果」不是「原因」。</p></details></dd>
 
 <dt>cranial nerve paralysis</dt>
-<dd><span class="root">cranial（顱的）+ paralysis（麻痺）</span>　腦神經麻痺，大理石骨病因顱骨孔道狹窄壓迫神經所致。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>骨頭只長不拆 → 神經要通過的孔愈變愈窄 → 壓迫。</p></details></dd>
+<dd hidden><span class="root">cranial（顱的）+ paralysis（麻痺）</span>　腦神經麻痺，大理石骨病因顱骨孔道狹窄壓迫神經所致。<p class="vpun"><span class="vtag">諧音梗</span>「顱骨孔太窄」：大理石骨壓到腦神經，麻痺。</p><details data-kind="vocab-memory" open><summary>記憶提示</summary><p>骨頭只長不拆 → 神經要通過的孔愈變愈窄 → 壓迫。</p></details></dd>
 <dt>soft tissue</dt>
-<dd><span class="root">soft（軟）+ tissue（組織）</span>　軟組織：脂肪、纖維、骨骼肌、平滑肌、血管、神經鞘。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>都是「支撐與填充」的組織。黏膜上皮是覆蓋與分泌，所以不算。</p></details></dd>
+<dd hidden><span class="root">soft（軟）+ tissue（組織）</span>　軟組織：脂肪、纖維、骨骼肌、平滑肌、血管、神經鞘。<p class="vpun"><span class="vtag">諧音梗</span>soft「軟」：脂肪、纖維、肌肉、血管、神經鞘都算。</p><details data-kind="vocab-memory" open><summary>記憶提示</summary><p>都是「支撐與填充」的組織。黏膜上皮是覆蓋與分泌，所以不算。</p></details></dd>
 
 <dt>karyotype</dt>
-<dd><span class="root">karyo-（細胞核）+ type（型）</span>　核型。惡性肉瘤多為<b>複雜核型</b>。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>karyo- 就是細胞核，比較 eukaryote（真核生物）。複雜＝亂＝惡性居多。</p></details></dd>
+<dd hidden><span class="root">karyo-（細胞核）+ type（型）</span>　核型。惡性肉瘤多為<b>複雜核型</b>。<p class="vpun"><span class="vtag">諧音梗</span>karyo「核」type「型」：惡性肉瘤多為複雜核型。</p><details data-kind="vocab-memory" open><summary>記憶提示</summary><p>karyo- 就是細胞核，比較 eukaryote（真核生物）。複雜＝亂＝惡性居多。</p></details></dd>
 
 <dt>aneuploid / euploid</dt>
-<dd><span class="root">an-（不）+ eu-（好）+ ploid（倍體）</span>　非整倍體／整倍體。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>eu-＝正常（比較 euthyroid 甲狀腺功能正常）。惡性肉瘤多為 aneuploid。</p></details></dd>
+<dd hidden><span class="root">an-（不）+ eu-（好）+ ploid（倍體）</span>　非整倍體／整倍體。<p class="vpun"><span class="vtag">諧音梗</span>aneu「安你不對」＝非整倍；eu「優」＝整倍體。</p><details data-kind="vocab-memory" open><summary>記憶提示</summary><p>eu-＝正常（比較 euthyroid 甲狀腺功能正常）。惡性肉瘤多為 aneuploid。</p></details></dd>
 
 <dt>pleomorphic / monomorphic</dt>
-<dd><span class="root">pleo-（多）／mono-（單）+ morph（形態）</span>　多形／單形。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>細胞長得越亂（pleomorphic）通常越惡性。複雜核型配多形外觀。</p></details></dd>
+<dd hidden><span class="root">pleo-（多）／mono-（單）+ morph（形態）</span>　多形／單形。<p class="vpun"><span class="vtag">諧音梗</span>pleo「多變」形；mono「單一」形。</p><details data-kind="vocab-memory" open><summary>記憶提示</summary><p>細胞長得越亂（pleomorphic）通常越惡性。複雜核型配多形外觀。</p></details></dd>
 
 <dt>translocation t(X;18)</dt>
-<dd><span class="root">trans-（跨越）+ location（位置）</span>　染色體易位，兩條染色體交換片段形成融合基因。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>括號前是染色體號碼、後是臂與帶的位置。記疾病與融合基因的配對即可。</p></details></dd>
+<dd hidden><span class="root">trans-（跨越）+ location（位置）</span>　染色體易位，兩條染色體交換片段形成融合基因。<p class="vpun"><span class="vtag">諧音梗</span>trans「換位」：兩條染色體交換片段成融合基因。</p><details data-kind="vocab-memory" open><summary>記憶提示</summary><p>括號前是染色體號碼、後是臂與帶的位置。記疾病與融合基因的配對即可。</p></details></dd>
 
 <dt>synovial sarcoma</dt>
-<dd><span class="root">synovial（滑膜的）+ sarcoma（肉瘤）</span>　滑膜肉瘤：<b>t(X;18) → SS18-SSX1/2/4</b>。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>名字叫滑膜但不一定長在關節。記 <b>X 和 18</b> 這組數字。</p></details></dd>
+<dd hidden><span class="root">synovial（滑膜的）+ sarcoma（肉瘤）</span>　滑膜肉瘤：<b>t(X;18) → SS18-SSX1/2/4</b>。<p class="vpun"><span class="vtag">諧音梗</span>synovial「X 十八」：t(X;18) → SS18-SSX。</p><details data-kind="vocab-memory" open><summary>記憶提示</summary><p>名字叫滑膜但不一定長在關節。記 <b>X 和 18</b> 這組數字。</p></details></dd>
 
 <dt>Ewing sarcoma</dt>
-<dd><span class="root">人名 James Ewing</span>　尤文氏肉瘤：<b>t(11;22) 或 t(21;22) → EWS-FLI1／EWS-ERG</b>。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>融合基因的第一個字就叫 EWS（Ewing sarcoma）。22 號染色體是共同項。</p></details></dd>
+<dd hidden><span class="root">人名 James Ewing</span>　尤文氏肉瘤：<b>t(11;22) 或 t(21;22) → EWS-FLI1／EWS-ERG</b>。<p class="vpun"><span class="vtag">諧音梗</span>Ewing「一一、二二」：t(11;22) → EWS-FLI1。</p><details data-kind="vocab-memory" open><summary>記憶提示</summary><p>融合基因的第一個字就叫 EWS（Ewing sarcoma）。22 號染色體是共同項。</p></details></dd>
 
 <dt>alveolar rhabdomyosarcoma</dt>
-<dd><span class="root">rhabdo-（棒狀）+ myo-（肌）+ sarcoma</span>　腺泡型橫紋肌肉瘤：<b>t(2;13) 或 t(1;13) → PAX3／PAX7-FOXO1</b>。<details data-kind="vocab-memory"><summary>記憶提示</summary><p><b>只有腺泡型</b>有 PAX-FOXO1，其他亞型沒有——這也是病理實驗課的考點。</p></details></dd>
+<dd hidden><span class="root">rhabdo-（棒狀）+ myo-（肌）+ sarcoma</span>　腺泡型橫紋肌肉瘤：<b>t(2;13) 或 t(1;13) → PAX3／PAX7-FOXO1</b>。<p class="vpun"><span class="vtag">諧音梗</span>alveolar「二、十三」：t(2;13) → PAX3-FOXO1。</p><details data-kind="vocab-memory" open><summary>記憶提示</summary><p><b>只有腺泡型</b>有 PAX-FOXO1，其他亞型沒有——這也是病理實驗課的考點。</p></details></dd>
 
 <dt>liposarcoma</dt>
-<dd><span class="root">lipo-（脂肪）+ sarcoma（肉瘤）</span>　脂肪肉瘤：好發四肢近端／腹膜後、<b>深部</b>、難切除。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>深＋難切＝惡性的空間特徵。脂肪瘤則是淺＋有被膜＋好切。</p></details></dd>
+<dd hidden><span class="root">lipo-（脂肪）+ sarcoma（肉瘤）</span>　脂肪肉瘤：好發四肢近端／腹膜後、<b>深部</b>、難切除。<p class="vpun"><span class="vtag">諧音梗</span>lipo「脂」肉瘤：四肢近端、腹膜後，深又難切。</p><details data-kind="vocab-memory" open><summary>記憶提示</summary><p>深＋難切＝惡性的空間特徵。脂肪瘤則是淺＋有被膜＋好切。</p></details></dd>
 
 <dt>Lambert-Eaton syndrome (LEMS)</dt>
-<dd><span class="root">人名 Lambert 與 Eaton</span>　抗體攻擊神經末梢<b>鈣通道</b>，常伴<b>小細胞肺癌</b>。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>問題在「放不出來」→ 多按幾次（反覆刺激）會改善。看到小細胞肺癌就想到它。</p></details></dd>
+<dd hidden><span class="root">人名 Lambert 與 Eaton</span>　抗體攻擊神經末梢<b>鈣通道</b>，常伴<b>小細胞肺癌</b>。<p class="vpun"><span class="vtag">諧音梗</span>Lambert「攔鈣」：抗體攻神經末梢鈣通道，伴小細胞肺癌。</p><details data-kind="vocab-memory" open><summary>記憶提示</summary><p>問題在「放不出來」→ 多按幾次（反覆刺激）會改善。看到小細胞肺癌就想到它。</p></details></dd>
 
 <dt>myasthenia gravis (MG)</dt>
-<dd><span class="root">my-（肌）+ asthenia（無力）+ gravis（嚴重的）</span>　抗體破壞<b>AChR</b>，膽鹼酯酶抑制劑有效。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>問題在「收不到」→ 反覆刺激沒用，要讓 ACh 留久一點才有效。</p></details></dd>
+<dd hidden><span class="root">my-（肌）+ asthenia（無力）+ gravis（嚴重的）</span>　抗體破壞<b>AChR</b>，膽鹼酯酶抑制劑有效。<p class="vpun"><span class="vtag">諧音梗</span>MG「沒勁」：抗 AChR，膽鹼酯酶抑制劑有效。</p><details data-kind="vocab-memory" open><summary>記憶提示</summary><p>問題在「收不到」→ 反覆刺激沒用，要讓 ACh 留久一點才有效。</p></details></dd>
 
 <dt>motor unit</dt>
-<dd><span class="root">motor（運動）+ unit（單位）</span>　一個運動神經元及其支配的肌纖維群。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>一個班長帶一班。班長換人，班員的肌纖維型別也會跟著換。</p></details></dd>
+<dd hidden><span class="root">motor（運動）+ unit（單位）</span>　一個運動神經元及其支配的肌纖維群。<p class="vpun"><span class="vtag">諧音梗</span>motor「馬達」unit：一個神經元帶一群肌纖維。</p><details data-kind="vocab-memory" open><summary>記憶提示</summary><p>一個班長帶一班。班長換人，班員的肌纖維型別也會跟著換。</p></details></dd>
 
 <dt>endomysium</dt>
-<dd><span class="root">endo-（內）+ mys（肌肉）</span>　肌內膜，包覆<b>單一條</b>肌纖維。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>endo- 最內層＝包單一條；perimysium 包一束；epimysium 包整塊。</p></details></dd>
+<dd hidden><span class="root">endo-（內）+ mys（肌肉）</span>　肌內膜，包覆<b>單一條</b>肌纖維。<p class="vpun"><span class="vtag">諧音梗</span>endo「內」mysium：包單一肌纖維的膜。</p><details data-kind="vocab-memory" open><summary>記憶提示</summary><p>endo- 最內層＝包單一條；perimysium 包一束；epimysium 包整塊。</p></details></dd>
 
 <dt>grouped atrophy / fiber type grouping</dt>
-<dd><span class="root">grouped（成群的）+ atrophy（萎縮）</span>　群組性萎縮與纖維型別群聚，<b>神經病變性肌病</b>的兩大特徵。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>神經死一個 → 它那一群一起萎縮；隔壁接管 → 接到的全變成同一型。</p></details></dd>
+<dd hidden><span class="root">grouped（成群的）+ atrophy（萎縮）</span>　群組性萎縮與纖維型別群聚，<b>神經病變性肌病</b>的兩大特徵。<p class="vpun"><span class="vtag">諧音梗</span>「一群一起萎」＋「同型抱團」：神經病變性肌病兩特徵。</p><details data-kind="vocab-memory" open><summary>記憶提示</summary><p>神經死一個 → 它那一群一起萎縮；隔壁接管 → 接到的全變成同一型。</p></details></dd>
 
 <dt>sarcopenia</dt>
-<dd><span class="root">sarco-（肌肉）+ penia（缺乏）</span>　肌少症。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>-penia＝減少（比較 leukopenia 白血球低下）。<b>會增加心肺疾病與認知障礙風險</b>，不只影響日常活動。</p></details></dd>
+<dd hidden><span class="root">sarco-（肌肉）+ penia（缺乏）</span>　肌少症。<p class="vpun"><span class="vtag">諧音梗</span>sarco「肌」penia「貧」：肌肉貧窮＝肌少症。</p><details data-kind="vocab-memory" open><summary>記憶提示</summary><p>-penia＝減少（比較 leukopenia 白血球低下）。<b>會增加心肺疾病與認知障礙風險</b>，不只影響日常活動。</p></details></dd>
 </dl>
 </section><section id="chapter-final" data-chapter-kind="final_questions">
 <h2>十七、歷年考題總複習</h2>
@@ -2230,5 +2249,36 @@ figure.boxfig .figtag{color:var(--violet);font-size:.76rem;letter-spacing:.1em;
   });
 </script>
 <!-- nb-comments:end -->
+
+<script data-nb-vocab-flip>
+(function(){
+  var dl=document.querySelector('dl.vocab'); if(!dl) return;
+  var dts=Array.prototype.slice.call(dl.querySelectorAll('dt'));
+  var count=document.querySelector('.vtools .vcount');
+  function dd(dt){return dt.nextElementSibling && dt.nextElementSibling.tagName==='DD' ? dt.nextElementSibling : null;}
+  function set(dt,open){var d=dd(dt); if(!d) return; d.hidden=!open; dt.classList.toggle('open',open); dt.setAttribute('aria-expanded',open?'true':'false');}
+  function refresh(){ if(!count) return; var n=dts.filter(function(dt){return dt.classList.contains('open');}).length; count.textContent='已翻 '+n+' / '+dts.length; }
+  dts.forEach(function(dt){
+    dt.tabIndex=0; dt.setAttribute('role','button'); set(dt,false);
+    dt.addEventListener('click',function(){ set(dt,dd(dt).hidden); refresh(); });
+    dt.addEventListener('keydown',function(e){ if(e.key==='Enter'||e.key===' '){ e.preventDefault(); dt.click(); } });
+  });
+  var tools=document.querySelector('.vtools'); if(!tools) return;
+  tools.addEventListener('click',function(e){
+    var b=e.target.closest('button'); if(!b) return;
+    var act=b.getAttribute('data-act');
+    if(act==='open'){ dts.forEach(function(dt){set(dt,true);}); }
+    else if(act==='close'){ dts.forEach(function(dt){set(dt,false);}); }
+    else if(act==='quiz'){
+      var closed=dts.filter(function(dt){return !dt.classList.contains('open');});
+      if(!closed.length){ dts.forEach(function(dt){set(dt,false);}); closed=dts; }
+      var pick=closed[Math.floor(Math.random()*closed.length)];
+      pick.scrollIntoView({behavior:'smooth',block:'center'}); pick.focus({preventScroll:true});
+    }
+    refresh();
+  });
+  refresh();
+})();
+</script>
 </body>
 </html>
