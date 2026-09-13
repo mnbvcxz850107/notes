@@ -94,6 +94,23 @@ figure.boxfig figcaption{color:var(--dim);font-size:.82rem;margin-top:.5rem;
 figure.boxfig .figtag{color:var(--violet);font-size:.76rem;letter-spacing:.1em;
   display:block;margin-bottom:.3rem}
 .ending{color:var(--dim);font-style:italic;margin:1.6rem 0 2.4rem}
+
+/* nb-vocab-flip:start */
+dl.vocab dt{cursor:pointer;user-select:none;position:relative;padding-right:6.2rem;border-bottom:1px dashed var(--line)}
+dl.vocab dt::after{content:"點我翻牌 ▸";position:absolute;right:0;top:.15rem;font-size:.8rem;color:var(--dim);font-weight:400}
+dl.vocab dt.open::after{content:"蓋回去 ▾";color:var(--gold)}
+dl.vocab dt:focus-visible{outline:2px solid var(--cyan);outline-offset:3px;border-radius:4px}
+dl.vocab dd[hidden]{display:none}
+dl.vocab dd{padding:.5rem .7rem .6rem;background:var(--panel);border:1px solid var(--line);border-top:0;border-radius:0 0 8px 8px;margin-bottom:.4rem}
+dl.vocab .vpun{margin:.5rem 0 0;padding:.45rem .65rem;border-left:3px solid var(--gold);background:rgba(229,181,103,.08);border-radius:4px}
+dl.vocab .vpun .vtag{color:var(--gold);font-weight:700;margin-right:.45rem}
+dl.vocab details[data-kind="vocab-memory"]{margin-top:.45rem}
+.vtools{display:flex;gap:.5rem;flex-wrap:wrap;align-items:center;margin:.5rem 0 .3rem}
+.vtools button{font:inherit;font-size:.9rem;padding:.35rem .8rem;border-radius:999px;border:1px solid var(--line);background:var(--panel);color:var(--ink);cursor:pointer}
+.vtools button:hover{border-color:var(--cyan);color:var(--cyan)}
+.vtools .vcount{color:var(--dim);font-size:.85rem;margin-left:auto}
+.vhow{color:var(--dim);font-size:.9rem;margin:.2rem 0 .4rem}
+/* nb-vocab-flip:end */
 </style></head>
 <body>
 <div class="container">
@@ -753,72 +770,74 @@ figure.boxfig .figtag{color:var(--violet);font-size:.76rem;letter-spacing:.1em;
 <!-- ================= VOCAB ================= -->
 <section id="chapter-vocab" data-chapter-kind="vocab">
 <h2>七、單字表</h2>
+<p class="vhow">先看英文想中文，點單字翻牌看意思、諧音梗與記憶提示。</p>
+<div class="vtools"><button type="button" data-act="quiz">🎲 隨機抽一張</button><button type="button" data-act="open">全部翻開</button><button type="button" data-act="close">全部蓋上</button><span class="vcount"></span></div>
 <dl class="vocab">
 <dt>brittle / ductile</dt>
-<dd><span class="root">brittle＝易碎；ductile 源自拉丁 ducere＝拉引</span>　脆性與延性。脆性材料破壞前塑性變形極少，延性材料塑性變形大。<details data-kind="vocab-memory"><summary>記憶提示</summary><p><b>陶瓷杯碎、不鏽鋼杯凹。</b>肌腱是延性。</p></details></dd>
+<dd hidden><span class="root">brittle＝易碎；ductile 源自拉丁 ducere＝拉引</span>　脆性與延性。脆性材料破壞前塑性變形極少，延性材料塑性變形大。<p class="vpun"><span class="vtag">諧音梗</span>brittle「不理頭」一折就斷（脆）；ductile「拉得躲」能拉長（延）。</p><details data-kind="vocab-memory" open><summary>記憶提示</summary><p><b>陶瓷杯碎、不鏽鋼杯凹。</b>肌腱是延性。</p></details></dd>
 
 <dt>plastic deformation</dt>
-<dd><span class="root">plastic＝可塑的</span>　塑性變形。超過彈性極限後不可恢復的變形。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>脆性材料「一小段」就斷，延性材料「一長段」才斷。</p></details></dd>
+<dd hidden><span class="root">plastic＝可塑的</span>　塑性變形。超過彈性極限後不可恢復的變形。<p class="vpun"><span class="vtag">諧音梗</span>plastic「塑膠」被壓扁就回不去：塑性變形不可逆。</p><details data-kind="vocab-memory" open><summary>記憶提示</summary><p>脆性材料「一小段」就斷，延性材料「一長段」才斷。</p></details></dd>
 
 <dt>elastic limit</dt>
-<dd><span class="root">elastic＝彈性</span>　彈性極限。超過此點後變形不再可逆。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>兩種材料的分歧點都在它之後。</p></details></dd>
+<dd hidden><span class="root">elastic＝彈性</span>　彈性極限。超過此點後變形不再可逆。<p class="vpun"><span class="vtag">諧音梗</span>elastic「橡皮筋」的極限：拉過這條線就回不去了。</p><details data-kind="vocab-memory" open><summary>記憶提示</summary><p>兩種材料的分歧點都在它之後。</p></details></dd>
 
 <dt>PMMA</dt>
-<dd><span class="root">polymethyl methacrylate</span>　聚甲基丙烯酸甲酯，骨水泥的主成分，脆性材料。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>112 年詳解給的脆性例子；和陶瓷一組。</p></details></dd>
+<dd hidden><span class="root">polymethyl methacrylate</span>　聚甲基丙烯酸甲酯，骨水泥的主成分，脆性材料。<p class="vpun"><span class="vtag">諧音梗</span>PMMA「拚命摸啊」骨水泥：硬但脆，一敲就裂。</p><details data-kind="vocab-memory" open><summary>記憶提示</summary><p>112 年詳解給的脆性例子；和陶瓷一組。</p></details></dd>
 
 <dt>motion analysis</dt>
-<dd><span class="root">motion（運動）+ analysis</span>　動作分析，含運動學與動力學。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>「定義廣泛」——所以問應用時答<b>以上皆是</b>。</p></details></dd>
+<dd hidden><span class="root">motion（運動）+ analysis</span>　動作分析，含運動學與動力學。<p class="vpun"><span class="vtag">諧音梗</span>motion「摸神」：把動作拆開分析，有運動學也有動力學。</p><details data-kind="vocab-memory" open><summary>記憶提示</summary><p>「定義廣泛」——所以問應用時答<b>以上皆是</b>。</p></details></dd>
 
 <dt>kinematics / kinetics</dt>
-<dd><span class="root">希臘 kinein＝移動</span>　運動學（動作本身：角度、速度）與動力學（關節受力大小）。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>kinematics 看<b>怎麼動</b>，kinetics 算<b>多少力</b>。</p></details></dd>
+<dd hidden><span class="root">希臘 kinein＝移動</span>　運動學（動作本身：角度、速度）與動力學（關節受力大小）。<p class="vpun"><span class="vtag">諧音梗</span>kinematics「看你動」＝角度速度；kinetics「看你 tick 出力」＝受力。</p><details data-kind="vocab-memory" open><summary>記憶提示</summary><p>kinematics 看<b>怎麼動</b>，kinetics 算<b>多少力</b>。</p></details></dd>
 
 <dt>late cocking / early acceleration</dt>
-<dd><span class="root">cocking＝上膛、拉弓</span>　投球的晚期舉臂與早期加速期，肩與肘負荷最高。<details data-kind="vocab-memory"><summary>記憶提示</summary><p><b>弓拉到最滿的那一刻。</b>三年答案都是它。</p></details></dd>
+<dd hidden><span class="root">cocking＝上膛、拉弓</span>　投球的晚期舉臂與早期加速期，肩與肘負荷最高。<p class="vpun"><span class="vtag">諧音梗</span>「晚舉、早衝」：舉臂最後與加速最初，肩肘最痛。</p><details data-kind="vocab-memory" open><summary>記憶提示</summary><p><b>弓拉到最滿的那一刻。</b>三年答案都是它。</p></details></dd>
 
 <dt>valgus extension overload</dt>
-<dd><span class="root">valgus＝外翻；extension＝伸直；overload＝過載</span>　外翻伸展過載，投手肘傷最常見原因。<details data-kind="vocab-memory"><summary>記憶提示</summary><p><b>內側拉、外側壓、後側夾。</b></p></details></dd>
+<dd hidden><span class="root">valgus＝外翻；extension＝伸直；overload＝過載</span>　外翻伸展過載，投手肘傷最常見原因。<p class="vpun"><span class="vtag">諧音梗</span>valgus「外拐死」＋伸直過載：投手肘傷的老大。</p><details data-kind="vocab-memory" open><summary>記憶提示</summary><p><b>內側拉、外側壓、後側夾。</b></p></details></dd>
 
 <dt>medial collateral ligament (MCL / UCL)</dt>
-<dd><span class="root">collateral＝側邊的</span>　肘內側副韌帶（尺側副韌帶）。外翻力下被拉開而不穩。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>是<b>內側</b>被拉，不是外側——113 年的錯項就是寫成外側。</p></details></dd>
+<dd hidden><span class="root">collateral＝側邊的</span>　肘內側副韌帶（尺側副韌帶）。外翻力下被拉開而不穩。<p class="vpun"><span class="vtag">諧音梗</span>MCL「沒扣了」：肘內側韌帶被外翻拉開，扣不住。</p><details data-kind="vocab-memory" open><summary>記憶提示</summary><p>是<b>內側</b>被拉，不是外側——113 年的錯項就是寫成外側。</p></details></dd>
 
 <dt>ulnar nerve neuropathy</dt>
-<dd><span class="root">ulnar＝尺側</span>　尺神經病變。尺神經走在肘內側，外翻時受牽拉。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>是<b>尺</b>神經不是<b>橈</b>神經——111 年的錯項。</p></details></dd>
+<dd hidden><span class="root">ulnar＝尺側</span>　尺神經病變。尺神經走在肘內側，外翻時受牽拉。<p class="vpun"><span class="vtag">諧音梗</span>ulnar「偶拿」麻：尺神經在肘內側，外翻時被拉到手麻。</p><details data-kind="vocab-memory" open><summary>記憶提示</summary><p>是<b>尺</b>神經不是<b>橈</b>神經——111 年的錯項。</p></details></dd>
 
 <dt>radio-capitellar joint</dt>
-<dd><span class="root">radius（橈骨）+ capitellum（肱骨小頭）</span>　橈骨小頭關節，肘外側。外翻時被壓迫造成骨軟骨損傷。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>「外側壓」就是壓在這裡。</p></details></dd>
+<dd hidden><span class="root">radius（橈骨）+ capitellum（肱骨小頭）</span>　橈骨小頭關節，肘外側。外翻時被壓迫造成骨軟骨損傷。<p class="vpun"><span class="vtag">諧音梗</span>radio「橈骨頭」對 capitellum「小頭」：肘外側被壓的那個關節。</p><details data-kind="vocab-memory" open><summary>記憶提示</summary><p>「外側壓」就是壓在這裡。</p></details></dd>
 
 <dt>posterior elbow impingement</dt>
-<dd><span class="root">impinge＝撞擊、夾擊</span>　後側肘夾擊。伸直時鷹嘴突撞入鷹嘴窩後內側。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>是<b>後側</b>不是前側——112 年的錯項寫成前側。</p></details></dd>
+<dd hidden><span class="root">impinge＝撞擊、夾擊</span>　後側肘夾擊。伸直時鷹嘴突撞入鷹嘴窩後內側。<p class="vpun"><span class="vtag">諧音梗</span>posterior「後」impinge「硬撞」：伸直時鷹嘴突撞進窩裡。</p><details data-kind="vocab-memory" open><summary>記憶提示</summary><p>是<b>後側</b>不是前側——112 年的錯項寫成前側。</p></details></dd>
 
 <dt>SLAP lesion</dt>
-<dd><span class="root">Superior Labrum Anterior to Posterior</span>　上關節唇由前到後的撕裂，肱二頭肌長頭腱附著處。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>投擲運動員的肩傷。<b>三把鑰匙：問、做、照。</b></p></details></dd>
+<dd hidden><span class="root">Superior Labrum Anterior to Posterior</span>　上關節唇由前到後的撕裂，肱二頭肌長頭腱附著處。<p class="vpun"><span class="vtag">諧音梗</span>SLAP「啪」一聲：上關節唇從前撕到後。</p><details data-kind="vocab-memory" open><summary>記憶提示</summary><p>投擲運動員的肩傷。<b>三把鑰匙：問、做、照。</b></p></details></dd>
 
 <dt>O'Brien's test</dt>
-<dd><span class="root">以醫師 O'Brien 命名</span>　主動壓迫測試，SLAP 的理學檢查。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>三年都以「有幫助」出現。</p></details></dd>
+<dd hidden><span class="root">以醫師 O'Brien 命名</span>　主動壓迫測試，SLAP 的理學檢查。<p class="vpun"><span class="vtag">諧音梗</span>O'Brien「歐不練」：手伸直下壓測 SLAP，痛就是。</p><details data-kind="vocab-memory" open><summary>記憶提示</summary><p>三年都以「有幫助」出現。</p></details></dd>
 
 <dt>compression rotation test</dt>
-<dd><span class="root">compression（壓迫）+ rotation（旋轉）</span>　壓迫旋轉測試，SLAP 的理學檢查。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>它是<b>肩</b>的。113 年被塞進 ACL 題當錯項。</p></details></dd>
+<dd hidden><span class="root">compression（壓迫）+ rotation（旋轉）</span>　壓迫旋轉測試，SLAP 的理學檢查。<p class="vpun"><span class="vtag">諧音梗</span>「壓著轉」：壓迫旋轉測 SLAP。</p><details data-kind="vocab-memory" open><summary>記憶提示</summary><p>它是<b>肩</b>的。113 年被塞進 ACL 題當錯項。</p></details></dd>
 
 <dt>MR-arthrography</dt>
-<dd><span class="root">arthro-（關節）+ -graphy</span>　MR 關節攝影，顯影劑注入關節腔後的 MRI，看關節唇撕裂最清楚。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>SLAP 的影像鑰匙。</p></details></dd>
+<dd hidden><span class="root">arthro-（關節）+ -graphy</span>　MR 關節攝影，顯影劑注入關節腔後的 MRI，看關節唇撕裂最清楚。<p class="vpun"><span class="vtag">諧音梗</span>MR＋arthro「關節」：打顯影劑再 MRI，關節唇看最清。</p><details data-kind="vocab-memory" open><summary>記憶提示</summary><p>SLAP 的影像鑰匙。</p></details></dd>
 
 <dt>Lachman test</dt>
-<dd><span class="root">以醫師 Lachman 命名</span>　膝 ACL 的理學檢查。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>它是<b>膝</b>的——112 年被塞進 SLAP 題當錯項。</p></details></dd>
+<dd hidden><span class="root">以醫師 Lachman 命名</span>　膝 ACL 的理學檢查。<p class="vpun"><span class="vtag">諧音梗</span>Lachman「拉克曼」拉脛骨：往前拉得動＝ACL 斷。</p><details data-kind="vocab-memory" open><summary>記憶提示</summary><p>它是<b>膝</b>的——112 年被塞進 SLAP 題當錯項。</p></details></dd>
 
 <dt>valgus stress test</dt>
-<dd><span class="root">valgus＝外翻</span>　外翻壓力測試，檢查肘（或膝）內側副韌帶。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>它是<b>肘</b>的——113 年被塞進 SLAP 題當錯項。</p></details></dd>
+<dd hidden><span class="root">valgus＝外翻</span>　外翻壓力測試，檢查肘（或膝）內側副韌帶。<p class="vpun"><span class="vtag">諧音梗</span>valgus「外拐死」壓力：往外掰看內側韌帶鬆不鬆。</p><details data-kind="vocab-memory" open><summary>記憶提示</summary><p>它是<b>肘</b>的——113 年被塞進 SLAP 題當錯項。</p></details></dd>
 
 <dt>anterior / posterior drawer test</dt>
-<dd><span class="root">drawer＝抽屜</span>　前抽屜測試查 ACL，後抽屜測試查 PCL。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>把小腿當抽屜往前拉是 ACL、往後推是 PCL。</p></details></dd>
+<dd hidden><span class="root">drawer＝抽屜</span>　前抽屜測試查 ACL，後抽屜測試查 PCL。<p class="vpun"><span class="vtag">諧音梗</span>drawer「抽屜」：往前拉抽屜查 ACL，往後推查 PCL。</p><details data-kind="vocab-memory" open><summary>記憶提示</summary><p>把小腿當抽屜往前拉是 ACL、往後推是 PCL。</p></details></dd>
 
 <dt>posterior sag sign</dt>
-<dd><span class="root">sag＝下沉</span>　後沉徵象。PCL 斷裂時脛骨相對股骨向後沉。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>與後抽屜配對，都是 PCL。</p></details></dd>
+<dd hidden><span class="root">sag＝下沉</span>　後沉徵象。PCL 斷裂時脛骨相對股骨向後沉。<p class="vpun"><span class="vtag">諧音梗</span>sag「塌」：PCL 斷了脛骨往後塌下去。</p><details data-kind="vocab-memory" open><summary>記憶提示</summary><p>與後抽屜配對，都是 PCL。</p></details></dd>
 
 <dt>coper</dt>
-<dd><span class="root">cope＝應付</span>　韌帶斷裂後靠復健與代償策略恢復良好、不需手術的病人。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>老師口述的研究：單獨 PCL 斷裂的 coper 組<b>不一定要開刀</b>。</p></details></dd>
+<dd hidden><span class="root">cope＝應付</span>　韌帶斷裂後靠復健與代償策略恢復良好、不需手術的病人。<p class="vpun"><span class="vtag">諧音梗</span>coper「扛得住」：韌帶斷了靠復健扛得住，不用開刀。</p><details data-kind="vocab-memory" open><summary>記憶提示</summary><p>老師口述的研究：單獨 PCL 斷裂的 coper 組<b>不一定要開刀</b>。</p></details></dd>
 
 <dt>fall on the outstretched hand (FOOSH)</dt>
-<dd><span class="root">outstretched＝伸直的</span>　跌倒時手撐地，上肢創傷的重要機轉。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>動作分析題年年出現的例子之一。</p></details></dd>
+<dd hidden><span class="root">outstretched＝伸直的</span>　跌倒時手撐地，上肢創傷的重要機轉。<p class="vpun"><span class="vtag">諧音梗</span>FOOSH「噗嘶」跌倒手撐地：上肢創傷的經典機轉。</p><details data-kind="vocab-memory" open><summary>記憶提示</summary><p>動作分析題年年出現的例子之一。</p></details></dd>
 </dl>
 </section>
 <section id="chapter-final" data-chapter-kind="final_questions">
@@ -1156,5 +1175,36 @@ figure.boxfig .figtag{color:var(--violet);font-size:.76rem;letter-spacing:.1em;
   });
 </script>
 <!-- nb-comments:end -->
+
+<script data-nb-vocab-flip>
+(function(){
+  var dl=document.querySelector('dl.vocab'); if(!dl) return;
+  var dts=Array.prototype.slice.call(dl.querySelectorAll('dt'));
+  var count=document.querySelector('.vtools .vcount');
+  function dd(dt){return dt.nextElementSibling && dt.nextElementSibling.tagName==='DD' ? dt.nextElementSibling : null;}
+  function set(dt,open){var d=dd(dt); if(!d) return; d.hidden=!open; dt.classList.toggle('open',open); dt.setAttribute('aria-expanded',open?'true':'false');}
+  function refresh(){ if(!count) return; var n=dts.filter(function(dt){return dt.classList.contains('open');}).length; count.textContent='已翻 '+n+' / '+dts.length; }
+  dts.forEach(function(dt){
+    dt.tabIndex=0; dt.setAttribute('role','button'); set(dt,false);
+    dt.addEventListener('click',function(){ set(dt,dd(dt).hidden); refresh(); });
+    dt.addEventListener('keydown',function(e){ if(e.key==='Enter'||e.key===' '){ e.preventDefault(); dt.click(); } });
+  });
+  var tools=document.querySelector('.vtools'); if(!tools) return;
+  tools.addEventListener('click',function(e){
+    var b=e.target.closest('button'); if(!b) return;
+    var act=b.getAttribute('data-act');
+    if(act==='open'){ dts.forEach(function(dt){set(dt,true);}); }
+    else if(act==='close'){ dts.forEach(function(dt){set(dt,false);}); }
+    else if(act==='quiz'){
+      var closed=dts.filter(function(dt){return !dt.classList.contains('open');});
+      if(!closed.length){ dts.forEach(function(dt){set(dt,false);}); closed=dts; }
+      var pick=closed[Math.floor(Math.random()*closed.length)];
+      pick.scrollIntoView({behavior:'smooth',block:'center'}); pick.focus({preventScroll:true});
+    }
+    refresh();
+  });
+  refresh();
+})();
+</script>
 </body>
 </html>
