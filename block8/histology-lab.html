@@ -94,6 +94,23 @@ figure.boxfig figcaption{color:var(--dim);font-size:.82rem;margin-top:.5rem;
 figure.boxfig .figtag{color:var(--violet);font-size:.76rem;letter-spacing:.1em;
   display:block;margin-bottom:.3rem}
 .ending{color:var(--dim);font-style:italic;margin:1.6rem 0 2.4rem}
+
+/* nb-vocab-flip:start */
+dl.vocab dt{cursor:pointer;user-select:none;position:relative;padding-right:6.2rem;border-bottom:1px dashed var(--line)}
+dl.vocab dt::after{content:"點我翻牌 ▸";position:absolute;right:0;top:.15rem;font-size:.8rem;color:var(--dim);font-weight:400}
+dl.vocab dt.open::after{content:"蓋回去 ▾";color:var(--gold)}
+dl.vocab dt:focus-visible{outline:2px solid var(--cyan);outline-offset:3px;border-radius:4px}
+dl.vocab dd[hidden]{display:none}
+dl.vocab dd{padding:.5rem .7rem .6rem;background:var(--panel);border:1px solid var(--line);border-top:0;border-radius:0 0 8px 8px;margin-bottom:.4rem}
+dl.vocab .vpun{margin:.5rem 0 0;padding:.45rem .65rem;border-left:3px solid var(--gold);background:rgba(229,181,103,.08);border-radius:4px}
+dl.vocab .vpun .vtag{color:var(--gold);font-weight:700;margin-right:.45rem}
+dl.vocab details[data-kind="vocab-memory"]{margin-top:.45rem}
+.vtools{display:flex;gap:.5rem;flex-wrap:wrap;align-items:center;margin:.5rem 0 .3rem}
+.vtools button{font:inherit;font-size:.9rem;padding:.35rem .8rem;border-radius:999px;border:1px solid var(--line);background:var(--panel);color:var(--ink);cursor:pointer}
+.vtools button:hover{border-color:var(--cyan);color:var(--cyan)}
+.vtools .vcount{color:var(--dim);font-size:.85rem;margin-left:auto}
+.vhow{color:var(--dim);font-size:.9rem;margin:.2rem 0 .4rem}
+/* nb-vocab-flip:end */
 </style></head>
 <body>
 <div class="container">
@@ -515,60 +532,62 @@ figure.boxfig .figtag{color:var(--violet);font-size:.76rem;letter-spacing:.1em;
 <!-- ================= VOCAB ================= -->
 <section id="chapter-vocab" data-chapter-kind="vocab">
 <h2>五、單字表</h2>
+<p class="vhow">先看英文想中文，點單字翻牌看意思、諧音梗與記憶提示。</p>
+<div class="vtools"><button type="button" data-act="quiz">🎲 隨機抽一張</button><button type="button" data-act="open">全部翻開</button><button type="button" data-act="close">全部蓋上</button><span class="vcount"></span></div>
 <dl class="vocab">
 <dt>cross section / longitudinal section</dt>
-<dd><span class="root">cross＝橫越；longitudinal＝縱向</span>　橫切與縱切。判讀切片的第一步。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>一片一片的閉合形狀＝橫切；一條一條的長帶＝縱切。<b>先判這個就能刷掉一半選項。</b></p></details></dd>
+<dd hidden><span class="root">cross＝橫越；longitudinal＝縱向</span>　橫切與縱切。判讀切片的第一步。<p class="vpun"><span class="vtag">諧音梗</span>cross「橫著切」、longitudinal「長長切」：判片第一步。</p><details data-kind="vocab-memory" open><summary>記憶提示</summary><p>一片一片的閉合形狀＝橫切；一條一條的長帶＝縱切。<b>先判這個就能刷掉一半選項。</b></p></details></dd>
 
 <dt>intercalated disc</dt>
-<dd><span class="root">intercalate＝插入其間</span>　間盤。心肌細胞末端相接處的特化連接，切片上是一條深色橫線。<details data-kind="vocab-memory"><summary>記憶提示</summary><p><b>心肌獨有。</b>看到它就結案，兩年的第 14 題都靠這一點。</p></details></dd>
+<dd hidden><span class="root">intercalate＝插入其間</span>　間盤。心肌細胞末端相接處的特化連接，切片上是一條深色橫線。<p class="vpun"><span class="vtag">諧音梗</span>intercalated「隔一節」disc：心肌細胞之間那條深色橫線。</p><details data-kind="vocab-memory" open><summary>記憶提示</summary><p><b>心肌獨有。</b>看到它就結案，兩年的第 14 題都靠這一點。</p></details></dd>
 
 <dt>anastomosing network</dt>
-<dd><span class="root">希臘 anastomosis＝開口相通</span>　吻合成網。心肌細胞分支後彼此相接形成的網狀結構。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>骨骼肌是一根一根平行的，<b>不會互相接起來</b>。</p></details></dd>
+<dd hidden><span class="root">希臘 anastomosis＝開口相通</span>　吻合成網。心肌細胞分支後彼此相接形成的網狀結構。<p class="vpun"><span class="vtag">諧音梗</span>anastomosing「連來連去」：心肌分支彼此相接成網。</p><details data-kind="vocab-memory" open><summary>記憶提示</summary><p>骨骼肌是一根一根平行的，<b>不會互相接起來</b>。</p></details></dd>
 
 <dt>tendon</dt>
-<dd><span class="root">拉丁 tendere＝拉緊</span>　肌腱。平行緻密的膠原纖維束，細胞（腱細胞）少而扁。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>它<b>不是肌肉</b>。切片上看不到橫紋也看不到肌纖維，只有一整片平行的粉紅纖維。</p></details></dd>
+<dd hidden><span class="root">拉丁 tendere＝拉緊</span>　肌腱。平行緻密的膠原纖維束，細胞（腱細胞）少而扁。<p class="vpun"><span class="vtag">諧音梗</span>tendon「疼懂」：平行緻密膠原，細胞少又扁。</p><details data-kind="vocab-memory" open><summary>記憶提示</summary><p>它<b>不是肌肉</b>。切片上看不到橫紋也看不到肌纖維，只有一整片平行的粉紅纖維。</p></details></dd>
 
 <dt>hyaline cartilage</dt>
-<dd><span class="root">希臘 hyalos＝玻璃</span>　透明軟骨。基質均勻無可見纖維，細胞成小群，外有軟骨膜。<details data-kind="vocab-memory"><summary>記憶提示</summary><p><b>什麼都看不到就是它。</b>氣管的 C 型環、關節面、肋軟骨、生長板。</p></details></dd>
+<dd hidden><span class="root">希臘 hyalos＝玻璃</span>　透明軟骨。基質均勻無可見纖維，細胞成小群，外有軟骨膜。<p class="vpun"><span class="vtag">諧音梗</span>hyaline「玻璃」：基質均勻無纖維，細胞成小群，有軟骨膜。</p><details data-kind="vocab-memory" open><summary>記憶提示</summary><p><b>什麼都看不到就是它。</b>氣管的 C 型環、關節面、肋軟骨、生長板。</p></details></dd>
 
 <dt>elastic cartilage</dt>
-<dd><span class="root">elastic＝有彈性的</span>　彈性軟骨。基質中密布交錯的彈性纖維，外有軟骨膜。<details data-kind="vocab-memory"><summary>記憶提示</summary><p><b>基質裡看得到一團亂線</b>就是它。外耳、外耳道、耳咽管、會厭。</p></details></dd>
+<dd hidden><span class="root">elastic＝有彈性的</span>　彈性軟骨。基質中密布交錯的彈性纖維，外有軟骨膜。<p class="vpun"><span class="vtag">諧音梗</span>elastic「橡皮」：基質裡密布彈性纖維，有軟骨膜。</p><details data-kind="vocab-memory" open><summary>記憶提示</summary><p><b>基質裡看得到一團亂線</b>就是它。外耳、外耳道、耳咽管、會厭。</p></details></dd>
 
 <dt>fibrocartilage</dt>
-<dd><span class="root">fibro-＝纖維</span>　纖維軟骨。粗大平行的膠原纖維束，細胞排成列，<b>無軟骨膜</b>。<details data-kind="vocab-memory"><summary>記憶提示</summary><p><b>三種軟骨裡唯一沒有軟骨膜的。</b>椎間盤、半月板、恥骨聯合。</p></details></dd>
+<dd hidden><span class="root">fibro-＝纖維</span>　纖維軟骨。粗大平行的膠原纖維束，細胞排成列，<b>無軟骨膜</b>。<p class="vpun"><span class="vtag">諧音梗</span>fibro「纖維粗」：粗大平行膠原束，細胞排成列，無軟骨膜。</p><details data-kind="vocab-memory" open><summary>記憶提示</summary><p><b>三種軟骨裡唯一沒有軟骨膜的。</b>椎間盤、半月板、恥骨聯合。</p></details></dd>
 
 <dt>perichondrium</dt>
-<dd><span class="root">peri-（周圍）+ chondro-（軟骨）</span>　軟骨膜。包在透明軟骨與彈性軟骨外的緻密結締組織。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>字根就是答案：<b>chondro-＝軟骨</b>。113 年紅線圈的就是它。</p></details></dd>
+<dd hidden><span class="root">peri-（周圍）+ chondro-（軟骨）</span>　軟骨膜。包在透明軟骨與彈性軟骨外的緻密結締組織。<p class="vpun"><span class="vtag">諧音梗</span>peri「圍」chondr「軟骨」：包在透明與彈性軟骨外面的膜。</p><details data-kind="vocab-memory" open><summary>記憶提示</summary><p>字根就是答案：<b>chondro-＝軟骨</b>。113 年紅線圈的就是它。</p></details></dd>
 
 <dt>periosteum / endosteum</dt>
-<dd><span class="root">peri-（外）／endo-（內）+ osteo-（骨）</span>　骨膜（包在骨外）與骨內膜（襯在骨髓腔內側）。<details data-kind="vocab-memory"><summary>記憶提示</summary><p><b>osteo-＝骨</b>，所以裡面是軟骨時兩個都不對。peri 在外、endo 在內。</p></details></dd>
+<dd hidden><span class="root">peri-（外）／endo-（內）+ osteo-（骨）</span>　骨膜（包在骨外）與骨內膜（襯在骨髓腔內側）。<p class="vpun"><span class="vtag">諧音梗</span>peri「外圍」骨膜、endo「內」骨內膜。</p><details data-kind="vocab-memory" open><summary>記憶提示</summary><p><b>osteo-＝骨</b>，所以裡面是軟骨時兩個都不對。peri 在外、endo 在內。</p></details></dd>
 
 <dt>territorial matrix</dt>
-<dd><span class="root">territory＝領域</span>　領域基質。緊貼軟骨陷窩周圍、染色較深的一小圈基質。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>它在<b>軟骨內部</b>，不是外層被膜。113 年拿它當誘餌。</p></details></dd>
+<dd hidden><span class="root">territory＝領域</span>　領域基質。緊貼軟骨陷窩周圍、染色較深的一小圈基質。<p class="vpun"><span class="vtag">諧音梗</span>territorial「地盤」基質：陷窩周圍那圈深色的小地盤。</p><details data-kind="vocab-memory" open><summary>記憶提示</summary><p>它在<b>軟骨內部</b>，不是外層被膜。113 年拿它當誘餌。</p></details></dd>
 
 <dt>osteoblast</dt>
-<dd><span class="root">osteo-（骨）+ blast（芽、生成者）</span>　成骨細胞。骨表面排成一列的立方形單核細胞。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>-blast＝製造者。<b>它在表面排排站。</b></p></details></dd>
+<dd hidden><span class="root">osteo-（骨）+ blast（芽、生成者）</span>　成骨細胞。骨表面排成一列的立方形單核細胞。<p class="vpun"><span class="vtag">諧音梗</span>-blast「爆」生：骨表面排成一列、立方形的成骨細胞。</p><details data-kind="vocab-memory" open><summary>記憶提示</summary><p>-blast＝製造者。<b>它在表面排排站。</b></p></details></dd>
 
 <dt>osteocyte</dt>
-<dd><span class="root">osteo-（骨）+ -cyte（細胞）</span>　骨細胞。被埋在骨基質陷窩中的扁平細胞。<details data-kind="vocab-memory"><summary>記憶提示</summary><p><b>它在裡面，不在表面。</b>被自己蓋的牆封起來的成骨細胞。</p></details></dd>
+<dd hidden><span class="root">osteo-（骨）+ -cyte（細胞）</span>　骨細胞。被埋在骨基質陷窩中的扁平細胞。<p class="vpun"><span class="vtag">諧音梗</span>-cyte「住」：埋在基質陷窩裡的扁平骨細胞。</p><details data-kind="vocab-memory" open><summary>記憶提示</summary><p><b>它在裡面，不在表面。</b>被自己蓋的牆封起來的成骨細胞。</p></details></dd>
 
 <dt>osteoclast</dt>
-<dd><span class="root">osteo-（骨）+ clast（打碎者）</span>　破骨細胞。巨大多核、嗜酸性，位於骨表面的凹坑中。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>四個辨識點：<b>大、多核、偏粉紅、坐在坑裡。</b></p></details></dd>
+<dd hidden><span class="root">osteo-（骨）+ clast（打碎者）</span>　破骨細胞。巨大多核、嗜酸性，位於骨表面的凹坑中。<p class="vpun"><span class="vtag">諧音梗</span>-clast「拆」：巨大多核、粉紅，坐在坑裡拆骨。</p><details data-kind="vocab-memory" open><summary>記憶提示</summary><p>四個辨識點：<b>大、多核、偏粉紅、坐在坑裡。</b></p></details></dd>
 
 <dt>Howship's lacuna</dt>
-<dd><span class="root">以解剖學家 Howship 命名；lacuna＝小窪</span>　豪希普陷窩，破骨細胞吸收骨質後留下的凹坑。<details data-kind="vocab-memory"><summary>記憶提示</summary><p><b>坑是它自己啃的，它就坐在坑裡。</b>切片上認破骨細胞就找這個坑。</p></details></dd>
+<dd hidden><span class="root">以解剖學家 Howship 命名；lacuna＝小窪</span>　豪希普陷窩，破骨細胞吸收骨質後留下的凹坑。<p class="vpun"><span class="vtag">諧音梗</span>Howship「好、吸」出一個坑：破骨細胞留下的凹坑。</p><details data-kind="vocab-memory" open><summary>記憶提示</summary><p><b>坑是它自己啃的，它就坐在坑裡。</b>切片上認破骨細胞就找這個坑。</p></details></dd>
 
 <dt>Haversian canal</dt>
-<dd><span class="root">以解剖學家 Havers 命名</span>　哈氏管。骨元中央的<b>縱向</b>管道，周圍有同心圓骨板。<details data-kind="vocab-memory"><summary>記憶提示</summary><p><b>有同心圓包著的那一根</b>就是它。</p></details></dd>
+<dd hidden><span class="root">以解剖學家 Havers 命名</span>　哈氏管。骨元中央的<b>縱向</b>管道，周圍有同心圓骨板。<p class="vpun"><span class="vtag">諧音梗</span>Haversian「哈佛」中央走廊：縱向管，周圍同心圓骨板。</p><details data-kind="vocab-memory" open><summary>記憶提示</summary><p><b>有同心圓包著的那一根</b>就是它。</p></details></dd>
 
 <dt>Volkmann canal</dt>
-<dd><span class="root">以解剖學家 Volkmann 命名</span>　福克曼管。<b>橫向</b>穿過骨板、連通哈氏管與骨膜的管道。<details data-kind="vocab-memory"><summary>記憶提示</summary><p><b>沒有自己的同心圓</b>——這是切片上最快的判準。</p></details></dd>
+<dd hidden><span class="root">以解剖學家 Volkmann 命名</span>　福克曼管。<b>橫向</b>穿過骨板、連通哈氏管與骨膜的管道。<p class="vpun"><span class="vtag">諧音梗</span>Volkmann「橫著跑的 man」：橫向連通哈氏管與骨膜。</p><details data-kind="vocab-memory" open><summary>記憶提示</summary><p><b>沒有自己的同心圓</b>——這是切片上最快的判準。</p></details></dd>
 
 <dt>fibroblast</dt>
-<dd><span class="root">fibro-（纖維）+ blast</span>　纖維母細胞。結締組織中細長梭形的細胞。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>出現在骨切片題的選項裡通常是誘餌——<b>它不在骨表面也不在陷窩裡。</b></p></details></dd>
+<dd hidden><span class="root">fibro-（纖維）+ blast</span>　纖維母細胞。結締組織中細長梭形的細胞。<p class="vpun"><span class="vtag">諧音梗</span>fibro「纖維」blast「生」：細長梭形的纖維母細胞。</p><details data-kind="vocab-memory" open><summary>記憶提示</summary><p>出現在骨切片題的選項裡通常是誘餌——<b>它不在骨表面也不在陷窩裡。</b></p></details></dd>
 
 <dt>bone marrow</dt>
-<dd><span class="root">marrow＝髓</span>　骨髓。填在骨髓腔與骨小樑之間的造血與脂肪組織。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>它是<b>一大團細胞</b>，不是管道。管道題出現它就是湊數的。</p></details></dd>
+<dd hidden><span class="root">marrow＝髓</span>　骨髓。填在骨髓腔與骨小樑之間的造血與脂肪組織。<p class="vpun"><span class="vtag">諧音梗</span>marrow「麻肉」：骨頭裡的軟肉，造血與脂肪。</p><details data-kind="vocab-memory" open><summary>記憶提示</summary><p>它是<b>一大團細胞</b>，不是管道。管道題出現它就是湊數的。</p></details></dd>
 </dl>
 </section>
 <section id="chapter-final" data-chapter-kind="final_questions">
@@ -786,5 +805,36 @@ figure.boxfig .figtag{color:var(--violet);font-size:.76rem;letter-spacing:.1em;
   });
 </script>
 <!-- nb-comments:end -->
+
+<script data-nb-vocab-flip>
+(function(){
+  var dl=document.querySelector('dl.vocab'); if(!dl) return;
+  var dts=Array.prototype.slice.call(dl.querySelectorAll('dt'));
+  var count=document.querySelector('.vtools .vcount');
+  function dd(dt){return dt.nextElementSibling && dt.nextElementSibling.tagName==='DD' ? dt.nextElementSibling : null;}
+  function set(dt,open){var d=dd(dt); if(!d) return; d.hidden=!open; dt.classList.toggle('open',open); dt.setAttribute('aria-expanded',open?'true':'false');}
+  function refresh(){ if(!count) return; var n=dts.filter(function(dt){return dt.classList.contains('open');}).length; count.textContent='已翻 '+n+' / '+dts.length; }
+  dts.forEach(function(dt){
+    dt.tabIndex=0; dt.setAttribute('role','button'); set(dt,false);
+    dt.addEventListener('click',function(){ set(dt,dd(dt).hidden); refresh(); });
+    dt.addEventListener('keydown',function(e){ if(e.key==='Enter'||e.key===' '){ e.preventDefault(); dt.click(); } });
+  });
+  var tools=document.querySelector('.vtools'); if(!tools) return;
+  tools.addEventListener('click',function(e){
+    var b=e.target.closest('button'); if(!b) return;
+    var act=b.getAttribute('data-act');
+    if(act==='open'){ dts.forEach(function(dt){set(dt,true);}); }
+    else if(act==='close'){ dts.forEach(function(dt){set(dt,false);}); }
+    else if(act==='quiz'){
+      var closed=dts.filter(function(dt){return !dt.classList.contains('open');});
+      if(!closed.length){ dts.forEach(function(dt){set(dt,false);}); closed=dts; }
+      var pick=closed[Math.floor(Math.random()*closed.length)];
+      pick.scrollIntoView({behavior:'smooth',block:'center'}); pick.focus({preventScroll:true});
+    }
+    refresh();
+  });
+  refresh();
+})();
+</script>
 </body>
 </html>
