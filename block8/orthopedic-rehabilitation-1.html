@@ -94,6 +94,23 @@ figure.boxfig figcaption{color:var(--dim);font-size:.82rem;margin-top:.5rem;
 figure.boxfig .figtag{color:var(--violet);font-size:.76rem;letter-spacing:.1em;
   display:block;margin-bottom:.3rem}
 .ending{color:var(--dim);font-style:italic;margin:1.6rem 0 2.4rem}
+
+/* nb-vocab-flip:start */
+dl.vocab dt{cursor:pointer;user-select:none;position:relative;padding-right:6.2rem;border-bottom:1px dashed var(--line)}
+dl.vocab dt::after{content:"點我翻牌 ▸";position:absolute;right:0;top:.15rem;font-size:.8rem;color:var(--dim);font-weight:400}
+dl.vocab dt.open::after{content:"蓋回去 ▾";color:var(--gold)}
+dl.vocab dt:focus-visible{outline:2px solid var(--cyan);outline-offset:3px;border-radius:4px}
+dl.vocab dd[hidden]{display:none}
+dl.vocab dd{padding:.5rem .7rem .6rem;background:var(--panel);border:1px solid var(--line);border-top:0;border-radius:0 0 8px 8px;margin-bottom:.4rem}
+dl.vocab .vpun{margin:.5rem 0 0;padding:.45rem .65rem;border-left:3px solid var(--gold);background:rgba(229,181,103,.08);border-radius:4px}
+dl.vocab .vpun .vtag{color:var(--gold);font-weight:700;margin-right:.45rem}
+dl.vocab details[data-kind="vocab-memory"]{margin-top:.45rem}
+.vtools{display:flex;gap:.5rem;flex-wrap:wrap;align-items:center;margin:.5rem 0 .3rem}
+.vtools button{font:inherit;font-size:.9rem;padding:.35rem .8rem;border-radius:999px;border:1px solid var(--line);background:var(--panel);color:var(--ink);cursor:pointer}
+.vtools button:hover{border-color:var(--cyan);color:var(--cyan)}
+.vtools .vcount{color:var(--dim);font-size:.85rem;margin-left:auto}
+.vhow{color:var(--dim);font-size:.9rem;margin:.2rem 0 .4rem}
+/* nb-vocab-flip:end */
 </style></head>
 <body>
 <div class="container">
@@ -482,57 +499,59 @@ figure.boxfig .figtag{color:var(--violet);font-size:.76rem;letter-spacing:.1em;
 <!-- ================= VOCAB ================= -->
 <section id="chapter-vocab" data-chapter-kind="vocab">
 <h2>四、單字表</h2>
+<p class="vhow">先看英文想中文，點單字翻牌看意思、諧音梗與記憶提示。</p>
+<div class="vtools"><button type="button" data-act="quiz">🎲 隨機抽一張</button><button type="button" data-act="open">全部翻開</button><button type="button" data-act="close">全部蓋上</button><span class="vcount"></span></div>
 <dl class="vocab">
 <dt>pain generator</dt>
-<dd><span class="root">generate＝產生</span>　疼痛來源，治療頸背痛前要先找出的結構。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>什麼都可能，就是<b>不是軟骨</b>。</p></details></dd>
+<dd hidden><span class="root">generate＝產生</span>　疼痛來源，治療頸背痛前要先找出的結構。<p class="vpun"><span class="vtag">諧音梗</span>generator「發電機」：痛從哪個結構發出來。</p><details data-kind="vocab-memory" open><summary>記憶提示</summary><p>什麼都可能，就是<b>不是軟骨</b>。</p></details></dd>
 
 <dt>cartilage</dt>
-<dd><span class="root">拉丁 cartilago＝軟骨</span>　軟骨，沒有神經，不是疼痛來源。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>三年答案都是它。</p></details></dd>
+<dd hidden><span class="root">拉丁 cartilago＝軟骨</span>　軟骨，沒有神經，不是疼痛來源。<p class="vpun"><span class="vtag">諧音梗</span>cartilage「卡體累」但不痛：軟骨沒神經。</p><details data-kind="vocab-memory" open><summary>記憶提示</summary><p>三年答案都是它。</p></details></dd>
 
 <dt>nerve root</dt>
-<dd><span class="root">root＝根</span>　神經根，脊神經離開脊髓處，是常見的疼痛來源。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>三年都放在選項裡當「會痛的」干擾項。</p></details></dd>
+<dd hidden><span class="root">root＝根</span>　神經根，脊神經離開脊髓處，是常見的疼痛來源。<p class="vpun"><span class="vtag">諧音梗</span>nerve「勒」root「根」：神經根被勒到最痛。</p><details data-kind="vocab-memory" open><summary>記憶提示</summary><p>三年都放在選項裡當「會痛的」干擾項。</p></details></dd>
 
 <dt>strain / sprain</dt>
-<dd><span class="root">strain＝肌肉肌腱拉傷；sprain＝韌帶扭傷</span>　頸部拉傷與扭傷，頸痛最常見原因，約 85%。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>不是椎間盤、不是脊髓病變、不是風濕。</p></details></dd>
+<dd hidden><span class="root">strain＝肌肉肌腱拉傷；sprain＝韌帶扭傷</span>　頸部拉傷與扭傷，頸痛最常見原因，約 85%。<p class="vpun"><span class="vtag">諧音梗</span>strain「拉」肌肉、sprain「扭」韌帶：頸痛 85% 是這個。</p><details data-kind="vocab-memory" open><summary>記憶提示</summary><p>不是椎間盤、不是脊髓病變、不是風濕。</p></details></dd>
 
 <dt>cervical myelopathy</dt>
-<dd><span class="root">myelo-（脊髓）+ -pathy（病變）</span>　頸椎脊髓病變。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>113 年的干擾項，不是最常見原因。</p></details></dd>
+<dd hidden><span class="root">myelo-（脊髓）+ -pathy（病變）</span>　頸椎脊髓病變。<p class="vpun"><span class="vtag">諧音梗</span>myelo「髓」pathy「病」：頸脊髓病變，干擾項。</p><details data-kind="vocab-memory" open><summary>記憶提示</summary><p>113 年的干擾項，不是最常見原因。</p></details></dd>
 
 <dt>non-specific low back pain</dt>
-<dd><span class="root">non-specific＝非特異性</span>　沒有明確結構病因的下背痛，佔 85%，多自限。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>跟體能、姿勢、情緒壓力有關；<b>不需手術</b>。</p></details></dd>
+<dd hidden><span class="root">non-specific＝非特異性</span>　沒有明確結構病因的下背痛，佔 85%，多自限。<p class="vpun"><span class="vtag">諧音梗</span>non-specific「沒特別原因」：85%，自限。</p><details data-kind="vocab-memory" open><summary>記憶提示</summary><p>跟體能、姿勢、情緒壓力有關；<b>不需手術</b>。</p></details></dd>
 
 <dt>self-limiting</dt>
-<dd><span class="root">limit＝限制</span>　自限性，不治療也會自己好。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>非特異性下背痛的特色。</p></details></dd>
+<dd hidden><span class="root">limit＝限制</span>　自限性，不治療也會自己好。<p class="vpun"><span class="vtag">諧音梗</span>self「自己」limit「停」：不治也會好。</p><details data-kind="vocab-memory" open><summary>記憶提示</summary><p>非特異性下背痛的特色。</p></details></dd>
 
 <dt>reintegration into society</dt>
-<dd><span class="root">re-（再）+ integrate（整合）</span>　重返社會，骨科復健的主要目標之一。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>目標是功能與社會，不是藥與刀。</p></details></dd>
+<dd hidden><span class="root">re-（再）+ integrate（整合）</span>　重返社會，骨科復健的主要目標之一。<p class="vpun"><span class="vtag">諧音梗</span>re「再」integrate「融入」社會：復健的終極目標。</p><details data-kind="vocab-memory" open><summary>記憶提示</summary><p>目標是功能與社會，不是藥與刀。</p></details></dd>
 
 <dt>bed rest</dt>
-<dd><span class="root">rest＝休息</span>　臥床休息；「躺到不痛為止」是唯一不建議的方法。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>三年都是答案。稍微不痛就要動。</p></details></dd>
+<dd hidden><span class="root">rest＝休息</span>　臥床休息；「躺到不痛為止」是唯一不建議的方法。<p class="vpun"><span class="vtag">諧音梗</span>bed rest「別 rest」：躺到不痛是唯一不建議。</p><details data-kind="vocab-memory" open><summary>記憶提示</summary><p>三年都是答案。稍微不痛就要動。</p></details></dd>
 
 <dt>image guided injection</dt>
-<dd><span class="root">guided＝導引</span>　影像導引注射（類固醇），屬介入性治療。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>可以做，不是不建議。</p></details></dd>
+<dd hidden><span class="root">guided＝導引</span>　影像導引注射（類固醇），屬介入性治療。<p class="vpun"><span class="vtag">諧音梗</span>「看著影像打針」：類固醇介入治療，可以。</p><details data-kind="vocab-memory" open><summary>記憶提示</summary><p>可以做，不是不建議。</p></details></dd>
 
 <dt>physical modality</dt>
-<dd><span class="root">modality＝方式</span>　物理因子治療，如熱療。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>熱療可以。</p></details></dd>
+<dd hidden><span class="root">modality＝方式</span>　物理因子治療，如熱療。<p class="vpun"><span class="vtag">諧音梗</span>modality「摸得來」：熱療等物理因子，可以。</p><details data-kind="vocab-memory" open><summary>記憶提示</summary><p>熱療可以。</p></details></dd>
 
 <dt>manual therapy</dt>
-<dd><span class="root">manual＝用手的</span>　徒手治療，含按摩，皆有療效。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>三年都在選項裡，都是可以。</p></details></dd>
+<dd hidden><span class="root">manual＝用手的</span>　徒手治療，含按摩，皆有療效。<p class="vpun"><span class="vtag">諧音梗</span>manual「用手」：徒手治療按摩，有效。</p><details data-kind="vocab-memory" open><summary>記憶提示</summary><p>三年都在選項裡，都是可以。</p></details></dd>
 
 <dt>acute stage</dt>
-<dd><span class="root">acute＝急性</span>　急性期；急性期過後就要開始運動。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>「輕、小、慢」。</p></details></dd>
+<dd hidden><span class="root">acute＝急性</span>　急性期；急性期過後就要開始運動。<p class="vpun"><span class="vtag">諧音梗</span>acute「哎、急」：急性期過了就要動。</p><details data-kind="vocab-memory" open><summary>記憶提示</summary><p>「輕、小、慢」。</p></details></dd>
 
 <dt>intervertebral disc</dt>
-<dd><span class="root">inter-（之間）+ vertebral（椎骨）</span>　椎間盤，壓力隨姿勢改變。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>210 ＞ 140 ＞ 100 ＞ 75 ＞ 25。</p></details></dd>
+<dd hidden><span class="root">inter-（之間）+ vertebral（椎骨）</span>　椎間盤，壓力隨姿勢改變。<p class="vpun"><span class="vtag">諧音梗</span>inter「椎骨之間」的 disc：壓力隨姿勢變。</p><details data-kind="vocab-memory" open><summary>記憶提示</summary><p>210 ＞ 140 ＞ 100 ＞ 75 ＞ 25。</p></details></dd>
 
 <dt>supine lying</dt>
-<dd><span class="root">supine＝仰臥</span>　平躺，椎間盤壓力最小（25%）。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>問「最小」選它。</p></details></dd>
+<dd hidden><span class="root">supine＝仰臥</span>　平躺，椎間盤壓力最小（25%）。<p class="vpun"><span class="vtag">諧音梗</span>supine「速躺平」：平躺最小 25%。</p><details data-kind="vocab-memory" open><summary>記憶提示</summary><p>問「最小」選它。</p></details></dd>
 
 <dt>side lying</dt>
-<dd><span class="root">side＝側</span>　側躺，椎間盤壓力 75%。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>比平躺大、比站小。</p></details></dd>
+<dd hidden><span class="root">side＝側</span>　側躺，椎間盤壓力 75%。<p class="vpun"><span class="vtag">諧音梗</span>side「側」躺：75%。</p><details data-kind="vocab-memory" open><summary>記憶提示</summary><p>比平躺大、比站小。</p></details></dd>
 
 <dt>sitting</dt>
-<dd><span class="root">sit＝坐</span>　坐姿，椎間盤壓力 140%，比站立還大。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>問「最大」（無仰臥起坐選項時）選它。</p></details></dd>
+<dd hidden><span class="root">sit＝坐</span>　坐姿，椎間盤壓力 140%，比站立還大。<p class="vpun"><span class="vtag">諧音梗</span>sitting「坐」140：坐比站大。</p><details data-kind="vocab-memory" open><summary>記憶提示</summary><p>問「最大」（無仰臥起坐選項時）選它。</p></details></dd>
 </dl>
 </section>
 <section id="chapter-final" data-chapter-kind="final_questions">
@@ -781,5 +800,36 @@ figure.boxfig .figtag{color:var(--violet);font-size:.76rem;letter-spacing:.1em;
   });
 </script>
 <!-- nb-comments:end -->
+
+<script data-nb-vocab-flip>
+(function(){
+  var dl=document.querySelector('dl.vocab'); if(!dl) return;
+  var dts=Array.prototype.slice.call(dl.querySelectorAll('dt'));
+  var count=document.querySelector('.vtools .vcount');
+  function dd(dt){return dt.nextElementSibling && dt.nextElementSibling.tagName==='DD' ? dt.nextElementSibling : null;}
+  function set(dt,open){var d=dd(dt); if(!d) return; d.hidden=!open; dt.classList.toggle('open',open); dt.setAttribute('aria-expanded',open?'true':'false');}
+  function refresh(){ if(!count) return; var n=dts.filter(function(dt){return dt.classList.contains('open');}).length; count.textContent='已翻 '+n+' / '+dts.length; }
+  dts.forEach(function(dt){
+    dt.tabIndex=0; dt.setAttribute('role','button'); set(dt,false);
+    dt.addEventListener('click',function(){ set(dt,dd(dt).hidden); refresh(); });
+    dt.addEventListener('keydown',function(e){ if(e.key==='Enter'||e.key===' '){ e.preventDefault(); dt.click(); } });
+  });
+  var tools=document.querySelector('.vtools'); if(!tools) return;
+  tools.addEventListener('click',function(e){
+    var b=e.target.closest('button'); if(!b) return;
+    var act=b.getAttribute('data-act');
+    if(act==='open'){ dts.forEach(function(dt){set(dt,true);}); }
+    else if(act==='close'){ dts.forEach(function(dt){set(dt,false);}); }
+    else if(act==='quiz'){
+      var closed=dts.filter(function(dt){return !dt.classList.contains('open');});
+      if(!closed.length){ dts.forEach(function(dt){set(dt,false);}); closed=dts; }
+      var pick=closed[Math.floor(Math.random()*closed.length)];
+      pick.scrollIntoView({behavior:'smooth',block:'center'}); pick.focus({preventScroll:true});
+    }
+    refresh();
+  });
+  refresh();
+})();
+</script>
 </body>
 </html>
