@@ -94,6 +94,23 @@ figure.boxfig figcaption{color:var(--dim);font-size:.82rem;margin-top:.5rem;
 figure.boxfig .figtag{color:var(--violet);font-size:.76rem;letter-spacing:.1em;
   display:block;margin-bottom:.3rem}
 .ending{color:var(--dim);font-style:italic;margin:1.6rem 0 2.4rem}
+
+/* nb-vocab-flip:start */
+dl.vocab dt{cursor:pointer;user-select:none;position:relative;padding-right:6.2rem;border-bottom:1px dashed var(--line)}
+dl.vocab dt::after{content:"點我翻牌 ▸";position:absolute;right:0;top:.15rem;font-size:.8rem;color:var(--dim);font-weight:400}
+dl.vocab dt.open::after{content:"蓋回去 ▾";color:var(--gold)}
+dl.vocab dt:focus-visible{outline:2px solid var(--cyan);outline-offset:3px;border-radius:4px}
+dl.vocab dd[hidden]{display:none}
+dl.vocab dd{padding:.5rem .7rem .6rem;background:var(--panel);border:1px solid var(--line);border-top:0;border-radius:0 0 8px 8px;margin-bottom:.4rem}
+dl.vocab .vpun{margin:.5rem 0 0;padding:.45rem .65rem;border-left:3px solid var(--gold);background:rgba(229,181,103,.08);border-radius:4px}
+dl.vocab .vpun .vtag{color:var(--gold);font-weight:700;margin-right:.45rem}
+dl.vocab details[data-kind="vocab-memory"]{margin-top:.45rem}
+.vtools{display:flex;gap:.5rem;flex-wrap:wrap;align-items:center;margin:.5rem 0 .3rem}
+.vtools button{font:inherit;font-size:.9rem;padding:.35rem .8rem;border-radius:999px;border:1px solid var(--line);background:var(--panel);color:var(--ink);cursor:pointer}
+.vtools button:hover{border-color:var(--cyan);color:var(--cyan)}
+.vtools .vcount{color:var(--dim);font-size:.85rem;margin-left:auto}
+.vhow{color:var(--dim);font-size:.9rem;margin:.2rem 0 .4rem}
+/* nb-vocab-flip:end */
 </style></head>
 <body>
 <div class="container">
@@ -808,78 +825,80 @@ figure.boxfig .figtag{color:var(--violet);font-size:.76rem;letter-spacing:.1em;
 <!-- ================= VOCAB ================= -->
 <section id="chapter-vocab" data-chapter-kind="vocab">
 <h2>七、單字表</h2>
+<p class="vhow">先看英文想中文，點單字翻牌看意思、諧音梗與記憶提示。</p>
+<div class="vtools"><button type="button" data-act="quiz">🎲 隨機抽一張</button><button type="button" data-act="open">全部翻開</button><button type="button" data-act="close">全部蓋上</button><span class="vcount"></span></div>
 <dl class="vocab">
 <dt>cyclooxygenase (COX-1 / COX-2)</dt>
-<dd><span class="root">cyclo-（環）+ oxygenase（加氧酶）</span>　環氧化酶。COX-1 恆定表現、管胃黏膜與血小板；COX-2 發炎時誘導、管紅腫熱痛。<details data-kind="vocab-memory"><summary>記憶提示</summary><p><b>1 是常設廠、2 是臨時廠。</b>整科的分類都從這裡長出來。</p></details></dd>
+<dd hidden><span class="root">cyclo-（環）+ oxygenase（加氧酶）</span>　環氧化酶。COX-1 恆定表現、管胃黏膜與血小板；COX-2 發炎時誘導、管紅腫熱痛。<p class="vpun"><span class="vtag">諧音梗</span>COX「摳死」：1 號管胃管血小板（恆定），2 號管紅腫熱痛（誘導）。</p><details data-kind="vocab-memory" open><summary>記憶提示</summary><p><b>1 是常設廠、2 是臨時廠。</b>整科的分類都從這裡長出來。</p></details></dd>
 
 <dt>thromboxane A2 (TXA2)</dt>
-<dd><span class="root">thrombo-（血栓）+ oxane</span>　血栓素 A2。血小板經 COX-1 製造，促進血小板聚集與血管收縮。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>thrombo-＝血栓。<b>Aspirin 抗血栓就是永久關掉它。</b></p></details></dd>
+<dd hidden><span class="root">thrombo-（血栓）+ oxane</span>　血栓素 A2。血小板經 COX-1 製造，促進血小板聚集與血管收縮。<p class="vpun"><span class="vtag">諧音梗</span>thrombo「血栓」箱：血小板做的，促聚集、收血管。</p><details data-kind="vocab-memory" open><summary>記憶提示</summary><p>thrombo-＝血栓。<b>Aspirin 抗血栓就是永久關掉它。</b></p></details></dd>
 
 <dt>prostacyclin (PGI2)</dt>
-<dd><span class="root">prosta-（前列腺素）+ cyclin</span>　前列環素。血管內皮主要經 COX-2 製造，抑制血小板聚集、擴張血管。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>它是 TXA2 的<b>對手</b>。只壓它不壓 TXA2，天平就倒向血栓——COX-2 選擇性抑制劑的原罪。</p></details></dd>
+<dd hidden><span class="root">prosta-（前列腺素）+ cyclin</span>　前列環素。血管內皮主要經 COX-2 製造，抑制血小板聚集、擴張血管。<p class="vpun"><span class="vtag">諧音梗</span>prostacyclin「怕死塞」：內皮做的，抗聚集、擴血管。</p><details data-kind="vocab-memory" open><summary>記憶提示</summary><p>它是 TXA2 的<b>對手</b>。只壓它不壓 TXA2，天平就倒向血栓——COX-2 選擇性抑制劑的原罪。</p></details></dd>
 
 <dt>acetylation (irreversible inhibition)</dt>
-<dd><span class="root">acetyl（乙醯基）+ -ation</span>　乙醯化。Aspirin 把乙醯基共價接到 COX 上，造成不可逆抑制。<details data-kind="vocab-memory"><summary>記憶提示</summary><p><b>焊上去拆不掉。</b>血小板沒有核、做不出新的 COX，所以要等 7–10 天。</p></details></dd>
+<dd hidden><span class="root">acetyl（乙醯基）+ -ation</span>　乙醯化。Aspirin 把乙醯基共價接到 COX 上，造成不可逆抑制。<p class="vpun"><span class="vtag">諧音梗</span>acetyl「乙醯」黏上去：Aspirin 把 COX 黏死，不可逆。</p><details data-kind="vocab-memory" open><summary>記憶提示</summary><p><b>焊上去拆不掉。</b>血小板沒有核、做不出新的 COX，所以要等 7–10 天。</p></details></dd>
 
 <dt>salicylic acid</dt>
-<dd><span class="root">拉丁 salix＝柳樹</span>　水楊酸。Aspirin 在體內的代謝產物。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>Aspirin 的化學名 acetyl<b>salicylic</b> acid——去掉乙醯基就是它。</p></details></dd>
+<dd hidden><span class="root">拉丁 salix＝柳樹</span>　水楊酸。Aspirin 在體內的代謝產物。<p class="vpun"><span class="vtag">諧音梗</span>salicylic「殺你 sick」酸：Aspirin 的代謝產物水楊酸。</p><details data-kind="vocab-memory" open><summary>記憶提示</summary><p>Aspirin 的化學名 acetyl<b>salicylic</b> acid——去掉乙醯基就是它。</p></details></dd>
 
 <dt>Diflunisal</dt>
-<dd><span class="root">di-fluoro-（二氟）+ salicylate</span>　非乙醯化水楊酸類。<details data-kind="vocab-memory"><summary>記憶提示</summary><p><b>沒有乙醯基</b>，所以做不到 Aspirin 那一刀。111 年的考點。</p></details></dd>
+<dd hidden><span class="root">di-fluoro-（二氟）+ salicylate</span>　非乙醯化水楊酸類。<p class="vpun"><span class="vtag">諧音梗</span>Diflunisal「地芙露」：非乙醯化的水楊酸類。</p><details data-kind="vocab-memory" open><summary>記憶提示</summary><p><b>沒有乙醯基</b>，所以做不到 Aspirin 那一刀。111 年的考點。</p></details></dd>
 
 <dt>transient ischemic attack (TIA)</dt>
-<dd><span class="root">transient（暫時）+ ischemic（缺血）</span>　暫時性腦缺血發作。低劑量 Aspirin 可減少其發生率。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>抗血小板的臨床用途之一，與「低劑量」配對記。</p></details></dd>
+<dd hidden><span class="root">transient（暫時）+ ischemic（缺血）</span>　暫時性腦缺血發作。低劑量 Aspirin 可減少其發生率。<p class="vpun"><span class="vtag">諧音梗</span>TIA「踢一下」腦：暫時性腦缺血，低劑量 Aspirin 防。</p><details data-kind="vocab-memory" open><summary>記憶提示</summary><p>抗血小板的臨床用途之一，與「低劑量」配對記。</p></details></dd>
 
 <dt>Reye's syndrome</dt>
-<dd><span class="root">以醫師 Reye 命名</span>　雷氏症候群。病毒感染的<b>兒童</b>服用 Aspirin 後的腦病變與脂肪肝衰竭。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>關鍵字是 <b>children</b>。113 年把它改成 adults 當錯項。</p></details></dd>
+<dd hidden><span class="root">以醫師 Reye 命名</span>　雷氏症候群。病毒感染的<b>兒童</b>服用 Aspirin 後的腦病變與脂肪肝衰竭。<p class="vpun"><span class="vtag">諧音梗</span>Reye「累死」小孩：病毒感染吃 Aspirin → 腦病變＋脂肪肝。</p><details data-kind="vocab-memory" open><summary>記憶提示</summary><p>關鍵字是 <b>children</b>。113 年把它改成 adults 當錯項。</p></details></dd>
 
 <dt>acetaminophen (paracetamol)</dt>
-<dd><span class="root">N-acetyl-para-aminophenol 的縮寫</span>　乙醯胺酚。鎮痛解熱、無消炎作用，成人上限 4 g/d。<details data-kind="vocab-memory"><summary>記憶提示</summary><p><b>不消炎、傷肝、上限 4 克</b>——三年三題就這三件事。</p></details></dd>
+<dd hidden><span class="root">N-acetyl-para-aminophenol 的縮寫</span>　乙醯胺酚。鎮痛解熱、無消炎作用，成人上限 4 g/d。<p class="vpun"><span class="vtag">諧音梗</span>acetaminophen「安痛不消炎」：解熱鎮痛，成人 4 g/d 上限。</p><details data-kind="vocab-memory" open><summary>記憶提示</summary><p><b>不消炎、傷肝、上限 4 克</b>——三年三題就這三件事。</p></details></dd>
 
 <dt>N-acetylcysteine (NAC)</dt>
-<dd><span class="root">N-acetyl + cysteine（半胱胺酸）</span>　乙醯半胱胺酸，Acetaminophen 過量的解毒劑，補充還原態穀胱甘肽。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>就是<b>愛克痰</b>（詳解原話）。它提供半胱胺酸去<b>還原</b>穀胱甘肽。</p></details></dd>
+<dd hidden><span class="root">N-acetyl + cysteine（半胱胺酸）</span>　乙醯半胱胺酸，Acetaminophen 過量的解毒劑，補充還原態穀胱甘肽。<p class="vpun"><span class="vtag">諧音梗</span>NAC「拿去解」：Acetaminophen 過量的解毒劑，補穀胱甘肽。</p><details data-kind="vocab-memory" open><summary>記憶提示</summary><p>就是<b>愛克痰</b>（詳解原話）。它提供半胱胺酸去<b>還原</b>穀胱甘肽。</p></details></dd>
 
 <dt>glutathione (reduced / oxidized)</dt>
-<dd><span class="root">glutamate + cysteine + glycine 三肽</span>　穀胱甘肽。<b>還原態</b>才能中和 Acetaminophen 的毒性代謝物。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>氧化態是<b>用過的</b>。113 年說「提高氧化態有助解毒」就是錯的。</p></details></dd>
+<dd hidden><span class="root">glutamate + cysteine + glycine 三肽</span>　穀胱甘肽。<b>還原態</b>才能中和 Acetaminophen 的毒性代謝物。<p class="vpun"><span class="vtag">諧音梗</span>glutathione「骨頭穿」：還原態才能中和毒性代謝物。</p><details data-kind="vocab-memory" open><summary>記憶提示</summary><p>氧化態是<b>用過的</b>。113 年說「提高氧化態有助解毒」就是錯的。</p></details></dd>
 
 <dt>celecoxib / etoricoxib</dt>
-<dd><span class="root">-coxib＝COX-2 inhibitor 的字尾</span>　COX-2 選擇性抑制劑；Etoricoxib 選擇性更高。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>看到 <b>-coxib</b> 就是這一家：保胃、不碰血小板、增加血栓風險。</p></details></dd>
+<dd hidden><span class="root">-coxib＝COX-2 inhibitor 的字尾</span>　COX-2 選擇性抑制劑；Etoricoxib 選擇性更高。<p class="vpun"><span class="vtag">諧音梗</span>-coxib「摳西不」：COX-2 選擇性，etori 更選擇。</p><details data-kind="vocab-memory" open><summary>記憶提示</summary><p>看到 <b>-coxib</b> 就是這一家：保胃、不碰血小板、增加血栓風險。</p></details></dd>
 
 <dt>Nabumetone</dt>
-<dd><span class="root">naphthyl-butanone 的縮寫</span>　前驅藥，目前唯一的非酸性 NSAID。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>兩個「唯一」：<b>唯一非酸性</b>、要先代謝才有活性。</p></details></dd>
+<dd hidden><span class="root">naphthyl-butanone 的縮寫</span>　前驅藥，目前唯一的非酸性 NSAID。<p class="vpun"><span class="vtag">諧音梗</span>Nabumetone「那不酸」：唯一非酸性 NSAID，前驅藥。</p><details data-kind="vocab-memory" open><summary>記憶提示</summary><p>兩個「唯一」：<b>唯一非酸性</b>、要先代謝才有活性。</p></details></dd>
 
 <dt>Indomethacin</dt>
-<dd><span class="root">indole（吲哚）+ methacin</span>　吲哚美辛。加速開放性動脈導管關閉；急性痛風替代藥；偏 COX-1。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>獨門標籤是 <b>PDA</b>。動脈導管靠前列腺素撐開，壓下去就關。</p></details></dd>
+<dd hidden><span class="root">indole（吲哚）+ methacin</span>　吲哚美辛。加速開放性動脈導管關閉；急性痛風替代藥；偏 COX-1。<p class="vpun"><span class="vtag">諧音梗</span>Indomethacin「引導閉」：關動脈導管，急性痛風替代，偏 COX-1。</p><details data-kind="vocab-memory" open><summary>記憶提示</summary><p>獨門標籤是 <b>PDA</b>。動脈導管靠前列腺素撐開，壓下去就關。</p></details></dd>
 
 <dt>patent ductus arteriosus (PDA)</dt>
-<dd><span class="root">patent＝開放的；ductus arteriosus＝動脈導管</span>　開放性動脈導管。出生後未關閉的胎兒血管。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>前列腺素維持它開放 → NSAID（Indomethacin）促其關閉。</p></details></dd>
+<dd hidden><span class="root">patent＝開放的；ductus arteriosus＝動脈導管</span>　開放性動脈導管。出生後未關閉的胎兒血管。<p class="vpun"><span class="vtag">諧音梗</span>patent「開著」ductus：出生後沒關的胎兒血管。</p><details data-kind="vocab-memory" open><summary>記憶提示</summary><p>前列腺素維持它開放 → NSAID（Indomethacin）促其關閉。</p></details></dd>
 
 <dt>Meloxicam</dt>
-<dd><span class="root">-oxicam＝oxicam 類字尾</span>　oxicam 類中偏向 COX-2 的一員。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>在 ibuprofen、mefenamic acid、indomethacin 之中<b>它最偏 COX-2</b>。</p></details></dd>
+<dd hidden><span class="root">-oxicam＝oxicam 類字尾</span>　oxicam 類中偏向 COX-2 的一員。<p class="vpun"><span class="vtag">諧音梗</span>Meloxicam「美洛」偏 COX-2：oxicam 家族。</p><details data-kind="vocab-memory" open><summary>記憶提示</summary><p>在 ibuprofen、mefenamic acid、indomethacin 之中<b>它最偏 COX-2</b>。</p></details></dd>
 
 <dt>colchicine</dt>
-<dd><span class="root">源自秋水仙屬 Colchicum</span>　秋水仙素。綁 tubulin、抑制白血球移動與吞噬，急性痛風第一線。<details data-kind="vocab-memory"><summary>記憶提示</summary><p><b>只管白血球，不管尿酸。</b>「減少尿酸合成與排泄」就是錯的。</p></details></dd>
+<dd hidden><span class="root">源自秋水仙屬 Colchicum</span>　秋水仙素。綁 tubulin、抑制白血球移動與吞噬，急性痛風第一線。<p class="vpun"><span class="vtag">諧音梗</span>colchicine「扣去洗」白血球：綁 tubulin，急性痛風第一線。</p><details data-kind="vocab-memory" open><summary>記憶提示</summary><p><b>只管白血球，不管尿酸。</b>「減少尿酸合成與排泄」就是錯的。</p></details></dd>
 
 <dt>tubulin</dt>
-<dd><span class="root">tubule（小管）+ -in</span>　微管蛋白。秋水仙素的結合標的，抑制微管聚合。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>微管壞了，白血球就<b>走不動、吞不了</b>。</p></details></dd>
+<dd hidden><span class="root">tubule（小管）+ -in</span>　微管蛋白。秋水仙素的結合標的，抑制微管聚合。<p class="vpun"><span class="vtag">諧音梗</span>tubulin「土不林」：微管蛋白，秋水仙素的標的。</p><details data-kind="vocab-memory" open><summary>記憶提示</summary><p>微管壞了，白血球就<b>走不動、吞不了</b>。</p></details></dd>
 
 <dt>uricosuric agent</dt>
-<dd><span class="root">uric（尿酸）+ -uria（尿）</span>　促尿酸排泄劑，如 Probenecid、Sulfinpyrazone，阻斷近端小管再吸收。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>位置是<b>近端</b>小管；<b>急性期不用</b>。兩個考點各考過一次。</p></details></dd>
+<dd hidden><span class="root">uric（尿酸）+ -uria（尿）</span>　促尿酸排泄劑，如 Probenecid、Sulfinpyrazone，阻斷近端小管再吸收。<p class="vpun"><span class="vtag">諧音梗</span>urico「尿酸」suric「排」：Probenecid 阻近端小管再吸收。</p><details data-kind="vocab-memory" open><summary>記憶提示</summary><p>位置是<b>近端</b>小管；<b>急性期不用</b>。兩個考點各考過一次。</p></details></dd>
 
 <dt>xanthine oxidase</dt>
-<dd><span class="root">xanthine（黃嘌呤）+ oxidase</span>　黃嘌呤氧化酶，尿酸合成的最後一步酵素。Allopurinol 與 Febuxostat 抑制它。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>「少做」那條路。Febuxostat 腎不好也能用，Allopurinol 小心 SJS。</p></details></dd>
+<dd hidden><span class="root">xanthine（黃嘌呤）+ oxidase</span>　黃嘌呤氧化酶，尿酸合成的最後一步酵素。Allopurinol 與 Febuxostat 抑制它。<p class="vpun"><span class="vtag">諧音梗</span>xanthine「仙丁」氧化酶：尿酸最後一步，Allopurinol 擋。</p><details data-kind="vocab-memory" open><summary>記憶提示</summary><p>「少做」那條路。Febuxostat 腎不好也能用，Allopurinol 小心 SJS。</p></details></dd>
 
 <dt>Stevens–Johnson syndrome (SJS)</dt>
-<dd><span class="root">以兩位醫師命名</span>　嚴重的藥物過敏性皮膚黏膜反應，Allopurinol 的已知風險。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>113 年當正確敘述出現。Allopurinol 配 SJS。</p></details></dd>
+<dd hidden><span class="root">以兩位醫師命名</span>　嚴重的藥物過敏性皮膚黏膜反應，Allopurinol 的已知風險。<p class="vpun"><span class="vtag">諧音梗</span>SJS「史提芬強生」皮膚炸：Allopurinol 的風險。</p><details data-kind="vocab-memory" open><summary>記憶提示</summary><p>113 年當正確敘述出現。Allopurinol 配 SJS。</p></details></dd>
 
 <dt>pegloticase</dt>
-<dd><span class="root">PEG（聚乙二醇）+ uricase</span>　聚乙二醇化重組尿酸氧化酶，把尿酸氧化為尿囊素。<details data-kind="vocab-memory"><summary>記憶提示</summary><p><b>分解</b>尿酸不是抑制合成；產生 H2O2 所以 <b>G6PD 缺乏禁用</b>。</p></details></dd>
+<dd hidden><span class="root">PEG（聚乙二醇）+ uricase</span>　聚乙二醇化重組尿酸氧化酶，把尿酸氧化為尿囊素。<p class="vpun"><span class="vtag">諧音梗</span>pegloticase「配了尿酸酶」：把尿酸氧化成尿囊素。</p><details data-kind="vocab-memory" open><summary>記憶提示</summary><p><b>分解</b>尿酸不是抑制合成；產生 H2O2 所以 <b>G6PD 缺乏禁用</b>。</p></details></dd>
 
 <dt>allantoin</dt>
-<dd><span class="root">源自 allantois（尿囊）</span>　尿囊素。尿酸氧化後的產物，更可溶、無活性、易排出。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>人類沒有尿酸酶，所以我們自己做不出它——要靠 Pegloticase。</p></details></dd>
+<dd hidden><span class="root">源自 allantois（尿囊）</span>　尿囊素。尿酸氧化後的產物，更可溶、無活性、易排出。<p class="vpun"><span class="vtag">諧音梗</span>allantoin「阿囊」：尿囊素，好溶好排。</p><details data-kind="vocab-memory" open><summary>記憶提示</summary><p>人類沒有尿酸酶，所以我們自己做不出它——要靠 Pegloticase。</p></details></dd>
 
 <dt>G6PD deficiency</dt>
-<dd><span class="root">glucose-6-phosphate dehydrogenase</span>　葡萄糖六磷酸去氫酶缺乏。無法還原 H2O2，故禁用 Pegloticase。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>問題是 <b>H2O2 處理不了</b>，不是腎結石——113 年 (B) 就是把兩件真事硬接起來。</p></details></dd>
+<dd hidden><span class="root">glucose-6-phosphate dehydrogenase</span>　葡萄糖六磷酸去氫酶缺乏。無法還原 H2O2，故禁用 Pegloticase。<p class="vpun"><span class="vtag">諧音梗</span>G6PD「缺六」不能還原 H2O2：禁用 Pegloticase。</p><details data-kind="vocab-memory" open><summary>記憶提示</summary><p>問題是 <b>H2O2 處理不了</b>，不是腎結石——113 年 (B) 就是把兩件真事硬接起來。</p></details></dd>
 </dl>
 </section>
 <section id="chapter-final" data-chapter-kind="final_questions">
@@ -1217,5 +1236,36 @@ figure.boxfig .figtag{color:var(--violet);font-size:.76rem;letter-spacing:.1em;
   });
 </script>
 <!-- nb-comments:end -->
+
+<script data-nb-vocab-flip>
+(function(){
+  var dl=document.querySelector('dl.vocab'); if(!dl) return;
+  var dts=Array.prototype.slice.call(dl.querySelectorAll('dt'));
+  var count=document.querySelector('.vtools .vcount');
+  function dd(dt){return dt.nextElementSibling && dt.nextElementSibling.tagName==='DD' ? dt.nextElementSibling : null;}
+  function set(dt,open){var d=dd(dt); if(!d) return; d.hidden=!open; dt.classList.toggle('open',open); dt.setAttribute('aria-expanded',open?'true':'false');}
+  function refresh(){ if(!count) return; var n=dts.filter(function(dt){return dt.classList.contains('open');}).length; count.textContent='已翻 '+n+' / '+dts.length; }
+  dts.forEach(function(dt){
+    dt.tabIndex=0; dt.setAttribute('role','button'); set(dt,false);
+    dt.addEventListener('click',function(){ set(dt,dd(dt).hidden); refresh(); });
+    dt.addEventListener('keydown',function(e){ if(e.key==='Enter'||e.key===' '){ e.preventDefault(); dt.click(); } });
+  });
+  var tools=document.querySelector('.vtools'); if(!tools) return;
+  tools.addEventListener('click',function(e){
+    var b=e.target.closest('button'); if(!b) return;
+    var act=b.getAttribute('data-act');
+    if(act==='open'){ dts.forEach(function(dt){set(dt,true);}); }
+    else if(act==='close'){ dts.forEach(function(dt){set(dt,false);}); }
+    else if(act==='quiz'){
+      var closed=dts.filter(function(dt){return !dt.classList.contains('open');});
+      if(!closed.length){ dts.forEach(function(dt){set(dt,false);}); closed=dts; }
+      var pick=closed[Math.floor(Math.random()*closed.length)];
+      pick.scrollIntoView({behavior:'smooth',block:'center'}); pick.focus({preventScroll:true});
+    }
+    refresh();
+  });
+  refresh();
+})();
+</script>
 </body>
 </html>
