@@ -94,6 +94,23 @@ figure.boxfig figcaption{color:var(--dim);font-size:.82rem;margin-top:.5rem;
 figure.boxfig .figtag{color:var(--violet);font-size:.76rem;letter-spacing:.1em;
   display:block;margin-bottom:.3rem}
 .ending{color:var(--dim);font-style:italic;margin:1.6rem 0 2.4rem}
+
+/* nb-vocab-flip:start */
+dl.vocab dt{cursor:pointer;user-select:none;position:relative;padding-right:6.2rem;border-bottom:1px dashed var(--line)}
+dl.vocab dt::after{content:"點我翻牌 ▸";position:absolute;right:0;top:.15rem;font-size:.8rem;color:var(--dim);font-weight:400}
+dl.vocab dt.open::after{content:"蓋回去 ▾";color:var(--gold)}
+dl.vocab dt:focus-visible{outline:2px solid var(--cyan);outline-offset:3px;border-radius:4px}
+dl.vocab dd[hidden]{display:none}
+dl.vocab dd{padding:.5rem .7rem .6rem;background:var(--panel);border:1px solid var(--line);border-top:0;border-radius:0 0 8px 8px;margin-bottom:.4rem}
+dl.vocab .vpun{margin:.5rem 0 0;padding:.45rem .65rem;border-left:3px solid var(--gold);background:rgba(229,181,103,.08);border-radius:4px}
+dl.vocab .vpun .vtag{color:var(--gold);font-weight:700;margin-right:.45rem}
+dl.vocab details[data-kind="vocab-memory"]{margin-top:.45rem}
+.vtools{display:flex;gap:.5rem;flex-wrap:wrap;align-items:center;margin:.5rem 0 .3rem}
+.vtools button{font:inherit;font-size:.9rem;padding:.35rem .8rem;border-radius:999px;border:1px solid var(--line);background:var(--panel);color:var(--ink);cursor:pointer}
+.vtools button:hover{border-color:var(--cyan);color:var(--cyan)}
+.vtools .vcount{color:var(--dim);font-size:.85rem;margin-left:auto}
+.vhow{color:var(--dim);font-size:.9rem;margin:.2rem 0 .4rem}
+/* nb-vocab-flip:end */
 </style></head>
 <body>
 <div class="container">
@@ -475,63 +492,65 @@ figure.boxfig .figtag{color:var(--violet);font-size:.76rem;letter-spacing:.1em;
 <!-- ================= VOCAB ================= -->
 <section id="chapter-vocab" data-chapter-kind="vocab">
 <h2>六、單字表</h2>
+<p class="vhow">先看英文想中文，點單字翻牌看意思、諧音梗與記憶提示。</p>
+<div class="vtools"><button type="button" data-act="quiz">🎲 隨機抽一張</button><button type="button" data-act="open">全部翻開</button><button type="button" data-act="close">全部蓋上</button><span class="vcount"></span></div>
 <dl class="vocab">
 <dt>sagittal band</dt>
-<dd><span class="root">sagittal＝矢狀（箭頭方向）</span>　矢狀帶。在 MCPJ 處把伸肌腱固定在正中，接掌側板，負責伸 P1。<details data-kind="vocab-memory"><summary>記憶提示</summary><p><b>管 P1、管 MCPJ。</b>寫成伸 P2 或伸 DIP 都是錯的。</p></details></dd>
+<dd hidden><span class="root">sagittal＝矢狀（箭頭方向）</span>　矢狀帶。在 MCPJ 處把伸肌腱固定在正中，接掌側板，負責伸 P1。<p class="vpun"><span class="vtag">諧音梗</span>sagittal「殺去頭」band：MCP 處把伸肌腱綁在正中，伸近節。</p><details data-kind="vocab-memory" open><summary>記憶提示</summary><p><b>管 P1、管 MCPJ。</b>寫成伸 P2 或伸 DIP 都是錯的。</p></details></dd>
 
 <dt>central slip</dt>
-<dd><span class="root">central＝中央；slip＝細條</span>　中央束。伸肌腱在 PIP 處的中央延伸，伸 P2（中節）。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>斷了就是<b>鈕扣孔變形</b>——不是終腱。</p></details></dd>
+<dd hidden><span class="root">central＝中央；slip＝細條</span>　中央束。伸肌腱在 PIP 處的中央延伸，伸 P2（中節）。<p class="vpun"><span class="vtag">諧音梗</span>central「中央」slip「條」：伸肌腱中央那條，伸中節。</p><details data-kind="vocab-memory" open><summary>記憶提示</summary><p>斷了就是<b>鈕扣孔變形</b>——不是終腱。</p></details></dd>
 
 <dt>terminal tendon</dt>
-<dd><span class="root">terminal＝末端</span>　終腱。兩條側帶匯合後的末端，伸 DIP。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>斷了是槌狀指（mallet finger）。</p></details></dd>
+<dd hidden><span class="root">terminal＝末端</span>　終腱。兩條側帶匯合後的末端，伸 DIP。<p class="vpun"><span class="vtag">諧音梗</span>terminal「終點站」：兩條側帶匯合到終點，伸遠節。</p><details data-kind="vocab-memory" open><summary>記憶提示</summary><p>斷了是槌狀指（mallet finger）。</p></details></dd>
 
 <dt>lateral band</dt>
-<dd><span class="root">lateral＝側</span>　側帶。伸肌裝置兩側的纖維束，PIP 屈曲時易向掌側滑。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>三角韌帶就是防它往掌側跑。</p></details></dd>
+<dd hidden><span class="root">lateral＝側</span>　側帶。伸肌裝置兩側的纖維束，PIP 屈曲時易向掌側滑。<p class="vpun"><span class="vtag">諧音梗</span>lateral「拉特肉」側帶：PIP 一彎就往掌側滑。</p><details data-kind="vocab-memory" open><summary>記憶提示</summary><p>三角韌帶就是防它往掌側跑。</p></details></dd>
 
 <dt>triangular ligament</dt>
-<dd><span class="root">triangular＝三角形</span>　三角韌帶。連接兩條側帶，防止 PIP 屈曲時側帶向掌側脫位。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>兩年的正解都是這一句。與腕部的 deltoid ligament 是不同東西。</p></details></dd>
+<dd hidden><span class="root">triangular＝三角形</span>　三角韌帶。連接兩條側帶，防止 PIP 屈曲時側帶向掌側脫位。<p class="vpun"><span class="vtag">諧音梗</span>triangular「三角」拉住：連住兩條側帶，不讓它們滑到掌側。</p><details data-kind="vocab-memory" open><summary>記憶提示</summary><p>兩年的正解都是這一句。與腕部的 deltoid ligament 是不同東西。</p></details></dd>
 
 <dt>boutonnière deformity</dt>
-<dd><span class="root">法文 boutonnière＝鈕扣孔</span>　鈕扣孔變形。中央束斷裂，PIP 屈曲、DIP 過伸。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>PIP 像從鈕扣孔鑽出來。<b>中央束</b>的事。</p></details></dd>
+<dd hidden><span class="root">法文 boutonnière＝鈕扣孔</span>　鈕扣孔變形。中央束斷裂，PIP 屈曲、DIP 過伸。<p class="vpun"><span class="vtag">諧音梗</span>boutonnière「鈕扣孔」：中央束斷了，PIP 從扣孔頂出來，DIP 翹。</p><details data-kind="vocab-memory" open><summary>記憶提示</summary><p>PIP 像從鈕扣孔鑽出來。<b>中央束</b>的事。</p></details></dd>
 
 <dt>dorsal / palmar interossei</dt>
-<dd><span class="root">inter-（之間）+ os（骨）</span>　背側與掌側骨間肌。背側外展、掌側內收。<details data-kind="vocab-memory"><summary>記憶提示</summary><p><b>DAB / PAD</b>：Dorsal ABduct、Palmar ADduct。</p></details></dd>
+<dd hidden><span class="root">inter-（之間）+ os（骨）</span>　背側與掌側骨間肌。背側外展、掌側內收。<p class="vpun"><span class="vtag">諧音梗</span>DAB「背側外展」、PAD「掌側內收」：背散開、掌併攏。</p><details data-kind="vocab-memory" open><summary>記憶提示</summary><p><b>DAB / PAD</b>：Dorsal ABduct、Palmar ADduct。</p></details></dd>
 
 <dt>proper digital artery / nerve</dt>
-<dd><span class="root">proper＝固有</span>　固有指動脈與指神經，並行於手指兩側。<details data-kind="vocab-memory"><summary>記憶提示</summary><p><b>動脈在背側、神經在掌側。</b>兩年都把它反過來當錯項。</p></details></dd>
+<dd hidden><span class="root">proper＝固有</span>　固有指動脈與指神經，並行於手指兩側。<p class="vpun"><span class="vtag">諧音梗</span>proper「專屬」的指動脈神經：手指兩側各一組並行。</p><details data-kind="vocab-memory" open><summary>記憶提示</summary><p><b>動脈在背側、神經在掌側。</b>兩年都把它反過來當錯項。</p></details></dd>
 
 <dt>extrinsic / intrinsic ligament (wrist)</dt>
-<dd><span class="root">extrinsic＝外在；intrinsic＝內在</span>　外在韌帶連前臂骨與腕骨，內在韌帶在腕骨之間。<details data-kind="vocab-memory"><summary>記憶提示</summary><p><b>名字有 radio- 或 ulno- 的是外在。</b></p></details></dd>
+<dd hidden><span class="root">extrinsic＝外在；intrinsic＝內在</span>　外在韌帶連前臂骨與腕骨，內在韌帶在腕骨之間。<p class="vpun"><span class="vtag">諧音梗</span>extrinsic「外來」連前臂；intrinsic「內建」腕骨之間。</p><details data-kind="vocab-memory" open><summary>記憶提示</summary><p><b>名字有 radio- 或 ulno- 的是外在。</b></p></details></dd>
 
 <dt>short radiolunate ligament (SRL)</dt>
-<dd><span class="root">radio-（橈）+ lunate（月狀骨）</span>　短橈月韌帶，外在韌帶，防止腕骨掌側脫位。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>把月狀骨綁在橈骨上。</p></details></dd>
+<dd hidden><span class="root">radio-（橈）+ lunate（月狀骨）</span>　短橈月韌帶，外在韌帶，防止腕骨掌側脫位。<p class="vpun"><span class="vtag">諧音梗</span>SRL「傻人拉」住月骨：短橈月韌帶，防腕骨往掌側掉。</p><details data-kind="vocab-memory" open><summary>記憶提示</summary><p>把月狀骨綁在橈骨上。</p></details></dd>
 
 <dt>deltoid (arcuate) ligament</dt>
-<dd><span class="root">deltoid＝三角形；arcuate＝弓形</span>　以頭狀骨為中心的 V 形內在韌帶。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>名字沒有 radio-，<b>不是外在韌帶</b>。</p></details></dd>
+<dd hidden><span class="root">deltoid＝三角形；arcuate＝弓形</span>　以頭狀骨為中心的 V 形內在韌帶。<p class="vpun"><span class="vtag">諧音梗</span>deltoid「Δ」V 形：以頭狀骨為中心的內在韌帶。</p><details data-kind="vocab-memory" open><summary>記憶提示</summary><p>名字沒有 radio-，<b>不是外在韌帶</b>。</p></details></dd>
 
 <dt>TFCC</dt>
-<dd><span class="root">Triangular FibroCartilage Complex</span>　三角纖維軟骨複合體，DRUJ 的主要穩定構造。<details data-kind="vocab-memory"><summary>記憶提示</summary><p><b>淺層接莖突、深層接 fovea。</b></p></details></dd>
+<dd hidden><span class="root">Triangular FibroCartilage Complex</span>　三角纖維軟骨複合體，DRUJ 的主要穩定構造。<p class="vpun"><span class="vtag">諧音梗</span>TFCC「太夫穩」DRUJ：三角纖維軟骨複合體，遠端橈尺關節主穩定者。</p><details data-kind="vocab-memory" open><summary>記憶提示</summary><p><b>淺層接莖突、深層接 fovea。</b></p></details></dd>
 
 <dt>fovea (ulnar fovea)</dt>
-<dd><span class="root">拉丁 fovea＝小凹</span>　尺骨頭上莖突基部的凹陷，TFCC 深層纖維的附著處，也是前臂旋轉軸的遠端點。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>深層接這裡；旋轉軸也通到這裡。</p></details></dd>
+<dd hidden><span class="root">拉丁 fovea＝小凹</span>　尺骨頭上莖突基部的凹陷，TFCC 深層纖維的附著處，也是前臂旋轉軸的遠端點。<p class="vpun"><span class="vtag">諧音梗</span>fovea「窩」：尺骨頭上的小窩，TFCC 深層附著點、旋轉軸遠端。</p><details data-kind="vocab-memory" open><summary>記憶提示</summary><p>深層接這裡；旋轉軸也通到這裡。</p></details></dd>
 
 <dt>ulnar styloid</dt>
-<dd><span class="root">styloid＝筆狀突起</span>　尺骨莖突。TFCC 淺層纖維的附著處。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>淺層接這裡。</p></details></dd>
+<dd hidden><span class="root">styloid＝筆狀突起</span>　尺骨莖突。TFCC 淺層纖維的附著處。<p class="vpun"><span class="vtag">諧音梗</span>styloid「筆尖」：尺骨莖突像筆尖，TFCC 淺層附著處。</p><details data-kind="vocab-memory" open><summary>記憶提示</summary><p>淺層接這裡。</p></details></dd>
 
 <dt>DRUJ</dt>
-<dd><span class="root">Distal RadioUlnar Joint</span>　遠端橈尺關節。主要穩定者是 TFCC，次要穩定者有六個。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>次要名單：ECU 腱鞘、第六腔室次鞘、PQ 深頭、骨間韌帶中央束、尺三角、尺月韌帶。</p></details></dd>
+<dd hidden><span class="root">Distal RadioUlnar Joint</span>　遠端橈尺關節。主要穩定者是 TFCC，次要穩定者有六個。<p class="vpun"><span class="vtag">諧音梗</span>DRUJ「抖入」關節：遠端橈尺關節，主靠 TFCC 穩住。</p><details data-kind="vocab-memory" open><summary>記憶提示</summary><p>次要名單：ECU 腱鞘、第六腔室次鞘、PQ 深頭、骨間韌帶中央束、尺三角、尺月韌帶。</p></details></dd>
 
 <dt>ECU tendon sheath</dt>
-<dd><span class="root">Extensor Carpi Ulnaris</span>　尺側伸腕肌腱鞘，DRUJ 的次要（外在）穩定者。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>寫成「關鍵內在穩定者」就是錯的。</p></details></dd>
+<dd hidden><span class="root">Extensor Carpi Ulnaris</span>　尺側伸腕肌腱鞘，DRUJ 的次要（外在）穩定者。<p class="vpun"><span class="vtag">諧音梗</span>ECU「伊拷」腱鞘：尺側伸腕肌腱鞘，DRUJ 的次要穩定者。</p><details data-kind="vocab-memory" open><summary>記憶提示</summary><p>寫成「關鍵內在穩定者」就是錯的。</p></details></dd>
 
 <dt>pronator quadratus (deep head)</dt>
-<dd><span class="root">pronator＝旋前肌；quadratus＝方形</span>　旋前方肌，其深頭是 DRUJ 的次要穩定者。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>是<b>深頭</b>不是淺頭，而且是次要。</p></details></dd>
+<dd hidden><span class="root">pronator＝旋前肌；quadratus＝方形</span>　旋前方肌，其深頭是 DRUJ 的次要穩定者。<p class="vpun"><span class="vtag">諧音梗</span>pronator「旋前」quadratus「方」：旋前方肌深頭幫忙穩 DRUJ。</p><details data-kind="vocab-memory" open><summary>記憶提示</summary><p>是<b>深頭</b>不是淺頭，而且是次要。</p></details></dd>
 
 <dt>forearm rotation axis</dt>
-<dd><span class="root">axis＝軸</span>　前臂旋轉軸，從橈骨頭到尺骨 fovea。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>遠端在<b>尺骨 fovea</b>，不是橈骨莖突。</p></details></dd>
+<dd hidden><span class="root">axis＝軸</span>　前臂旋轉軸，從橈骨頭到尺骨 fovea。<p class="vpun"><span class="vtag">諧音梗</span>「橈骨頭到尺骨窩」一條線：前臂旋轉就繞這條軸。</p><details data-kind="vocab-memory" open><summary>記憶提示</summary><p>遠端在<b>尺骨 fovea</b>，不是橈骨莖突。</p></details></dd>
 
 <dt>abductor pollicis brevis / longus</dt>
-<dd><span class="root">pollex＝拇指；brevis＝短；longus＝長</span>　外展拇短肌（正中神經）與外展拇長肌（橈神經）。<details data-kind="vocab-memory"><summary>記憶提示</summary><p><b>大魚際正中、前臂橈。</b>內收拇肌才是尺神經。</p></details></dd>
+<dd hidden><span class="root">pollex＝拇指；brevis＝短；longus＝長</span>　外展拇短肌（正中神經）與外展拇長肌（橈神經）。<p class="vpun"><span class="vtag">諧音梗</span>APB「正中」短、APL「橈」長：外展拇短肌走正中，長肌走橈。</p><details data-kind="vocab-memory" open><summary>記憶提示</summary><p><b>大魚際正中、前臂橈。</b>內收拇肌才是尺神經。</p></details></dd>
 </dl>
 </section>
 <section id="chapter-final" data-chapter-kind="final_questions">
@@ -734,5 +753,36 @@ figure.boxfig .figtag{color:var(--violet);font-size:.76rem;letter-spacing:.1em;
   });
 </script>
 <!-- nb-comments:end -->
+
+<script data-nb-vocab-flip>
+(function(){
+  var dl=document.querySelector('dl.vocab'); if(!dl) return;
+  var dts=Array.prototype.slice.call(dl.querySelectorAll('dt'));
+  var count=document.querySelector('.vtools .vcount');
+  function dd(dt){return dt.nextElementSibling && dt.nextElementSibling.tagName==='DD' ? dt.nextElementSibling : null;}
+  function set(dt,open){var d=dd(dt); if(!d) return; d.hidden=!open; dt.classList.toggle('open',open); dt.setAttribute('aria-expanded',open?'true':'false');}
+  function refresh(){ if(!count) return; var n=dts.filter(function(dt){return dt.classList.contains('open');}).length; count.textContent='已翻 '+n+' / '+dts.length; }
+  dts.forEach(function(dt){
+    dt.tabIndex=0; dt.setAttribute('role','button'); set(dt,false);
+    dt.addEventListener('click',function(){ set(dt,dd(dt).hidden); refresh(); });
+    dt.addEventListener('keydown',function(e){ if(e.key==='Enter'||e.key===' '){ e.preventDefault(); dt.click(); } });
+  });
+  var tools=document.querySelector('.vtools'); if(!tools) return;
+  tools.addEventListener('click',function(e){
+    var b=e.target.closest('button'); if(!b) return;
+    var act=b.getAttribute('data-act');
+    if(act==='open'){ dts.forEach(function(dt){set(dt,true);}); }
+    else if(act==='close'){ dts.forEach(function(dt){set(dt,false);}); }
+    else if(act==='quiz'){
+      var closed=dts.filter(function(dt){return !dt.classList.contains('open');});
+      if(!closed.length){ dts.forEach(function(dt){set(dt,false);}); closed=dts; }
+      var pick=closed[Math.floor(Math.random()*closed.length)];
+      pick.scrollIntoView({behavior:'smooth',block:'center'}); pick.focus({preventScroll:true});
+    }
+    refresh();
+  });
+  refresh();
+})();
+</script>
 </body>
 </html>
