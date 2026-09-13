@@ -94,6 +94,23 @@ figure.boxfig figcaption{color:var(--dim);font-size:.82rem;margin-top:.5rem;
 figure.boxfig .figtag{color:var(--violet);font-size:.76rem;letter-spacing:.1em;
   display:block;margin-bottom:.3rem}
 .ending{color:var(--dim);font-style:italic;margin:1.6rem 0 2.4rem}
+
+/* nb-vocab-flip:start */
+dl.vocab dt{cursor:pointer;user-select:none;position:relative;padding-right:6.2rem;border-bottom:1px dashed var(--line)}
+dl.vocab dt::after{content:"點我翻牌 ▸";position:absolute;right:0;top:.15rem;font-size:.8rem;color:var(--dim);font-weight:400}
+dl.vocab dt.open::after{content:"蓋回去 ▾";color:var(--gold)}
+dl.vocab dt:focus-visible{outline:2px solid var(--cyan);outline-offset:3px;border-radius:4px}
+dl.vocab dd[hidden]{display:none}
+dl.vocab dd{padding:.5rem .7rem .6rem;background:var(--panel);border:1px solid var(--line);border-top:0;border-radius:0 0 8px 8px;margin-bottom:.4rem}
+dl.vocab .vpun{margin:.5rem 0 0;padding:.45rem .65rem;border-left:3px solid var(--gold);background:rgba(229,181,103,.08);border-radius:4px}
+dl.vocab .vpun .vtag{color:var(--gold);font-weight:700;margin-right:.45rem}
+dl.vocab details[data-kind="vocab-memory"]{margin-top:.45rem}
+.vtools{display:flex;gap:.5rem;flex-wrap:wrap;align-items:center;margin:.5rem 0 .3rem}
+.vtools button{font:inherit;font-size:.9rem;padding:.35rem .8rem;border-radius:999px;border:1px solid var(--line);background:var(--panel);color:var(--ink);cursor:pointer}
+.vtools button:hover{border-color:var(--cyan);color:var(--cyan)}
+.vtools .vcount{color:var(--dim);font-size:.85rem;margin-left:auto}
+.vhow{color:var(--dim);font-size:.9rem;margin:.2rem 0 .4rem}
+/* nb-vocab-flip:end */
 </style></head>
 <body>
 <div class="container">
@@ -564,54 +581,56 @@ figure.boxfig .figtag{color:var(--violet);font-size:.76rem;letter-spacing:.1em;
 <!-- ================= VOCAB ================= -->
 <section id="chapter-vocab" data-chapter-kind="vocab">
 <h2>五、單字表</h2>
+<p class="vhow">先看英文想中文，點單字翻牌看意思、諧音梗與記憶提示。</p>
+<div class="vtools"><button type="button" data-act="quiz">🎲 隨機抽一張</button><button type="button" data-act="open">全部翻開</button><button type="button" data-act="close">全部蓋上</button><span class="vcount"></span></div>
 <dl class="vocab">
 <dt>RANKL</dt>
-<dd><span class="root">Receptor Activator of Nuclear factor Kappa-B Ligand</span>　由成骨細胞端釋出，<b>促進</b>破骨細胞增生與成熟。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>名字裡有 <b>Activator</b>＝活化。它是派工單，不是攔截員。</p></details></dd>
+<dd hidden><span class="root">Receptor Activator of Nuclear factor Kappa-B Ligand</span>　由成骨細胞端釋出，<b>促進</b>破骨細胞增生與成熟。<p class="vpun"><span class="vtag">諧音梗</span>RANKL「讓客拆」：叫破骨細胞增生成熟。</p><details data-kind="vocab-memory" open><summary>記憶提示</summary><p>名字裡有 <b>Activator</b>＝活化。它是派工單，不是攔截員。</p></details></dd>
 
 <dt>osteoprotegerin (OPG)</dt>
-<dd><span class="root">osteo-（骨）+ protegere（拉丁：保護）</span>　骨保護素。作為 RANKL 的誘餌受體，<b>抑制</b>破骨細胞增生並誘導凋亡。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>protegere＝保護（比較 protect）。名字就說它是保護骨頭的那一方。</p></details></dd>
+<dd hidden><span class="root">osteo-（骨）+ protegere（拉丁：保護）</span>　骨保護素。作為 RANKL 的誘餌受體，<b>抑制</b>破骨細胞增生並誘導凋亡。<p class="vpun"><span class="vtag">諧音梗</span>OPG「歐、保護骨」：RANKL 的誘餌受體，破骨細胞凋亡。</p><details data-kind="vocab-memory" open><summary>記憶提示</summary><p>protegere＝保護（比較 protect）。名字就說它是保護骨頭的那一方。</p></details></dd>
 
 <dt>bisphosphonate</dt>
-<dd><span class="root">bis-（拉丁：兩個）+ phosphonate（膦酸鹽）</span>　雙磷酸鹽。抗骨吸收主力藥。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>兩個磷讓它牢牢黏在骨的礦物質上——因此半衰期極長，也因此是唯一能放藥物假期的藥。</p></details></dd>
+<dd hidden><span class="root">bis-（拉丁：兩個）+ phosphonate（膦酸鹽）</span>　雙磷酸鹽。抗骨吸收主力藥。<p class="vpun"><span class="vtag">諧音梗</span>bisphosphonate「必服福斯」：抗骨吸收主力。</p><details data-kind="vocab-memory" open><summary>記憶提示</summary><p>兩個磷讓它牢牢黏在骨的礦物質上——因此半衰期極長，也因此是唯一能放藥物假期的藥。</p></details></dd>
 
 <dt>zoledronate (zoledronic acid)</dt>
-<dd><span class="root">-dronate 為雙磷酸鹽類字尾</span>　唑來膦酸，靜脈注射型雙磷酸鹽，<b>可有效減少髖骨折</b>。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>看到 <b>-dronate</b> 就是雙磷酸鹽家族（alendronate、risedronate、zoledronate）。</p></details></dd>
+<dd hidden><span class="root">-dronate 為雙磷酸鹽類字尾</span>　唑來膦酸，靜脈注射型雙磷酸鹽，<b>可有效減少髖骨折</b>。<p class="vpun"><span class="vtag">諧音梗</span>zoledronate「左了打針」：靜脈雙磷酸鹽，減髖骨折。</p><details data-kind="vocab-memory" open><summary>記憶提示</summary><p>看到 <b>-dronate</b> 就是雙磷酸鹽家族（alendronate、risedronate、zoledronate）。</p></details></dd>
 
 <dt>acute phase reaction</dt>
-<dd><span class="root">acute phase（急性期）</span>　急性期反應。靜脈注射雙磷酸鹽活化 T 細胞引起，如感冒症狀。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>第一次打針最明顯。這是<b>雙磷酸鹽專屬</b>，年年被安到別的藥頭上。</p></details></dd>
+<dd hidden><span class="root">acute phase（急性期）</span>　急性期反應。靜脈注射雙磷酸鹽活化 T 細胞引起，如感冒症狀。<p class="vpun"><span class="vtag">諧音梗</span>acute phase「打完像感冒」：靜脈雙磷酸鹽活化 T 細胞。</p><details data-kind="vocab-memory" open><summary>記憶提示</summary><p>第一次打針最明顯。這是<b>雙磷酸鹽專屬</b>，年年被安到別的藥頭上。</p></details></dd>
 
 <dt>drug holiday</dt>
-<dd><span class="root">drug（藥）+ holiday（假期）</span>　藥物假期。注射滿三年或口服滿五年後可考慮停藥。<details data-kind="vocab-memory"><summary>記憶提示</summary><p><b>只有雙磷酸鹽</b>放得了假——因為它卡在骨頭裡，停藥後藥效還在。</p></details></dd>
+<dd hidden><span class="root">drug（藥）+ holiday（假期）</span>　藥物假期。注射滿三年或口服滿五年後可考慮停藥。<p class="vpun"><span class="vtag">諧音梗</span>drug holiday「藥物放假」：針三年或口服五年後可停。</p><details data-kind="vocab-memory" open><summary>記憶提示</summary><p><b>只有雙磷酸鹽</b>放得了假——因為它卡在骨頭裡，停藥後藥效還在。</p></details></dd>
 
 <dt>SERM</dt>
-<dd><span class="root">Selective Estrogen Receptor Modulator</span>　選擇性雌激素受體調節劑，如 Raloxifene。<details data-kind="vocab-memory"><summary>記憶提示</summary><p><b>Selective</b>＝在不同組織扮演不同角色。在骨頭幫忙、在血管惹禍（血栓）。</p></details></dd>
+<dd hidden><span class="root">Selective Estrogen Receptor Modulator</span>　選擇性雌激素受體調節劑，如 Raloxifene。<p class="vpun"><span class="vtag">諧音梗</span>SERM「選擇性雌激素」：Raloxifene。</p><details data-kind="vocab-memory" open><summary>記憶提示</summary><p><b>Selective</b>＝在不同組織扮演不同角色。在骨頭幫忙、在血管惹禍（血栓）。</p></details></dd>
 
 <dt>raloxifene</dt>
-<dd><span class="root">第二代 SERM</span>　有 2–3 倍靜脈血栓風險，<b>只減脊椎骨折</b>。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>考題講「SERM」時通常指的就是它。</p></details></dd>
+<dd hidden><span class="root">第二代 SERM</span>　有 2–3 倍靜脈血栓風險，<b>只減脊椎骨折</b>。<p class="vpun"><span class="vtag">諧音梗</span>raloxifene「拉了血栓」：VTE 風險 2–3 倍，只減脊椎骨折。</p><details data-kind="vocab-memory" open><summary>記憶提示</summary><p>考題講「SERM」時通常指的就是它。</p></details></dd>
 
 <dt>thromboembolism</dt>
-<dd><span class="root">thrombo-（血栓）+ embolism（栓塞）</span>　血栓栓塞。<b>SERM 的風險</b>，不是雙磷酸鹽的。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>雌激素本來就會提高凝血傾向——SERM 在血管扮演雌激素，所以繼承了這個副作用。</p></details></dd>
+<dd hidden><span class="root">thrombo-（血栓）+ embolism（栓塞）</span>　血栓栓塞。<b>SERM 的風險</b>，不是雙磷酸鹽的。<p class="vpun"><span class="vtag">諧音梗</span>thrombo「血栓」embolism「塞」：SERM 的風險。</p><details data-kind="vocab-memory" open><summary>記憶提示</summary><p>雌激素本來就會提高凝血傾向——SERM 在血管扮演雌激素，所以繼承了這個副作用。</p></details></dd>
 
 <dt>teriparatide</dt>
-<dd><span class="root">teri- + parathyroid（副甲狀腺）</span>　PTH 類促骨生成藥。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>掛在它身上的四件事：腿抽筋、骨肉瘤風險、增加長骨直徑、放療後禁用。</p></details></dd>
+<dd hidden><span class="root">teri- + parathyroid（副甲狀腺）</span>　PTH 類促骨生成藥。<p class="vpun"><span class="vtag">諧音梗</span>teriparatide「替你拍」PTH：促骨生成。</p><details data-kind="vocab-memory" open><summary>記憶提示</summary><p>掛在它身上的四件事：腿抽筋、骨肉瘤風險、增加長骨直徑、放療後禁用。</p></details></dd>
 
 <dt>anti-sclerostin antibody (romosozumab)</dt>
-<dd><span class="root">anti-（抗）+ sclerostin（硬化蛋白）</span>　抗硬化蛋白抗體，促骨生成藥。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>兩個考點：<b>一年內心肌梗塞或中風禁用</b>、<b>無髖骨折療效資料</b>。</p></details></dd>
+<dd hidden><span class="root">anti-（抗）+ sclerostin（硬化蛋白）</span>　抗硬化蛋白抗體，促骨生成藥。<p class="vpun"><span class="vtag">諧音梗</span>romosozumab「羅莫」擋 sclerostin：促骨生成。</p><details data-kind="vocab-memory" open><summary>記憶提示</summary><p>兩個考點：<b>一年內心肌梗塞或中風禁用</b>、<b>無髖骨折療效資料</b>。</p></details></dd>
 
 <dt>denosumab</dt>
-<dd><span class="root">deno- + -mab（單株抗體字尾）</span>　RANKL 單株抗體，抗骨吸收藥，<b>可有效減少髖骨折</b>。<details data-kind="vocab-memory"><summary>記憶提示</summary><p><b>-mab</b>＝monoclonal antibody。停藥後骨量快速流失，所以<b>沒有</b>藥物假期。</p></details></dd>
+<dd hidden><span class="root">deno- + -mab（單株抗體字尾）</span>　RANKL 單株抗體，抗骨吸收藥，<b>可有效減少髖骨折</b>。<p class="vpun"><span class="vtag">諧音梗</span>denosumab「地諾」擋 RANKL：抗骨吸收，減髖骨折。</p><details data-kind="vocab-memory" open><summary>記憶提示</summary><p><b>-mab</b>＝monoclonal antibody。停藥後骨量快速流失，所以<b>沒有</b>藥物假期。</p></details></dd>
 
 <dt>anabolic vs antiresorptive</dt>
-<dd><span class="root">anabolic（合成代謝）／anti-resorptive（抗吸收）</span>　促骨生成 vs 抗骨吸收，骨鬆用藥的兩大分類。<details data-kind="vocab-memory"><summary>記憶提示</summary><p><b>促生成</b>：Teriparatide、Romosozumab。<b>抗吸收</b>：雙磷酸鹽、Denosumab、SERM。</p></details></dd>
+<dd hidden><span class="root">anabolic（合成代謝）／anti-resorptive（抗吸收）</span>　促骨生成 vs 抗骨吸收，骨鬆用藥的兩大分類。<p class="vpun"><span class="vtag">諧音梗</span>anabolic「蓋」vs antiresorptive「擋拆」：骨鬆藥兩大類。</p><details data-kind="vocab-memory" open><summary>記憶提示</summary><p><b>促生成</b>：Teriparatide、Romosozumab。<b>抗吸收</b>：雙磷酸鹽、Denosumab、SERM。</p></details></dd>
 
 <dt>creatinine clearance (CrCl)</dt>
-<dd><span class="root">creatinine（肌酸酐）+ clearance（清除率）</span>　腎功能指標。<b>CrCl &lt; 30 ml/min 不可使用雙磷酸鹽</b>。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>雙磷酸鹽走腎排除，腎不好就排不掉。</p></details></dd>
+<dd hidden><span class="root">creatinine（肌酸酐）+ clearance（清除率）</span>　腎功能指標。<b>CrCl &lt; 30 ml/min 不可使用雙磷酸鹽</b>。<p class="vpun"><span class="vtag">諧音梗</span>CrCl「腎過濾」&lt; 30：不可用雙磷酸鹽。</p><details data-kind="vocab-memory" open><summary>記憶提示</summary><p>雙磷酸鹽走腎排除，腎不好就排不掉。</p></details></dd>
 
 <dt>osteosarcoma</dt>
-<dd><span class="root">osteo-（骨）+ sarcoma（肉瘤）</span>　骨肉瘤。長期使用 <b>Teriparatide（PTH 類）</b>的風險。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>促骨生成藥推得太久，理論上有讓細胞失控的疑慮——所以有療程上限。</p></details></dd>
+<dd hidden><span class="root">osteo-（骨）+ sarcoma（肉瘤）</span>　骨肉瘤。長期使用 <b>Teriparatide（PTH 類）</b>的風險。<p class="vpun"><span class="vtag">諧音梗</span>osteo「骨」sarcoma：長期 Teriparatide 的風險。</p><details data-kind="vocab-memory" open><summary>記憶提示</summary><p>促骨生成藥推得太久，理論上有讓細胞失控的疑慮——所以有療程上限。</p></details></dd>
 
 <dt>vertebral vs non-vertebral fracture</dt>
-<dd><span class="root">vertebral（脊椎的）</span>　脊椎骨折與非脊椎骨折。<details data-kind="vocab-memory"><summary>記憶提示</summary><p><b>SERM 只減脊椎</b>；髖骨折屬非脊椎，要靠 Denosumab 或 Zoledronate。</p></details></dd>
+<dd hidden><span class="root">vertebral（脊椎的）</span>　脊椎骨折與非脊椎骨折。<p class="vpun"><span class="vtag">諧音梗</span>vertebral「脊椎」vs non「非脊椎」：Raloxifene 只顧脊椎。</p><details data-kind="vocab-memory" open><summary>記憶提示</summary><p><b>SERM 只減脊椎</b>；髖骨折屬非脊椎，要靠 Denosumab 或 Zoledronate。</p></details></dd>
 </dl>
 </section>
 <section id="chapter-final" data-chapter-kind="final_questions">
@@ -860,5 +879,36 @@ figure.boxfig .figtag{color:var(--violet);font-size:.76rem;letter-spacing:.1em;
   });
 </script>
 <!-- nb-comments:end -->
+
+<script data-nb-vocab-flip>
+(function(){
+  var dl=document.querySelector('dl.vocab'); if(!dl) return;
+  var dts=Array.prototype.slice.call(dl.querySelectorAll('dt'));
+  var count=document.querySelector('.vtools .vcount');
+  function dd(dt){return dt.nextElementSibling && dt.nextElementSibling.tagName==='DD' ? dt.nextElementSibling : null;}
+  function set(dt,open){var d=dd(dt); if(!d) return; d.hidden=!open; dt.classList.toggle('open',open); dt.setAttribute('aria-expanded',open?'true':'false');}
+  function refresh(){ if(!count) return; var n=dts.filter(function(dt){return dt.classList.contains('open');}).length; count.textContent='已翻 '+n+' / '+dts.length; }
+  dts.forEach(function(dt){
+    dt.tabIndex=0; dt.setAttribute('role','button'); set(dt,false);
+    dt.addEventListener('click',function(){ set(dt,dd(dt).hidden); refresh(); });
+    dt.addEventListener('keydown',function(e){ if(e.key==='Enter'||e.key===' '){ e.preventDefault(); dt.click(); } });
+  });
+  var tools=document.querySelector('.vtools'); if(!tools) return;
+  tools.addEventListener('click',function(e){
+    var b=e.target.closest('button'); if(!b) return;
+    var act=b.getAttribute('data-act');
+    if(act==='open'){ dts.forEach(function(dt){set(dt,true);}); }
+    else if(act==='close'){ dts.forEach(function(dt){set(dt,false);}); }
+    else if(act==='quiz'){
+      var closed=dts.filter(function(dt){return !dt.classList.contains('open');});
+      if(!closed.length){ dts.forEach(function(dt){set(dt,false);}); closed=dts; }
+      var pick=closed[Math.floor(Math.random()*closed.length)];
+      pick.scrollIntoView({behavior:'smooth',block:'center'}); pick.focus({preventScroll:true});
+    }
+    refresh();
+  });
+  refresh();
+})();
+</script>
 </body>
 </html>
