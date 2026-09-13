@@ -94,6 +94,23 @@ figure.boxfig figcaption{color:var(--dim);font-size:.82rem;margin-top:.5rem;
 figure.boxfig .figtag{color:var(--violet);font-size:.76rem;letter-spacing:.1em;
   display:block;margin-bottom:.3rem}
 .ending{color:var(--dim);font-style:italic;margin:1.6rem 0 2.4rem}
+
+/* nb-vocab-flip:start */
+dl.vocab dt{cursor:pointer;user-select:none;position:relative;padding-right:6.2rem;border-bottom:1px dashed var(--line)}
+dl.vocab dt::after{content:"點我翻牌 ▸";position:absolute;right:0;top:.15rem;font-size:.8rem;color:var(--dim);font-weight:400}
+dl.vocab dt.open::after{content:"蓋回去 ▾";color:var(--gold)}
+dl.vocab dt:focus-visible{outline:2px solid var(--cyan);outline-offset:3px;border-radius:4px}
+dl.vocab dd[hidden]{display:none}
+dl.vocab dd{padding:.5rem .7rem .6rem;background:var(--panel);border:1px solid var(--line);border-top:0;border-radius:0 0 8px 8px;margin-bottom:.4rem}
+dl.vocab .vpun{margin:.5rem 0 0;padding:.45rem .65rem;border-left:3px solid var(--gold);background:rgba(229,181,103,.08);border-radius:4px}
+dl.vocab .vpun .vtag{color:var(--gold);font-weight:700;margin-right:.45rem}
+dl.vocab details[data-kind="vocab-memory"]{margin-top:.45rem}
+.vtools{display:flex;gap:.5rem;flex-wrap:wrap;align-items:center;margin:.5rem 0 .3rem}
+.vtools button{font:inherit;font-size:.9rem;padding:.35rem .8rem;border-radius:999px;border:1px solid var(--line);background:var(--panel);color:var(--ink);cursor:pointer}
+.vtools button:hover{border-color:var(--cyan);color:var(--cyan)}
+.vtools .vcount{color:var(--dim);font-size:.85rem;margin-left:auto}
+.vhow{color:var(--dim);font-size:.9rem;margin:.2rem 0 .4rem}
+/* nb-vocab-flip:end */
 </style></head>
 <body>
 <div class="container">
@@ -451,54 +468,56 @@ figure.boxfig .figtag{color:var(--violet);font-size:.76rem;letter-spacing:.1em;
 <!-- ================= VOCAB ================= -->
 <section id="chapter-vocab" data-chapter-kind="vocab">
 <h2>五、單字表</h2>
+<p class="vhow">先看英文想中文，點單字翻牌看意思、諧音梗與記憶提示。</p>
+<div class="vtools"><button type="button" data-act="quiz">🎲 隨機抽一張</button><button type="button" data-act="open">全部翻開</button><button type="button" data-act="close">全部蓋上</button><span class="vcount"></span></div>
 <dl class="vocab">
 <dt>differential diagnosis (DD)</dt>
-<dd><span class="root">differential＝區別的</span>　鑑別診斷。列出可能的病因再逐一排除。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>盧老師的六大類：<b>骨、軟骨、囊韌帶、滑液囊、肌腱、神經</b>。</p></details></dd>
+<dd hidden><span class="root">differential＝區別的</span>　鑑別診斷。列出可能的病因再逐一排除。<p class="vpun"><span class="vtag">諧音梗</span>DD「刪刪」：列出可能再一個個刪。</p><details data-kind="vocab-memory" open><summary>記憶提示</summary><p>盧老師的六大類：<b>骨、軟骨、囊韌帶、滑液囊、肌腱、神經</b>。</p></details></dd>
 
 <dt>overhead motion</dt>
-<dd><span class="root">overhead＝過頭</span>　過肩動作。投球、扣球、發球等手舉過頭的動作。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>三個病人的共同點。<b>過肩 → SLAP、旋轉肌袖。</b></p></details></dd>
+<dd hidden><span class="root">overhead＝過頭</span>　過肩動作。投球、扣球、發球等手舉過頭的動作。<p class="vpun"><span class="vtag">諧音梗</span>overhead「手過頭」：投球扣球發球。</p><details data-kind="vocab-memory" open><summary>記憶提示</summary><p>三個病人的共同點。<b>過肩 → SLAP、旋轉肌袖。</b></p></details></dd>
 
 <dt>SLAP lesion</dt>
-<dd><span class="root">Superior Labrum Anterior to Posterior</span>　上關節唇由前到後的損傷，二頭肌長頭反覆拉扯所致。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>「可能的病因」——兩年都以正確敘述出現。</p></details></dd>
+<dd hidden><span class="root">Superior Labrum Anterior to Posterior</span>　上關節唇由前到後的損傷，二頭肌長頭反覆拉扯所致。<p class="vpun"><span class="vtag">諧音梗</span>SLAP「啪」：上關節唇從前撕到後，二頭肌長頭拉的。</p><details data-kind="vocab-memory" open><summary>記憶提示</summary><p>「可能的病因」——兩年都以正確敘述出現。</p></details></dd>
 
 <dt>long head of biceps</dt>
-<dd><span class="root">biceps＝二頭</span>　二頭肌長頭，肌腱穿過關節囊附著於盂上結節與關節唇上緣。<details data-kind="vocab-memory"><summary>記憶提示</summary><p><b>長頭 → 盂上結節；短頭 → 喙突。</b>老師說常考。</p></details></dd>
+<dd hidden><span class="root">biceps＝二頭</span>　二頭肌長頭，肌腱穿過關節囊附著於盂上結節與關節唇上緣。<p class="vpun"><span class="vtag">諧音梗</span>long head「長頭」穿關節：附在盂上結節與關節唇上緣。</p><details data-kind="vocab-memory" open><summary>記憶提示</summary><p><b>長頭 → 盂上結節；短頭 → 喙突。</b>老師說常考。</p></details></dd>
 
 <dt>supraglenoid tubercle</dt>
-<dd><span class="root">supra-（上）+ glenoid（關節盂）</span>　盂上結節，二頭肌長頭的近端附著點。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>就在關節唇上緣旁邊，所以拉扯會傷到關節唇。</p></details></dd>
+<dd hidden><span class="root">supra-（上）+ glenoid（關節盂）</span>　盂上結節，二頭肌長頭的近端附著點。<p class="vpun"><span class="vtag">諧音梗</span>supra「盂上」tubercle：二頭肌長頭近端附著。</p><details data-kind="vocab-memory" open><summary>記憶提示</summary><p>就在關節唇上緣旁邊，所以拉扯會傷到關節唇。</p></details></dd>
 
 <dt>coracoid process</dt>
-<dd><span class="root">希臘 korax＝烏鴉（喙）</span>　喙突，二頭肌短頭的附著點。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>短頭在這裡；長頭不在。</p></details></dd>
+<dd hidden><span class="root">希臘 korax＝烏鴉（喙）</span>　喙突，二頭肌短頭的附著點。<p class="vpun"><span class="vtag">諧音梗</span>coracoid「烏鴉嘴」喙突：二頭肌短頭附著。</p><details data-kind="vocab-memory" open><summary>記憶提示</summary><p>短頭在這裡；長頭不在。</p></details></dd>
 
 <dt>rotator cuff</dt>
-<dd><span class="root">rotator（旋轉）+ cuff（袖）</span>　旋轉肌袖，走在肩峰與肱骨頭之間的四條肌腱。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>斷了就<b>痛、活動受限、舉不起來或沒力</b>。過肩運動員一定要考慮。</p></details></dd>
+<dd hidden><span class="root">rotator（旋轉）+ cuff（袖）</span>　旋轉肌袖，走在肩峰與肱骨頭之間的四條肌腱。<p class="vpun"><span class="vtag">諧音梗</span>「旋轉的袖口」：肩峰與肱骨頭之間的四條腱。</p><details data-kind="vocab-memory" open><summary>記憶提示</summary><p>斷了就<b>痛、活動受限、舉不起來或沒力</b>。過肩運動員一定要考慮。</p></details></dd>
 
 <dt>subacromial bursa</dt>
-<dd><span class="root">sub-（下）+ acromion（肩峰）+ bursa（囊）</span>　肩峰下滑液囊，旋轉肌袖與肩峰之間的墊片。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>詳解說「像是墊片」。六大類裡的 bursa 就是它。</p></details></dd>
+<dd hidden><span class="root">sub-（下）+ acromion（肩峰）+ bursa（囊）</span>　肩峰下滑液囊，旋轉肌袖與肩峰之間的墊片。<p class="vpun"><span class="vtag">諧音梗</span>sub「肩峰下」bursa「墊」：旋轉肌與肩峰間的墊片。</p><details data-kind="vocab-memory" open><summary>記憶提示</summary><p>詳解說「像是墊片」。六大類裡的 bursa 就是它。</p></details></dd>
 
 <dt>scapular Y view / axillary view</dt>
-<dd><span class="root">Y＝肩胛骨側面呈 Y 形；axillary＝腋下</span>　肩部 X 光的側面與腋位投影。<details data-kind="vocab-memory"><summary>記憶提示</summary><p><b>AP ＋ scapular Y ＋ axillary</b>，三個角度三年都當正確敘述。</p></details></dd>
+<dd hidden><span class="root">Y＝肩胛骨側面呈 Y 形；axillary＝腋下</span>　肩部 X 光的側面與腋位投影。<p class="vpun"><span class="vtag">諧音梗</span>Y「側面」、axillary「腋下」：肩部 X 光兩投影。</p><details data-kind="vocab-memory" open><summary>記憶提示</summary><p><b>AP ＋ scapular Y ＋ axillary</b>，三個角度三年都當正確敘述。</p></details></dd>
 
 <dt>ulnar collateral ligament (UCL)</dt>
-<dd><span class="root">ulnar＝尺側；collateral＝側副</span>　尺側副韌帶，肘內側，投手最常見的韌帶損傷。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>內側。寫成「橈側副韌帶最常見」就錯。</p></details></dd>
+<dd hidden><span class="root">ulnar＝尺側；collateral＝側副</span>　尺側副韌帶，肘內側，投手最常見的韌帶損傷。<p class="vpun"><span class="vtag">諧音梗</span>UCL「油西樂」肘內側：投手最常傷的韌帶。</p><details data-kind="vocab-memory" open><summary>記憶提示</summary><p>內側。寫成「橈側副韌帶最常見」就錯。</p></details></dd>
 
 <dt>valgus stress test (elbow)</dt>
-<dd><span class="root">valgus＝外翻</span>　肘外翻壓力測試，檢查 UCL 最重要的理學檢查。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>把肘往外扳看 UCL 撐不撐得住。</p></details></dd>
+<dd hidden><span class="root">valgus＝外翻</span>　肘外翻壓力測試，檢查 UCL 最重要的理學檢查。<p class="vpun"><span class="vtag">諧音梗</span>valgus「外拐死」：肘往外掰查 UCL。</p><details data-kind="vocab-memory" open><summary>記憶提示</summary><p>把肘往外扳看 UCL 撐不撐得住。</p></details></dd>
 
 <dt>ulnar nerve</dt>
-<dd><span class="root">ulnar＝尺側</span>　尺神經，走在肘內側（肘隧道），UCL 的鄰居。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>內側痛<b>一定要查</b>它。</p></details></dd>
+<dd hidden><span class="root">ulnar＝尺側</span>　尺神經，走在肘內側（肘隧道），UCL 的鄰居。<p class="vpun"><span class="vtag">諧音梗</span>ulnar「偶拿」麻：走肘隧道，UCL 的鄰居。</p><details data-kind="vocab-memory" open><summary>記憶提示</summary><p>內側痛<b>一定要查</b>它。</p></details></dd>
 
 <dt>tennis elbow (lateral epicondylitis)</dt>
-<dd><span class="root">lateral（外側）+ epicondyle（上髁）+ -itis</span>　網球肘，外上髁炎，在肘<b>外側</b>。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>兩年的錯項——病人痛的是內側。</p></details></dd>
+<dd hidden><span class="root">lateral（外側）+ epicondyle（上髁）+ -itis</span>　網球肘，外上髁炎，在肘<b>外側</b>。<p class="vpun"><span class="vtag">諧音梗</span>「網球肘在外側」：外上髁炎。</p><details data-kind="vocab-memory" open><summary>記憶提示</summary><p>兩年的錯項——病人痛的是內側。</p></details></dd>
 
 <dt>elbow terrible triad</dt>
-<dd><span class="root">triad＝三聯</span>　肘部恐怖三聯：肘關節脫位＋橈骨頭骨折＋冠狀突骨折。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>三個一起才「恐怖」。113 年答「以上皆是」。</p></details></dd>
+<dd hidden><span class="root">triad＝三聯</span>　肘部恐怖三聯：肘關節脫位＋橈骨頭骨折＋冠狀突骨折。<p class="vpun"><span class="vtag">諧音梗</span>terrible「恐怖三兄弟」：脫位＋橈骨頭骨折＋冠狀突骨折。</p><details data-kind="vocab-memory" open><summary>記憶提示</summary><p>三個一起才「恐怖」。113 年答「以上皆是」。</p></details></dd>
 
 <dt>coronoid process</dt>
-<dd><span class="root">希臘 korone＝冠</span>　尺骨冠狀突，肘前方的骨突。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>恐怖三聯的第三個成員。</p></details></dd>
+<dd hidden><span class="root">希臘 korone＝冠</span>　尺骨冠狀突，肘前方的骨突。<p class="vpun"><span class="vtag">諧音梗</span>coronoid「冠」狀突：尺骨前方的骨突。</p><details data-kind="vocab-memory" open><summary>記憶提示</summary><p>恐怖三聯的第三個成員。</p></details></dd>
 
 <dt>radial head</dt>
-<dd><span class="root">radial＝橈側</span>　橈骨頭。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>恐怖三聯的第二個成員；也是前臂旋轉軸的近端點。</p></details></dd>
+<dd hidden><span class="root">radial＝橈側</span>　橈骨頭。<p class="vpun"><span class="vtag">諧音梗</span>radial「橈骨」頭：肘外側，恐怖三聯之一。</p><details data-kind="vocab-memory" open><summary>記憶提示</summary><p>恐怖三聯的第二個成員；也是前臂旋轉軸的近端點。</p></details></dd>
 </dl>
 </section>
 <section id="chapter-final" data-chapter-kind="final_questions">
@@ -701,5 +720,36 @@ figure.boxfig .figtag{color:var(--violet);font-size:.76rem;letter-spacing:.1em;
   });
 </script>
 <!-- nb-comments:end -->
+
+<script data-nb-vocab-flip>
+(function(){
+  var dl=document.querySelector('dl.vocab'); if(!dl) return;
+  var dts=Array.prototype.slice.call(dl.querySelectorAll('dt'));
+  var count=document.querySelector('.vtools .vcount');
+  function dd(dt){return dt.nextElementSibling && dt.nextElementSibling.tagName==='DD' ? dt.nextElementSibling : null;}
+  function set(dt,open){var d=dd(dt); if(!d) return; d.hidden=!open; dt.classList.toggle('open',open); dt.setAttribute('aria-expanded',open?'true':'false');}
+  function refresh(){ if(!count) return; var n=dts.filter(function(dt){return dt.classList.contains('open');}).length; count.textContent='已翻 '+n+' / '+dts.length; }
+  dts.forEach(function(dt){
+    dt.tabIndex=0; dt.setAttribute('role','button'); set(dt,false);
+    dt.addEventListener('click',function(){ set(dt,dd(dt).hidden); refresh(); });
+    dt.addEventListener('keydown',function(e){ if(e.key==='Enter'||e.key===' '){ e.preventDefault(); dt.click(); } });
+  });
+  var tools=document.querySelector('.vtools'); if(!tools) return;
+  tools.addEventListener('click',function(e){
+    var b=e.target.closest('button'); if(!b) return;
+    var act=b.getAttribute('data-act');
+    if(act==='open'){ dts.forEach(function(dt){set(dt,true);}); }
+    else if(act==='close'){ dts.forEach(function(dt){set(dt,false);}); }
+    else if(act==='quiz'){
+      var closed=dts.filter(function(dt){return !dt.classList.contains('open');});
+      if(!closed.length){ dts.forEach(function(dt){set(dt,false);}); closed=dts; }
+      var pick=closed[Math.floor(Math.random()*closed.length)];
+      pick.scrollIntoView({behavior:'smooth',block:'center'}); pick.focus({preventScroll:true});
+    }
+    refresh();
+  });
+  refresh();
+})();
+</script>
 </body>
 </html>
