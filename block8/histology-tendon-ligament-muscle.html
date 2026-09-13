@@ -94,6 +94,23 @@ figure.boxfig figcaption{color:var(--dim);font-size:.82rem;margin-top:.5rem;
 figure.boxfig .figtag{color:var(--violet);font-size:.76rem;letter-spacing:.1em;
   display:block;margin-bottom:.3rem}
 .ending{color:var(--dim);font-style:italic;margin:1.6rem 0 2.4rem}
+
+/* nb-vocab-flip:start */
+dl.vocab dt{cursor:pointer;user-select:none;position:relative;padding-right:6.2rem;border-bottom:1px dashed var(--line)}
+dl.vocab dt::after{content:"點我翻牌 ▸";position:absolute;right:0;top:.15rem;font-size:.8rem;color:var(--dim);font-weight:400}
+dl.vocab dt.open::after{content:"蓋回去 ▾";color:var(--gold)}
+dl.vocab dt:focus-visible{outline:2px solid var(--cyan);outline-offset:3px;border-radius:4px}
+dl.vocab dd[hidden]{display:none}
+dl.vocab dd{padding:.5rem .7rem .6rem;background:var(--panel);border:1px solid var(--line);border-top:0;border-radius:0 0 8px 8px;margin-bottom:.4rem}
+dl.vocab .vpun{margin:.5rem 0 0;padding:.45rem .65rem;border-left:3px solid var(--gold);background:rgba(229,181,103,.08);border-radius:4px}
+dl.vocab .vpun .vtag{color:var(--gold);font-weight:700;margin-right:.45rem}
+dl.vocab details[data-kind="vocab-memory"]{margin-top:.45rem}
+.vtools{display:flex;gap:.5rem;flex-wrap:wrap;align-items:center;margin:.5rem 0 .3rem}
+.vtools button{font:inherit;font-size:.9rem;padding:.35rem .8rem;border-radius:999px;border:1px solid var(--line);background:var(--panel);color:var(--ink);cursor:pointer}
+.vtools button:hover{border-color:var(--cyan);color:var(--cyan)}
+.vtools .vcount{color:var(--dim);font-size:.85rem;margin-left:auto}
+.vhow{color:var(--dim);font-size:.9rem;margin:.2rem 0 .4rem}
+/* nb-vocab-flip:end */
 </style></head>
 <body>
 <div class="container">
@@ -890,81 +907,83 @@ figure.boxfig .figtag{color:var(--violet);font-size:.76rem;letter-spacing:.1em;
 <!-- ================= VOCAB ================= -->
 <section id="chapter-vocab" data-chapter-kind="vocab">
 <h2>八、單字表</h2>
+<p class="vhow">先看英文想中文，點單字翻牌看意思、諧音梗與記憶提示。</p>
+<div class="vtools"><button type="button" data-act="quiz">🎲 隨機抽一張</button><button type="button" data-act="open">全部翻開</button><button type="button" data-act="close">全部蓋上</button><span class="vcount"></span></div>
 <dl class="vocab">
 <dt>epimysium</dt>
-<dd><span class="root">epi-（在上、外）+ mys（希臘：肌肉）</span>　肌外膜。包住整塊肌肉的最外層緻密結締組織。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>epi-＝最外面。<b>三層由外到內：epi → peri → endo。</b></p></details></dd>
+<dd hidden><span class="root">epi-（在上、外）+ mys（希臘：肌肉）</span>　肌外膜。包住整塊肌肉的最外層緻密結締組織。<p class="vpun"><span class="vtag">諧音梗</span>epi「外皮」mysium：包住整塊肌肉的最外層。</p><details data-kind="vocab-memory" open><summary>記憶提示</summary><p>epi-＝最外面。<b>三層由外到內：epi → peri → endo。</b></p></details></dd>
 
 <dt>perimysium</dt>
-<dd><span class="root">peri-（周圍）+ mys（肌肉）</span>　肌束膜。包住一束（fascicle）肌纖維的結締組織。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>peri-＝圍著一圈。<b>它包的是「一束」，所以粉紅區內部也會有核。</b></p></details></dd>
+<dd hidden><span class="root">peri-（周圍）+ mys（肌肉）</span>　肌束膜。包住一束（fascicle）肌纖維的結締組織。<p class="vpun"><span class="vtag">諧音梗</span>peri「圍一束」：包住一束肌纖維。</p><details data-kind="vocab-memory" open><summary>記憶提示</summary><p>peri-＝圍著一圈。<b>它包的是「一束」，所以粉紅區內部也會有核。</b></p></details></dd>
 
 <dt>endomysium</dt>
-<dd><span class="root">endo-（內）+ mys（肌肉）</span>　肌內膜。包住<b>單一條</b>肌纖維的薄層網狀結締組織。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>endo-＝最裡面。<b>它包的是「一根」，所以核全部貼在邊緣。</b></p></details></dd>
+<dd hidden><span class="root">endo-（內）+ mys（肌肉）</span>　肌內膜。包住<b>單一條</b>肌纖維的薄層網狀結締組織。<p class="vpun"><span class="vtag">諧音梗</span>endo「內」：包住單一條肌纖維。</p><details data-kind="vocab-memory" open><summary>記憶提示</summary><p>endo-＝最裡面。<b>它包的是「一根」，所以核全部貼在邊緣。</b></p></details></dd>
 
 <dt>fascicle</dt>
-<dd><span class="root">拉丁 fasciculus＝小束</span>　肌束。由多條肌纖維集結而成，外覆肌束膜。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>把肌肉想成電纜，fascicle 就是其中<b>一束線</b>。</p></details></dd>
+<dd hidden><span class="root">拉丁 fasciculus＝小束</span>　肌束。由多條肌纖維集結而成，外覆肌束膜。<p class="vpun"><span class="vtag">諧音梗</span>fascicle「發洗口」一束：多條肌纖維綁成一束。</p><details data-kind="vocab-memory" open><summary>記憶提示</summary><p>把肌肉想成電纜，fascicle 就是其中<b>一束線</b>。</p></details></dd>
 
 <dt>T-tubule (transverse tubule)</dt>
-<dd><span class="root">transverse＝橫向的</span>　T 小管。細胞膜向內凹陷形成的橫向管道，把電訊號送進細胞深處。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>凹陷進去的是<b>細胞膜</b>，不是肌漿——111 年的錯項就在這裡。</p></details></dd>
+<dd hidden><span class="root">transverse＝橫向的</span>　T 小管。細胞膜向內凹陷形成的橫向管道，把電訊號送進細胞深處。<p class="vpun"><span class="vtag">諧音梗</span>T「橫」小管：細胞膜凹進去，把電訊號送進深處。</p><details data-kind="vocab-memory" open><summary>記憶提示</summary><p>凹陷進去的是<b>細胞膜</b>，不是肌漿——111 年的錯項就在這裡。</p></details></dd>
 
 <dt>sarcoplasmic reticulum</dt>
-<dd><span class="root">sarco-（肉）+ plasma（漿）；reticulum＝網</span>　肌漿網。肌細胞特化的滑面內質網，儲存鈣離子。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>它就是肌肉版的滑面內質網。<b>鈣的倉庫。</b></p></details></dd>
+<dd hidden><span class="root">sarco-（肉）+ plasma（漿）；reticulum＝網</span>　肌漿網。肌細胞特化的滑面內質網，儲存鈣離子。<p class="vpun"><span class="vtag">諧音梗</span>sarco「肌」reticulum「網」：肌漿網存鈣。</p><details data-kind="vocab-memory" open><summary>記憶提示</summary><p>它就是肌肉版的滑面內質網。<b>鈣的倉庫。</b></p></details></dd>
 
 <dt>terminal cisterna</dt>
-<dd><span class="root">terminal＝末端；拉丁 cisterna＝蓄水池</span>　終池。肌漿網在 T 小管兩側膨大形成的鈣儲存槽。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>cisterna＝蓄水池。<b>它是肌漿網「膨大」出來的，不是內陷形成的。</b></p></details></dd>
+<dd hidden><span class="root">terminal＝末端；拉丁 cisterna＝蓄水池</span>　終池。肌漿網在 T 小管兩側膨大形成的鈣儲存槽。<p class="vpun"><span class="vtag">諧音梗</span>terminal「終」cisterna「水槽」：肌漿網兩端的鈣水槽。</p><details data-kind="vocab-memory" open><summary>記憶提示</summary><p>cisterna＝蓄水池。<b>它是肌漿網「膨大」出來的，不是內陷形成的。</b></p></details></dd>
 
 <dt>triad / diad</dt>
-<dd><span class="root">tri-（三）／di-（二）</span>　三聯體＝兩終池＋一 T 小管（骨骼肌）；雙聯體＝一終池＋一 T 小管（心肌）。<details data-kind="vocab-memory"><summary>記憶提示</summary><p><b>骨骼肌三、心肌二。</b>選項寫「一管一池」就是把心肌的答案搬過來。</p></details></dd>
+<dd hidden><span class="root">tri-（三）／di-（二）</span>　三聯體＝兩終池＋一 T 小管（骨骼肌）；雙聯體＝一終池＋一 T 小管（心肌）。<p class="vpun"><span class="vtag">諧音梗</span>tri「三」＝兩池一管（骨骼肌）；di「二」＝一池一管（心肌）。</p><details data-kind="vocab-memory" open><summary>記憶提示</summary><p><b>骨骼肌三、心肌二。</b>選項寫「一管一池」就是把心肌的答案搬過來。</p></details></dd>
 
 <dt>caveolae</dt>
-<dd><span class="root">拉丁 caveola＝小洞穴</span>　小窩。平滑肌細胞膜上的小凹陷，功能類似骨骼肌的 T 小管。<details data-kind="vocab-memory"><summary>記憶提示</summary><p><b>它屬於平滑肌。</b>出現在骨骼肌的三聯體選項裡就是誘餌。</p></details></dd>
+<dd hidden><span class="root">拉丁 caveola＝小洞穴</span>　小窩。平滑肌細胞膜上的小凹陷，功能類似骨骼肌的 T 小管。<p class="vpun"><span class="vtag">諧音梗</span>caveolae「小 cave」洞：平滑肌膜上的小凹，代替 T 小管。</p><details data-kind="vocab-memory" open><summary>記憶提示</summary><p><b>它屬於平滑肌。</b>出現在骨骼肌的三聯體選項裡就是誘餌。</p></details></dd>
 
 <dt>gap junction</dt>
-<dd><span class="root">gap＝縫隙</span>　間隙連接。細胞間可直接通訊的通道。<b>心肌與平滑肌有，骨骼肌沒有。</b><details data-kind="vocab-memory"><summary>記憶提示</summary><p>本科最穩定的考點：<b>看到「骨骼肌＋間隙連接」就是錯的。</b></p></details></dd>
+<dd hidden><span class="root">gap＝縫隙</span>　間隙連接。細胞間可直接通訊的通道。<b>心肌與平滑肌有，骨骼肌沒有。</b><p class="vpun"><span class="vtag">諧音梗</span>gap「隔壁」相通：心肌平滑肌有，骨骼肌沒有。</p><details data-kind="vocab-memory" open><summary>記憶提示</summary><p>本科最穩定的考點：<b>看到「骨骼肌＋間隙連接」就是錯的。</b></p></details></dd>
 
 <dt>sarcomere</dt>
-<dd><span class="root">sarco-（肉）+ meros（部分）</span>　肌節。兩條 Z 線之間的收縮單位，<b>只有骨骼肌與心肌有</b>。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>有肌節才有橫紋。<b>平滑肌兩者都沒有。</b></p></details></dd>
+<dd hidden><span class="root">sarco-（肉）+ meros（部分）</span>　肌節。兩條 Z 線之間的收縮單位，<b>只有骨骼肌與心肌有</b>。<p class="vpun"><span class="vtag">諧音梗</span>sarco「肌」mere「單元」：兩條 Z 線之間的收縮單位。</p><details data-kind="vocab-memory" open><summary>記憶提示</summary><p>有肌節才有橫紋。<b>平滑肌兩者都沒有。</b></p></details></dd>
 
 <dt>dense body</dt>
-<dd><span class="root">dense＝緻密</span>　緻密體。平滑肌中肌絲的錨定點，相當於骨骼肌的 Z 線。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>詳解原話：<b>「只有平滑肌有 Dense body 這項 Special feature」</b>。</p></details></dd>
+<dd hidden><span class="root">dense＝緻密</span>　緻密體。平滑肌中肌絲的錨定點，相當於骨骼肌的 Z 線。<p class="vpun"><span class="vtag">諧音梗</span>dense「緻密」body：平滑肌的 Z 線替代品。</p><details data-kind="vocab-memory" open><summary>記憶提示</summary><p>詳解原話：<b>「只有平滑肌有 Dense body 這項 Special feature」</b>。</p></details></dd>
 
 <dt>side-polar thick filament</dt>
-<dd><span class="root">side＝側；polar＝極性</span>　側極性粗肌絲。平滑肌粗肌絲的排列方式，兩側肌凝蛋白頭朝相反方向。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>沒有中央裸區 → 沒有規則的重疊帶 → <b>沒有橫紋</b>。</p></details></dd>
+<dd hidden><span class="root">side＝側；polar＝極性</span>　側極性粗肌絲。平滑肌粗肌絲的排列方式，兩側肌凝蛋白頭朝相反方向。<p class="vpun"><span class="vtag">諧音梗</span>side-polar「側極」：平滑肌粗肌絲兩側頭朝反方向。</p><details data-kind="vocab-memory" open><summary>記憶提示</summary><p>沒有中央裸區 → 沒有規則的重疊帶 → <b>沒有橫紋</b>。</p></details></dd>
 
 <dt>fusiform</dt>
-<dd><span class="root">拉丁 fusus＝紡錘</span>　紡錘形。平滑肌細胞的外形，中間粗兩端尖。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>核在最粗的中段，所以<b>核在中央</b>。</p></details></dd>
+<dd hidden><span class="root">拉丁 fusus＝紡錘</span>　紡錘形。平滑肌細胞的外形，中間粗兩端尖。<p class="vpun"><span class="vtag">諧音梗</span>fusiform「紡錘形」：平滑肌中間粗兩頭尖。</p><details data-kind="vocab-memory" open><summary>記憶提示</summary><p>核在最粗的中段，所以<b>核在中央</b>。</p></details></dd>
 
 <dt>eosinophilic / basophilic</dt>
-<dd><span class="root">eosin（伊紅染劑）／base（鹼）+ -philic（親和）</span>　嗜伊紅（粉紅）與嗜鹼（藍紫）。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>肌肉細胞質富含蛋白質 → <b>嗜伊紅、粉紅色</b>。112 年把它寫成嗜鹼而成為錯項。</p></details></dd>
+<dd hidden><span class="root">eosin（伊紅染劑）／base（鹼）+ -philic（親和）</span>　嗜伊紅（粉紅）與嗜鹼（藍紫）。<p class="vpun"><span class="vtag">諧音梗</span>eosin「粉紅」愛紅；baso「藍紫」愛鹼。</p><details data-kind="vocab-memory" open><summary>記憶提示</summary><p>肌肉細胞質富含蛋白質 → <b>嗜伊紅、粉紅色</b>。112 年把它寫成嗜鹼而成為錯項。</p></details></dd>
 
 <dt>slow oxidative fiber (type I)</dt>
-<dd><span class="root">oxidative＝氧化的</span>　慢氧化型纖維。直徑最小、粒線體與肌紅蛋白多、<b>最耐疲勞</b>。<details data-kind="vocab-memory"><summary>記憶提示</summary><p><b>馬拉松型。</b>最細＝最耐操。</p></details></dd>
+<dd hidden><span class="root">oxidative＝氧化的</span>　慢氧化型纖維。直徑最小、粒線體與肌紅蛋白多、<b>最耐疲勞</b>。<p class="vpun"><span class="vtag">諧音梗</span>slow「慢」一型：最細、粒線體多、最耐操。</p><details data-kind="vocab-memory" open><summary>記憶提示</summary><p><b>馬拉松型。</b>最細＝最耐操。</p></details></dd>
 
 <dt>fast glycolytic (anaerobic) fiber (type IIb)</dt>
-<dd><span class="root">glycolytic＝糖解的；an-（無）+ aerobic（有氧）</span>　快糖解／快無氧型纖維。直徑最大、<b>最易疲勞</b>。<details data-kind="vocab-memory"><summary>記憶提示</summary><p><b>短跑型。</b>最粗＝最快壞。</p></details></dd>
+<dd hidden><span class="root">glycolytic＝糖解的；an-（無）+ aerobic（有氧）</span>　快糖解／快無氧型纖維。直徑最大、<b>最易疲勞</b>。<p class="vpun"><span class="vtag">諧音梗</span>fast「快」IIb：最粗、無氧、最快累。</p><details data-kind="vocab-memory" open><summary>記憶提示</summary><p><b>短跑型。</b>最粗＝最快壞。</p></details></dd>
 
 <dt>actin / myosin</dt>
-<dd><span class="root">actin＝細肌絲的主成分；myosin＝粗肌絲的主成分</span>　肌動蛋白與肌凝蛋白。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>細肌絲上有「把手」，粗肌絲的「頭」去抓它。</p></details></dd>
+<dd hidden><span class="root">actin＝細肌絲的主成分；myosin＝粗肌絲的主成分</span>　肌動蛋白與肌凝蛋白。<p class="vpun"><span class="vtag">諧音梗</span>actin「細」、myosin「粗」：細肌絲與粗肌絲。</p><details data-kind="vocab-memory" open><summary>記憶提示</summary><p>細肌絲上有「把手」，粗肌絲的「頭」去抓它。</p></details></dd>
 
 <dt>tropomyosin</dt>
-<dd><span class="root">tropo-（轉、變）+ myosin</span>　原肌凝蛋白。靜止時<b>蓋住</b>肌動蛋白上的肌凝蛋白結合位。<details data-kind="vocab-memory"><summary>記憶提示</summary><p><b>那條膠帶。</b>兩年考同一題，答案都是它。</p></details></dd>
+<dd hidden><span class="root">tropo-（轉、變）+ myosin</span>　原肌凝蛋白。靜止時<b>蓋住</b>肌動蛋白上的肌凝蛋白結合位。<p class="vpun"><span class="vtag">諧音梗</span>tropomyosin「膠帶」：靜止時蓋住結合位。</p><details data-kind="vocab-memory" open><summary>記憶提示</summary><p><b>那條膠帶。</b>兩年考同一題，答案都是它。</p></details></dd>
 
 <dt>troponin (troponin C)</dt>
-<dd><span class="root">tropo-（轉）+ -nin</span>　旋轉素。釘在原肌凝蛋白上的複合體，<b>troponin C 接鈣</b>後使膠帶滑開。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>它是<b>扣環</b>不是膠帶。112 年把它放進選項當誘餌。</p></details></dd>
+<dd hidden><span class="root">tropo-（轉）+ -nin</span>　旋轉素。釘在原肌凝蛋白上的複合體，<b>troponin C 接鈣</b>後使膠帶滑開。<p class="vpun"><span class="vtag">諧音梗</span>troponin「拆膠帶的鈣鉤」：C 接鈣，膠帶滑開。</p><details data-kind="vocab-memory" open><summary>記憶提示</summary><p>它是<b>扣環</b>不是膠帶。112 年把它放進選項當誘餌。</p></details></dd>
 
 <dt>nebulin / tropomodulin</dt>
-<dd><span class="root">nebula＝雲霧；modulin＝調節者</span>　伴肌動蛋白（決定細肌絲長度）與原肌球調節蛋白（封住細肌絲負端）。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>兩個都在細肌絲上，但<b>都不遮結合位</b>——111 年的干擾選項。</p></details></dd>
+<dd hidden><span class="root">nebula＝雲霧；modulin＝調節者</span>　伴肌動蛋白（決定細肌絲長度）與原肌球調節蛋白（封住細肌絲負端）。<p class="vpun"><span class="vtag">諧音梗</span>nebulin「量尺」定長度；tropomodulin「蓋子」封負端。</p><details data-kind="vocab-memory" open><summary>記憶提示</summary><p>兩個都在細肌絲上，但<b>都不遮結合位</b>——111 年的干擾選項。</p></details></dd>
 
 <dt>cross-bridge cycle</dt>
-<dd><span class="root">cross-bridge＝橫橋</span>　橫橋循環：附著 → 脫離 → 上膛 → 出力。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>問「最先」＝<b>附著（attachment）</b>。ATP 是用來「放手」與「上膛」的。</p></details></dd>
+<dd hidden><span class="root">cross-bridge＝橫橋</span>　橫橋循環：附著 → 脫離 → 上膛 → 出力。<p class="vpun"><span class="vtag">諧音梗</span>「附、脫、上膛、出力」：橫橋四步循環。</p><details data-kind="vocab-memory" open><summary>記憶提示</summary><p>問「最先」＝<b>附著（attachment）</b>。ATP 是用來「放手」與「上膛」的。</p></details></dd>
 
 <dt>A band / I band</dt>
-<dd><span class="root">A＝anisotropic（異向性，暗帶）；I＝isotropic（等向性，亮帶）</span>　A 帶是粗肌絲全長，I 帶是細肌絲未重疊處。<details data-kind="vocab-memory"><summary>記憶提示</summary><p><b>A 帶＝粗肌絲長度＝永遠不變。I 帶收縮時變窄。</b></p></details></dd>
+<dd hidden><span class="root">A＝anisotropic（異向性，暗帶）；I＝isotropic（等向性，亮帶）</span>　A 帶是粗肌絲全長，I 帶是細肌絲未重疊處。<p class="vpun"><span class="vtag">諧音梗</span>A「暗」帶＝粗肌絲全長；I「亮」帶＝細肌絲沒重疊處。</p><details data-kind="vocab-memory" open><summary>記憶提示</summary><p><b>A 帶＝粗肌絲長度＝永遠不變。I 帶收縮時變窄。</b></p></details></dd>
 
 <dt>H zone / M line / Z line</dt>
-<dd><span class="root">德文 hell＝亮；Mittel＝中間；Zwischen＝之間</span>　H 區是粗肌絲未被覆蓋處、M 線在肌節正中、Z 線是肌節兩端。<details data-kind="vocab-memory"><summary>記憶提示</summary><p><b>H 區收縮時變窄；M 線不變；Z 線互相靠近但始終看得見。</b></p></details></dd>
+<dd hidden><span class="root">德文 hell＝亮；Mittel＝中間；Zwischen＝之間</span>　H 區是粗肌絲未被覆蓋處、M 線在肌節正中、Z 線是肌節兩端。<p class="vpun"><span class="vtag">諧音梗</span>H「空」區、M「中」線、Z「邊」線。</p><details data-kind="vocab-memory" open><summary>記憶提示</summary><p><b>H 區收縮時變窄；M 線不變；Z 線互相靠近但始終看得見。</b></p></details></dd>
 
 <dt>intercalated disc</dt>
-<dd><span class="root">intercalate＝插入其間</span>　間盤。心肌細胞之間的特化連接，含間隙連接與胞橋小體。<details data-kind="vocab-memory"><summary>記憶提示</summary><p>心肌能同步收縮就靠它。<b>骨骼肌沒有這種東西。</b></p></details></dd>
+<dd hidden><span class="root">intercalate＝插入其間</span>　間盤。心肌細胞之間的特化連接，含間隙連接與胞橋小體。<p class="vpun"><span class="vtag">諧音梗</span>intercalated「隔一節」：心肌細胞間的連接盤。</p><details data-kind="vocab-memory" open><summary>記憶提示</summary><p>心肌能同步收縮就靠它。<b>骨骼肌沒有這種東西。</b></p></details></dd>
 </dl>
 </section>
 <section id="chapter-final" data-chapter-kind="final_questions">
@@ -1332,5 +1351,36 @@ figure.boxfig .figtag{color:var(--violet);font-size:.76rem;letter-spacing:.1em;
   });
 </script>
 <!-- nb-comments:end -->
+
+<script data-nb-vocab-flip>
+(function(){
+  var dl=document.querySelector('dl.vocab'); if(!dl) return;
+  var dts=Array.prototype.slice.call(dl.querySelectorAll('dt'));
+  var count=document.querySelector('.vtools .vcount');
+  function dd(dt){return dt.nextElementSibling && dt.nextElementSibling.tagName==='DD' ? dt.nextElementSibling : null;}
+  function set(dt,open){var d=dd(dt); if(!d) return; d.hidden=!open; dt.classList.toggle('open',open); dt.setAttribute('aria-expanded',open?'true':'false');}
+  function refresh(){ if(!count) return; var n=dts.filter(function(dt){return dt.classList.contains('open');}).length; count.textContent='已翻 '+n+' / '+dts.length; }
+  dts.forEach(function(dt){
+    dt.tabIndex=0; dt.setAttribute('role','button'); set(dt,false);
+    dt.addEventListener('click',function(){ set(dt,dd(dt).hidden); refresh(); });
+    dt.addEventListener('keydown',function(e){ if(e.key==='Enter'||e.key===' '){ e.preventDefault(); dt.click(); } });
+  });
+  var tools=document.querySelector('.vtools'); if(!tools) return;
+  tools.addEventListener('click',function(e){
+    var b=e.target.closest('button'); if(!b) return;
+    var act=b.getAttribute('data-act');
+    if(act==='open'){ dts.forEach(function(dt){set(dt,true);}); }
+    else if(act==='close'){ dts.forEach(function(dt){set(dt,false);}); }
+    else if(act==='quiz'){
+      var closed=dts.filter(function(dt){return !dt.classList.contains('open');});
+      if(!closed.length){ dts.forEach(function(dt){set(dt,false);}); closed=dts; }
+      var pick=closed[Math.floor(Math.random()*closed.length)];
+      pick.scrollIntoView({behavior:'smooth',block:'center'}); pick.focus({preventScroll:true});
+    }
+    refresh();
+  });
+  refresh();
+})();
+</script>
 </body>
 </html>
