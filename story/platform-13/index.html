@@ -11,17 +11,13 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;600;700&display=swap" rel="stylesheet">
 <style>
-:root{
-  --bg:#0f141c; --bg2:#141922; --panel:#1b2230; --line:#2a3340;
-  --ink:#e8ecf3; --ink2:#a3adbd; --dim:#6f7a8c; --amber:#e5b567; --amber2:#f3cf8a;
-  --serif:"Noto Serif TC","Songti TC","PingFang TC","Microsoft JhengHei",serif;
-}
-*{box-sizing:border-box}
-html{scroll-behavior:smooth}
+:root{--bg:#0f141c;--bg2:#141922;--panel:#1b2230;--line:#2a3340;--ink:#e8ecf3;--ink2:#a3adbd;--dim:#6f7a8c;--amber:#e5b567;--amber2:#f3cf8a;--serif:"Noto Serif TC","Songti TC","PingFang TC","Microsoft JhengHei",serif}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
 body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--serif);line-height:1.95;-webkit-font-smoothing:antialiased}
-a{color:var(--amber);text-decoration:none}
-a:hover{color:var(--amber2)}
-#bar{position:fixed;top:0;left:0;height:3px;width:0;background:linear-gradient(90deg,var(--amber),var(--amber2));z-index:50;transition:width .1s linear}
+a{color:var(--amber);text-decoration:none}a:hover{color:var(--amber2)}
+#bar{position:fixed;top:0;left:0;height:3px;width:0;background:linear-gradient(90deg,var(--amber),var(--amber2));z-index:50}
+.back{position:absolute;top:18px;left:0;right:0;z-index:5;max-width:760px;margin:0 auto;padding:0 24px;font-size:.85rem;letter-spacing:.15em}
+.back a{background:rgba(15,20,28,.55);padding:6px 12px;border-radius:999px;border:1px solid rgba(255,255,255,.12);color:var(--ink2)}
 .hero{position:relative;height:clamp(460px,78vh,820px);display:flex;align-items:flex-end;overflow:hidden;background:#0a0e14}
 .hero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.75}
 .hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(15,20,28,.15) 0%,rgba(15,20,28,.2) 45%,rgba(15,20,28,.97) 100%)}
@@ -29,39 +25,37 @@ a:hover{color:var(--amber2)}
 .kicker{color:var(--amber);letter-spacing:.35em;font-size:.8rem;margin-bottom:14px}
 h1{font-size:clamp(2.4rem,7vw,4.2rem);font-weight:700;letter-spacing:.12em;margin:0 0 14px;line-height:1.2;text-shadow:0 4px 30px rgba(0,0,0,.6)}
 .tagline{color:var(--ink2);font-size:1.05rem;max-width:560px;margin:0 0 22px}
-.meta{display:flex;flex-wrap:wrap;gap:10px 22px;color:var(--dim);font-size:.85rem;letter-spacing:.08em}
-.meta b{color:var(--ink2);font-weight:600}
+.meta{display:flex;flex-wrap:wrap;gap:10px 22px;color:var(--dim);font-size:.85rem;letter-spacing:.08em}.meta b{color:var(--ink2);font-weight:600}
 .wrap{max-width:720px;margin:0 auto;padding:24px 24px 80px}
 .toc{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:20px 24px;margin:8px 0 48px}
 .toc h3{margin:0 0 10px;font-size:.85rem;letter-spacing:.3em;color:var(--amber);font-weight:600}
 .toc ol{margin:0;padding:0;list-style:none;display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:6px 18px}
-.toc li a{color:var(--ink2);font-size:.95rem;display:block;padding:3px 0;border-bottom:1px dashed var(--line)}
-.toc li a:hover{color:var(--amber2)}
+.toc li a{color:var(--ink2);font-size:.95rem;display:block;padding:3px 0;border-bottom:1px dashed var(--line)}.toc li a:hover{color:var(--amber2)}
 .chapter{margin-bottom:64px}
 .chapter h2{font-size:1.65rem;letter-spacing:.2em;margin:56px 0 28px;padding-top:20px;border-top:1px solid var(--line);color:var(--amber2);font-weight:600}
 .chapter h2 .sp{display:inline-block;width:.8em}
 .chapter:first-of-type h2{border-top:0;padding-top:0;margin-top:0}
 .chapter p{margin:0 0 1.35em;font-size:1.08rem;text-align:justify;text-justify:inter-ideograph}
 .chapter p.letter{background:var(--panel);border-left:3px solid var(--amber);padding:16px 20px;border-radius:0 8px 8px 0;color:var(--ink2);font-size:1.02rem}
+.chapter p.brk{text-align:center;color:var(--dim);letter-spacing:.5em;margin:28px 0}
 .fin{text-align:center!important;color:var(--dim);letter-spacing:.5em;margin-top:40px!important}
-figure.ill{margin:36px -24px 40px;}
-figure.ill img{display:block;width:100%;height:auto;border-radius:0;box-shadow:0 20px 50px rgba(0,0,0,.5)}
+figure.ill{margin:36px -24px 40px}figure.ill img{display:block;width:100%;height:auto;box-shadow:0 20px 50px rgba(0,0,0,.5)}
 figure.ill figcaption{color:var(--dim);font-size:.86rem;text-align:center;margin-top:12px;letter-spacing:.06em;padding:0 24px}
-@media(min-width:900px){figure.ill{margin:40px -120px 44px} figure.ill img{border-radius:10px}}
-.after{border-top:1px solid var(--line);margin-top:40px;padding-top:28px;color:var(--dim);font-size:.9rem;line-height:1.8}
-.after b{color:var(--ink2)}
-.top{display:inline-block;margin-top:14px;font-size:.85rem;letter-spacing:.15em}
+@media(min-width:900px){figure.ill{margin:40px -120px 44px}figure.ill img{border-radius:10px}}
+.after{border-top:1px solid var(--line);margin-top:40px;padding-top:28px;color:var(--dim);font-size:.9rem;line-height:1.8}.after b{color:var(--ink2)}
+.top{display:inline-block;margin-top:14px;font-size:.85rem;letter-spacing:.15em;margin-right:18px}
 </style>
 </head>
 <body>
 <div id="bar"></div>
 <header class="hero">
-  <img src="img/02-cover.webp" alt="雨夜中的台北車站" fetchpriority="high">
+  <div class="back"><a href="../">← 回到書架</a></div>
+  <img src="img/02-cover.webp" alt="第十三號月台" fetchpriority="high">
   <div class="in">
     <div class="kicker">短篇小說 · 魔幻寫實</div>
     <h1>第十三號月台</h1>
     <p class="tagline">台北車站沒有第十三號月台。一個夜班調度員、一班只在雨夜出現的列車，和一封放了二十二年沒有寄出的信。</p>
-    <div class="meta"><span>全文 <b>9,140</b> 字</span><span>閱讀約 <b>26</b> 分鐘</span><span>插圖 <b>13</b> 幅</span></div>
+    <div class="meta"><span>全文 <b>9,142</b> 字</span><span>閱讀約 <b>26</b> 分鐘</span><span>插圖 <b>13</b> 幅</span></div>
   </div>
 </header>
 <main class="wrap">
@@ -85,7 +79,7 @@ figure.ill figcaption{color:var(--dim);font-size:.86rem;text-align:center;margin
 <p>所以當那一夜控制盤上亮起一條她從沒見過的綠線時，她的第一個念頭不是害怕，而是：誰在開玩笑。</p>
 </section>
 <section class="chapter" id="ch2">
-<h2>第一章<span class="sp"></span>雨夜</h2>
+<h2>第一章<span class=sp></span>雨夜</h2>
 <p>那是九月的一個星期二，颱風外圍環流掃過北台灣，雨從傍晚下到深夜，一點也沒有要停的意思。</p>
 <p>凌晨一點四十分，末班車早已收班，調度室裡只剩雨澄一個人。她把濕透的外套掛在椅背上，端著已經冷掉的咖啡，看著控制盤上的燈號一盞一盞暗下去——那是她一天之中最喜歡的時刻，整座車站像一頭疲倦的巨獸，終於躺平了，開始緩慢地呼吸。</p>
 <figure class="ill"><img src="img/01-control-room.webp" alt="調度室裡只剩雨澄一個人，控制盤上多了一條不該存在的綠線。" loading="lazy" width="1600" height="900"><figcaption>調度室裡只剩雨澄一個人，控制盤上多了一條不該存在的綠線。</figcaption></figure>
@@ -108,7 +102,7 @@ figure.ill figcaption{color:var(--dim);font-size:.86rem;text-align:center;margin
 <p>她穿上濕外套，拿起手電筒，關掉調度室的燈，走了出去。</p>
 </section>
 <section class="chapter" id="ch3">
-<h2>第二章<span class="sp"></span>老周</h2>
+<h2>第二章<span class=sp></span>老周</h2>
 <p>通往地下二層的員工樓梯又窄又陡，牆上的磁磚有一半已經掉了，露出底下灰色的水泥。雨澄走過這條樓梯無數次，從沒注意過樓梯間的盡頭有一條岔路。</p>
 <p>但今晚有。</p>
 <p>那是一條更窄的通道，天花板低得她必須微微低頭，日光燈管一閃一閃的，牆上滲著水，一滴一滴落在積水裡，發出很小的聲音。通道的盡頭有一道鐵門，漆成很多年前台鐵慣用的那種綠色，門縫裡透出昏黃的光和一縷一縷的白霧。</p>
@@ -134,7 +128,7 @@ figure.ill figcaption{color:var(--dim);font-size:.86rem;text-align:center;margin
 <p>她深吸一口氣，走了進去。</p>
 </section>
 <section class="chapter" id="ch4">
-<h2>第三章<span class="sp"></span>月台</h2>
+<h2>第三章<span class=sp></span>月台</h2>
 <p>那是一座她從沒見過、卻莫名熟悉的月台。</p>
 <p>沒有電子看板，沒有黃色的警示線，沒有播放廣告的液晶螢幕，只有水泥地面、木頭長椅、一排圓形的老式月台燈，燈罩裡的鎢絲燈泡發出橘黃色的光。頂棚是鐵皮的，雨打在上面，聲音像有人在遠處持續不斷地鼓掌。</p>
 <p>月台的盡頭立著一個紅色的郵筒。圓柱形的，老式的，投信口上方有一片小小的雨遮，漆已經斑駁，但很乾淨，像有人每天都來擦拭。</p>
@@ -154,7 +148,7 @@ figure.ill figcaption{color:var(--dim);font-size:.86rem;text-align:center;margin
 <p>雨澄拉開車門，走了上去。</p>
 </section>
 <section class="chapter" id="ch5">
-<h2>第四章<span class="sp"></span>乘客</h2>
+<h2>第四章<span class=sp></span>乘客</h2>
 <p>車廂裡是暖的。</p>
 <p>不是空調的那種暖，而是一種更古老的暖，像冬天的教室，像老家的廚房。木質座椅，黃銅扶手，車廂燈是一顆一顆裸露的燈泡，光線昏黃，把每個人的影子都拉得很長。</p>
 <p>車廂裡大約有二十個人。他們各自坐著，沒有人說話，沒有人看手機——事實上沒有人拿著手機。每一個人的手裡都捧著一個信封。有的是泛黃的牛皮紙，有的是印著花邊的粉紅信紙，有的只是一張摺起來的作業簿內頁。</p>
@@ -181,7 +175,7 @@ figure.ill figcaption{color:var(--dim);font-size:.86rem;text-align:center;margin
 <p>雨澄握著票，指尖冰涼。她記得這個日期。她這輩子不可能忘記這個日期。</p>
 </section>
 <section class="chapter" id="ch6">
-<h2>第五章<span class="sp"></span>八堵</h2>
+<h2>第五章<span class=sp></span>八堵</h2>
 <p>列車停下的時候，雨澄的手心全是汗。</p>
 <p>窗外是八堵車站。不是她上個月出差經過的那個八堵——那個有電梯、有電子票閘、有便利商店和自動販賣機的八堵——而是一個更小、更舊、更安靜的八堵。木造的候車室，圓形的月台燈，站名牌是搪瓷的，白底黑字，邊角的漆剝落了，露出底下的鐵鏽。</p>
 <p>山邊的雨霧漫過鐵軌，把遠處的號誌燈暈成一團一團模糊的紅。</p>
@@ -206,7 +200,7 @@ figure.ill figcaption{color:var(--dim);font-size:.86rem;text-align:center;margin
 <p>父親深吸了一口氣，把帽子戴回頭上，提著便當盒，一步一步走向那班車。</p>
 </section>
 <section class="chapter" id="ch7">
-<h2>第六章<span class="sp"></span>信</h2>
+<h2>第六章<span class=sp></span>信</h2>
 <p>「等一下——」</p>
 <p>雨澄衝出柱子，往父親跑去。老周在後面喊了什麼，她沒有聽清楚。她跑過潮濕的月台，跑過那盞一閃一閃的燈，跑過候車室門口那張沒有人坐的長椅，跑到那列黑藍色的列車前面——</p>
 <p>父親已經踏上了車門的踏板。</p>
@@ -239,7 +233,7 @@ figure.ill figcaption{color:var(--dim);font-size:.86rem;text-align:center;margin
 <p>他站起來，拍了拍膝蓋上的灰，提起提燈。「回程的車快到了。妳還有一點時間。」</p>
 </section>
 <section class="chapter" id="ch8">
-<h2>第七章<span class="sp"></span>回程</h2>
+<h2>第七章<span class=sp></span>回程</h2>
 <p>回程的列車在凌晨三點進站。</p>
 <p>雨澄上了車。車廂裡的人比來的時候少了，高中女生不見了，老太太也不見了，竹籃留在座位上，裡面的保溫瓶還在，粽子不見了。那個西裝男人還在，眼睛不再紅腫，手裡的信封空了，他看起來像剛剛睡了一場很長很長的覺，領帶也鬆開了。</p>
 <p>雨澄走到車廂的最後一排，在一個空位坐下。她把那封摺了二十二年的信拿出來，一層一層攤開，平放在膝蓋上。</p>
@@ -263,7 +257,7 @@ figure.ill figcaption{color:var(--dim);font-size:.86rem;text-align:center;margin
 <figure class="ill"><img src="img/10-reunion.webp" alt="這一次，他看見她了。" loading="lazy" width="1600" height="900"><figcaption>這一次，他看見她了。</figcaption></figure>
 </section>
 <section class="chapter" id="ch9">
-<h2>第八章<span class="sp"></span>投遞</h2>
+<h2>第八章<span class=sp></span>投遞</h2>
 <p>他們在車廂裡坐了很久。</p>
 <p>沒有人說很多話。父親問她幾歲了，她說三十二。父親說，那妳媽媽——她說五年前走了，很安詳，走之前還在念叨家裡的瓦斯費沒繳。父親低下頭，過了很久才抬起來，眼睛紅紅的，說：「對不起。」</p>
 <p>雨澄搖搖頭。她不是來聽這三個字的。</p>
@@ -295,7 +289,7 @@ figure.ill figcaption{color:var(--dim);font-size:.86rem;text-align:center;margin
 <p>「有一班車停了。」他說，聲音有些發抖，「很遠的地方，有一班車，終於停了。」</p>
 </section>
 <section class="chapter" id="ch10">
-<h2>尾聲<span class="sp"></span>清晨</h2>
+<h2>尾聲<span class=sp></span>清晨</h2>
 <p>雨澄是在員工休息室的長椅上醒來的。</p>
 <p>窗外的天已經亮了，雨停了，一縷陽光斜斜地照在她的臉上。牆上的時鐘指著六點十分。她的制服外套還是濕的，手裡握著一張泛黃的硬紙車票，票面上的字已經褪得看不清楚，只剩下一個小小的剪票缺口。</p>
 <p>她走下樓梯，走到地下二層。樓梯間的盡頭沒有岔路。她用手摸了摸那面牆——水泥的，冰涼的，斑駁的，摸不出任何門的痕跡。只有靠近地面的地方，有一小片磚頭的顏色和其他的不太一樣，像很多年前曾經有過一道門，後來被封起來了。</p>
@@ -321,7 +315,7 @@ figure.ill figcaption{color:var(--dim);font-size:.86rem;text-align:center;margin
     <b>關於這個故事</b><br>
     台鐵的藍皮普快車在二〇二〇年底全面退出定期營運；八堵站也早已改建。故事裡的月台、郵筒與那班車，都不存在於任何時刻表上。<br>
     文字與插圖皆為 AI 生成（文字：Claude；插圖：OpenAI gpt-image）。<br>
-    <a class="top" href="#top">↑ 回到最上面</a>
+    <a class="top" href="#top">↑ 回到最上面</a><a class="top" href="../">📚 回到書架</a>
   </div>
 </main>
 <script>
