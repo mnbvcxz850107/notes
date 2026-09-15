@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>故事書架</title>
+<meta name="description" content="一座只在深夜開放的書架：半小時與一小時就能讀完的短篇小說，每篇都有插圖。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0f141c;--panel:#1b2230;--panel2:#222b3a;--line:#2a3340;--ink:#e8ecf3;--ink2:#a3adbd;--dim:#6f7a8c;--amber:#e5b567;--amber2:#f3cf8a;--serif:"Noto Serif TC","Songti TC","PingFang TC","Microsoft JhengHei",serif}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--serif);line-height:1.7;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1120px;margin:0 auto;padding:40px 24px 80px}
+header{margin-bottom:28px}
+.kicker{color:var(--amber);letter-spacing:.35em;font-size:.8rem;margin-bottom:10px}
+h1{font-size:clamp(2rem,5vw,3rem);letter-spacing:.15em;margin:0 0 10px;font-weight:700}
+.sub{color:var(--ink2);max-width:600px;margin:0 0 6px}
+.stats{color:var(--dim);font-size:.85rem;letter-spacing:.08em}
+.filters{display:flex;flex-wrap:wrap;gap:8px;margin:26px 0 8px;align-items:center}
+.filters .lbl{color:var(--dim);font-size:.8rem;letter-spacing:.2em;margin-right:4px}
+.filters button{font-family:inherit;background:var(--panel);border:1px solid var(--line);color:var(--ink2);padding:6px 14px;border-radius:999px;font-size:.9rem;cursor:pointer}
+.filters button:hover{border-color:var(--amber);color:var(--amber2)}
+.filters button.on{background:var(--amber);border-color:var(--amber);color:#1a1408;font-weight:600}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:22px;margin-top:22px}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:14px;overflow:hidden;display:flex;flex-direction:column;transition:transform .2s,border-color .2s}
+.card:hover{transform:translateY(-4px);border-color:var(--amber)}
+.card[hidden]{display:none}
+.cv{position:relative;aspect-ratio:16/9;background:#0a0e14}.cv img{width:100%;height:100%;object-fit:cover;display:block}
+.len{position:absolute;top:10px;left:10px;background:rgba(15,20,28,.8);border:1px solid rgba(255,255,255,.15);color:var(--amber2);font-size:.75rem;letter-spacing:.15em;padding:3px 10px;border-radius:999px}
+.cb{padding:16px 18px 20px}
+.g{color:var(--dim);font-size:.78rem;letter-spacing:.1em;margin-bottom:6px}
+.cb h3{margin:0 0 8px;font-size:1.25rem;letter-spacing:.1em;color:var(--amber2);font-weight:600}
+.cb p{margin:0;color:var(--ink2);font-size:.92rem;line-height:1.7;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.empty{color:var(--dim);text-align:center;padding:60px 0;display:none}
+footer{margin-top:60px;color:var(--dim);font-size:.85rem;border-top:1px solid var(--line);padding-top:20px}
+footer a{color:var(--amber)}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <div class="kicker">STORY SHELF</div>
+  <h1>故事書架</h1>
+  <p class="sub">半小時、一小時就能讀完的短篇小說，每一篇都有插圖。挑一篇，找個舒服的位置。</p>
+  <div class="stats">共 1 篇 · 半小時 1 篇 · 一小時 0 篇</div>
+</header>
+<div class="filters" id="fl"><span class="lbl">長度</span><button data-l="all" class="on">全部</button><button data-l="half">半小時</button><button data-l="hour">一小時</button></div>
+<div class="filters" id="fg"><span class="lbl">類型</span><button data-g="all" class="on">全部</button><button data-g="魔幻寫實">魔幻寫實</button></div>
+<div class="grid" id="grid">
+<a class="card" href="platform-13/" data-len="half" data-genre="魔幻寫實">
+  <div class="cv"><img src="platform-13/img/02-cover.webp" alt="" loading="lazy"><span class="len">半小時</span></div>
+  <div class="cb"><div class="g">魔幻寫實 · 26 分鐘 · 9,142 字</div><h3>第十三號月台</h3><p>台北車站沒有第十三號月台。一個夜班調度員、一班只在雨夜出現的列車，和一封放了二十二年沒有寄出的信。</p></div>
+</a>
+</div>
+<p class="empty" id="empty">這個組合目前還沒有故事。</p>
+<footer>文字與插圖皆為 AI 生成（文字：Claude；插圖：OpenAI gpt-image）。 · <a href="../">回到筆記首頁</a></footer>
+</div>
+<script>
+(function(){
+  var L='all',G='all',cards=[].slice.call(document.querySelectorAll('.card'));
+  function apply(){var n=0;cards.forEach(function(c){var ok=(L==='all'||c.dataset.len===L)&&(G==='all'||c.dataset.genre===G);c.hidden=!ok;if(ok)n++;});document.getElementById('empty').style.display=n?'none':'block';
+    try{localStorage.setItem('shelf',JSON.stringify({L:L,G:G}))}catch(e){}}
+  function wire(id,key,set){var box=document.getElementById(id);box.addEventListener('click',function(e){var b=e.target.closest('button');if(!b)return;[].forEach.call(box.querySelectorAll('button'),function(x){x.classList.remove('on')});b.classList.add('on');set(b.dataset[key]);apply();});}
+  wire('fl','l',function(v){L=v});wire('fg','g',function(v){G=v});
+  try{var s=JSON.parse(localStorage.getItem('shelf')||'{}');if(s.L){L=s.L;G=s.G||'all';[].forEach.call(document.querySelectorAll('#fl button'),function(b){b.classList.toggle('on',b.dataset.l===L)});[].forEach.call(document.querySelectorAll('#fg button'),function(b){b.classList.toggle('on',b.dataset.g===G)});if(!document.querySelector('#fg button.on')){G='all';document.querySelector('#fg button').classList.add('on')}}}catch(e){}
+  apply();
+})();
+</script>
+</body>
+</html>
