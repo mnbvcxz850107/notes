@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>借我一點光</title>
+<meta name="description" content="颱風夜停電，插畫家蘇晚對著天井另一邊的窗戶喊：「你有沒有延長線？」對面的木工把一條橘色的線丟了過來。從那條線開始，有些東西就再也收不回去了。">
+<meta property="og:title" content="借我一點光">
+<meta property="og:description" content="颱風夜停電，插畫家蘇晚對著天井另一邊的窗戶喊：「你有沒有延長線？」對面的木工把一條橘色的線丟了過來。從那條線開始，有些東西就再也收不回去了。">
+<meta property="og:image" content="https://mnbvcxz850107.github.io/notes/story/lend-me-a-light/img/01-cover.webp">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0f141c;--bg2:#141922;--panel:#1b2230;--line:#2a3340;--ink:#e8ecf3;--ink2:#a3adbd;--dim:#6f7a8c;--amber:#e5b567;--amber2:#f3cf8a;--serif:"Noto Serif TC","Songti TC","PingFang TC","Microsoft JhengHei",serif}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--serif);line-height:1.95;-webkit-font-smoothing:antialiased}
+a{color:var(--amber);text-decoration:none}a:hover{color:var(--amber2)}
+#bar{position:fixed;top:0;left:0;height:3px;width:0;background:linear-gradient(90deg,var(--amber),var(--amber2));z-index:50}
+.back{position:absolute;top:18px;left:0;right:0;z-index:5;max-width:760px;margin:0 auto;padding:0 24px;font-size:.85rem;letter-spacing:.15em}
+.back a{background:rgba(15,20,28,.55);padding:6px 12px;border-radius:999px;border:1px solid rgba(255,255,255,.12);color:var(--ink2)}
+.hero{position:relative;height:clamp(460px,78vh,820px);display:flex;align-items:flex-end;overflow:hidden;background:#0a0e14}
+.hero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.75}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(15,20,28,.15) 0%,rgba(15,20,28,.2) 45%,rgba(15,20,28,.97) 100%)}
+.hero .in{position:relative;z-index:2;width:100%;max-width:760px;margin:0 auto;padding:60px 24px 56px}
+.kicker{color:var(--amber);letter-spacing:.35em;font-size:.8rem;margin-bottom:14px}
+h1{font-size:clamp(2.4rem,7vw,4.2rem);font-weight:700;letter-spacing:.12em;margin:0 0 14px;line-height:1.2;text-shadow:0 4px 30px rgba(0,0,0,.6)}
+.tagline{color:var(--ink2);font-size:1.05rem;max-width:560px;margin:0 0 22px}
+.meta{display:flex;flex-wrap:wrap;gap:10px 22px;color:var(--dim);font-size:.85rem;letter-spacing:.08em}.meta b{color:var(--ink2);font-weight:600}
+.wrap{max-width:720px;margin:0 auto;padding:24px 24px 80px}
+.toc{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:20px 24px;margin:8px 0 48px}
+.toc h3{margin:0 0 10px;font-size:.85rem;letter-spacing:.3em;color:var(--amber);font-weight:600}
+.toc ol{margin:0;padding:0;list-style:none;display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:6px 18px}
+.toc li a{color:var(--ink2);font-size:.95rem;display:block;padding:3px 0;border-bottom:1px dashed var(--line)}.toc li a:hover{color:var(--amber2)}
+.chapter{margin-bottom:64px}
+.chapter h2{font-size:1.65rem;letter-spacing:.2em;margin:56px 0 28px;padding-top:20px;border-top:1px solid var(--line);color:var(--amber2);font-weight:600}
+.chapter h2 .sp{display:inline-block;width:.8em}
+.chapter:first-of-type h2{border-top:0;padding-top:0;margin-top:0}
+.chapter p{margin:0 0 1.35em;font-size:1.08rem;text-align:justify;text-justify:inter-ideograph}
+.chapter p.letter{background:var(--panel);border-left:3px solid var(--amber);padding:16px 20px;border-radius:0 8px 8px 0;color:var(--ink2);font-size:1.02rem}
+.chapter p.brk{text-align:center;color:var(--dim);letter-spacing:.5em;margin:28px 0}
+.fin{text-align:center!important;color:var(--dim);letter-spacing:.5em;margin-top:40px!important}
+figure.ill{margin:36px -24px 40px}figure.ill img{display:block;width:100%;height:auto;box-shadow:0 20px 50px rgba(0,0,0,.5)}
+figure.ill figcaption{color:var(--dim);font-size:.86rem;text-align:center;margin-top:12px;letter-spacing:.06em;padding:0 24px}
+@media(min-width:900px){figure.ill{margin:40px -120px 44px}figure.ill img{border-radius:10px}}
+.after{border-top:1px solid var(--line);margin-top:40px;padding-top:28px;color:var(--dim);font-size:.9rem;line-height:1.8}.after b{color:var(--ink2)}
+.top{display:inline-block;margin-top:14px;font-size:.85rem;letter-spacing:.15em;margin-right:18px}
+</style>
+</head>
+<body>
+<div id="bar"></div>
+<header class="hero">
+  <div class="back"><a href="../">← 回到書架</a></div>
+  <img src="img/01-cover.webp" alt="借我一點光" fetchpriority="high">
+  <div class="in">
+    <div class="kicker">短篇小說 · 言情</div>
+    <h1>借我一點光</h1>
+    <p class="tagline">颱風夜停電，插畫家蘇晚對著天井另一邊的窗戶喊：「你有沒有延長線？」對面的木工把一條橘色的線丟了過來。從那條線開始，有些東西就再也收不回去了。</p>
+    <div class="meta"><span>全文 <b>8,360</b> 字</span><span>閱讀約 <b>28</b> 分鐘</span><span>插圖 <b>13</b> 幅</span></div>
+  </div>
+</header>
+<main class="wrap">
+  <nav class="toc"><h3>目錄</h3><ol>
+<li><a href="#ch1">第一章 · 停電</a></li>
+<li><a href="#ch2">第二章 · 延長線</a></li>
+<li><a href="#ch3">第三章 · 對窗</a></li>
+<li><a href="#ch4">第四章 · 木屑</a></li>
+<li><a href="#ch5">第五章 · 雨傘</a></li>
+<li><a href="#ch6">第六章 · 鑿刀</a></li>
+<li><a href="#ch7">第七章 · 抽屜</a></li>
+<li><a href="#ch8">第八章 · 那把椅子</a></li>
+<li><a href="#ch9">第九章 · 花蓮</a></li>
+<li><a href="#ch10">第十章 · 颱風</a></li>
+<li><a href="#ch11">第十一章 · 燈</a></li>
+  <li><a href="#comments" data-nb-toc="1">留言板</a></li>
+</ol></nav>
+<section class="chapter" id="ch1">
+<h2>第一章<span class=sp></span>停電</h2>
+<p>停電的時候，蘇晚正在畫一隻貓的第三根鬍鬚。</p>
+<p>颱風從傍晚開始，雨打在鐵窗上像有人一直在敲。她的公寓在中山區一條老巷子裡，五樓，一九七〇年代的房子，隔音很差，可是租金便宜，而且有一個朝著天井的大窗戶。她是插畫家，接案的，工作室就是客廳的那張桌子。畫貓的案子明天早上要交。</p>
+<p>九點四十分，燈滅了。</p>
+<p>不是整棟樓。她走到窗邊，看到天井對面的窗戶還亮著——四樓、五樓、六樓，都亮著。只有她這一戶是黑的。她去看電箱，總開關跳了，她推回去，「啪」一聲又跳掉。再推，再跳。</p>
+<p>她站在黑暗裡，聽著雨。手機的電量百分之二十三。畫圖用的平板電量百分之十一。明天早上九點要交。</p>
+<p>她想了三分鐘，然後她做了一件她平常絕對不會做的事。</p>
+<p>她打開窗戶，對著天井對面那扇亮著的窗戶喊：「不好意思——」</p>
+<p>雨聲太大。她喊了第二次，大聲一點。</p>
+<p>對面五樓的窗戶開了。一個男人探出頭來，三十幾歲，短髮，穿一件灰色的T恤，肩膀很寬。他看著她，隔著大約四公尺的天井，隔著雨。</p>
+<figure class="ill"><img src="img/02-window-call.webp" alt="「妳要我從這裡拉一條線給妳？」" loading="lazy" width="1600" height="900"><figcaption>「妳要我從這裡拉一條線給妳？」</figcaption></figure>
+<p>「妳說什麼？」</p>
+<p>「我停電了。」蘇晚喊，「只有我這一戶。你那邊有電嗎？」</p>
+<p>「有。」</p>
+<p>「那——」她忽然覺得這個要求很荒謬，可是她已經開口了，「你有沒有延長線？很長的那種？」</p>
+<p>男人看著她，看了兩秒。然後他的臉上出現一個很淡的表情，像是在忍住笑。</p>
+<p>「妳要我從這裡拉一條線給妳？」</p>
+<p>「我知道很奇怪。」蘇晚說，「可是我明天早上要交稿，我的平板快沒電了。我可以付你電費。」</p>
+<p>男人沒有回答。他把頭縮回去了。</p>
+<p>蘇晚站在窗邊，雨從窗戶飄進來，打在她的手臂上。她想，算了，他大概覺得我是瘋子。她正要把窗戶關上——</p>
+<p>對面的窗戶又開了。男人手裡拿著一捆橘色的延長線，工地用的那種，很粗。他把一頭綁在一個什麼東西上——她看不清楚——然後把另一頭拿在手裡，估了一下距離。</p>
+<p>「接好。」他說。</p>
+<p>然後他把延長線丟過來。</p>
+</section>
+<section class="chapter" id="ch2">
+<h2>第二章<span class=sp></span>延長線</h2>
+<p>線飛過天井，穿過雨，落在她的窗台上。她伸手抓住的時候，手是抖的，不知道是冷的還是別的。</p>
+<p>「插頭在那一頭。」男人說，「我這邊接好了。妳插上去試試看。」</p>
+<p>她把線拉進來，找到插頭，接上平板的充電器。充電的圖示亮了。</p>
+<p>她回到窗邊。「有了。謝謝。真的。」</p>
+<p>「不客氣。」男人說。他還站在窗邊，沒有要關窗的意思。「妳畫什麼的？」</p>
+<p>「插畫。明天要交一隻貓。」</p>
+<p>「什麼樣的貓？」</p>
+<p>蘇晚愣了一下。從來沒有人問過她這個。客戶會問「可以再可愛一點嗎」，編輯會問「可以趕上截稿嗎」，可是沒有人問過「什麼樣的貓」。</p>
+<p>「一隻很老的貓。」她說，「十七歲。牠的主人是一個八十歲的老太太，出版社要出她的回憶錄，封面要放這隻貓。牠已經死了，我只有一張照片。」</p>
+<p>男人點點頭。「那要畫得像牠活著的時候。」</p>
+<p>「對。」</p>
+<p>「妳畫得出來嗎？」</p>
+<p>蘇晚看著他。四公尺，雨，兩扇窗戶。他的臉在他那邊的燈光裡，一半亮，一半暗。</p>
+<p>「不知道。」她說，「我在試。」</p>
+<p>「那妳去畫吧。」他說，「線我不會收。」</p>
+<p>他把窗戶關上了。</p>
+<p>蘇晚回到桌子前面，平板充著電，橘色的線從窗戶拉進來，橫過她的客廳。她看著那條線。她想，這是她三年來第一次讓一個東西從外面進到她的房間裡。</p>
+<p>她畫完了那隻貓。凌晨三點。她畫牠躺在一個老太太的膝蓋上，眼睛半閉著，鬍鬚很長，其中有一根是白的。</p>
+<figure class="ill"><img src="img/03-drawing-cat.webp" alt="鬍鬚很長，其中有一根是白的。" loading="lazy" width="1600" height="900"><figcaption>鬍鬚很長，其中有一根是白的。</figcaption></figure>
+<p>她抬起頭的時候，對面的窗戶是黑的。他睡了。橘色的線還在，從他的窗戶到她的窗戶，在雨裡，微微地晃。</p>
+</section>
+<section class="chapter" id="ch3">
+<h2>第三章<span class=sp></span>對窗</h2>
+<p>第二天颱風走了。她的電也修好了，是電表的問題，台電的人來換了一個。</p>
+<p>她把延長線收好，捲成一捆，站在窗邊。對面五樓的窗戶開著，可是沒有人。她不知道他什麼時候在。她不知道他叫什麼。</p>
+<p>她在窗台上放了一盒東西——她早上去買的，巷口那家的鳳梨酥——和一張紙，寫著「謝謝。線在這裡，你方便的時候拿」。然後她想了一下，這樣他要怎麼拿？她總不能再叫他丟一次。</p>
+<p>她把紙拿回來，在後面加了一行：「或者我拿過去。你住幾號？」</p>
+<p>然後她把紙和鳳梨酥放回窗台上，等。</p>
+<p>等了一個下午。她畫了一半的圖，改了三次，每改一次就看一次窗戶。</p>
+<p>五點半，對面的窗戶有人了。</p>
+<p>他看到窗台上的東西，看到紙，看了很久——她假裝在畫圖，可是她的餘光全部在那裡。然後他抬起頭，看向她。</p>
+<p>「二十三號。」他隔著天井說，「五樓。門口有一台腳踏車。」</p>
+<p>「好。」</p>
+<p>「妳叫什麼？」</p>
+<p>「蘇晚。」她說。晚上的晚。</p>
+<p>「沈聿。」他說。</p>
+<p>他沒有解釋是哪個聿。她後來查了，是「筆」的意思，很少見的字。她想這個名字很適合他，因為他說話很少，每一個字都像是選過的。</p>
+<p>她把鳳梨酥拿過去。二十三號，五樓，門口真的有一台腳踏車，很舊的，鋼管車架。她按門鈴，他開門，屋子裡有一種味道——木頭的，新鮮的，像剛鋸開的樹。</p>
+<figure class="ill"><img src="img/04-pineapple-cake.webp" alt="走到三樓的時候，她發現自己的心跳很快。" loading="lazy" width="1600" height="900"><figcaption>走到三樓的時候，她發現自己的心跳很快。</figcaption></figure>
+<p>「你做木工？」</p>
+<p>「嗯。」他接過鳳梨酥，「進來坐？」</p>
+<p>她沒有進去。她說她還有圖要畫。他說好。她轉身下樓，走到三樓的時候，發現自己的心跳很快，快到她必須停下來，扶著樓梯的扶手，站一會兒。</p>
+<p>她三十歲了。她跟自己說，妳三十歲了。</p>
+<p>可是心跳不理她。</p>
+</section>
+<section class="chapter" id="ch4">
+<h2>第四章<span class=sp></span>木屑</h2>
+<p>之後的三個星期，他們用窗戶講話。</p>
+<p>不是每天。有時候幾天一次。她在畫圖的時候會聽到對面有聲音——鋸子，砂紙，或者一種很輕的、有節奏的敲擊——然後她會抬頭，他的窗戶開著，他在裡面做什麼，背對著她。有時候他會轉過來，看到她，點一下頭。有時候不會。</p>
+<p>她開始畫他。不是故意的。她畫圖的時候手會自己動，畫到後來發現紙上是一個背影，肩膀很寬，低著頭，手裡拿著什麼。她把那些畫撕掉。撕了幾張以後，她不撕了，收進抽屜裡。</p>
+<p>有一天他問她：「妳那隻貓，交了嗎？」</p>
+<p>「交了。編輯說老太太看了哭了。」</p>
+<p>「為什麼哭？」</p>
+<p>「她說那根白鬍鬚，是她十年前幫牠剪的。」蘇晚說，「她以為沒有人會注意到。」</p>
+<p>沈聿沒有說話。可是他停下手裡的東西，看著她，看了很久。天井裡有風，把她的頭髮吹起來。</p>
+<p>「妳注意到了。」他說。</p>
+<p>「照片裡有。我就畫了。」</p>
+<p>「大部分人看照片，看不到白鬍鬚。」他說，「他們看到一隻貓。」</p>
+<p>她不知道怎麼回答。她低下頭，假裝在整理桌上的筆。她的耳朵很熱。</p>
+<p>「我在做一把椅子。」他忽然說，「妳要不要來看？」</p>
+<p class="brk">✦</p>
+<p>他的工作室是他的客廳。跟她一樣，只是她的桌子上是紙和筆，他的桌子上是木頭和刀。</p>
+<p>椅子放在中間。還沒有做好，只有骨架，四隻腳和椅背，木頭是淺色的，上面還有鉛筆畫的線。地上全是木屑，踩上去很軟。</p>
+<p>「這是什麼木頭？」</p>
+<p>「檜木。台灣的。」沈聿說，「一個客人的阿嬤留下來的老衣櫃，壞了，他捨不得丟，叫我做成一把椅子。」</p>
+<p>蘇晚蹲下來看。她看到木頭上有一些很細的紋路，還有一個很小的、圓形的洞。</p>
+<p>「這裡有一個洞。」</p>
+<p>「蟲蛀的。八十年前的。」沈聿在她旁邊蹲下來。他很近。她聞到那種味道，木頭的，新鮮的，還有一點點汗，「客人說要留著。他說他小時候，會把手指伸進去。」</p>
+<p>蘇晚看著那個洞。她想伸手去摸，可是她沒有。她的手放在膝蓋上。</p>
+<p>「你可以摸。」沈聿說。</p>
+<p>她伸出手。木頭是溫的，比她想的溫。她的手指碰到那個洞的邊緣，很光滑，八十年的光滑。</p>
+<figure class="ill"><img src="img/05-wormhole.webp" alt="沈聿的手在旁邊。離她的手大概五公分。" loading="lazy" width="1600" height="900"><figcaption>沈聿的手在旁邊。離她的手大概五公分。</figcaption></figure>
+<p>沈聿的手在旁邊。離她的手大概五公分。他沒有動。她也沒有動。</p>
+<p>「很漂亮。」她說。她的聲音比她想的小。</p>
+<p>「還沒做好。」他說。</p>
+<p>她站起來。太快了，頭有一點暈。她說她要回去了，他說好，他送她到門口。門口那台腳踏車，她不小心碰到了，倒了，很大聲。</p>
+<p>「對不起——」</p>
+<p>「沒關係。」他把腳踏車扶起來。他笑了。她第一次看到他笑，不是忍住的那種，是真的。他的眼角有紋路。</p>
+<p>她走下樓。三樓，她又停下來了。</p>
+</section>
+<section class="chapter" id="ch5">
+<h2>第五章<span class=sp></span>雨傘</h2>
+<p>她的鉛筆用完了，是在一個星期五的晚上。</p>
+<p>不是普通的鉛筆，是一種很軟的、畫陰影用的炭筆，只有一間店有賣，在中山北路的巷子裡，走路二十分鐘。外面在下雨。她本來想算了，明天再去，可是她看著桌上那張畫到一半的圖——一隻鳥，翅膀還沒有影子——覺得今天晚上不畫完會睡不著。</p>
+<p>她拿了傘，走下樓。</p>
+<p>一樓的門口，沈聿站在那裡。他在收腳踏車，褲管濕了一半。</p>
+<p>「妳要出去？」</p>
+<p>「買炭筆。」</p>
+<p>「這麼晚？」</p>
+<p>「用完了。」</p>
+<p>他看著她，看了一下她手裡的傘——很小的一把，折疊的，傘骨有一根歪了——然後他把自己的傘打開。是一把很大的黑傘，長柄的。</p>
+<p>「我陪妳。」他說，「妳那把傘會漏。」</p>
+<p>她想說不用。可是她看著那把黑傘，看著雨，然後她走到傘下面。</p>
+<p>二十分鐘。</p>
+<p>一把傘，兩個人，肩膀會碰到。不是每一步，是走到人行道變窄的地方，或者要閃一台停在路邊的機車的時候。碰一下。分開。再碰一下。她數了。從她家到文具店，碰了十一次。</p>
+<figure class="ill"><img src="img/06-umbrella.webp" alt="從她家到文具店，碰了十一次。她數的。" loading="lazy" width="1600" height="900"><figcaption>從她家到文具店，碰了十一次。她數的。</figcaption></figure>
+<p>他們沒有講很多話。他問她畫什麼，她說一隻鳥。他問什麼鳥，她說不知道，客戶說「一隻看起來要飛走的鳥」。他說那很難，她說對。然後他們就走。雨打在傘上，很大聲，可是傘下面很安靜。</p>
+<p>第七次碰到肩膀的時候，他說：「妳走靠裡面一點。」</p>
+<p>「為什麼？」</p>
+<p>「外面會濕。」</p>
+<p>她往裡面走了一步。這樣肩膀就一直碰著了。她不知道這樣是不是他的意思。她不敢問。</p>
+<p>文具店快關門了，老闆認得她，說「蘇小姐又來了」，她買了六支炭筆，老闆看了一眼站在門口收傘的沈聿，什麼都沒有說，可是把炭筆的袋子打結的時候打了兩次。</p>
+<p>回去的路上，肩膀碰了十四次。她數的。</p>
+<p>到了一樓門口，他把傘收起來，甩了甩水。</p>
+<p>「謝謝。」她說。</p>
+<p>「炭筆。」他說，「妳畫鳥的時候，翅膀的影子，不要畫太黑。」</p>
+<p>「為什麼？」</p>
+<p>「要飛走的鳥，影子是輕的。」他說，「因為牠快要不在那裡了。」</p>
+<p>她愣住了。他點了一下頭，推著腳踏車進去了。</p>
+<p>她站在一樓門口，手裡拿著六支炭筆，衣服的一邊肩膀是乾的，另一邊有一點濕。</p>
+<p>那天晚上她畫完了那隻鳥。翅膀的影子很輕。客戶說：「就是這個。牠看起來馬上就要飛了。」</p>
+</section>
+<section class="chapter" id="ch6">
+<h2>第六章<span class=sp></span>鑿刀</h2>
+<p>「妳想試試看嗎？」</p>
+<p>那是又過了一個星期。她去看椅子的進度——她告訴自己是去看椅子。椅子的椅面做好了，他在刻椅背上的紋路，用一把很小的鑿刀，一下一下，木屑像雪一樣掉。</p>
+<p>「我不會。」</p>
+<p>「我教妳。」</p>
+<p>他把鑿刀遞給她。她接過來，握著。手柄是木頭的，被他握了很多年，握的地方比其他地方顏色深。</p>
+<p>「不是這樣握。」他說。</p>
+<p>然後他的手蓋上來。</p>
+<figure class="ill"><img src="img/07-chisel.webp" alt="「不要用力。讓刀自己走。」" loading="lazy" width="1600" height="900"><figcaption>「不要用力。讓刀自己走。」</figcaption></figure>
+<p>蓋在她的手上，把她的手指一根一根調整位置。他的手很大，很粗，掌心有繭。他的手是溫的。她的手在他的手裡，握著一把鑿刀，對著一塊八十年的檜木。</p>
+<p>「這樣。」他說。他的聲音在她耳朵旁邊，很近，「不要用力。讓刀自己走。」</p>
+<p>她推了一下。木屑掉下來，一小片，捲起來的。</p>
+<p>「對。」他說。</p>
+<p>他的手還在。他沒有拿開。她的心跳很大聲，大到她覺得他一定聽得到，大到她覺得整間屋子都是她的心跳。</p>
+<p>「再一次。」他說。</p>
+<p>她再推了一次。第二片木屑。</p>
+<p>然後他的手拿開了。很慢，像是在確認她可以自己握住。她握住了。她繼續推，第三片，第四片。他站在旁邊看。她不敢抬頭。</p>
+<p>「妳學得很快。」他說。</p>
+<p>「你教得好。」</p>
+<p>「不是。」他說，「是妳的手很穩。畫畫的人的手。」</p>
+<p>她放下鑿刀。她的手心全是汗。她看著那塊木頭，看著她刻出來的那一小段線，歪的，可是是她刻的。</p>
+<p>「沈聿，」她說，「你為什麼要教我？」</p>
+<p>他沒有立刻回答。他把鑿刀拿起來，放回工具架上，一把一把排好。</p>
+<p>「因為妳看得到白鬍鬚。」他說，「我想看看妳的手會做出什麼。」</p>
+</section>
+<section class="chapter" id="ch7">
+<h2>第七章<span class=sp></span>抽屜</h2>
+<p>他看到那些畫，是一個意外。</p>
+<p>那天他來她這裡——第一次來。他說要看看那條延長線當初是從哪裡拉進來的，「工程上的好奇」。她讓他進來了。她的客廳很小，一張桌子，一張床，一個書架，一個窗戶。他站在窗邊，看著對面自己的窗戶，說：「原來從這邊看是這樣。」</p>
+<p>然後他要找一張紙寫東西。她說桌上有。他拉開桌子的抽屜。</p>
+<p>不是那個抽屜。是另一個。</p>
+<p>抽屜裡是十幾張畫。都是一個背影。肩膀很寬，低著頭，手裡拿著什麼。有的只畫了幾筆，有的畫得很細，細到看得出T恤的皺褶。最上面那一張，是他蹲在椅子旁邊，側臉，眼角有紋路。</p>
+<figure class="ill"><img src="img/08-drawer.webp" alt="「這是我。」不是問句。" loading="lazy" width="1600" height="900"><figcaption>「這是我。」不是問句。</figcaption></figure>
+<p>她看到他拉開抽屜的時候，整個人像被釘在地上。</p>
+<p>他沒有說話。他一張一張看。看得很慢。她站在他後面，離他兩公尺，覺得自己要死了，覺得整個房間的空氣都不見了，覺得她應該衝過去把抽屜關上，可是她的腳不動。</p>
+<p>他看完了。他把畫放回去，一張一張，按原本的順序。然後他把抽屜關上。</p>
+<p>他轉過身。</p>
+<p>「這是我。」他說。</p>
+<p>不是問句。</p>
+<p>她的臉燙得像發燒。她想說「不是」，想說「那是隨便畫的」，想說「那是練習」。她張開嘴，什麼都沒有出來。</p>
+<p>「妳什麼時候開始畫的？」</p>
+<p>「……延長線那天。」她說。她的聲音小到自己都聽不到，「隔天。」</p>
+<p>他站在那裡，看著她。他的表情她讀不懂——不是笑，不是驚訝，是一種很安靜的東西，像他在刻木頭的時候。</p>
+<p>「蘇晚。」他說。</p>
+<p>「嗯。」</p>
+<p>「妳畫我的時候，我在做什麼？」</p>
+<p>「做椅子。」</p>
+<p>「妳的椅子。」他說，「我在做妳的椅子，妳在畫我。」</p>
+<p>她說不出話。</p>
+<p>他走過來。兩公尺變成一公尺。他站在她面前，低下頭，離她很近，近到她看得到他的睫毛。</p>
+<p>「我可以再看一次嗎？」他說，「最上面那一張。」</p>
+<p>她點頭。</p>
+<p>他沒有去拉抽屜。他伸出手，碰了一下她的臉——很輕，用手指的背面，從她的太陽穴到下巴，像在確認什麼。</p>
+<figure class="ill"><img src="img/09-touch.webp" alt="「妳畫得很像。可是我看妳的時候，比那個更——」" loading="lazy" width="1600" height="900"><figcaption>「妳畫得很像。可是我看妳的時候，比那個更——」</figcaption></figure>
+<p>「妳畫得很像。」他說，「可是我看妳的時候，比那個更——」</p>
+<p>他停住了。他把手放下。</p>
+<p>「我要回去了。」他說，「椅子還沒做完。」</p>
+<p>他走了。她站在房間中央，站了很久，然後她坐到地上。她的臉還在燙。她把手放在他碰過的地方。</p>
+<p>那天晚上她沒有畫圖。她躺在床上，看著天花板，聽著對面傳來的鑿刀的聲音，一下，一下。她想：他知道了。</p>
+<p>她想：他沒有走。</p>
+</section>
+<section class="chapter" id="ch8">
+<h2>第八章<span class=sp></span>那把椅子</h2>
+<p>椅子做好的那天，下雨。</p>
+<p>不是颱風，是梅雨，細細的，一整天。她在窗邊畫圖，聽到對面的聲音停了。她抬頭，沈聿站在窗邊，手裡沒有東西。</p>
+<p>「做好了。」他說。</p>
+<p>「客人要來拿了？」</p>
+<p>「明天。」他說，「今天晚上，妳要不要來坐坐看？」</p>
+<p>她去了。</p>
+<p>椅子放在他客廳的中間，燈打在上面。檜木的顏色是淺蜜色的，椅背上有她刻的那一小段線——他沒有磨掉，他把它留著，在其他的紋路中間，歪歪的，像一個記號。那個蟲蛀的洞在椅面的邊緣，他把它磨得很圓。</p>
+<figure class="ill"><img src="img/10-chair.webp" alt="「我量的是妳的。」" loading="lazy" width="1600" height="900"><figcaption>「我量的是妳的。」</figcaption></figure>
+<p>「坐。」</p>
+<p>她坐下來。</p>
+<p>椅子是溫的。不是因為燈，是木頭本身。它的形狀剛好接住她的背，椅面的高度剛好讓她的腳可以平放在地上。她坐在一把八十年的老衣櫃變成的椅子上，在一個木工的客廳裡，外面下著雨。</p>
+<p>「怎麼樣？」</p>
+<p>「很好。」她說，「很——」她找不到字。</p>
+<p>沈聿站在她面前。他沒有坐。他看著她坐在椅子上，看了很久。</p>
+<p>「我做這把椅子的時候，」他說，「量了很多次尺寸。客人給了他阿嬤的身高。可是我做到後來，發現我量的不是他阿嬤的。」</p>
+<p>蘇晚抬頭看他。</p>
+<p>「我量的是妳的。」他說，「妳每次來，蹲在旁邊看，我就看妳的背，妳的腿，妳坐著的樣子。我做到一半才發現。」</p>
+<p>雨打在窗戶上。她坐在椅子上，不能動。</p>
+<p>「客人明天來拿。」沈聿說，「我會再做一把。用同一塊木頭剩下的。那一把是妳的尺寸。」</p>
+<p>「沈聿——」</p>
+<p>「我知道。」他說，「妳不用說什麼。我只是想讓妳知道，這把椅子是照妳做的。妳坐起來很好，是因為它本來就是妳的。」</p>
+<p>她站起來。太快了，椅子往後移了一點，在地板上發出聲音。她站在他面前，離他很近，近到她要抬頭才能看到他的眼睛。</p>
+<p>她想說很多話。她想說她三年前有一個人，那個人走了，她從此不讓任何東西從外面進到她的房間。她想說那些畫，她一張都沒有撕，以後也不會。她想說她在三樓的樓梯停過很多次。</p>
+<p>她說的是：「我要回去了。」</p>
+<p>他點點頭。他沒有攔她。他送她到門口。她走下樓，一樓，二樓，三樓——她停下來。她扶著扶手，站了很久。</p>
+<p>然後她沒有下去。她轉身，走回五樓。</p>
+<p>門還開著。他站在門口，像是知道她會回來。</p>
+<p>「我忘了東西。」她說。</p>
+<p>「什麼？」</p>
+<p>她不知道。她站在門口，看著他。</p>
+<p>「我不知道。」她說，「可是我忘了。」</p>
+<p>他伸出手，把她拉進去，把門關上。</p>
+<p>他沒有做別的。他只是抱著她。在門的後面，在木頭的味道裡，在雨聲裡。她的臉貼在他的胸口，聽到他的心跳——也很快。跟她一樣快。</p>
+<figure class="ill"><img src="img/11-embrace.webp" alt="她的臉貼在他的胸口，聽到他的心跳——也很快。" loading="lazy" width="1600" height="900"><figcaption>她的臉貼在他的胸口，聽到他的心跳——也很快。</figcaption></figure>
+<p>「妳的手很冷。」他說。</p>
+<p>「我知道。」</p>
+<p>「我幫妳暖。」</p>
+</section>
+<section class="chapter" id="ch9">
+<h2>第九章<span class=sp></span>花蓮</h2>
+<p>他要去花蓮，是她在六月知道的。</p>
+<p>不是他說的。是那個來拿椅子的客人說的，客人是他的朋友，在門口跟她閒聊，說「阿聿下個月就回花蓮了，這裡的工作室要收了，妳知道吧？」她說她知道。她不知道。</p>
+<p>那天晚上她沒有去他那裡。她坐在自己的窗邊，看著對面亮著的窗戶。他在裡面，在做她的那把椅子。她看得到木屑在燈光裡飛。</p>
+<p>她想起三年前。那個人也是這樣，先是說要去別的城市工作，然後說會回來，然後就沒有了。她記得那種等的感覺。她記得她把窗戶關上的那一天。</p>
+<p>十點，對面的窗戶開了。</p>
+<p>「妳今天沒有來。」沈聿說。</p>
+<p>「嗯。」</p>
+<p>「怎麼了？」</p>
+<p>她看著他。四公尺，兩扇窗戶，中間沒有雨。</p>
+<p>「你要去花蓮。」她說。</p>
+<p>他安靜了幾秒。</p>
+<p>「對。」</p>
+<p>「你沒有說。」</p>
+<p>「我在想怎麼說。」他說，「我爸的工作室在花蓮。他七十歲了，手不行了。他叫我回去接。我答應了，在認識妳之前。」</p>
+<p>「什麼時候？」</p>
+<p>「七月。」</p>
+<p>蘇晚沒有說話。她想把窗戶關上。她的手已經放在窗框上了。</p>
+<p>「蘇晚。」他說。</p>
+<p>她停下來。</p>
+<p>「我不是要走。」他說，「我是要換一個地方做椅子。花蓮到台北兩個小時。我可以每個星期回來。或者——」他停了一下，「或者妳可以來。那裡有海。妳可以畫海。」</p>
+<p>「我在這裡有工作。」</p>
+<p>「我知道。」</p>
+<p>「我不能說走就走。」</p>
+<p>「我知道。」他說，「我沒有要妳走。我只是在說，那裡有一扇窗戶，是空的。」</p>
+<p>她的手還在窗框上。她看著他，看著他那邊的燈，看著他背後那把做到一半的椅子。</p>
+<p>「我要想一下。」她說。</p>
+<p>「好。」</p>
+<p>她把窗戶關上了。這一次，關得很慢。</p>
+</section>
+<section class="chapter" id="ch10">
+<h2>第十章<span class=sp></span>颱風</h2>
+<p>七月的颱風，比上一次大。</p>
+<p>氣象局說是強颱，整個台北都在準備。蘇晚把窗戶的鐵窗鎖好，把桌子搬離窗邊，把平板充飽電。她做這些的時候，一直在看對面。</p>
+<p>對面的窗戶是黑的。</p>
+<p>他三天前走了。她沒有去送。他來敲過門，她沒有開。她站在門後面，聽他站了很久，然後聽他下樓。腳踏車推走的聲音。然後沒有了。</p>
+<p>那把椅子，他放在她的門口。上面放了一張紙：「妳的尺寸。窗戶是空的。」</p>
+<p>她把椅子搬進來，放在窗邊。她坐在上面，畫圖，畫海。她沒有看過花蓮的海，她憑想像畫。畫了三天，畫了幾十張，每一張都不像。</p>
+<p>颱風晚上九點登陸。雨打在鐵窗上，像有人一直在敲。</p>
+<p>九點四十分，燈滅了。</p>
+<p>她笑了。她坐在黑暗裡，在那把椅子上，笑了很久，笑到後來變成別的東西。整棟樓都停電了，這次不是只有她。天井對面的窗戶全是黑的。沒有人可以丟一條線給她。</p>
+<p>她的手機響了。</p>
+<figure class="ill"><img src="img/12-typhoon-call.webp" alt="「我這裡的窗戶，是開的。我在等。」" loading="lazy" width="1600" height="900"><figcaption>「我這裡的窗戶，是開的。我在等。」</figcaption></figure>
+<p>「妳那邊停電了嗎？」沈聿的聲音。有風的聲音，很大。</p>
+<p>「停了。整棟。」</p>
+<p>「我這邊也是。」他說，「花蓮風很大。我在工作室，一個人。我爸在家。」</p>
+<p>「你在做什麼？」</p>
+<p>「坐在一把椅子上。」他說，「妳呢？」</p>
+<p>「一樣。」</p>
+<p>兩個人都沒有說話。電話裡是風，是雨，是兩百公里外的另一場風雨。</p>
+<p>「蘇晚，」他說，「我可以問妳一件事嗎？」</p>
+<p>「嗯。」</p>
+<p>「三年前，是誰？」</p>
+<p>她在黑暗裡閉上眼睛。</p>
+<p>「一個說會回來的人。」她說。</p>
+<p>「他沒有回來。」</p>
+<p>「沒有。」</p>
+<p>「所以妳把窗戶關了。」</p>
+<p>「對。」</p>
+<p>沈聿安靜了很久。風的聲音。然後他說：「我不會叫妳開窗戶。妳要開就開，不開就不開。可是我要告訴妳一件事。」</p>
+<p>「什麼？」</p>
+<p>「我這裡的窗戶，是開的。」他說，「風很大，雨進來了，我沒有關。我在等。」</p>
+<p>她握著手機。她的手在抖。</p>
+<p>「等什麼？」</p>
+<p>「等妳從對面丟一條線過來。」他說，「這次換妳。」</p>
+</section>
+<section class="chapter" id="ch11">
+<h2>第十一章<span class=sp></span>燈</h2>
+<p>她是隔天早上去的。</p>
+<p>颱風還沒有完全走，火車開了，可是很慢。她帶了一個背包，裡面是平板和幾支筆，還有那幾十張畫得不像的海。她沒有帶椅子。椅子太大了。</p>
+<p>火車到花蓮的時候是下午三點。雨停了，天是一種洗過的藍。她照著他給的地址走，走了二十分鐘，走到海邊。</p>
+<p>工作室在一間老房子裡，門口有一台腳踏車。她認得那台車。</p>
+<p>她站在門口。她沒有按門鈴。她站著，聽裡面的聲音——鋸子，砂紙，那種很輕的、有節奏的敲擊。</p>
+<p>然後她做了一件她平常絕對不會做的事。</p>
+<p>她繞到房子的側面。那裡有一扇窗戶，開著。窗戶裡面，他背對著她，低著頭，手裡拿著鑿刀。木屑像雪一樣掉。</p>
+<p>她把背包放下，從裡面拿出一樣東西。</p>
+<p>一條延長線。橘色的，工地用的，很粗。她從台北帶來的——他留在她窗台上的那一捆，她一直沒有還。</p>
+<p>她把一頭握在手裡。然後她對著窗戶說：「不好意思——」</p>
+<figure class="ill"><img src="img/13-hualien.webp" alt="「我停電了。我需要借一點光。」" loading="lazy" width="1600" height="900"><figcaption>「我停電了。我需要借一點光。」</figcaption></figure>
+<p>他的手停了。</p>
+<p>他轉過來。他看到她，站在窗外，手裡拿著一條橘色的線，背後是花蓮的海和洗過的天。</p>
+<p>他的臉上出現一個表情。不是忍住笑。是別的。是一個人等了很久、終於等到的那種。</p>
+<p>「我停電了。」蘇晚說。她的聲音在抖，「我需要借一點光。」</p>
+<p>他放下鑿刀。他走到窗邊。他們之間沒有天井，沒有四公尺，只有一扇窗戶的窗台。</p>
+<p>「接好。」她說。</p>
+<p>她把線遞過去。</p>
+<p>他接住的不是線。他接住的是她的手。他把她的手握在他的手裡，隔著窗台，握了很久。他的手是溫的。</p>
+<p>「妳的手很冷。」他說。</p>
+<p>「我知道。」</p>
+<p>「進來。」他說，「這裡有燈。」</p>
+<p>她從窗戶爬進去。很難看，背包卡住了，她差點摔倒，他接住她。她站在他的工作室裡，在木頭的味道裡，在花蓮的下午三點。</p>
+<p>牆邊有一把椅子。淺蜜色的，檜木。椅背上有一小段歪歪的線。</p>
+<p>「妳的尺寸。」他說，「我又做了一把。這樣兩邊都有。」</p>
+<p>她看著那把椅子，看著他，看著窗外的海。</p>
+<p>「我可能沒有辦法一直在這裡。」她說。</p>
+<p>「我知道。」</p>
+<p>「我有工作，我有台北的窗戶——」</p>
+<p>「我知道。」他說，「兩扇窗戶。中間有一條線。這樣就夠了。」</p>
+<p>他低下頭。她抬起頭。</p>
+<p>窗外的海很亮。工作室裡有燈。她的心跳很大聲，大到她覺得整個花蓮都聽得到。</p>
+<p>她不管了。</p>
+<p class="fin">（完）</p>
+</section>
+  <div class="after">
+    <b>關於這個故事</b><br>
+    老公寓的天井、四公尺的距離、一條延長線——這篇的所有心跳，都發生在很小的空間裡。<br>
+    文字與插圖皆為 AI 生成（文字：Claude；插圖：OpenAI gpt-image）。<br>
+    <a class="top" href="#top">↑ 回到最上面</a><a class="top" href="../">📚 回到書架</a>
+  </div>
+</main>
+<script>
+(function(){var b=document.getElementById('bar');function u(){var h=document.documentElement;var p=h.scrollTop/(h.scrollHeight-h.clientHeight);b.style.width=(p*100)+'%';}addEventListener('scroll',u,{passive:true});u();})();
+</script>
+<!-- nb-comments:start -->
+<link rel="stylesheet" href="https://unpkg.com/@waline/client@v3/dist/waline.css">
+<style>
+  .nb-comments{margin:72px 0 48px;padding-top:32px;border-top:1px solid var(--line,#2a3340)}
+  .nb-comments h2{margin:0 0 6px;font-size:22px;font-weight:700;color:var(--ink,var(--text,#e8ecf3))}
+  .nb-comments p.nb-hint{margin:0 0 20px;font-size:14px;color:var(--dim,var(--text-2,#a3adbd))}
+  .nb-comments #waline{
+    --waline-theme-color:var(--cyan,var(--teal,#6fd3c7));
+    --waline-active-color:var(--gold,#e5b567);
+    --waline-font-size:15px;
+    --waline-bgcolor:var(--panel,var(--bg-2,#141922));
+    --waline-bgcolor-light:var(--panel2,var(--bg-3,#1b2230));
+    --waline-border-color:var(--line,#2a3340);
+    --waline-color:var(--ink,var(--text,#e8ecf3));
+    --waline-light-grey:var(--dim,var(--text-2,#a3adbd));
+    --waline-dark-grey:var(--dim,var(--text-2,#a3adbd));
+    --waline-white:var(--panel,var(--bg-2,#141922));
+    --waline-disable-bgcolor:var(--panel2,var(--bg-3,#1b2230));
+    --waline-disable-color:var(--dim,var(--text-3,#7a968d));
+    --waline-info-bgcolor:var(--panel2,var(--bg-3,#1b2230));
+    --waline-info-color:var(--dim,var(--text-2,#a3adbd));
+    --waline-border:1px solid var(--line,#2a3340);
+    --waline-code-bgcolor:var(--panel2,var(--bg-3,#1b2230));
+    --waline-badge-color:var(--gold,#e5b567);
+    --waline-bq-color:var(--dim,#a3adbd);
+  }
+  .nb-comments .wl-panel{background:var(--panel,var(--bg-2,#141922))}
+  .nb-comments .wl-editor,.nb-comments .wl-input{background:var(--bg,#0b0e13)}
+</style>
+<section class="nb-comments" id="comments">
+  <div class="wrap">
+    <h2>留言板</h2>
+    <p class="nb-hint">看不懂、想補充、發現錯誤都歡迎留言；填個暱稱就能發。</p>
+    <div id="waline"></div>
+  </div>
+</section>
+<script type="module">
+  import { init } from 'https://unpkg.com/@waline/client@v3/dist/waline.js';
+  init({
+    el: '#waline',
+    serverURL: 'https://notes-comments.vercel.app',
+    path: location.pathname,
+    lang: 'zh-TW',
+    dark: true,
+    meta: ['nick'],
+    requiredMeta: ['nick'],
+    login: 'disable',
+    reaction: false,
+    pageview: false,
+    search: false,
+    imageUploader: false,
+    copyright: false,
+    locale: { placeholder: '寫下你的想法或問題⋯⋯（支援 Markdown）' }
+  });
+</script>
+<!-- nb-comments:end -->
+</body>
+</html>
