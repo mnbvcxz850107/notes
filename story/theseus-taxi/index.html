@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>忒修斯的計程車</title>
+<meta name="description" content="老簡的計程車是一九九八年的。引擎、車門、座椅、底盤全部換過，沒有一個零件是一九九八年的。一個念過哲學的乘客問他：那它還是同一台車嗎？">
+<meta property="og:title" content="忒修斯的計程車">
+<meta property="og:description" content="老簡的計程車是一九九八年的。引擎、車門、座椅、底盤全部換過，沒有一個零件是一九九八年的。一個念過哲學的乘客問他：那它還是同一台車嗎？">
+<meta property="og:image" content="https://mnbvcxz850107.github.io/notes/story/theseus-taxi/img/01-cover.webp">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0f141c;--bg2:#141922;--panel:#1b2230;--line:#2a3340;--ink:#e8ecf3;--ink2:#a3adbd;--dim:#6f7a8c;--amber:#e5b567;--amber2:#f3cf8a;--serif:"Noto Serif TC","Songti TC","PingFang TC","Microsoft JhengHei",serif}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--serif);line-height:1.95;-webkit-font-smoothing:antialiased}
+a{color:var(--amber);text-decoration:none}a:hover{color:var(--amber2)}
+#bar{position:fixed;top:0;left:0;height:3px;width:0;background:linear-gradient(90deg,var(--amber),var(--amber2));z-index:50}
+.back{position:absolute;top:18px;left:0;right:0;z-index:5;max-width:760px;margin:0 auto;padding:0 24px;font-size:.85rem;letter-spacing:.15em}
+.back a{background:rgba(15,20,28,.55);padding:6px 12px;border-radius:999px;border:1px solid rgba(255,255,255,.12);color:var(--ink2)}
+.hero{position:relative;height:clamp(460px,78vh,820px);display:flex;align-items:flex-end;overflow:hidden;background:#0a0e14}
+.hero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.75}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(15,20,28,.15) 0%,rgba(15,20,28,.2) 45%,rgba(15,20,28,.97) 100%)}
+.hero .in{position:relative;z-index:2;width:100%;max-width:760px;margin:0 auto;padding:60px 24px 56px}
+.kicker{color:var(--amber);letter-spacing:.35em;font-size:.8rem;margin-bottom:14px}
+h1{font-size:clamp(2.4rem,7vw,4.2rem);font-weight:700;letter-spacing:.12em;margin:0 0 14px;line-height:1.2;text-shadow:0 4px 30px rgba(0,0,0,.6)}
+.tagline{color:var(--ink2);font-size:1.05rem;max-width:560px;margin:0 0 22px}
+.meta{display:flex;flex-wrap:wrap;gap:10px 22px;color:var(--dim);font-size:.85rem;letter-spacing:.08em}.meta b{color:var(--ink2);font-weight:600}
+.wrap{max-width:720px;margin:0 auto;padding:24px 24px 80px}
+.toc{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:20px 24px;margin:8px 0 48px}
+.toc h3{margin:0 0 10px;font-size:.85rem;letter-spacing:.3em;color:var(--amber);font-weight:600}
+.toc ol{margin:0;padding:0;list-style:none;display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:6px 18px}
+.toc li a{color:var(--ink2);font-size:.95rem;display:block;padding:3px 0;border-bottom:1px dashed var(--line)}.toc li a:hover{color:var(--amber2)}
+.chapter{margin-bottom:64px}
+.chapter h2{font-size:1.65rem;letter-spacing:.2em;margin:56px 0 28px;padding-top:20px;border-top:1px solid var(--line);color:var(--amber2);font-weight:600}
+.chapter h2 .sp{display:inline-block;width:.8em}
+.chapter:first-of-type h2{border-top:0;padding-top:0;margin-top:0}
+.chapter p{margin:0 0 1.35em;font-size:1.08rem;text-align:justify;text-justify:inter-ideograph}
+.chapter p.letter{background:var(--panel);border-left:3px solid var(--amber);padding:16px 20px;border-radius:0 8px 8px 0;color:var(--ink2);font-size:1.02rem}
+.chapter p.brk{text-align:center;color:var(--dim);letter-spacing:.5em;margin:28px 0}
+.fin{text-align:center!important;color:var(--dim);letter-spacing:.5em;margin-top:40px!important}
+figure.ill{margin:36px -24px 40px}figure.ill img{display:block;width:100%;height:auto;box-shadow:0 20px 50px rgba(0,0,0,.5)}
+figure.ill figcaption{color:var(--dim);font-size:.86rem;text-align:center;margin-top:12px;letter-spacing:.06em;padding:0 24px}
+@media(min-width:900px){figure.ill{margin:40px -120px 44px}figure.ill img{border-radius:10px}}
+.after{border-top:1px solid var(--line);margin-top:40px;padding-top:28px;color:var(--dim);font-size:.9rem;line-height:1.8}.after b{color:var(--ink2)}
+.top{display:inline-block;margin-top:14px;font-size:.85rem;letter-spacing:.15em;margin-right:18px}
+</style>
+</head>
+<body>
+<div id="bar"></div>
+<header class="hero">
+  <div class="back"><a href="../">← 回到書架</a></div>
+  <img src="img/01-cover.webp" alt="忒修斯的計程車" fetchpriority="high">
+  <div class="in">
+    <div class="kicker">哲學短篇 · 同一性</div>
+    <h1>忒修斯的計程車</h1>
+    <p class="tagline">老簡的計程車是一九九八年的。引擎、車門、座椅、底盤全部換過，沒有一個零件是一九九八年的。一個念過哲學的乘客問他：那它還是同一台車嗎？</p>
+    <div class="meta"><span>全文 <b>4,708</b> 字</span><span>閱讀約 <b>16</b> 分鐘</span><span>插圖 <b>9</b> 幅</span></div>
+  </div>
+</header>
+<main class="wrap">
+  <nav class="toc"><h3>目錄</h3><ol>
+<li><a href="#ch1">第一章 · 車牌</a></li>
+<li><a href="#ch2">第二章 · 乘客</a></li>
+<li><a href="#ch3">第三章 · 零件</a></li>
+<li><a href="#ch4">第四章 · 修車廠</a></li>
+<li><a href="#ch5">第五章 · 拆車場</a></li>
+<li><a href="#ch6">第六章 · 女兒</a></li>
+<li><a href="#ch7">第七章 · 阿公</a></li>
+<li><a href="#ch8">第八章 · 乘客（二）</a></li>
+<li><a href="#ch9">尾聲</a></li>
+  <li><a href="#comments" data-nb-toc="1">留言板</a></li>
+</ol></nav>
+<section class="chapter" id="ch1">
+<h2>第一章<span class=sp></span>車牌</h2>
+<p>老簡的計程車是一九九八年的。</p>
+<p>這是他跟每一個問的乘客說的話。「一九九八年，裕隆的，我買的時候三十二歲。」乘客通常會「哇」一聲，然後往車內看一圈，找一九九八年的痕跡。找不到。座椅是新的，儀表板是新的，音響是新的，方向盤是新的。引擎是二〇一一年換的，變速箱是二〇一五年，車門——四扇門，在不同的年份，因為不同的原因，一扇一扇換掉了。車頂是二〇一九年一場冰雹之後換的。底盤是二〇二二年，因為鏽穿了。</p>
+<p>「那什麼是一九九八年的？」有一次一個乘客問。</p>
+<p>老簡想了一下。</p>
+<p>「車牌。」他說。</p>
+<p>那個乘客笑了。老簡沒有笑。他覺得這個答案沒有什麼好笑的。車牌是一九九八年的，白底黑字，掛在一台已經沒有任何一個零件是一九九八年的車上。監理站的紀錄上，這台車是一九九八年出廠的。保險公司的紀錄上也是。老簡自己的記憶裡也是——他記得買它的那一天，記得第一次載客的那一天，記得他女兒出生那天他是開這台車去醫院的。</p>
+<p>他開了二十七年。</p>
+</section>
+<section class="chapter" id="ch2">
+<h2>第二章<span class=sp></span>乘客</h2>
+<p>那個女生是在一個星期二的晚上上車的。</p>
+<figure class="ill"><img src="img/02-passenger.webp" alt="「那它還是同一台車嗎？」" loading="lazy" width="1600" height="900"><figcaption>「那它還是同一台車嗎？」</figcaption></figure>
+<p>三十歲左右，背一個很大的背包，在台大側門上車，說去板橋。她坐後座，一上車就把頭靠在窗戶上，看外面。老簡沒有跟她講話。他開了二十七年，知道什麼樣的乘客想講話，什麼樣的不想。</p>
+<p>可是過了羅斯福路，她忽然說：「這台車很老了。」</p>
+<p>「一九九八年的。」老簡說。</p>
+<p>「哇。」她說。然後她往車內看了一圈。「可是看起來很新。」</p>
+<p>「零件都換過了。」</p>
+<p>「全部？」</p>
+<p>「全部。」</p>
+<p>女生安靜了一會兒。然後她問了那個問題，用一種老簡沒有聽過的方式問。</p>
+<p>「那它還是同一台車嗎？」</p>
+<p>老簡從後照鏡看她。她不是在開玩笑。她的表情很認真，像在問一個她真的不知道答案的問題。</p>
+<p>「妳是做什麼的？」</p>
+<p>「以前念哲學。」她說，「博士。沒念完。」</p>
+<p>「哲學也問這個？」</p>
+<p>「這是哲學最老的問題之一。」她說，「兩千年前就有人問了。一艘船，木板一塊一塊換掉，換到最後沒有一塊是原本的。那還是同一艘船嗎？」</p>
+<p>「他們怎麼說？」</p>
+<p>「吵了兩千年。」女生說，「沒有答案。」</p>
+<p>老簡開過中正橋。橋下的河是黑的，河面上有燈的倒影。</p>
+<p>「那妳覺得呢？」他問。</p>
+<p>「我不知道。」她說，「所以我沒念完。」</p>
+</section>
+<section class="chapter" id="ch3">
+<h2>第三章<span class=sp></span>零件</h2>
+<p>那天晚上老簡回到家，睡不著。</p>
+<p>他躺在床上，想那個問題。他以前不覺得這是一個問題。車就是車，壞了就修，修不好就換零件，換了零件還是這台車。他從來沒有想過「這還是同一台車嗎」，因為這台車一直在他手上，一天都沒有離開過。它是同一台，因為它一直是他的。</p>
+<p>可是現在他躺在床上，開始想每一個零件。</p>
+<p>引擎是二〇一一年換的。那年他五十五歲，車在北宜公路上拋錨，拖回台北，修車廠的老陳說引擎報廢了。他換了一個中古的，是從另一台報廢的裕隆上拆下來的。所以他的車的心臟，是另一台車的。</p>
+<p>那另一台車呢？它的車牌被註銷了，車身被壓成廢鐵。它的引擎在他的車裡跑了十四年。它算死了嗎？還是它有一部分活在他的車裡？</p>
+<p>他想到更多。座椅是從一台計程車行淘汰的車上拆的。車門有一扇是原廠的新品，可是有三扇是拆車場的，來自三台不同的車。他的車是由至少六台車的零件組成的。它是一台車，還是六台車的墓？</p>
+<p>他起來，走到窗邊，往下看。車停在巷子裡，路燈下面，白色的，跟每一天一樣。</p>
+<figure class="ill"><img src="img/03-window.webp" alt="他忽然覺得他不認識它。" loading="lazy" width="1600" height="900"><figcaption>他忽然覺得他不認識它。</figcaption></figure>
+<p>他忽然覺得他不認識它。</p>
+</section>
+<section class="chapter" id="ch4">
+<h2>第四章<span class=sp></span>修車廠</h2>
+<p>第二天他去找老陳。</p>
+<p>老陳的修車廠在三重，一間鐵皮屋，老簡在那裡修了二十七年的車。老陳六十八歲，比他大三歲，手上永遠是黑的。</p>
+<p>「阿簡，車又怎麼了？」</p>
+<p>「沒怎麼。」老簡說，「我問你一件事。」</p>
+<p>他把那個問題講了。老陳聽完，擦了擦手，坐在一個輪胎上。</p>
+<p>「你是在問，」老陳說，「這台車還是不是一九九八年那一台？」</p>
+<p>「對。」</p>
+<p>老陳想了很久。他這輩子修過幾千台車，換過幾萬個零件，從來沒有人問過他這個。</p>
+<figure class="ill"><img src="img/04-mechanic.webp" alt="「零件不會記得這些。你會。」" loading="lazy" width="1600" height="900"><figcaption>「零件不會記得這些。你會。」</figcaption></figure>
+<p>「我跟你講一個事。」他說，「我這裡有一台車，一台老賓士，一個老先生的。他每年來保養一次，每次都換一點東西。二十年了。去年他過世了，他兒子把車開來，說要賣。我幫他估價。」</p>
+<p>「然後？」</p>
+<p>「我打開引擎蓋，看了一下，發現裡面沒有一個東西是原廠的。全部是我換的。我換了二十年。」老陳說，「我跟他兒子說，這台車是我做的。」</p>
+<p>「他兒子怎麼說？」</p>
+<p>「他說，可是我爸開了二十年。」老陳笑了，「他說得對。我做的是零件。他爸開的是車。」</p>
+<p>老簡看著他。</p>
+<p>「阿簡，」老陳說，「零件是我換的。可是那台車每天是誰在開？誰知道它在幾公里的時候會抖？誰知道它冷天要熱車三分鐘？誰知道它右邊的煞車比左邊靈？」</p>
+<p>「我。」</p>
+<p>「那就是你的車。」老陳說，「零件不會記得這些。你會。」</p>
+</section>
+<section class="chapter" id="ch5">
+<h2>第五章<span class=sp></span>拆車場</h2>
+<p>星期三下午沒有客人，老簡開去了桃園。</p>
+<p>拆車場在一條產業道路的盡頭，很大，一眼看不到邊，全部是車。疊起來的，壓扁的，拆到只剩骨架的。他在這裡買過三扇車門、一組座椅、一個後視鏡。老闆姓黃，五十幾歲，跟他認識十幾年。</p>
+<p>「阿簡，要什麼？」</p>
+<p>「不要什麼。」老簡說，「來看看。」</p>
+<p>黃老闆沒有問看什麼。他讓老簡自己走。</p>
+<p>老簡走進那些車之間。一台一台。有的還看得出來是什麼車，有的已經看不出來了。他走到一台裕隆前面——跟他的同一款，一九九〇年代的，車身是藍的，引擎蓋開著，裡面是空的。引擎已經被拆走了。</p>
+<figure class="ill"><img src="img/05-scrapyard.webp" alt="「沒有一台車是死的。」" loading="lazy" width="1600" height="900"><figcaption>「沒有一台車是死的。」</figcaption></figure>
+<p>他站在那裡看。他想，我的引擎，是不是也是從一台這樣的車裡拆出來的。那台車的主人是誰？開了幾年？載過誰？它在拋錨的那一天，主人是什麼心情？</p>
+<p>他不知道。沒有人知道。那台車被壓扁，車牌註銷，紀錄消失。可是它的引擎在他的車裡跑了十四年，每天早上他發動的時候，是它在動。</p>
+<p>黃老闆走過來，站在他旁邊。</p>
+<p>「你在看什麼？」</p>
+<p>「我在想，這台車死了嗎？」</p>
+<p>黃老闆看了一眼那台藍色的裕隆。</p>
+<p>「我做這行三十年，」他說，「我跟你講，沒有一台車是死的。」</p>
+<p>「什麼意思？」</p>
+<p>「這台車的引擎在別的車裡。門在別的車裡。座椅在別的車裡。每一個零件都在跑。」黃老闆說，「你說它死了，可是它的每一個部分都在路上。你要說哪一個是它？」</p>
+<p>老簡看著那個空的引擎室。</p>
+<p>「那什麼是死的？」</p>
+<p>黃老闆想了一下。</p>
+<p>「沒有人記得的。」他說，「零件還在跑，可是沒有人知道那是它的。那才是死。」</p>
+<p>他拍了拍老簡的肩膀，走了。</p>
+<p>老簡在那台藍色的裕隆前面站了很久。他伸手摸了摸它的引擎蓋。鐵的，涼的，有一點鏽。他想，如果我的引擎是你的，那我每天在替你記得。</p>
+<p>他不知道這樣算不算。</p>
+</section>
+<section class="chapter" id="ch6">
+<h2>第六章<span class=sp></span>女兒</h2>
+<p>老簡的女兒叫簡沛，三十四歲，在新竹做工程師。</p>
+<p>她是那台車載去醫院出生的。她小時候坐在後座上寫功課，國中的時候坐在後座上跟他吵架，高中的時候坐在後座上不講話。她考上大學那天，是他開這台車送她去宿舍的。</p>
+<p>她每個月回來一次。那個星期六她回來，老簡在吃飯的時候問她：</p>
+<figure class="ill"><img src="img/06-daughter.webp" alt="「你現在身上沒有一個細胞是一九九八年的。你還是你嗎？」" loading="lazy" width="1600" height="900"><figcaption>「你現在身上沒有一個細胞是一九九八年的。你還是你嗎？」</figcaption></figure>
+<p>「沛沛，妳覺得我的車，還是一九九八年那一台嗎？」</p>
+<p>簡沛看著他，筷子停在半空中。</p>
+<p>「爸，你在說什麼？」</p>
+<p>「有一個乘客問我。零件都換過了，還是不是同一台。」</p>
+<p>簡沛想了一下。她是工程師，她想事情的方式跟老簡不一樣。</p>
+<p>「從物理上講，不是。」她說，「沒有一個原子是一樣的。」</p>
+<p>「那從別的講呢？」</p>
+<p>「爸，」她說，「你的身體，每七年細胞就全部換過一遍。你現在身上沒有一個細胞是一九九八年的。你還是你嗎？」</p>
+<p>老簡愣住了。</p>
+<p>「你六十八歲了。」簡沛說，「你的膝蓋換過一個。你的牙齒有一半是假的。你的心臟放了一根支架。你的血每天都在換。你還是你嗎？」</p>
+<p>「我——」</p>
+<p>「我覺得是。」簡沛說，「因為你一直記得你是誰。你記得買車那天。你記得我出生那天。零件換了，記憶沒有換。」</p>
+<p>她低下頭吃飯。過了一會兒，她又抬起頭。</p>
+<p>「可是爸，如果有一天你的記憶也換了呢？」</p>
+<p>老簡沒有回答。他知道她在說什麼。他的父親，簡沛的阿公，八十歲以後失智，最後三年不認得任何人。那三年他還是他嗎？</p>
+<p>「那就要靠別人記得了。」老簡說。</p>
+</section>
+<section class="chapter" id="ch7">
+<h2>第七章<span class=sp></span>阿公</h2>
+<p>他去了安養院。</p>
+<p>不是探望——他父親十年前就過世了。他去的是那間安養院，因為那個問題一直在他腦子裡：一個記憶換掉的人，還是不是同一個人。</p>
+<p>安養院還在，換了名字。他站在門口，看著裡面的老人坐在輪椅上，看著電視，或者看著窗外。他想起父親最後那三年。</p>
+<p>第一年，父親還認得他，可是會問他「你什麼時候結婚」——他那時候結婚二十年了。第二年，父親不認得他，可是認得那台車。他每次開車去，父親會站在窗邊，聽到那個引擎聲——二〇一一年換的那個引擎——就說「阿簡來了」。他不認得走進來的人，可是認得車的聲音。</p>
+<p>第三年，父親什麼都不認得了。他坐在床上，看著天花板。老簡跟他講話，他不回。老簡握他的手，他不動。</p>
+<p>有一天，老簡在病房裡，忽然按了一下車鑰匙上的按鈕。車在樓下，喇叭響了兩聲。</p>
+<figure class="ill"><img src="img/07-horn.webp" alt="「車。」父親說。" loading="lazy" width="1600" height="900"><figcaption>「車。」父親說。</figcaption></figure>
+<p>父親的頭轉過來了。</p>
+<p>很慢。可是轉過來了。他看著窗戶的方向，嘴巴動了一下。老簡靠過去聽。</p>
+<p>「車。」父親說。</p>
+<p>就一個字。然後他又看回天花板。</p>
+<p>老簡站在安養院門口，想起那個字。他想，父親最後認得的不是他，是車。可是那台車是他的。車的聲音是他每天發動的。父親認得的，是「阿簡每天開來的那個聲音」。他認得的不是一個人，是一件一直在做的事。</p>
+<p>他想，也許這就是了。一個人不是他的零件，不是他的記憶。是他一直在做的那件事。零件會換，記憶會掉。可是「每天開車來看爸爸」這件事，是他做的，到最後一天都是。</p>
+<p>父親認得的是那個。</p>
+<p>他走了。他沒有進去。他開車回台北，開得很慢。</p>
+</section>
+<section class="chapter" id="ch8">
+<h2>第八章<span class=sp></span>乘客（二）</h2>
+<p>那個女生又上車了。</p>
+<p>一個月後，同一個地方，台大側門，同一個背包。她上車看到是他，愣了一下，然後笑了。</p>
+<p>「一九九八年的。」她說。</p>
+<p>「對。」</p>
+<p>「你有想過那個問題嗎？」</p>
+<p>「想了一個月。」</p>
+<p>「然後呢？」</p>
+<p>老簡開過羅斯福路。他把想過的事情一件一件跟她講。老陳的話，女兒的話，他父親的事。他講了很久，講到過了中正橋。</p>
+<figure class="ill"><img src="img/08-bridge.webp" alt="「書裡的人只是在想。你是在開。」" loading="lazy" width="1600" height="900"><figcaption>「書裡的人只是在想。你是在開。」</figcaption></figure>
+<p>女生聽完，安靜了很久。</p>
+<p>「你比我念的那些書都好。」她說。</p>
+<p>「我沒念過書。」</p>
+<p>「所以才好。」她說，「書裡的人只是在想。你是在開。」</p>
+<p>她看著窗外。</p>
+<p>「我念哲學的時候，」她說，「我的老師說，這個問題沒有答案，因為『同一』不是一個事實，是一個決定。一艘船是不是同一艘，要看誰在問，為什麼問。海關問，是為了收稅。船長問，是為了知道要不要信任它。船員問，是為了知道要不要留下來。每個人的答案都不一樣。」</p>
+<p>「那妳問我，是為什麼？」</p>
+<p>女生沉默了很久。</p>
+<p>「因為我在想我自己。」她說，「我三十歲了。我二十歲的時候想的事，現在一件都不想了。我念哲學是因為我想知道人為什麼活著，現在我在一間公司做行銷，想的是怎麼讓人買東西。我的朋友都換了，我的房間換了，我的想法換了。我媽說我變了一個人。」她停了一下，「我想知道，我還是不是同一個人。」</p>
+<p>老簡看著後照鏡。</p>
+<p>「妳記得妳二十歲的時候嗎？」</p>
+<p>「記得。」</p>
+<p>「妳記得妳為什麼想念哲學嗎？」</p>
+<p>「記得。」</p>
+<p>「那妳就還是。」老簡說，「零件換了，車牌沒換。」</p>
+<p>女生笑了。她的眼睛紅紅的。</p>
+<p>「你的車牌是什麼？」她問，「你自己的。」</p>
+<p>老簡想了很久。車開到板橋。他在她說的巷口停下來。</p>
+<p>「我不知道。」他說，「可能是——我一直在開這台車。二十七年。這件事沒有換過。」</p>
+<p>女生下車。她付了錢，站在車門口，彎腰看他。</p>
+<p>「謝謝。」她說，「我大概知道我的車牌是什麼了。」</p>
+<p>「是什麼？」</p>
+<p>「我一直在問。」她說，「這件事沒有換過。」</p>
+</section>
+<section class="chapter" id="ch9">
+<h2>尾聲</h2>
+<p>老簡的車在二〇二六年報廢了。</p>
+<p>不是壞了。是法規——計程車的車齡上限，一九九八年的車已經超過太久了，監理站不給驗。他去辦手續的那天，把車牌拆下來，帶回家。</p>
+<p>他買了一台新的。二〇二六年的，電動的，什麼都不一樣。他開了一個星期，覺得很奇怪，像穿別人的鞋。</p>
+<p>第二個星期，他把那塊舊車牌拿出來，放在新車的儀表板上。不是掛——那是違法的——只是放著，在他每天看得到的地方。</p>
+<figure class="ill"><img src="img/09-plate.webp" alt="「零件是新的。開的人是舊的。」" loading="lazy" width="1600" height="900"><figcaption>「零件是新的。開的人是舊的。」</figcaption></figure>
+<p>一個乘客問：「這是什麼？」</p>
+<p>「我以前的車。」老簡說，「一九九八年的。」</p>
+<p>「這台不是新車嗎？」</p>
+<p>老簡看了看儀表板上的車牌，又看了看方向盤。他的手放在方向盤上，跟過去二十七年一樣的位置，一樣的角度。</p>
+<p>「零件是新的。」他說，「開的人是舊的。」</p>
+<p>乘客笑了。老簡也笑了。這次他覺得，這個答案是可以笑的。</p>
+<p class="fin">（完）</p>
+</section>
+  <div class="after">
+    <b>關於這個故事</b><br>
+    忒修斯之船：木板一塊一塊換掉，換到最後沒有一塊是原本的，還是同一艘船嗎？兩千年沒有答案。這篇讓一個開了二十七年計程車的人來回答。<br>
+    文字與插圖皆為 AI 生成（文字：Claude；插圖：OpenAI gpt-image）。<br>
+    <a class="top" href="#top">↑ 回到最上面</a><a class="top" href="../">📚 回到書架</a>
+  </div>
+</main>
+<script>
+(function(){var b=document.getElementById('bar');function u(){var h=document.documentElement;var p=h.scrollTop/(h.scrollHeight-h.clientHeight);b.style.width=(p*100)+'%';}addEventListener('scroll',u,{passive:true});u();})();
+</script>
+<!-- nb-comments:start -->
+<link rel="stylesheet" href="https://unpkg.com/@waline/client@v3/dist/waline.css">
+<style>
+  .nb-comments{margin:72px 0 48px;padding-top:32px;border-top:1px solid var(--line,#2a3340)}
+  .nb-comments h2{margin:0 0 6px;font-size:22px;font-weight:700;color:var(--ink,var(--text,#e8ecf3))}
+  .nb-comments p.nb-hint{margin:0 0 20px;font-size:14px;color:var(--dim,var(--text-2,#a3adbd))}
+  .nb-comments #waline{
+    --waline-theme-color:var(--cyan,var(--teal,#6fd3c7));
+    --waline-active-color:var(--gold,#e5b567);
+    --waline-font-size:15px;
+    --waline-bgcolor:var(--panel,var(--bg-2,#141922));
+    --waline-bgcolor-light:var(--panel2,var(--bg-3,#1b2230));
+    --waline-border-color:var(--line,#2a3340);
+    --waline-color:var(--ink,var(--text,#e8ecf3));
+    --waline-light-grey:var(--dim,var(--text-2,#a3adbd));
+    --waline-dark-grey:var(--dim,var(--text-2,#a3adbd));
+    --waline-white:var(--panel,var(--bg-2,#141922));
+    --waline-disable-bgcolor:var(--panel2,var(--bg-3,#1b2230));
+    --waline-disable-color:var(--dim,var(--text-3,#7a968d));
+    --waline-info-bgcolor:var(--panel2,var(--bg-3,#1b2230));
+    --waline-info-color:var(--dim,var(--text-2,#a3adbd));
+    --waline-border:1px solid var(--line,#2a3340);
+    --waline-code-bgcolor:var(--panel2,var(--bg-3,#1b2230));
+    --waline-badge-color:var(--gold,#e5b567);
+    --waline-bq-color:var(--dim,#a3adbd);
+  }
+  .nb-comments .wl-panel{background:var(--panel,var(--bg-2,#141922))}
+  .nb-comments .wl-editor,.nb-comments .wl-input{background:var(--bg,#0b0e13)}
+</style>
+<section class="nb-comments" id="comments">
+  <div class="wrap">
+    <h2>留言板</h2>
+    <p class="nb-hint">看不懂、想補充、發現錯誤都歡迎留言；填個暱稱就能發。</p>
+    <div id="waline"></div>
+  </div>
+</section>
+<script type="module">
+  import { init } from 'https://unpkg.com/@waline/client@v3/dist/waline.js';
+  init({
+    el: '#waline',
+    serverURL: 'https://notes-comments.vercel.app',
+    path: location.pathname,
+    lang: 'zh-TW',
+    dark: true,
+    meta: ['nick'],
+    requiredMeta: ['nick'],
+    login: 'disable',
+    reaction: false,
+    pageview: false,
+    search: false,
+    imageUploader: false,
+    copyright: false,
+    locale: { placeholder: '寫下你的想法或問題⋯⋯（支援 Markdown）' }
+  });
+</script>
+<!-- nb-comments:end -->
+</body>
+</html>
