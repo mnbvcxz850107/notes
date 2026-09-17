@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>單字表｜考古導向學習筆記</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&family=Noto+Serif+TC:wght@500;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    color-scheme:dark;
+    --bg:#0b0e13;--panel:#141922;--panel2:#1b2230;--line:#2a3340;
+    --ink:#e8ecf3;--dim:#a3adbd;--gold:#e5b567;--cyan:#6fd3c7;--rose:#e88b8b;--green:#8fd39a;
+    --serif:"Noto Serif TC","Songti TC",serif;
+    --sans:"Noto Sans TC","PingFang TC","Microsoft JhengHei",sans-serif;
+    --mono:"JetBrains Mono",ui-monospace,Menlo,monospace;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:16.5px;line-height:1.75;font-weight:300;-webkit-font-smoothing:antialiased;padding-bottom:env(safe-area-inset-bottom)}
+  a{color:var(--cyan)}
+  .wrap{max-width:760px;margin:0 auto;padding:0 18px}
+  button{font-family:inherit;touch-action:manipulation}
+
+  header{padding:40px 0 22px;border-bottom:1px solid var(--line)}
+  .eyebrow{display:flex;align-items:center;gap:14px;margin-bottom:14px;font-family:var(--serif);font-size:13px;letter-spacing:.3em;color:var(--cyan)}
+  .eyebrow .rule{width:44px;height:1px;background:var(--gold)}
+  .eyebrow a{margin-left:auto;letter-spacing:0;font-family:var(--sans);font-size:13.5px;color:var(--dim);text-decoration:none}
+  h1{font-family:var(--serif);font-weight:700;font-size:clamp(30px,6vw,44px);margin:0 0 6px;line-height:1.2}
+  h1 em{font-style:normal;color:var(--gold)}
+  .stats{display:flex;gap:18px;flex-wrap:wrap;margin-top:12px;font-family:var(--mono);font-size:12.5px;color:var(--dim)}
+  .stats b{color:var(--ink);font-weight:600;font-size:15px;margin-right:4px}
+  .stats .due b{color:var(--gold)}
+
+  nav.tabs{display:flex;gap:6px;margin:18px 0 8px;border-bottom:1px solid var(--line)}
+  nav.tabs button{background:none;border:0;color:var(--dim);font-size:15px;padding:10px 14px;cursor:pointer;border-bottom:2px solid transparent;margin-bottom:-1px}
+  nav.tabs button.on{color:var(--cyan);border-bottom-color:var(--cyan)}
+  nav.tabs .sync{margin-left:auto;align-self:center;font-family:var(--mono);font-size:11.5px;color:var(--dim);display:flex;align-items:center;gap:6px}
+  nav.tabs .sync i{width:8px;height:8px;border-radius:50%;background:var(--dim);display:inline-block}
+  nav.tabs .sync.ok i{background:var(--green)}nav.tabs .sync.busy i{background:var(--gold);animation:blink 1s infinite}nav.tabs .sync.err i{background:var(--rose)}nav.tabs .sync.ro i{background:var(--dim)}
+  @keyframes blink{50%{opacity:.3}}
+  section{display:none;padding:14px 0 60px}section.on{display:block}
+
+  /* 複習卡 */
+  .empty{text-align:center;color:var(--dim);padding:60px 0}
+  .empty h2{font-family:var(--serif);color:var(--ink);font-weight:500;font-size:22px;margin:0 0 8px}
+  .progress{font-family:var(--mono);font-size:12px;color:var(--dim);margin-bottom:10px;display:flex;justify-content:space-between}
+  .card{background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:26px 22px 20px;min-height:280px;box-shadow:0 14px 40px rgba(0,0,0,.35)}
+  .card .box{font-family:var(--mono);font-size:11px;color:var(--dim);letter-spacing:.15em;display:flex;gap:4px;align-items:center;margin-bottom:14px}
+  .card .box i{width:14px;height:5px;border-radius:3px;background:var(--line);display:inline-block}
+  .card .box i.on{background:var(--gold)}
+  .card .word{font-size:clamp(30px,8vw,40px);font-weight:700;color:var(--cyan);line-height:1.2;word-break:break-word;font-family:var(--serif)}
+  .card .ctx{margin:16px 0 0;padding:10px 12px;background:var(--bg);border-left:2px solid var(--line);border-radius:0 10px 10px 0;font-size:15px;color:var(--dim);line-height:1.6}
+  .card .ctx mark{background:transparent;color:var(--gold);font-weight:600}
+  .card .ctx .zh{margin-top:6px;color:var(--ink)}
+  .card .ans{margin-top:18px;padding-top:16px;border-top:1px dashed var(--line)}
+  .card .tr{font-size:24px;font-weight:500;line-height:1.4}
+  .card .dict{margin:6px 0 0;padding:0;list-style:none;font-size:14px;color:var(--dim)}
+  .card .dict b{color:var(--gold);font-weight:500;margin-right:6px}
+  .card .src{margin-top:12px;font-size:12.5px;color:var(--dim)}.card .src a{color:var(--dim)}
+  .actions{display:flex;gap:10px;margin-top:14px}
+  .actions button{flex:1;height:54px;border-radius:14px;font-size:17px;font-weight:700;cursor:pointer;border:1px solid var(--line);background:var(--panel2);color:var(--ink)}
+  .actions .show{background:var(--gold);color:var(--bg);border-color:var(--gold)}
+  .actions .no{border-color:rgba(232,139,139,.5);color:var(--rose)}
+  .actions .yes{border-color:rgba(143,211,154,.5);color:var(--green)}
+  .actions button:active{transform:scale(.98)}
+  .hint{font-size:12.5px;color:var(--dim);text-align:center;margin-top:12px}
+
+  /* 列表 */
+  .tools{display:flex;gap:8px;margin-bottom:12px}
+  .tools input{flex:1;height:42px;padding:0 12px;border-radius:10px;border:1px solid var(--line);background:var(--panel);color:var(--ink);font-size:15px}
+  .tools select{height:42px;border-radius:10px;border:1px solid var(--line);background:var(--panel);color:var(--ink);padding:0 8px;font-size:14px}
+  ul.list{list-style:none;margin:0;padding:0}
+  ul.list li{display:grid;grid-template-columns:1fr auto;gap:4px 10px;padding:12px 4px;border-bottom:1px solid var(--line);align-items:center}
+  ul.list .w{font-weight:600;color:var(--cyan);font-size:17px}
+  ul.list .t{color:var(--ink);font-weight:300}
+  ul.list .m{grid-column:1/-1;font-size:12px;color:var(--dim);font-family:var(--mono);display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+  ul.list .m a{color:var(--dim);text-decoration:none;max-width:50vw;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+  ul.list .m i{display:inline-flex;gap:2px}ul.list .m i b{width:9px;height:4px;border-radius:2px;background:var(--line);display:inline-block}ul.list .m i b.on{background:var(--gold)}
+  ul.list .ops{display:flex;gap:4px}
+  ul.list .ops button{background:none;border:1px solid var(--line);color:var(--dim);border-radius:8px;height:32px;padding:0 10px;font-size:12.5px;cursor:pointer}
+  ul.list .ops button.del:hover{color:var(--rose);border-color:var(--rose)}
+  .count{font-family:var(--mono);font-size:12px;color:var(--dim);margin-bottom:6px}
+
+  /* 設定 */
+  .field{margin-bottom:18px}
+  .field label{display:block;font-size:13.5px;color:var(--dim);margin-bottom:6px}
+  .field input{width:100%;height:44px;padding:0 12px;border-radius:10px;border:1px solid var(--line);background:var(--panel);color:var(--ink);font-size:15px;font-family:var(--mono)}
+  .field p{margin:6px 0 0;font-size:13px;color:var(--dim)}
+  .btns{display:flex;gap:8px;flex-wrap:wrap}
+  .btns button{height:42px;padding:0 16px;border-radius:10px;border:1px solid var(--line);background:var(--panel2);color:var(--ink);font-size:14.5px;cursor:pointer}
+  .btns .pri{background:var(--gold);color:var(--bg);border-color:var(--gold);font-weight:700}
+  .msg{margin-top:12px;font-size:13.5px;color:var(--dim);min-height:1.4em}.msg.err{color:var(--rose)}.msg.ok{color:var(--green)}
+  .howto{margin-top:30px;padding:16px 18px;border:1px solid var(--line);border-radius:14px;background:var(--panel);font-size:14px;color:var(--dim)}
+  .howto h3{margin:0 0 8px;font-size:15px;color:var(--ink);font-weight:500}
+  .howto ol{margin:0;padding-left:20px}.howto li{margin:4px 0}
+  @media (max-width:480px){.actions button{font-size:16px;height:52px}.tools select{display:none}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="eyebrow"><span class="rule"></span>VOCABULARY<a href="../">← 總目錄</a></div>
+    <h1>單字<em>表</em></h1>
+    <div class="stats">
+      <span>總數 <b id="s-total">–</b></span>
+      <span class="due">今日待複習 <b id="s-due">–</b></span>
+      <span>已熟 <b id="s-known">–</b></span>
+    </div>
+  </header>
+
+  <nav class="tabs">
+    <button data-tab="review" class="on">複習</button>
+    <button data-tab="list">全部</button>
+    <button data-tab="settings">設定</button>
+    <span class="sync" id="sync"><i></i><span>載入中</span></span>
+  </nav>
+
+  <section id="review" class="on"></section>
+
+  <section id="list">
+    <div class="tools">
+      <input id="q" type="search" placeholder="搜尋單字或中文…" autocomplete="off">
+      <select id="sort"><option value="added">最新加入</option><option value="alpha">字母</option><option value="weak">最不熟</option></select>
+    </div>
+    <div class="count" id="count"></div>
+    <ul class="list" id="ul"></ul>
+  </section>
+
+  <section id="settings">
+    <div class="field">
+      <label>GitHub Token（存在這台裝置的瀏覽器裡，不會上傳到任何地方）</label>
+      <input id="tok" type="password" placeholder="github_pat_…" autocomplete="off">
+      <p>沒有 token 也能看單字表，但複習進度和刪除不會儲存。<a href="https://github.com/settings/personal-access-tokens/new" target="_blank" rel="noopener">產生 Fine-grained token ↗</a>：Repository access 只選 <b>notes</b>，Permissions 勾 <b>Contents: Read and write</b>。</p>
+    </div>
+    <div class="btns">
+      <button class="pri" id="tok-save">儲存並測試</button>
+      <button id="tok-clear">清除 token</button>
+      <button id="reload">重新載入單字表</button>
+    </div>
+    <div class="msg" id="msg"></div>
+
+    <div class="howto">
+      <h3>怎麼加單字</h3>
+      <ol>
+        <li>在任何一頁筆記反白英文字，旁邊會浮出 <b style="color:var(--gold)">譯</b> 按鈕</li>
+        <li>點它看翻譯，再按「加入單字表」</li>
+        <li>電腦上其他網站：裝 Chrome 插件後，反白 → 右鍵 → 「翻譯並加入單字表」</li>
+      </ol>
+    </div>
+  </section>
+</div>
+
+<script>
+(function(){
+'use strict';
+var REPO='mnbvcxz850107/notes', BRANCH='main', PATH='vocab/vocab.json';
+var INTERVALS=[0,1,2,4,7,15,30]; // 天；box 0 = 新字 / 忘了
+var DAY=864e5;
+
+var state={data:{version:1,words:[]}, sha:null, token:'', mode:'ro', dirty:false, deleted:[], queue:[], cur:null, flipped:false, saving:null};
+
+function $(s,el){return (el||document).querySelector(s);}
+function esc(s){return String(s==null?'':s).replace(/[&<>"']/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];});}
+function b64enc(s){return btoa(unescape(encodeURIComponent(s)));}
+function b64dec(b){return decodeURIComponent(escape(atob(b.replace(/\n/g,''))));}
+function nowIso(){return new Date().toISOString();}
+function lget(k){try{return localStorage.getItem(k)||'';}catch(e){return '';}}
+function lset(k,v){try{localStorage.setItem(k,v);}catch(e){}}
+function hdr(){return {Authorization:'Bearer '+state.token,Accept:'application/vnd.github+json','X-GitHub-Api-Version':'2022-11-28'};}
+function api(){return 'https://api.github.com/repos/'+REPO+'/contents/'+PATH;}
+
+function setSync(cls,txt){var el=$('#sync');el.className='sync '+cls;el.lastElementChild.textContent=txt;}
+
+/* ---- 讀取 ---- */
+async function ghGet(){
+  var r=await fetch(api()+'?ref='+BRANCH+'&t='+Date.now(),{headers:hdr(),cache:'no-store'});
+  if(r.status===404) return {sha:null,data:{version:1,words:[]}};
+  if(r.status===401) throw new Error('Token 無效或過期');
+  if(r.status===403) throw new Error('Token 沒有 notes repo 的權限');
+  if(!r.ok) throw new Error('讀取失敗 ('+r.status+')');
+  var j=await r.json(); var data;
+  try{data=JSON.parse(b64dec(j.content));}catch(e){data={version:1,words:[]};}
+  if(!Array.isArray(data.words)) data.words=[];
+  return {sha:j.sha,data:data};
+}
+async function load(){
+  state.token=lget('nbVocabToken'); $('#tok').value=state.token;
+  setSync('busy','載入中');
+  try{
+    if(state.token){var g=await ghGet(); state.sha=g.sha; state.data=g.data; state.mode='rw'; setSync('ok','已同步');}
+    else{var r=await fetch('vocab.json?t='+Date.now(),{cache:'no-store'}); state.data=r.ok?await r.json():{version:1,words:[]}; if(!Array.isArray(state.data.words)) state.data.words=[]; state.mode='ro'; setSync('ro','唯讀（未設 token）');}
+  }catch(e){
+    setSync('err',e.message); state.mode='ro';
+    try{var r2=await fetch('vocab.json?t='+Date.now(),{cache:'no-store'}); state.data=await r2.json();}catch(e2){}
+  }
+  state.data.words.forEach(function(w){ if(w.box==null) w.box=0; if(!w.due) w.due=w.added||nowIso(); w.seen=w.seen||0; w.correct=w.correct||0; w.lower=w.lower||w.word.toLowerCase(); });
+  lset('nbVocabCache',JSON.stringify(state.data.words.map(function(w){return w.lower;})));
+  buildQueue(); renderAll();
+}
+
+/* ---- 儲存（讀最新 → 合併 → 寫）---- */
+function mergeInto(remote){
+  var byId={}; remote.words.forEach(function(w){byId[w.id]=w;});
+  state.data.words.forEach(function(w){
+    var r=byId[w.id];
+    if(!r) byId[w.id]=w;
+    else if((w.updated||'')>=(r.updated||'')) byId[w.id]=w;
+  });
+  state.deleted.forEach(function(id){delete byId[id];});
+  var words=Object.keys(byId).map(function(k){return byId[k];});
+  words.sort(function(a,b){return (a.added||'')<(b.added||'')?-1:1;});
+  remote.words=words; return remote;
+}
+async function save(){
+  if(state.mode!=='rw'||!state.dirty) return;
+  if(state.saving) return state.saving;
+  setSync('busy','儲存中');
+  state.saving=(async function(){
+    for(var i=0;i<3;i++){
+      var g=await ghGet();
+      var merged=mergeInto(g.data); merged.updated=nowIso();
+      var body={message:'vocab: review progress',branch:BRANCH,content:b64enc(JSON.stringify(merged,null,1))};
+      if(g.sha) body.sha=g.sha;
+      var r=await fetch(api(),{method:'PUT',headers:Object.assign({'Content-Type':'application/json'},hdr()),body:JSON.stringify(body)});
+      if(r.status===409||r.status===422) continue;
+      if(!r.ok) throw new Error('寫入失敗 ('+r.status+')');
+      var j=await r.json(); state.sha=j.content.sha; state.data=merged; state.deleted=[]; state.dirty=false;
+      setSync('ok','已同步'); return;
+    }
+    throw new Error('同步衝突，請稍後再試');
+  })().catch(function(e){setSync('err',e.message);}).finally(function(){state.saving=null; if(state.dirty) scheduleSave();});
+  return state.saving;
+}
+var saveTimer=null;
+function scheduleSave(){clearTimeout(saveTimer); saveTimer=setTimeout(save,2500); if(state.mode==='rw') setSync('busy','待儲存');}
+window.addEventListener('pagehide',function(){ if(state.dirty&&state.mode==='rw'){ clearTimeout(saveTimer); save(); } });
+document.addEventListener('visibilitychange',function(){ if(document.hidden&&state.dirty){clearTimeout(saveTimer);save();} });
+
+/* ---- 複習 ---- */
+function buildQueue(){
+  var now=Date.now();
+  state.queue=state.data.words.filter(function(w){return new Date(w.due).getTime()<=now;})
+    .sort(function(a,b){return a.box-b.box||(a.due<b.due?-1:1);});
+  state.cur=state.queue.length?state.queue[0]:null; state.flipped=false;
+}
+function boxes(n){var s='';for(var i=0;i<6;i++)s+='<i class="'+(i<n?'on':'')+'"></i>';return s;}
+function renderReview(){
+  var el=$('#review');
+  if(!state.cur){
+    var total=state.data.words.length;
+    var next=state.data.words.map(function(w){return new Date(w.due).getTime();}).filter(function(t){return t>Date.now();}).sort()[0];
+    el.innerHTML='<div class="empty"><h2>'+(total?'今天的複習完成了 ✓':'還沒有單字')+'</h2><p>'+(total?(next?'下一批 '+Math.ceil((next-Date.now())/DAY)+' 天後到期':'')+'':'去筆記頁反白英文，按「譯」再加入')+'</p></div>';
+    return;
+  }
+  var w=state.cur, idx=state.queue.indexOf(w);
+  var ctx=w.context?esc(w.context).replace(new RegExp(esc(w.word).replace(/[.*+?^${}()|[\]\\]/g,'\\$&'),'i'),function(m){return '<mark>'+m+'</mark>';}):'';
+  el.innerHTML='<div class="progress"><span>'+(idx+1)+' / '+state.queue.length+'</span><span>'+(w.box?'第 '+w.box+' 階':'新字')+'</span></div>'+
+    '<div class="card"><div class="box">'+boxes(w.box)+'</div><div class="word">'+esc(w.word)+'</div>'+
+    (ctx?'<div class="ctx">'+ctx+(state.flipped&&w.contextZh?'<div class="zh">'+esc(w.contextZh)+'</div>':'')+'</div>':'')+
+    (state.flipped?'<div class="ans"><div class="tr">'+esc(w.translation||'—')+'</div><ul class="dict">'+(w.dict||[]).map(function(d){return '<li><b>'+esc(d.pos)+'</b>'+esc((d.terms||[]).join('、'))+'</li>';}).join('')+'</ul>'+
+      (w.url?'<div class="src">來源：<a href="'+esc(w.url)+'" target="_blank" rel="noopener">'+esc(w.title||w.url)+'</a></div>':'')+'</div>':'')+
+    '</div>'+
+    (state.flipped?'<div class="actions"><button class="no" data-a="no">✗ 不記得</button><button class="yes" data-a="yes">✓ 記得</button></div>':'<div class="actions"><button class="show" data-a="show">看答案</button></div>')+
+    '<div class="hint">'+(state.mode==='rw'?'進度會自動儲存到 GitHub':'唯讀模式：到「設定」貼 token 才會記錄進度')+'</div>';
+}
+function answer(ok){
+  var w=state.cur; w.seen=(w.seen||0)+1; if(ok) w.correct=(w.correct||0)+1;
+  w.box=ok?Math.min(w.box+1,6):0;
+  w.due=new Date(Date.now()+INTERVALS[w.box]*DAY+(ok?0:60000)).toISOString();
+  w.updated=nowIso(); state.dirty=true; scheduleSave();
+  state.queue.shift(); if(!ok) state.queue.push(w);
+  state.cur=state.queue[0]||null; state.flipped=false; renderReview(); renderStats();
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+$('#review').addEventListener('click',function(e){
+  var b=e.target.closest('button[data-a]'); if(!b) return;
+  var a=b.getAttribute('data-a');
+  if(a==='show'){state.flipped=true;renderReview();}
+  else answer(a==='yes');
+});
+document.addEventListener('keydown',function(e){
+  if(!$('#review').classList.contains('on')||!state.cur) return;
+  if(e.key===' '||e.key==='Enter'){ if(!state.flipped){e.preventDefault();state.flipped=true;renderReview();} }
+  else if(state.flipped&&(e.key==='1'||e.key==='ArrowLeft')) answer(false);
+  else if(state.flipped&&(e.key==='2'||e.key==='ArrowRight')) answer(true);
+});
+
+/* ---- 列表 ---- */
+function renderList(){
+  var q=$('#q').value.trim().toLowerCase(), sort=$('#sort').value;
+  var ws=state.data.words.filter(function(w){return !q||w.lower.indexOf(q)>=0||(w.translation||'').indexOf(q)>=0;});
+  if(sort==='alpha') ws.sort(function(a,b){return a.lower<b.lower?-1:1;});
+  else if(sort==='weak') ws.sort(function(a,b){return a.box-b.box||(a.added<b.added?1:-1);});
+  else ws.sort(function(a,b){return a.added<b.added?1:-1;});
+  $('#count').textContent=ws.length+' 個字';
+  $('#ul').innerHTML=ws.map(function(w){
+    return '<li data-id="'+esc(w.id)+'"><div><span class="w">'+esc(w.word)+'</span>　<span class="t">'+esc(w.translation||'')+'</span></div>'+
+      '<div class="ops"><button class="edit">改翻譯</button><button class="del">刪除</button></div>'+
+      '<div class="m"><i>'+boxes(w.box)+'</i><span>'+(w.added||'').slice(0,10)+'</span>'+(w.url?'<a href="'+esc(w.url)+'" target="_blank" rel="noopener">'+esc(w.title||w.url)+'</a>':'')+'</div></li>';
+  }).join('');
+}
+$('#q').addEventListener('input',renderList); $('#sort').addEventListener('change',renderList);
+$('#ul').addEventListener('click',function(e){
+  var b=e.target.closest('button'); if(!b) return;
+  var li=b.closest('li'), id=li.getAttribute('data-id');
+  var w=state.data.words.filter(function(x){return x.id===id;})[0]; if(!w) return;
+  if(state.mode!=='rw'){alert('唯讀模式：先到「設定」貼上 token');return;}
+  if(b.classList.contains('del')){
+    if(!confirm('刪除「'+w.word+'」？')) return;
+    state.data.words=state.data.words.filter(function(x){return x.id!==id;}); state.deleted.push(id);
+  }else{
+    var t=prompt('「'+w.word+'」的翻譯',w.translation||''); if(t==null) return;
+    w.translation=t.trim();
+  }
+  w.updated=nowIso(); state.dirty=true; scheduleSave(); buildQueue(); renderAll();
+});
+
+/* ---- 設定 ---- */
+$('#tok-save').addEventListener('click',async function(){
+  var t=$('#tok').value.trim(); var m=$('#msg'); m.className='msg'; m.textContent='測試中…';
+  lset('nbVocabToken',t); state.token=t;
+  if(!t){m.textContent='已清除，現在是唯讀模式'; state.mode='ro'; setSync('ro','唯讀'); return;}
+  try{var g=await ghGet(); state.sha=g.sha; state.data=g.data; state.mode='rw'; m.className='msg ok'; m.textContent='連線成功，單字表共 '+g.data.words.length+' 個字'; setSync('ok','已同步'); buildQueue(); renderAll();}
+  catch(e){m.className='msg err'; m.textContent=e.message; state.mode='ro'; setSync('err',e.message);}
+});
+$('#tok-clear').addEventListener('click',function(){$('#tok').value='';$('#tok-save').click();});
+$('#reload').addEventListener('click',load);
+
+/* ---- 分頁 / 統計 ---- */
+document.querySelectorAll('nav.tabs button').forEach(function(b){
+  b.addEventListener('click',function(){
+    document.querySelectorAll('nav.tabs button').forEach(function(x){x.classList.toggle('on',x===b);});
+    document.querySelectorAll('section').forEach(function(s){s.classList.toggle('on',s.id===b.getAttribute('data-tab'));});
+    if(b.getAttribute('data-tab')==='review'){buildQueue();renderReview();}
+  });
+});
+function renderStats(){
+  var ws=state.data.words, now=Date.now();
+  $('#s-total').textContent=ws.length;
+  $('#s-due').textContent=ws.filter(function(w){return new Date(w.due).getTime()<=now;}).length;
+  $('#s-known').textContent=ws.filter(function(w){return w.box>=4;}).length;
+}
+function renderAll(){renderStats();renderReview();renderList();}
+load();
+})();
+</script>
+</body>
+</html>
