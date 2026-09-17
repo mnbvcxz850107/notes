@@ -8,11 +8,11 @@
     <title>讀片室的她</title>
     <style>
       html, body { margin: 0; padding: 0; background: #0b0b12; height: 100%; overflow: hidden; }
-      #wrap { position: fixed; inset: 0; display: flex; align-items: center; justify-content: center; }
+      #wrap { position: fixed; top:0; left:0; right:0; bottom:0; display: flex; align-items: center; justify-content: center; }
       #unity-canvas { background: #0b0b12; display: block; width: 100%; height: 100%; }
       /* 電腦：維持直式手機比例置中 */
       @media (min-aspect-ratio: 3/5) { #unity-canvas { height: 100vh; width: calc(100vh * 0.5); max-width: 100vw; } }
-      #loading { position: fixed; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center;
+      #loading { position: fixed; top:0; left:0; right:0; bottom:0; z-index: 10; display: flex; flex-direction: column; align-items: center; justify-content: center;
                  color: #ff73a0; font: 18px/1.6 -apple-system, "PingFang TC", "Noto Sans TC", sans-serif; background: #0b0b12; }
       #bar { width: 60%; max-width: 320px; height: 6px; background: #222; border-radius: 3px; overflow: hidden; margin-top: 12px; }
       #fill { width: 0; height: 100%; background: #ff73a0; transition: width .2s; }
