@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="theme-color" content="#0b0b12">
+    <title>讀片室的她</title>
+    <style>
+      html, body { margin: 0; padding: 0; background: #0b0b12; height: 100%; overflow: hidden; }
+      #wrap { position: fixed; inset: 0; display: flex; align-items: center; justify-content: center; }
+      #unity-canvas { background: #0b0b12; display: block; width: 100%; height: 100%; }
+      /* 電腦：維持直式手機比例置中 */
+      @media (min-aspect-ratio: 3/5) { #unity-canvas { height: 100vh; width: calc(100vh * 0.5); max-width: 100vw; } }
+      #loading { position: fixed; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center;
+                 color: #ff73a0; font: 18px/1.6 -apple-system, "PingFang TC", "Noto Sans TC", sans-serif; background: #0b0b12; }
+      #bar { width: 60%; max-width: 320px; height: 6px; background: #222; border-radius: 3px; overflow: hidden; margin-top: 12px; }
+      #fill { width: 0; height: 100%; background: #ff73a0; transition: width .2s; }
+    </style>
+  </head>
+  <body>
+    <div id="wrap"><canvas id="unity-canvas" tabindex="-1"></canvas></div>
+    <div id="loading"><div>讀片室的她　載入中…</div><div id="bar"><div id="fill"></div></div><div id="pct" style="font-size:14px;opacity:.7;margin-top:6px">0%</div></div>
+    <script src="Build/web.loader.js"></script>
+    <script>
+      createUnityInstance(document.querySelector("#unity-canvas"), {
+        arguments: [],
+        dataUrl: "Build/web.data.unityweb",
+        frameworkUrl: "Build/web.framework.js.unityweb",
+        codeUrl: "Build/web.wasm.unityweb",
+        streamingAssetsUrl: "StreamingAssets",
+        companyName: "furyan",
+        productName: "讀片室的她",
+        productVersion: "1.0",
+      }, (p) => {
+        document.getElementById("fill").style.width = Math.round(p * 100) + "%";
+        document.getElementById("pct").textContent = Math.round(p * 100) + "%";
+      }).then(() => {
+        document.getElementById("loading").remove();
+      }).catch((message) => { alert(message); });
+    </script>
+  </body>
+</html>
