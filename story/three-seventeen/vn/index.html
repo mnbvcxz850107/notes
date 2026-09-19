@@ -1,0 +1,677 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, user-scalable=no">
+<title>時間停在三點十七分｜視覺小說</title>
+<meta name="description" content="《時間停在三點十七分》視覺小說版：苗栗山城的一個星期三下午，三千個人停在同一秒。只有物理老師邱望還在動。你會留下來，還是讓它發生？">
+<meta property="og:title" content="時間停在三點十七分｜視覺小說">
+<meta property="og:description" content="鳥停在空中，雨停在半空，三千個人停在同一秒。只有你還在動。三個結局。">
+<meta property="og:image" content="https://mnbvcxz850107.github.io/notes/story/three-seventeen/vn/img/ts01_title.webp">
+<meta name="theme-color" content="#0f141c">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0f141c;--panel:#1b2230;--line:#2a3340;--ink:#e8ecf3;--ink2:#a3adbd;--dim:#6f7a8c;--amber:#e5b567;--amber2:#f3cf8a;--serif:"Noto Serif TC","Songti TC","PingFang TC","Microsoft JhengHei",serif}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html,body{margin:0;height:100%;background:var(--bg);color:var(--ink);font-family:var(--serif);overflow:hidden;-webkit-font-smoothing:antialiased;user-select:none}
+#stage{position:fixed;inset:0;margin:auto;width:100%;height:100%;max-width:calc(100vh * 3 / 4);background:#0a0e14;overflow:hidden;box-shadow:0 0 80px rgba(0,0,0,.7)}
+@media(min-aspect-ratio:3/4){#stage{width:calc(100vh * 3 / 4)}}
+.bg{position:absolute;inset:0;background:#0a0e14 center/cover no-repeat;opacity:0;transition:opacity .9s ease}
+.bg.on{opacity:1}
+#dim{position:absolute;inset:0;background:linear-gradient(180deg,rgba(15,20,28,0) 55%,rgba(15,20,28,.55) 78%,rgba(15,20,28,.92) 100%);pointer-events:none}
+/* dialogue */
+#box{position:absolute;left:0;right:0;bottom:0;padding:0 16px calc(16px + env(safe-area-inset-bottom));z-index:5}
+#name{display:inline-flex;align-items:center;gap:8px;margin:0 0 8px 4px;padding:4px 12px 4px 4px;background:rgba(15,20,28,.85);border:1px solid rgba(229,181,103,.5);border-radius:999px;color:var(--amber2);font-size:.9rem;letter-spacing:.15em;font-weight:600;min-height:32px}
+#name:empty{display:none}
+#name img{width:26px;height:26px;border-radius:50%;object-fit:cover;object-position:top;background:#222}
+#text{background:rgba(15,20,28,.86);border:1px solid rgba(255,255,255,.1);border-radius:14px;padding:18px 20px 22px;min-height:132px;font-size:1.06rem;line-height:1.85;letter-spacing:.02em;position:relative;backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px)}
+#text.narr{color:var(--ink2);font-style:normal}
+#text.msg{border-color:rgba(229,181,103,.35);background:rgba(27,34,48,.92)}
+#text.msg::before{content:"訊息";position:absolute;top:-10px;right:14px;font-size:.7rem;letter-spacing:.3em;color:var(--amber);background:var(--bg);padding:0 8px}
+#next{position:absolute;right:16px;bottom:10px;color:var(--amber);font-size:.8rem;animation:blink 1.2s infinite;opacity:0}
+#next.on{opacity:1}
+@keyframes blink{0%,100%{opacity:.25}50%{opacity:1}}
+#tap{position:absolute;inset:0;z-index:4}
+/* top bar */
+#bar{position:absolute;top:0;left:0;right:0;display:flex;justify-content:space-between;align-items:center;padding:calc(10px + env(safe-area-inset-top)) 12px 8px;z-index:6;background:linear-gradient(180deg,rgba(15,20,28,.6),rgba(15,20,28,0))}
+#bar .l{color:var(--ink2);font-size:.74rem;letter-spacing:.15em;text-shadow:0 1px 6px #000;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:42%}
+#bar .r{display:flex;gap:6px}
+.ib{background:rgba(15,20,28,.6);border:1px solid rgba(255,255,255,.14);color:var(--ink2);border-radius:999px;padding:4px 9px;font-size:.72rem;letter-spacing:.08em;font-family:inherit;cursor:pointer;white-space:nowrap;line-height:1.4}
+.ib.on{color:var(--amber2);border-color:rgba(229,181,103,.6)}
+/* chapter card */
+#card{position:absolute;inset:0;z-index:8;display:flex;flex-direction:column;align-items:center;justify-content:center;background:var(--bg);opacity:0;pointer-events:none;transition:opacity .7s}
+#card.on{opacity:1;pointer-events:auto}
+#card .k{color:var(--amber);letter-spacing:.4em;font-size:.8rem;margin-bottom:16px}
+#card h2{margin:0;font-size:1.7rem;letter-spacing:.3em;font-weight:600;text-align:center;padding:0 20px}
+/* choices */
+#choices{position:absolute;left:0;right:0;bottom:0;padding:70px 18px calc(22px + env(safe-area-inset-bottom));z-index:7;display:none;flex-direction:column;gap:10px;background:linear-gradient(180deg,rgba(15,20,28,0),rgba(15,20,28,.9) 60px)}
+#choices.on{display:flex}
+#choices button{background:rgba(27,34,48,.94);border:1px solid rgba(229,181,103,.55);color:var(--ink);border-radius:12px;padding:15px 18px;font-size:1rem;font-family:inherit;line-height:1.6;text-align:left;cursor:pointer;letter-spacing:.02em}
+#choices button:hover{border-color:var(--amber2);color:var(--amber2)}
+#choices .q{color:var(--amber);letter-spacing:.3em;font-size:.75rem;text-align:center;margin-bottom:4px}
+/* title */
+#title{position:absolute;inset:0;z-index:9;display:flex;flex-direction:column;justify-content:flex-end;background:#0a0e14}
+#title .cv{position:absolute;inset:0;background:center/cover no-repeat;opacity:.7}
+#title::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(15,20,28,.1) 0%,rgba(15,20,28,.25) 45%,rgba(15,20,28,.97) 100%)}
+#title .in{position:relative;z-index:2;padding:0 26px calc(36px + env(safe-area-inset-bottom))}
+#title .kicker{color:var(--amber);letter-spacing:.35em;font-size:.78rem;margin-bottom:10px}
+#title h1{font-size:2.4rem;letter-spacing:.14em;margin:0 0 10px;line-height:1.25;font-weight:700;text-shadow:0 4px 30px rgba(0,0,0,.7)}
+#title .tag{color:var(--ink2);font-size:.92rem;line-height:1.8;margin:0 0 20px}
+#title .menu{display:flex;flex-direction:column;gap:9px}
+#title .menu button{background:rgba(27,34,48,.9);border:1px solid rgba(229,181,103,.5);color:var(--ink);border-radius:12px;padding:13px 16px;font-size:1rem;font-family:inherit;letter-spacing:.2em;cursor:pointer;display:flex;justify-content:space-between;align-items:center}
+#title .menu button:hover{border-color:var(--amber2);color:var(--amber2)}
+#title .menu button small{color:var(--dim);letter-spacing:.05em;font-size:.75rem}
+#title .menu button[disabled]{opacity:.35;cursor:default}
+#title .foot{margin-top:16px;color:var(--dim);font-size:.75rem;letter-spacing:.12em;display:flex;justify-content:space-between}
+#title .foot a{color:var(--ink2);text-decoration:none}
+#ends{display:flex;gap:6px;flex-wrap:wrap;margin:6px 0 0}
+#ends span{font-size:.72rem;letter-spacing:.1em;color:var(--dim);border:1px solid var(--line);border-radius:999px;padding:2px 9px}
+#ends span.got{color:var(--amber2);border-color:rgba(229,181,103,.5)}
+/* ending */
+#ending{position:absolute;inset:0;z-index:9;display:none;flex-direction:column;align-items:center;justify-content:center;background:rgba(10,14,20,.94);text-align:center;padding:30px}
+#ending.on{display:flex}
+#ending .k{color:var(--amber);letter-spacing:.4em;font-size:.8rem;margin-bottom:14px}
+#ending h2{margin:0 0 14px;font-size:1.6rem;letter-spacing:.25em;font-weight:600}
+#ending p{color:var(--ink2);line-height:1.9;max-width:320px;margin:0 0 26px}
+#ending button{background:transparent;border:1px solid rgba(229,181,103,.6);color:var(--amber2);border-radius:999px;padding:10px 22px;font-family:inherit;font-size:.95rem;letter-spacing:.2em;cursor:pointer;margin:4px}
+/* overlays */
+.ov{position:absolute;inset:0;z-index:10;background:rgba(10,14,20,.96);display:none;flex-direction:column;padding:calc(14px + env(safe-area-inset-top)) 16px 16px}
+.ov.on{display:flex}
+.ov h3{margin:0 0 12px;color:var(--amber);font-size:.85rem;letter-spacing:.35em;font-weight:600;display:flex;justify-content:space-between;align-items:center}
+.ov .body{overflow:auto;flex:1;-webkit-overflow-scrolling:touch}
+.ov .row{border-bottom:1px dashed var(--line);padding:10px 4px;font-size:.95rem;line-height:1.75;color:var(--ink2)}
+.ov .row b{color:var(--amber2);font-weight:600;margin-right:8px}
+.ov .row.cur{color:var(--ink)}
+.ov .ch{display:block;width:100%;text-align:left;background:var(--panel);border:1px solid var(--line);color:var(--ink2);border-radius:10px;padding:12px 14px;font-family:inherit;font-size:.95rem;letter-spacing:.05em;margin-bottom:8px;cursor:pointer}
+.ov .ch:hover{color:var(--amber2);border-color:rgba(229,181,103,.5)}
+.ov .ch[disabled]{opacity:.3;cursor:default}
+#flash{position:absolute;inset:0;background:#fff;opacity:0;pointer-events:none;z-index:6;transition:opacity .15s}
+</style>
+</head>
+<body>
+<div id="stage">
+  <div class="bg" id="bgA"></div><div class="bg" id="bgB"></div>
+  <div id="dim"></div>
+  <div id="flash"></div>
+  <div id="tap"></div>
+  <div id="bar"><div class="l" id="chap"></div><div class="r">
+    <button class="ib" id="bAuto">自動</button><button class="ib" id="bSkip">快轉</button><button class="ib" id="bLog">紀錄</button><button class="ib" id="bMenu">選單</button></div></div>
+  <div id="box"><div id="name"></div><div id="text"><span id="tx"></span><span id="next">▼</span></div></div>
+  <div id="choices"></div>
+  <div id="card"><div class="k" id="cardK">CHAPTER</div><h2 id="cardT"></h2></div>
+  <div id="ending"><div class="k">END</div><h2 id="endT"></h2><p id="endP"></p><div><button id="endTitle">回到標題</button><button id="endBack">回到上一個選擇</button></div></div>
+  <div id="title"><div class="cv" id="cover"></div><div class="in">
+    <div class="kicker">視覺小說 · 科幻懸疑 · 三個結局</div>
+    <h1>時間停在<br>三點十七分</h1>
+    <p class="tag">苗栗山城的一個星期三下午，鳥停在空中，雨停在半空，三千個人停在同一秒。只有物理老師邱望還在動。</p>
+    <div class="menu">
+      <button id="mCont">繼續<small id="mContS"></small></button>
+      <button id="mNew">從頭開始<small>約 30 分鐘</small></button>
+      <button id="mChap">章節選擇<small id="mChapS"></small></button>
+    </div>
+    <div id="ends"></div>
+    <div class="foot"><a href="../">← 讀小說原文</a><span>Ryan ©</span></div>
+  </div></div>
+  <div class="ov" id="log"><h3>對話紀錄<button class="ib" data-close="log">關閉</button></h3><div class="body" id="logBody"></div></div>
+  <div class="ov" id="chapters"><h3>章節選擇<button class="ib" data-close="chapters">關閉</button></h3><div class="body" id="chapBody"></div></div>
+  <div class="ov" id="menu"><h3>選單<button class="ib" data-close="menu">關閉</button></h3><div class="body">
+    <button class="ch" id="mmTitle">回到標題畫面</button>
+    <button class="ch" id="mmChap">章節選擇</button>
+    <button class="ch" id="mmRestartChap">從本章開頭重來</button>
+    <div class="row" style="margin-top:14px">操作：點畫面或按空白鍵／Enter 前進；「快轉」跳過已讀內容到下一個選擇；進度會自動儲存在這個瀏覽器。</div>
+    <div class="row"><a href="../" style="color:var(--amber)">閱讀小說原文 →</a></div>
+  </div></div>
+</div>
+<script>
+// 《時間停在三點十七分》視覺小說腳本
+// 節點格式：
+//  ["ch", 標題]            章節卡
+//  ["bg", 圖名]            換背景（img/<圖名>.webp）
+//  ["n", 旁白]             旁白
+//  ["s", 角色, 台詞]        對白（角色：qiu/ahe/wei/yun/other，或直接給名字）
+//  ["t", 角色, 台詞]        打字（阿禾用手機打的字，顯示成訊息樣式）
+//  ["choice", [[文字, 標籤], ...]]
+//  ["label", 標籤] / ["jump", 標籤]
+//  ["flag", 名] / ["if", 名, 標籤]   （旗標為真時跳）
+//  ["end", 結局id, 結局標題, 一句話]
+const CHARS = {
+  qiu: { name: "邱望", img: "tsp_qiu" },
+  ahe: { name: "阿禾", img: "tsp_ahe" },
+  wei: { name: "老魏", img: "tsp_wei" },
+  yun: { name: "曉芸", img: "tsp_yun" },
+};
+const SCRIPT = [
+["label","start"],
+["ch","第一章　三點十七分"],
+["bg","ts02_classroom"],
+["n","邱望是在黑板前面發現的。"],
+["n","高二的物理課，下午第六節，全班三十二個人有一半在打瞌睡。他正在講等速圓周運動，粉筆在黑板上畫了一個圓。"],
+["n","畫到四分之三的時候，他聽到窗外的鳥叫聲停了。"],
+["n","不是變小，是停。像有人按了靜音。"],
+["n","他轉過頭。窗外有一隻麻雀，在空中。翅膀張開，不動。像一張貼在天空上的照片。"],
+["n","他看了三秒。然後他回頭看教室。"],
+["n","三十二個學生，一半趴著，一半坐著。坐著的那一半，眼睛睜著，看著黑板，不動。"],
+["n","第三排那個永遠在轉筆的男生，筆在他的指尖上，斜的，停在半空中。空氣中有粉筆灰，一粒一粒的，懸著，在光裡發亮。"],
+["n","沒有聲音。"],
+["s","qiu","……陳冠宇？"],
+["n","沒有人回答。他走下講台，伸手碰了一下第一排學生的肩膀。"],
+["n","肩膀是溫的，可是像石頭一樣硬——不是硬，是「不動」。他的手推不動它，像推一堵牆。"],
+["n","牆上的時鐘停在三點十七分。秒針在「四」和「五」之間。"],
+["s","qiu","（我在做夢。）"],
+["n","他掐了自己的手臂。很痛。"],
+["bg","ts03_corridor"],
+["n","走廊上有一個學生，正在跑，一隻腳離地，身體往前傾——停在那裡。"],
+["n","他繞過那個學生，走下樓梯，走到操場。"],
+["bg","ts01_title"],
+["n","操場上有一場籃球賽。球在空中，離籃框大約一公尺，五個人仰著頭看它。"],
+["n","天空是灰的。他抬頭，看到雨已經開始下了——雨滴懸在空中，密密麻麻的，一顆一顆，像一整片玻璃珠。"],
+["n","他伸出手，碰了一顆。它不動。他的手指穿過去的時候，它還是在那裡，濕的，冷的，可是不落下來。"],
+["n","他站在操場中央，在一片懸著的雨裡。"],
+["n","三點十七分。"],
+
+["ch","第二章　靜止的鎮"],
+["bg","ts04_street"],
+["n","石岡坪是苗栗山裡的一個小鎮。人口三千，一條主街，一間高中，一座廟，一間便利商店，一間農會。"],
+["n","邱望在這裡住了十八年。他的太太曉芸是這裡人，在農會上班。他們沒有小孩，住在鎮東邊一間兩層樓的老房子。"],
+["n","街上有十幾個人。騎機車的阿榮，機車傾斜著，正在轉彎。提菜籃的阿嬌，一隻腳踏在騎樓的台階上。"],
+["n","便利商店的門開到一半，一個小孩在門裡，手裡拿著一根冰棒，冰棒的頂端有一滴水，懸著。"],
+["n","他一個一個走過去看。他們的眼睛是睜著的，可是不看他。他們在看三點十七分那一秒他們在看的東西。"],
+["bg","ts05_office"],
+["n","他走到農會。"],
+["n","曉芸的位子是空的。電腦開著，游標在一個格子裡，閃到一半——停在亮的那一瞬間。椅子往後推，包包不在。"],
+["n","她出去了。"],
+["n","他拿出手機，撥她的號碼。螢幕亮了，可是撥號的聲音沒有出來。訊號是空的。螢幕上的時間：三點十七分。"],
+["s","qiu","（她會去哪裡？下午三點……菜市場？廟口找阿嬌？或者——）"],
+["n","他忽然想起來。今天是星期三。"],
+["n","星期三下午她會開車去隔壁鎮的診所拿她母親的藥。三點出門，走山路，四點回來。"],
+["s","qiu","山路。"],
+["n","他開始跑。"],
+
+["ch","第三章　家"],
+["bg","ts04_street"],
+["n","他跑到鎮的西邊，山路的入口，然後他停下來。"],
+["s","qiu","（如果她已經回來了呢？如果她今天沒有去，如果她現在正在家裡，在後院，在廚房？）"],
+["choice",[["先回家看看","c3_home"],["直接上山路找她","c3_road"]]],
+["label","c3_road"],
+["n","他往山路踏了兩步，又停下來。十二公里。如果她根本不在山上，他會在一片灰色裡白走一趟，而她在家裡等他。"],
+["n","他往回跑。"],
+["label","c3_home"],
+["bg","ts06_kitchen"],
+["n","門口的桂花懸在半空中，有幾朵正在落，停在離地面三十公分的地方。他推開門。"],
+["n","客廳沒有人。廚房沒有人。爐子上有一鍋咖哩，鍋蓋掀開一半，冒出來的蒸氣停在空中，像一團白色的棉花。"],
+["n","桌上有一張紙，是曉芸的字。"],
+["s","yun","「去拿藥。回來煮咖哩。你先吃水果。」"],
+["n","旁邊放著一盤切好的芭樂。"],
+["n","她三點出門。三點十七分。她在路上。"],
+["n","他拿起一片芭樂，放進嘴裡。沒有味道。像吃空氣。"],
+["bg","ts07_bedroom"],
+["n","他走上二樓。床是鋪好的，曉芸每天早上都鋪。床頭櫃上有她的眼鏡，一本翻到一半的書，一杯喝了一半的水。杯子外面有幾滴水珠，懸著。"],
+["n","他在床上躺下來。他不累，可是他躺著。"],
+["n","天花板上有一片水漬，是去年颱風留下的。曉芸說要修，他說再看看，然後就沒有修。"],
+["n","然後他睡著了。"],
+["bg","ts08_dream"],
+["n","他做了一個夢。夢裡的東西是會動的。"],
+["n","曉芸在廚房裡煮咖哩，蒸氣往上冒，她回過頭。"],
+["s","yun","你回來了？"],
+["s","qiu","嗯。"],
+["s","yun","先吃水果。"],
+["s","qiu","好。"],
+["n","就這樣。一個很普通的夢。"],
+["bg","ts07_bedroom"],
+["n","他醒過來的時候，天還是三點十七分的灰。蒸氣還懸在空中。"],
+["n","他下樓，走出門，往山路走。這次他沒有跑。因為他知道，不管他跑多快，那裡都是三點十七分。"],
+["bg","ts09_store"],
+["n","走到主街的時候，他繞進了便利商店。不是為了買東西。是因為他想看看。"],
+["n","收銀台後面的店員，他三年前教過的學生。她的眼睛看著塑膠袋，嘴角有一點點往上，可能是在想什麼好笑的事。"],
+["n","三點十七分。她永遠在想那件好笑的事。"],
+["s","qiu","（如果我不走。如果我永遠在這裡——）"],
+["n","沒有人會老，沒有人會死，沒有人會離開。石岡坪三千個人，永遠停在一個星期三的下午。"],
+["n","這聽起來不像地獄。這聽起來像一張照片。"],
+["n","他把飯糰的包裝放回貨架——一轉頭，它回到了他手裡。他把它放進口袋，走出去。"],
+
+["ch","第四章　阿禾"],
+["bg","ts10_ahe"],
+["n","他走了兩公里，走到山路的入口，然後他停下來，因為他看到有東西在動。"],
+["n","在一個靜止的世界裡，有東西在動。"],
+["n","是一個小女孩。十二歲左右，穿一件黃色的雨衣，蹲在路邊的水窪旁邊，用一根樹枝把懸在空中的雨滴一顆一顆撥成一排。"],
+["s","qiu","妳——"],
+["n","女孩抬起頭。她看到他，愣了一下，往後退了兩步。她的眼睛很大，很黑，像在看一個很久沒有看過的東西。"],
+["s","qiu","妳會動。……妳是誰？"],
+["n","女孩沒有回答。她把手舉起來，指了指自己的耳朵，搖了搖頭。"],
+["n","她聽不到。"],
+["bg","ts11_phone"],
+["n","他不會手語。他從口袋裡拿出手機，打開記事本，打了一行字，舉起來給她看。"],
+["t","qiu","妳叫什麼名字？"],
+["n","女孩走過來，把手機拿過去，打了幾個字。"],
+["t","ahe","阿禾。你是新來的？"],
+["n","新來的。邱望看著那三個字，看了很久。"],
+["t","qiu","妳在這裡多久了？"],
+["t","ahe","不知道。很久。時鐘不會動，我不會算。"],
+["t","qiu","妳一個人？"],
+["t","ahe","還有一個阿公。在山上。他不太下來。"],
+["n","邱望蹲下來，跟她一樣高。"],
+["t","qiu","這是什麼地方？為什麼大家都不動？"],
+["n","阿禾看著他，看了很久。然後她打了一行字，字很慢，一個一個打。"],
+["t","ahe","他們不是不動。是你不動。"],
+
+["ch","第五章　規則"],
+["bg","ts12_shrine"],
+["n","阿禾帶他去她住的地方。路邊一間廢棄的土地公廟，很小。裡面有一條毯子，幾個寶特瓶，一堆撿來的東西——石頭，樹枝，一個壞掉的手錶。"],
+["n","香爐裡有三根香，燒到一半，香灰懸在空中。"],
+["n","她在毯子上坐下來，拍拍旁邊的位子。他們用手機打字，一句一句地講。"],
+["t","ahe","有一天我在跑，然後所有東西都停了。我以為是做夢。我等大家動起來，沒有。"],
+["t","ahe","東西拿得動，可是吃起來沒有味道。像吃空氣。不會餓死，也不會飽。不會累，可是可以睡。"],
+["t","ahe","睡著的時候會做夢。夢裡的東西是會動的。醒來，又不動了。"],
+["t","ahe","那個阿公說，這裡有規則。"],
+["t","qiu","什麼規則？"],
+["t","ahe","東西可以拿，可是不能改。"],
+["n","她指了指香爐裡懸著的香灰。"],
+["t","ahe","你可以把它撥掉，可是你一轉頭，它又回來了。你動的東西，只有你在看的時候是動的。"],
+["n","邱望想起教室裡那個學生的肩膀。像推一堵牆。"],
+["t","ahe","還有一個。時間不動，可是我們會走。走得越遠，就越難回來。"],
+["t","qiu","回來哪裡？"],
+["n","阿禾沒有打字。她走到廟門口，指了指那條通往山上的路。"],
+["t","ahe","阿公在上面。他走太遠了。"],
+["bg","ts10_ahe"],
+["n","那天晚上——沒有晚上，天一直是三點十七分的灰——邱望坐在廟門口，看著懸在空中的雨。"],
+["s","qiu","（他們不是不動。是你不動。）"],
+["n","他是物理老師。他知道時間不是一個東西，是一種關係——一個東西相對於另一個東西的變化。"],
+["n","如果所有東西都不變，那就沒有時間。如果只有你在變，那時間就只是你的。"],
+["n","所以不是世界停了。是他從世界裡掉出來了。"],
+["n","三點出門，走山路，四點回來。三點十七分，她大概在山路的中段，那個很多彎的地方，那個去年出過車禍的地方。"],
+["n","他站起來。阿禾沒有問他要去哪裡。她只是也站起來，穿上那件黃色的雨衣，跟在他後面。"],
+
+["ch","第六章　走遠"],
+["choice",[["先往相反的方向走，看看這個「三點十七分」有多大","c6_east"],["直接上山路","c6_road"]]],
+["label","c6_road"],
+["n","他往山路走了幾步。阿禾拉住他的袖子，把手機舉起來。"],
+["t","ahe","阿公說，先看看外面。不然你到了那裡，會以為那裡就是全部。"],
+["n","他看著那行字，看了很久。然後他轉身，往東走。"],
+["label","c6_east"],
+["bg","ts13_fields"],
+["n","第二天——他們說那是第二天——邱望往山的另一邊走。往東，往隔壁的鎮。他想知道走出石岡坪以後，會不會有一個地方是三點十八分。"],
+["n","經過農田，田裡有一個農夫，彎著腰，手裡拿著一把草。經過一條溪，溪水不流，水面像一片玻璃，玻璃下面有魚，停著。"],
+["bg","ts14_train"],
+["n","走到隔壁鎮的時候，那裡也是三點十七分。"],
+["n","一台火車，停在平交道前面，車頭的燈亮著，車廂裡有幾十個人，臉貼著窗戶。"],
+["s","qiu","他們也是三點十七分。"],
+["t","ahe","阿公走到台中。走到台北。走到海邊。都是。"],
+["t","qiu","全世界都是？"],
+["t","ahe","不知道。阿公說，可能不是全世界停了。是我們停了。我們走到哪裡，就把三點十七分帶到哪裡。"],
+["n","他看著車廂裡的那些臉。他們不是停的。他們正在從三點十七分走到三點十八分，只是他看不到。"],
+["n","像一張照片。照片裡的人不是不動。是照片不動。"],
+["s","qiu","阿禾，阿公說走得越遠，越難回來。是什麼意思？"],
+["t","ahe","他說，你走得越遠，就越覺得這裡是真的。你會忘記那邊有一個三點十八分。你會覺得，這裡就是全部。"],
+["t","ahe","他有一段時間，真的忘了。他在山上走了很多年，忘了他為什麼在這裡。忘了阿明。"],
+["t","ahe","然後有一天他走回溪邊，看到阿明在水裡，他才想起來。然後他就不走了。他說，忘記比記得更可怕。"],
+["bg","ts09_store"],
+["n","他們往回走。走回石岡坪的時候，阿榮還在轉彎，阿嬌還在踏台階，那個小孩還在拿冰棒。"],
+["n","邱望站在便利商店門口。他想，如果他再走幾年，他也會忘記。忘記曉芸在山路上，忘記那台貨車，忘記三點十八分。"],
+["s","qiu","（我不要。）"],
+
+["ch","第七章　山路"],
+["bg","ts15_road"],
+["n","山路有十二公里。邱望跑一段，走一段。阿禾跟在後面，不快不慢，像一個不會累的人。"],
+["n","路上有幾台車，都停在路中間，開到一半。有一台貨車，司機的手在方向盤上，嘴巴張著，像在講電話。"],
+["n","邱望一台一台地看。沒有曉芸的車。"],
+["bg","ts16_wei"],
+["n","走到第七公里的時候，他看到了。不是車。是一個人。"],
+["n","一個老人，站在路邊的護欄旁邊，往山下看。他的頭慢慢地轉過來。八十幾歲，舊工作服，褲管捲到膝蓋，赤腳。"],
+["s","wei","新來的。"],
+["n","他的聲音很啞，像很久沒有講話。"],
+["s","qiu","你是——"],
+["s","wei","阿禾叫我阿公。我姓魏。你來找誰？"],
+["s","qiu","……找我太太。"],
+["n","老人點點頭，像早就知道。"],
+["s","wei","每個人都在找一個人。阿禾找她媽。我找我兒子。你找你太太。"],
+["s","wei","找到了，就麻煩了。"],
+["s","qiu","什麼意思？"],
+["n","老人沒有回答。他往山下指了一下。"],
+["bg","ts17_bend"],
+["n","山路在下面繞了一個大彎，彎的最外側是一面很陡的坡，坡下面是溪。彎道上有兩台車。"],
+["n","一台是曉芸的，白色的小車，在彎道的內側。另一台是貨車，藍色的，很大，載著石頭，車頭朝著曉芸的車。"],
+["n","兩台車之間，大約三十公尺。"],
+["n","貨車的輪子是斜的。不是轉彎的斜，是打滑的斜。"],
+["n","邱望的手抓住了護欄。"],
+["s","wei","三點十七分。她的三點十七分。"],
+
+["ch","第八章　推不動"],
+["bg","ts18_wife"],
+["n","他從護欄翻過去，滑下坡，摔了一次，膝蓋擦破了，爬起來繼續跑。他跑到曉芸的車旁邊，拉開車門。"],
+["n","她在裡面。手在方向盤上，眼睛看著前面，看著那台貨車。"],
+["n","她的臉是平靜的——不是不怕，是還沒來得及怕。她的右手正要從方向盤上抬起來，去按喇叭，或者去打方向盤。"],
+["n","邱望把手放在她的臉上。溫的。"],
+["s","qiu","曉芸。"],
+["n","她不看他。她看著貨車。"],
+["n","三十公尺。打滑。載著石頭。他是物理老師，他可以算。他不想算，可是他的腦子自己算了。"],
+["n","三秒。時間動起來以後，三秒。"],
+["bg","ts19_push"],
+["n","他跑到貨車旁邊，拉開車門，把司機往旁邊推。推不動。像推一堵牆。"],
+["n","他去推貨車。用肩膀，用背，用整個身體。貨車不動。"],
+["n","他去搬石頭，一顆一顆，想讓貨車輕一點。他抱著一顆走了三步，放在路邊。回頭——石頭在貨車上。路邊什麼都沒有。"],
+["n","他跑回曉芸的車，解安全帶。解開了，一轉頭，它又扣回去。他把方向盤打向另一邊，鬆手，它回來。"],
+["n","他站在兩台車中間，三十公尺的路上，喘著氣。"],
+["s","wei","不能改。我試了五十年。"],
+
+["ch","第九章　老魏"],
+["bg","ts16_wei"],
+["n","老魏的三點十七分，是一九七五年。"],
+["s","wei","那年我三十四歲。我兒子八歲。我們在溪邊。他在玩水，我在旁邊抽菸。"],
+["s","wei","三點十七分，他滑了一跤，掉進深的地方。我看到他的頭在水裡浮了一下。"],
+["s","wei","然後所有東西都停了。"],
+["s","qiu","你就在這裡？五十年？"],
+["s","wei","不知道幾年。不會算。可是很久。"],
+["s","wei","一開始我跟你一樣，跑下去，想拉他。拉不動。我把他從水裡抱起來，一轉頭，他又在水裡。我做了幾千次。幾萬次。"],
+["s","wei","後來我走遠了。我想，如果我走得夠遠，也許時間會動。我走了很多年。可是走到哪裡都是三點十七分。我走回來，他還在水裡。"],
+["n","他看著山下的溪。"],
+["s","wei","阿禾跟你說這裡有規則。她是對的。可是她只知道一半。"],
+["s","wei","規則是：你可以一直留在這裡。一直。只要你不讓它發生，它就不會發生。"],
+["s","wei","你的兒子永遠在水裡浮著，你的太太永遠在車裡看著貨車。他們不會死。可是他們也不會活。"],
+["s","qiu","那怎麼離開？"],
+["n","老魏轉過頭。他的眼睛很老，可是很清楚。"],
+["s","wei","讓它發生。"],
+
+["ch","第十章　阿禾的三點十七分"],
+["bg","ts20_rock"],
+["n","阿禾的三點十七分是二〇〇九年八月八日。"],
+["t","ahe","那天颱風。我跟媽媽在家。水進來了。媽媽抱著我往山上跑。"],
+["t","ahe","跑到橋上，橋在搖。媽媽把我放下來，叫我先跑。我跑了三步，回頭看，橋斷了。媽媽在水裡。"],
+["t","ahe","然後就停了。"],
+["n","二〇〇九年，八八風災。十幾年了。可是她還是十二歲。"],
+["t","ahe","這裡不會長大。阿公也不會變老。他是三十四歲的時候來的，可是他現在看起來八十歲。他說那不是變老，是走太遠了。"],
+["t","qiu","妳有去看妳媽媽嗎？"],
+["t","ahe","每天。她在橋下面。水裡。她的臉朝上，眼睛是睜開的。她在看我。"],
+["t","ahe","我知道要怎麼離開。阿公跟我說過。讓它發生。可是我不要。"],
+["t","qiu","為什麼？"],
+["t","ahe","因為我一走，她就死了。現在她在水裡，可是她在看我。她還沒有死。只要我在這裡，她就還沒有死。"],
+["n","她的眼睛很大，很黑，十二歲的眼睛，可是裡面有十幾年。"],
+["n","邱望想起曉芸在車裡，看著貨車。她還沒有死。只要他在這裡，她就還沒有死。"],
+["n","他忽然明白老魏說的：找到了，就麻煩了。"],
+
+["ch","第十一章　五十年"],
+["bg","ts21_talk"],
+["n","老魏是在第三天走的。不是走遠——是走了。"],
+["n","那天邱望坐在曉芸的車旁邊。他每天都去，坐在她旁邊，跟她講話。"],
+["s","qiu","……妳把我的表格退回來三次，因為我字寫太醜。妳記得嗎？十八年前，在農會。"],
+["s","qiu","地瓜葉又長太多了。我們吃不完。妳就是要種。"],
+["s","qiu","我每個星期三下午都心不在焉。我怕妳開山路。我從來沒有跟妳說。"],
+["n","老魏走過來的時候，他正在講這個。老魏站在車旁邊，看著曉芸，看了很久。"],
+["s","wei","她很漂亮。"],
+["s","qiu","嗯。"],
+["s","wei","我兒子也很漂亮。八歲的小孩，都很漂亮。我今天去看他了。五十年了。他八歲。"],
+["s","wei","我想通了一件事。我一直以為我留在這裡是為了他。不讓他死。"],
+["s","wei","可是他不是活的。他是停的。停在最壞的那一秒。溺水的那一秒。我讓他在那一秒裡待了五十年。"],
+["n","他的聲音在抖。"],
+["s","wei","那不是救他。那是不放他走。"],
+["s","wei","我要走了。我要去溪邊，讓它發生。他會死。我知道。可是他會死完。他不會一直在死。"],
+["n","他站起來，看著邱望，看了很久。"],
+["s","wei","你自己決定。不要聽我的。我的五十年，不是你的。"],
+["bg","ts22_wei_leaves"],
+["n","老魏站在溪邊，看著水裡那個八歲的孩子，看了很久很久。然後他走進水裡，走到孩子旁邊，跪下來，把手放在孩子的頭上。"],
+["s","wei","阿明，阿爸在。"],
+["n","然後他閉上眼睛。"],
+["n","沒有聲音，沒有光。老魏跪在水裡，然後他不在了。"],
+["n","然後——很慢，很慢——孩子的頭沉下去了。一秒。兩秒。水面平了。"],
+["t","ahe","他走了。兩個都走了。"],
+["n","阿禾的手在抖。"],
+["t","ahe","阿公跟我說過，讓它發生的時候，不是你一個人動。是那個人也動了。他們一起動。然後那個人就走了，你也走了。"],
+["t","qiu","走去哪裡？"],
+["t","ahe","阿公說，回到三點十八分。"],
+
+["ch","第十二章　選擇"],
+["bg","ts21_talk"],
+["n","邱望在曉芸的車旁邊坐了很久。可能是幾天，可能是幾個星期。"],
+["n","他一直在算。貨車的速度，重量，坡度。三秒。每一次的答案都一樣：車會被推出彎道，翻下坡，掉進溪裡。"],
+["n","他算她能不能活。他不會算。這不是物理。"],
+["n","她在車裡，臉是平靜的，她還沒有死。他可以每天來，坐在她旁邊，講話。十八年了，他習慣她在。"],
+["n","可是老魏說：她不是活的。她是停的。停在最壞的那一秒。"],
+["n","他看著她的臉。平靜的，還沒來得及怕的臉。"],
+["choice",[["留下來。只要我在這裡，她就還沒有死。","c12_stay"],["讓它發生。","c12_go"]]],
+
+["label","c12_stay"],
+["bg","ts21_talk"],
+["n","他留下來了。"],
+["n","他每天坐在她旁邊講話。學校的事，麻雀，阿禾。講完了，再從頭講一次。"],
+["n","阿禾偶爾來。後來來得少了。有一天她站在坡上，看了他很久，用手比了一個他看不懂的手勢，然後走了。她沒有再來。"],
+["n","他去便利商店拿飯糰。店員永遠在想那件好笑的事。他吃了，沒有味道。"],
+["n","他不再算了。三秒。反正不會發生。"],
+["bg","ts33_photo_end"],
+["n","不知道多久以後，他在車窗的倒影裡看到自己。頭髮全白了。臉上的皺紋像老魏。"],
+["n","不是變老。是走太遠了。"],
+["n","他想不起來他為什麼在這裡。他只知道車裡有一個女人，很漂亮，他每天陪她。"],
+["n","她的臉是平靜的。永遠平靜的。"],
+["n","三點十七分。"],
+["end","photo","結局：照片","停在最壞的一秒——他把她留在了那裡，也把自己留在了那裡。"],
+
+["label","c12_go"],
+["n","如果她可以選，她會選什麼？永遠停在這一秒，看著一台貨車，什麼都不知道？還是讓它發生，不管發生什麼？"],
+["n","他知道答案。她把他的表格退回來三次。她種的地瓜葉太多，她就是要種。她開山路，他叫她不要開，她說：不開山路，我媽的藥誰拿？"],
+["n","她是一個不會停的人。"],
+["flag","go"],
+["bg","ts20_rock"],
+["s","qiu","我要走了。"],
+["n","阿禾坐在石頭上，看著他。"],
+["s","qiu","可是我不能改任何東西。我推不動車，搬不動石頭，解不開安全帶。"],
+["s","qiu","可是我可以改我自己。"],
+["s","qiu","規則是東西不能改。可是我不是東西。時間動起來的時候，我在哪裡，我就在哪裡。"],
+["n","他指著彎道。"],
+["s","qiu","三點十七分，我在教室裡，在十二公里外。救護車從鎮上來，要二十分鐘。那二十分鐘裡，她一個人在溪裡。"],
+["s","qiu","如果時間動起來的時候，我就在她的車旁邊，三公尺？"],
+["n","阿禾的眼睛慢慢張大了。"],
+["s","qiu","我救不了她不被撞。可是我可以是第一個到的人。二十分鐘，變成三秒。"],
+["n","他不知道這夠不夠。可是他知道，這是他唯一可以改的東西。"],
+
+["ch","第十三章　橋"],
+["bg","ts23_bridge"],
+["n","阿禾帶他去看她媽媽。她說她從來沒有帶過任何人去，連阿公都沒有。"],
+["n","橋在鎮的北邊。水泥橋中間斷了一截，兩邊的橋面往下垂，像一張被折彎的紙。溪水是停的，可是看得出來它急，浪頭全是白的，像一排牙齒。"],
+["n","一個女人。三十幾歲，穿著雨衣，在水裡。水淹到她的脖子，臉朝上，眼睛睜開，嘴巴微微張著。她的一隻手伸出水面，指著橋上——指著阿禾站的地方。"],
+["n","十幾年。她一直在看阿禾。"],
+["s","qiu","妳每天來。妳每天站在這裡。她每天看妳。"],
+["t","ahe","一開始我覺得她在看我。後來我覺得她在等我做什麼。再後來我覺得，她只是看著。她停在那裡。"],
+["t","ahe","可是有時候，我覺得她在說一句話。嘴巴的形狀。我會讀唇語。"],
+["t","qiu","什麼話？"],
+["n","阿禾看著下面，看了很久。"],
+["t","ahe","跑。"],
+["n","邱望忽然想到一件事。阿禾的世界是二〇〇九年。可是這座橋，在他的時間裡，早就修好了。"],
+["s","qiu","二〇〇九年斷的，二〇一一年修好的。我來的時候，它是一座新的橋。可是現在它是斷的。"],
+["t","ahe","因為我在這裡。我在哪裡，我的三點十七分就在哪裡。我們在一起的時候，兩個疊在一起。"],
+["t","ahe","你看到的是我的橋，我的媽媽。我看到的是你的貨車，你的太太。我們都看到對方的三點十七分。"],
+["t","ahe","阿公說，這就是為什麼我們會遇到。一個人停在這裡，看不到自己。要有另一個人，才看得到。"],
+["n","橋下的女人，嘴巴的形狀是一個字。跑。"],
+["n","他想起曉芸的臉。如果她也在說一句話，會是什麼？他不知道。可是他覺得，大概不是「留下來」。"],
+
+["ch","第十四章　阿禾"],
+["bg","ts24_ahe_cry"],
+["n","阿禾坐在石頭上，很久沒有動。"],
+["choice",[["跟她說：妳媽媽要妳走。","c14_talk"],["這是她的事。什麼都不說。","c14_silent"]]],
+
+["label","c14_silent"],
+["n","他什麼都沒有說。她的十幾年，不是他的。老魏也是這樣說的：我的五十年，不是你的。"],
+["n","阿禾看著他，等了很久。然後她低下頭。"],
+["bg","ts34_alone_bridge"],
+["n","他走的那天，阿禾站在橋上，站在她媽媽指的那個位置。她沒有回頭。"],
+["n","他在路口回頭看了她最後一眼。黃色的雨衣，在灰色的世界裡，很小的一團光。"],
+["n","然後他往山路走。"],
+["flag","ahe_stays"],
+["jump","c15_walk"],
+
+["label","c14_talk"],
+["s","qiu","妳媽媽在橋下面。她的眼睛是睜開的。她在看妳。"],
+["s","qiu","妳說只要妳在這裡，她就還沒有死。可是她也沒有活。她在水裡，十幾年。她看著妳，十幾年。"],
+["s","qiu","她看到的是什麼？是一個十二歲的女孩，站在斷掉的橋上，回頭看她。她十幾年都在看這個。"],
+["n","阿禾的眼淚流下來。"],
+["s","qiu","她叫妳先跑。她把妳放下來，叫妳先跑。她要妳走。"],
+["t","ahe","我怕。"],
+["s","qiu","我知道。"],
+["t","ahe","我怕我一走，就什麼都沒有了。她沒有了，這裡沒有了，我十二歲的那個世界也沒有了。我不知道三點十八分是什麼。"],
+["n","邱望蹲下來，跟她一樣高。"],
+["s","qiu","我也不知道。可是老魏說，讓它發生的時候，不是你一個人動。是那個人也動了。"],
+["s","qiu","妳媽媽在水裡等妳。不是等妳救她。是等妳走。她走不了，因為妳還站在橋上回頭看。妳一走，她才能走。"],
+["n","阿禾哭了很久。然後她站起來，把黃色的雨衣穿好，把手機還給邱望。"],
+["n","她用手比了一個手勢。他看不懂，可是他懂。"],
+["t","qiu","妳會回到哪裡？"],
+["t","ahe","二〇〇九年八月八日，三點十八分。一座斷掉的橋上。我十二歲。"],
+["t","ahe","然後我會長大。"],
+
+["ch","第十五章　開始"],
+["bg","ts25_ahe_runs"],
+["n","阿禾站在橋上，站在她十幾年前站的地方。她往下看。"],
+["n","然後她做了一件邱望沒有想到的事。她轉過身，背對著溪，面對著山上的路——她媽媽叫她跑的方向。"],
+["n","她開始跑。"],
+["n","三步。她跑了三步，然後——她不在了。橋上什麼都沒有。"],
+["n","邱望往橋下看。水裡的女人，臉朝上，眼睛睜開。然後——很慢，很慢——她的眼睛閉上了。她的臉轉向一邊。她沉下去。"],
+["n","水面平了。"],
+["n","邱望站在橋上，很久。然後他往山路走。"],
+
+["label","c15_walk"],
+["bg","ts26_walk"],
+["n","他走了十二公里。走得很慢。"],
+["n","他經過學校，經過操場上那顆懸在空中的籃球，經過阿榮和阿嬌和那個拿冰棒的小孩。他經過農會，曉芸的空位子。"],
+["bg","ts27_waiting"],
+["n","他走到那個彎道。曉芸在車裡，手在方向盤上，臉是平靜的。貨車在三十公尺外，輪子斜著。"],
+["n","他在她的車旁邊站好。三公尺。駕駛座的那一側。"],
+["n","他算過：貨車撞上來的時候，車會往左推，他站在右邊，會被推開，可是不會被壓到。他會摔倒。他會在三秒內爬起來。"],
+["n","他蹲下來，把手放在車窗上。"],
+["s","qiu","曉芸，我在這裡。"],
+["n","然後他做了老魏做的事，阿禾做的事。他閉上眼睛。"],
+["n","他讓它發生。"],
+
+["ch","第十六章　三點十八分"],
+["bg","ts28_crash"],
+["n","聲音先回來。"],
+["n","鳥叫。雨。引擎。輪胎在濕的路面上打滑的聲音，尖的，長的。喇叭。"],
+["n","然後是撞擊。"],
+["n","他被推開了。像他算的一樣。他摔在路邊，肩膀撞到護欄，很痛。金屬被壓扁的聲音，玻璃碎掉，曉芸的車被推出彎道、滑下坡。"],
+["n","他爬起來。三秒。"],
+["bg","ts29_rescue"],
+["n","車翻了，四輪朝天，在坡的一半，卡在一棵樹上。沒有掉進溪裡。樹擋住了。"],
+["n","他滑下去。他不記得怎麼滑下去的。曉芸在裡面，倒吊著，安全帶扣著她。頭上有血。眼睛閉著。"],
+["s","qiu","曉芸。"],
+["n","他伸手進去，摸她的脖子。有脈搏。很快，可是有。"],
+["s","qiu","曉芸，我在這裡。"],
+["n","她的眼睛動了一下。"],
+["n","他解開安全帶——這一次解開了，它沒有扣回去。車在漏油，他聞到了。他把她拉到十公尺外的草地上，讓她平躺。"],
+["n","他拿出手機。有訊號了。"],
+["s","qiu","石岡坪，山路七公里，彎道，車禍，一個人，有意識，頭部外傷。我在她旁邊。快。"],
+["n","他的聲音很穩。他不知道為什麼這麼穩。"],
+["n","她的眼睛半開著，看著他。"],
+["s","yun","阿望？"],
+["s","qiu","我在。"],
+["s","yun","你怎麼會在這裡？"],
+["n","他不知道怎麼回答。他握著她的手。"],
+["s","qiu","我來接妳。"],
+["bg","ts30_hospital"],
+["n","救護車二十分鐘後到。醫生說，如果晚十分鐘，她會失血過多。車在救護車到之前五分鐘燒起來了。"],
+["n","貨車司機在筆錄裡說，他看到一個人站在那台白色小車旁邊，撞上去之前就在那裡。警察問邱望，他說他剛好路過。沒有人再問。"],
+["n","曉芸在醫院住了三個星期。頭部外傷，三根肋骨斷了，左手骨折。醫生說她會完全好。"],
+["n","邱望每天去醫院，坐在她旁邊，跟她講話。這次她會回答。"],
+
+["ch","尾聲"],
+["bg","ts31_class_after"],
+["n","一年後，邱望在物理課上講等速圓周運動。"],
+["n","他在黑板上畫了一個圓，畫到四分之三的時候，停下來。窗外有一隻麻雀，飛過去，翅膀在動。"],
+["s","other:學生","老師？"],
+["s","qiu","沒事。"],
+["n","他把圓畫完。"],
+["n","曉芸問過他一次，問他那天為什麼會在山路上。他說他請了假，想去接她。"],
+["s","yun","你從來不請假的。"],
+["s","qiu","那天想請。"],
+["n","她沒有再問。"],
+["if","ahe_stays","ep_alone"],
+["n","他去找過阿禾。二〇〇九年八月八日，苗栗山區的一個村子，一座橋斷了，一個女人被沖走，她十二歲的女兒活下來了。"],
+["n","女兒後來被親戚收養，去了台中。她今年二十七歲，在一間學校教書，教聽障的孩子。"],
+["n","他沒有去見她。他只是知道她長大了。這樣就夠了。"],
+["jump","ep_wei"],
+["label","ep_alone"],
+["n","他去找過阿禾。二〇〇九年八月八日，苗栗山區的一個村子，一座橋斷了，一個女人被沖走。"],
+["n","報導寫著：母女兩人。"],
+["n","他在那條溪邊站了很久。新的橋，水很清。沒有黃色的雨衣。"],
+["n","他想，她還在那座橋上。站在她媽媽指的那個位置，回頭看。"],
+["n","他什麼都不能替她做。這是她的三點十七分。可是他還是站了很久。"],
+["label","ep_wei"],
+["n","他也去了老魏的那條溪。一九七五年，一個八歲的男孩溺水。他的父親活到八十四歲，在二〇二三年過世。"],
+["n","鄰居說老人晚年很安靜，每天去溪邊坐一會兒，不講話，可是不像在難過，「像在陪誰」。"],
+["n","他想，他們都回到三點十八分了。有的人回去得早，有的人回去得晚。可是都回去了。"],
+["bg","ts32_garden"],
+["n","他站起來，回家。"],
+["n","曉芸在後院種菜。地瓜葉又長太多了。"],
+["s","yun","你回來了。"],
+["s","qiu","嗯。"],
+["n","桂花在落。真的在落。三點十八分。三點十九分。三點二十分。"],
+["n","時間在動。"],
+["if","ahe_stays","end_alone"],
+["end","true","結局：三點十八分","他們都回去了。有的人早，有的人晚。"],
+["label","end_alone"],
+["end","alone","結局：一個人的三點十八分","他回來了。可是橋上還有一團黃色的光，在灰色裡，回頭看。"],
+];
+
+(function(){
+const $=id=>document.getElementById(id);
+const KEY='ts317_vn';
+let st={pc:0,flags:{},seen:{},ends:{},lastChoice:null,log:[]};
+try{const s=JSON.parse(localStorage.getItem(KEY)||'null');if(s)st=Object.assign(st,s)}catch(e){}
+const save=()=>{try{localStorage.setItem(KEY,JSON.stringify({pc:st.pc,flags:st.flags,seen:st.seen,ends:st.ends,lastChoice:st.lastChoice,bg:curBg,chap:curChap}))}catch(e){}};
+const labels={};SCRIPT.forEach((n,i)=>{if(n[0]==='label')labels[n[1]]=i});
+const chapIdx=[];SCRIPT.forEach((n,i)=>{if(n[0]==='ch')chapIdx.push([i,n[1]])});
+const imgUrl=k=>'img/'+k+'.webp';
+let curBg=st.bg||null,curChap=st.chap||'',bgFlip=false,typing=null,auto=false,skip=false,busy=false,waiting=false;
+const pre=new Set();const preload=k=>{if(!k||pre.has(k))return;pre.add(k);const i=new Image();i.src=imgUrl(k)};
+function setBg(k,instant){curBg=k;const a=bgFlip?$('bgA'):$('bgB'),b=bgFlip?$('bgB'):$('bgA');bgFlip=!bgFlip;a.style.backgroundImage=`url(${imgUrl(k)})`;if(instant){a.style.transition='none';b.style.transition='none'}a.classList.add('on');b.classList.remove('on');if(instant)requestAnimationFrame(()=>{a.style.transition='';b.style.transition=''})}
+function preloadAhead(pc){let n=0;for(let i=pc;i<SCRIPT.length&&n<3;i++){if(SCRIPT[i][0]==='bg'){preload(SCRIPT[i][1]);n++}}}
+function who(k){if(!k)return null;if(k.startsWith('other:'))return{name:k.slice(6)};return CHARS[k]||{name:k}}
+function showText(node){const tx=$('tx'),nm=$('name'),tb=$('text');const kind=node[0];const w=kind==='n'?null:who(node[1]);const text=kind==='n'?node[1]:node[2];
+  tb.className=kind==='n'?'narr':(kind==='t'?'msg':'');nm.innerHTML='';if(w){if(w.img){const im=document.createElement('img');im.src=imgUrl(w.img);im.alt='';nm.appendChild(im)}nm.appendChild(document.createTextNode(w.name))}
+  st.log.push({n:w?w.name:'',t:text});if(st.log.length>200)st.log.shift();
+  $('next').classList.remove('on');clearTimeout(typing);
+  if(skip||st.seen[st.pc-1]&&false){tx.textContent=text;done();return}
+  let i=0;tx.textContent='';const speed=skip?0:22;const step=()=>{i+=1;tx.textContent=text.slice(0,i);if(i<text.length)typing=setTimeout(step,speed);else done()};step();
+  function done(){typing=null;$('next').classList.add('on');waiting=true;if(auto)typing=setTimeout(()=>{typing=null;advance()},Math.max(1400,text.length*90))}
+}
+function finishTyping(){if(typing&&!waiting){clearTimeout(typing);typing=null;const node=SCRIPT[st.pc-1];$('tx').textContent=node[0]==='n'?node[1]:node[2];$('next').classList.add('on');waiting=true;if(auto)typing=setTimeout(()=>{typing=null;advance()},2000);return true}return false}
+function showCard(title,cb){$('cardT').textContent=title;$('card').classList.add('on');setTimeout(()=>{$('card').classList.remove('on');cb()},skip?250:1700)}
+function showChoice(node){$('box').style.visibility='hidden';const c=$('choices');c.innerHTML='<div class="q">— 選擇 —</div>';node[1].forEach(o=>{const b=document.createElement('button');b.textContent=o[0];b.onclick=e=>{e.stopPropagation();c.classList.remove('on');$('box').style.visibility='';st.lastChoice=st.pc-1;st.pc=labels[o[1]];st.log.push({n:'▶',t:o[0]});save();run()};c.appendChild(b)});c.classList.add('on');skip=false;$('bSkip').classList.remove('on')}
+function showEnd(node){st.ends[node[1]]=1;save();$('endT').textContent=node[2];$('endP').textContent=node[3];$('ending').classList.add('on');auto=false;skip=false;$('bAuto').classList.remove('on');$('bSkip').classList.remove('on');renderEnds()}
+function run(){busy=true;while(true){const node=SCRIPT[st.pc];if(!node){busy=false;return}const k=node[0];st.pc++;
+  if(k==='label')continue;
+  if(k==='flag'){st.flags[node[1]]=1;continue}
+  if(k==='if'){if(st.flags[node[1]])st.pc=labels[node[2]];continue}
+  if(k==='jump'){st.pc=labels[node[1]];continue}
+  if(k==='bg'){setBg(node[1]);preloadAhead(st.pc);continue}
+  if(k==='ch'){curChap=node[1];$('chap').textContent=node[1].replace('　',' · ');save();showCard(node[1],run);return}
+  if(k==='n'||k==='s'||k==='t'){const seen=!!st.seen[st.pc-1];st.seen[st.pc-1]=1;if(skip&&seen){continue}if(skip&&!seen){skip=false;$('bSkip').classList.remove('on')}waiting=false;showText(node);save();return}
+  if(k==='choice'){showChoice(node);save();return}
+  if(k==='end'){showEnd(node);return}
+}}
+function advance(){if($('choices').classList.contains('on')||$('ending').classList.contains('on')||$('card').classList.contains('on'))return;if(document.querySelector('.ov.on'))return;if(finishTyping())return;if(!waiting&&typing)return;waiting=false;run()}
+$('tap').addEventListener('click',advance);
+document.addEventListener('keydown',e=>{if($('title').style.display!=='none')return;if(e.key===' '||e.key==='Enter'||e.key==='ArrowRight'){e.preventDefault();advance()}});
+$('bAuto').onclick=e=>{e.stopPropagation();auto=!auto;$('bAuto').classList.toggle('on',auto);if(auto&&waiting)advance()};
+$('bSkip').onclick=e=>{e.stopPropagation();skip=!skip;$('bSkip').classList.toggle('on',skip);if(skip){clearTimeout(typing);typing=null;waiting=false;run()}};
+$('bLog').onclick=e=>{e.stopPropagation();const b=$('logBody');b.innerHTML='';st.log.slice(-80).forEach(r=>{const d=document.createElement('div');d.className='row';if(r.n)d.innerHTML='<b></b>';if(r.n)d.querySelector('b').textContent=r.n;d.appendChild(document.createTextNode(r.t));b.appendChild(d)});$('log').classList.add('on');b.scrollTop=b.scrollHeight};
+$('bMenu').onclick=e=>{e.stopPropagation();$('menu').classList.add('on')};
+document.querySelectorAll('[data-close]').forEach(b=>b.onclick=e=>{e.stopPropagation();$(b.dataset.close).classList.remove('on')});
+function renderChapters(){const b=$('chapBody');b.innerHTML='';chapIdx.forEach(([i,t],n)=>{const bt=document.createElement('button');bt.className='ch';bt.textContent=t.replace('　',' · ');const unlocked=n===0||st.seen[i+1]||st.seen[i+2]||st.seen[i+3]||Object.keys(st.seen).some(k=>+k>i);if(!unlocked)bt.disabled=true;bt.onclick=()=>{$('chapters').classList.remove('on');startAt(i)};b.appendChild(bt)})}
+function startAt(i){$('title').style.display='none';$('ending').classList.remove('on');$('choices').classList.remove('on');$('box').style.visibility='';st.pc=i;st.log=[];if(i>0){let j=i;while(j>0&&SCRIPT[j][0]!=='bg')j--;if(SCRIPT[j][0]==='bg')setBg(SCRIPT[j][1],true)}
+  // flags only matter after ch.12; leave as saved
+  run()}
+function renderEnds(){const e=$('ends');e.innerHTML='';[['photo','照片'],['alone','一個人的三點十八分'],['true','三點十八分']].forEach(([k,t])=>{const s=document.createElement('span');s.textContent=(st.ends[k]?'✓ ':'')+t;if(st.ends[k])s.className='got';e.appendChild(s)});const n=Object.keys(st.ends).length;$('mChapS').textContent=n?`已達成 ${n}/3 結局`:'';}
+function showTitle(){$('title').style.display='';$('ending').classList.remove('on');$('choices').classList.remove('on');$('box').style.visibility='';clearTimeout(typing);typing=null;auto=false;skip=false;$('bAuto').classList.remove('on');$('bSkip').classList.remove('on');const has=st.pc>1&&SCRIPT[st.pc]&&SCRIPT[st.pc][0]!=='end';$('mCont').disabled=!has;$('mContS').textContent=has?(curChap||'').replace('　',' · '):'';renderEnds()}
+$('cover').style.backgroundImage=`url(${imgUrl('ts01_title')})`;
+$('mNew').onclick=()=>{st.flags={};st.log=[];startAt(0)};
+$('mCont').onclick=()=>{if($('mCont').disabled)return;$('title').style.display='none';if(curBg)setBg(curBg,true);$('chap').textContent=(curChap||'').replace('　',' · ');run()};
+$('mChap').onclick=()=>{renderChapters();$('chapters').classList.add('on')};
+$('mmChap').onclick=()=>{$('menu').classList.remove('on');renderChapters();$('chapters').classList.add('on')};
+$('mmTitle').onclick=()=>{$('menu').classList.remove('on');save();showTitle()};
+$('mmRestartChap').onclick=()=>{$('menu').classList.remove('on');let j=st.pc;while(j>0&&SCRIPT[j][0]!=='ch')j--;startAt(j)};
+$('endTitle').onclick=()=>{st.pc=0;save();showTitle()};
+$('endBack').onclick=()=>{if(st.lastChoice==null)return;$('ending').classList.remove('on');// clear flags set after the choice
+  st.flags={};for(let i=0;i<st.lastChoice;i++){if(SCRIPT[i][0]==='flag')st.flags[SCRIPT[i][1]]=1}startAt(st.lastChoice)};
+preload('ts01_title');preload('ts02_classroom');preload('tsp_qiu');preload('tsp_ahe');
+showTitle();
+})();
+</script>
+<!-- nb-comments:start --><!-- nb-comments:end -->
+</body>
+</html>
